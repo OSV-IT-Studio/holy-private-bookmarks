@@ -1,0 +1,333 @@
+{
+  "extensionName": {
+    "message": "Holy Private Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "Völlig private Lesezeichen mit Master-Passwort, Ordnern und Verschlüsselung"
+  },
+  "createPassword": {
+    "message": "Erstellen Sie ein Master-Passwort für die vollständige Verschlüsselung Ihrer Lesezeichen"
+  },
+  "newPassword": {
+    "message": "Neues Passwort (min. 6 Zeichen)"
+  },
+  "confirmPassword": {
+    "message": "Passwort bestätigen"
+  },
+  "createStorage": {
+    "message": "🔐 Speicher erstellen"
+  },
+  "enterMasterPassword": {
+    "message": "Geben Sie Ihr Master-Passwort zum Entsperren ein"
+  },
+  "masterPassword": {
+    "message": "Master-Passwort"
+  },
+  "unlock": {
+    "message": "🔓 Entsperren"
+  },
+  "wrongPassword": {
+    "message": "Falsches Passwort"
+  },
+  "passwordsMismatch": {
+    "message": "Passwörter stimmen nicht überein oder sind zu kurz"
+  },
+  "bookmarksProtected": {
+    "message": "Ihre Lesezeichen sind sicher geschützt"
+  },
+  "addCurrentPage": {
+    "message": "➕ Aktuelle Seite hinzufügen"
+  },
+  "newFolder": {
+    "message": "📁 Neuer Ordner"
+  },
+  "clearHistory": {
+    "message": "🧹️ Verlauf löschen"
+  },
+  "supportProject": {
+    "message": "❤️ Das Projekt unterstützen"
+  },
+  "settings": {
+    "message": "⚙️ Einstellungen"
+  },
+   "settingsbtn": {
+    "message": "⚙️"
+  },
+  "changeMasterPassword": {
+    "message": "Master-Passwort ändern"
+  },
+  "currentPassword": {
+    "message": "Aktuelles Passwort"
+  },
+  "newPassword2": {
+    "message": "Neues Passwort"
+  },
+  "confirmNewPassword": {
+    "message": "Neues Passwort bestätigen"
+  },
+  "changePassword": {
+    "message": "🔑 Passwort ändern"
+  },
+  "exportImport": {
+    "message": "Export & Import"
+  },
+  "export": {
+    "message": "📤 Exportieren"
+  },
+  "import": {
+    "message": "📥 Importieren"
+  },
+  "importFromChrome": {
+    "message": "Von Chrome importieren"
+  },
+  "importChromeBookmarks": {
+    "message": "📥 Alle Chrome-Lesezeichen importieren"
+  },
+  "importChromeBookmarksAdvanced": {
+    "message": "🗂️ Ordner zum Import auswählen"
+  },
+  "importChromeConfirm": {
+    "message": "Alle Lesezeichen aus Chrome importieren? Bestehende Lesezeichen bleiben erhalten."
+  },
+  "importChromeSuccess": {
+    "message": "Lesezeichen erfolgreich importiert!"
+  },
+  "importChromeError": {
+    "message": "Lesezeichen konnten nicht importiert werden"
+  },
+  "selectFoldersToImport": {
+    "message": "Zu importierende Ordner auswählen"
+  },
+  "selectAll": {
+    "message": "Alle auswählen"
+  },
+  "deselectAll": {
+    "message": "Auswahl aufheben"
+  },
+  "importSelected": {
+    "message": "Importieren"
+  },
+  "back": {
+    "message": "← Zurück"
+  },
+  "addBookmark": {
+    "message": "Lesezeichen hinzufügen"
+  },
+  "editBookmark": {
+    "message": "Lesezeichen bearbeiten"
+  },
+  "page": {
+    "message": "Seite"
+  },
+  "title": {
+    "message": "Titel"
+  },
+  "url": {
+    "message": "URL"
+  },
+  "folder": {
+    "message": "Ordner"
+  },
+  "rootFolder": {
+    "message": "Hauptordner"
+  },
+  "new": {
+    "message": "+ Neu"
+  },
+  "cancel": {
+    "message": "Abbrechen"
+  },
+  "save": {
+    "message": "Speichern"
+  },
+  "deleteConfirm": {
+    "message": "Dieses Element löschen?"
+  },
+  "folderName": {
+    "message": "Ordnername:"
+  },
+  "newName": {
+    "message": "Neuer Name:"
+  },
+  "titleRequired": {
+    "message": "Titel und URL sind erforderlich"
+  },
+  "validUrl": {
+    "message": "URL muss mit http:// oder https:// beginnen"
+  },
+  "passwordChanged": {
+    "message": "Passwort erfolgreich geändert!"
+  },
+  "importSuccess": {
+    "message": "Backup erfolgreich importiert! Bitte öffnen Sie das Popup erneut."
+  },
+  "invalidFile": {
+    "message": "Ungültige Backup-Datei"
+  },
+  "clearHistoryConfirm": {
+    "message": "⚠️ ALLE Browserverlauf-Einträge für Domains löschen, die in Ihren Holy Private Bookmarks enthalten sind?\n\nDies entfernt Besuche ALLER Seiten auf diesen Websites (nicht nur der Lesezeichen).\nDie Aktion kann nicht rückgängig gemacht werden."
+  },
+  "noBookmarks": {
+    "message": "Keine Lesezeichen gefunden – nichts zu löschen."
+  },
+  "noDomains": {
+    "message": "Keine gültigen Domains in den Lesezeichen gefunden."
+  },
+
+  "newBookmark": {
+    "message": "Neues Lesezeichen"
+  },
+  "paste": {
+    "message": "Einfügen"
+  },
+    "ctxnewFolder": {
+    "message": "Neuer Ordner"
+  },
+    "emptyTreeTitle": {
+    "message": "Noch keine Lesezeichen"
+  },
+    "emptyTreeSubtitle": {
+    "message": "Fügen Sie Ihr erstes Lesezeichen oder Ihren ersten Ordner hinzu, um zu beginnen"
+  },
+  "historyCleared": {
+    "message": "🧹 Verlauf gelöscht!\n$count$ Besuch(e) von $domains$ Domain(s) entfernt.",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domains": {
+        "content": "$2"
+      }
+    }
+  },
+  "addToHoly": {
+    "message": "Zu Holy Private Bookmarks hinzufügen"
+  },
+  "cannotAddPage": {
+    "message": "Diese Seite kann nicht hinzugefügt werden (keine gültige URL)"
+  },
+ "extensionName": {
+    "message": "Holy Private Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "Sicherer, verschlüsselter Lesezeichen-Manager"
+  },
+  "supportPageTitle": {
+    "message": "Projekt unterstützen — Holy Private Bookmarks"
+  },
+  "supportTitle": {
+    "message": "❤️ Das Projekt unterstützen"
+  },
+  "supportDescription": {
+    "message": "Wenn die Erweiterung für Sie nützlich ist – jede Hilfe wird geschätzt"
+  },
+  "bitcoinTitle": {
+    "message": "Bitcoin (BTC)"
+  },
+  "ethereumTitle": {
+    "message": "Ethereum (ETH)"
+  },
+  "copyAddress": {
+    "message": "Adresse kopieren"
+  },
+  "copiedToClipboard": {
+    "message": "Adresse in die Zwischenablage kopiert!"
+  },
+"clickToCopy": {
+    "message": "Zum Kopieren klicken"
+  },
+  "importantWarning": {
+    "message": "WICHTIGE WARNUNG:"
+  },
+  "passwordCannotBeRecovered": {
+    "message": "Dieses Passwort kann NICHT wiederhergestellt werden!"
+  },
+  "noPasswordReset": {
+    "message": "Es gibt KEINE Option zum Zurücksetzen des Passworts"
+  },
+  "weDontStorePassword": {
+    "message": "Wir speichern Ihr Passwort NICHT irgendwo"
+  },
+  "bookmarksEncrypted": {
+    "message": "Ihre Lesezeichen sind nur mit diesem Passwort verschlüsselt"
+  },
+  "savePasswordSecurely": {
+    "message": "Speichern Sie dieses Passwort sicher!"
+},
+  "copyUrl": {
+    "message": "URL kopieren"
+  },
+  "edit": {
+    "message": "Bearbeiten"
+  },
+  "delete": {
+    "message": "Löschen"
+  },
+  "urlCopied": {
+    "message": "URL in die Zwischenablage kopiert"
+  },
+  "about": {
+    "message": "Über",
+    "description": "Titel des Abschnitts \"Über\""
+  },
+  "aboutExtension": {
+    "message": "Über diese Erweiterung",
+    "description": "Text für den Button \"Über Erweiterung\""
+  },
+  "openGitHub": {
+    "message": "GitHub öffnen",
+    "description": "Text für den Button \"GitHub öffnen\""
+  },
+  "close": {
+    "message": "Schließen",
+    "description": "Text für den Button \"Schließen\""
+  },
+  "features": {
+    "message": "Funktionen",
+    "description": "Titel des Abschnitts \"Funktionen\""
+  },
+  "encryption": {
+    "message": "Verschlüsselung",
+    "description": "Titel des Merkmals \"Verschlüsselung\""
+  },
+  "encryptionDesc": {
+    "message": "AES-256-Verschlüsselung",
+    "description": "Beschreibung des Merkmals \"Verschlüsselung\""
+  },
+  "localStorage": {
+    "message": "Lokale Speicherung",
+    "description": "Titel des Merkmals \"Lokale Speicherung\""
+  },
+  "localStorageDesc": {
+    "message": "Daten verbleiben auf Ihrem Gerät",
+    "description": "Beschreibung des Merkmals \"Lokale Speicherung\""
+  },
+  "privacy": {
+    "message": "Datenschutz",
+    "description": "Titel des Merkmals \"Datenschutz\""
+  },
+  "privacyDesc": {
+    "message": "Kein Tracking oder Analytics",
+    "description": "Beschreibung des Merkmals \"Datenschutz\""
+  },
+  "openSource": {
+    "message": "WTFPL v2",
+    "description": "Titel des Merkmals \"Open Source\" (Lizenz beibehalten)"
+  },
+  "viewOnGitHub": {
+    "message": "Auf GitHub ansehen",
+    "description": "Text für den Button \"Auf GitHub ansehen\""
+  },
+  "githubRepo": {
+    "message": "GitHub-Repository",
+    "description": "Text für den Button \"GitHub-Repository\""
+  },
+  "githubRepoDesc": {
+    "message": "Quellcode ansehen, Probleme melden, beitragen",
+    "description": "Beschreibung für das GitHub-Repository"
+  },
+  "version": {
+    "message": "Version",
+    "description": "Versionsbezeichnung"
+  }
+}

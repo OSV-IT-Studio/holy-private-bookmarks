@@ -1,0 +1,356 @@
+{
+  "extensionName": {
+    "message": "Holy Private Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "Marque-pages entièrement privés avec mot de passe maître, dossiers et chiffrement"
+  },
+  "createPassword": {
+    "message": "Créez un mot de passe maître pour le chiffrement complet des marque-pages"
+  },
+  "newPassword": {
+    "message": "Nouveau mot de passe (min. 6 caractères)"
+  },
+  "confirmPassword": {
+    "message": "Confirmer le mot de passe"
+  },
+  "createStorage": {
+    "message": "🔐 Créer le stockage"
+  },
+  "enterMasterPassword": {
+    "message": "Entrez votre mot de passe maître pour déverrouiller"
+  },
+  "masterPassword": {
+    "message": "Mot de passe maître"
+  },
+  "unlock": {
+    "message": "🔓 Déverrouiller"
+  },
+  "wrongPassword": {
+    "message": "Mot de passe incorrect"
+  },
+  "passwordsMismatch": {
+    "message": "Les mots de passe ne correspondent pas ou sont trop courts"
+  },
+  "bookmarksProtected": {
+    "message": "Vos marque-pages sont sécurisés"
+  },
+  "addCurrentPage": {
+    "message": "➕ Ajouter la page actuelle"
+  },
+  "newFolder": {
+    "message": "📁 Nouveau dossier"
+  },
+  "clearHistory": {
+    "message": "🧹️ Effacer l'historique"
+  },
+  "supportProject": {
+    "message": "❤️ Soutenir le projet"
+  },
+  "settings": {
+    "message": "⚙️ Paramètres"
+  },
+  "settingsbtn": {
+    "message": "⚙️"
+  },
+  "changeMasterPassword": {
+    "message": "Changer le mot de passe maître"
+  },
+  "currentPassword": {
+    "message": "Mot de passe actuel"
+  },
+  "newPassword2": {
+    "message": "Nouveau mot de passe"
+  },
+  "confirmNewPassword": {
+    "message": "Confirmer le nouveau mot de passe"
+  },
+  "changePassword": {
+    "message": "🔑 Changer le mot de passe"
+  },
+  "exportImport": {
+    "message": "Exporter & Importer"
+  },
+  "export": {
+    "message": "📤 Exporter"
+  },
+  "import": {
+    "message": "📥 Importer"
+  },
+  "importFromChrome": {
+    "message": "Importer depuis Chrome",
+    "description": "Titre de la section d'importation Chrome"
+  },
+  "importChromeBookmarks": {
+    "message": "📥 Importer tous les marque-pages Chrome",
+    "description": "Bouton pour importer tous les marque-pages Chrome"
+  },
+  "importChromeBookmarksAdvanced": {
+    "message": "🗂️ Sélectionner des dossiers à importer",
+    "description": "Bouton pour sélectionner des dossiers à importer"
+  },
+  "importChromeConfirm": {
+    "message": "Importer tous les marque-pages depuis Chrome ? Les marque-pages existants seront conservés.",
+    "description": "Confirmation pour l'importation depuis Chrome"
+  },
+  "importChromeSuccess": {
+    "message": "Marque-pages importés avec succès !",
+    "description": "Notification de réussite d'importation"
+  },
+  "importChromeError": {
+    "message": "Échec de l'importation des marque-pages",
+    "description": "Erreur d'importation"
+  },
+  "selectFoldersToImport": {
+    "message": "Sélectionner les dossiers à importer",
+    "description": "Titre de la fenêtre de sélection"
+  },
+  "selectAll": {
+    "message": "Tout sélectionner",
+    "description": "Bouton pour tout sélectionner"
+  },
+  "deselectAll": {
+    "message": "Tout désélectionner",
+    "description": "Bouton pour tout désélectionner"
+  },
+  "importSelected": {
+    "message": "Importer",
+    "description": "Bouton pour importer la sélection"
+  },
+  "back": {
+    "message": "← Retour"
+  },
+  "addBookmark": {
+    "message": "Ajouter un marque-page"
+  },
+  "editBookmark": {
+    "message": "Modifier le marque-page"
+  },
+  "page": {
+    "message": "Page"
+  },
+  "title": {
+    "message": "Titre"
+  },
+  "url": {
+    "message": "URL"
+  },
+  "folder": {
+    "message": "Dossier"
+  },
+  "rootFolder": {
+    "message": "Dossier racine"
+  },
+  "new": {
+    "message": "+ Nouveau"
+  },
+  "cancel": {
+    "message": "Annuler"
+  },
+  "save": {
+    "message": "Enregistrer"
+  },
+  "deleteConfirm": {
+    "message": "Supprimer cet élément ?"
+  },
+  "folderName": {
+    "message": "Nom du dossier :"
+  },
+  "newName": {
+    "message": "Nouveau nom :"
+  },
+  "titleRequired": {
+    "message": "Le titre et l'URL sont requis"
+  },
+  "validUrl": {
+    "message": "L'URL doit commencer par http:// ou https://"
+  },
+  "passwordChanged": {
+    "message": "Mot de passe changé avec succès !"
+  },
+  "importSuccess": {
+    "message": "Sauvegarde importée avec succès ! Veuillez rouvrir la fenêtre."
+  },
+  "invalidFile": {
+    "message": "Fichier de sauvegarde invalide"
+  },
+  "clearHistoryConfirm": {
+    "message": "⚠️ Supprimer TOUTES les entrées d'historique pour les domaines présents dans Holy Private Bookmarks ?\n\nCela supprimera les visites de TOUTES les pages de ces sites (pas seulement celles enregistrées).\nAction irréversible."
+  },
+  "noBookmarks": {
+    "message": "Aucun marque-page trouvé — rien à effacer."
+  },
+  "noDomains": {
+    "message": "Aucun domaine valide trouvé dans les marque-pages."
+  },
+  "newBookmark": {
+    "message": "Nouveau marque-page"
+  },
+  "paste": {
+    "message": "Coller"
+  },
+  "ctxnewFolder": {
+    "message": "Nouveau dossier"
+  },
+  "emptyTreeTitle": {
+    "message": "Pas encore de marque-pages"
+  },
+  "emptyTreeSubtitle": {
+    "message": "Ajoutez votre premier marque-page ou dossier pour commencer"
+  },
+  "historyCleared": {
+    "message": "🧹 Historique effacé !\nSupprimé $count$ visite(s) sur $domains$ domaine(s).",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domains": {
+        "content": "$2"
+      }
+    }
+  },
+  "addToHoly": {
+    "message": "Ajouter à Holy Private Bookmarks"
+  },
+  "cannotAddPage": {
+    "message": "Impossible d'ajouter cette page (URL non valide)"
+  },
+  "extensionName": {
+    "message": "Holy Private Bookmarks",
+    "description": "Nom de l'extension"
+  },
+  "extensionDescription": {
+    "message": "Gestionnaire de marque-pages chiffré sécurisé",
+    "description": "Description de l'extension"
+  },
+  "supportPageTitle": {
+    "message": "Soutenir le projet — Holy Private Bookmarks",
+    "description": "Titre de la page de dons"
+  },
+  "supportTitle": {
+    "message": "❤️ Soutenir le Projet",
+    "description": "Titre principal de la page de dons"
+  },
+  "supportDescription": {
+    "message": "Si cette extension vous est utile — toute aide est appréciée",
+    "description": "Description sur la page de dons"
+  },
+  "bitcoinTitle": {
+    "message": "Bitcoin (BTC)",
+    "description": "Titre pour les dons Bitcoin"
+  },
+  "ethereumTitle": {
+    "message": "Ethereum (ETH)",
+    "description": "Titre pour les dons Ethereum"
+  },
+  "copyAddress": {
+    "message": "Copier l'adresse",
+    "description": "Texte du bouton de copie d'adresse"
+  },
+  "copiedToClipboard": {
+    "message": "Adresse copiée !",
+    "description": "Notification de copie réussie"
+  },
+  "clickToCopy": {
+    "message": "Cliquer pour copier",
+    "description": "Info-bulle pour les adresses cliquables"
+  },
+  "importantWarning": {
+    "message": "AVERTISSEMENT IMPORTANT :"
+  },
+  "passwordCannotBeRecovered": {
+    "message": "Ce mot de passe NE PEUT PAS être récupéré !"
+  },
+  "noPasswordReset": {
+    "message": "Il n'y a AUCUNE option de réinitialisation de mot de passe"
+  },
+  "weDontStorePassword": {
+    "message": "Nous NE stockons PAS votre mot de passe"
+  },
+  "bookmarksEncrypted": {
+    "message": "Vos marque-pages sont chiffrés UNIQUEMENT avec ce mot de passe"
+  },
+  "savePasswordSecurely": {
+    "message": "Conservez ce mot de passe en lieu sûr !"
+  },
+  "copyUrl": {
+    "message": "Copier l'URL",
+    "description": "Info-bulle du bouton de copie d'URL"
+  },
+  "edit": {
+    "message": "Modifier",
+    "description": "Info-bulle du bouton de modification"
+  },
+  "delete": {
+    "message": "Supprimer",
+    "description": "Info-bulle du bouton de suppression"
+  },
+  "urlCopied": {
+    "message": "URL copiée",
+    "description": "Notification de copie d'URL"
+  },
+    "about": {
+    "message": "À propos",
+    "description": "Titre de la section À propos"
+  },
+  "aboutExtension": {
+    "message": "À propos de l'extension",
+    "description": "Texte du bouton À propos de l'extension"
+  },
+  "openGitHub": {
+    "message": "Ouvrir GitHub",
+    "description": "Texte du bouton Ouvrir GitHub"
+  },
+  "close": {
+    "message": "Fermer",
+    "description": "Texte du bouton Fermer"
+  },
+  "features": {
+    "message": "Fonctionnalités",
+    "description": "Titre de la section Fonctionnalités"
+  },
+  "encryption": {
+    "message": "Chiffrement",
+    "description": "Titre de la fonctionnalité Chiffrement"
+  },
+  "encryptionDesc": {
+    "message": "Chiffrement AES-256",
+    "description": "Description de la fonctionnalité Chiffrement"
+  },
+  "localStorage": {
+    "message": "Stockage local",
+    "description": "Titre de la fonctionnalité Stockage local"
+  },
+  "localStorageDesc": {
+    "message": "Les données restent sur votre appareil",
+    "description": "Description de la fonctionnalité Stockage local"
+  },
+  "privacy": {
+    "message": "Confidentialité",
+    "description": "Titre de la fonctionnalité Confidentialité"
+  },
+  "privacyDesc": {
+    "message": "Pas de suivi ni d'analytiques",
+    "description": "Description de la fonctionnalité Confidentialité"
+  },
+  "openSource": {
+    "message": "WTFPL v2",
+    "description": "Titre de la fonctionnalité Open source"
+  },
+  "viewOnGitHub": {
+    "message": "Voir sur GitHub",
+    "description": "Bouton Voir sur GitHub"
+  },
+  "githubRepo": {
+    "message": "Dépôt GitHub",
+    "description": "Texte du bouton Dépôt GitHub"
+  },
+  "githubRepoDesc": {
+    "message": "Voir le code source, signaler des problèmes, contribuer",
+    "description": "Description du dépôt GitHub"
+  },
+  "version": {
+    "message": "Version",
+    "description": "Libellé Version"
+  }
+}

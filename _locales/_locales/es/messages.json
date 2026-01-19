@@ -1,0 +1,410 @@
+{
+  "extensionName": {
+    "message": "Holy Private Bookmarks",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Marcadores completamente privados con contraseña maestra, carpetas y cifrado",
+    "description": "Extension description"
+  },
+  "createPassword": {
+    "message": "Crea una contraseña maestra para el cifrado completo de los marcadores",
+    "description": "Prompt to create master password"
+  },
+  "newPassword": {
+    "message": "Nueva contraseña (mín. 6 caracteres)",
+    "description": "Label for new password input"
+  },
+  "confirmPassword": {
+    "message": "Confirmar contraseña",
+    "description": "Label for confirm password input"
+  },
+  "createStorage": {
+    "message": "🔐 Crear almacenamiento",
+    "description": "Button to create storage"
+  },
+  "enterMasterPassword": {
+    "message": "Ingresa tu contraseña maestra para desbloquear",
+    "description": "Prompt to enter master password"
+  },
+  "masterPassword": {
+    "message": "Contraseña maestra",
+    "description": "Label for master password input"
+  },
+  "unlock": {
+    "message": "🔓 Desbloquear",
+    "description": "Button to unlock"
+  },
+  "wrongPassword": {
+    "message": "Contraseña incorrecta",
+    "description": "Error message for wrong password"
+  },
+  "passwordsMismatch": {
+    "message": "Las contraseñas no coinciden o son demasiado cortas",
+    "description": "Error message for password mismatch"
+  },
+  "bookmarksProtected": {
+    "message": "Tus marcadores están protegidos de forma segura",
+    "description": "Message indicating bookmarks are protected"
+  },
+  "addCurrentPage": {
+    "message": "➕ Agregar página actual",
+    "description": "Button to add current page"
+  },
+  "newFolder": {
+    "message": "📁 Nueva carpeta",
+    "description": "Button to create new folder"
+  },
+  "clearHistory": {
+    "message": "🧹️ Limpiar historial",
+    "description": "Button to clear history"
+  },
+  "supportProject": {
+    "message": "❤️ Apoyar el proyecto",
+    "description": "Button to support project"
+  },
+  "settings": {
+    "message": "⚙️ Ajustes",
+    "description": "Settings button/menu label"
+  },
+  "settingsbtn": {
+    "message": "⚙️",
+    "description": "Settings icon"
+  },
+  "changeMasterPassword": {
+    "message": "Cambiar contraseña maestra",
+    "description": "Button to change master password"
+  },
+  "currentPassword": {
+    "message": "Contraseña actual",
+    "description": "Label for current password input"
+  },
+  "newPassword2": {
+    "message": "Nueva contraseña",
+    "description": "Label for new password input"
+  },
+  "confirmNewPassword": {
+    "message": "Confirmar nueva contraseña",
+    "description": "Label for confirm new password input"
+  },
+  "changePassword": {
+    "message": "🔑 Cambiar contraseña",
+    "description": "Button to change password"
+  },
+  "exportImport": {
+    "message": "Exportar e Importar",
+    "description": "Export/Import section title"
+  },
+  "export": {
+    "message": "📤 Exportar",
+    "description": "Button to export"
+  },
+  "import": {
+    "message": "📥 Importar",
+    "description": "Button to import"
+  },
+  "importFromChrome": {
+    "message": "Importar desde Chrome",
+    "description": "Title of the Chrome import section"
+  },
+  "importChromeBookmarks": {
+    "message": "📥 Importar todos los marcadores de Chrome",
+    "description": "Button to import all Chrome bookmarks"
+  },
+  "importChromeBookmarksAdvanced": {
+    "message": "🗂️ Seleccionar carpetas para importar",
+    "description": "Button to select folders for import"
+  },
+  "importChromeConfirm": {
+    "message": "¿Importar todos los marcadores de Chrome? Los marcadores existentes se conservarán.",
+    "description": "Confirmation for importing bookmarks from Chrome"
+  },
+  "importChromeSuccess": {
+    "message": "¡Marcadores importados exitosamente!",
+    "description": "Notification for successful bookmark import"
+  },
+  "importChromeError": {
+    "message": "Error al importar los marcadores",
+    "description": "Bookmark import error"
+  },
+  "selectFoldersToImport": {
+    "message": "Seleccionar carpetas para importar",
+    "description": "Title of the folder selection modal"
+  },
+  "selectAll": {
+    "message": "Seleccionar todo",
+    "description": "Button to select all"
+  },
+  "deselectAll": {
+    "message": "Deseleccionar todo",
+    "description": "Button to deselect all"
+  },
+  "importSelected": {
+    "message": "Importar",
+    "description": "Button to import selected folders"
+  },
+  "back": {
+    "message": "← Atrás",
+    "description": "Back button"
+  },
+  "addBookmark": {
+    "message": "Agregar marcador",
+    "description": "Button to add bookmark"
+  },
+  "editBookmark": {
+    "message": "Editar marcador",
+    "description": "Button to edit bookmark"
+  },
+  "page": {
+    "message": "Página",
+    "description": "Page label"
+  },
+  "title": {
+    "message": "Título",
+    "description": "Title label"
+  },
+  "url": {
+    "message": "URL",
+    "description": "URL label"
+  },
+  "folder": {
+    "message": "Carpeta",
+    "description": "Folder label"
+  },
+  "rootFolder": {
+    "message": "Carpeta raíz",
+    "description": "Root folder label"
+  },
+  "new": {
+    "message": "+ Nuevo",
+    "description": "New button/label"
+  },
+  "cancel": {
+    "message": "Cancelar",
+    "description": "Cancel button"
+  },
+  "save": {
+    "message": "Guardar",
+    "description": "Save button"
+  },
+  "deleteConfirm": {
+    "message": "¿Eliminar este elemento?",
+    "description": "Delete confirmation message"
+  },
+  "folderName": {
+    "message": "Nombre de la carpeta:",
+    "description": "Label for folder name input"
+  },
+  "newName": {
+    "message": "Nuevo nombre:",
+    "description": "Label for new name input"
+  },
+  "titleRequired": {
+    "message": "El título y la URL son obligatorios",
+    "description": "Error message for required fields"
+  },
+  "validUrl": {
+    "message": "La URL debe comenzar con http:// o https://",
+    "description": "Error message for invalid URL"
+  },
+  "passwordChanged": {
+    "message": "¡Contraseña cambiada exitosamente!",
+    "description": "Success message for password change"
+  },
+  "importSuccess": {
+    "message": "¡Copia de seguridad importada exitosamente! Por favor, vuelve a abrir la ventana emergente.",
+    "description": "Success message for import"
+  },
+  "invalidFile": {
+    "message": "Archivo de copia de seguridad inválido",
+    "description": "Error message for invalid file"
+  },
+  "clearHistoryConfirm": {
+    "message": "⚠️ ¿Eliminar TODAS las entradas del historial del navegador de los dominios presentes en tus Holy Private Bookmarks?\n\nEsto eliminará las visitas a TODAS las páginas de estos sitios (no solo las marcadas).\nLa acción no se puede deshacer.",
+    "description": "Confirmation message for clearing history"
+  },
+  "noBookmarks": {
+    "message": "No se encontraron marcadores — nada que limpiar.",
+    "description": "Message when no bookmarks found"
+  },
+  "noDomains": {
+    "message": "No se encontraron dominios válidos en los marcadores.",
+    "description": "Message when no valid domains found"
+  },
+  "newBookmark": {
+    "message": "Nuevo marcador",
+    "description": "New bookmark label"
+  },
+  "paste": {
+    "message": "Pegar",
+    "description": "Paste button/label"
+  },
+  "ctxnewFolder": {
+    "message": "Nueva carpeta",
+    "description": "Context menu item for new folder"
+  },
+  "emptyTreeTitle": {
+    "message": "Aún no hay marcadores",
+    "description": "Title when bookmarks tree is empty"
+  },
+  "emptyTreeSubtitle": {
+    "message": "Agrega tu primer marcador o carpeta para comenzar",
+    "description": "Subtitle when bookmarks tree is empty"
+  },
+  "historyCleared": {
+    "message": "🧹 ¡Historial limpiado!\nSe eliminó(n) $count$ visita(s) de $domains$ dominio(s).",
+    "description": "Success message for cleared history",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domains": {
+        "content": "$2"
+      }
+    }
+  },
+  "addToHoly": {
+    "message": "Agregar a Holy Private Bookmarks",
+    "description": "Context menu item to add to bookmarks"
+  },
+  "cannotAddPage": {
+    "message": "No se puede agregar esta página (URL no válida)",
+    "description": "Error message when page cannot be added"
+  },
+  "supportPageTitle": {
+    "message": "Apoyar proyecto — Holy Private Bookmarks",
+    "description": "Donate page title"
+  },
+  "supportTitle": {
+    "message": "❤️ Apoyar el Proyecto",
+    "description": "Main title on donate page"
+  },
+  "supportDescription": {
+    "message": "Si la extensión te es útil — cualquier ayuda es apreciada",
+    "description": "Description on donate page"
+  },
+  "bitcoinTitle": {
+    "message": "Bitcoin (BTC)",
+    "description": "Bitcoin donation title"
+  },
+  "ethereumTitle": {
+    "message": "Ethereum (ETH)",
+    "description": "Ethereum donation title"
+  },
+  "copyAddress": {
+    "message": "Copiar dirección",
+    "description": "Copy address button text"
+  },
+  "copiedToClipboard": {
+    "message": "¡Dirección copiada al portapapeles!",
+    "description": "Notification when address is copied"
+  },
+  "clickToCopy": {
+    "message": "Haz clic para copiar",
+    "description": "Tooltip for clickable addresses"
+  },
+  "importantWarning": {
+    "message": "ADVERTENCIA IMPORTANTE:",
+    "description": "Important warning title"
+  },
+  "passwordCannotBeRecovered": {
+    "message": "¡Esta contraseña NO se puede recuperar!",
+    "description": "Warning about password irrecoverability"
+  },
+  "noPasswordReset": {
+    "message": "NO hay opción de restablecimiento de contraseña",
+    "description": "Warning about no password reset"
+  },
+  "weDontStorePassword": {
+    "message": "NO almacenamos tu contraseña en ningún lugar",
+    "description": "Message about password storage"
+  },
+  "bookmarksEncrypted": {
+    "message": "Tus marcadores están cifrados solo con esta contraseña",
+    "description": "Message about encryption"
+  },
+  "savePasswordSecurely": {
+    "message": "¡Guarda esta contraseña de forma segura!",
+    "description": "Instruction to save password securely"
+  },
+  "copyUrl": {
+    "message": "Copiar URL",
+    "description": "Copy URL button tooltip"
+  },
+  "edit": {
+    "message": "Editar",
+    "description": "Edit button tooltip"
+  },
+  "delete": {
+    "message": "Eliminar",
+    "description": "Delete button tooltip"
+  },
+  "urlCopied": {
+    "message": "URL copiada al portapapeles",
+    "description": "URL copied notification"
+  },
+  "about": {
+    "message": "Acerca de",
+    "description": "Título de la sección Acerca de"
+},
+"aboutExtension": {
+    "message": "Acerca de la Extensión",
+    "description": "Texto del botón Acerca de la extensión"
+},
+"openGitHub": {
+    "message": "Abrir GitHub",
+    "description": "Texto del botón Abrir GitHub"
+},
+"close": {
+    "message": "Cerrar",
+    "description": "Texto del botón Cerrar"
+},
+"features": {
+    "message": "Características",
+    "description": "Título de la sección Características"
+},
+"encryption": {
+    "message": "Cifrado",
+    "description": "Título de la característica Cifrado"
+},
+"encryptionDesc": {
+    "message": "Cifrado AES-256",
+    "description": "Descripción de la característica Cifrado"
+},
+"localStorage": {
+    "message": "Almacenamiento Local",
+    "description": "Título de la característica Almacenamiento local"
+},
+"localStorageDesc": {
+    "message": "Los datos permanecen en tu dispositivo",
+    "description": "Descripción de la característica Almacenamiento local"
+},
+"privacy": {
+    "message": "Privacidad",
+    "description": "Título de la característica Privacidad"
+},
+"privacyDesc": {
+    "message": "Sin rastreo ni analíticas",
+    "description": "Descripción de la característica Privacidad"
+},
+"openSource": {
+    "message": "WTFPL v2",
+    "description": "Título de la característica Código abierto (licencia)"
+},
+"viewOnGitHub": {
+    "message": "Ver en GitHub",
+    "description": "Botón Ver en GitHub"
+},
+"githubRepo": {
+    "message": "Repositorio de GitHub",
+    "description": "Texto del botón Repositorio de GitHub"
+},
+"githubRepoDesc": {
+    "message": "Ver código fuente, reportar problemas, contribuir",
+    "description": "Descripción del repositorio de GitHub"
+},
+"version": {
+    "message": "Versión",
+    "description": "Etiqueta de versión"
+}
+}

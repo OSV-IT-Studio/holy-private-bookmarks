@@ -1,0 +1,358 @@
+{
+  "extensionName": {
+    "message": "Holy Private Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "Fully private bookmarks with master password, folders and encryption"
+  },
+  "createPassword": {
+    "message": "Create a master password for full bookmark encryption"
+  },
+  "newPassword": {
+    "message": "New password (min. 6 characters)"
+  },
+  "confirmPassword": {
+    "message": "Confirm password"
+  },
+  "createStorage": {
+    "message": "🔐 Create storage"
+  },
+  "enterMasterPassword": {
+    "message": "Enter your master password to unlock"
+  },
+  "masterPassword": {
+    "message": "Master password"
+  },
+  "unlock": {
+    "message": "🔓 Unlock"
+  },
+  "wrongPassword": {
+    "message": "Wrong password"
+  },
+  "passwordsMismatch": {
+    "message": "Passwords do not match or too short"
+  },
+  "bookmarksProtected": {
+    "message": "Your bookmarks are securely protected"
+  },
+  "addCurrentPage": {
+    "message": "➕ Add current page"
+  },
+  "newFolder": {
+    "message": "📁 New folder"
+  },
+  "clearHistory": {
+    "message": "🧹️ Clear history"
+  },
+  "supportProject": {
+    "message": "❤️ Support the project"
+  },
+  "settings": {
+    "message": "⚙️ Settings"
+  },
+   "settingsbtn": {
+    "message": "⚙️"
+  },
+  "changeMasterPassword": {
+    "message": "Change master password"
+  },
+  "currentPassword": {
+    "message": "Current password"
+  },
+  "newPassword2": {
+    "message": "New password"
+  },
+  "confirmNewPassword": {
+    "message": "Confirm new password"
+  },
+  "changePassword": {
+    "message": "🔑 Change password"
+  },
+  "exportImport": {
+    "message": "Export & Import"
+  },
+  "export": {
+    "message": "📤 Export"
+  },
+  "import": {
+    "message": "📥 Import"
+  },
+  "importFromChrome": {
+    "message": "Import from Chrome",
+    "description": "Title of the Chrome import section"
+  },
+  "importChromeBookmarks": {
+    "message": "📥 Import all Chrome bookmarks",
+    "description": "Button to import all Chrome bookmarks"
+  },
+  "importChromeBookmarksAdvanced": {
+    "message": "🗂️ Select folders to import",
+    "description": "Button to select folders for import"
+  },
+  "importChromeConfirm": {
+    "message": "Import all bookmarks from Chrome? Existing bookmarks will be preserved.",
+    "description": "Confirmation for importing bookmarks from Chrome"
+  },
+  "importChromeSuccess": {
+    "message": "Bookmarks imported successfully!",
+    "description": "Notification for successful bookmark import"
+  },
+  "importChromeError": {
+    "message": "Failed to import bookmarks",
+    "description": "Bookmark import error"
+  },
+  "selectFoldersToImport": {
+    "message": "Select folders to import",
+    "description": "Title of the folder selection modal"
+  },
+  "selectAll": {
+    "message": "Select all",
+    "description": "Button to select all"
+  },
+  "deselectAll": {
+    "message": "Deselect all",
+    "description": "Button to deselect all"
+  },
+  "importSelected": {
+    "message": "Import",
+    "description": "Button to import selected folders"
+  },
+  "back": {
+    "message": "← Back"
+  },
+  "addBookmark": {
+    "message": "Add bookmark"
+  },
+  "editBookmark": {
+    "message": "Edit bookmark"
+  },
+  "page": {
+    "message": "Page"
+  },
+  "title": {
+    "message": "Title"
+  },
+  "url": {
+    "message": "URL"
+  },
+  "folder": {
+    "message": "Folder"
+  },
+  "rootFolder": {
+    "message": "Root folder"
+  },
+  "new": {
+    "message": "+ New"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "deleteConfirm": {
+    "message": "Delete this item?"
+  },
+  "folderName": {
+    "message": "Folder name:"
+  },
+  "newName": {
+    "message": "New name:"
+  },
+  "titleRequired": {
+    "message": "Title and URL are required"
+  },
+  "validUrl": {
+    "message": "URL must start with http:// or https://"
+  },
+  "passwordChanged": {
+    "message": "Password changed successfully!"
+  },
+  "importSuccess": {
+    "message": "Backup imported successfully! Please reopen the popup."
+  },
+  "invalidFile": {
+    "message": "Invalid backup file"
+  },
+  "clearHistoryConfirm": {
+    "message": "⚠️ Delete ALL browser history entries for domains present in your Holy Private Bookmarks?\n\nThis will remove visits to ALL pages on these sites (not just bookmarked ones).\nAction cannot be undone."
+  },
+  "noBookmarks": {
+    "message": "No bookmarks found — nothing to clear."
+  },
+  "noDomains": {
+    "message": "No valid domains found in bookmarks."
+  },
+
+  "newBookmark": {
+    "message": "New bookmark"
+  },
+  "paste": {
+    "message": "Paste"
+  },
+    "ctxnewFolder": {
+    "message": "New folder"
+  },
+    "emptyTreeTitle": {
+    "message": "No bookmarks yet"
+  },
+    "emptyTreeSubtitle": {
+    "message": "Add your first bookmark or folder to get started"
+  },
+  "historyCleared": {
+    "message": "🧹 History cleared!\nRemoved $count$ visit(s) from $domains$ domain(s).",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domains": {
+        "content": "$2"
+      }
+    }
+  },
+  "addToHoly": {
+    "message": "Add to Holy Private Bookmarks"
+  },
+  "cannotAddPage": {
+    "message": "Cannot add this page (no valid URL)"
+  },
+ "extensionName": {
+    "message": "Holy Private Bookmarks",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Secure encrypted bookmark manager",
+    "description": "Extension description"
+  },
+  "supportPageTitle": {
+    "message": "Support project — Holy Private Bookmarks",
+    "description": "Donate page title"
+  },
+  "supportTitle": {
+    "message": "❤️ Support the Project",
+    "description": "Main title on donate page"
+  },
+  "supportDescription": {
+    "message": "If the extension is useful to you — any help is appreciated",
+    "description": "Description on donate page"
+  },
+  "bitcoinTitle": {
+    "message": "Bitcoin (BTC)",
+    "description": "Bitcoin donation title"
+  },
+  "ethereumTitle": {
+    "message": "Ethereum (ETH)",
+    "description": "Ethereum donation title"
+  },
+  "copyAddress": {
+    "message": "Copy address",
+    "description": "Copy address button text"
+  },
+  "copiedToClipboard": {
+    "message": "Address copied to clipboard!",
+    "description": "Notification when address is copied"
+  },
+"clickToCopy": {
+    "message": "Click to copy",
+    "description": "Tooltip for clickable addresses"
+  },  
+  "importantWarning": {
+    "message": "IMPORTANT WARNING:"
+  },
+  "passwordCannotBeRecovered": {
+    "message": "This password CANNOT be recovered!"
+  },
+  "noPasswordReset": {
+    "message": "There is NO password reset option"
+  },
+  "weDontStorePassword": {
+    "message": "We do NOT store your password anywhere"
+  },
+  "bookmarksEncrypted": {
+    "message": "Your bookmarks are encrypted with this password only"
+  },
+  "savePasswordSecurely": {
+    "message": "Save this password securely!"
+},
+  "copyUrl": {
+    "message": "Copy URL",
+    "description": "Copy URL button tooltip"
+  },
+  "edit": {
+    "message": "Edit",
+    "description": "Edit button tooltip"
+  },
+  "delete": {
+    "message": "Delete",
+    "description": "Delete button tooltip"
+  },
+  "urlCopied": {
+    "message": "URL copied to clipboard",
+    "description": "URL copied notification"
+  },
+    "about": {
+    "message": "About",
+    "description": "About section title"
+  },
+  "aboutExtension": {
+    "message": "About Extension",
+    "description": "About extension button text"
+  },
+
+  "openGitHub": {
+    "message": "Open GitHub",
+    "description": "Open GitHub button text"
+  },
+  "close": {
+    "message": "Close",
+    "description": "Close button text"
+  },
+  "features": {
+    "message": "Features",
+    "description": "Features section title"
+  },
+  "encryption": {
+    "message": "Encryption",
+    "description": "Encryption feature title"
+  },
+  "encryptionDesc": {
+    "message": "AES-256 encryption",
+    "description": "Encryption feature description"
+  },
+  "localStorage": {
+    "message": "Local Storage",
+    "description": "Local storage feature title"
+  },
+  "localStorageDesc": {
+    "message": "Data stays on your device",
+    "description": "Local storage feature description"
+  },
+  "privacy": {
+    "message": "Privacy",
+    "description": "Privacy feature title"
+  },
+  "privacyDesc": {
+    "message": "No tracking or analytics",
+    "description": "Privacy feature description"
+  },
+  "openSource": {
+    "message": "WTFPL v2",
+    "description": "Open source feature title"
+  },
+  "viewOnGitHub": {
+    "message": "View on GitHub",
+    "description": "View on GitHub button"
+  },
+  "githubRepo": {
+    "message": "GitHub Repository",
+    "description": "GitHub repository button text"
+  },
+  "githubRepoDesc": {
+    "message": "View source code, report issues, contribute",
+    "description": "GitHub repository description"
+  },
+  "version": {
+    "message": "Version",
+    "description": "Version label"
+  }
+}
