@@ -265,5 +265,69 @@
   },
   "urlCopied": {
     "message": "URL in die Zwischenablage kopiert"
+  },
+  "about": {
+    "message": "Über",
+    "description": "Titel des Abschnitts \"Über\""
+  },
+  "aboutExtension": {
+    "message": "Über diese Erweiterung",
+    "description": "Text für den Button \"Über Erweiterung\""
+  },
+  "openGitHub": {
+    "message": "GitHub öffnen",
+    "description": "Text für den Button \"GitHub öffnen\""
+  },
+  "close": {
+    "message": "Schließen",
+    "description": "Text für den Button \"Schließen\""
+  },
+  "features": {
+    "message": "Funktionen",
+    "description": "Titel des Abschnitts \"Funktionen\""
+  },
+  "encryption": {
+    "message": "Verschlüsselung",
+    "description": "Titel des Merkmals \"Verschlüsselung\""
+  },
+  "encryptionDesc": {
+    "message": "AES-256-Verschlüsselung",
+    "description": "Beschreibung des Merkmals \"Verschlüsselung\""
+  },
+  "localStorage": {
+    "message": "Lokale Speicherung",
+    "description": "Titel des Merkmals \"Lokale Speicherung\""
+  },
+  "localStorageDesc": {
+    "message": "Daten verbleiben auf Ihrem Gerät",
+    "description": "Beschreibung des Merkmals \"Lokale Speicherung\""
+  },
+  "privacy": {
+    "message": "Datenschutz",
+    "description": "Titel des Merkmals \"Datenschutz\""
+  },
+  "privacyDesc": {
+    "message": "Kein Tracking oder Analytics",
+    "description": "Beschreibung des Merkmals \"Datenschutz\""
+  },
+  "openSource": {
+    "message": "WTFPL v2",
+    "description": "Titel des Merkmals \"Open Source\" (Lizenz beibehalten)"
+  },
+  "viewOnGitHub": {
+    "message": "Auf GitHub ansehen",
+    "description": "Text für den Button \"Auf GitHub ansehen\""
+  },
+  "githubRepo": {
+    "message": "GitHub-Repository",
+    "description": "Text für den Button \"GitHub-Repository\""
+  },
+  "githubRepoDesc": {
+    "message": "Quellcode ansehen, Probleme melden, beitragen",
+    "description": "Beschreibung für das GitHub-Repository"
+  },
+  "version": {
+    "message": "Version",
+    "description": "Versionsbezeichnung"
   }
 }

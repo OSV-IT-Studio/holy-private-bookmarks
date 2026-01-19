@@ -342,5 +342,69 @@
   "urlCopied": {
     "message": "URL copiada al portapapeles",
     "description": "URL copied notification"
-  }
+  },
+  "about": {
+    "message": "Acerca de",
+    "description": "Título de la sección Acerca de"
+},
+"aboutExtension": {
+    "message": "Acerca de la Extensión",
+    "description": "Texto del botón Acerca de la extensión"
+},
+"openGitHub": {
+    "message": "Abrir GitHub",
+    "description": "Texto del botón Abrir GitHub"
+},
+"close": {
+    "message": "Cerrar",
+    "description": "Texto del botón Cerrar"
+},
+"features": {
+    "message": "Características",
+    "description": "Título de la sección Características"
+},
+"encryption": {
+    "message": "Cifrado",
+    "description": "Título de la característica Cifrado"
+},
+"encryptionDesc": {
+    "message": "Cifrado AES-256",
+    "description": "Descripción de la característica Cifrado"
+},
+"localStorage": {
+    "message": "Almacenamiento Local",
+    "description": "Título de la característica Almacenamiento local"
+},
+"localStorageDesc": {
+    "message": "Los datos permanecen en tu dispositivo",
+    "description": "Descripción de la característica Almacenamiento local"
+},
+"privacy": {
+    "message": "Privacidad",
+    "description": "Título de la característica Privacidad"
+},
+"privacyDesc": {
+    "message": "Sin rastreo ni analíticas",
+    "description": "Descripción de la característica Privacidad"
+},
+"openSource": {
+    "message": "WTFPL v2",
+    "description": "Título de la característica Código abierto (licencia)"
+},
+"viewOnGitHub": {
+    "message": "Ver en GitHub",
+    "description": "Botón Ver en GitHub"
+},
+"githubRepo": {
+    "message": "Repositorio de GitHub",
+    "description": "Texto del botón Repositorio de GitHub"
+},
+"githubRepoDesc": {
+    "message": "Ver código fuente, reportar problemas, contribuir",
+    "description": "Descripción del repositorio de GitHub"
+},
+"version": {
+    "message": "Versión",
+    "description": "Etiqueta de versión"
+}
 }

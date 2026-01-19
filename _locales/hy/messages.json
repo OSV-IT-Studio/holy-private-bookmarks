@@ -250,5 +250,70 @@
   },
   "urlCopied": {
     "message": "Հղումը պատճենվեց սեղմատախտակ"
+  },
+  "about": {
+    "message": "Մասին",
+    "description": "«Մասին» բաժնի վերնագիր"
+  },
+  "aboutExtension": {
+    "message": "Ընդլայնման մասին",
+    "description": "«Ընդլայնման մասին» կոճակի տեքստը"
+  },
+
+  "openGitHub": {
+    "message": "Բացել GitHub-ը",
+    "description": "«Բացել GitHub-ը» կոճակի տեքստը"
+  },
+  "close": {
+    "message": "Փակել",
+    "description": "«Փակել» կոճակի տեքստը"
+  },
+  "features": {
+    "message": "Հատկություններ",
+    "description": "«Հատկություններ» բաժնի վերնագիր"
+  },
+  "encryption": {
+    "message": "Գաղտնագրում",
+    "description": "«Գաղտնագրում» հատկության վերնագիր"
+  },
+  "encryptionDesc": {
+    "message": "AES-256 գաղտնագրում",
+    "description": "«Գաղտնագրում» հատկության նկարագրությունը"
+  },
+  "localStorage": {
+    "message": "Լոկալ Պահեստ",
+    "description": "«Լոկալ պահեստ» հատկության վերնագիր"
+  },
+  "localStorageDesc": {
+    "message": "Տվյալները մնում են ձեր սարքում",
+    "description": "«Լոկալ պահեստ» հատկության նկարագրությունը"
+  },
+  "privacy": {
+    "message": "Գաղտնիություն",
+    "description": "«Գաղտնիություն» հատկության վերնագիր"
+  },
+  "privacyDesc": {
+    "message": "Հետագծում կամ վերլուծություն չկա",
+    "description": "«Գաղտնիություն» հատկության նկարագրությունը"
+  },
+  "openSource": {
+    "message": "WTFPL v2",
+    "description": "«Բաց կոդ» հատկության վերնագիր (լիցենզիայի անունը թողնված է անփոփոխ)"
+  },
+  "viewOnGitHub": {
+    "message": "Դիտել GitHub-ում",
+    "description": "«Դիտել GitHub-ում» կոճակի տեքստը"
+  },
+  "githubRepo": {
+    "message": "GitHub Պահոց",
+    "description": "«GitHub պահոց» կոճակի տեքստը"
+  },
+  "githubRepoDesc": {
+    "message": "Դիտել կոդը, զեկուցել խնդիրներ, նպաստել մշակմանը",
+    "description": "GitHub պահոցի նկարագրությունը"
+  },
+  "version": {
+    "message": "Տարբերակ",
+    "description": "«Տարբերակ» պիտակի տեքստը"
   }
-}
+    }

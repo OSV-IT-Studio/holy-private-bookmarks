@@ -288,5 +288,69 @@
   "urlCopied": {
     "message": "URL copiée",
     "description": "Notification de copie d'URL"
+  },
+    "about": {
+    "message": "À propos",
+    "description": "Titre de la section À propos"
+  },
+  "aboutExtension": {
+    "message": "À propos de l'extension",
+    "description": "Texte du bouton À propos de l'extension"
+  },
+  "openGitHub": {
+    "message": "Ouvrir GitHub",
+    "description": "Texte du bouton Ouvrir GitHub"
+  },
+  "close": {
+    "message": "Fermer",
+    "description": "Texte du bouton Fermer"
+  },
+  "features": {
+    "message": "Fonctionnalités",
+    "description": "Titre de la section Fonctionnalités"
+  },
+  "encryption": {
+    "message": "Chiffrement",
+    "description": "Titre de la fonctionnalité Chiffrement"
+  },
+  "encryptionDesc": {
+    "message": "Chiffrement AES-256",
+    "description": "Description de la fonctionnalité Chiffrement"
+  },
+  "localStorage": {
+    "message": "Stockage local",
+    "description": "Titre de la fonctionnalité Stockage local"
+  },
+  "localStorageDesc": {
+    "message": "Les données restent sur votre appareil",
+    "description": "Description de la fonctionnalité Stockage local"
+  },
+  "privacy": {
+    "message": "Confidentialité",
+    "description": "Titre de la fonctionnalité Confidentialité"
+  },
+  "privacyDesc": {
+    "message": "Pas de suivi ni d'analytiques",
+    "description": "Description de la fonctionnalité Confidentialité"
+  },
+  "openSource": {
+    "message": "WTFPL v2",
+    "description": "Titre de la fonctionnalité Open source"
+  },
+  "viewOnGitHub": {
+    "message": "Voir sur GitHub",
+    "description": "Bouton Voir sur GitHub"
+  },
+  "githubRepo": {
+    "message": "Dépôt GitHub",
+    "description": "Texte du bouton Dépôt GitHub"
+  },
+  "githubRepoDesc": {
+    "message": "Voir le code source, signaler des problèmes, contribuer",
+    "description": "Description du dépôt GitHub"
+  },
+  "version": {
+    "message": "Version",
+    "description": "Libellé Version"
   }
 }

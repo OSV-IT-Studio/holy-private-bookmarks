@@ -289,5 +289,134 @@
   "urlCopied": {
     "message": "URL copiato negli appunti",
     "description": "URL copied notification"
+  },
+  "about": {
+    "message": "Informazioni",
+    "description": "Titolo della sezione Informazioni"
+  },
+  "aboutExtension": {
+    "message": "Informazioni sull'estensione",
+    "description": "Testo del pulsante Informazioni estensione"
+  },
+
+  "openGitHub": {
+    "message": "Apri GitHub",
+    "description": "Testo del pulsante Apri GitHub"
+  },
+  "close": {
+    "message": "Chiudi",
+    "description": "Testo del pulsante Chiudi"
+  },
+  "features": {
+    "message": "Funzionalità",
+    "description": "Titolo della sezione Funzionalità"
+  },
+  "encryption": {
+    "message": "Crittografia",
+    "description": "Titolo della funzionalità Crittografia"
+  },
+  "encryptionDesc": {
+    "message": "Crittografia AES-256",
+    "description": "Descrizione della funzionalità Crittografia"
+  },
+  "localStorage": {
+    "message": "Memoria Locale",
+    "description": "Titolo della funzionalità Memoria Locale"
+  },
+  "localStorageDesc": {
+    "message": "I dati rimangono sul tuo dispositivo",
+    "description": "Descrizione della funzionalità Memoria Locale"
+  },
+  "privacy": {
+    "message": "Privacy",
+    "description": "Titolo della funzionalità Privacy"
+  },
+  "privacyDesc": {
+    "message": "Nessun tracciamento o analisi",
+    "description": "Descrizione della funzionalità Privacy"
+  },
+  "openSource": {
+    "message": "WTFPL v2",
+    "description": "Titolo della funzionalità Open Source (nome licenza lasciato invariato)"
+  },
+  "viewOnGitHub": {
+    "message": "Vedi su GitHub",
+    "description": "Testo del pulsante Vedi su GitHub"
+  },
+  "githubRepo": {
+    "message": "Repository GitHub",
+    "description": "Testo del pulsante Repository GitHub"
+  },
+  "githubRepoDesc": {
+    "message": "Visualizza il codice sorgente, segnala problemi, contribuisci",
+    "description": "Descrizione del repository GitHub"
+  },
+  "version": {
+    "message": "Versione",
+    "description": "Etichetta Versione"
+  },
+  "about": {
+    "message": "Про розширення",
+    "description": "Заголовок розділу «Про розширення»"
+  },
+  "aboutExtension": {
+    "message": "Про розширення",
+    "description": "Текст кнопки «Про розширення»"
+  },
+  "openGitHub": {
+    "message": "Відкрити GitHub",
+    "description": "Текст кнопки «Відкрити GitHub»"
+  },
+  "close": {
+    "message": "Закрити",
+    "description": "Текст кнопки «Закрити»"
+  },
+  "features": {
+    "message": "Можливості",
+    "description": "Заголовок розділу «Можливості»"
+  },
+  "encryption": {
+    "message": "Шифрування",
+    "description": "Заголовок можливості «Шифрування»"
+  },
+  "encryptionDesc": {
+    "message": "Шифрування AES-256",
+    "description": "Опис можливості «Шифрування»"
+  },
+  "localStorage": {
+    "message": "Локальне сховище",
+    "description": "Заголовок можливості «Локальне сховище»"
+  },
+  "localStorageDesc": {
+    "message": "Дані залишаються на вашому пристрої",
+    "description": "Опис можливості «Локальне сховище»"
+  },
+  "privacy": {
+    "message": "Приватність",
+    "description": "Заголовок можливості «Приватність»"
+  },
+  "privacyDesc": {
+    "message": "Жодного відстеження чи аналітики",
+    "description": "Опис можливості «Приватність»"
+  },
+  "openSource": {
+    "message": "WTFPL v2",
+    "description": "Заголовок можливості «Відкритий код» (ліцензія)"
+  },
+  "viewOnGitHub": {
+    "message": "Переглянути на GitHub",
+    "description": "Текст кнопки «Переглянути на GitHub»"
+  },
+  "githubRepo": {
+    "message": "Репозиторій GitHub",
+    "description": "Текст кнопки «Репозиторій GitHub»"
+  },
+  "githubRepoDesc": {
+    "message": "Переглянути вихідний код, повідомити про проблеми, зробити внесок",
+    "description": "Опис репозиторію GitHub"
+  },
+  "version": {
+    "message": "Версія",
+    "description": "Мітка «Версія»"
   }
 }

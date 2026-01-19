@@ -289,5 +289,71 @@
   "urlCopied": {
     "message": "URL скопирован в буфер обмена",
     "description": "URL скопирован"
+  },
+  "about": {
+    "message": "О расширении",
+    "description": "Заголовок раздела 'О расширении'"
+  },
+  "aboutExtension": {
+    "message": "О расширении",
+    "description": "Текст кнопки 'О расширении'"
+  },
+
+  "openGitHub": {
+    "message": "Открыть GitHub",
+    "description": "Текст кнопки 'Открыть GitHub'"
+  },
+  "close": {
+    "message": "Закрыть",
+    "description": "Текст кнопки 'Закрыть'"
+  },
+  "features": {
+    "message": "Функции",
+    "description": "Заголовок раздела 'Функции'"
+  },
+  "encryption": {
+    "message": "Шифрование",
+    "description": "Заголовок функции 'Шифрование'"
+  },
+  "encryptionDesc": {
+    "message": "Шифрование AES-256",
+    "description": "Описание функции шифрования"
+  },
+  "localStorage": {
+    "message": "Локальное хранилище",
+    "description": "Заголовок функции 'Локальное хранилище'"
+  },
+  "localStorageDesc": {
+    "message": "Данные хранятся на вашем устройстве",
+    "description": "Описание функции локального хранилища"
+  },
+  "privacy": {
+    "message": "Конфиденциальность",
+    "description": "Заголовок функции 'Конфиденциальность'"
+  },
+  "privacyDesc": {
+    "message": "Нет отслеживания и аналитики",
+    "description": "Описание функции конфиденциальности"
+  },
+  "openSource": {
+    "message": "WTFPL v2",
+    "description": "Заголовок функции 'Открытый исходный код' (лицензия)"
+  },
+  
+  "viewOnGitHub": {
+    "message": "Посмотреть на GitHub",
+    "description": "Кнопка 'Посмотреть на GitHub'"
+  },
+  "githubRepo": {
+    "message": "Репозиторий GitHub",
+    "description": "Текст кнопки 'Репозиторий GitHub'"
+  },
+  "githubRepoDesc": {
+    "message": "Посмотреть исходный код, сообщить о проблемах, внести вклад",
+    "description": "Описание репозитория GitHub"
+  },
+  "version": {
+    "message": "Версия",
+    "description": "Надпись 'Версия'"
   }
 }

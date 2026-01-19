@@ -289,5 +289,70 @@
   "urlCopied": {
     "message": "URL copied to clipboard",
     "description": "URL copied notification"
+  },
+    "about": {
+    "message": "About",
+    "description": "About section title"
+  },
+  "aboutExtension": {
+    "message": "About Extension",
+    "description": "About extension button text"
+  },
+
+  "openGitHub": {
+    "message": "Open GitHub",
+    "description": "Open GitHub button text"
+  },
+  "close": {
+    "message": "Close",
+    "description": "Close button text"
+  },
+  "features": {
+    "message": "Features",
+    "description": "Features section title"
+  },
+  "encryption": {
+    "message": "Encryption",
+    "description": "Encryption feature title"
+  },
+  "encryptionDesc": {
+    "message": "AES-256 encryption",
+    "description": "Encryption feature description"
+  },
+  "localStorage": {
+    "message": "Local Storage",
+    "description": "Local storage feature title"
+  },
+  "localStorageDesc": {
+    "message": "Data stays on your device",
+    "description": "Local storage feature description"
+  },
+  "privacy": {
+    "message": "Privacy",
+    "description": "Privacy feature title"
+  },
+  "privacyDesc": {
+    "message": "No tracking or analytics",
+    "description": "Privacy feature description"
+  },
+  "openSource": {
+    "message": "WTFPL v2",
+    "description": "Open source feature title"
+  },
+  "viewOnGitHub": {
+    "message": "View on GitHub",
+    "description": "View on GitHub button"
+  },
+  "githubRepo": {
+    "message": "GitHub Repository",
+    "description": "GitHub repository button text"
+  },
+  "githubRepoDesc": {
+    "message": "View source code, report issues, contribute",
+    "description": "GitHub repository description"
+  },
+  "version": {
+    "message": "Version",
+    "description": "Version label"
   }
- }
+}
