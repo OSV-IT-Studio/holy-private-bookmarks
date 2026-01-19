@@ -154,9 +154,22 @@
                     </button>
                 </div>
             </div>
-        </div>
+        
+		
+<div class="settings-section">
+    <h3 class="section-title" data-i18n="about">About</h3>
+    <div class="settings-buttons-grid">
+        <button class="settings-full-btn" id="about-btn">
+            <span class="icon">ℹ️</span>
+            <div class="btn-content">
+                <div class="btn-title" data-i18n="aboutExtension">About Extension</div>
+            </div>
+            <span class="btn-arrow">→</span>
+        </button>
     </div>
-
+</div>		
+    </div>
+</div>
     
     <div id="add-bookmark-modal">
         <div class="modal-content">
@@ -183,7 +196,62 @@
 
     <!-- Hidden input for importing files -->
     <input type="file" id="import-file" accept=".json" style="display:none">
-
+<div id="about-modal" class="modal" style="display: none;">
+    <div class="modal-content" style="max-width: 500px;">
+        <h2 style="color: var(--accent); margin-top: 0; text-align: center;" data-i18n="extensionName">
+            Holy Private Bookmarks
+        </h2>
+        
+        <div style="margin: 20px 0;">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <div style=" margin-bottom: 10px;"><img src="icons/icon48.png"></div>
+                <h3 style="margin: 0; color: var(--text-primary);" data-i18n="extensionDescription">
+                    Secure Encrypted Bookmark Manager
+                </h3>
+            </div>
+            
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 16px; border-radius: 12px; margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="color: var(--text-secondary);" data-i18n="version">Version:</span>
+                    <span style="color: var(--text-primary); font-weight: 600;">1.7.3</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="color: var(--text-secondary);">Developer:</span>
+                    <span style="color: var(--text-primary); font-weight: 600;">OSV IT-Studio</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-secondary);">License:</span>
+                    <span style="color: var(--text-primary); font-weight: 600;" data-i18n="openSource">WTFPL v2</span>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: var(--text-secondary); margin-bottom: 8px; font-size: 14px;" data-i18n="githubRepo">
+                    GitHub Repository:
+                </h4>
+                <div style="background: rgba(0, 212, 255, 0.1); padding: 12px; border-radius: 10px; word-break: break-all;">
+                    <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks" 
+                       target="_blank"
+                       style="color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                       <span style="font-size: 18px;">🔗</span>
+                       <span>github.com/OSV-IT-Studio/holy-private-bookmarks</span>
+                    </a>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+        <div class="modal-buttons">
+            <button class="btn-secondary" id="close-about" data-i18n="close">Close</button>
+            <button class="btn-primary" id="open-github">
+                <span style="margin-right: 8px;">🔗</span>
+                <span data-i18n="openGitHub">Open GitHub</span>
+            </button>
+        </div>
+    </div>
+</div>
+        
     <!-- Context menu -->
     <div id="context-menu" class="context-menu">
         <div class="context-menu-item" id="ctx-new-folder">
