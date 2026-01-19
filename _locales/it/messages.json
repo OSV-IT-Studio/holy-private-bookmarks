@@ -1,0 +1,293 @@
+{
+  "extensionName": {
+    "message": "Holy Private Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "Segnalibri completamente privati con password principale, cartelle e crittografia"
+  },
+  "createPassword": {
+    "message": "Crea una password principale per la crittografia completa dei segnalibri"
+  },
+  "newPassword": {
+    "message": "Nuova password (min. 6 caratteri)"
+  },
+  "confirmPassword": {
+    "message": "Conferma password"
+  },
+  "createStorage": {
+    "message": "🔐 Crea archivio"
+  },
+  "enterMasterPassword": {
+    "message": "Inserisci la tua password principale per sbloccare"
+  },
+  "masterPassword": {
+    "message": "Password principale"
+  },
+  "unlock": {
+    "message": "🔓 Sblocca"
+  },
+  "wrongPassword": {
+    "message": "Password errata"
+  },
+  "passwordsMismatch": {
+    "message": "Le password non coincidono o sono troppo corte"
+  },
+  "bookmarksProtected": {
+    "message": "I tuoi segnalibri sono protetti in modo sicuro"
+  },
+  "addCurrentPage": {
+    "message": "➕ Aggiungi pagina corrente"
+  },
+  "newFolder": {
+    "message": "📁 Nuova cartella"
+  },
+  "clearHistory": {
+    "message": "🧹️ Pulisci cronologia"
+  },
+  "supportProject": {
+    "message": "❤️ Supporta il progetto"
+  },
+  "settings": {
+    "message": "⚙️ Impostazioni"
+  },
+   "settingsbtn": {
+    "message": "⚙️"
+  },
+  "changeMasterPassword": {
+    "message": "Cambia password principale"
+  },
+  "currentPassword": {
+    "message": "Password attuale"
+  },
+  "newPassword2": {
+    "message": "Nuova password"
+  },
+  "confirmNewPassword": {
+    "message": "Conferma nuova password"
+  },
+  "changePassword": {
+    "message": "🔑 Cambia password"
+  },
+  "exportImport": {
+    "message": "Esporta & Importa"
+  },
+  "export": {
+    "message": "📤 Esporta"
+  },
+  "import": {
+    "message": "📥 Importa"
+  },
+  "importFromChrome": {
+    "message": "Importa da Chrome",
+    "description": "Title of the Chrome import section"
+  },
+  "importChromeBookmarks": {
+    "message": "📥 Importa tutti i segnalibri di Chrome",
+    "description": "Button to import all Chrome bookmarks"
+  },
+  "importChromeBookmarksAdvanced": {
+    "message": "🗂️ Seleziona cartelle da importare",
+    "description": "Button to select folders for import"
+  },
+  "importChromeConfirm": {
+    "message": "Importare tutti i segnalibri da Chrome? I segnalibri esistenti saranno preservati.",
+    "description": "Confirmation for importing bookmarks from Chrome"
+  },
+  "importChromeSuccess": {
+    "message": "Segnalibri importati con successo!",
+    "description": "Notification for successful bookmark import"
+  },
+  "importChromeError": {
+    "message": "Importazione segnalibri fallita",
+    "description": "Bookmark import error"
+  },
+  "selectFoldersToImport": {
+    "message": "Seleziona cartelle da importare",
+    "description": "Title of the folder selection modal"
+  },
+  "selectAll": {
+    "message": "Seleziona tutto",
+    "description": "Button to select all"
+  },
+  "deselectAll": {
+    "message": "Deseleziona tutto",
+    "description": "Button to deselect all"
+  },
+  "importSelected": {
+    "message": "Importa",
+    "description": "Button to import selected folders"
+  },
+  "back": {
+    "message": "← Indietro"
+  },
+  "addBookmark": {
+    "message": "Aggiungi segnalibro"
+  },
+  "editBookmark": {
+    "message": "Modifica segnalibro"
+  },
+  "page": {
+    "message": "Pagina"
+  },
+  "title": {
+    "message": "Titolo"
+  },
+  "url": {
+    "message": "URL"
+  },
+  "folder": {
+    "message": "Cartella"
+  },
+  "rootFolder": {
+    "message": "Cartella principale"
+  },
+  "new": {
+    "message": "+ Nuova"
+  },
+  "cancel": {
+    "message": "Annulla"
+  },
+  "save": {
+    "message": "Salva"
+  },
+  "deleteConfirm": {
+    "message": "Eliminare questo elemento?"
+  },
+  "folderName": {
+    "message": "Nome cartella:"
+  },
+  "newName": {
+    "message": "Nuovo nome:"
+  },
+  "titleRequired": {
+    "message": "Titolo e URL sono obbligatori"
+  },
+  "validUrl": {
+    "message": "L'URL deve iniziare con http:// o https://"
+  },
+  "passwordChanged": {
+    "message": "Password cambiata con successo!"
+  },
+  "importSuccess": {
+    "message": "Backup importato con successo! Riapri il popup."
+  },
+  "invalidFile": {
+    "message": "File di backup non valido"
+  },
+  "clearHistoryConfirm": {
+    "message": "⚠️ Eliminare TUTTE le voci della cronologia del browser per i domini presenti nei tuoi Holy Private Bookmarks?\n\nQuesto rimuoverà le visite a TUTTE le pagine di questi siti (non solo quelle con segnalibro).\nAzione irreversibile."
+  },
+  "noBookmarks": {
+    "message": "Nessun segnalibro trovato — nulla da cancellare."
+  },
+  "noDomains": {
+    "message": "Nessun dominio valido trovato nei segnalibri."
+  },
+
+  "newBookmark": {
+    "message": "Nuovo segnalibro"
+  },
+  "paste": {
+    "message": "Incolla"
+  },
+    "ctxnewFolder": {
+    "message": "Nuova cartella"
+  },
+    "emptyTreeTitle": {
+    "message": "Ancora nessun segnalibro"
+  },
+    "emptyTreeSubtitle": {
+    "message": "Aggiungi il tuo primo segnalibro o cartella per iniziare"
+  },
+  "historyCleared": {
+    "message": "🧹 Cronologia cancellata!\nRimosse $count$ visita/e da $domains$ dominio/i.",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domains": {
+        "content": "$2"
+      }
+    }
+  },
+  "addToHoly": {
+    "message": "Aggiungi a Holy Private Bookmarks"
+  },
+  "cannotAddPage": {
+    "message": "Impossibile aggiungere questa pagina (URL non valido)"
+  },
+ "extensionName": {
+    "message": "Holy Private Bookmarks",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Gestore di segnalibri sicuro e crittografato",
+    "description": "Extension description"
+  },
+  "supportPageTitle": {
+    "message": "Supporta il progetto — Holy Private Bookmarks",
+    "description": "Donate page title"
+  },
+  "supportTitle": {
+    "message": "❤️ Supporta il Progetto",
+    "description": "Main title on donate page"
+  },
+  "supportDescription": {
+    "message": "Se l'estensione ti è utile — qualsiasi aiuto è apprezzato",
+    "description": "Description on donate page"
+  },
+  "bitcoinTitle": {
+    "message": "Bitcoin (BTC)",
+    "description": "Bitcoin donation title"
+  },
+  "ethereumTitle": {
+    "message": "Ethereum (ETH)",
+    "description": "Ethereum donation title"
+  },
+  "copyAddress": {
+    "message": "Copia indirizzo",
+    "description": "Copy address button text"
+  },
+  "copiedToClipboard": {
+    "message": "Indirizzo copiato negli appunti!",
+    "description": "Notification when address is copied"
+  },
+"clickToCopy": {
+    "message": "Clicca per copiare",
+    "description": "Tooltip for clickable addresses"
+  },
+  "importantWarning": {
+    "message": "AVVISO IMPORTANTE:"
+  },
+  "passwordCannotBeRecovered": {
+    "message": "Questa password NON PUÒ essere recuperata!"
+  },
+  "noPasswordReset": {
+    "message": "NON esiste un'opzione di ripristino password"
+  },
+  "weDontStorePassword": {
+    "message": "NOI NON memorizziamo la tua password da nessuna parte"
+  },
+  "bookmarksEncrypted": {
+    "message": "I tuoi segnalibri sono crittografati SOLO con questa password"
+  },
+  "savePasswordSecurely": {
+    "message": "Salva questa password in modo sicuro!"
+},
+  "copyUrl": {
+    "message": "Copia URL",
+    "description": "Copy URL button tooltip"
+  },
+  "edit": {
+    "message": "Modifica",
+    "description": "Edit button tooltip"
+  },
+  "delete": {
+    "message": "Elimina",
+    "description": "Delete button tooltip"
+  },
+  "urlCopied": {
+    "message": "URL copiato negli appunti",
+    "description": "URL copied notification"
+  }
+}
