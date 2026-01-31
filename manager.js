@@ -723,7 +723,7 @@ function buildFolderOptions(items, select, prefix = '', depth = 0) {
   });
 }
 
-async function handleModalSave() {
+function handleModalSave() {
   const modal = document.getElementById('edit-bookmark-modal');
   if (!modal) return;
 
@@ -745,16 +745,16 @@ async function handleModalSave() {
 
   const pathStr = document.getElementById('folder-select').value;
 
-  let newPath = [];
+  let targetPath = [];
   if (pathStr !== '') {
-    newPath = pathStr
+    targetPath = pathStr
       .split('/')
       .map(Number)
       .filter(Number.isInteger);
   }
 
-  if (newPath.length > 0) {
-    const target = getItemByPath(newPath);
+  if (targetPath.length > 0) {
+    const target = getItemByPath(targetPath);
     if (!target || target.type !== 'folder') {
       showNotification('Selected path is not a folder', true);
       return;
@@ -762,19 +762,48 @@ async function handleModalSave() {
   }
 
   if (editingBookmark && editingBookmarkPath) {
-    updateBookmark(editingBookmarkPath, title, url, newPath);
+
+    updateBookmark(editingBookmarkPath, title, url, targetPath);
+  } else {
+
+    addNewBookmarkToPath(title, url, targetPath);
   }
 
-  const stored = await chrome.storage.local.get(STORAGE_KEY);
-  await saveEncrypted(new Uint8Array(stored[STORAGE_KEY].salt));
+  saveChanges().then(() => {
+    modal.style.display = 'none';
+    editingBookmark = null;
+    editingBookmarkPath = null;
+    
+    showNotification(editingBookmark ? 
+      getMessage('bookmarkUpdated') || 'Bookmark updated' : 
+      getMessage('bookmarkAdded') || 'Bookmark added');
+    
+    renderFolderTree();
+    renderBookmarks();
+  });
+}
+
+
+function addNewBookmarkToPath(title, url, targetPath) {
+  let targetArray;
   
-  modal.style.display = 'none';
-  editingBookmark = null;
-  editingBookmarkPath = null;
+  if (targetPath.length === 0) {
+    targetArray = data.folders;
+  } else {
+    const folder = getItemByPath(targetPath);
+    if (!folder || folder.type !== 'folder' || !Array.isArray(folder.children)) {
+      console.error('Target path is not a folder:', targetPath);
+      return;
+    }
+    targetArray = folder.children;
+  }
   
-  showNotification(getMessage('bookmarkUpdated') || 'Bookmark updated');
-  renderFolderTree();
-  renderBookmarks();
+  targetArray.push({
+    type: 'bookmark',
+    title: title,
+    url: url,
+    dateAdded: Date.now()
+  });
 }
 
 function updateBookmark(oldPath, title, url, newPathRaw) {
@@ -1000,6 +1029,10 @@ async function init() {
   
   initLockButton();
   
+   const addBookmarkBtn = document.getElementById('add-bookmark-btn');
+  if (addBookmarkBtn) {
+    addBookmarkBtn.addEventListener('click', addNewBookmarkFromManager);
+  }
   const stored = await chrome.storage.local.get(STORAGE_KEY);
   
   if (!stored[STORAGE_KEY]) {
@@ -1096,6 +1129,44 @@ async function init() {
   }
 }
 
+function addNewBookmarkFromManager() {
+  const modal = document.getElementById('edit-bookmark-modal');
+  if (!modal) return;
+  
+  editingBookmark = null;
+  editingBookmarkPath = null;
+  
+  modal.style.display = 'flex';
+  
+  document.getElementById('modal-title-text').textContent = getMessage('addBookmark') || 'Add Bookmark';
+  document.getElementById('modal-page-title').textContent = '';
+  
+
+  document.getElementById('modal-bookmark-title').value = '';
+  document.getElementById('modal-bookmark-url').value = 'https://';
+  
+
+  const select = document.getElementById('folder-select');
+  select.innerHTML = '';
+  
+  const rootOption = document.createElement('option');
+  rootOption.value = '';
+  rootOption.textContent = getMessage('rootFolder') || 'Root folder';
+  select.appendChild(rootOption);
+  
+  buildFolderOptions(data.folders, select, '', 0);
+  
+
+  if (currentFolderId !== 'all') {
+    const folderPath = currentFolderId.split(',');
+    if (folderPath.length > 0) {
+      const pathStr = folderPath.join('/');
+      select.value = pathStr;
+    }
+  }
+  
+  resetInactivityTimer();
+}
 async function renameFolder(folderId) {
     if (folderId === 'all') {
         showNotification(getMessage('cannotRenameAll') || 'Cannot rename "All Bookmarks" folder', true);
@@ -1183,7 +1254,7 @@ async function deleteFolder(folderId) {
     }
 }
 
-// Функция для подсчета папок внутри папки
+
 function countFoldersInFolder(folder) {
     let count = 0;
     

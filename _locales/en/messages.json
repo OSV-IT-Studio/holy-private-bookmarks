@@ -1,5 +1,8 @@
 {
-  "extensionName": {
+  "Name": {
+    "message": "Holy Private Bookmarks — Encrypted Local Bookmark Manager"
+  },
+    "extensionName": {
     "message": "Holy Private Bookmarks"
   },
   "extensionDescription": {
@@ -111,7 +114,7 @@
     "message": "← Back"
   },
   "addBookmark": {
-    "message": "Add bookmark"
+    "message": "📌 Add bookmark"
   },
   "editBookmark": {
     "message": "Edit bookmark"
@@ -384,5 +387,8 @@
   },
   "foldersCount": {
     "message": "{0} folders"
-  }
+  },
+  "bookmarkAdded": {
+    "message": "Bookmark added"
+}
 }

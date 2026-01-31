@@ -1,4 +1,7 @@
 {
+  "Name": {
+  "message": "Holy Private Bookmarks — Зашифрований локальний менеджер закладок"
+  },
   "extensionName": {
     "message": "Holy Private Bookmarks"
   },
@@ -111,7 +114,7 @@
     "message": "← Назад"
   },
   "addBookmark": {
-    "message": "Додати закладку"
+    "message": "📌 Додати закладку"
   },
   "editBookmark": {
     "message": "Редагувати закладку"
@@ -384,5 +387,8 @@
   },
   "foldersCount": {
     "message": "{0} папки"
-  }
+  },
+  "bookmarkAdded": {
+    "message": "Закладку додано"
+}
 }

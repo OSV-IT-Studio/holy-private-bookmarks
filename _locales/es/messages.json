@@ -1,4 +1,7 @@
 {
+  "Name": {
+  "message": "Holy Private Bookmarks — Gestor de marcadores local cifrado"
+  },
   "extensionName": {
     "message": "Holy Private Bookmarks"
   },
@@ -111,7 +114,7 @@
     "message": "← Atrás"
   },
   "addBookmark": {
-    "message": "Agregar marcador"
+    "message": "📌 Agregar marcador"
   },
   "editBookmark": {
     "message": "Editar marcador"
@@ -384,5 +387,8 @@
   },
   "foldersCount": {
     "message": "{0} carpetas"
-  }
+  },
+  "bookmarkAdded": {
+    "message": "Marcador añadido"
+}
 }

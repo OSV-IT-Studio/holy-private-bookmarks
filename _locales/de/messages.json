@@ -1,4 +1,7 @@
 {
+  "Name": {
+  "message": "Holy Private Bookmarks — Verschlüsselter lokaler Lesezeichen-Manager"
+  },
   "extensionName": {
     "message": "Holy Private Bookmarks"
   },
@@ -111,7 +114,7 @@
     "message": "← Zurück"
   },
   "addBookmark": {
-    "message": "Lesezeichen hinzufügen"
+    "message": "📌 Lesezeichen hinzufügen"
   },
   "editBookmark": {
     "message": "Lesezeichen bearbeiten"
@@ -381,5 +384,8 @@
   },
   "foldersCount": {
     "message": "{0} Ordner"
-  }
+  },
+  "bookmarkAdded": {
+    "message": "Lesezeichen hinzugefügt"
+}
 }

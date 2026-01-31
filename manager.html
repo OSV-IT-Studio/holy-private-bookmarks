@@ -6,7 +6,6 @@
   <title>Holy Private Bookmarks - manager</title>
   <link rel="stylesheet" href="manager.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
@@ -21,26 +20,36 @@
     </div>
   </div>
 
-
   <div class="container" style="display: none;">
-
     <div class="sidebar">
-	
       <div class="logo">
         <div class="logo-icon"><img src="icons/icon48.png"></div>
         <div class="logo-text">Holy Private Bookmarks</div>
-		
       </div>
-	  <div style="margin-top: 0px; margin-bottom: 20px;">
-  <button id="manual-lock-btn" class="empty-state-btn" style="width: 100%;" data-i18n="lockManager">
-    🔒 Lock Manager
+<div class="actions-container" style="margin-bottom: 24px;">
+
+  <button id="manual-lock-btn" class="modern-btn primary-glass" data-i18n="lockManager">
+    <span class="btn-icon">🔒</span>
+    <span class="btn-text">Lock Manager</span>
+    <div class="btn-glow"></div>
   </button>
+  
+
+  <div class="compact-actions" style="display: flex; gap: 10px; margin-top: 12px;">
+    <button id="new-folder-btn" class="modern-btn secondary-glass" data-i18n="newFolder">
+      <span class="btn-icon">📁</span>
+      <span class="btn-text">New Folder</span>
+      <div class="btn-glow"></div>
+    </button>
+    
+    <button id="add-bookmark-btn" class="modern-btn secondary-glass" data-i18n="addBookmark">
+      <span class="btn-icon">📌</span>
+      <span class="btn-text">Add Bookmark</span>
+      <div class="btn-glow"></div>
+    </button>
+  </div>
 </div>
-      <div style="margin-top: 0px; margin-bottom: 20px;">
-  <button id="new-folder-btn" class="empty-state-btn" style="width: 100%;" data-i18n="newFolder">
-    📁 New Folder
-  </button>
-</div>
+
       <div class="folders-section">
         <div class="folders-title" data-i18n="folders">Folders</div>
         <ul class="folder-tree" id="folder-tree">
@@ -56,7 +65,6 @@
       </div>
     </div>
 
-
     <div class="main-content">
       <div class="header">
         <h1 id="current-folder-name" data-i18n="allBookmarks">All Bookmarks</h1>
@@ -68,11 +76,8 @@
       </div>
 
       <div class="bookmarks-container">
-        <div id="bookmarks-grid" class="bookmarks-grid">
-
-        </div>
+        <div id="bookmarks-grid" class="bookmarks-grid"></div>
         
-
         <div id="empty-state" class="empty-state" style="display: none;">
           <div class="empty-state-icon">📚</div>
           <h3 data-i18n="noBookmarksInFolder">No bookmarks in this folder</h3>
@@ -81,7 +86,6 @@
       </div>
     </div>
   </div>
-
 
   <div id="edit-bookmark-modal">
     <div class="modal-content">
@@ -109,25 +113,7 @@
     </div>
   </div>
 
-<div id="folder-context-menu" class="folder-context-menu">
-  <div class="folder-context-menu-item" id="folder-ctx-edit">
-    <span>✏️</span>
-    <span data-i18n="renameFolder">Rename folder</span>
-  </div>
-  <div class="folder-context-menu-item" id="folder-ctx-delete">
-    <span>🗑️</span>
-    <span data-i18n="deleteFolder">Delete folder</span>
-  </div>
-  <div class="folder-context-menu-divider"></div>
-  <div class="folder-context-menu-item" id="folder-ctx-new-subfolder">
-    <span>📁</span>
-    <span data-i18n="newSubfolder">New subfolder</span>
-  </div>
-  <div class="folder-context-menu-item" id="folder-ctx-new-bookmark">
-    <span>🔗</span>
-    <span data-i18n="newBookmark">New bookmark</span>
-  </div>
-</div>
+  
   <script src="manager.js"></script>
 </body>
 </html>

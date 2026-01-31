@@ -1,4 +1,7 @@
 {
+  "Name": {
+  "message": "Holy Private Bookmarks — Gestionnaire de signets local chiffré"
+  },
   "extensionName": {
     "message": "Holy Private Bookmarks"
   },
@@ -111,7 +114,7 @@
     "message": "← Retour"
   },
   "addBookmark": {
-    "message": "Ajouter un marque-page"
+    "message": "📌 Ajouter un marque-page"
   },
   "editBookmark": {
     "message": "Modifier le marque-page"
@@ -384,5 +387,8 @@
   },
   "foldersCount": {
     "message": "{0} dossiers"
-  }
+  },
+  "bookmarkAdded": {
+    "message": "Marque-page ajouté"
+}
 }

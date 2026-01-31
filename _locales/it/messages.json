@@ -1,4 +1,7 @@
 {
+  "Name": {
+  "message": "Holy Private Bookmarks — Gestore di segnalibri locale crittografato"
+  },
   "extensionName": {
     "message": "Holy Private Bookmarks"
   },
@@ -111,7 +114,7 @@
     "message": "← Indietro"
   },
   "addBookmark": {
-    "message": "Aggiungi segnalibro"
+    "message": "📌 Aggiungi segnalibro"
   },
   "editBookmark": {
     "message": "Modifica segnalibro"
@@ -384,5 +387,8 @@
   },
   "foldersCount": {
     "message": "{0} cartelle"
-  }
+  },
+  "bookmarkAdded": {
+    "message": "Segnalibro aggiunto"
+}
 }

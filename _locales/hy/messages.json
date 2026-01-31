@@ -1,4 +1,7 @@
 {
+  "Name": {
+  "message": "Holy Private Bookmarks — Գաղտնագրված տեղական Էջանիշերի կառավարիչ"
+  },
   "extensionName": {
     "message": "Holy Private Bookmarks"
   },
@@ -111,7 +114,7 @@
     "message": "← Հետ"
   },
   "addBookmark": {
-    "message": "Ավելացնել էջանիշ"
+    "message": "📌 Ավելացնել էջանիշ"
   },
   "editBookmark": {
     "message": "Խմբագրել էջանիշը"
@@ -384,5 +387,8 @@
   },
   "foldersCount": {
     "message": "{0} թղթապանակ"
-  }
+  },
+  "bookmarkAdded": {
+    "message": "Էջանիշն ավելացված է"
+}
 }
