@@ -925,7 +925,7 @@ function renderEmptyState(container) {
       <p style="margin: 0 0 20px 0;">${messages.subtitle}</p>
       <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
         <button class="btn-secondary" id="empty-add-bookmark" style="font-size: 14px; padding: 8px 16px;">
-          📌 ${messages.addBookmark}
+          ${messages.addBookmark}
         </button>
         <button class="btn-secondary" id="empty-add-folder" style="font-size: 14px; padding: 8px 16px;">
            ${messages.newFolder}
@@ -1891,6 +1891,7 @@ function showError(id, msgKey, substitutions = [], isError = true) {
   const message = getMessage(msgKey, substitutions);
   showNotification(message, isError);
 }
+
 
 
 document.addEventListener('DOMContentLoaded', init);
