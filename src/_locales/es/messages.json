@@ -1,0 +1,394 @@
+{
+  "Name": {
+  "message": "Holy Private Bookmarks — Gestor de marcadores local cifrado"
+  },
+  "extensionName": {
+    "message": "Holy Private Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "Marcadores completamente privados con contraseña maestra, carpetas y cifrado"
+  },
+  "createPassword": {
+    "message": "Crea una contraseña maestra para el cifrado completo de los marcadores"
+  },
+  "newPassword": {
+    "message": "Nueva contraseña (mín. 6 caracteres)"
+  },
+  "confirmPassword": {
+    "message": "Confirmar contraseña"
+  },
+  "createStorage": {
+    "message": "🔐 Crear almacenamiento"
+  },
+  "enterMasterPassword": {
+    "message": "Ingresa tu contraseña maestra para desbloquear"
+  },
+  "masterPassword": {
+    "message": "Contraseña maestra"
+  },
+  "unlock": {
+    "message": "🔓 Desbloquear"
+  },
+  "wrongPassword": {
+    "message": "Contraseña incorrecta"
+  },
+  "passwordsMismatch": {
+    "message": "Las contraseñas no coinciden o son demasiado cortas"
+  },
+  "bookmarksProtected": {
+    "message": "Tus marcadores están protegidos de forma segura"
+  },
+  "addCurrentPage": {
+    "message": "➕ Agregar página actual"
+  },
+  "newFolder": {
+    "message": "📁 Nueva carpeta"
+  },
+  "clearHistory": {
+    "message": "🧹️ Limpiar historial"
+  },
+  "supportProject": {
+    "message": "❤️ Apoyar el proyecto"
+  },
+  "settings": {
+    "message": "⚙️ Ajustes"
+  },
+  "settingsbtn": {
+    "message": "⚙️"
+  },
+  "changeMasterPassword": {
+    "message": "Cambiar contraseña maestra"
+  },
+  "currentPassword": {
+    "message": "Contraseña actual"
+  },
+  "newPassword2": {
+    "message": "Nueva contraseña"
+  },
+  "confirmNewPassword": {
+    "message": "Confirmar nueva contraseña"
+  },
+  "changePassword": {
+    "message": "🔑 Cambiar contraseña"
+  },
+  "exportImport": {
+    "message": "Exportar e Importar"
+  },
+  "export": {
+    "message": "📤 Exportar"
+  },
+  "import": {
+    "message": "📥 Importar"
+  },
+  "importFromChrome": {
+    "message": "Importar desde Chrome"
+  },
+  "importChromeBookmarks": {
+    "message": "📥 Importar todos los marcadores de Chrome"
+  },
+  "importChromeBookmarksAdvanced": {
+    "message": "🗂️ Seleccionar carpetas para importar"
+  },
+  "importChromeConfirm": {
+    "message": "¿Importar todos los marcadores de Chrome? Los marcadores existentes se conservarán."
+  },
+  "importChromeSuccess": {
+    "message": "¡Marcadores importados con éxito!"
+  },
+  "importChromeError": {
+    "message": "Error al importar los marcadores"
+  },
+  "selectFoldersToImport": {
+    "message": "Seleccionar carpetas para importar"
+  },
+  "selectAll": {
+    "message": "Seleccionar todo"
+  },
+  "deselectAll": {
+    "message": "Deseleccionar todo"
+  },
+  "importSelected": {
+    "message": "Importar"
+  },
+  "back": {
+    "message": "← Atrás"
+  },
+  "addBookmark": {
+    "message": "📌 Agregar marcador"
+  },
+  "editBookmark": {
+    "message": "Editar marcador"
+  },
+  "page": {
+    "message": "Página"
+  },
+  "title": {
+    "message": "Título"
+  },
+  "url": {
+    "message": "URL"
+  },
+  "folder": {
+    "message": "Carpeta"
+  },
+  "rootFolder": {
+    "message": "Carpeta raíz"
+  },
+  "new": {
+    "message": "+ Nuevo"
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "save": {
+    "message": "Guardar"
+  },
+  "deleteConfirm": {
+    "message": "¿Eliminar este elemento?"
+  },
+  "folderName": {
+    "message": "Nombre de la carpeta:"
+  },
+  "newName": {
+    "message": "Nuevo nombre:"
+  },
+  "titleRequired": {
+    "message": "El título y la URL son obligatorios"
+  },
+  "validUrl": {
+    "message": "La URL debe comenzar con http:// o https://"
+  },
+  "passwordChanged": {
+    "message": "¡Contraseña cambiada con éxito!"
+  },
+  "importSuccess": {
+    "message": "¡Copia de seguridad importada con éxito! Por favor, vuelve a abrir la ventana emergente."
+  },
+  "invalidFile": {
+    "message": "Archivo de copia de seguridad no válido"
+  },
+  "clearHistoryConfirm": {
+    "message": "⚠️ ¿Eliminar TODAS las entradas del historial del navegador para los dominios presentes en tus Holy Private Bookmarks?\n\nEsto eliminará las visitas a TODAS las páginas de estos sitios (no solo las marcadas).\nLa acción no se puede deshacer."
+  },
+  "noBookmarks": {
+    "message": "No se encontraron marcadores — nada que limpiar."
+  },
+  "noDomains": {
+    "message": "No se encontraron dominios válidos en los marcadores."
+  },
+  "newBookmark": {
+    "message": "Nuevo marcador"
+  },
+  "paste": {
+    "message": "Pegar"
+  },
+  "ctxnewFolder": {
+    "message": "Nueva carpeta"
+  },
+  "emptyTreeTitle": {
+    "message": "Aún no hay marcadores"
+  },
+  "emptyTreeSubtitle": {
+    "message": "Agrega tu primer marcador o carpeta para comenzar"
+  },
+  "historyCleared": {
+    "message": "🧹 ¡Historial limpiado!\nSe eliminó $count$ visita(s) de $domains$ dominio(s).",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domains": {
+        "content": "$2"
+      }
+    }
+  },
+  "addToHoly": {
+    "message": "Agregar a Holy Private Bookmarks"
+  },
+  "cannotAddPage": {
+    "message": "No se puede agregar esta página (URL no válida)"
+  },
+  "supportPageTitle": {
+    "message": "Apoyar proyecto — Holy Private Bookmarks"
+  },
+  "supportTitle": {
+    "message": "❤️ Apoyar el Proyecto"
+  },
+  "supportDescription": {
+    "message": "Si la extensión te es útil — cualquier ayuda es apreciada"
+  },
+  "bitcoinTitle": {
+    "message": "Bitcoin (BTC)"
+  },
+  "ethereumTitle": {
+    "message": "Ethereum (ETH)"
+  },
+  "copyAddress": {
+    "message": "Copiar dirección"
+  },
+  "copiedToClipboard": {
+    "message": "¡Dirección copiada al portapapeles!"
+  },
+  "clickToCopy": {
+    "message": "Haz clic para copiar"
+  },
+  "importantWarning": {
+    "message": "ADVERTENCIA IMPORTANTE:"
+  },
+  "passwordCannotBeRecovered": {
+    "message": "¡Esta contraseña NO SE PUEDE recuperar!"
+  },
+  "noPasswordReset": {
+    "message": "NO existe la opción de restablecer la contraseña"
+  },
+  "weDontStorePassword": {
+    "message": "NO almacenamos tu contraseña en ningún lugar"
+  },
+  "bookmarksEncrypted": {
+    "message": "Tus marcadores están cifrados únicamente con esta contraseña"
+  },
+  "savePasswordSecurely": {
+    "message": "¡Guarda esta contraseña de forma segura!"
+  },
+  "copyUrl": {
+    "message": "Copiar URL"
+  },
+  "edit": {
+    "message": "Editar"
+  },
+  "delete": {
+    "message": "Eliminar"
+  },
+  "urlCopied": {
+    "message": "URL copiada al portapapeles"
+  },
+  "about": {
+    "message": "Acerca de"
+  },
+  "aboutExtension": {
+    "message": "Acerca de la Extensión"
+  },
+  "openGitHub": {
+    "message": "Abrir GitHub"
+  },
+  "close": {
+    "message": "Cerrar"
+  },
+  "features": {
+    "message": "Características"
+  },
+  "encryption": {
+    "message": "Cifrado"
+  },
+  "encryptionDesc": {
+    "message": "Cifrado AES-256"
+  },
+  "localStorage": {
+    "message": "Almacenamiento Local"
+  },
+  "localStorageDesc": {
+    "message": "Los datos permanecen en tu dispositivo"
+  },
+  "privacy": {
+    "message": "Privacidad"
+  },
+  "privacyDesc": {
+    "message": "Sin seguimiento ni análisis"
+  },
+  "openSource": {
+    "message": "WTFPL v2"
+  },
+  "viewOnGitHub": {
+    "message": "Ver en GitHub"
+  },
+  "githubRepo": {
+    "message": "Repositorio GitHub"
+  },
+  "githubRepoDesc": {
+    "message": "Ver código fuente, reportar problemas, contribuir"
+  },
+  "version": {
+    "message": "Versión"
+  },
+  "openmanager": {
+    "message": "Abrir administrador"
+  },
+  "managerDesc": {
+    "message": "Abrir administrador de marcadores a pantalla completa"
+  },
+  "folders": {
+    "message": "Carpetas"
+  },
+  "bookmarks": {
+    "message": "marcadores"
+  },
+  "allBookmarks": {
+    "message": "Todos los Marcadores"
+  },
+  "bookmarksCount": {
+    "message": "marcadores"
+  },
+  "searchBookmarks": {
+    "message": "Buscar marcadores..."
+  },
+  "noBookmarksInFolder": {
+    "message": "No hay marcadores en esta carpeta"
+  },
+  "addBookmarksToGetStarted": {
+    "message": "Agrega marcadores para comenzar"
+  },
+  "bookmarkUpdated": {
+    "message": "Marcador actualizado"
+  },
+  "bookmarkDeleted": {
+    "message": "Marcador eliminado"
+  },
+  "renameFolder": {
+    "message": "Renombrar carpeta"
+  },
+  "folderCreated": {
+    "message": "Carpeta creada con éxito"
+  },
+  "managerLocked": {
+    "message": "Administrador bloqueado"
+  },
+  "lockManager": {
+    "message": "🔓 Bloquear Administrador"
+  },
+  "manager": {
+    "message": "🗂 Abrir administrador completo"
+  },
+  "rename": {
+    "message": "Renombrar"
+  },
+  "renameFolder": {
+    "message": "Renombrar carpeta"
+  },
+  "deleteFolder": {
+    "message": "Eliminar carpeta"
+  },
+  "deleteFolderConfirm": {
+    "message": "¿Eliminar la carpeta \"{0}\"?"
+  },
+  "deleteFolderWarning": {
+    "message": "Todo el contenido se eliminará permanentemente."
+  },
+  "folderRenamed": {
+    "message": "Carpeta renombrada con éxito"
+  },
+  "folderDeleted": {
+    "message": "Carpeta eliminada con éxito"
+  },
+  "cannotRenameAll": {
+    "message": "No se puede renombrar la carpeta \"Todos los Marcadores\""
+  },
+  "cannotDeleteAll": {
+    "message": "No se puede eliminar la carpeta \"Todos los Marcadores\""
+  },
+  "foldersCount": {
+    "message": "{0} carpetas"
+  },
+  "bookmarkAdded": {
+    "message": "Marcador añadido"
+}
+}
