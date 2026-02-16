@@ -77,6 +77,9 @@
   "export": {
     "message": "📤 Export"
   },
+  "openPrivate": {
+    "message": "Open in private tab"
+  },
   "import": {
     "message": "📥 Import"
   },
@@ -277,6 +280,9 @@
   "features": {
     "message": "Features"
   },
+    "troubleshooting": {
+    "message": "Troubleshooting"
+  },
   "encryption": {
     "message": "Encryption"
   },
@@ -396,5 +402,183 @@
   },
   "pendingBookmarkInstruction": {
     "message": "A bookmark is waiting to be added. Please unlock to continue."
+  },
+  "faqTitle": {
+    "message": "FAQ — Holy Private Bookmarks"
+  },
+  "faqSubtitle": {
+    "message": "Find answers to common questions about Holy Private Bookmarks"
+  },
+  "searchFAQ": {
+    "message": "Search questions..."
+  },
+  "faqSecurity1": {
+    "message": "How secure is my data?"
+  },
+  "faqSecurity1Answer": {
+    "message": "All your bookmarks are encrypted locally using AES-256-GCM encryption with a master password. Your data never leaves your computer. Even we cannot access your bookmarks without your password."
+  },
+  "faqSecurity2": {
+    "message": "What happens if I forget my password?"
+  },
+  "faqSecurity2Answer": {
+    "message": "Warning: Your password cannot be recovered. We don't store your password or any recovery keys. If you forget your password, you will lose access to all your encrypted bookmarks permanently. Please save your password in a secure password manager."
+  },
+  "faqSecurity3": {
+    "message": "Why do I need to enter my password every time?"
+  },
+  "faqSecurity3Warning": {
+    "message": "⚠️ This is by design and cannot be changed"
+  },
+  "faqSecurity3Answer": {
+    "message": "Holy Private Bookmarks is built on a zero-trust security model. Requiring password entry every time is not a limitation—it's the core security feature."
+  },
+  "faqSecurity3WhyTitle": {
+    "message": "Why this is non-negotiable:"
+  },
+  "faqSecurity3Reason1": {
+    "message": "True zero-knowledge: We never store your password, session tokens, or decryption keys"
+  },
+  "faqSecurity3Reason2": {
+    "message": "Defense in depth: Even with physical access to your computer, your bookmarks remain protected"
+  },
+  "faqSecurity3Reason3": {
+    "message": "No single point of failure: There are no backdoors, recovery keys, or password reset options"
+  },
+  "faqSecurity3Reason4": {
+    "message": "Browser security limitations: Chrome extensions cannot securely persist authentication between sessions"
+  },
+  "faqSecurity3BenefitsTitle": {
+    "message": "Security benefits:"
+  },
+  "faqSecurity3Benefit1": {
+    "message": "Protection against theft: If your device is stolen, your bookmarks remain encrypted"
+  },
+  "faqSecurity3Benefit2": {
+    "message": "No forensic traces: Nothing is stored in browser storage that could be recovered"
+  },
+  "faqSecurity3Benefit3": {
+    "message": "Malware resistance: Even keyloggers only capture one-time password entry"
+  },
+  "faqSecurity3TipTitle": {
+    "message": "Pro tip:"
+  },
+  "faqSecurity3TipText": {
+    "message": "Use a password manager like Bitwarden or KeePass. With auto-fill, entering your password takes just 2 seconds while maintaining maximum security."
+  },
+  "faqSecurity3Conclusion": {
+    "message": "Remember: Every time you enter your password, you're verifying that YOU are the only person who can access your private bookmarks. This is the price of true privacy."
+  },
+  "faqUsage1": {
+    "message": "How do I add bookmarks?"
+  },
+  "faqUsage1Answer": {
+    "message": "You can add bookmarks in several ways:"
+  },
+  "faqUsage1Method1": {
+    "message": "Click the '+' button in the popup to add the current page"
+  },
+  "faqUsage1Method2": {
+    "message": "Right-click on any page or link and select 'Add to Holy Private Bookmarks'"
+  },
+  "faqUsage1Method3": {
+    "message": "Use the manager to add bookmarks manually"
+  },
+  "faqUsage1Method4": {
+    "message": "Import from Chrome bookmarks via Settings"
+  },
+  "faqUsage2": {
+    "message": "How do I organize bookmarks into folders?"
+  },
+  "faqUsage2Answer": {
+    "message": "You can create folders and subfolders to organize your bookmarks:"
+  },
+  "faqUsage2Step1": {
+    "message": "Open the extension popup"
+  },
+  "faqUsage2Step2": {
+    "message": "Click 'New Folder' or right-click in the tree view"
+  },
+  "faqUsage2Step3": {
+    "message": "Drag and drop bookmarks into folders"
+  },
+  "faqUsage2Step4": {
+    "message": "Use the manager for advanced organization"
+  },
+  "faqFeatures1": {
+    "message": "What's the difference between popup and manager?"
+  },
+  "faqFeatures1Answer": {
+    "message": "Popup: Quick access for adding/viewing bookmarks. Automatically locks after 10 minutes.\n\nManager: Full-featured interface with search, grid view, advanced editing, and folder management. Also auto-locks for security."
+  },
+  "faqFeatures2": {
+    "message": "Can I backup my bookmarks?"
+  },
+  "faqFeatures2Answer": {
+    "message": "Yes! Go to Settings → Export & Import → Export Bookmarks. This creates an encrypted backup file. You can restore it anytime using the Import option."
+  },
+  "faqFeatures3": {
+    "message": "What does 'Clear History' do?"
+  },
+  "faqFeatures3Answer": {
+    "message": "This feature removes your Chrome browsing history for domains that are in your bookmarks. It helps maintain privacy by automatically clearing history traces of bookmarked sites."
+  },
+  "faqUsage3": {
+    "message": "How to search my bookmarks?"
+  },
+  "faqUsage3Answer": {
+    "message": "Use the search bar in the manager (full interface) to search through all your bookmarks by title or URL. The popup shows a filtered tree view of all bookmarks."
+  },
+  
+  "faqTrouble2": {
+    "message": "Will my bookmarks sync between devices?"
+  },
+  "faqTrouble2Answer": {
+    "message": "Currently, bookmarks are stored locally on your device. You can manually export/import to transfer between devices. Cloud sync is planned for future versions."
+  },
+  "faqTrouble3": {
+    "message": "Context menu option is missing"
+  },
+  "faqTrouble3Answer": {
+    "message": "If 'Add to Holy Private Bookmarks' doesn't appear in right-click menu:"
+  },
+  "faqTrouble3Step1": {
+    "message": "Reload the extension"
+  },
+  "faqTrouble3Step2": {
+    "message": "Check extension permissions"
+  },
+  "faqTrouble3Step3": {
+    "message": "Try on a different page (some pages restrict context menus)"
+  },
+  "faqStillQuestions": {
+    "message": "Still have questions?"
+  },
+  "faqContactUs": {
+    "message": "Contact us or check the GitHub repository:"
+  },
+  "noResultsTitle": {
+    "message": "No questions found"
+  },
+  "noResultsText": {
+    "message": "Try a different search term or category"
+  },
+  "openGitHub": {
+    "message": "GitHub"
+  },
+  "supportProject": {
+    "message": "Support Project"
+  },  
+  "faqButtonTitle": {
+    "message": "Frequently Asked Questions"
+  },
+    "contactEmail": {
+    "message": "osv-it-studio@googlegroups.com"
+  },
+  "emailUs": {
+    "message": "Email us"
+  },
+    "dragSuccess": {
+    "message": "✅ Item moved successfully"
   }
 }

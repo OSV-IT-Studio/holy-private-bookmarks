@@ -814,18 +814,6 @@ body {
   margin: 4px 0;
 }
 
-{
-  "managerAutoLocked": {
-    "message": "Manager was auto-locked due to inactivity"
-  },
-  "managerLocked": {
-    "message": "Manager locked due to inactivity"
-  },
-  "lockManager": {
-    "message": "Lock Manager"
-  }
-}
-
 @media (max-width: 1200px) {
   .container {
     padding: 15px;

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_Name__",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
@@ -11,9 +11,10 @@
     "scripting", 
     "history",
     "bookmarks", 
-	"clipboardRead",
+    "clipboardRead",
     "clipboardWrite"
   ],
+  "incognito": "spanning",
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",
@@ -32,7 +33,7 @@
     "128": "icons/icon128.png"
   },
   "web_accessible_resources": [{
-    "resources": ["donate.html", "js/donate.js", "manager.html", "js/manager.js", "icons/*.png"],
+    "resources": ["donate.html", "js/donate.js",  "faq.html", "js/faq.js", "js/crypto-wrapper.js", "manager.html", "js/manager.js", "icons/*.png"],
     "matches": ["<all_urls>"]
   }],
   "content_security_policy": {

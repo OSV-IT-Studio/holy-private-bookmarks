@@ -1,18 +1,18 @@
 {
   "Name": {
-  "message": "Holy Private Bookmarks — Verschlüsselter lokaler Lesezeichen-Manager"
+    "message": "Holy Private Bookmarks — Lokaler, verschlüsselter Lesezeichen-Manager"
   },
   "extensionName": {
     "message": "Holy Private Bookmarks"
   },
   "extensionDescription": {
-    "message": "Völlig private Lesezeichen mit Hauptpasswort, Ordnern und Verschlüsselung"
+    "message": "Vollständig private Lesezeichen mit Master-Passwort, Ordnern und Verschlüsselung"
   },
   "createPassword": {
-    "message": "Erstellen Sie ein Hauptpasswort für die vollständige Verschlüsselung Ihrer Lesezeichen"
+    "message": "Lege ein Master-Passwort für die vollständige Verschlüsselung deiner Lesezeichen fest"
   },
   "newPassword": {
-    "message": "Neues Passwort (mind. 6 Zeichen)"
+    "message": "Neues Passwort (min. 6 Zeichen)"
   },
   "confirmPassword": {
     "message": "Passwort bestätigen"
@@ -21,10 +21,10 @@
     "message": "🔐 Speicher erstellen"
   },
   "enterMasterPassword": {
-    "message": "Geben Sie Ihr Hauptpasswort zum Entsperren ein"
+    "message": "Gib dein Master-Passwort ein, um zu entsperren"
   },
   "masterPassword": {
-    "message": "Hauptpasswort"
+    "message": "Master-Passwort"
   },
   "unlock": {
     "message": "🔓 Entsperren"
@@ -36,7 +36,7 @@
     "message": "Passwörter stimmen nicht überein oder sind zu kurz"
   },
   "bookmarksProtected": {
-    "message": "Ihre Lesezeichen sind sicher geschützt"
+    "message": "Deine Lesezeichen sind sicher geschützt"
   },
   "addCurrentPage": {
     "message": "➕ Aktuelle Seite hinzufügen"
@@ -57,7 +57,7 @@
     "message": "⚙️"
   },
   "changeMasterPassword": {
-    "message": "Hauptpasswort ändern"
+    "message": "Master-Passwort ändern"
   },
   "currentPassword": {
     "message": "Aktuelles Passwort"
@@ -72,40 +72,43 @@
     "message": "🔑 Passwort ändern"
   },
   "exportImport": {
-    "message": "Export & Import"
+    "message": "Exportieren & Importieren"
   },
   "export": {
     "message": "📤 Exportieren"
+  },
+  "openPrivate": {
+    "message": "Im privaten Tab öffnen"
   },
   "import": {
     "message": "📥 Importieren"
   },
   "importFromChrome": {
-    "message": "Aus Chrome importieren"
+    "message": "Von Chrome importieren"
   },
   "importChromeBookmarks": {
     "message": "📥 Alle Chrome-Lesezeichen importieren"
   },
   "importChromeBookmarksAdvanced": {
-    "message": "🗂️ Ordner zum Import auswählen"
+    "message": "🗂️ Ordner zum Importieren auswählen"
   },
   "importChromeConfirm": {
-    "message": "Alle Lesezeichen aus Chrome importieren? Vorhandene Lesezeichen bleiben erhalten."
+    "message": "Alle Lesezeichen von Chrome importieren? Vorhandene Lesezeichen bleiben erhalten."
   },
   "importChromeSuccess": {
     "message": "Lesezeichen erfolgreich importiert!"
   },
   "importChromeError": {
-    "message": "Import der Lesezeichen fehlgeschlagen"
+    "message": "Fehler beim Importieren der Lesezeichen"
   },
   "selectFoldersToImport": {
-    "message": "Zu importierende Ordner auswählen"
+    "message": "Wähle Ordner zum Importieren aus"
   },
   "selectAll": {
     "message": "Alle auswählen"
   },
   "deselectAll": {
-    "message": "Auswahl aufheben"
+    "message": "Alle abwählen"
   },
   "importSelected": {
     "message": "Importieren"
@@ -156,22 +159,22 @@
     "message": "Titel und URL sind erforderlich"
   },
   "validUrl": {
-    "message": "URL muss mit http:// oder https:// beginnen"
+    "message": "Die URL muss mit http:// oder https:// beginnen"
   },
   "passwordChanged": {
     "message": "Passwort erfolgreich geändert!"
   },
   "importSuccess": {
-    "message": "Sicherung erfolgreich importiert! Bitte öffnen Sie das Popup erneut."
+    "message": "Backup erfolgreich importiert! Bitte öffne das Popup neu."
   },
   "invalidFile": {
-    "message": "Ungültige Sicherungsdatei"
+    "message": "Ungültige Backup-Datei"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ ALLE Browserverlaufseinträge für Domains löschen, die in Ihren Holy Private Bookmarks vorhanden sind?\n\nDadurch werden Besuche auf ALLEN Seiten dieser Websites entfernt (nicht nur die mit Lesezeichen).\nDiese Aktion kann nicht rückgängig gemacht werden."
+    "message": "⚠️ ALLE Einträge im Browserverlauf für Domains löschen, die in deinen Heiligen Privaten Lesezeichen vorkommen?\n\nDies entfernt Besuche von ALLEN Seiten auf diesen Websites (nicht nur die gespeicherten Lesezeichen).\nDiese Aktion kann nicht rückgängig gemacht werden."
   },
   "noBookmarks": {
-    "message": "Keine Lesezeichen gefunden – nichts zu löschen."
+    "message": "Keine Lesezeichen gefunden — es gibt nichts zu löschen."
   },
   "noDomains": {
     "message": "Keine gültigen Domains in den Lesezeichen gefunden."
@@ -189,10 +192,10 @@
     "message": "Noch keine Lesezeichen"
   },
   "emptyTreeSubtitle": {
-    "message": "Fügen Sie Ihr erstes Lesezeichen oder einen Ordner hinzu, um zu beginnen"
+    "message": "Füge dein erstes Lesezeichen oder einen Ordner hinzu, um zu beginnen"
   },
   "historyCleared": {
-    "message": "🧹 Verlauf gelöscht!\nEntfernt: $count$ Besuch(e) von $domains$ Domain(s).",
+    "message": "🧹 Verlauf gelöscht!\n$count$ Besuch(e) von $domains$ Domain(s) entfernt.",
     "placeholders": {
       "count": {
         "content": "$1"
@@ -212,10 +215,10 @@
     "message": "Projekt unterstützen — Holy Private Bookmarks"
   },
   "supportTitle": {
-    "message": "❤️ Das Projekt unterstützen"
+    "message": "❤️ Projekt unterstützen"
   },
   "supportDescription": {
-    "message": "Wenn die Erweiterung für Sie nützlich ist – jede Hilfe ist willkommen"
+    "message": "Wenn dir die Erweiterung nützlich ist – jede Hilfe wird geschätzt"
   },
   "bitcoinTitle": {
     "message": "Bitcoin (BTC)"
@@ -230,7 +233,7 @@
     "message": "Adresse in die Zwischenablage kopiert!"
   },
   "clickToCopy": {
-    "message": "Klicken zum Kopieren"
+    "message": "Zum Kopieren klicken"
   },
   "importantWarning": {
     "message": "WICHTIGE WARNUNG:"
@@ -239,16 +242,16 @@
     "message": "Dieses Passwort kann NICHT wiederhergestellt werden!"
   },
   "noPasswordReset": {
-    "message": "Es gibt KEINE Passwort-Zurücksetzen-Funktion"
+    "message": "Es gibt KEINE Option zum Zurücksetzen des Passworts"
   },
   "weDontStorePassword": {
-    "message": "Wir speichern Ihr Passwort NICHT irgendwo"
+    "message": "Wir speichern dein Passwort nirgendwo"
   },
   "bookmarksEncrypted": {
-    "message": "Ihre Lesezeichen werden NUR mit diesem Passwort verschlüsselt"
+    "message": "Deine Lesezeichen werden nur mit diesem Passwort verschlüsselt"
   },
   "savePasswordSecurely": {
-    "message": "Speichern Sie dieses Passwort sicher!"
+    "message": "Bewahre dieses Passwort sicher auf!"
   },
   "copyUrl": {
     "message": "URL kopieren"
@@ -277,23 +280,26 @@
   "features": {
     "message": "Funktionen"
   },
+  "troubleshooting": {
+    "message": "Fehlerbehebung"
+  },
   "encryption": {
     "message": "Verschlüsselung"
   },
   "encryptionDesc": {
-    "message": "AES-256-Verschlüsselung"
+    "message": "AES-256 Verschlüsselung"
   },
   "localStorage": {
-    "message": "Lokale Speicherung"
+    "message": "Lokaler Speicher"
   },
   "localStorageDesc": {
-    "message": "Daten bleiben auf Ihrem Gerät"
+    "message": "Daten verbleiben auf deinem Gerät"
   },
   "privacy": {
     "message": "Privatsphäre"
   },
   "privacyDesc": {
-    "message": "Kein Tracking oder Analytics"
+    "message": "Kein Tracking oder Analytik"
   },
   "openSource": {
     "message": "WTFPL v2"
@@ -305,7 +311,7 @@
     "message": "GitHub Repository"
   },
   "githubRepoDesc": {
-    "message": "Quellcode ansehen, Probleme melden, beitragen"
+    "message": "Quellcode ansehen, Probleme melden, mitwirken"
   },
   "version": {
     "message": "Version"
@@ -314,7 +320,7 @@
     "message": "Manager öffnen"
   },
   "managerDesc": {
-    "message": "Vollbild-Lesezeichen-Manager öffnen"
+    "message": "Vollbild-Lesezeichenmanager öffnen"
   },
   "folders": {
     "message": "Ordner"
@@ -335,7 +341,7 @@
     "message": "Keine Lesezeichen in diesem Ordner"
   },
   "addBookmarksToGetStarted": {
-    "message": "Fügen Sie Lesezeichen hinzu, um zu beginnen"
+    "message": "Füge Lesezeichen hinzu, um zu beginnen"
   },
   "bookmarkUpdated": {
     "message": "Lesezeichen aktualisiert"
@@ -356,7 +362,7 @@
     "message": "🔓 Manager sperren"
   },
   "manager": {
-    "message": "🗂 Vollständigen Manager öffnen"
+    "message": "🗂 Vollen Manager öffnen"
   },
   "rename": {
     "message": "Umbenennen"
@@ -368,7 +374,7 @@
     "message": "Ordner \"{0}\" löschen?"
   },
   "deleteFolderWarning": {
-    "message": "Alle Inhalte werden dauerhaft gelöscht."
+    "message": "Der gesamte Inhalt wird endgültig gelöscht."
   },
   "folderRenamed": {
     "message": "Ordner erfolgreich umbenannt"
@@ -387,11 +393,182 @@
   },
   "bookmarkAdded": {
     "message": "Lesezeichen hinzugefügt"
-},
+  },
   "pendingBookmarkNotification": {
     "message": "Lesezeichen wartet!"
   },
   "pendingBookmarkInstruction": {
-    "message": "Ein Lesezeichen wartet auf Hinzufügung. Bitte entsperren, um fortzufahren."
-  }
+    "message": "Ein Lesezeichen wartet darauf, hinzugefügt zu werden. Bitte entsperren, um fortzufahren."
+  },
+  "faqTitle": {
+    "message": "FAQ — Holy Private Bookmarks"
+  },
+  "faqSubtitle": {
+    "message": "Finde Antworten auf häufige Fragen zu Holy Private Bookmarks"
+  },
+  "searchFAQ": {
+    "message": "Fragen durchsuchen..."
+  },
+  "faqSecurity1": {
+    "message": "Wie sicher sind meine Daten?"
+  },
+  "faqSecurity1Answer": {
+    "message": "Alle deine Lesezeichen werden lokal mit AES-256-GCM Verschlüsselung und einem Master-Passwort verschlüsselt. Deine Daten verlassen niemals deinen Computer. Selbst wir können ohne dein Passwort nicht auf deine Lesezeichen zugreifen."
+  },
+  "faqSecurity2": {
+    "message": "Was passiert, wenn ich mein Passwort vergesse?"
+  },
+  "faqSecurity2Answer": {
+    "message": "Warnung: Dein Passwort kann nicht wiederhergestellt werden. Wir speichern weder dein Passwort noch Wiederherstellungsschlüssel. Wenn du dein Passwort vergisst, verlierst du dauerhaft den Zugriff auf alle deine verschlüsselten Lesezeichen. Bitte bewahre dein Passwort in einem sicheren Passwort-Manager auf."
+  },
+  "faqSecurity3": {
+    "message": "Warum muss ich mein Passwort jedes Mal eingeben?"
+  },
+  "faqSecurity3Warning": {
+    "message": "⚠️ Dies ist beabsichtigt und kann nicht geändert werden"
+  },
+  "faqSecurity3Answer": {
+    "message": "Holy Private Bookmarks basiert auf einem Zero-Trust-Sicherheitsmodell. Die Notwendigkeit, das Passwort jedes Mal einzugeben, ist keine Einschränkung – es ist die zentrale Sicherheitsfunktion."
+  },
+  "faqSecurity3WhyTitle": {
+    "message": "Warum dies nicht verhandelbar ist:"
+  },
+  "faqSecurity3Reason1": {
+    "message": "Echtes Zero-Knowledge: Wir speichern niemals dein Passwort, Sitzungstokens oder Entschlüsselungsschlüssel"
+  },
+  "faqSecurity3Reason2": {
+    "message": "Mehrschichtige Verteidigung: Selbst bei physischem Zugriff auf deinen Computer bleiben deine Lesezeichen geschützt"
+  },
+  "faqSecurity3Reason3": {
+    "message": "Kein einzelner Fehlerpunkt: Es gibt keine Hintertüren, Wiederherstellungsschlüssel oder Optionen zum Zurücksetzen des Passworts"
+  },
+  "faqSecurity3Reason4": {
+    "message": "Sicherheitseinschränkungen des Browsers: Chrome-Erweiterungen können eine Authentifizierung nicht sicher über Sitzungen hinweg aufrechterhalten"
+  },
+  "faqSecurity3BenefitsTitle": {
+    "message": "Sicherheitsvorteile:"
+  },
+  "faqSecurity3Benefit1": {
+    "message": "Schutz vor Diebstahl: Wenn dein Gerät gestohlen wird, bleiben deine Lesezeichen verschlüsselt"
+  },
+  "faqSecurity3Benefit2": {
+    "message": "Keine forensischen Spuren: Im Browser-Speicher wird nichts gespeichert, was wiederhergestellt werden könnte"
+  },
+  "faqSecurity3Benefit3": {
+    "message": "Malware-Resistenz: Selbst Keylogger erfassen nur die einmalige Passworteingabe"
+  },
+  "faqSecurity3TipTitle": {
+    "message": "Profi-Tipp:"
+  },
+  "faqSecurity3TipText": {
+    "message": "Verwende einen Passwort-Manager wie Bitwarden oder KeePass. Mit Auto-Ausfüllen dauert die Passworteingabe nur 2 Sekunden, während maximale Sicherheit erhalten bleibt."
+  },
+  "faqSecurity3Conclusion": {
+    "message": "Denke daran: Jedes Mal, wenn du dein Passwort eingibst, bestätigst du, dass DU die einzige Person bist, die auf deine privaten Lesezeichen zugreifen kann. Das ist der Preis für echte Privatsphäre."
+  },
+  "faqUsage1": {
+    "message": "Wie füge ich Lesezeichen hinzu?"
+  },
+  "faqUsage1Answer": {
+    "message": "Du kannst Lesezeichen auf verschiedene Arten hinzufügen:"
+  },
+  "faqUsage1Method1": {
+    "message": "Klicke auf die '+' Schaltfläche im Popup, um die aktuelle Seite hinzuzufügen"
+  },
+  "faqUsage1Method2": {
+    "message": "Klicke mit der rechten Maustaste auf eine Seite oder einen Link und wähle 'Zu Holy Private Bookmarks hinzufügen'"
+  },
+  "faqUsage1Method3": {
+    "message": "Verwende den Manager, um Lesezeichen manuell hinzuzufügen"
+  },
+  "faqUsage1Method4": {
+    "message": "Importiere sie über die Einstellungen aus Chrome-Lesezeichen"
+  },
+  "faqUsage2": {
+    "message": "Wie organisiere ich Lesezeichen in Ordnern?"
+  },
+  "faqUsage2Answer": {
+    "message": "Du kannst Ordner und Unterordner erstellen, um deine Lesezeichen zu organisieren:"
+  },
+  "faqUsage2Step1": {
+    "message": "Öffne das Erweiterungs-Popup"
+  },
+  "faqUsage2Step2": {
+    "message": "Klicke auf 'Neuer Ordner' oder klicke mit der rechten Maustaste in die Baumansicht"
+  },
+  "faqUsage2Step3": {
+    "message": "Ziehe Lesezeichen per Drag & Drop in Ordner"
+  },
+  "faqUsage2Step4": {
+    "message": "Verwende den Manager für eine erweiterte Organisation"
+  },
+  "faqFeatures1": {
+    "message": "Was ist der Unterschied zwischen Popup und Manager?"
+  },
+  "faqFeatures1Answer": {
+    "message": "Popup: Schneller Zugriff zum Hinzufügen/Anzeigen von Lesezeichen. Sperrt automatisch nach 10 Minuten.\n\nManager: Voll ausgestattete Oberfläche mit Suche, Rasteransicht, erweiterter Bearbeitung und Ordnerverwaltung. Sperrt ebenfalls automatisch aus Sicherheitsgründen."
+  },
+  "faqFeatures2": {
+    "message": "Kann ich meine Lesezeichen sichern?"
+  },
+  "faqFeatures2Answer": {
+    "message": "Ja! Gehe zu Einstellungen → Exportieren & Importieren → Lesezeichen exportieren. Dies erstellt eine verschlüsselte Backup-Datei. Du kannst sie jederzeit über die Import-Option wiederherstellen."
+  },
+  "faqFeatures3": {
+    "message": "Was bewirkt 'Verlauf löschen'?"
+  },
+  "faqFeatures3Answer": {
+    "message": "Diese Funktion entfernt deinen Chrome-Browserverlauf für Domains, die in deinen Lesezeichen vorkommen. Sie hilft, die Privatsphäre zu wahren, indem sie automatisch Verlaufsspuren von gespeicherten Websites löscht."
+  },
+  "faqUsage3": {
+    "message": "Wie durchsuche ich meine Lesezeichen?"
+  },
+  "faqUsage3Answer": {
+    "message": "Verwende die Suchleiste im Manager (vollständige Oberfläche), um alle deine Lesezeichen nach Titel oder URL zu durchsuchen. Das Popup zeigt eine gefilterte Baumansicht aller Lesezeichen."
+  },
+  "faqTrouble2": {
+    "message": "Werden meine Lesezeichen zwischen Geräten synchronisiert?"
+  },
+  "faqTrouble2Answer": {
+    "message": "Derzeit werden Lesezeichen lokal auf deinem Gerät gespeichert. Du kannst sie manuell exportieren/importieren, um sie zwischen Geräten zu übertragen. Cloud-Synchronisation ist für zukünftige Versionen geplant."
+  },
+  "faqTrouble3": {
+    "message": "Die Kontextmenü-Option fehlt"
+  },
+  "faqTrouble3Answer": {
+    "message": "Wenn 'Zu Holy Private Bookmarks hinzufügen' nicht im Rechtsklick-Menü erscheint:"
+  },
+  "faqTrouble3Step1": {
+    "message": "Lade die Erweiterung neu"
+  },
+  "faqTrouble3Step2": {
+    "message": "Überprüfe die Berechtigungen der Erweiterung"
+  },
+  "faqTrouble3Step3": {
+    "message": "Versuche es auf einer anderen Seite (manche Seiten schränken Kontextmenüs ein)"
+  },
+  "faqStillQuestions": {
+    "message": "Hast du noch Fragen?"
+  },
+  "faqContactUs": {
+    "message": "Kontaktiere uns oder besuche das GitHub-Repository:"
+  },
+  "noResultsTitle": {
+    "message": "Keine Fragen gefunden"
+  },
+  "noResultsText": {
+    "message": "Versuche einen anderen Suchbegriff oder eine andere Kategorie"
+  },
+  "faqButtonTitle": {
+    "message": "Häufig gestellte Fragen (FAQ)"
+  },
+  "contactEmail": {
+    "message": "osv-it-studio@googlegroups.com"
+  },
+  "emailUs": {
+    "message": "E-Mail senden"
+  },
+  "dragSuccess": {
+  "message": "✅ Element erfolgreich verschoben"
+}
 }

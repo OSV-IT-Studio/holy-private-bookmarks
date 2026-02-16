@@ -1,6 +1,11 @@
 const STORAGE_KEY = 'holyPrivateData';
-let masterKey = null;
-let currentPassword = null;
+const CryptoManager = window.CryptoManager || window.SecureCrypto;
+
+
+if (!CryptoManager) {
+  console.error('CRITICAL: CryptoManager not loaded! Check script order in manager.html');
+}
+
 let data = { folders: [] };
 let currentFolderId = 'all';
 let searchQuery = '';
@@ -8,10 +13,12 @@ let editingBookmark = null;
 let editingBookmarkPath = null;
 
 let inactivityTimer;
-const INACTIVITY_TIMEOUT = 10 * 60 * 1000; 
+const INACTIVITY_TIMEOUT = 10 * 60 * 1000;
 let isLocked = false;
 
 const messageCache = new Map();
+
+
 
 function getMessage(key, substitutions = []) {
   if (messageCache.has(key)) {
@@ -42,18 +49,17 @@ function localizePage() {
 function resetInactivityTimer() {
   clearTimeout(inactivityTimer);
   
-  if (!isLocked && masterKey) {
+  if (!isLocked && CryptoManager.isReady()) {
     inactivityTimer = setTimeout(lockManager, INACTIVITY_TIMEOUT);
   }
 }
 
 async function lockManager() {
-  if (isLocked || !masterKey) return;
+  if (isLocked || !CryptoManager.isReady()) return;
   
   isLocked = true;
   
-  masterKey = null;
-  currentPassword = null;
+  CryptoManager.clear();
   data = { folders: [] };
   
   document.getElementById('lock-screen').style.display = 'flex';
@@ -81,14 +87,11 @@ function initActivityTracking() {
   document.addEventListener('mousedown', resetInactivityTimer);
   document.addEventListener('click', resetInactivityTimer);
   document.addEventListener('scroll', resetInactivityTimer);
-  
   document.addEventListener('keydown', resetInactivityTimer);
   document.addEventListener('keypress', resetInactivityTimer);
   document.addEventListener('keyup', resetInactivityTimer);
-  
   document.addEventListener('input', resetInactivityTimer);
   document.addEventListener('change', resetInactivityTimer);
-  
   window.addEventListener('focus', resetInactivityTimer);
   document.addEventListener('focusin', resetInactivityTimer);
   
@@ -134,12 +137,24 @@ async function unlock() {
   }
   
   const salt = new Uint8Array(stored[STORAGE_KEY].salt);
+  const encrypted = stored[STORAGE_KEY].encrypted;
   
   try {
-    masterKey = await deriveKey(password, salt);
-    const decrypted = await decrypt(stored[STORAGE_KEY].encrypted, masterKey);
+
+    const isValid = await CryptoManager.verifyPassword(password, salt, encrypted);
+    
+    if (!isValid) {
+      showError(getMessage('wrongPassword') || 'Wrong password', true);
+      return;
+    }
+    
+
+    const success = await CryptoManager.init(password, salt);
+    if (!success) throw new Error('Init failed');
+    
+
+    const decrypted = await CryptoManager.decrypt(encrypted);
     data = JSON.parse(decrypted);
-    currentPassword = password;
     
     isLocked = false;
     
@@ -156,42 +171,12 @@ async function unlock() {
     renderFolderTree();
     renderBookmarks();
   } catch (e) {
+    console.error('Unlock error:', e);
     showError(getMessage('wrongPassword') || 'Wrong password', true);
+    CryptoManager.clear();
   }
 }
 
-async function deriveKey(password, salt) {
-  const enc = new TextEncoder();
-  const keyMaterial = await crypto.subtle.importKey('raw', enc.encode(password), 'PBKDF2', false, ['deriveKey']);
-  return await crypto.subtle.deriveKey(
-    { name: 'PBKDF2', salt, iterations: 600000, hash: 'SHA-256' },
-    keyMaterial,
-    { name: 'AES-GCM', length: 256 },
-    true,
-    ['encrypt', 'decrypt']
-  );
-}
-
-async function decrypt(obj, key) {
-  const decrypted = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: new Uint8Array(obj.iv) }, key, new Uint8Array(obj.data));
-  return new TextDecoder().decode(decrypted);
-}
-
-async function encrypt(text, key) {
-  const iv = crypto.getRandomValues(new Uint8Array(12));
-  const encrypted = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, new TextEncoder().encode(text));
-  return { iv: Array.from(iv), data: Array.from(new Uint8Array(encrypted)) };
-}
-
-async function saveEncrypted(salt) {
-  const encrypted = await encrypt(JSON.stringify(data), masterKey);
-  await chrome.storage.local.set({ 
-    [STORAGE_KEY]: { 
-      salt: Array.from(salt), 
-      encrypted 
-    } 
-  });
-}
 
 function getItemByPath(path) {
   let current = data.folders;
@@ -634,6 +619,7 @@ async function createBookmarkCard(bookmark, index) {
     <div class="bookmark-actions">
       <button class="action-btn edit" title="${getMessage('edit') || 'Edit'}">✏️</button>
       <button class="action-btn copy" title="${getMessage('copyUrl') || 'Copy URL'}">📋</button>
+      <button class="action-btn private" title="${getMessage('openPrivate') || 'Open in private tab'}">👁️</button>
       <button class="action-btn delete" title="${getMessage('delete') || 'Delete'}">🗑</button>
     </div>
   `;
@@ -641,6 +627,7 @@ async function createBookmarkCard(bookmark, index) {
   const actions = card.querySelector('.bookmark-actions');
   const editBtn = actions.querySelector('.edit');
   const copyBtn = actions.querySelector('.copy');
+  const privateBtn = actions.querySelector('.private');
   const deleteBtn = actions.querySelector('.delete');
   
   card.addEventListener('click', (e) => {
@@ -659,6 +646,11 @@ async function createBookmarkCard(bookmark, index) {
     navigator.clipboard.writeText(bookmark.url).then(() => {
       showNotification(getMessage('urlCopied') || 'URL copied to clipboard');
     });
+  });
+  
+  privateBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openInPrivateTab(bookmark.url);
   });
   
   deleteBtn.addEventListener('click', (e) => {
@@ -762,10 +754,8 @@ function handleModalSave() {
   }
 
   if (editingBookmark && editingBookmarkPath) {
-
     updateBookmark(editingBookmarkPath, title, url, targetPath);
   } else {
-
     addNewBookmarkToPath(title, url, targetPath);
   }
 
@@ -782,7 +772,6 @@ function handleModalSave() {
     renderBookmarks();
   });
 }
-
 
 function addNewBookmarkToPath(title, url, targetPath) {
   let targetArray;
@@ -936,7 +925,7 @@ window.addEventListener('beforeunload', () => {
 });
 
 window.addEventListener('focus', () => {
-  if (masterKey && data) {
+  if (CryptoManager.isReady() && data) {
     setTimeout(() => {
       renderFolderTree();
       renderBookmarks();
@@ -947,7 +936,7 @@ window.addEventListener('focus', () => {
 });
 
 document.addEventListener('visibilitychange', () => {
-  if (!document.hidden && masterKey && data) {
+  if (!document.hidden && CryptoManager.isReady() && data) {
     setTimeout(() => {
       renderFolderTree();
       renderBookmarks();
@@ -960,9 +949,7 @@ document.addEventListener('visibilitychange', () => {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'closeForPopup') {
     window.close();
-    
     chrome.runtime.sendMessage({ action: 'managerClosed' });
-    
     return true;
   }
 });
@@ -1013,6 +1000,21 @@ async function saveChanges() {
   }
 }
 
+async function saveEncrypted(salt) {
+  try {
+    const encrypted = await CryptoManager.encrypt(JSON.stringify(data));
+    await chrome.storage.local.set({ 
+      [STORAGE_KEY]: { 
+        salt: Array.from(salt), 
+        encrypted 
+      } 
+    });
+  } catch (e) {
+    console.error('Save error:', e);
+    showNotification('Error saving data', true);
+  }
+}
+
 function initNewFolderButton() {
   const newFolderBtn = document.getElementById('new-folder-btn');
   if (newFolderBtn) {
@@ -1026,13 +1028,13 @@ async function init() {
   localizePage();
   
   initActivityTracking();
-  
   initLockButton();
   
-   const addBookmarkBtn = document.getElementById('add-bookmark-btn');
+  const addBookmarkBtn = document.getElementById('add-bookmark-btn');
   if (addBookmarkBtn) {
     addBookmarkBtn.addEventListener('click', addNewBookmarkFromManager);
   }
+  
   const stored = await chrome.storage.local.get(STORAGE_KEY);
   
   if (!stored[STORAGE_KEY]) {
@@ -1124,8 +1126,6 @@ async function init() {
     setTimeout(() => {
       window.location.reload();
     }, 500);
-  } else {
-    
   }
 }
 
@@ -1141,11 +1141,9 @@ function addNewBookmarkFromManager() {
   document.getElementById('modal-title-text').textContent = getMessage('addBookmark') || 'Add Bookmark';
   document.getElementById('modal-page-title').textContent = '';
   
-
   document.getElementById('modal-bookmark-title').value = '';
   document.getElementById('modal-bookmark-url').value = 'https://';
   
-
   const select = document.getElementById('folder-select');
   select.innerHTML = '';
   
@@ -1156,7 +1154,6 @@ function addNewBookmarkFromManager() {
   
   buildFolderOptions(data.folders, select, '', 0);
   
-
   if (currentFolderId !== 'all') {
     const folderPath = currentFolderId.split(',');
     if (folderPath.length > 0) {
@@ -1167,119 +1164,135 @@ function addNewBookmarkFromManager() {
   
   resetInactivityTimer();
 }
-async function renameFolder(folderId) {
-    if (folderId === 'all') {
-        showNotification(getMessage('cannotRenameAll') || 'Cannot rename "All Bookmarks" folder', true);
-        return;
-    }
-    
-    const folder = findFolderById(data.folders, folderId);
-    if (!folder) {
-        console.error('Folder not found:', folderId);
-        return;
-    }
-    
-    const currentName = folder.name;
-    const newName = prompt(getMessage('renameFolder') || 'Rename folder:', currentName);
-    
-    if (newName && newName.trim() && newName.trim() !== currentName) {
-        folder.name = newName.trim();
-        
-        await saveChanges();
-        
-        renderFolderTree();
-        
-        if (currentFolderId === folderId) {
-            document.getElementById('current-folder-name').textContent = folder.name;
-        }
-        
-        showNotification(getMessage('folderRenamed') || 'Folder renamed successfully');
-        
-        resetInactivityTimer();
-    }
-}
 
+async function renameFolder(folderId) {
+  if (folderId === 'all') {
+    showNotification(getMessage('cannotRenameAll') || 'Cannot rename "All Bookmarks" folder', true);
+    return;
+  }
+  
+  const folder = findFolderById(data.folders, folderId);
+  if (!folder) {
+    console.error('Folder not found:', folderId);
+    return;
+  }
+  
+  const currentName = folder.name;
+  const newName = prompt(getMessage('renameFolder') || 'Rename folder:', currentName);
+  
+  if (newName && newName.trim() && newName.trim() !== currentName) {
+    folder.name = newName.trim();
+    
+    await saveChanges();
+    
+    renderFolderTree();
+    
+    if (currentFolderId === folderId) {
+      document.getElementById('current-folder-name').textContent = folder.name;
+    }
+    
+    showNotification(getMessage('folderRenamed') || 'Folder renamed successfully');
+    
+    resetInactivityTimer();
+  }
+}
 
 async function deleteFolder(folderId) {
-    if (folderId === 'all') {
-        showNotification(getMessage('cannotDeleteAll') || 'Cannot delete "All Bookmarks" folder', true);
-        return;
+  if (folderId === 'all') {
+    showNotification(getMessage('cannotDeleteAll') || 'Cannot delete "All Bookmarks" folder', true);
+    return;
+  }
+  
+  const folder = findFolderById(data.folders, folderId);
+  if (!folder) {
+    console.error('Folder not found:', folderId);
+    return;
+  }
+  
+  const bookmarkCount = countBookmarksInFolder(folderId);
+  const folderCount = countFoldersInFolder(folder);
+  
+  let message = getMessage('deleteFolderConfirm') || 'Delete folder "{0}"?';
+  message = message.replace('{0}', folder.name);
+  
+  if (bookmarkCount > 0 || folderCount > 0) {
+    message += '\n\n';
+    if (bookmarkCount > 0) {
+      const bookmarksText = getMessage('bookmarksCount') || '{0} bookmarks';
+      message += '• ' + bookmarksText.replace('{0}', bookmarkCount) + '\n';
+    }
+    if (folderCount > 0) {
+      const foldersText = getMessage('foldersCount') || '{0} folders';
+      message += '• ' + foldersText.replace('{0}', folderCount) + '\n';
+    }
+    message += '\n' + (getMessage('deleteFolderWarning') || 'All content will be permanently deleted.');
+  }
+  
+  if (!confirm(message)) {
+    return;
+  }
+  
+  const path = getFolderPathById(folderId);
+  if (path) {
+    removeItemByPath(path);
+    
+    await saveChanges();
+    
+    if (currentFolderId === folderId) {
+      setActiveFolder('all');
+    } else {
+      renderFolderTree();
+      renderBookmarks();
     }
     
-    const folder = findFolderById(data.folders, folderId);
-    if (!folder) {
-        console.error('Folder not found:', folderId);
-        return;
-    }
+    showNotification(getMessage('folderDeleted') || 'Folder deleted successfully');
     
-    const bookmarkCount = countBookmarksInFolder(folderId);
-    const folderCount = countFoldersInFolder(folder);
-    
-    let message = getMessage('deleteFolderConfirm') || 'Delete folder "{0}"?';
-    message = message.replace('{0}', folder.name);
-    
-    if (bookmarkCount > 0 || folderCount > 0) {
-        message += '\n\n';
-        if (bookmarkCount > 0) {
-            const bookmarksText = getMessage('bookmarksCount') || '{0} bookmarks';
-            message += '• ' + bookmarksText.replace('{0}', bookmarkCount) + '\n';
-        }
-        if (folderCount > 0) {
-            const foldersText = getMessage('foldersCount') || '{0} folders';
-            message += '• ' + foldersText.replace('{0}', folderCount) + '\n';
-        }
-        message += '\n' + (getMessage('deleteFolderWarning') || 'All content will be permanently deleted.');
-    }
-    
-    if (!confirm(message)) {
-        return;
-    }
-    
-    const path = getFolderPathById(folderId);
-    if (path) {
-        removeItemByPath(path);
-        
-        await saveChanges();
-        
-        if (currentFolderId === folderId) {
-            setActiveFolder('all');
-        } else {
-            renderFolderTree();
-            renderBookmarks();
-        }
-        
-        showNotification(getMessage('folderDeleted') || 'Folder deleted successfully');
-        
-        resetInactivityTimer();
-    }
+    resetInactivityTimer();
+  }
 }
-
 
 function countFoldersInFolder(folder) {
-    let count = 0;
-    
-    function countRecursive(items) {
-        items.forEach(item => {
-            if (item.type === 'folder') {
-                count++;
-                if (item.children && item.children.length > 0) {
-                    countRecursive(item.children);
-                }
-            }
-        });
-    }
-    
-    if (folder.children) {
-        countRecursive(folder.children);
-    }
-    
-    return count;
+  let count = 0;
+  
+  function countRecursive(items) {
+    items.forEach(item => {
+      if (item.type === 'folder') {
+        count++;
+        if (item.children && item.children.length > 0) {
+          countRecursive(item.children);
+        }
+      }
+    });
+  }
+  
+  if (folder.children) {
+    countRecursive(folder.children);
+  }
+  
+  return count;
 }
-
 
 function getFolderPathById(folderId) {
-    const parts = folderId.split(',').map(Number);
-    return parts;
+  const parts = folderId.split(',').map(Number);
+  return parts;
 }
+
+function openInPrivateTab(url) {
+  try {
+    if (chrome.windows && chrome.windows.create) {
+      chrome.windows.create({
+        url: url,
+        incognito: true,
+        focused: true
+      });
+    } else {
+      window.open(url, '_blank');
+    }
+  } catch (error) {
+    console.error('Error opening private tab:', error);
+    showNotification(getMessage('privateTabError') || 'Cannot open private tab', true);
+  }
+}
+
 
 init();
