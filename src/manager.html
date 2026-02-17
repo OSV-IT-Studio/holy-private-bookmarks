@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holy Private Bookmarks - manager</title>
+  <link rel="stylesheet" href="css/manager.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="lock-screen" class="lock-screen" style="display: flex;">
+    <div class="lock-container">
+      <div class="lock-icon"><img src="icons/icon128.png"></div>
+      <h1 class="lock-title">Holy Private Bookmarks</h1>
+      <p class="lock-description" data-i18n="enterMasterPassword">Enter your master password to access bookmarks</p>
+      <input type="password" id="password-input" data-i18n="masterPassword" class="password-input" placeholder="Master password" autofocus>
+      <button id="unlock-btn" class="unlock-btn" data-i18n="unlock">Unlock</button>
+      <div id="error-message" class="error-message"></div>
+    </div>
+  </div>
+
+  <div class="container" style="display: none;">
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo-icon"><img src="icons/icon48.png"></div>
+        <div class="logo-text">Holy Private Bookmarks</div>
+      </div>
+<div class="actions-container" style="margin-bottom: 24px;">
+
+  <button id="manual-lock-btn" class="modern-btn primary-glass" data-i18n="lockManager">
+    <span class="btn-icon">🔒</span>
+    <span class="btn-text">Lock Manager</span>
+    <div class="btn-glow"></div>
+  </button>
+  
+
+  
+</div>
+
+      <div class="folders-section">
+        <div class="folders-title" data-i18n="folders">Folders</div>
+        <ul class="folder-tree" id="folder-tree">
+          <li class="folder-item all-bookmarks active" data-folder-id="all">
+            <div class="folder-content">
+              <span class="folder-toggle">▶</span>
+              <div class="folder-icon">⭐</div>
+              <div class="folder-name" data-i18n="allBookmarks">All Bookmarks</div>
+            </div>
+            <div class="folder-count" id="all-count">0</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="header">
+        <h1 id="current-folder-name" data-i18n="allBookmarks">All Bookmarks</h1>
+        <p id="bookmarks-count" data-i18n="bookmarksCount">0 bookmarks</p>
+      </div>
+
+           <div class="toolbar">
+        <div class="search-container">
+          <input type="text" id="search-input" class="search-input" placeholder="Search bookmarks..." data-i18n="searchBookmarks">
+          <span class="search-icon">🔍</span>
+        </div>
+        <div class="toolbar-buttons">
+          <button id="new-folder-btn" class="toolbar-btn" data-i18n="newFolder">📁 New Folder</button>
+          <button id="add-bookmark-btn" class="toolbar-btn primary" data-i18n="addBookmark">➕ Add Bookmark</button>
+          
+        </div>
+      </div>
+
+      <div class="bookmarks-container">
+        <div id="bookmarks-grid" class="bookmarks-grid"></div>
+        
+        <div id="empty-state" class="empty-state" style="display: none;">
+          <div class="empty-state-icon">📚</div>
+          <h3 data-i18n="noBookmarksInFolder">No bookmarks in this folder</h3>
+          <p data-i18n="addBookmarksToGetStarted">Add bookmarks to get started</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="selection-hint" id="selection-hint" style="display: none;">
+  <span class="hint-key">Ctrl</span>
+  <span>+ click to select multiple</span>
+  <span class="hint-key">Shift</span>
+  <span>+ click to select range</span>
+</div>
+  <div id="edit-bookmark-modal">
+    <div class="modal-content">
+      <h2 id="modal-title-text" data-i18n="editBookmark">Edit Bookmark</h2>
+      <p><strong data-i18n="page">Page</strong> <span id="modal-page-title"></span></p>
+      
+      <label data-i18n="title">Title:</label>
+      <input type="text" id="modal-bookmark-title" placeholder="Bookmark title">
+      
+      <label data-i18n="url">URL:</label>
+      <input type="text" id="modal-bookmark-url" placeholder="https://example.com">
+      
+      <label data-i18n="folder">Folder:</label>
+      <div class="folder-select-container">
+        <select id="folder-select">
+          <option value="" data-i18n="rootFolder">Root folder</option>
+        </select>
+        <button id="new-folder-in-modal" data-i18n="new">+ New</button>
+      </div>
+      
+      <div class="modal-buttons">
+        <button class="modal-cancel" id="modal-cancel" data-i18n="cancel">Cancel</button>
+        <button class="modal-save" id="modal-save" data-i18n="save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/crypto-wrapper.js"></script>
+  <script src="js/manager.js"></script>
+</body>
+</html>

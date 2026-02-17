@@ -1,0 +1,660 @@
+{
+  "Name": {
+    "message": "Holy Private Bookmarks — Encrypted Local Bookmark Manager"
+  },
+    "extensionName": {
+    "message": "Holy Private Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "Fully private bookmarks with master password, folders and encryption"
+  },
+  "createPassword": {
+    "message": "Create a master password for full bookmark encryption"
+  },
+  "newPassword": {
+    "message": "New password (min. 6 characters)"
+  },
+  "confirmPassword": {
+    "message": "Confirm password"
+  },
+  "createStorage": {
+    "message": "🔐 Create storage"
+  },
+  "enterMasterPassword": {
+    "message": "Enter your master password to unlock"
+  },
+  "masterPassword": {
+    "message": "Master password"
+  },
+  "unlock": {
+    "message": "🔓 Unlock"
+  },
+  "wrongPassword": {
+    "message": "Wrong password"
+  },
+  "passwordsMismatch": {
+    "message": "Passwords do not match or too short"
+  },
+  "bookmarksProtected": {
+    "message": "Your bookmarks are securely protected"
+  },
+  "addCurrentPage": {
+    "message": "➕ Add current page"
+  },
+  "newFolder": {
+    "message": "📁 New folder"
+  },
+  "clearHistory": {
+    "message": "🧹️ Clear history"
+  },
+  "supportProject": {
+    "message": "❤️ Support the project"
+  },
+  "settings": {
+    "message": "⚙️ Settings"
+  },
+  "settingsbtn": {
+    "message": "⚙️"
+  },
+  "changeMasterPassword": {
+    "message": "Change master password"
+  },
+  "currentPassword": {
+    "message": "Current password"
+  },
+  "newPassword2": {
+    "message": "New password"
+  },
+  "confirmNewPassword": {
+    "message": "Confirm new password"
+  },
+  "changePassword": {
+    "message": "🔑 Change password"
+  },
+  "exportImport": {
+    "message": "Export & Import"
+  },
+  "export": {
+    "message": "📤 Export"
+  },
+  "openPrivate": {
+    "message": "Open in private tab"
+  },
+  "import": {
+    "message": "📥 Import"
+  },
+  "importFromChrome": {
+    "message": "Import from Chrome"
+  },
+  "importChromeBookmarks": {
+    "message": "📥 Import all Chrome bookmarks"
+  },
+  "importChromeBookmarksAdvanced": {
+    "message": "🗂️ Select folders to import"
+  },
+  "importChromeConfirm": {
+    "message": "Import all bookmarks from Chrome? Existing bookmarks will be preserved."
+  },
+  "importChromeSuccess": {
+    "message": "Bookmarks imported successfully!"
+  },
+  "importChromeError": {
+    "message": "Failed to import bookmarks"
+  },
+  "selectFoldersToImport": {
+    "message": "Select folders to import"
+  },
+  "selectAll": {
+    "message": "Select all"
+  },
+  "deselectAll": {
+    "message": "Deselect all"
+  },
+  "importSelected": {
+    "message": "Import"
+  },
+  "back": {
+    "message": "← Back"
+  },
+  "addBookmark": {
+    "message": "📌 Add bookmark"
+  },
+  "editBookmark": {
+    "message": "Edit bookmark"
+  },
+  "page": {
+    "message": "Page"
+  },
+  "title": {
+    "message": "Title"
+  },
+  "url": {
+    "message": "URL"
+  },
+  "folder": {
+    "message": "Folder"
+  },
+  "rootFolder": {
+    "message": "Root folder"
+  },
+  "new": {
+    "message": "+ New"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "deleteConfirm": {
+    "message": "Delete this item?"
+  },
+  "folderName": {
+    "message": "Folder name:"
+  },
+  "newName": {
+    "message": "New name:"
+  },
+  "titleRequired": {
+    "message": "Title and URL are required"
+  },
+  "validUrl": {
+    "message": "URL must start with http:// or https://"
+  },
+  "passwordChanged": {
+    "message": "Password changed successfully!"
+  },
+  "importSuccess": {
+    "message": "Backup imported successfully! Please reopen the popup."
+  },
+  "invalidFile": {
+    "message": "Invalid backup file"
+  },
+  "clearHistoryConfirm": {
+    "message": "⚠️ Delete ALL browser history entries for domains present in your Holy Private Bookmarks?\n\nThis will remove visits to ALL pages on these sites (not just bookmarked ones).\nAction cannot be undone."
+  },
+  "noBookmarks": {
+    "message": "No bookmarks found — nothing to clear."
+  },
+  "noDomains": {
+    "message": "No valid domains found in bookmarks."
+  },
+  "newBookmark": {
+    "message": "New bookmark"
+  },
+  "paste": {
+    "message": "Paste"
+  },
+  "ctxnewFolder": {
+    "message": "New folder"
+  },
+  "emptyTreeTitle": {
+    "message": "No bookmarks yet"
+  },
+  "emptyTreeSubtitle": {
+    "message": "Add your first bookmark or folder to get started"
+  },
+  "historyCleared": {
+    "message": "🧹 History cleared!\nRemoved $count$ visit(s) from $domains$ domain(s).",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domains": {
+        "content": "$2"
+      }
+    }
+  },
+  "addToHoly": {
+    "message": "Add to Holy Private Bookmarks"
+  },
+  "cannotAddPage": {
+    "message": "Cannot add this page (no valid URL)"
+  },
+  "supportPageTitle": {
+    "message": "Support project — Holy Private Bookmarks"
+  },
+  "supportTitle": {
+    "message": "❤️ Support the Project"
+  },
+  "supportDescription": {
+    "message": "If the extension is useful to you — any help is appreciated"
+  },
+  "bitcoinTitle": {
+    "message": "Bitcoin (BTC)"
+  },
+  "ethereumTitle": {
+    "message": "Ethereum (ETH)"
+  },
+  "copyAddress": {
+    "message": "Copy address"
+  },
+  "copiedToClipboard": {
+    "message": "Address copied to clipboard!"
+  },
+  "clickToCopy": {
+    "message": "Click to copy"
+  },
+  "importantWarning": {
+    "message": "IMPORTANT WARNING:"
+  },
+  "passwordCannotBeRecovered": {
+    "message": "This password CANNOT be recovered!"
+  },
+  "noPasswordReset": {
+    "message": "There is NO password reset option"
+  },
+  "weDontStorePassword": {
+    "message": "We do NOT store your password anywhere"
+  },
+  "bookmarksEncrypted": {
+    "message": "Your bookmarks are encrypted with this password only"
+  },
+  "savePasswordSecurely": {
+    "message": "Save this password securely!"
+  },
+  "copyUrl": {
+    "message": "Copy URL"
+  },
+  "edit": {
+    "message": "Edit"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "urlCopied": {
+    "message": "URL copied to clipboard"
+  },
+  "about": {
+    "message": "About"
+  },
+  "aboutExtension": {
+    "message": "About Extension"
+  },
+  "openGitHub": {
+    "message": "Open GitHub"
+  },
+  "close": {
+    "message": "Close"
+  },
+  "features": {
+    "message": "Features"
+  },
+    "troubleshooting": {
+    "message": "Troubleshooting"
+  },
+  "encryption": {
+    "message": "Encryption"
+  },
+  "encryptionDesc": {
+    "message": "AES-256 encryption"
+  },
+  "localStorage": {
+    "message": "Local Storage"
+  },
+  "localStorageDesc": {
+    "message": "Data stays on your device"
+  },
+  "privacy": {
+    "message": "Privacy"
+  },
+  "privacyDesc": {
+    "message": "No tracking or analytics"
+  },
+  "openSource": {
+    "message": "GPLv3"
+  },
+  "viewOnGitHub": {
+    "message": "View on GitHub"
+  },
+  "githubRepo": {
+    "message": "GitHub Repository"
+  },
+  "githubRepoDesc": {
+    "message": "View source code, report issues, contribute"
+  },
+  "version": {
+    "message": "Version"
+  },
+  "openmanager": {
+    "message": "Open manager"
+  },
+  "managerDesc": {
+    "message": "Open fullscreen bookmark manager"
+  },
+  "folders": {
+    "message": "Folders"
+  },
+    "bookmarks": {
+    "message": "bookmarks"
+  },
+  "allBookmarks": {
+    "message": "All Bookmarks"
+  },
+  "bookmarksCount": {
+    "message": "bookmarks"
+  },
+  "searchBookmarks": {
+    "message": "Search bookmarks..."
+  },
+  "noBookmarksInFolder": {
+    "message": "No bookmarks in this folder"
+  },
+  "addBookmarksToGetStarted": {
+    "message": "Add bookmarks to get started"
+  },
+  "bookmarkUpdated": {
+    "message": "Bookmark updated"
+  },
+  "bookmarkDeleted": {
+    "message": "Bookmark deleted"
+  },
+  "renameFolder": {
+    "message": "Rename folder"
+  },
+  "folderCreated": {
+    "message": "Folder created successfully"
+  },
+  "managerLocked": {
+    "message": "Manager locked"
+  },
+  "lockManager": {
+    "message": "🔓 Lock Manager"
+  },
+  "manager": {
+    "message": "🗂 Open full manager"
+  },
+  "rename": {
+    "message": "Rename"
+  },
+  "renameFolder": {
+    "message": "Rename folder"
+  },
+  "deleteFolder": {
+    "message": "Delete folder"
+  },
+  "deleteFolderConfirm": {
+    "message": "Delete folder \"{0}\"?"
+  },
+  "deleteFolderWarning": {
+    "message": "All content will be permanently deleted."
+  },
+  "folderRenamed": {
+    "message": "Folder renamed successfully"
+  },
+  "folderDeleted": {
+    "message": "Folder deleted successfully"
+  },
+  "cannotRenameAll": {
+    "message": "Cannot rename \"All Bookmarks\" folder"
+  },
+  "cannotDeleteAll": {
+    "message": "Cannot delete \"All Bookmarks\" folder"
+  },
+  "foldersCount": {
+    "message": "{0} folders"
+  },
+  "bookmarkAdded": {
+    "message": "Bookmark added"
+},
+  "pendingBookmarkNotification": {
+    "message": "Bookmark pending!"
+  },
+  "pendingBookmarkInstruction": {
+    "message": "A bookmark is waiting to be added. Please unlock to continue."
+  },
+  "faqTitle": {
+    "message": "FAQ — Holy Private Bookmarks"
+  },
+  "faqSubtitle": {
+    "message": "Find answers to common questions about Holy Private Bookmarks"
+  },
+  "searchFAQ": {
+    "message": "Search questions..."
+  },
+  "faqSecurity1": {
+    "message": "How secure is my data?"
+  },
+  "faqSecurity1Answer": {
+    "message": "All your bookmarks are encrypted locally using AES-256-GCM encryption with a master password. Your data never leaves your computer. Even we cannot access your bookmarks without your password."
+  },
+  "faqSecurity2": {
+    "message": "What happens if I forget my password?"
+  },
+  "faqSecurity2Answer": {
+    "message": "Warning: Your password cannot be recovered. We don't store your password or any recovery keys. If you forget your password, you will lose access to all your encrypted bookmarks permanently. Please save your password in a secure password manager."
+  },
+  "faqSecurity3": {
+    "message": "Why do I need to enter my password every time?"
+  },
+  "faqSecurity3Warning": {
+    "message": "⚠️ This is by design and cannot be changed"
+  },
+  "faqSecurity3Answer": {
+    "message": "Holy Private Bookmarks is built on a zero-trust security model. Requiring password entry every time is not a limitation—it's the core security feature."
+  },
+  "faqSecurity3WhyTitle": {
+    "message": "Why this is non-negotiable:"
+  },
+  "faqSecurity3Reason1": {
+    "message": "True zero-knowledge: We never store your password, session tokens, or decryption keys"
+  },
+  "faqSecurity3Reason2": {
+    "message": "Defense in depth: Even with physical access to your computer, your bookmarks remain protected"
+  },
+  "faqSecurity3Reason3": {
+    "message": "No single point of failure: There are no backdoors, recovery keys, or password reset options"
+  },
+  "faqSecurity3Reason4": {
+    "message": "Browser security limitations: Chrome extensions cannot securely persist authentication between sessions"
+  },
+  "faqSecurity3BenefitsTitle": {
+    "message": "Security benefits:"
+  },
+  "faqSecurity3Benefit1": {
+    "message": "Protection against theft: If your device is stolen, your bookmarks remain encrypted"
+  },
+  "faqSecurity3Benefit2": {
+    "message": "No forensic traces: Nothing is stored in browser storage that could be recovered"
+  },
+  "faqSecurity3Benefit3": {
+    "message": "Malware resistance: Even keyloggers only capture one-time password entry"
+  },
+  "faqSecurity3TipTitle": {
+    "message": "Pro tip:"
+  },
+  "faqSecurity3TipText": {
+    "message": "Use a password manager like Bitwarden or KeePass. With auto-fill, entering your password takes just 2 seconds while maintaining maximum security."
+  },
+  "faqSecurity3Conclusion": {
+    "message": "Remember: Every time you enter your password, you're verifying that YOU are the only person who can access your private bookmarks. This is the price of true privacy."
+  },
+  "faqUsage1": {
+    "message": "How do I add bookmarks?"
+  },
+  "faqUsage1Answer": {
+    "message": "You can add bookmarks in several ways:"
+  },
+  "faqUsage1Method1": {
+    "message": "Click the '+' button in the popup to add the current page"
+  },
+  "faqUsage1Method2": {
+    "message": "Right-click on any page or link and select 'Add to Holy Private Bookmarks'"
+  },
+  "faqUsage1Method3": {
+    "message": "Use the manager to add bookmarks manually"
+  },
+  "faqUsage1Method4": {
+    "message": "Import from Chrome bookmarks via Settings"
+  },
+  "faqUsage2": {
+    "message": "How do I organize bookmarks into folders?"
+  },
+  "faqUsage2Answer": {
+    "message": "You can create folders and subfolders to organize your bookmarks:"
+  },
+  "faqUsage2Step1": {
+    "message": "Open the extension popup"
+  },
+  "faqUsage2Step2": {
+    "message": "Click 'New Folder' or right-click in the tree view"
+  },
+  "faqUsage2Step3": {
+    "message": "Drag and drop bookmarks into folders"
+  },
+  "faqUsage2Step4": {
+    "message": "Use the manager for advanced organization"
+  },
+  "faqFeatures1": {
+    "message": "What's the difference between popup and manager?"
+  },
+  "faqFeatures1Answer": {
+    "message": "Popup: Quick access for adding/viewing bookmarks. Automatically locks after 10 minutes.\n\nManager: Full-featured interface with search, grid view, advanced editing, and folder management. Also auto-locks for security."
+  },
+  "faqFeatures2": {
+    "message": "Can I backup my bookmarks?"
+  },
+  "faqFeatures2Answer": {
+    "message": "Yes! Go to Settings → Export & Import → Export Bookmarks. This creates an encrypted backup file. You can restore it anytime using the Import option."
+  },
+  "faqFeatures3": {
+    "message": "What does 'Clear History' do?"
+  },
+  "faqFeatures3Answer": {
+    "message": "This feature removes your Chrome browsing history for domains that are in your bookmarks. It helps maintain privacy by automatically clearing history traces of bookmarked sites."
+  },
+  "faqUsage3": {
+    "message": "How to search my bookmarks?"
+  },
+  "faqUsage3Answer": {
+    "message": "Use the search bar in the manager (full interface) to search through all your bookmarks by title or URL. The popup shows a filtered tree view of all bookmarks."
+  },
+  
+  "faqTrouble2": {
+    "message": "Will my bookmarks sync between devices?"
+  },
+  "faqTrouble2Answer": {
+    "message": "Currently, bookmarks are stored locally on your device. You can manually export/import to transfer between devices. Cloud sync is planned for future versions."
+  },
+  "faqTrouble3": {
+    "message": "Context menu option is missing"
+  },
+  "faqTrouble3Answer": {
+    "message": "If 'Add to Holy Private Bookmarks' doesn't appear in right-click menu:"
+  },
+  "faqTrouble3Step1": {
+    "message": "Reload the extension"
+  },
+  "faqTrouble3Step2": {
+    "message": "Check extension permissions"
+  },
+  "faqTrouble3Step3": {
+    "message": "Try on a different page (some pages restrict context menus)"
+  },
+  "faqStillQuestions": {
+    "message": "Still have questions?"
+  },
+  "faqContactUs": {
+    "message": "Contact us or check the GitHub repository:"
+  },
+  "noResultsTitle": {
+    "message": "No questions found"
+  },
+  "noResultsText": {
+    "message": "Try a different search term or category"
+  },
+  "openGitHub": {
+    "message": "GitHub"
+  },
+  "supportProject": {
+    "message": "Support Project"
+  },  
+  "faqButtonTitle": {
+    "message": "Frequently Asked Questions"
+  },
+    "contactEmail": {
+    "message": "osv-it-studio@googlegroups.com"
+  },
+  "emailUs": {
+    "message": "Email us"
+  },
+    "dragSuccess": {
+    "message": "✅ Item moved successfully"
+  },
+  "invalidDestinationFolder": {
+    "message": "Invalid destination folder"
+  },
+  "bookmarksMoved": {
+    "message": "{0} bookmark{1} moved"
+  },
+  "moveFailed": {
+    "message": "Failed to move bookmarks"
+},
+  "noBookmarksSelected": {
+    "message": "No bookmarks selected"
+  },
+  "moveBookmarksTitle": {
+    "message": "Move {0} bookmark{1}"
+  },
+  "selectDestinationFolder": {
+    "message": "Select destination folder:"
+  },
+  "rootFolder": {
+    "message": "Root folder"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "move": {
+    "message": "Move"
+  },
+  "selected": {
+    "message": "selected"
+  },
+  "moveSelectedTitle": {
+    "message": "Move selected"
+  },
+  "move": {
+    "message": "Move"
+  },
+  "deleteSelectedTitle": {
+    "message": "Delete selected"
+  },
+  "cancelSelectionTitle": {
+    "message": "Cancel selection"
+  },
+    "deleteSelectedConfirm": {
+    "message": "Delete selected bookmark?"
+  },
+"deleteSelectedConfirm": {
+  "message": "Delete {count} selected bookmark$plural$?",
+  "placeholders": {
+    "count": {
+      "content": "$1"
+    },
+    "plural": {
+      "content": "$2"
+    }
+  }
+},
+"bookmarksDeleted": {
+  "message": "{count} bookmarks deleted",
+  "placeholders": {
+    "count": {
+      "content": "$1"
+    }
+  }
+},
+    "emptyFolder": {
+        "message": "Folder is empty",
+        "description": "Message shown when a folder has no bookmarks"
+},
+"noSearchResults": {
+  "message": "No bookmarks found",
+  "description": "Message when search returns no results"
+},
+"noSearchResultsDesc": {
+  "message": "Try a different search term",
+  "description": "Description for empty search results"
+}
+}
