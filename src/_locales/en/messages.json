@@ -171,7 +171,7 @@
     "message": "Invalid backup file"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ Delete ALL browser history entries for domains present in your Holy Private Bookmarks?\n\nThis will remove visits to ALL pages on these sites (not just bookmarked ones).\nAction cannot be undone."
+    "message": "⚠️ Delete ALL browser history entries for domains present in your Holy Private Bookmarks?"
   },
   "noBookmarks": {
     "message": "No bookmarks found — nothing to clear."
@@ -653,8 +653,35 @@
   "message": "No bookmarks found",
   "description": "Message when search returns no results"
 },
+
+
 "noSearchResultsDesc": {
   "message": "Try a different search term",
   "description": "Description for empty search results"
+},
+"theme": {
+  "message": "Theme"
+},
+  "themeDark": {
+    "message": "Dark",
+    "description": "Dark theme name"
+  },
+  "themeLight": {
+    "message": "Light",
+    "description": "Light theme name"
+  },
+  "themeSystem": {
+    "message": "System",
+    "description": "System theme name"
+  },
+    "themeToggle": {
+    "message": "Switch theme",
+    "description": "Tooltip for theme toggle button"
+  },
+"showFavicons": {
+    "message": "Show website favicons"
+},
+"showFaviconsDesc": {
+    "message": "May leak browsing history to Google's servers"
 }
 }

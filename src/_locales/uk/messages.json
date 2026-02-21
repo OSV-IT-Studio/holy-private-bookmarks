@@ -171,7 +171,7 @@
     "message": "Недійсний файл резервної копії"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ Видалити ВСІ записи історії браузера для доменів, присутніх у ваших Holy Private Bookmarks?\n\nЦе видалить відвідування ВСІХ сторінок на цих сайтах (не лише тих, що в закладках).\nДію неможливо скасувати."
+    "message": "⚠️ Видалити ВСІ записи історії браузера для доменів, присутніх у ваших Holy Private Bookmarks?"
   },
   "noBookmarks": {
     "message": "Закладок не знайдено — нічого очищати."
@@ -646,5 +646,30 @@
   "noSearchResultsDesc": {
     "message": "Спробуйте інший пошуковий запит",
     "description": "Description for empty search results"
-  }
+  },
+ "theme": {
+  "message": "Тема"
+},
+"themeDark": {
+  "message": "Темна",
+  "description": "Dark theme name"
+},
+"themeLight": {
+  "message": "Світла",
+  "description": "Light theme name"
+},
+"themeSystem": {
+  "message": "Системна",
+  "description": "System theme name"
+},
+"themeToggle": {
+  "message": "Перемкнути тему",
+  "description": "Tooltip for theme toggle button"
+},
+"showFavicons": {
+    "message": "Показувати іконки сайтів (favicons)"
+},
+"showFaviconsDesc": {
+    "message": "Може передавати історію переглядів на сервери Google"
+}
 }

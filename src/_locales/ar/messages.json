@@ -171,7 +171,7 @@
     "message": "ملف نسخ احتياطي غير صالح"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ حذف جميع إدخالات سجل المتصفح للنطاقات الموجودة في Holy Private Bookmarks الخاصة بك؟\n\nسيؤدي هذا إلى إزالة الزيارات لجميع الصفحات على هذه المواقع (وليس فقط تلك الموجودة في الإشارات المرجعية).\nلا يمكن التراجع عن هذا الإجراء."
+    "message": "⚠️ حذف جميع إدخالات سجل المتصفح للنطاقات الموجودة في Holy Private Bookmarks الخاصة بك؟"
   },
   "noBookmarks": {
     "message": "لم يتم العثور على إشارات مرجعية - لا شيء لمسحه."
@@ -646,5 +646,30 @@
   "noSearchResultsDesc": {
     "message": "جرب مصطلح بحث مختلف",
     "description": "Description for empty search results"
-  }
+  },
+  "theme": {
+  "message": "المظهر"
+},
+"themeDark": {
+  "message": "داكن",
+  "description": "Dark theme name"
+},
+"themeLight": {
+  "message": "فاتح",
+  "description": "Light theme name"
+},
+"themeSystem": {
+  "message": "النظام",
+  "description": "System theme name"
+},
+"themeToggle": {
+  "message": "تبديل المظهر",
+  "description": "Tooltip for theme toggle button"
+},
+"showFavicons": {
+    "message": "عرض أيقونات المواقع"
+},
+"showFaviconsDesc": {
+    "message": "قد يؤدي إلى تسرب سجل التصفح إلى خوادم Google"
+}
 }

@@ -171,7 +171,7 @@
     "message": "Ungültige Backup-Datei"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ ALLE Browser-Verlaufseinträge für Domains löschen, die in deinen Holy Private Bookmarks vorkommen?\n\nDies entfernt Besuche auf ALLEN Seiten dieser Websites (nicht nur die gespeicherten Lesezeichen).\nDiese Aktion kann nicht rückgängig gemacht werden."
+    "message": "⚠️ ALLE Browser-Verlaufseinträge für Domains löschen, die in deinen Holy Private Bookmarks vorkommen?"
   },
   "noBookmarks": {
     "message": "Keine Lesezeichen gefunden — nichts zu löschen."
@@ -649,5 +649,30 @@
   "noSearchResultsDesc": {
     "message": "Versuche einen anderen Suchbegriff",
     "description": "Description for empty search results"
-  }
+  },
+ "theme": {
+  "message": "Design"
+},
+"themeDark": {
+  "message": "Dunkel",
+  "description": "Dark theme name"
+},
+"themeLight": {
+  "message": "Hell",
+  "description": "Light theme name"
+},
+"themeSystem": {
+  "message": "System",
+  "description": "System theme name"
+},
+"themeToggle": {
+  "message": "Design wechseln",
+  "description": "Tooltip for theme toggle button"
+},
+"showFavicons": {
+    "message": "Webseiten-Favicons anzeigen"
+},
+"showFaviconsDesc": {
+    "message": "Kann den Browserverlauf an Google-Server weitergeben"
+}
 }

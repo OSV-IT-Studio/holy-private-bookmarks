@@ -171,7 +171,7 @@
     "message": "Неверный файл резервной копии"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ Удалить ВСЕ записи истории браузера для доменов, присутствующих в ваших Holy Private Bookmarks?\n\nЭто удалит посещения ВСЕХ страниц на этих сайтах (не только сохраненных в закладки).\nДействие нельзя отменить."
+    "message": "⚠️ Удалить ВСЕ записи истории браузера для доменов, присутствующих в ваших Holy Private Bookmarks?"
   },
   "noBookmarks": {
     "message": "Закладки не найдены — нечего очищать."
@@ -628,5 +628,30 @@
   },
   "noSearchResultsDesc": {
     "message": "Попробуйте другой поисковый запрос"
-  }
+  },
+  "theme": {
+  "message": "Тема"
+},
+"themeDark": {
+  "message": "Тёмная",
+  "description": "Dark theme name"
+},
+"themeLight": {
+  "message": "Светлая",
+  "description": "Light theme name"
+},
+"themeSystem": {
+  "message": "Системная",
+  "description": "System theme name"
+},
+"themeToggle": {
+  "message": "Переключить тему",
+  "description": "Tooltip for theme toggle button"
+},
+"showFavicons": {
+    "message": "Показывать иконки сайтов (favicons)"
+},
+"showFaviconsDesc": {
+    "message": "Может передавать историю просмотров на серверы Google"
+}
 }

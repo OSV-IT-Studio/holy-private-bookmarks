@@ -171,7 +171,7 @@
     "message": "File di backup non valido"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ Eliminare TUTTE le voci della cronologia del browser per i domini presenti nei tuoi Holy Private Bookmarks?\n\nQuesto rimuoverà le visite a TUTTE le pagine su questi siti (non solo quelle nei segnalibri).\nAzione irreversibile."
+    "message": "⚠️ Eliminare TUTTE le voci della cronologia del browser per i domini presenti nei tuoi Holy Private Bookmarks?"
   },
   "noBookmarks": {
     "message": "Nessun segnalibro trovato — nulla da cancellare."
@@ -646,5 +646,30 @@
   "noSearchResultsDesc": {
     "message": "Prova un termine di ricerca diverso",
     "description": "Description for empty search results"
-  }
+  },
+  "theme": {
+  "message": "Tema"
+},
+"themeDark": {
+  "message": "Scuro",
+  "description": "Dark theme name"
+},
+"themeLight": {
+  "message": "Chiaro",
+  "description": "Light theme name"
+},
+"themeSystem": {
+  "message": "Sistema",
+  "description": "System theme name"
+},
+"themeToggle": {
+  "message": "Cambia tema",
+  "description": "Tooltip for theme toggle button"
+},
+"showFavicons": {
+    "message": "Mostra le favicon dei siti web"
+},
+"showFaviconsDesc": {
+    "message": "Potrebbe divulgare la cronologia di navigazione ai server di Google"
+}
 }

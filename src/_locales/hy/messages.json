@@ -171,7 +171,7 @@
     "message": "Անվավեր պահուստային ֆայլ"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ Ջնջել ձեր դիտարկիչի պատմության ԲՈԼՈՐ գրառումները այն դոմենների համար, որոնք առկա են ձեր Holy Private Bookmarks-ում:\n\nՍա կհեռացնի այցելությունները այս կայքերի ԲՈԼՈՐ էջերին (ոչ միայն էջանշվածներին):\nԳործողությունը հետ շրջել հնարավոր չէ:"
+    "message": "⚠️ Ջնջել ձեր դիտարկիչի պատմության ԲՈԼՈՐ գրառումները այն դոմենների համար, որոնք առկա են ձեր Holy Private Bookmarks-ում:"
   },
   "noBookmarks": {
     "message": "Էջանիշեր չեն գտնվել — մաքրելու բան չկա:"
@@ -643,5 +643,39 @@
   "noSearchResultsDesc": {
     "message": "Փորձեք որոնման այլ բառ",
     "description": "Description for empty search results"
-  }
+  },
+  "themeDark": {
+    "message": "Մուգ",
+    "description": "Dark theme name"
+  },
+  "themeDarkDesc": {
+    "message": "Գիշերային օգտագործման համար",
+    "description": "Dark theme description"
+  },
+  "themeLight": {
+    "message": "Բաց",
+    "description": "Light theme name"
+  },
+  "themeLightDesc": {
+    "message": "Ցերեկային օգտագործման համար",
+    "description": "Light theme description"
+  },
+  "themeSystem": {
+    "message": "Համակարգային",
+    "description": "System theme name"
+  },
+  "themeSystemDesc": {
+    "message": "Հետևում է համակարգի կարգավորումներին",
+    "description": "System theme description"
+  },
+  "themeToggle": {
+    "message": "Փոխել թեման",
+    "description": "Tooltip for theme toggle button"
+  },
+  "showFavicons": {
+    "message": "Ցուցադրել կայքերի favicon-ները"
+},
+"showFaviconsDesc": {
+    "message": "Կարող է զննարկման պատմությունը փոխանցել Google-ի սերվերներին"
+}
 }

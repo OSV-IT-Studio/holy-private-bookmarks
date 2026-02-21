@@ -94,7 +94,7 @@
                     </button>
                     <div style="flex: 1;"></div>
 
-                    <button id="clear-history" class="menu-btn right-btn actions">
+                    <button id="clear-history" class="menu-btn right-btn">
                        <div class="button-text">
                             <div class="icon" id="clear-historydiv">🧹️</div>
                         </div>
@@ -122,6 +122,24 @@
             <button id="back" data-i18n="back">← Back</button>
             <h1 data-i18n="settings" style="padding-bottom: 30px;">⚙️ Settings</h1>
 
+<div class="settings-section">
+    <h3 class="section-title" data-i18n="theme">Theme</h3>
+    <div id="theme-selector-container"></div>
+
+</div>
+<div class="settings-section">
+    <h3 class="section-title" data-i18n="privacy">Privacy</h3>
+    <div class="settings-option" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0;">
+        <div>
+            <div class="option-title" data-i18n="showFavicons">Show website favicons</div>
+            <div class="option-description" data-i18n="showFaviconsDesc">May leak browsing history to Google's servers</div>
+        </div>
+        <label class="switch">
+            <input type="checkbox" id="favicon-toggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</div>
             <div class="settings-section">
                 <h3 class="section-title" data-i18n="changeMasterPassword">Change Master Password</h3>
                 <input type="password" id="old-pass" data-i18n="currentPassword" placeholder="Current password">
@@ -237,7 +255,7 @@
             <div style="background: rgba(255, 255, 255, 0.05); padding: 16px; border-radius: 12px; margin-bottom: 20px;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);" data-i18n="version">Version:</span>
-                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4</span>
+                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4.03</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);">Developer:</span>
@@ -293,8 +311,12 @@
         </div>
     </div>
 
+
 	<script src="js/crypto-wrapper.js"></script>
+	<script src="js/theme.js"></script>
+	<script src="js/shared.js"></script>
     <script src="js/popup.js"></script>
+	
 </body>
 
 </html>

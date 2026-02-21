@@ -171,7 +171,7 @@
     "message": "Fichier de sauvegarde invalide"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ Supprimer TOUTES les entrées de l'historique de navigation pour les domaines présents dans vos Holy Private Bookmarks ?\n\nCela supprimera les visites sur TOUTES les pages de ces sites (pas seulement celles mises en marque-page).\nAction irréversible."
+    "message": "⚠️ Supprimer TOUTES les entrées de l'historique de navigation pour les domaines présents dans vos Holy Private Bookmarks ?"
   },
   "noBookmarks": {
     "message": "Aucun marque-page trouvé — rien à effacer."
@@ -652,5 +652,30 @@
   "noSearchResultsDesc": {
     "message": "Essayez un terme de recherche différent",
     "description": "Description for empty search results"
-  }
+  },
+ "theme": {
+  "message": "Thème"
+},
+"themeDark": {
+  "message": "Sombre",
+  "description": "Dark theme name"
+},
+"themeLight": {
+  "message": "Clair",
+  "description": "Light theme name"
+},
+"themeSystem": {
+  "message": "Système",
+  "description": "System theme name"
+},
+"themeToggle": {
+  "message": "Changer de thème",
+  "description": "Tooltip for theme toggle button"
+},
+"showFavicons": {
+    "message": "Afficher les favicons des sites web"
+},
+"showFaviconsDesc": {
+    "message": "Peut divulguer l'historique de navigation aux serveurs de Google"
+}
 }

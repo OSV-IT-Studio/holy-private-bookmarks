@@ -17,60 +17,71 @@
  *
  * Source code: https://github.com/OSV-IT-Studio/holy-private-bookmarks
  */
-const STORAGE_KEY = 'holyPrivateData';
-const CryptoManager = window.SecureCrypto;
 
+const {
+    STORAGE_KEY,
+    INACTIVITY_TIMEOUT,
+    VIRTUAL_SCROLL_CONFIG,
+    
+    virtualScrollCache,
+    
+    getCachedElement,
+    clearElementCache,
+    
+    getMessage,
+    
+    normalizePath,
+    getItemByPath,
+    getParentByPath,
+    removeItemByPath,
+    findItemPath,
+    findFolderById,
+    isAncestor,
+    arraysEqual,
+    
+    countItemsInFolder,
+    
+    getFaviconUrl,
+    getDomainFromUrl,
+    loadFaviconAsync,
+    
+    buildFolderOptions,
+    
+    saveEncrypted,
+    
+    showNotification,
+    escapeHtml,
+    
+    openInPrivateTab,
+    
+    convertChromeBookmarks,
+    collectAllBookmarkUrls,
+    
+    debounce,
+    throttle,
+    
+    showLoadingIndicator,
+    hideLoadingIndicator,
+    ensureLoadingStyles
+} = window.HolyShared || {};
+
+if (!window.HolyShared) {
+    throw new Error('HolyShared is required but not loaded');
+}
+
+if (!window.SecureCrypto) {
+    throw new Error('SecureCrypto is required but not loaded');
+}
+
+const CryptoManager = window.SecureCrypto;
+const FAVICON_ENABLED_KEY = 'holyFaviconEnabled';
 let data = { folders: [] };
 let autoLockTimer;
 let pendingBookmark = null;
 let editingBookmarkPath = null;
 let contextMenu = null;
 let clipboardItem = null;
-
-const VIRTUAL_SCROLL_CONFIG = {
-    initialLoadCount: 50,
-    loadMoreCount: 30,
-    maxCacheSize: 200,
-    scrollThreshold: 200,
-    batchRenderDelay: 50
-};
-
-const virtualScrollCache = {
-    folders: new Map(),
-    visibleItems: new Set(),
-    scrollPositions: new Map(),
-    renderQueue: [],
-    isRendering: false,
-    totalItemsCount: 0,
-    
-    clear() {
-        this.folders.clear();
-        this.visibleItems.clear();
-        this.scrollPositions.clear();
-        this.renderQueue = [];
-        this.totalItemsCount = 0;
-    },
-    
-    getFolderContainer(path) {
-        const pathKey = path.join(',');
-        if (!this.folders.has(pathKey)) {
-            this.folders.set(pathKey, {
-                items: [],
-                visibleStart: 0,
-                visibleCount: VIRTUAL_SCROLL_CONFIG.initialLoadCount,
-                isLoading: false,
-                hasMore: true,
-                scrollTop: 0,
-                container: null,
-                totalItems: 0,
-                isOpen: false
-            });
-        }
-        return this.folders.get(pathKey);
-    }
-};
-
-const messageCache = new Map();
+let isInitialized = false;
 
 let dragState = {
     draggedItem: null,
@@ -97,41 +108,6 @@ const DRAG_CONFIG = {
 
 let eventHandlersInitialized = false;
 
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-function throttle(func, limit) {
-    let inThrottle;
-    return function(...args) {
-        if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
-}
-
-function getMessage(key, substitutions = []) {
-    if (messageCache.has(key)) {
-        return messageCache.get(key);
-    }
-    
-    const message = chrome.i18n.getMessage(key, substitutions);
-    if (message) {
-        messageCache.set(key, message);
-    }
-    return message || key;
-}
-
 function getEmptyTreeMessages() {
     return {
         title: getMessage('emptyTreeTitle') || 'No bookmarks yet',
@@ -139,29 +115,6 @@ function getEmptyTreeMessages() {
         addBookmark: getMessage('addBookmark') || 'Add Bookmark',
         newFolder: getMessage('newFolder') || 'New Folder'
     };
-}
-
-function normalizePath(path) {
-    if (!Array.isArray(path)) return [];
-    return path.filter(i => Number.isInteger(i) && i >= 0);
-}
-
-function getOrCreateElement(selector) {
-    const cache = window.elementCache || (window.elementCache = {});
-    if (!cache[selector]) {
-        cache[selector] = document.querySelector(selector);
-    }
-    return cache[selector];
-}
-
-function clearElementCache() {
-    window.elementCache = {};
-}
-
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
 }
 
 function localizePage() {
@@ -219,7 +172,7 @@ function localizePage() {
     };
     
     for (const selector in elements) {
-        const element = getOrCreateElement(selector);
+        const element = getCachedElement(selector);
         const key = elements[selector];
         if (element) {
             const text = getMessage(key);
@@ -240,7 +193,7 @@ function localizePage() {
         }
     }
     
-    const modalTitle = getOrCreateElement('#add-bookmark-modal h2');
+    const modalTitle = getCachedElement('#add-bookmark-modal h2');
     if (modalTitle && modalTitle.id !== 'modal-title-text') {
         modalTitle.id = 'modal-title-text';
     }
@@ -252,14 +205,14 @@ function localizePage() {
         modalLabels[2].setAttribute('data-i18n', 'folder');
     }
     
-    const pageLabel = getOrCreateElement('#add-bookmark-modal p strong');
+    const pageLabel = getCachedElement('#add-bookmark-modal p strong');
     if (pageLabel) {
         pageLabel.setAttribute('data-i18n', 'page');
     }
     
     setTimeout(() => {
-        const addBookmarkBtn = getOrCreateElement('#empty-add-bookmark');
-        const addFolderBtn = getOrCreateElement('#empty-add-folder');
+        const addBookmarkBtn = getCachedElement('#empty-add-bookmark');
+        const addFolderBtn = getCachedElement('#empty-add-folder');
         
         if (addBookmarkBtn) {
             const text = getMessage('addBookmark') || 'Add Bookmark';
@@ -271,24 +224,6 @@ function localizePage() {
             addFolderBtn.textContent = '📁 ' + text;
         }
     }, 100);
-}
-
-async function getFaviconUrl(url) {
-    try {
-        const urlObj = new URL(url);
-        return `https://www.google.com/s2/favicons?domain=${urlObj.hostname}&sz=32`;
-    } catch {
-        return null;
-    }
-}
-
-function getDomainFromUrl(url) {
-    try {
-        const urlObj = new URL(url);
-        return urlObj.hostname.replace('www.', '');
-    } catch {
-        return '';
-    }
 }
 
 function initContextMenu() {
@@ -445,6 +380,9 @@ function initQuickActions() {
 }
 
 function expandAllFolders() {
+    if (!virtualScrollCache || typeof virtualScrollCache.clear !== 'function') {
+        return;
+    }
     virtualScrollCache.clear();
     document.querySelectorAll('.subitems.collapsed').forEach(sub => {
         sub.classList.remove('collapsed');
@@ -457,6 +395,9 @@ function expandAllFolders() {
 }
 
 function collapseAllFolders() {
+    if (!virtualScrollCache || typeof virtualScrollCache.clear !== 'function') {
+        return;
+    }
     virtualScrollCache.clear();
     document.querySelectorAll('.subitems:not(.collapsed)').forEach(sub => {
         sub.classList.add('collapsed');
@@ -478,7 +419,7 @@ function copyBookmarkUrl(url) {
 
 function editBookmark(pathStr) {
     const path = pathStr.split(',').map(Number);
-    const bookmark = getItemByPath(path);
+    const bookmark = getItemByPath(data, path);
     if (bookmark) {
         openAddBookmarkModal(bookmark.title, bookmark.url, path);
     }
@@ -486,16 +427,30 @@ function editBookmark(pathStr) {
 
 function deleteBookmark(pathStr) {
     const path = pathStr.split(',').map(Number);
-    removeItemByPath(path);
+    removeItemByPath(data, path);
     saveAndRefresh();
 }
 
 async function init() {
+    if (isInitialized) return;
+    
     localizePage();
+    
+    if (window.ThemeManager) {
+        await window.ThemeManager.init();
+        
+        const themeContainer = document.getElementById('theme-selector-container');
+        if (themeContainer) {
+            window.ThemeManager.createThemeSelector(themeContainer);
+        }
+    }
+    
+    ensureLoadingStyles();
     initContextMenu();
     initQuickActions();
-    
-    chrome.runtime.sendMessage({ action: 'reloadmanager' });
+    initFaviconToggle();
+	
+    chrome.runtime.sendMessage({ action: 'reloadmanager' }).catch(() => {});
     
     const [stored, session] = await Promise.all([
         chrome.storage.local.get(STORAGE_KEY),
@@ -542,28 +497,28 @@ async function init() {
         '#lock': lock,
         '#add-current': addCurrentPage,
         '#export': exportData,
-        '#import-btn': () => getOrCreateElement('#import-file').click(),
+        '#import-btn': () => getCachedElement('#import-file').click(),
         '#import-from-chrome': importFromChromeBookmarks,
         '#import-from-chrome-advanced': importFromChromeBookmarksAdvanced,
         '#support-btn': () => chrome.tabs.create({ url: chrome.runtime.getURL('donate.html') }),
         '#settings-btn': () => showSection('settings'),
         '#back': () => showSection('main'),
         '#change-pass': changeMasterPassword,
-        '#modal-cancel': () => getOrCreateElement('#add-bookmark-modal').style.display = 'none',
+        '#modal-cancel': () => getCachedElement('#add-bookmark-modal').style.display = 'none',
         '#manager-btn': openmanager,
         '#faq-btn': () => chrome.tabs.create({ url: chrome.runtime.getURL('faq.html') })
     };
     
     Object.entries(handlers).forEach(([selector, handler]) => {
-        const element = getOrCreateElement(selector);
+        const element = getCachedElement(selector);
         if (element) {
             element.addEventListener('click', handler);
         }
     });
     
-    getOrCreateElement('#import-file').addEventListener('change', importData);
+    getCachedElement('#import-file').addEventListener('change', importData);
     
-    const clearHistoryBtn = getOrCreateElement('#clear-history');
+    const clearHistoryBtn = getCachedElement('#clear-history');
     if (clearHistoryBtn) {
         clearHistoryBtn.addEventListener('click', clearBookmarksHistoryByDomain);
     }
@@ -589,7 +544,7 @@ async function init() {
         });
     }
     
-    const modalSaveBtn = getOrCreateElement('#modal-save');
+    const modalSaveBtn = getCachedElement('#modal-save');
     if (modalSaveBtn) {
         modalSaveBtn.addEventListener('click', handleModalSave);
     }
@@ -629,6 +584,8 @@ async function init() {
             e.target.style.display = 'none';
         }
     });
+    
+    isInitialized = true;
 }
 
 function showSection(id) {
@@ -650,7 +607,7 @@ function showSection(id) {
 }
 
 function openAddBookmarkModal(pageTitle, pageUrl, editPath = null) {
-    const modal = getOrCreateElement('#add-bookmark-modal');
+    const modal = getCachedElement('#add-bookmark-modal');
     if (!modal) return;
     
     editingBookmarkPath = editPath;
@@ -666,7 +623,7 @@ function openAddBookmarkModal(pageTitle, pageUrl, editPath = null) {
     const urlInput = document.getElementById('modal-bookmark-url');
     
     if (isEdit) {
-        const bookmark = getItemByPath(editPath);
+        const bookmark = getItemByPath(data, editPath);
         if (bookmark) {
             titleInput.value = bookmark.title;
             urlInput.value = bookmark.url;
@@ -722,6 +679,16 @@ async function openmanager() {
     }
 }
 
+function validateImportedData(data) {
+    return data && 
+           typeof data === 'object' &&
+           data.salt && 
+           data.encrypted &&
+           typeof data.encrypted === 'object' &&
+           data.encrypted.iv &&
+           data.encrypted.data;
+}
+
 function handleModalSave() {
     const modal = document.getElementById('add-bookmark-modal');
     if (!modal) return;
@@ -753,7 +720,7 @@ function handleModalSave() {
     }
     
     if (newPath.length > 0) {
-        const target = getItemByPath(newPath);
+        const target = getItemByPath(data, newPath);
         if (!target || target.type !== 'folder') {
             showNotification('Selected path is not a folder', true);
             return;
@@ -776,7 +743,7 @@ function updateBookmark(oldPath, title, url, newPathRaw) {
     const newPath = normalizePath(newPathRaw);
     const oldFolderPath = normalizePath(oldPath.slice(0, -1));
     
-    const sourceParent = getParentByPath(oldFolderPath);
+    const sourceParent = getParentByPath(data, oldFolderPath);
     const sourceIndex = oldPath[oldPath.length - 1];
     const bookmark = sourceParent[sourceIndex];
     
@@ -796,7 +763,7 @@ function updateBookmark(oldPath, title, url, newPathRaw) {
     if (newPath.length === 0) {
         targetArray = data.folders;
     } else {
-        const folder = getItemByPath(newPath);
+        const folder = getItemByPath(data, newPath);
         if (!folder || folder.type !== 'folder' || !Array.isArray(folder.children)) {
             return;
         }
@@ -822,51 +789,6 @@ function addNewBookmark(title, url, path) {
         url,
         dateAdded: Date.now()
     });
-}
-
-function getParentByPath(path) {
-    if (!path || path.length === 0) {
-        return data.folders;
-    }
-    
-    let current = data.folders;
-    
-    for (const idx of path) {
-        if (current[idx] && current[idx].type === 'folder' && current[idx].children) {
-            current = current[idx].children;
-        } else {
-            return data.folders;
-        }
-    }
-    
-    return current;
-}
-
-function getItemByPath(path) {
-    let current = data.folders;
-    for (let i = 0; i < path.length; i++) {
-        const idx = path[i];
-        if (i === path.length - 1) {
-            return current[idx];
-        }
-        if (current[idx] && current[idx].type === 'folder' && current[idx].children) {
-            current = current[idx].children;
-        } else {
-            return null;
-        }
-    }
-    return null;
-}
-
-function removeItemByPath(path) {
-    if (path.length === 0) return;
-    
-    const parent = getParentByPath(path.slice(0, -1));
-    const indexToRemove = path[path.length - 1];
-    
-    if (parent && parent[indexToRemove]) {
-        parent.splice(indexToRemove, 1);
-    }
 }
 
 async function unlock() {
@@ -939,7 +861,7 @@ async function createMasterPassword() {
     if (!success) throw new Error('Init failed');
     
     data = { folders: [] };
-    await saveEncrypted(salt);
+    await saveEncrypted(data, salt, CryptoManager);
     showSection('main');
 }
 
@@ -972,24 +894,10 @@ async function changeMasterPassword() {
     const success = await CryptoManager.init(p1, newSalt);
     if (!success) throw new Error('Init failed');
     
-    await saveEncrypted(newSalt);
+    await saveEncrypted(data, newSalt, CryptoManager);
     
     showNotification(getMessage('passwordChanged') || 'Password changed successfully', false);
     setTimeout(() => showSection('main'), 1500);
-}
-
-async function saveEncrypted(salt) {
-    try {
-        const encrypted = await CryptoManager.encrypt(JSON.stringify(data));
-        await chrome.storage.local.set({ 
-            [STORAGE_KEY]: { 
-                salt: Array.from(salt), 
-                encrypted 
-            } 
-        });
-    } catch (e) {
-        showNotification('Error saving data', true);
-    }
 }
 
 function addFolder() {
@@ -1079,22 +987,41 @@ function toggleFolder(header) {
 }
 
 function openFolder(folderItem, header, sub, path) {
-    if (!sub.hasChildNodes() || sub.children.length === 0) {
-        const pathArray = path.split(',').map(Number);
-        const folder = getItemByPath(pathArray);
-        
-        if (folder && folder.children) {
-            sub.innerHTML = '';
-            setTimeout(() => {
-                loadFolderContents(folder, pathArray, sub);
-            }, 50);
-        }
-    }
-    
     sub.classList.remove('collapsed');
     const arrow = header.querySelector('.arrow');
     if (arrow) arrow.textContent = '▼';
     folderItem.classList.add('open');
+
+    if (!sub.hasChildNodes() || sub.children.length === 0) {
+        const pathArray = path.split(',').map(Number);
+        const folder = getItemByPath(data, pathArray);
+
+        if (folder && folder.children) {
+            sub.innerHTML = ''; 
+            
+            const scrollContainer = document.createElement('div');
+            scrollContainer.className = 'folder-virtual-scroll';
+            sub.appendChild(scrollContainer);
+
+            if (virtualScrollCache && typeof virtualScrollCache.getFolderContainer === 'function') {
+                const folderData = virtualScrollCache.getFolderContainer(pathArray);
+                folderData.totalItems = folder.children.length;
+                folderData.container = scrollContainer;
+                folderData.isOpen = true;
+                folderData.visibleStart = 0;
+                folderData.visibleCount = 0;
+                folderData.hasMore = true;
+
+                loadMoreFolderItems(
+                    folder, 
+                    pathArray, 
+                    scrollContainer, 
+                    0, 
+                    VIRTUAL_SCROLL_CONFIG.initialLoadCount
+                );
+            }
+        }
+    }
 }
 
 function closeFolder(folderItem, header, sub) {
@@ -1105,7 +1032,7 @@ function closeFolder(folderItem, header, sub) {
 }
 
 function renameItem(pathArray) {
-    const targetItem = getItemByPath(pathArray);
+    const targetItem = getItemByPath(data, pathArray);
     if (!targetItem) return;
     
     const currentName = targetItem.type === 'folder' ? targetItem.name : targetItem.title;
@@ -1123,160 +1050,113 @@ function renameItem(pathArray) {
 
 function deleteItem(pathArray) {
     if (confirm(getMessage('deleteConfirm') || 'Are you sure?')) {
-        removeItemByPath(pathArray);
+        removeItemByPath(data, pathArray);
         saveAndRefresh();
     }
 }
 
-function loadFolderContents(folder, path, container) {
-    if (!container) return;
-    
+function renderFolderItemsBatch(folder, path, container, startIndex, endIndex, onComplete) {
+    const batchSize = 10;
+    const currentEnd = Math.min(startIndex + batchSize, endIndex);
 
-    container.innerHTML = '';
-    
-    if (!folder.children || folder.children.length === 0) {
-        const emptyMessage = document.createElement('div');
-        emptyMessage.className = 'empty-folder-message';
-        emptyMessage.setAttribute('data-i18n', 'emptyFolder');
-        emptyMessage.textContent = getMessage('emptyFolder') || 'Folder is empty';
-        container.appendChild(emptyMessage);
-        return;
-    }
-    
+    const fragment = document.createDocumentFragment();
 
-    const scrollContainer = document.createElement('div');
-    scrollContainer.className = 'folder-virtual-scroll';
-    container.appendChild(scrollContainer);
-    
-    const loadCount = Math.min(VIRTUAL_SCROLL_CONFIG.initialLoadCount, folder.children.length);
-    
-
-    for (let i = 0; i < loadCount; i++) {
+    for (let i = startIndex; i < currentEnd; i++) {
         const child = folder.children[i];
         const childPath = [...path, i];
-        
+
         let element;
         if (child.type === 'bookmark') {
             element = createBookmarkElement(child, childPath);
         } else if (child.type === 'folder') {
             element = createFolderElement(child, childPath);
         }
-        
+
         if (element) {
-            scrollContainer.appendChild(element);
+            fragment.appendChild(element);
         }
     }
-    
 
-    if (folder.children.length > VIRTUAL_SCROLL_CONFIG.initialLoadCount) {
-        addLoadMoreButton(container, folder, path, loadCount);
+    container.appendChild(fragment);
+
+    if (currentEnd < endIndex) {
+        requestAnimationFrame(() => {
+            renderFolderItemsBatch(folder, path, container, currentEnd, endIndex, onComplete);
+        });
+    } else {
+        if (onComplete) onComplete();
     }
-    
-
-    refreshDragItems();
 }
 
-function addLoadMoreButton(container, folder, path, startIndex) {
-    if (!container) return;
-    
-    const oldLoadMoreContainer = container.querySelector('.load-more-container');
-    if (oldLoadMoreContainer) {
-        oldLoadMoreContainer.remove();
-    }
-    
-    const loadMoreContainer = document.createElement('div');
-    loadMoreContainer.className = 'load-more-container';
-    
-    const loadMoreBtn = document.createElement('button');
-    loadMoreBtn.className = 'load-more-btn';
-    loadMoreBtn.setAttribute('data-folder-path', path.join(','));
-    loadMoreBtn.setAttribute('data-start-index', startIndex);
-    loadMoreBtn.innerHTML = `<span class="icon">↓</span> Load more (${folder.children.length - startIndex} remaining)`;
-    
-    loadMoreBtn.onclick = handleLoadMoreClick;
-    
-    loadMoreContainer.appendChild(loadMoreBtn);
-    container.appendChild(loadMoreContainer);
-}
-
-function handleLoadMoreClick(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    const btn = e.currentTarget;
-    const folderPath = btn.getAttribute('data-folder-path');
-    const startIndex = parseInt(btn.getAttribute('data-start-index'), 10);
-    
-    if (!folderPath || isNaN(startIndex)) return;
-    
-    const path = folderPath.split(',').map(Number);
-    const folder = getItemByPath(path);
-    if (!folder) return;
-    
-    const container = btn.closest('.subitems') || btn.closest('.folder-virtual-scroll')?.parentElement;
-    if (!container) return;
-    
-    btn.disabled = true;
-    btn.innerHTML = '<div class="spinner" style="width: 16px; height: 16px;"></div> Loading...';
-    
-    loadMoreFolderItems(folder, path, container, startIndex, btn);
-}
-
-function loadMoreFolderItems(folder, path, container, startIndex, clickedBtn) {
-    const scrollContainer = container.querySelector('.folder-virtual-scroll');
-    if (!scrollContainer) {
-        if (clickedBtn) {
-            clickedBtn.disabled = false;
-            clickedBtn.innerHTML = `<span class="icon">↓</span> Load more (${folder.children.length - startIndex} remaining)`;
-        }
+function loadMoreFolderItems(folder, path, container, startIndex, countToLoad) {
+    if (!virtualScrollCache || typeof virtualScrollCache.getFolderContainer !== 'function') {
         return;
     }
     
-    const endIndex = Math.min(startIndex + VIRTUAL_SCROLL_CONFIG.loadMoreCount, folder.children.length);
+    const folderData = virtualScrollCache.getFolderContainer(path);
     
-    requestAnimationFrame(() => {
-        for (let i = startIndex; i < endIndex; i++) {
-            const child = folder.children[i];
-            const childPath = [...path, i];
-            
-            let element;
-            if (child.type === 'bookmark') {
-                element = createBookmarkElement(child, childPath);
-            } else if (child.type === 'folder') {
-                element = createFolderElement(child, childPath);
-            }
-            
-            if (element) {
-                scrollContainer.appendChild(element);
-            }
-        }
+    if (folder.children.length === 0) {
+        const emptyMessage = document.createElement('div');
+        emptyMessage.className = 'empty-folder-message';
+        emptyMessage.setAttribute('data-i18n', 'emptyFolder');
+        emptyMessage.textContent = getMessage('emptyFolder') || 'Folder is empty';
+        container.appendChild(emptyMessage);
         
-        const loadMoreContainer = container.querySelector('.load-more-container');
+        folderData.hasMore = false;
+        return;
+    }
+    
+    const endIndex = Math.min(startIndex + countToLoad, folder.children.length);
+
+    if (startIndex === 0) {
+        showLoadingIndicator(container);
+    }
+
+    renderFolderItemsBatch(folder, path, container, startIndex, endIndex, () => {
+        hideLoadingIndicator(container);
         
+        folderData.visibleStart = startIndex;
+        folderData.visibleCount = (folderData.visibleCount || 0) + (endIndex - startIndex);
+        folderData.hasMore = endIndex < folder.children.length;
+
         if (endIndex < folder.children.length) {
-            const remaining = folder.children.length - endIndex;
-            
-            if (loadMoreContainer) {
-                const loadMoreBtn = loadMoreContainer.querySelector('.load-more-btn');
-                if (loadMoreBtn) {
-                    loadMoreBtn.disabled = false;
-                    loadMoreBtn.setAttribute('data-start-index', endIndex);
-                    loadMoreBtn.innerHTML = `<span class="icon">↓</span> Load more (${remaining} remaining)`;
-                } else {
-                    loadMoreContainer.remove();
-                    addLoadMoreButton(container, folder, path, endIndex);
-                }
-            } else {
-                addLoadMoreButton(container, folder, path, endIndex);
-            }
+            updateLoadMoreButton(container, folder, path, endIndex);
         } else {
-            if (loadMoreContainer) {
-                loadMoreContainer.innerHTML = '<div class="all-loaded-message">✓ All items loaded</div>';
-            }
+            removeLoadMoreButton(container);
         }
-        
-        refreshDragItems();
     });
+}
+
+function updateLoadMoreButton(container, folder, path, nextStartIndex) {
+    removeLoadMoreButton(container);
+
+    const remaining = folder.children.length - nextStartIndex;
+    const loadMoreContainer = document.createElement('div');
+    loadMoreContainer.className = 'load-more-container';
+
+    const loadMoreBtn = document.createElement('button');
+    loadMoreBtn.className = 'load-more-btn';
+    loadMoreBtn.setAttribute('data-folder-path', path.join(','));
+    loadMoreBtn.setAttribute('data-start-index', nextStartIndex);
+    loadMoreBtn.innerHTML = `<span class="icon">↓</span> Load more (${remaining} remaining)`;
+
+    loadMoreBtn.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const btn = e.currentTarget;
+        btn.disabled = true;
+        btn.innerHTML = '<div class="spinner" style="width: 16px; height: 16px;"></div> Loading...';
+
+        loadMoreFolderItems(folder, path, container, nextStartIndex, VIRTUAL_SCROLL_CONFIG.loadMoreCount);
+    };
+
+    loadMoreContainer.appendChild(loadMoreBtn);
+    container.parentNode.appendChild(loadMoreContainer);
+}
+
+function removeLoadMoreButton(container) {
+    const oldContainer = container.parentNode?.querySelector('.load-more-container');
+    if (oldContainer) oldContainer.remove();
 }
 
 function renderTree() {
@@ -1290,7 +1170,9 @@ function renderTree() {
         return;
     }
     
-    virtualScrollCache.clear();
+    if (virtualScrollCache && typeof virtualScrollCache.clear === 'function') {
+        virtualScrollCache.clear();
+    }
     
     tree.innerHTML = '';
     
@@ -1396,7 +1278,17 @@ function createBookmarkElement(item, path) {
     privateBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         e.preventDefault();
-        openInPrivateTab(item.url);
+        
+        try {
+            const urlObj = new URL(item.url);
+            if (!urlObj.protocol.startsWith('http')) {
+                showNotification(getMessage('invalidUrlForPrivate') || 'Only http:// and https:// URLs can be opened in private mode', true);
+                return;
+            }
+            openInPrivateTab(item.url, showNotification, getMessage);
+        } catch (err) {
+            showNotification(getMessage('invalidUrl') || 'Invalid URL', true);
+        }
     });
     
     const header = document.createElement('div');
@@ -1497,38 +1389,6 @@ function createBookmarkElement(item, path) {
     
     return div;
 }
-
-async function loadFaviconAsync(url, iconElement) {
-    try {
-        const faviconUrl = await getFaviconUrl(url);
-        if (faviconUrl) {
-            const faviconImg = document.createElement('img');
-            faviconImg.src = faviconUrl;
-            faviconImg.style.cssText = 'width: 16px; height: 16px; margin-right: 8px; border-radius: 2px;';
-            faviconImg.loading = 'lazy';
-            iconElement.parentNode.replaceChild(faviconImg, iconElement);
-        }
-    } catch (error) {}
-}
-
-function countItemsInFolder(folder) {
-    let count = 0;
-    function countRecursive(items) {
-        items.forEach(item => {
-            if (item.type === 'bookmark') {
-                count++;
-            } else if (item.type === 'folder') {
-                countRecursive(item.children);
-            }
-        });
-    }
-    if (folder.children) {
-        countRecursive(folder.children);
-    }
-    return count;
-}
-
-function addEventListenersToTreeItems() {}
 
 function initDragAndDrop() {
     const tree = document.getElementById('tree');
@@ -1785,22 +1645,6 @@ function validateDropTarget(target) {
     return true;
 }
 
-function isAncestor(ancestor, descendant) {
-    if (descendant.length <= ancestor.length) return false;
-    for (let i = 0; i < ancestor.length; i++) {
-        if (ancestor[i] !== descendant[i]) return false;
-    }
-    return true;
-}
-
-function arraysEqual(a, b) {
-    if (a.length !== b.length) return false;
-    for (let i = 0; i < a.length; i++) {
-        if (a[i] !== b[i]) return false;
-    }
-    return true;
-}
-
 function showForbiddenIndicator(target) {
     clearDropIndicators();
     
@@ -1914,7 +1758,7 @@ function resetDragState() {
 }
 
 async function moveItem(sourcePath, targetPath, insertBefore = true, isIntoFolder = false) {
-    const sourceParent = getParentByPath(sourcePath.slice(0, -1));
+    const sourceParent = getParentByPath(data, sourcePath.slice(0, -1));
     const sourceIndex = sourcePath[sourcePath.length - 1];
     const itemToMove = sourceParent[sourceIndex];
     
@@ -1939,14 +1783,14 @@ async function moveItem(sourcePath, targetPath, insertBefore = true, isIntoFolde
     let insertPos;
     
     if (isIntoFolder && targetPath) {
-        const folder = getItemByPath(targetPath);
+        const folder = getItemByPath(data, targetPath);
         if (!folder || folder.type !== 'folder') {
             throw new Error('Target is not a folder');
         }
         targetArray = folder.children;
         insertPos = targetArray.length;
     } else if (targetPath) {
-        targetArray = getParentByPath(targetPath.slice(0, -1));
+        targetArray = getParentByPath(data, targetPath.slice(0, -1));
         const targetIdx = targetPath[targetPath.length - 1];
         insertPos = insertBefore ? targetIdx : targetIdx + 1;
     } else {
@@ -1967,14 +1811,18 @@ async function moveItem(sourcePath, targetPath, insertBefore = true, isIntoFolde
     
     itemToMove.dateModified = Date.now();
     
-    virtualScrollCache.clear();
+    if (virtualScrollCache && typeof virtualScrollCache.clear === 'function') {
+        virtualScrollCache.clear();
+    }
 }
 
 async function saveAndRefresh() {
     const stored = await chrome.storage.local.get(STORAGE_KEY);
-    await saveEncrypted(new Uint8Array(stored[STORAGE_KEY].salt));
+    await saveEncrypted(data, new Uint8Array(stored[STORAGE_KEY].salt), CryptoManager);
     
-    virtualScrollCache.clear();
+    if (virtualScrollCache && typeof virtualScrollCache.clear === 'function') {
+        virtualScrollCache.clear();
+    }
     renderTree();
 }
 
@@ -1993,11 +1841,15 @@ async function importData(e) {
     const file = e.target.files[0];
     if (!file) return;
     
+    showLoadingIndicator(document.body, 'Importing...');
+    
     try {
         const text = await file.text();
         const json = JSON.parse(text);
         
-        if (!json.salt || !json.encrypted) throw new Error('Invalid format');
+        if (!validateImportedData(json)) {
+            throw new Error('Invalid format');
+        }
         
         await chrome.storage.local.set({ [STORAGE_KEY]: json });
         showNotification(getMessage('importSuccess') || 'Import successful');
@@ -2007,17 +1859,20 @@ async function importData(e) {
             showSection('login');
         }, 500);
         
-    } catch {
+    } catch (error) {
         showNotification(getMessage('invalidFile') || 'Invalid file format', true);
+    } finally {
+        hideLoadingIndicator(document.body);
+        e.target.value = '';
     }
-    
-    e.target.value = '';
 }
 
 async function importFromChromeBookmarks() {
     if (!confirm(getMessage('importChromeConfirm'))) {
         return;
     }
+    
+    showLoadingIndicator(document.body, 'Importing Chrome bookmarks...');
     
     try {
         const chromeBookmarks = await chrome.bookmarks.getTree();
@@ -2029,6 +1884,8 @@ async function importFromChromeBookmarks() {
         showNotification(getMessage('importChromeSuccess') || 'Chrome bookmarks imported successfully');
     } catch (error) {
         showNotification(getMessage('importChromeError') + ': ' + error.message, true);
+    } finally {
+        hideLoadingIndicator(document.body);
     }
 }
 
@@ -2106,7 +1963,7 @@ function showChromeImportModal(bookmarkNodes) {
                 
                 const label = document.createElement('label');
                 label.htmlFor = folderId;
-                label.textContent = (node.title || 'Unnamed Folder') + ` (${countBookmarksInFolder(node)} bookmarks)`;
+                label.textContent = (node.title || 'Unnamed Folder') + ` (${countItemsInFolder(node)} bookmarks)`;
                 label.style.cssText = 'cursor: pointer; display: flex; align-items: center; font-weight: 500;';
                 
                 label.prepend(checkbox);
@@ -2165,21 +2022,6 @@ function showChromeImportModal(bookmarkNodes) {
         return result;
     }
     
-    function countBookmarksInFolder(folderNode) {
-        let count = 0;
-        function countRecursive(node) {
-            if (node.url) {
-                count++;
-            } else if (node.children) {
-                node.children.forEach(child => countRecursive(child));
-            }
-        }
-        if (folderNode.children) {
-            folderNode.children.forEach(child => countRecursive(child));
-        }
-        return count;
-    }
-    
     renderFolders(bookmarkNodes);
     
     content.querySelector('#cancel-import').addEventListener('click', () => {
@@ -2191,7 +2033,7 @@ function showChromeImportModal(bookmarkNodes) {
         
         selectedFolders.forEach((folderData) => {
             const folder = folderData.node;
-            const converted = convertChromeBookmarksFull(folder.children || []);
+            const converted = convertChromeBookmarks(folder.children || []);
             if (converted.length > 0) {
                 importedData.push({
                     type: 'folder',
@@ -2210,81 +2052,9 @@ function showChromeImportModal(bookmarkNodes) {
     });
 }
 
-function convertChromeBookmarks(chromeNodes) {
-    const result = [];
-    
-    for (const node of chromeNodes) {
-        if (node.url) {
-            result.push({
-                type: 'bookmark',
-                title: node.title || 'Untitled',
-                url: node.url,
-                dateAdded: Date.now()
-            });
-        } else if (node.children && node.children.length > 0) {
-            const folder = {
-                type: 'folder',
-                name: node.title || 'Unnamed Folder',
-                children: convertChromeBookmarks(node.children),
-                dateAdded: Date.now()
-            };
-            
-            if (folder.children.length > 0) {
-                result.push(folder);
-            }
-        }
-    }
-    
-    return result;
-}
-
-function convertChromeBookmarksFull(chromeNodes) {
-    const result = [];
-    
-    for (const node of chromeNodes) {
-        if (node.url) {
-            result.push({
-                type: 'bookmark',
-                title: node.title || 'Untitled',
-                url: node.url,
-                dateAdded: Date.now()
-            });
-        } else if (node.children && node.children.length > 0) {
-            const folder = {
-                type: 'folder',
-                name: node.title || 'Unnamed Folder',
-                children: convertChromeBookmarksFull(node.children),
-                dateAdded: Date.now()
-            };
-            
-            if (folder.children.length > 0) {
-                result.push(folder);
-            }
-        }
-    }
-    
-    return result;
-}
-
-function buildFolderOptions(items, select, prefix = '', depth = 0) {
-    items.forEach((item, index) => {
-        if (!item || item.type !== 'folder') return;
-        
-        const option = document.createElement('option');
-        option.value = prefix ? `${prefix}/${index}` : index.toString();
-        option.textContent = '— '.repeat(depth) + item.name;
-        select.appendChild(option);
-        
-        if (Array.isArray(item.children) && item.children.length > 0) {
-            const newPrefix = prefix ? `${prefix}/${index}` : index.toString();
-            buildFolderOptions(item.children, select, newPrefix, depth + 1);
-        }
-    });
-}
-
 function startAutoLock() {
     clearTimeout(autoLockTimer);
-    autoLockTimer = setTimeout(lock, 10 * 60 * 1000);
+    autoLockTimer = setTimeout(lock, INACTIVITY_TIMEOUT);
 }
 
 function lock() {
@@ -2292,8 +2062,12 @@ function lock() {
     CryptoManager.clear();
     data = { folders: [] };
     pendingBookmark = null;
-    virtualScrollCache.clear();
+    
+    if (virtualScrollCache && typeof virtualScrollCache.clear === 'function') {
+        virtualScrollCache.clear();
+    }
     clearElementCache();
+    
     showSection('login');
     document.getElementById('password').value = '';
 }
@@ -2303,10 +2077,10 @@ async function clearBookmarksHistoryByDomain() {
         return;
     }
     
-    const clearHistoryBtn = getOrCreateElement('#clear-history');
+    const clearHistoryBtn = getCachedElement('#clear-history');
     if (!clearHistoryBtn) return;
     
-    const buttonIcon = getOrCreateElement('#clear-historydiv');
+    const buttonIcon = getCachedElement('#clear-historydiv');
     if (!buttonIcon) return;
     
     const originalContent = buttonIcon.innerHTML;
@@ -2319,6 +2093,8 @@ async function clearBookmarksHistoryByDomain() {
     
     clearHistoryBtn.classList.add('loading');
     clearHistoryBtn.disabled = true;
+    
+    showLoadingIndicator(document.body, 'Clearing history...');
     
     try {
         const allUrls = collectAllBookmarkUrls(data.folders);
@@ -2378,55 +2154,75 @@ async function clearBookmarksHistoryByDomain() {
         buttonIcon.innerHTML = originalContent;
         clearHistoryBtn.classList.remove('loading');
         clearHistoryBtn.disabled = false;
+        hideLoadingIndicator(document.body);
     }
 }
 
-function collectAllBookmarkUrls(items, urls = []) {
-    for (const item of items) {
-        if (item.type === 'bookmark' && item.url) {
-            urls.push(item.url);
-        } else if (item.type === 'folder' && item.children) {
-            collectAllBookmarkUrls(item.children, urls);
+function performCleanup() {
+    if (virtualScrollCache && typeof virtualScrollCache.clear === 'function') {
+        virtualScrollCache.clear();
+    }
+    
+    if (window.HolyShared && window.HolyShared.faviconCache && typeof window.HolyShared.faviconCache.clear === 'function') {
+        window.HolyShared.faviconCache.clear();
+    }
+    
+    if (window.HolyShared && window.HolyShared.faviconPromises && typeof window.HolyShared.faviconPromises.clear === 'function') {
+        window.HolyShared.faviconPromises.clear();
+    }
+    
+    if (window.HolyShared && window.HolyShared.messageCache && typeof window.HolyShared.messageCache.clear === 'function') {
+        window.HolyShared.messageCache.clear();
+    }
+    
+    if (CryptoManager && typeof CryptoManager.clear === 'function') {
+        CryptoManager.clear();
+    }
+    
+    data = { folders: [] };
+    pendingBookmark = null;
+    editingBookmarkPath = null;
+    clipboardItem = null;
+    
+    clearElementCache();
+}
+
+window.addEventListener('pagehide', performCleanup);
+window.addEventListener('beforeunload', performCleanup);
+
+window.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+        if (window.HolyShared && window.HolyShared.messageCache && typeof window.HolyShared.messageCache.clear === 'function') {
+            window.HolyShared.messageCache.clear();
+        }
+        if (window.HolyShared && window.HolyShared.faviconCache && typeof window.HolyShared.faviconCache.clear === 'function') {
+            window.HolyShared.faviconCache.clear();
         }
     }
-    return urls;
-}
+});
+async function initFaviconToggle() {
+    const toggle = document.getElementById('favicon-toggle');
+    if (!toggle) return;
+    
 
-function showNotification(message, isError = false) {
-    const oldNotifications = document.querySelectorAll('.notification');
-    oldNotifications.forEach(notification => notification.remove());
+    const enabled = window.HolyShared.isFaviconEnabled();
+    toggle.checked = enabled;
     
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.textContent = message;
-    
-    if (isError) {
-        notification.style.background = 'rgba(255, 64, 96, 0.9)';
-    }
-    
-    document.body.appendChild(notification);
-    
-    setTimeout(function() {
-        if (notification.parentNode) {
-            notification.parentNode.removeChild(notification);
+
+    toggle.addEventListener('change', async (e) => {
+        const enabled = e.target.checked;
+        window.HolyShared.setFaviconEnabled(enabled);
+        
+
+        if (window.HolyShared.faviconCache) {
+            window.HolyShared.faviconCache.clear();
         }
-    }, 2000);
-}
-
-function openInPrivateTab(url) {
-    try {
-        if (chrome.windows && chrome.windows.create) {
-            chrome.windows.create({
-                url: url,
-                incognito: true,
-                focused: true
-            });
-        } else {
-            window.open(url, '_blank');
+        if (window.HolyShared.faviconPromises) {
+            window.HolyShared.faviconPromises.clear();
         }
-    } catch (error) {
-        showNotification(getMessage('privateTabError') || 'Cannot open private tab', true);
-    }
-}
+        
 
+        renderTree();
+    });
+}
 document.addEventListener('DOMContentLoaded', init);

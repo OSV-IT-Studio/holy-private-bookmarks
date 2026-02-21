@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_Name__",
-  "version": "1.8.4",
+  "version": "1.8.4.03",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
@@ -33,7 +33,7 @@
     "128": "icons/icon128.png"
   },
   "web_accessible_resources": [{
-    "resources": ["donate.html", "js/donate.js",  "faq.html", "js/faq.js", "js/crypto-wrapper.js", "manager.html", "js/manager.js", "icons/*.png"],
+    "resources": ["donate.html", "js/donate.js", "js/shared.js", "faq.html", "js/faq.js", "js/crypto-wrapper.js", "manager.html", "js/manager.js", "icons/*.png"],
     "matches": ["<all_urls>"]
   }],
   "content_security_policy": {
