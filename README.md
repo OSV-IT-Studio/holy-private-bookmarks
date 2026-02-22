@@ -34,7 +34,7 @@ No one except you (not even us) can read them — everything is encrypted with a
 
 ## 🤖 AI Assistance
 
-Parts of this project's code were developed with the assistance of AI tools (such as GitHub Copilot). All generated code has been reviewed, tested, and adapted by human contributors to meet the project's quality and security standards.
+Parts of this project's code were developed with the assistance of AI tools (such as ChatGPT Grok). All generated code has been reviewed, tested, and adapted by human contributors to meet the project's quality and security standards.
 
 ## Installation
 
