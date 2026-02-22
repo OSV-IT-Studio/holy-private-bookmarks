@@ -263,8 +263,35 @@ function setFaviconEnabled(enabled) {
 
     
     function countItemsInFolder(folder) {
-        if (!folder || !folder.children) return 0;
+    if (!folder) return 0;
+    
+ 
+    if (folder.url) {
+        return 0; 
+    }
+    
+
+    if (folder.children && Array.isArray(folder.children)) {
+        let count = 0;
         
+        function countChromeBookmarks(nodes) {
+            for (let i = 0; i < nodes.length; i++) {
+                const node = nodes[i];
+                if (node.url) {
+                    count++; 
+                } else if (node.children && node.children.length > 0) {
+                   
+                    countChromeBookmarks(node.children);
+                }
+            }
+        }
+        
+        countChromeBookmarks(folder.children);
+        return count;
+    }
+    
+
+    if (folder.type === 'folder' && folder.children) {
         let count = 0;
         
         function countRecursive(items) {
@@ -281,6 +308,9 @@ function setFaviconEnabled(enabled) {
         countRecursive(folder.children);
         return count;
     }
+    
+    return 0;
+}
 
     
     function countFoldersInFolder(folder) {
