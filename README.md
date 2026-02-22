@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="src/icons/icon128.png" alt="Holy Private Bookmarks icon" width="128"/>
+</p>
+
 # Holy Private Bookmarks
 
 **Fully encrypted private bookmarks right in your browser.**
@@ -27,6 +31,10 @@ No one except you (not even us) can read them — everything is encrypted with a
 ![Main screen](screenshots/main-4.png)
 ![Settings](screenshots/settings.png)
 ![Settings](screenshots/settings-2.png)
+
+## 🤖 AI Assistance
+
+Parts of this project's code were developed with the assistance of AI tools (such as GitHub Copilot). All generated code has been reviewed, tested, and adapted by human contributors to meet the project's quality and security standards.
 
 ## Installation
 
