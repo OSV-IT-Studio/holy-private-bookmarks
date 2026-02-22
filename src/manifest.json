@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_Name__",
-  "version": "1.8.4.05",
+  "version": "1.8.4.06",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
@@ -36,4 +36,5 @@
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   }
+
 }
