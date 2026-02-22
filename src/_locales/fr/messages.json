@@ -677,5 +677,8 @@
 },
 "showFaviconsDesc": {
     "message": "Peut divulguer l'historique de navigation aux serveurs de Google"
-}
+},
+"bookmarksAndFolders": {
+    "message": "Marque-pages et Dossiers"
+  }
 }

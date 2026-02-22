@@ -677,5 +677,8 @@
 },
 "showFaviconsDesc": {
     "message": "Կարող է զննարկման պատմությունը փոխանցել Google-ի սերվերներին"
-}
+},
+ "bookmarksAndFolders": {
+    "message": "Էջանիշեր և պանակներ"
+  }
 }

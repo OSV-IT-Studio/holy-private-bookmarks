@@ -674,5 +674,8 @@
 },
 "showFaviconsDesc": {
     "message": "Kann den Browserverlauf an Google-Server weitergeben"
-}
+},
+  "bookmarksAndFolders": {
+    "message": "Lesezeichen & Ordner"
+  }
 }

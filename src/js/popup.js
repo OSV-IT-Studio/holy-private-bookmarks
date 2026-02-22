@@ -506,7 +506,9 @@ async function init() {
         '#change-pass': changeMasterPassword,
         '#modal-cancel': () => getCachedElement('#add-bookmark-modal').style.display = 'none',
         '#manager-btn': openmanager,
-        '#faq-btn': () => chrome.tabs.create({ url: chrome.runtime.getURL('faq.html') })
+        '#faq-btn': () => chrome.tabs.create({ url: chrome.runtime.getURL('faq.html') }),
+		'#quick-add-bookmark': addEmptyBookmark,
+		'#quick-add-folder': addFolder
     };
     
     Object.entries(handlers).forEach(([selector, handler]) => {

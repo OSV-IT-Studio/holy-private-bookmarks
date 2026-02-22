@@ -671,5 +671,8 @@
 },
 "showFaviconsDesc": {
     "message": "قد يؤدي إلى تسرب سجل التصفح إلى خوادم Google"
-}
+},
+"bookmarksAndFolders": {
+    "message": "الإشارات المرجعية والمجلدات"
+  }
 }

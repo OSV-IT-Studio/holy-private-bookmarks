@@ -653,5 +653,9 @@
 },
 "showFaviconsDesc": {
     "message": "Может передавать историю просмотров на серверы Google"
+},
+"bookmarksAndFolders": {
+    "message": "Закладки и папки",
+    "description": "Label for bookmarks and folders section"
 }
 }

@@ -677,5 +677,8 @@
 },
 "showFaviconsDesc": {
     "message": "Puede filtrar el historial de navegación a los servidores de Google"
-}
+},
+"bookmarksAndFolders": {
+    "message": "Marcadores y Carpetas"
+  }
 }

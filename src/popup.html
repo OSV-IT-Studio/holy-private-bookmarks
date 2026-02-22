@@ -113,7 +113,19 @@
                         </div> 
                 </button>
             </div>
-
+ <div class="action-bar">
+        <div class="action-bar-left">
+            <span class="stats-label" data-i18n="bookmarksAndFolders">Bookmarks & Folders</span>
+        </div>
+        <div class="action-bar-right">
+            <button id="quick-add-bookmark" class="icon-button" data-i18n-title="addBookmark">
+                <span class="button-icon">➕</span>
+            </button>
+            <button id="quick-add-folder" class="icon-button" data-i18n-title="newFolder">
+                <span class="button-icon">📁</span>
+            </button>
+        </div>
+    </div>
             <div id="tree"></div>
         </div>
 
@@ -255,7 +267,7 @@
             <div style="background: rgba(255, 255, 255, 0.05); padding: 16px; border-radius: 12px; margin-bottom: 20px;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);" data-i18n="version">Version:</span>
-                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4.06</span>
+                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4.07</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);">Developer:</span>
@@ -318,6 +330,5 @@
     <script src="js/popup.js"></script>
 	
 </body>
-
 
 </html>

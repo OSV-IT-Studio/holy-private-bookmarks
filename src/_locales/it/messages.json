@@ -671,5 +671,8 @@
 },
 "showFaviconsDesc": {
     "message": "Potrebbe divulgare la cronologia di navigazione ai server di Google"
-}
+},
+ "bookmarksAndFolders": {
+    "message": "Segnalibri e Cartelle"
+  }
 }

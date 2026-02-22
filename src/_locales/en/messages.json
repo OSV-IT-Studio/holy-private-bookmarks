@@ -683,5 +683,8 @@
 },
 "showFaviconsDesc": {
     "message": "May leak browsing history to Google's servers"
+},
+"bookmarksAndFolders": {
+    "message": "Bookmarks & Folders"
 }
 }

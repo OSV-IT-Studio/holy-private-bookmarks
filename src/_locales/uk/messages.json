@@ -671,5 +671,8 @@
 },
 "showFaviconsDesc": {
     "message": "Може передавати історію переглядів на сервери Google"
-}
+},
+"bookmarksAndFolders": {
+    "message": "Закладки та теки"
+  }
 }
