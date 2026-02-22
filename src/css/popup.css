@@ -21,19 +21,23 @@
 }
 
 body.light-theme {
-  --bg: linear-gradient(135deg, #f5f9ff 0%, #e8f0fe 50%, #dde5f0 100%);
-  --card-bg: rgba(255, 255, 255, 0.85);
-  --sidebar-bg: rgba(255, 255, 255, 0.85);
-  --card-hover: rgba(255, 255, 255, 0.98);
-  --card-border: rgba(0, 0, 0, 0.1);
-  --text-primary: #1a2639;
-  --text-secondary: #2c3e5c;
-  --accent: #0066cc;
-  --accent-hover: #004999;
-  --danger: #dc3545;
-  --danger-hover: #b02a37;
-  --success: #28a745;
-  --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+--bg: linear-gradient(135deg, #f8fafd 0%, #f0f4fa 50%, #e9eef5 100%);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-hover: rgba(255, 255, 255, 1);
+  --sidebar-bg: rgba(248, 250, 253, 0.98);
+  --card-border: rgba(60, 80, 100, 0.15);
+  --text-primary: #1e2a3a;
+  --text-secondary: #3a4a5e;
+  --text-tertiary: #5a6b7e;
+  --accent: #1a73e8;
+  --accent-hover: #0d5bba;
+  --accent-soft: rgba(26, 115, 232, 0.08);
+  --danger: #d93036;
+  --danger-hover: #b0282e;
+  --success: #18884f;
+  --shadow: 0 8px 32px rgba(30, 40, 50, 0.12);
+  --shadow-hover: 0 12px 40px rgba(30, 40, 50, 0.18);
+  --border-light: rgba(60, 80, 100, 0.08);
 }
 
 * {
@@ -179,6 +183,313 @@ button {
   width: 100%;
 }
 
+.tree-item {
+    position: relative;
+    margin-bottom: 6px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--card-bg);
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.tree-item:hover {
+    background: var(--card-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.15);
+}
+
+
+.bookmark-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.item-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 70%;
+    background: var(--accent);
+    border-radius: 2px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.tree-item:hover .item-header::before {
+    opacity: 1;
+}
+
+
+
+
+.icon.bookmark {
+    margin-right: 8px;
+    font-size: 16px;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+
+.bookmark-title {
+    color: var(--accent);
+    display: inline-block;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    transition: color 0.2s ease;
+    font-weight: 500;
+}
+
+.bookmark-link:hover .bookmark-title {
+    color: var(--accent-hover);
+}
+
+.item-domain {
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-family: monospace;
+    opacity: 0.7;
+    margin-left: 8px;
+    background: rgba(0, 212, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.favicon-img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border-radius: 2px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.quick-actions-hover {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    gap: 4px;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 4px;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.tree-item:hover .quick-actions-hover {
+    display: flex;
+    animation: quickActionsFadeIn 0.15s ease;
+}
+
+@keyframes quickActionsFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+
+.quick-action-btn-small {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+.quick-action-btn-small:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    color: var(--accent);
+}
+
+.quick-action-btn-small:active {
+    transform: scale(0.95);
+}
+
+
+.quick-action-btn-small.delete {
+    background: rgba(255, 64, 96, 0.1);
+    color: #ff7b9c;
+}
+
+.quick-action-btn-small.delete:hover {
+    background: rgba(255, 64, 96, 0.2);
+    color: #ff4060;
+}
+
+
+
+
+.load-more-btn:hover:not(:disabled) {
+    background: rgba(0, 212, 255, 0.15);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
+}
+
+.load-more-btn .spinner {
+    width: 16px;
+    height: 16px;
+}
+
+
+.drag-ghost {
+    position: fixed;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 10px 16px;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translate(-50%, -50%);
+    opacity: 0.95;
+    animation: ghostAppear 0.2s ease;
+}
+
+@keyframes ghostAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 0.95;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.drag-ghost .icon {
+    font-size: 20px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 212, 255, 0.2);
+    border-radius: 6px;
+}
+
+.drag-ghost .text {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.drag-ghost .count {
+    background: var(--accent);
+    color: black;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+
+.tree-item.drop-above::before,
+.tree-item.drop-below::after {
+    content: '';
+    position: absolute;
+    left: 24px;
+    right: 8px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), #a0f1ff);
+    border-radius: 2px;
+    z-index: 10;
+    animation: pulse 1.5s infinite;
+}
+
+.tree-item.drop-above::before {
+    top: -2px;
+}
+
+.tree-item.drop-below::after {
+    bottom: -2px;
+}
+
+.tree-item.drop-into-folder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.2);
+    animation: borderGlow 1.5s infinite;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@keyframes borderGlow {
+    0%, 100% { 
+        border-color: var(--accent); 
+        box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.2); 
+    }
+    50% { 
+        border-color: #a0f1ff; 
+        box-shadow: inset 0 0 30px rgba(0, 212, 255, 0.4); 
+    }
+}
+
+.tree-item.drop-forbidden {
+    background: rgba(255, 64, 96, 0.2) !important;
+    border: 2px solid var(--danger);
+    cursor: not-allowed !important;
+}
+
+.tree-item.dragging {
+    opacity: 0.4;
+    transform: scale(0.98);
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.3);
+    cursor: grabbing;
+}
 .btn-secondary {
   background: var(--card-bg);
   backdrop-filter: blur(12px);
@@ -292,19 +603,7 @@ button {
   transform: translateZ(0);
 }
 
-.tree-item {
-  margin-bottom: 6px;
-  border-radius: 14px;
-  overflow: hidden;
-  background: var(--card-bg);
-  transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  position: relative;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  margin-right: 5px;
-  margin-left: 5px;
-}
+
 
 .tree-item:hover {
   background: var(--card-hover);
@@ -784,11 +1083,7 @@ button {
   50% { opacity: 1; }
 }
 
-.tree-item {
-  position: relative;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  user-select: none;
-}
+
 
 .tree-item:hover {
   cursor: grab;

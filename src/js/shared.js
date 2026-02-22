@@ -479,7 +479,7 @@ function setFaviconEnabled(enabled) {
         
         const faviconImg = document.createElement('img');
         faviconImg.src = faviconUrl;
-        faviconImg.style.cssText = 'width: 16px; height: 16px; margin-right: 8px; border-radius: 2px;';
+        faviconImg.className = 'favicon-img';
         faviconImg.loading = 'lazy';
         faviconImg.onerror = () => faviconImg.remove();
         

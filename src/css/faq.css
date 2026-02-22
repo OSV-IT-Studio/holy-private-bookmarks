@@ -16,6 +16,20 @@
   --radius-lg: 24px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+body.light-theme {
+  --bg: linear-gradient(135deg, #f5f9ff 0%, #e8f0fe 50%, #dde5f0 100%);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-hover: rgba(255, 255, 255, 0.98);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --text-primary: #1a2639;
+  --text-secondary: #2c3e5c;
+  --accent: #0066cc;
+  --accent-hover: #004999;
+  --danger: #dc3545;
+  --danger-light: #ff7b9c;
+  --success: #28a745;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
 
 * {
   box-sizing: border-box;

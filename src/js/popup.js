@@ -1273,7 +1273,6 @@ function createBookmarkElement(item, path) {
     const privateBtn = document.createElement('button');
     privateBtn.className = 'quick-action-btn-small';
     privateBtn.title = getMessage('openPrivate') || 'Open in private tab';
-    privateBtn.style.cssText = 'width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; background: rgba(255, 255, 255, 0.1); border: none; color: var(--text-secondary); cursor: pointer; transition: all 0.2s ease;';
     privateBtn.textContent = '👁️';
     privateBtn.addEventListener('click', function(e) {
         e.stopPropagation();
@@ -1300,29 +1299,26 @@ function createBookmarkElement(item, path) {
     const iconSpan = document.createElement('span');
     iconSpan.className = 'icon bookmark';
     iconSpan.textContent = '🔗';
-    iconSpan.style.cssText = 'margin-right: 8px; font-size: 16px;';
     
     const textSpan = document.createElement('span');
+    textSpan.className = 'bookmark-title';
     textSpan.textContent = item.title;
-    textSpan.style.cssText = 'color: var(--accent); display: inline-block; max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle;';
     
     titleDiv.appendChild(iconSpan);
     titleDiv.appendChild(textSpan);
     
     const domainSpan = document.createElement('span');
     domainSpan.className = 'item-domain';
-    domainSpan.style.cssText = 'font-size: 11px; color: var(--text-secondary); margin-left: 8px; font-family: monospace; opacity: 0.7;';
     domainSpan.textContent = domain;
     titleDiv.appendChild(domainSpan);
     
     const quickActions = document.createElement('div');
     quickActions.className = 'quick-actions-hover';
-    quickActions.style.cssText = 'position: absolute; right: 10px; top: 50%; transform: translateY(-50%); display: none; gap: 4px; background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--card-border); border-radius: 8px; padding: 4px; z-index: 10;';
+	quickActions.style.display = 'none';
     
     const editBtn = document.createElement('button');
     editBtn.className = 'quick-action-btn-small';
     editBtn.title = getMessage('edit') || 'Edit';
-    editBtn.style.cssText = 'width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; background: rgba(255, 255, 255, 0.1); border: none; color: var(--text-secondary); cursor: pointer; transition: all 0.2s ease;';
     editBtn.textContent = '✏️';
     editBtn.addEventListener('click', function(e) {
         e.stopPropagation();
@@ -1333,7 +1329,6 @@ function createBookmarkElement(item, path) {
     const copyBtn = document.createElement('button');
     copyBtn.className = 'quick-action-btn-small';
     copyBtn.title = getMessage('copyUrl') || 'Copy URL';
-    copyBtn.style.cssText = 'width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; background: rgba(255, 255, 255, 0.1); border: none; color: var(--text-secondary); cursor: pointer; transition: all 0.2s ease;';
     copyBtn.textContent = '📋';
     copyBtn.addEventListener('click', function(e) {
         e.stopPropagation();
@@ -1344,7 +1339,6 @@ function createBookmarkElement(item, path) {
     const deleteBtn = document.createElement('button');
     deleteBtn.className = 'quick-action-btn-small delete';
     deleteBtn.title = getMessage('delete') || 'Delete';
-    deleteBtn.style.cssText = 'width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; background: rgba(255, 64, 96, 0.1); border: none; color: #ff7b9c; cursor: pointer; transition: all 0.2s ease;';
     deleteBtn.textContent = '🗑️';
     deleteBtn.addEventListener('click', function(e) {
         e.stopPropagation();
@@ -1361,21 +1355,8 @@ function createBookmarkElement(item, path) {
     
     titleDiv.appendChild(quickActions);
     header.appendChild(titleDiv);
-    
     link.appendChild(header);
-    
     div.appendChild(link);
-    
-    link.style.cssText = 'display: block; text-decoration: none; color: inherit;';
-    
-    link.addEventListener('mouseenter', () => {
-        textSpan.style.color = 'var(--accent-hover)';
-        textSpan.style.textDecoration = 'none';
-    });
-    link.addEventListener('mouseleave', () => {
-        textSpan.style.color = 'var(--accent)';
-        textSpan.style.textDecoration = 'none';
-    });
     
     div.addEventListener('mouseenter', function() {
         quickActions.style.display = 'flex';
@@ -2077,24 +2058,22 @@ async function clearBookmarksHistoryByDomain() {
         return;
     }
     
+
     const clearHistoryBtn = getCachedElement('#clear-history');
-    if (!clearHistoryBtn) return;
-    
     const buttonIcon = getCachedElement('#clear-historydiv');
-    if (!buttonIcon) return;
     
+    if (!clearHistoryBtn || !buttonIcon) return;
+    
+
     const originalContent = buttonIcon.innerHTML;
     
+
     const spinner = document.createElement('div');
     spinner.className = 'spinner';
-    
     buttonIcon.innerHTML = '';
     buttonIcon.appendChild(spinner);
-    
     clearHistoryBtn.classList.add('loading');
     clearHistoryBtn.disabled = true;
-    
-    showLoadingIndicator(document.body, 'Clearing history...');
     
     try {
         const allUrls = collectAllBookmarkUrls(data.folders);
@@ -2112,7 +2091,7 @@ async function clearBookmarksHistoryByDomain() {
         });
         
         if (domains.size === 0) {
-            showNotification(getMessage('noDomains') || 'No domains found in bookmarks', true);
+            showNotification(getMessage('noDomains') || 'No valid domains found in bookmarks', true);
             return;
         }
         
@@ -2148,13 +2127,14 @@ async function clearBookmarksHistoryByDomain() {
         showNotification(getMessage('historyCleared', [totalDeleted, domains.size]) || `Cleared ${totalDeleted} history entries from ${domains.size} domains`);
         
     } catch (error) {
+        console.error('Clear history error:', error);
         showNotification(getMessage('clearHistoryError') || 'An error occurred while clearing history', true);
         
     } finally {
+
         buttonIcon.innerHTML = originalContent;
         clearHistoryBtn.classList.remove('loading');
         clearHistoryBtn.disabled = false;
-        hideLoadingIndicator(document.body);
     }
 }
 

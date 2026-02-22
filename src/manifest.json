@@ -1,21 +1,18 @@
 {
   "manifest_version": 3,
   "name": "__MSG_Name__",
-  "version": "1.8.4.03",
+  "version": "1.8.4.05",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
     "storage", 
     "contextMenus", 
     "activeTab", 
-    "scripting", 
     "history",
     "bookmarks", 
     "clipboardRead",
     "clipboardWrite"
   ],
-  "incognito": "spanning",
-  "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -34,7 +31,7 @@
   },
   "web_accessible_resources": [{
     "resources": ["donate.html", "js/donate.js", "js/shared.js", "faq.html", "js/faq.js", "js/crypto-wrapper.js", "manager.html", "js/manager.js", "icons/*.png"],
-    "matches": ["<all_urls>"]
+    "matches": ["chrome-extension://*/*"]
   }],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"

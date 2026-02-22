@@ -20,36 +20,45 @@
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: "add-to-holy",
-    title: chrome.i18n.getMessage("addToHoly"),
+    title: chrome.i18n.getMessage("addToHoly") || "Add to Holy Private Bookmarks",
     contexts: ["page", "link", "frame"]
+  });
+
+
+  chrome.contextMenus.create({
+    id: "add-current-tab",
+    title: chrome.i18n.getMessage("addToHoly") || "Add to Holy Private Bookmarks",
+    contexts: ["action"]  
   });
 });
 
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
+  let url, title;
+
   if (info.menuItemId === "add-to-holy") {
-    let url = info.linkUrl || info.frameUrl || tab?.url;
-    let title = tab?.title || "No title";
+    url = info.linkUrl || info.pageUrl || tab?.url;
+    title = tab?.title || "No title";
+  } else if (info.menuItemId === "add-current-tab") {
+    url = tab?.url;
+    title = tab?.title;
+  }
 
+  if (!url || !url.startsWith('http')) return;
 
-    if (!url || !url.startsWith('http')) {
-      return;
+  await chrome.storage.session.set({
+    pendingBookmarkAdd: {
+      url: url,
+      title: title.slice(0, 200)
     }
+  });
 
+  if (chrome.action.openPopup) {
+    chrome.action.openPopup();
+  } else {
 
-    await chrome.storage.session.set({
-      pendingBookmarkAdd: {
-        url: url,
-        title: title.slice(0, 200)
-      }
-    });
-
-
-    if (chrome.action.openPopup) {
-      chrome.action.openPopup();
-    }
+    chrome.tabs.create({ url: chrome.runtime.getURL("popup.html") });
   }
 });
-
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'reloadmanager') {

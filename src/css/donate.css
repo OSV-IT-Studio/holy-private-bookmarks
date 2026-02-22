@@ -8,7 +8,17 @@
       --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
       --radius: 18px;
     }
-
+body.light-theme {
+  --bg: linear-gradient(135deg, #f5f9ff 0%, #e8f0fe 50%, #dde5f0 100%);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --text-primary: #1a2639;
+  --text-secondary: #2c3e5c;
+  --accent: #0066cc;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --radius: 18px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
     body {
       font-family: 'Inter', system-ui, sans-serif;
       min-height: 620px;
@@ -76,15 +86,16 @@
     }
 
     .copy-btn {
-      background: rgba(255, 255, 255, 0.15);
-      border: none;
-      padding: 8px 16px;
-      border-radius: 8px;
-      color: white;
-      cursor: pointer;
-      margin-top: 8px;
-      font-size: 14px;
-      transition: background 0.3s ease;
+background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  margin-top: 8px;
+  font-size: 14px;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
     }
 
     .copy-btn:hover {
@@ -92,18 +103,16 @@
     }
 
     .back-btn {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background: rgba(255, 255, 255, 0.15);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      font-size: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+background: rgba(255, 255, 255, 0.15);
+border: 1px solid var(--card-border);
+padding: 8px 16px;
+border-radius: 8px;
+color: var(--text-primary);
+cursor: pointer;
+margin-top: 8px;
+font-size: 14px;
+transition: var(--transition);
+backdrop-filter: blur(10px);
     }
 
     .back-btn:hover {

@@ -17,6 +17,43 @@
  *
  * Source code: https://github.com/OSV-IT-Studio/holy-private-bookmarks
  */
+ if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeAndHideLoader);
+} else {
+    initThemeAndHideLoader();
+}
+
+async function initThemeAndHideLoader() {
+
+    if (window.ThemeManager) {
+        await window.ThemeManager.init();
+    }
+
+
+    const loader = document.getElementById('theme-loader-block');
+    if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+
+            if (loader.parentNode) {
+                loader.parentNode.removeChild(loader);
+            }
+        }, 200); 
+    }
+}
+
+
+if (!document.querySelector('#theme-loader-animation')) {
+    const style = document.createElement('style');
+    style.id = 'theme-loader-animation';
+    style.textContent = `
+        @keyframes theme-loader-spin {
+            to { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+}
 function getMessage(key, substitutions = []) {
   return chrome.i18n.getMessage(key, substitutions);
 }
