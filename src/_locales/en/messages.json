@@ -75,22 +75,22 @@
     "message": "Export & Import"
   },
   "export": {
-    "message": "📤 Export"
+    "message": "Export"
   },
   "openPrivate": {
     "message": "Open in private tab"
   },
   "import": {
-    "message": "📥 Import"
+    "message": "Import"
   },
   "importFromChrome": {
     "message": "Import from Chrome"
   },
   "importChromeBookmarks": {
-    "message": "📥 Import all Chrome bookmarks"
+    "message": "Import all Chrome bookmarks"
   },
   "importChromeBookmarksAdvanced": {
-    "message": "🗂️ Select folders to import"
+    "message": "Select folders to import"
   },
   "importChromeConfirm": {
     "message": "Import all bookmarks from Chrome? Existing bookmarks will be preserved."
@@ -686,5 +686,44 @@
 },
 "bookmarksAndFolders": {
     "message": "Bookmarks & Folders"
+},
+"importFromHtml": {
+    "message": "Import from HTML"
+},
+"importHtmlSuccess": {
+    "message": "HTML bookmarks imported successfully! $COUNT$ bookmarks added.",
+    "placeholders": {
+        "count": {
+            "content": "$1",
+            "example": "42"
+        }
+    }
+},
+  "htmlImporterNoFileSelected": {
+    "message": "No file selected"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "File too large (max 1MB)"
+  },
+  "htmlImporterParseError": {
+    "message": "Failed to import HTML: $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "No bookmarks found in file"
+  },
+"importHtmlError": {
+    "message": "Failed to parse HTML file. Please check the file format."
+},
+"importHtmlSizeWarning": {
+    "message": "1MB Limit"
+},
+"importHtmlSizeNote": {
+    "message": "~2500 Lesezeichen max"
+},
+"importWarning": {
+    "message": "All existing bookmarks will be replaced"
+},
+"developer": {
+    "message": "Developer:"
 }
 }

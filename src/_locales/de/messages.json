@@ -81,16 +81,16 @@
     "message": "Im privaten Tab öffnen"
   },
   "import": {
-    "message": "📥 Importieren"
+    "message": "Importieren"
   },
   "importFromChrome": {
     "message": "Von Chrome importieren"
   },
   "importChromeBookmarks": {
-    "message": "📥 Alle Chrome-Lesezeichen importieren"
+    "message": "Alle Chrome-Lesezeichen importieren"
   },
   "importChromeBookmarksAdvanced": {
-    "message": "🗂️ Ordner zum Importieren auswählen"
+    "message": "Ordner zum Importieren auswählen"
   },
   "importChromeConfirm": {
     "message": "Alle Lesezeichen von Chrome importieren? Vorhandene Lesezeichen bleiben erhalten."
@@ -677,5 +677,41 @@
 },
   "bookmarksAndFolders": {
     "message": "Lesezeichen & Ordner"
-  }
+  },
+ "importFromHtml": {
+        "message": "Aus HTML importieren"
+    },
+    "importHtmlSuccess": {
+        "message": "HTML-Lesezeichen erfolgreich importiert! $COUNT$ Lesezeichen hinzugefügt.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+   "htmlImporterNoFileSelected": {
+    "message": "Keine Datei ausgewählt"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "Datei zu groß (max. 1 MB)"
+  },
+  "htmlImporterParseError": {
+    "message": "Fehler beim Importieren der HTML-Datei: $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "Keine Lesezeichen in der Datei gefunden"
+  },
+    "importHtmlError": {
+        "message": "Fehler beim Parsen der HTML-Datei. Bitte überprüfen Sie das Dateiformat."
+    },
+    "importHtmlSizeWarning": {
+        "message": "1MB-Grenze"
+    },
+    "importHtmlSizeNote": {
+        "message": "max. ~2500 Lesezeichen"
+    },
+    "importWarning": {
+        "message": "Alle vorhandenen Lesezeichen werden ersetzt"
+    }
 }

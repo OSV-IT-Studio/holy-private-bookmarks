@@ -81,16 +81,16 @@
     "message": "Abrir en pestaña privada"
   },
   "import": {
-    "message": "📥 Importar"
+    "message": "Importar"
   },
   "importFromChrome": {
     "message": "Importar desde Chrome"
   },
   "importChromeBookmarks": {
-    "message": "📥 Importar todos los marcadores de Chrome"
+    "message": "Importar todos los marcadores de Chrome"
   },
   "importChromeBookmarksAdvanced": {
-    "message": "🗂️ Seleccionar carpetas para importar"
+    "message": "Seleccionar carpetas para importar"
   },
   "importChromeConfirm": {
     "message": "¿Importar todos los marcadores de Chrome? Los marcadores existentes se conservarán."
@@ -680,5 +680,41 @@
 },
 "bookmarksAndFolders": {
     "message": "Marcadores y Carpetas"
-  }
+  },
+"importFromHtml": {
+        "message": "Importar desde HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "¡Marcadores HTML importados correctamente! $COUNT$ marcadores añadidos.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+    "message": "Ningún archivo seleccionado"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "Archivo demasiado grande (máx. 1 MB)"
+  },
+  "htmlImporterParseError": {
+    "message": "Error al importar el HTML: $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "No se encontraron marcadores en el archivo"
+  },
+    "importHtmlError": {
+        "message": "Error al analizar el archivo HTML. Por favor, verifique el formato del archivo."
+    },
+    "importHtmlSizeWarning": {
+        "message": "Límite de 1MB"
+    },
+    "importHtmlSizeNote": {
+        "message": "máx. ~2500 marcadores"
+    },
+    "importWarning": {
+        "message": "Todos los marcadores existentes serán reemplazados"
+    }
 }

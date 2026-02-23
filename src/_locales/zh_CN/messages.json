@@ -1,0 +1,694 @@
+{
+  "Name": {
+    "message": "Holy Private Bookmarks — 加密本地书签管理器"
+  },
+  "extensionName": {
+    "message": "Holy Private Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "完全私密书签，支持主密码、文件夹和加密功能"
+  },
+  "createPassword": {
+    "message": "创建主密码以加密所有书签"
+  },
+  "newPassword": {
+    "message": "新密码（至少6个字符）"
+  },
+  "confirmPassword": {
+    "message": "确认密码"
+  },
+  "createStorage": {
+    "message": "🔐 创建存储"
+  },
+  "enterMasterPassword": {
+    "message": "输入您的主密码以解锁"
+  },
+  "masterPassword": {
+    "message": "主密码"
+  },
+  "unlock": {
+    "message": "🔓 解锁"
+  },
+  "wrongPassword": {
+    "message": "密码错误"
+  },
+  "passwordsMismatch": {
+    "message": "密码不匹配或太短"
+  },
+  "bookmarksProtected": {
+    "message": "您的书签已安全保护"
+  },
+  "addCurrentPage": {
+    "message": "➕ 添加当前页面"
+  },
+  "newFolder": {
+    "message": "📁 新建文件夹"
+  },
+  "clearHistory": {
+    "message": "🧹️ 清除历史记录"
+  },
+  "supportProject": {
+    "message": "❤️ 支持项目"
+  },
+  "settings": {
+    "message": "⚙️ 设置"
+  },
+  "settingsbtn": {
+    "message": "⚙️"
+  },
+  "changeMasterPassword": {
+    "message": "更改主密码"
+  },
+  "currentPassword": {
+    "message": "当前密码"
+  },
+  "newPassword2": {
+    "message": "新密码"
+  },
+  "confirmNewPassword": {
+    "message": "确认新密码"
+  },
+  "changePassword": {
+    "message": "🔑 更改密码"
+  },
+  "exportImport": {
+    "message": "导出与导入"
+  },
+  "export": {
+    "message": "导出"
+  },
+  "openPrivate": {
+    "message": "在隐私标签页中打开"
+  },
+  "import": {
+    "message": "导入"
+  },
+  "importFromChrome": {
+    "message": "从 Chrome 导入"
+  },
+  "importChromeBookmarks": {
+    "message": "导入所有 Chrome 书签"
+  },
+  "importChromeBookmarksAdvanced": {
+    "message": "选择要导入的文件夹"
+  },
+  "importChromeConfirm": {
+    "message": "从 Chrome 导入所有书签？现有书签将被保留。"
+  },
+  "importChromeSuccess": {
+    "message": "书签导入成功！"
+  },
+  "importChromeError": {
+    "message": "导入书签失败"
+  },
+  "selectFoldersToImport": {
+    "message": "选择要导入的文件夹"
+  },
+  "selectAll": {
+    "message": "全选"
+  },
+  "deselectAll": {
+    "message": "取消全选"
+  },
+  "importSelected": {
+    "message": "导入"
+  },
+  "back": {
+    "message": "← 返回"
+  },
+  "addBookmark": {
+    "message": "📌 添加书签"
+  },
+  "editBookmark": {
+    "message": "编辑书签"
+  },
+  "page": {
+    "message": "页面"
+  },
+  "title": {
+    "message": "标题"
+  },
+  "url": {
+    "message": "网址"
+  },
+  "folder": {
+    "message": "文件夹"
+  },
+  "rootFolder": {
+    "message": "根文件夹"
+  },
+  "new": {
+    "message": "+ 新建"
+  },
+  "cancel": {
+    "message": "取消"
+  },
+  "save": {
+    "message": "保存"
+  },
+  "deleteConfirm": {
+    "message": "删除此项？"
+  },
+  "folderName": {
+    "message": "文件夹名称："
+  },
+  "newName": {
+    "message": "新名称："
+  },
+  "titleRequired": {
+    "message": "标题和网址为必填项"
+  },
+  "validUrl": {
+    "message": "网址必须以 http:// 或 https:// 开头"
+  },
+  "passwordChanged": {
+    "message": "密码更改成功！"
+  },
+  "importSuccess": {
+    "message": "备份导入成功！请重新打开弹出窗口。"
+  },
+  "invalidFile": {
+    "message": "无效的备份文件"
+  },
+  "clearHistoryConfirm": {
+    "message": "⚠️ 删除您在 Holy Private Bookmarks 中出现的所有域名的浏览器历史记录条目？"
+  },
+  "noBookmarks": {
+    "message": "未找到书签 — 无需清除。"
+  },
+  "noDomains": {
+    "message": "书签中未找到有效域名。"
+  },
+  "newBookmark": {
+    "message": "新建书签"
+  },
+  "paste": {
+    "message": "粘贴"
+  },
+  "ctxnewFolder": {
+    "message": "新建文件夹"
+  },
+  "emptyTreeTitle": {
+    "message": "暂无书签"
+  },
+  "emptyTreeSubtitle": {
+    "message": "添加您的第一个书签或文件夹以开始使用"
+  },
+  "historyCleared": {
+    "message": "🧹 历史记录已清除！\n已移除 $count$ 条访问记录，涉及 $domains$ 个域名。",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domains": {
+        "content": "$2"
+      }
+    }
+  },
+  "addToHoly": {
+    "message": "添加到 Holy Private Bookmarks"
+  },
+  "cannotAddPage": {
+    "message": "无法添加此页面（无有效网址）"
+  },
+  "supportPageTitle": {
+    "message": "支持项目 — Holy Private Bookmarks"
+  },
+  "supportTitle": {
+    "message": "❤️ 支持项目"
+  },
+  "supportDescription": {
+    "message": "如果此扩展对您有帮助 — 任何支持都感激不尽"
+  },
+  "bitcoinTitle": {
+    "message": "比特币 (BTC)"
+  },
+  "ethereumTitle": {
+    "message": "以太坊 (ETH)"
+  },
+  "copyAddress": {
+    "message": "复制地址"
+  },
+  "copiedToClipboard": {
+    "message": "地址已复制到剪贴板！"
+  },
+  "clickToCopy": {
+    "message": "点击复制"
+  },
+  "importantWarning": {
+    "message": "重要警告："
+  },
+  "passwordCannotBeRecovered": {
+    "message": "此密码无法恢复！"
+  },
+  "noPasswordReset": {
+    "message": "没有密码重置选项"
+  },
+  "weDontStorePassword": {
+    "message": "我们不会在任何地方存储您的密码"
+  },
+  "bookmarksEncrypted": {
+    "message": "您的书签仅使用此密码加密"
+  },
+  "savePasswordSecurely": {
+    "message": "请安全保存此密码！"
+  },
+  "copyUrl": {
+    "message": "复制网址"
+  },
+  "edit": {
+    "message": "编辑"
+  },
+  "delete": {
+    "message": "删除"
+  },
+  "urlCopied": {
+    "message": "网址已复制到剪贴板"
+  },
+  "about": {
+    "message": "关于"
+  },
+  "aboutExtension": {
+    "message": "关于扩展"
+  },
+  "openGitHub": {
+    "message": "打开 GitHub"
+  },
+  "close": {
+    "message": "关闭"
+  },
+  "features": {
+    "message": "功能特点"
+  },
+  "troubleshooting": {
+    "message": "故障排除"
+  },
+  "encryption": {
+    "message": "加密"
+  },
+  "encryptionDesc": {
+    "message": "AES-256 加密"
+  },
+  "localStorage": {
+    "message": "本地存储"
+  },
+  "localStorageDesc": {
+    "message": "数据保留在您的设备上"
+  },
+  "privacy": {
+    "message": "隐私保护"
+  },
+  "privacyDesc": {
+    "message": "无跟踪或分析"
+  },
+  "openSource": {
+    "message": "GPLv3"
+  },
+  "viewOnGitHub": {
+    "message": "在 GitHub 上查看"
+  },
+  "githubRepo": {
+    "message": "GitHub 仓库"
+  },
+  "githubRepoDesc": {
+    "message": "查看源代码、报告问题、贡献代码"
+  },
+  "version": {
+    "message": "版本"
+  },
+  "openmanager": {
+    "message": "打开管理器"
+  },
+  "managerDesc": {
+    "message": "打开全屏书签管理器"
+  },
+  "folders": {
+    "message": "文件夹"
+  },
+  "bookmarks": {
+    "message": "书签"
+  },
+  "allBookmarks": {
+    "message": "所有书签"
+  },
+  "bookmarksCount": {
+    "message": "个书签"
+  },
+  "searchBookmarks": {
+    "message": "搜索书签..."
+  },
+  "noBookmarksInFolder": {
+    "message": "此文件夹中没有书签"
+  },
+  "addBookmarksToGetStarted": {
+    "message": "添加书签以开始使用"
+  },
+  "bookmarkUpdated": {
+    "message": "书签已更新"
+  },
+  "bookmarkDeleted": {
+    "message": "书签已删除"
+  },
+  "renameFolder": {
+    "message": "重命名文件夹"
+  },
+  "folderCreated": {
+    "message": "文件夹创建成功"
+  },
+  "managerLocked": {
+    "message": "管理器已锁定"
+  },
+  "lockManager": {
+    "message": "🔓 锁定管理器"
+  },
+  "manager": {
+    "message": "🗂 打开完整管理器"
+  },
+  "rename": {
+    "message": "重命名"
+  },
+  "deleteFolder": {
+    "message": "删除文件夹"
+  },
+  "deleteFolderConfirm": {
+    "message": "删除文件夹 \"{0}\"？"
+  },
+  "deleteFolderWarning": {
+    "message": "所有内容将被永久删除。"
+  },
+  "folderRenamed": {
+    "message": "文件夹重命名成功"
+  },
+  "folderDeleted": {
+    "message": "文件夹删除成功"
+  },
+  "cannotRenameAll": {
+    "message": "无法重命名“所有书签”文件夹"
+  },
+  "cannotDeleteAll": {
+    "message": "无法删除“所有书签”文件夹"
+  },
+  "foldersCount": {
+    "message": "{0} 个文件夹"
+  },
+  "bookmarkAdded": {
+    "message": "书签已添加"
+  },
+  "pendingBookmarkNotification": {
+    "message": "有待添加的书签！"
+  },
+  "pendingBookmarkInstruction": {
+    "message": "有一个书签正在等待添加。请解锁以继续。"
+  },
+  "faqTitle": {
+    "message": "常见问题解答 — Holy Private Bookmarks"
+  },
+  "faqSubtitle": {
+    "message": "查找关于 Holy Private Bookmarks 的常见问题解答"
+  },
+  "searchFAQ": {
+    "message": "搜索问题..."
+  },
+  "faqSecurity1": {
+    "message": "我的数据有多安全？"
+  },
+  "faqSecurity1Answer": {
+    "message": "您所有的书签都使用主密码在本地通过 AES-256-GCM 加密。您的数据永远不会离开您的电脑。即使是我们也无法在没有您密码的情况下访问您的书签。"
+  },
+  "faqSecurity2": {
+    "message": "如果我忘记密码会怎么样？"
+  },
+  "faqSecurity2Answer": {
+    "message": "警告：您的密码无法恢复。我们不存储您的密码或任何恢复密钥。如果您忘记密码，您将永久丢失对所有加密书签的访问权限。请将您的密码保存在安全的密码管理器中。"
+  },
+  "faqSecurity3": {
+    "message": "为什么每次都需要输入密码？"
+  },
+  "faqSecurity3Warning": {
+    "message": "⚠️ 这是设计使然，无法更改"
+  },
+  "faqSecurity3Answer": {
+    "message": "Holy Private Bookmarks 基于零信任安全模型构建。每次要求输入密码并非限制——而是核心安全特性。"
+  },
+  "faqSecurity3WhyTitle": {
+    "message": "为何这是不可妥协的："
+  },
+  "faqSecurity3Reason1": {
+    "message": "真正的零知识：我们从不存储您的密码、会话令牌或解密密钥"
+  },
+  "faqSecurity3Reason2": {
+    "message": "纵深防御：即使他人可以物理访问您的电脑，您的书签仍然受到保护"
+  },
+  "faqSecurity3Reason3": {
+    "message": "无单点故障：没有后门、恢复密钥或密码重置选项"
+  },
+  "faqSecurity3Reason4": {
+    "message": "浏览器安全限制：Chrome 扩展无法在会话之间安全地持久化认证信息"
+  },
+  "faqSecurity3BenefitsTitle": {
+    "message": "安全优势："
+  },
+  "faqSecurity3Benefit1": {
+    "message": "防盗保护：如果您的设备被盗，您的书签仍处于加密状态"
+  },
+  "faqSecurity3Benefit2": {
+    "message": "无取证痕迹：浏览器存储中未存储任何可恢复的信息"
+  },
+  "faqSecurity3Benefit3": {
+    "message": "恶意软件抵抗：即使键盘记录器也仅能捕获一次性密码输入"
+  },
+  "faqSecurity3TipTitle": {
+    "message": "专业提示："
+  },
+  "faqSecurity3TipText": {
+    "message": "使用像 Bitwarden 或 KeePass 这样的密码管理器。通过自动填充，输入密码只需 2 秒钟，同时保持最高安全性。"
+  },
+  "faqSecurity3Conclusion": {
+    "message": "请记住：每次输入密码，您都在验证您是唯一可以访问您私密书签的人。这是实现真正隐私的代价。"
+  },
+  "faqUsage1": {
+    "message": "如何添加书签？"
+  },
+  "faqUsage1Answer": {
+    "message": "您可以通过几种方式添加书签："
+  },
+  "faqUsage1Method1": {
+    "message": "点击弹出窗口中的“+”按钮添加当前页面"
+  },
+  "faqUsage1Method2": {
+    "message": "右键点击任何页面或链接，然后选择“添加到 Holy Private Bookmarks”"
+  },
+  "faqUsage1Method3": {
+    "message": "使用管理器手动添加书签"
+  },
+  "faqUsage1Method4": {
+    "message": "通过设置从 Chrome 书签导入"
+  },
+  "faqUsage2": {
+    "message": "如何将书签整理到文件夹中？"
+  },
+  "faqUsage2Answer": {
+    "message": "您可以创建文件夹和子文件夹来整理您的书签："
+  },
+  "faqUsage2Step1": {
+    "message": "打开扩展弹出窗口"
+  },
+  "faqUsage2Step2": {
+    "message": "点击“新建文件夹”或在树状视图中右键点击"
+  },
+  "faqUsage2Step3": {
+    "message": "将书签拖放到文件夹中"
+  },
+  "faqUsage2Step4": {
+    "message": "使用管理器进行高级整理"
+  },
+  "faqFeatures1": {
+    "message": "弹出窗口和管理器有什么区别？"
+  },
+  "faqFeatures1Answer": {
+    "message": "弹出窗口：用于快速添加/查看书签。10 分钟后自动锁定。\n\n管理器：功能齐全的界面，支持搜索、网格视图、高级编辑和文件夹管理。同样出于安全考虑会自动锁定。"
+  },
+  "faqFeatures2": {
+    "message": "我可以备份我的书签吗？"
+  },
+  "faqFeatures2Answer": {
+    "message": "可以！前往设置 → 导出与导入 → 导出书签。这将创建一个加密的备份文件。您可以随时使用导入选项恢复它。"
+  },
+  "faqFeatures3": {
+    "message": "“清除历史记录”有什么作用？"
+  },
+  "faqFeatures3Answer": {
+    "message": "此功能会删除您在 Chrome 浏览器中访问过的、存在于您书签中的域名的历史记录。它通过自动清除书签站点的历史记录痕迹来帮助维护隐私。"
+  },
+  "faqUsage3": {
+    "message": "如何搜索我的书签？"
+  },
+  "faqUsage3Answer": {
+    "message": "使用管理器（完整界面）中的搜索栏，按标题或网址搜索您的所有书签。弹出窗口显示所有书签的过滤树状视图。"
+  },
+  "faqTrouble2": {
+    "message": "我的书签会在设备间同步吗？"
+  },
+  "faqTrouble2Answer": {
+    "message": "目前，书签存储在您的本地设备上。您可以手动导出/导入以在设备间转移。未来版本计划支持云同步。"
+  },
+  "faqTrouble3": {
+    "message": "右键菜单选项不见了"
+  },
+  "faqTrouble3Answer": {
+    "message": "如果右键菜单中没有显示“添加到 Holy Private Bookmarks”："
+  },
+  "faqTrouble3Step1": {
+    "message": "重新加载扩展"
+  },
+  "faqTrouble3Step2": {
+    "message": "检查扩展权限"
+  },
+  "faqTrouble3Step3": {
+    "message": "尝试在不同的页面上（某些页面可能会限制右键菜单）"
+  },
+  "faqStillQuestions": {
+    "message": "还有问题？"
+  },
+  "faqContactUs": {
+    "message": "联系我们或查看 GitHub 仓库："
+  },
+  "noResultsTitle": {
+    "message": "未找到问题"
+  },
+  "noResultsText": {
+    "message": "尝试不同的搜索词或类别"
+  },
+  "faqButtonTitle": {
+    "message": "常见问题解答"
+  },
+  "contactEmail": {
+    "message": "osv-it-studio@googlegroups.com"
+  },
+  "emailUs": {
+    "message": "给我们发邮件"
+  },
+  "dragSuccess": {
+    "message": "✅ 项目移动成功"
+  },
+  "invalidDestinationFolder": {
+    "message": "无效的目标文件夹"
+  },
+  "bookmarksMoved": {
+    "message": "已移动 {0} 个书签"
+  },
+  "moveFailed": {
+    "message": "移动书签失败"
+  },
+  "noBookmarksSelected": {
+    "message": "未选择书签"
+  },
+  "moveBookmarksTitle": {
+    "message": "移动 {0} 个书签"
+  },
+  "selectDestinationFolder": {
+    "message": "选择目标文件夹："
+  },
+  "move": {
+    "message": "移动"
+  },
+  "selected": {
+    "message": "已选择"
+  },
+  "moveSelectedTitle": {
+    "message": "移动所选"
+  },
+  "deleteSelectedTitle": {
+    "message": "删除所选"
+  },
+  "cancelSelectionTitle": {
+    "message": "取消选择"
+  },
+  "deleteSelectedConfirm": {
+    "message": "删除所选书签？"
+  },
+  "bookmarksDeleted": {
+    "message": "已删除 {count} 个书签",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "emptyFolder": {
+    "message": "文件夹为空",
+    "description": "Message shown when a folder has no bookmarks"
+  },
+  "noSearchResults": {
+    "message": "未找到书签",
+    "description": "Message when search returns no results"
+  },
+  "noSearchResultsDesc": {
+    "message": "尝试不同的搜索词",
+    "description": "Description for empty search results"
+  },
+  "theme": {
+    "message": "主题"
+  },
+  "themeDark": {
+    "message": "深色",
+    "description": "Dark theme name"
+  },
+  "themeLight": {
+    "message": "浅色",
+    "description": "Light theme name"
+  },
+  "themeSystem": {
+    "message": "系统",
+    "description": "System theme name"
+  },
+  "themeToggle": {
+    "message": "切换主题",
+    "description": "Tooltip for theme toggle button"
+  },
+  "showFavicons": {
+    "message": "显示网站图标"
+  },
+  "showFaviconsDesc": {
+    "message": "可能会向 Google 服务器泄露浏览历史"
+  },
+  "bookmarksAndFolders": {
+    "message": "书签与文件夹"
+  },
+  "importFromHtml": {
+    "message": "从 HTML 导入"
+  },
+  "importHtmlSuccess": {
+    "message": "HTML 书签导入成功！已添加 $COUNT$ 个书签。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "htmlImporterNoFileSelected": {
+    "message": "未选择文件"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "文件太大（最大 1MB）"
+  },
+  "htmlImporterParseError": {
+    "message": "导入 HTML 失败：$1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "文件中未找到书签"
+  },
+  "importHtmlError": {
+    "message": "解析 HTML 文件失败。请检查文件格式。"
+  },
+  "importHtmlSizeWarning": {
+    "message": "1MB 限制"
+  },
+  "importHtmlSizeNote": {
+    "message": "最多约 2500 个书签"
+  },
+  "importWarning": {
+    "message": "所有现有书签都将被替换"
+  }
+}

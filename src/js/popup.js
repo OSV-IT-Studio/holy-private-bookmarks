@@ -73,6 +73,9 @@ if (!window.SecureCrypto) {
     throw new Error('SecureCrypto is required but not loaded');
 }
 
+if (!window.HTMLImporter) {
+    console.warn('HTMLImporter module is not loaded. HTML import functionality will be unavailable.');
+}
 const CryptoManager = window.SecureCrypto;
 const FAVICON_ENABLED_KEY = 'holyFaviconEnabled';
 let data = { folders: [] };
@@ -130,68 +133,7 @@ function localizePage() {
         }
     });
     
-    const elements = {
-        '#setup h1': 'extensionName',
-        '#setup .subtitle': 'createPassword',
-        '#new-pass': 'newPassword',
-        '#confirm-pass': 'confirmPassword',
-        '#create-pass': 'createStorage',
-        '#login h1': 'extensionName',
-        '#login .subtitle': 'enterMasterPassword',
-        '#password': 'masterPassword',
-        '#unlock': 'unlock',
-        '#main h1': 'extensionName',
-        '#main .subtitle': 'bookmarksProtected',
-        '#add-currentdiv': 'addCurrentPage',
-        '#add-folder': 'newFolder',
-        '#clear-historydiv': 'clearHistory',
-        '#support': 'supportProject',
-        '#settings-btn': 'settingsbtn',
-        '#settings h1': 'settings',
-        '#settings .subtitle:nth-of-type(1)': 'changeMasterPassword',
-        '#old-pass': 'currentPassword',
-        '#new-pass2': 'newPassword2',
-        '#confirm-pass2': 'confirmNewPassword',
-        '#change-pass': 'changePassword',
-        '#settings .subtitle:nth-of-type(2)': 'exportImport',
-        '#export': 'export',
-        '#import-btn': 'import',
-        '#import-from-chrome': 'importChromeBookmarks',
-        '#import-from-chrome-advanced': 'importChromeBookmarksAdvanced',
-        '#settings .subtitle:nth-of-type(3)': 'importFromChrome',
-        '#back': 'back',
-        '#modal-cancel': 'cancel',
-        '#modal-save': 'save',
-        '#new-folder-in-modal': 'new',
-        '#important-warning-text': 'importantWarning',
-        '#cannot-recover-text': 'passwordCannotBeRecovered',
-        '#no-reset-text': 'noPasswordReset',
-        '#dont-store-text': 'weDontStorePassword',
-        '#encrypted-only-text': 'bookmarksEncrypted',
-        '#save-password-text': 'savePasswordSecurely'
-    };
-    
-    for (const selector in elements) {
-        const element = getCachedElement(selector);
-        const key = elements[selector];
-        if (element) {
-            const text = getMessage(key);
-            if (text) {
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    element.placeholder = text;
-                } else if (element.tagName === 'BUTTON') {
-                    const emojiMatch = element.textContent.match(/^[^\w\s]*/);
-                    if (emojiMatch && !text.startsWith(emojiMatch[0])) {
-                        element.textContent = emojiMatch[0] + ' ' + text;
-                    } else {
-                        element.textContent = text;
-                    }
-                } else {
-                    element.textContent = text;
-                }
-            }
-        }
-    }
+
     
     const modalTitle = getCachedElement('#add-bookmark-modal h2');
     if (modalTitle && modalTitle.id !== 'modal-title-text') {
@@ -586,7 +528,41 @@ async function init() {
             e.target.style.display = 'none';
         }
     });
+// HTML Importer
+if (window.HTMLImporter) {
+    window.HTMLImporter._getCurrentData = () => data;
     
+    const initialized = window.HTMLImporter.initPopupImporter({
+        maxFileSize: 1 * 1024 * 1024,
+        onSuccess: async (result) => {
+            data.folders.push(...result.folders);
+            await saveAndRefresh();
+            
+            const stats = result.stats;
+            let message = getMessage('importHtmlSuccess', [stats.imported.toString()]);
+            
+            if (!message || message === 'importHtmlSuccess') {
+                message = `Imported ${stats.imported} bookmarks`;
+            }
+
+            showNotification(message);
+
+            if (typeof renderTree === 'function') {
+                renderTree();
+            }
+        }, 
+        onError: (errorMessage) => {
+            showNotification(errorMessage, true);
+        },
+        onProgress: (statusMessage) => {
+            showLoadingIndicator(document.body, statusMessage);
+        }
+    });
+    
+    if (!initialized) {
+        console.warn('HTML importer could not be initialized - DOM elements not found');
+    }
+}
     isInitialized = true;
 }
 

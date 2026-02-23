@@ -81,13 +81,13 @@
     "message": "Відкрити в приватній вкладці"
   },
   "import": {
-    "message": "📥 Імпорт"
+    "message": "Імпорт"
   },
   "importFromChrome": {
     "message": "Імпортувати з Chrome"
   },
   "importChromeBookmarks": {
-    "message": "📥 Імпортувати всі закладки Chrome"
+    "message": "Імпортувати всі закладки Chrome"
   },
   "importChromeBookmarksAdvanced": {
     "message": "🗂️ Вибрати папки для імпорту"
@@ -674,5 +674,41 @@
 },
 "bookmarksAndFolders": {
     "message": "Закладки та теки"
-  }
+  },
+ "importFromHtml": {
+        "message": "Імпорт з HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "Імпорт закладок з HTML виконано успішно! Додано закладок: $COUNT$.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+   "htmlImporterNoFileSelected": {
+    "message": "Файл не вибрано"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "Файл занадто великий (макс. 1 МБ)"
+  },
+  "htmlImporterParseError": {
+    "message": "Не вдалося імпортувати HTML: $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "У файлі не знайдено закладок"
+  },
+    "importHtmlError": {
+        "message": "Не вдалося обробити HTML-файл. Будь ласка, перевірте формат файлу."
+    },
+    "importHtmlSizeWarning": {
+        "message": "Ліміт 1 МБ"
+    },
+    "importHtmlSizeNote": {
+        "message": "макс. ~2500 закладок"
+    },
+    "importWarning": {
+        "message": "Всі існуючі закладки будуть замінені"
+    }
 }

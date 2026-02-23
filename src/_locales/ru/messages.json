@@ -75,22 +75,22 @@
     "message": "Экспорт и импорт"
   },
   "export": {
-    "message": "📤 Экспорт"
+    "message": "Экспорт"
   },
   "openPrivate": {
     "message": "Открыть в приватной вкладке"
   },
   "import": {
-    "message": "📥 Импорт"
+    "message": "Импорт"
   },
   "importFromChrome": {
     "message": "Импорт из Chrome"
   },
   "importChromeBookmarks": {
-    "message": "📥 Импортировать все закладки Chrome"
+    "message": "Импортировать все закладки Chrome"
   },
   "importChromeBookmarksAdvanced": {
-    "message": "🗂️ Выберите папки для импорта"
+    "message": "Выберите папки для импорта"
   },
   "importChromeConfirm": {
     "message": "Импортировать все закладки из Chrome? Существующие закладки будут сохранены."
@@ -657,5 +657,42 @@
 "bookmarksAndFolders": {
     "message": "Закладки и папки",
     "description": "Label for bookmarks and folders section"
-}
+},
+"importFromHtml": {
+        "message": "Импорт из HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "Импорт закладок из HTML выполнен успешно! Добавлено закладок: $COUNT$.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+
+"htmlImporterNoFileSelected": {
+    "message": "Файл не выбран"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "Файл слишком большой (макс. 1 МБ)"
+  },
+  "htmlImporterParseError": {
+    "message": "Не удалось импортировать HTML: $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "В файле не найдено закладок"
+  },
+    "importHtmlError": {
+        "message": "Не удалось обработать HTML-файл. Пожалуйста, проверьте формат файла."
+    },
+    "importHtmlSizeWarning": {
+        "message": "Лимит 1 МБ"
+    },
+    "importHtmlSizeNote": {
+        "message": "макс. ~2500 закладок"
+    },
+    "importWarning": {
+        "message": "Все существующие закладки будут заменены"
+    }
 }

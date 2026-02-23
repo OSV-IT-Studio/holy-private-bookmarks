@@ -19,28 +19,28 @@
             <input type="password" id="confirm-pass" data-i18n="confirmPassword" placeholder="Confirm password">
 
             <div class="password-warning" style="
-                background: rgba(255, 64, 96, 0.1);
-                border-radius: 12px;
-                padding: 16px;
-                margin: 16px 0;
-                border-left: 4px solid var(--danger);
-                text-align: left;
-                font-size: 14px;
-                color: var(--text-secondary);
-            ">
-                <p style="margin: 0 0 8px 0; color: var(--text-primary); font-weight: 600;">
-                    ⚠️ <span id="important-warning-text"></span>
-                </p>
-                <ul style="margin: 0; padding-left: 20px; line-height: 1.5;">
-                    <li><span id="cannot-recover-text"></span></li>
-                    <li><span id="no-reset-text"></span></li>
-                    <li><span id="dont-store-text"></span></li>
-                    <li><span id="encrypted-only-text"></span></li>
-                </ul>
-                <p style="margin: 12px 0 0 0; font-weight: 600; color: var(--accent);">
-                    💡 <span id="save-password-text"></span>
-                </p>
-            </div>
+    background: rgba(255, 64, 96, 0.1);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+    border-left: 4px solid var(--danger);
+    text-align: left;
+    font-size: 14px;
+    color: var(--text-secondary);
+">
+    <p style="margin: 0 0 8px 0; color: var(--text-primary); font-weight: 600;">
+        ⚠️ <span data-i18n="importantWarning" id="important-warning-text"></span>
+    </p>
+    <ul style="margin: 0; padding-left: 20px; line-height: 1.5;">
+        <li><span data-i18n="passwordCannotBeRecovered" id="cannot-recover-text"></span></li>
+        <li><span data-i18n="noPasswordReset" id="no-reset-text"></span></li>
+        <li><span data-i18n="weDontStorePassword" id="dont-store-text"></span></li>
+        <li><span data-i18n="bookmarksEncrypted" id="encrypted-only-text"></span></li>
+    </ul>
+    <p style="margin: 12px 0 0 0; font-weight: 600; color: var(--accent);">
+        💡 <span data-i18n="savePasswordSecurely" id="save-password-text"></span>
+    </p>
+</div>
 
             <button class="btn-primary" id="create-pass" data-i18n="createStorage">🔐 Create storage</button>
         </div>
@@ -78,9 +78,9 @@
         <!-- Main Menu -->
         <div id="main" class="section">
             <div class="top-right-buttons">
-			    <button id="faq-btn" class="top-right-btn" title="FAQ">❓</button>
-                <button id="support-btn" class="top-right-btn" title="Support Project">❤️</button>
-                <button id="settings-btn" class="top-right-btn" title="Settings">⚙️</button>
+			    <button id="faq-btn" class="top-right-btn" data-i18n-title="faqButtonTitle" title="FAQ">❓</button>
+				<button id="support-btn" class="top-right-btn" data-i18n-title="supportProject" title="Support Project">❤️</button>
+				<button id="settings-btn" class="top-right-btn" data-i18n-title="settings" title="Settings">⚙️</button>
             </div>
 
             <h1 data-i18n="extensionName">Holy Private Bookmarks</h1>
@@ -96,15 +96,15 @@
 
                     <button id="clear-history" class="menu-btn right-btn">
                        <div class="button-text">
-                            <div class="icon" id="clear-historydiv">🧹️</div>
+                            <div class="icon" data-i18n="clearHistory" id="clear-historydiv">🧹️</div>
                         </div>
                     </button>
                 </div>
 
 
-                <button id="lock" class="menu-btn center-btn" title="Lock">
-                    <img src="icons/Lock.png">
-                </button>
+                <button id="lock" class="menu-btn center-btn" data-i18n-title="lock" title="Lock">
+					<img src="icons/Lock.png">
+				</button>
 
 
                 <button id="manager-btn" class="menu-btn bottom-btn" >
@@ -169,20 +169,38 @@
                     <button class="settings-full-btn export" id="export">
                         <span class="icon">📤</span>
                         <div class="btn-content">
-                            <div class="btn-title" data-i18n="export">Export Bookmarks</div>
-                            <div class="btn-description" data-i18n="exportDesc">Download encrypted backup file</div>
+                            <div class="btn-title" data-i18n="export">Export</div>
                         </div>
                         <span class="btn-arrow">→</span>
                     </button>
 
                     <button class="settings-full-btn import" id="import-btn">
-                        <span class="icon">📥</span>
-                        <div class="btn-content">
-                            <div class="btn-title" data-i18n="import">Import Bookmarks</div>
-                            <div class="btn-description" data-i18n="importDesc">Restore from backup file</div>
-                        </div>
-                        <span class="btn-arrow">→</span>
-                    </button>
+    <span class="icon">📥</span>
+    <div class="btn-content">
+        <div class="btn-title" data-i18n="import">Import</div>
+        <div class="btn-note warning-note">
+            <span class="note-icon warning-icon">⚠️</span>
+            <span class="note-text" data-i18n="importWarning">All existing bookmarks will be replaced</span>
+        </div>
+    </div>
+    <span class="btn-arrow">→</span>
+</button>
+
+
+<button class="settings-full-btn html-import" id="import-html-btn">
+    <span class="icon">🌐</span>
+    <div class="btn-content">
+        <div class="btn-title" data-i18n="importFromHtml">Import from HTML</div>
+        <div class="btn-note info-note">
+            <span class="note-text accent" data-i18n="importHtmlSizeWarning">1MB limit</span>
+            <span class="note-separator">•</span>
+            <span class="note-text" data-i18n="importHtmlSizeNote">~2500 bookmarks max</span>
+        </div>
+    </div>
+    <span class="btn-arrow">→</span>
+</button>
+
+<input type="file" id="import-html-file" accept=".html,.htm" style="display:none">
                 </div>
             </div>
 
@@ -190,11 +208,10 @@
                 <h3 class="section-title" data-i18n="importFromChrome">Import from Chrome</h3>
                 <div class="settings-buttons-grid">
                     <button class="settings-full-btn chrome" id="import-from-chrome">
-                        <span class="icon">🌐</span>
+                        <span class="icon">📥</span>
                         <div class="btn-content">
                             <div class="btn-title" data-i18n="importChromeBookmarks">Import All Bookmarks</div>
-                            <div class="btn-description" data-i18n="importChromeDesc">Import all bookmarks from Chrome
-                            </div>
+                            
                         </div>
                         <span class="btn-arrow">→</span>
                     </button>
@@ -203,8 +220,6 @@
                         <span class="icon">🗂️</span>
                         <div class="btn-content">
                             <div class="btn-title" data-i18n="importChromeBookmarksAdvanced">Selective Import</div>
-                            <div class="btn-description" data-i18n="importChromeAdvancedDesc">Choose specific folders to
-                                import</div>
                         </div>
                         <span class="btn-arrow">→</span>
                     </button>
@@ -267,10 +282,10 @@
             <div style="background: rgba(255, 255, 255, 0.05); padding: 16px; border-radius: 12px; margin-bottom: 20px;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);" data-i18n="version">Version:</span>
-                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4.07</span>
+                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4.14</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                    <span style="color: var(--text-secondary);">Developer:</span>
+                    <span style="color: var(--text-secondary);" data-i18n="developer">Developer:</span>
                     <span style="color: var(--text-primary); font-weight: 600;">OSV IT-Studio</span>
                 </div>
                 <div style="display: flex; justify-content: space-between;">
@@ -287,7 +302,7 @@
                     <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks" 
                        target="_blank"
                        style="color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 8px;">
-                       <span style="font-size: 18px;">🔗</span>
+                       <span style="font-size: 18px;"><img src="icons/github.png"></span>
                        <span>github.com/OSV-IT-Studio/holy-private-bookmarks</span>
                     </a>
                 </div>
@@ -327,6 +342,7 @@
 	<script src="js/crypto-wrapper.js"></script>
 	<script src="js/theme.js"></script>
 	<script src="js/shared.js"></script>
+	<script src="js/html-importer.js"></script>
     <script src="js/popup.js"></script>
 	
 </body>

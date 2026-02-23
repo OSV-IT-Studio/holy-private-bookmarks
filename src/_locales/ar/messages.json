@@ -81,16 +81,16 @@
     "message": "فتح في تبويب خاص"
   },
   "import": {
-    "message": "📥 استيراد"
+    "message": "استيراد"
   },
   "importFromChrome": {
     "message": "استيراد من Chrome"
   },
   "importChromeBookmarks": {
-    "message": "📥 استيراد جميع إشارات Chrome المرجعية"
+    "message": "استيراد جميع إشارات Chrome المرجعية"
   },
   "importChromeBookmarksAdvanced": {
-    "message": "🗂️ تحديد المجلدات للاستيراد"
+    "message": "تحديد المجلدات للاستيراد"
   },
   "importChromeConfirm": {
     "message": "استيراد جميع الإشارات المرجعية من Chrome؟ سيتم الاحتفاظ بالإشارات المرجعية الموجودة."
@@ -674,5 +674,41 @@
 },
 "bookmarksAndFolders": {
     "message": "الإشارات المرجعية والمجلدات"
-  }
+  },
+"importFromHtml": {
+        "message": "استيراد من HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "تم استيراد الإشارات المرجعية من HTML بنجاح! تمت إضافة $COUNT$ إشارة مرجعية.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+    "message": "لم يتم تحديد ملف"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "الملف كبير جدًا (الحد الأقصى 1 ميجابايت)"
+  },
+  "htmlImporterParseError": {
+    "message": "فشل استيراد HTML: $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "لم يتم العثور على إشارات مرجعية في الملف"
+  },
+    "importHtmlError": {
+        "message": "فشل تحليل ملف HTML. يرجى التحقق من تنسيق الملف."
+    },
+    "importHtmlSizeWarning": {
+        "message": "حد 1 ميجابايت"
+    },
+    "importHtmlSizeNote": {
+        "message": "الحد الأقصى ~2500 إشارة مرجعية"
+    },
+    "importWarning": {
+        "message": "سيتم استبدال جميع الإشارات المرجعية الموجودة"
+    }
 }

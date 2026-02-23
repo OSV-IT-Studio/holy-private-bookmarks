@@ -81,16 +81,16 @@
     "message": "Բացել գաղտնի ներդիրում"
   },
   "import": {
-    "message": "📥 Ներմուծել"
+    "message": "Ներմուծել"
   },
   "importFromChrome": {
     "message": "Ներմուծել Chrome-ից"
   },
   "importChromeBookmarks": {
-    "message": "📥 Ներմուծել Chrome-ի բոլոր էջանիշերը"
+    "message": "Ներմուծել Chrome-ի բոլոր էջանիշերը"
   },
   "importChromeBookmarksAdvanced": {
-    "message": "🗂️ Ընտրել թղթապանակները ներմուծման համար"
+    "message": "Ընտրել թղթապանակները ներմուծման համար"
   },
   "importChromeConfirm": {
     "message": "Ներմուծել Chrome-ի բոլոր էջանիշերը: Գոյություն ունեցող էջանիշերը կպահպանվեն:"
@@ -680,5 +680,41 @@
 },
  "bookmarksAndFolders": {
     "message": "Էջանիշեր և պանակներ"
-  }
+  },
+ "importFromHtml": {
+        "message": "Ներմուծել HTML-ից"
+    },
+    "importHtmlSuccess": {
+        "message": "HTML-ից էջանիշների ներմուծումը հաջողվեց: Ավելացվեց $COUNT$ էջանիշ:",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+   "htmlImporterNoFileSelected": {
+    "message": "Ֆայլ ընտրված չէ"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "Ֆայլը չափազանց մեծ է (առավելագույնը 1 ՄԲ)"
+  },
+  "htmlImporterParseError": {
+    "message": "HTML-ի ներմուծումը ձախողվեց՝ $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "Ֆայլում էջանիշներ չեն գտնվել"
+  },
+    "importHtmlError": {
+        "message": "HTML ֆայլի մշակումը ձախողվեց: Խնդրում ենք ստուգել ֆայլի ֆորմատը:"
+    },
+    "importHtmlSizeWarning": {
+        "message": "1 ՄԲ սահմանաչափ"
+    },
+    "importHtmlSizeNote": {
+        "message": "առավել. ~2500 էջանիշ"
+    },
+    "importWarning": {
+        "message": "Բոլոր գոյություն ունեցող էջանիշները կփոխարինվեն"
+    }
 }

@@ -81,16 +81,16 @@
     "message": "Apri in scheda privata"
   },
   "import": {
-    "message": "📥 Importa"
+    "message": "Importa"
   },
   "importFromChrome": {
     "message": "Importa da Chrome"
   },
   "importChromeBookmarks": {
-    "message": "📥 Importa tutti i segnalibri di Chrome"
+    "message": "Importa tutti i segnalibri di Chrome"
   },
   "importChromeBookmarksAdvanced": {
-    "message": "🗂️ Seleziona cartelle da importare"
+    "message": "Seleziona cartelle da importare"
   },
   "importChromeConfirm": {
     "message": "Importare tutti i segnalibri da Chrome? I segnalibri esistenti verranno conservati."
@@ -674,5 +674,41 @@
 },
  "bookmarksAndFolders": {
     "message": "Segnalibri e Cartelle"
-  }
+  },
+  "importFromHtml": {
+        "message": "Importa da HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "Importazione segnalibri HTML riuscita! $COUNT$ segnalibri aggiunti.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+    "message": "Nessun file selezionato"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "File troppo grande (max 1 MB)"
+  },
+  "htmlImporterParseError": {
+    "message": "Impossibile importare il file HTML: $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "Nessun segnalibro trovato nel file"
+  },
+    "importHtmlError": {
+        "message": "Impossibile analizzare il file HTML. Si prega di verificare il formato del file."
+    },
+    "importHtmlSizeWarning": {
+        "message": "Limite 1MB"
+    },
+    "importHtmlSizeNote": {
+        "message": "max ~2500 segnalibri"
+    },
+    "importWarning": {
+        "message": "Tutti i segnalibri esistenti verranno sostituiti"
+    }
 }

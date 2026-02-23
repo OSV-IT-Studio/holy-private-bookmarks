@@ -81,16 +81,16 @@
     "message": "Ouvrir dans un onglet privé"
   },
   "import": {
-    "message": "📥 Importer"
+    "message": "Importer"
   },
   "importFromChrome": {
     "message": "Importer depuis Chrome"
   },
   "importChromeBookmarks": {
-    "message": "📥 Importer tous les marque-pages Chrome"
+    "message": "Importer tous les marque-pages Chrome"
   },
   "importChromeBookmarksAdvanced": {
-    "message": "🗂️ Sélectionner les dossiers à importer"
+    "message": "Sélectionner les dossiers à importer"
   },
   "importChromeConfirm": {
     "message": "Importer tous les marque-pages depuis Chrome ? Les marque-pages existants seront conservés."
@@ -680,5 +680,41 @@
 },
 "bookmarksAndFolders": {
     "message": "Marque-pages et Dossiers"
-  }
+  },
+ "importFromHtml": {
+        "message": "Importer depuis HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "Importation des favoris HTML réussie ! $COUNT$ favoris ajoutés.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+   "htmlImporterNoFileSelected": {
+    "message": "Aucun fichier sélectionné"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "Fichier trop volumineux (max 1 Mo)"
+  },
+  "htmlImporterParseError": {
+    "message": "Échec de l'importation HTML : $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "Aucun signet trouvé dans le fichier"
+  },
+    "importHtmlError": {
+        "message": "Échec de l'analyse du fichier HTML. Veuillez vérifier le format du fichier."
+    },
+    "importHtmlSizeWarning": {
+        "message": "Limite de 1 Mo"
+    },
+    "importHtmlSizeNote": {
+        "message": "max. ~2500 favoris"
+    },
+    "importWarning": {
+        "message": "Tous les favoris existants seront remplacés"
+    }
 }

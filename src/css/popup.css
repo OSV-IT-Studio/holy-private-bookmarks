@@ -2130,3 +2130,48 @@ body.light-theme input:checked + .slider {
 .icon-button:active {
     transform: scale(0.95);
 }
+.btn-note {
+    font-size: 11px;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    line-height: 1.4;
+}
+
+.note-icon {
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.note-text {
+    color: var(--text-secondary);
+}
+
+.note-text.accent {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.note-separator {
+    color: var(--text-secondary);
+    opacity: 0.5;
+    font-size: 12px;
+}
+
+.warning-note .note-icon {
+    color: var(--danger);
+    margin-right: 2px;
+}
+
+.warning-note .note-text {
+    color: var(--text-secondary);
+}
+
+.info-note .note-text:first-of-type {
+    color: var(--accent);
+    font-weight: 500;
+}
