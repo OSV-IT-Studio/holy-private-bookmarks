@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://osv-it-studio.github.io/holy-private-bookmarks/sitemap.xml
