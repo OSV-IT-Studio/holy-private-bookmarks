@@ -13,15 +13,29 @@ No one except you (not even us) can read them — everything is encrypted with a
 [![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/nnafnomgekidkehbgkfmhapccelgdbch)](https://chromewebstore.google.com/detail/holy-private-bookmarks/nnafnomgekidkehbgkfmhapccelgdbch)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+---
+
+## 🌐 Official Website
+
+Visit our **[official website](https://osv-it-studio.github.io/holy-private-bookmarks/)** for:
+- 📖 Detailed feature overview with screenshots
+- ❓ Frequently Asked Questions
+- 🎯 Interactive demonstration of all functions
+- 🔧 Troubleshooting guides
+- 📸 High-quality screenshots of every feature
+
+---
+
 ## Features
 
-- Full bookmark encryption (AES-GCM + PBKDF2)
-- No servers — everything is stored locally
-- Import from standard Chrome bookmarks
-- Support for folders and nested structure
-- Context menu for quick bookmark adding
-- Auto-lock after 10 minutes of inactivity
-- Clear browsing history for domains present in bookmarks
+- 🔒 Full bookmark encryption (AES-GCM + PBKDF2)
+- ☁️ No servers — everything is stored locally
+- 📥 Import from standard Chrome bookmarks
+- 📁 Support for folders and nested structure
+- 🖱️ Context menu for quick bookmark adding
+- ⏰ Auto-lock after 10 minutes of inactivity
+- 🧹 Clear browsing history for domains present in bookmarks
+- 🌓 Dark/Light theme support
 
 ## Screenshots
 
@@ -32,13 +46,15 @@ No one except you (not even us) can read them — everything is encrypted with a
 ![Settings](screenshots/settings.png)
 ![Settings](screenshots/settings-2.png)
 
+> 📸 **More screenshots available on our [website](https://osv-it-studio.github.io/holy-private-bookmarks/)**
+
 ## 🤖 AI Assistance
 
 Parts of this project's code were developed with the assistance of AI tools (such as ChatGPT Grok). All generated code has been reviewed, tested, and adapted by human contributors to meet the project's quality and security standards.
 
 ## Installation
 
-[Install from Chrome Web Store](https://chromewebstore.google.com/detail/holy-private-bookmarks/nnafnomgekidkehbgkfmhapccelgdbch)
+[![Chrome Web Store](https://img.shields.io/badge/Install-Chrome_Web_Store-blue?logo=google-chrome)](https://chromewebstore.google.com/detail/holy-private-bookmarks/nnafnomgekidkehbgkfmhapccelgdbch)
 
 Or load it manually:
 1. Download a release or clone the repository
@@ -66,9 +82,11 @@ If you find the extension useful, any support is greatly appreciated:
 - Ethereum (ETH): `0xAc862138b1ebF8d7F4fdb23D821489Cf91c314d0`
 
 ❤️ Thank you!
+
 ---
 
 <p align="center">
-  <a href="https://osv-it-studio.github.io/holy-private-bookmarks/">📚 Documentation & FAQ</a> •
-  <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks/issues">🐛 Report Bug</a>
+  <a href="https://osv-it-studio.github.io/holy-private-bookmarks/">📚 Official Website</a> •
+  <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks/issues">🐛 Report Bug</a> •
+  <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks/discussions">💬 Discussions</a>
 </p>
