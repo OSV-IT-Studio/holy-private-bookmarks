@@ -22,7 +22,6 @@ Visit our **[official website](https://osv-it-studio.github.io/holy-private-book
 - ❓ Frequently Asked Questions
 - 🎯 Interactive demonstration of all functions
 - 🔧 Troubleshooting guides
-- 📸 High-quality screenshots of every feature
 
 ---
 
