@@ -170,17 +170,41 @@ const ThemeManager = (function() {
         
         selector.innerHTML = `
             <div class="theme-option ${currentTheme === THEMES.DARK ? 'active' : ''}" data-theme="${THEMES.DARK}">
-                <span class="theme-icon">🌙</span>
-                <div class="theme-name">${darkName}</div>
-            </div>
-            <div class="theme-option ${currentTheme === THEMES.LIGHT ? 'active' : ''}" data-theme="${THEMES.LIGHT}">
-                <span class="theme-icon">☀️</span>
-                <div class="theme-name">${lightName}</div>
-            </div>
-            <div class="theme-option ${currentTheme === THEMES.SYSTEM ? 'active' : ''}" data-theme="${THEMES.SYSTEM}">
-                <span class="theme-icon">💻</span>
-                <div class="theme-name">${systemName}</div>
-            </div>
+    <span class="theme-option__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+    </span>
+    <span class="theme-option__name">${darkName}</span>
+</div>
+
+<div class="theme-option ${currentTheme === THEMES.LIGHT ? 'active' : ''}" data-theme="${THEMES.LIGHT}">
+    <span class="theme-option__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+    </span>
+    <span class="theme-option__name">${lightName}</span>
+</div>
+
+<div class="theme-option ${currentTheme === THEMES.SYSTEM ? 'active' : ''}" data-theme="${THEMES.SYSTEM}">
+    <span class="theme-option__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+        </svg>
+    </span>
+    <span class="theme-option__name">${systemName}</span>
+</div>
         `;
         
         selector.querySelectorAll('.theme-option').forEach(btn => {

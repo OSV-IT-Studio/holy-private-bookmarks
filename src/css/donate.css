@@ -39,7 +39,10 @@ body.light-theme {
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
+.icon-text::before {
+    content: attr(data-icon);
+    margin-right: 8px;
+}
     .subtitle {
       text-align: center;
       color: var(--text-secondary);

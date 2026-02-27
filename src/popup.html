@@ -11,128 +11,114 @@
 
 <body>
     <div class="container">
-        <!-- Setup -->
-        <div id="setup" class="section">
-            <h1 data-i18n="extensionName">🔒 Holy Private</h1>
-            <p class="subtitle" data-i18n="createPassword">Create a master password for full bookmark encryption</p>
-            <input type="password" id="new-pass" data-i18n="newPassword" placeholder="New password">
-            <input type="password" id="confirm-pass" data-i18n="confirmPassword" placeholder="Confirm password">
 
-            <div class="password-warning" style="
-    background: rgba(255, 64, 96, 0.1);
-    border-radius: 12px;
-    padding: 16px;
-    margin: 16px 0;
-    border-left: 4px solid var(--danger);
-    text-align: left;
-    font-size: 14px;
-    color: var(--text-secondary);
-">
-    <p style="margin: 0 0 8px 0; color: var(--text-primary); font-weight: 600;">
-        ⚠️ <span data-i18n="importantWarning" id="important-warning-text"></span>
-    </p>
-    <ul style="margin: 0; padding-left: 20px; line-height: 1.5;">
-        <li><span data-i18n="passwordCannotBeRecovered" id="cannot-recover-text"></span></li>
-        <li><span data-i18n="noPasswordReset" id="no-reset-text"></span></li>
-        <li><span data-i18n="weDontStorePassword" id="dont-store-text"></span></li>
-        <li><span data-i18n="bookmarksEncrypted" id="encrypted-only-text"></span></li>
-    </ul>
-    <p style="margin: 12px 0 0 0; font-weight: 600; color: var(--accent);">
-        💡 <span data-i18n="savePasswordSecurely" id="save-password-text"></span>
-    </p>
-</div>
-
-            <button class="btn-primary" id="create-pass" data-i18n="createStorage">🔐 Create storage</button>
-        </div>
-
-        <!-- Login -->
-        <div id="login" class="section">
-            <h1 data-i18n="extensionName">🔒 Holy Private</h1>
-            <p class="subtitle" data-i18n="enterMasterPassword">Enter your master password to unlock</p>
-            
-            <div id="pending-bookmark-notification" class="pending-notification" style="
-                display: none;
-                background: rgba(0, 212, 255, 0.1);
-                border: 1px solid var(--accent);
-                border-radius: 12px;
-                padding: 16px;
-                margin: 16px 0;
-                text-align: left;
-                font-size: 14px;
-                color: var(--text-secondary);
-            ">
-                <p style="margin: 0 0 8px 0; color: var(--accent); font-weight: 600;">
-                    <span id="pending-notification-text" data-i18n="pendingBookmarkNotification">Bookmark pending!</span>
-                </p>
-                <p style="margin: 0; line-height: 1.5;">
-                    <span id="pending-instruction-text" data-i18n="pendingBookmarkInstruction">
-                        A bookmark is waiting to be added. Please unlock to continue.
-                    </span>
-                </p>
-            </div>
-            
-            <input type="password" id="password" data-i18n="masterPassword" placeholder="Master password">
-            <button class="btn-primary" id="unlock" data-i18n="unlock">🔓 Unlock</button>
-        </div>
 
         <!-- Main Menu -->
         <div id="main" class="section">
-            <div class="top-right-buttons">
-			    <button id="faq-btn" class="top-right-btn" data-i18n-title="faqButtonTitle" title="FAQ">❓</button>
-				<button id="support-btn" class="top-right-btn" data-i18n-title="supportProject" title="Support Project">❤️</button>
-				<button id="settings-btn" class="top-right-btn" data-i18n-title="settings" title="Settings">⚙️</button>
-            </div>
+<div class="top-right-buttons">
+    <button id="faq-btn" class="top-right-btn" data-i18n-title="faqButtonTitle" title="FAQ">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+        </svg>
+    </button>
+    
+    <button id="support-btn" class="top-right-btn" data-i18n-title="supportProject" title="Support Project">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+    </button>
+    
+    <button id="settings-btn" class="top-right-btn" data-i18n-title="settings" title="Settings">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+    </button>
+</div>
 
             <h1 data-i18n="extensionName">Holy Private Bookmarks</h1>
 
 
-            <div class="menu" style="position: relative; width: 100%; max-width: 640px; height: 120px; margin: 40px auto 30px auto;">
+<div class="action-menu">
 
-                <div class="top-panel" style="position: absolute; top: 0; left: 0; width: 100%; height: 85px; display: flex; border-radius: 20px; overflow: hidden;">
-
-                    <button id="add-current" class="menu-btn left-btn" data-i18n="addCurrentPage">➕
-                    </button>
-                    <div style="flex: 1;"></div>
-
-                    <button id="clear-history" class="menu-btn right-btn">
-                       <div class="button-text">
-                            <div class="icon" data-i18n="clearHistory" id="clear-historydiv">🧹️</div>
-                        </div>
-                    </button>
-                </div>
-
-
-                <button id="lock" class="menu-btn center-btn" data-i18n-title="lock" title="Lock">
-					<img src="icons/Lock.png">
-				</button>
-
-
-                <button id="manager-btn" class="menu-btn bottom-btn" >
-                    <div class="button-text" style="margin-top: 15px;">
-                            <div class="icon" data-i18n="manager"></div> 
-                        </div> 
-                </button>
-            </div>
- <div class="action-bar">
-        <div class="action-bar-left">
-            <span class="stats-label" data-i18n="bookmarksAndFolders">Bookmarks & Folders</span>
-        </div>
-        <div class="action-bar-right">
-            <button id="quick-add-bookmark" class="icon-button" data-i18n-title="addBookmark">
-                <span class="button-icon">➕</span>
-            </button>
-            <button id="quick-add-folder" class="icon-button" data-i18n-title="newFolder">
-                <span class="button-icon">📁</span>
-            </button>
-        </div>
+    <div class="action-menu__panel">
+        <button class="action-menu__btn action-menu__btn--add" id="add-current">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="2" y1="10" x2="18" y2="10"/>
+    <line x1="10" y1="2" x2="10" y2="18"/>
+</svg>
+            <span data-i18n="addCurrentPage">Add current</span>
+        </button>
+        
+        <div class="action-menu__spacer"></div>
+        
+        <button class="action-menu__btn action-menu__btn--clear" id="clear-history">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                <line x1="10" y1="11" x2="10" y2="17"></line>
+                <line x1="14" y1="11" x2="14" y2="17"></line>
+            </svg>
+            <span data-i18n="clearHistory">Clear history</span>
+        </button>
     </div>
+    
+
+    <button class="action-menu__lock" id="lock" data-i18n-title="lock" title="Lock">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        </svg>
+    </button>
+    
+    
+</div>
+<div class="action-bar">
+    <div class="action-bar__left">
+        <span class="action-bar__label" data-i18n="bookmarksAndFolders">Bookmarks & Folders</span>
+    </div>
+
+    <div class="action-bar__right">
+	    <button id="manager-btn" class="icon-button" data-i18n-title="manager" title="Manager">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+        </button>
+        <button id="quick-add-bookmark" class="icon-button" data-i18n-title="addBookmark" title="Add bookmark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+        </button>
+        
+        <button id="quick-add-folder" class="icon-button" data-i18n-title="newFolder" title="New folder">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                <line x1="12" y1="11" x2="12" y2="17" />
+                <line x1="9" y1="14" x2="15" y2="14" />
+            </svg>
+        </button>
+    </div>
+</div>
             <div id="tree"></div>
         </div>
 
-        <!-- Settings -->
+
         <div id="settings" class="section">
             <button id="back" data-i18n="back">← Back</button>
-            <h1 data-i18n="settings" style="padding-bottom: 30px;">⚙️ Settings</h1>
+           <h1 class="settings-title">
+    <span class="settings-title__icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+    </span>
+    <span data-i18n="settings">Settings</span>
+</h1>
 
 <div class="settings-section">
     <h3 class="section-title" data-i18n="theme">Theme</h3>
@@ -164,82 +150,152 @@
             </div>
 
             <div class="settings-section">
-                <h3 class="section-title" data-i18n="exportImport">Export & Import</h3>
-                <div class="settings-buttons-grid">
-                    <button class="settings-full-btn export" id="export">
-                        <span class="icon">📤</span>
-                        <div class="btn-content">
-                            <div class="btn-title" data-i18n="export">Export</div>
-                        </div>
-                        <span class="btn-arrow">→</span>
-                    </button>
+    <h3 class="section-title" data-i18n="exportImport">Export & Import</h3>
+    <div class="settings-buttons-grid">
+  
+        <button class="settings-btn" id="export">
+            <span class="settings-btn__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="export">Export</span>
+            </div>
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
 
-                    <button class="settings-full-btn import" id="import-btn">
-    <span class="icon">📥</span>
-    <div class="btn-content">
-        <div class="btn-title" data-i18n="import">Import</div>
-        <div class="btn-note warning-note">
-            <span class="note-icon warning-icon">⚠️</span>
-            <span class="note-text" data-i18n="importWarning">All existing bookmarks will be replaced</span>
-        </div>
+
+        <button class="settings-btn settings-btn--warning" id="import-btn">
+            <span class="settings-btn__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="import">Import</span>
+                <span class="settings-btn__warning">
+                    <span class="warning-icon">⚠️</span>
+                    <span class="warning-text" data-i18n="importWarning">All existing bookmarks will be replaced</span>
+                </span>
+            </div>
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
+
+        <!-- HTML Import -->
+        <button class="settings-btn" id="import-html-btn">
+            <span class="settings-btn__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+                    <polyline points="8 12 12 16 16 12" />
+                    <line x1="12" y1="2" x2="12" y2="16" />
+                </svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="importFromHtml">Import from HTML</span>
+                <span class="settings-btn__caption">
+                    <span class="settings-btn__badge">1MB</span>
+                    <span class="settings-btn__divider">•</span>
+                    <span data-i18n="importHtmlSizeNote">~2500 bookmarks max</span>
+                </span>
+            </div>
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
     </div>
-    <span class="btn-arrow">→</span>
-</button>
+    <input type="file" id="import-html-file" accept=".html,.htm" style="display:none">
+</div>
 
+<div class="settings-section">
+    <h3 class="section-title" data-i18n="importFromChrome">Import from Chrome</h3>
+    <div class="settings-buttons-grid">
+        <!-- Import All Chrome Bookmarks -->
+        <button class="settings-btn" id="import-from-chrome">
+            <span class="settings-btn__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="4" />
+                    <line x1="21.17" y1="8" x2="12" y2="8" />
+                    <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
+                    <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
+                </svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="importChromeBookmarks">Import All Bookmarks</span>
+            </div>
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
 
-<button class="settings-full-btn html-import" id="import-html-btn">
-    <span class="icon">🌐</span>
-    <div class="btn-content">
-        <div class="btn-title" data-i18n="importFromHtml">Import from HTML</div>
-        <div class="btn-note info-note">
-            <span class="note-text accent" data-i18n="importHtmlSizeWarning">1MB limit</span>
-            <span class="note-separator">•</span>
-            <span class="note-text" data-i18n="importHtmlSizeNote">~2500 bookmarks max</span>
-        </div>
+        <!-- Selective Import -->
+        <button class="settings-btn" id="import-from-chrome-advanced">
+            <span class="settings-btn__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
+                    <line x1="12" y1="10" x2="12" y2="16" />
+                    <line x1="9" y1="13" x2="15" y2="13" />
+                </svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="importChromeBookmarksAdvanced">Selective Import</span>
+            </div>
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
     </div>
-    <span class="btn-arrow">→</span>
-</button>
+</div>
 
-<input type="file" id="import-html-file" accept=".html,.htm" style="display:none">
-                </div>
+<div class="settings-section">
+    <h3 class="section-title" data-i18n="about">About</h3>
+    <div class="settings-buttons-grid">
+        <!-- About Button -->
+        <button class="settings-btn" id="about-btn">
+            <span class="settings-btn__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="aboutExtension">About Extension</span>
             </div>
-
-            <div class="settings-section">
-                <h3 class="section-title" data-i18n="importFromChrome">Import from Chrome</h3>
-                <div class="settings-buttons-grid">
-                    <button class="settings-full-btn chrome" id="import-from-chrome">
-                        <span class="icon">📥</span>
-                        <div class="btn-content">
-                            <div class="btn-title" data-i18n="importChromeBookmarks">Import All Bookmarks</div>
-                            
-                        </div>
-                        <span class="btn-arrow">→</span>
-                    </button>
-
-                    <button class="settings-full-btn chrome" id="import-from-chrome-advanced">
-                        <span class="icon">🗂️</span>
-                        <div class="btn-content">
-                            <div class="btn-title" data-i18n="importChromeBookmarksAdvanced">Selective Import</div>
-                        </div>
-                        <span class="btn-arrow">→</span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="settings-section">
-                <h3 class="section-title" data-i18n="about">About</h3>
-                <div class="settings-buttons-grid">
-                    <button class="settings-full-btn" id="about-btn">
-                        <span class="icon">ℹ️</span>
-                        <div class="btn-content">
-                            <div class="btn-title" data-i18n="aboutExtension">About Extension</div>
-                        </div>
-                        <span class="btn-arrow">→</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
+    </div>
+</div>
+</div>
          <div id="add-bookmark-modal">
         <div class="modal-content">
             <h2 style="margin-top:0; color:var(--accent);" id="modal-title-text">Add bookmark</h2>
@@ -282,7 +338,7 @@
             <div style="background: rgba(255, 255, 255, 0.05); padding: 16px; border-radius: 12px; margin-bottom: 20px;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);" data-i18n="version">Version:</span>
-                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4.14</span>
+                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4.16</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);" data-i18n="developer">Developer:</span>
@@ -321,22 +377,7 @@
     </div>
 </div>
         
-    <!-- Context menu -->
-    <div id="context-menu" class="context-menu">
-        <div class="context-menu-item" id="ctx-new-folder">
-            <span class="icon">📁</span>
-            <span data-i18n="newFolder">New folder</span>
-        </div>
-        <div class="context-menu-item" id="ctx-new-bookmark">
-            <span class="icon">🔗</span>
-            <span data-i18n="newBookmark">New bookmark</span>
-        </div>
-        <div class="context-menu-divider"></div>
-        <div class="context-menu-item" id="ctx-paste">
-            <span class="icon">📋</span>
-            <span data-i18n="paste">Paste</span>
-        </div>
-    </div>
+ 
 
 
 	<script src="js/crypto-wrapper.js"></script>

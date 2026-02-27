@@ -82,8 +82,6 @@ let data = { folders: [] };
 let autoLockTimer;
 let pendingBookmark = null;
 let editingBookmarkPath = null;
-let contextMenu = null;
-let clipboardItem = null;
 let isInitialized = false;
 
 let dragState = {
@@ -111,6 +109,205 @@ const DRAG_CONFIG = {
 
 let eventHandlersInitialized = false;
 
+// ========== SETUP SECTION ==========
+
+function loadSetupContent() {
+    const setupSection = document.getElementById('setup');
+    if (!setupSection) return;
+
+    setupSection.innerHTML = `
+	 <h1 data-i18n="extensionName">Holy Private</h1>
+        <p class="subtitle" data-i18n="createPassword"></p>
+        <input type="password" id="new-pass" data-i18n="newPassword" placeholder="">
+        <input type="password" id="confirm-pass" data-i18n="confirmPassword" placeholder="">
+
+        <div class="password-warning" style="
+            background: rgba(255, 64, 96, 0.1);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 4px solid var(--danger);
+            text-align: left;
+            font-size: 14px;
+            color: var(--text-secondary);
+        ">
+            <p style="margin: 0 0 8px 0; color: var(--text-primary); font-weight: 600;">
+                ⚠️ <span data-i18n="importantWarning" id="important-warning-text"></span>
+            </p>
+            <ul style="margin: 0; padding-left: 20px; line-height: 1.5;">
+                <li><span data-i18n="passwordCannotBeRecovered" id="cannot-recover-text"></span></li>
+                <li><span data-i18n="noPasswordReset" id="no-reset-text"></span></li>
+                <li><span data-i18n="weDontStorePassword" id="dont-store-text"></span></li>
+                <li><span data-i18n="bookmarksEncrypted" id="encrypted-only-text"></span></li>
+            </ul>
+            <p style="margin: 12px 0 0 0; font-weight: 600; color: var(--accent);">
+                💡 <span data-i18n="savePasswordSecurely" id="save-password-text"></span>
+            </p>
+        </div>
+
+        <button class="btn-primary" id="create-pass" data-i18n="createStorage"></button>
+    `;
+
+
+    const createPassBtn = document.getElementById('create-pass');
+    if (createPassBtn) {
+        createPassBtn.addEventListener('click', createMasterPassword);
+    }
+
+    const newPassInput = document.getElementById('new-pass');
+    const confirmPassInput = document.getElementById('confirm-pass');
+    
+    if (newPassInput) {
+        newPassInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && confirmPassInput?.value) {
+                createMasterPassword();
+            }
+        });
+    }
+    
+    if (confirmPassInput) {
+        confirmPassInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                createMasterPassword();
+            }
+        });
+    }
+
+    if (typeof localizePage === 'function') localizePage();
+}
+
+function showSetupSection() {
+    
+    let setupSection = document.getElementById('setup');
+    if (!setupSection) {
+        setupSection = document.createElement('div');
+        setupSection.id = 'setup';
+        setupSection.className = 'section';
+        document.querySelector('.container').appendChild(setupSection);
+    }
+    
+    
+    loadSetupContent();
+    
+    
+    showSection('setup');
+    
+    
+    setTimeout(() => document.getElementById('new-pass')?.focus(), 100);
+}
+
+function refreshSetupContent() {
+    loadSetupContent();
+}
+
+function showSetupSection() {
+    
+    let setupSection = document.getElementById('setup');
+    if (!setupSection) {
+        setupSection = document.createElement('div');
+        setupSection.id = 'setup';
+        setupSection.className = 'section';
+        document.querySelector('.container').appendChild(setupSection);
+    }
+    
+    
+    loadSetupContent();
+    
+   
+    showSection('setup');
+    
+    
+    setTimeout(() => document.getElementById('new-pass')?.focus(), 100);
+}
+
+function refreshSetupContent() {
+    loadSetupContent();
+}
+
+// ========== LOGIN SECTION ==========
+
+function loadLoginContent(showNotification = false, bookmarkTitle = '') {
+    const loginSection = document.getElementById('login');
+    if (!loginSection) return;
+
+    
+    const notificationHtml = showNotification ? `
+	<div id="pending-bookmark-notification" class="pending-notification" style="
+        background: rgba(0, 212, 255, 0.1);
+        border: 1px solid var(--accent);
+        border-radius: 12px;
+        padding: 16px;
+        margin: 16px 0;
+        text-align: left;
+        font-size: 14px;
+        color: var(--text-secondary);
+    ">
+        <p style="margin: 0 0 8px 0; color: var(--accent); font-weight: 600;">
+            <span id="pending-notification-text">📌 <span data-i18n="pendingBookmarkNotification"></span></span>
+        </p>
+        <p style="margin: 0; line-height: 1.5;">
+            <span id="pending-instruction-text">
+                <span data-i18n="pendingBookmarkInstruction"></span>
+                ${bookmarkTitle ? `(${bookmarkTitle})` : ''}
+            </span>
+        </p>
+    </div>
+` : '<div id="pending-bookmark-notification" style="display: none;"></div>';
+
+loginSection.innerHTML = `
+    <h1 data-i18n="extensionName"></h1>
+    <p class="subtitle" data-i18n="enterMasterPassword"></p>
+    
+    ${notificationHtml}
+    
+    <input type="password" id="password" data-i18n="masterPassword" placeholder="">
+    <button class="btn-primary" id="unlock" data-i18n="unlock"></button>
+    `;
+
+    
+    const unlockBtn = document.getElementById('unlock');
+    if (unlockBtn) {
+        unlockBtn.addEventListener('click', unlock);
+    }
+
+    const passwordInput = document.getElementById('password');
+    if (passwordInput) {
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') unlock();
+        });
+    }
+
+    if (typeof localizePage === 'function') localizePage();
+}
+
+function showLoginSection() {
+    const hasPendingBookmark = !!pendingBookmark;
+    const bookmarkTitle = pendingBookmark?.title || '';
+    
+    
+    let loginSection = document.getElementById('login');
+    if (!loginSection) {
+        loginSection = document.createElement('div');
+        loginSection.id = 'login';
+        loginSection.className = 'section';
+        document.querySelector('.container').appendChild(loginSection);
+    }
+    
+    
+    loadLoginContent(hasPendingBookmark, bookmarkTitle);
+    
+    
+    showSection('login');
+    
+    
+    setTimeout(() => document.getElementById('password')?.focus(), 100);
+}
+
+function refreshLoginContent() {
+    loadLoginContent(!!pendingBookmark, pendingBookmark?.title || '');
+}
+
+
 function getEmptyTreeMessages() {
     return {
         title: getMessage('emptyTreeTitle') || 'No bookmarks yet',
@@ -121,6 +318,7 @@ function getEmptyTreeMessages() {
 }
 
 function localizePage() {
+
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         const text = getMessage(key);
@@ -134,167 +332,18 @@ function localizePage() {
     });
     
 
-    
-    const modalTitle = getCachedElement('#add-bookmark-modal h2');
-    if (modalTitle && modalTitle.id !== 'modal-title-text') {
-        modalTitle.id = 'modal-title-text';
-    }
-    
-    const modalLabels = document.querySelectorAll('#add-bookmark-modal label');
-    if (modalLabels.length >= 3) {
-        modalLabels[0].setAttribute('data-i18n', 'title');
-        modalLabels[1].setAttribute('data-i18n', 'url');
-        modalLabels[2].setAttribute('data-i18n', 'folder');
-    }
-    
-    const pageLabel = getCachedElement('#add-bookmark-modal p strong');
-    if (pageLabel) {
-        pageLabel.setAttribute('data-i18n', 'page');
-    }
-    
-    setTimeout(() => {
-        const addBookmarkBtn = getCachedElement('#empty-add-bookmark');
-        const addFolderBtn = getCachedElement('#empty-add-folder');
-        
-        if (addBookmarkBtn) {
-            const text = getMessage('addBookmark') || 'Add Bookmark';
-            addBookmarkBtn.textContent = '📌 ' + text;
-        }
-        
-        if (addFolderBtn) {
-            const text = getMessage('newFolder') || 'New Folder';
-            addFolderBtn.textContent = '📁 ' + text;
-        }
-    }, 100);
-}
-
-function initContextMenu() {
-    contextMenu = document.getElementById('context-menu');
-    
-    if (!contextMenu) {
-        return;
-    }
-    
-    const ctxItems = {
-        'ctx-new-folder': 'ctxnewFolder',
-        'ctx-new-bookmark': 'newBookmark',
-        'ctx-paste': 'paste'
-    };
-    
-    Object.entries(ctxItems).forEach(([id, key]) => {
-        const item = document.getElementById(id);
-        if (item) {
-            const textSpan = item.querySelector('span:not(.icon)');
-            if (textSpan) {
-                textSpan.textContent = getMessage(key);
-            }
-        }
-    });
-    
-    document.getElementById('ctx-new-folder').addEventListener('click', handleNewFolder);
-    document.getElementById('ctx-new-bookmark').addEventListener('click', handleNewBookmark);
-    document.getElementById('ctx-paste').addEventListener('click', handlePaste);
-    
-    document.addEventListener('contextmenu', function(e) {
-        const mainSection = document.getElementById('main');
-        if (!mainSection || mainSection.style.display !== 'block') {
-            return;
-        }
-        
-        const tree = document.getElementById('tree');
-        const clickedOnTreeItem = e.target.closest('.tree-item');
-        const clickedOnTree = tree && (tree === e.target || tree.contains(e.target));
-        
-        if (clickedOnTree || clickedOnTreeItem) {
-            e.preventDefault();
-            showContextMenu(e.clientX, e.clientY);
-        } else {
-            hideContextMenu();
-        }
-    });
-    
-    document.addEventListener('click', (e) => {
-        if (contextMenu && contextMenu.style.display === 'block' && !contextMenu.contains(e.target)) {
-            hideContextMenu();
-        }
-    });
-    
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && contextMenu && contextMenu.style.display === 'block') {
-            hideContextMenu();
+    document.querySelectorAll('[data-i18n-title]').forEach(element => {
+        const key = element.getAttribute('data-i18n-title');
+        const text = getMessage(key);
+        if (text) {
+            element.title = text;
         }
     });
 }
 
-function handleNewFolder() {
-    hideContextMenu();
-    addFolder();
-}
 
-function handleNewBookmark() {
-    hideContextMenu();
-    addEmptyBookmark();
-}
 
-function handlePaste() {
-    hideContextMenu();
-    pasteFromClipboard();
-}
 
-function showContextMenu(x, y) {
-    if (!contextMenu) return;
-    
-    checkClipboard();
-    
-    contextMenu.style.display = 'block';
-    
-    const menuWidth = contextMenu.offsetWidth || 200;
-    const menuHeight = contextMenu.offsetHeight || 150;
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    
-    let finalX = Math.max(10, Math.min(x, windowWidth - menuWidth - 10));
-    let finalY = Math.max(10, Math.min(y, windowHeight - menuHeight - 10));
-    
-    contextMenu.style.left = finalX + 'px';
-    contextMenu.style.top = finalY + 'px';
-    
-    setTimeout(() => {
-        contextMenu.style.opacity = '1';
-    }, 10);
-}
-
-function hideContextMenu() {
-    if (contextMenu) {
-        contextMenu.style.display = 'none';
-        contextMenu.style.opacity = '0';
-    }
-}
-
-async function checkClipboard() {
-    const pasteBtn = document.getElementById('ctx-paste');
-    if (!pasteBtn) return;
-    
-    try {
-        const text = await navigator.clipboard.readText();
-        const trimmed = text.trim();
-        
-        if (trimmed) {
-            const urlPattern = /^(https?:\/\/|www\.)/i;
-            if (urlPattern.test(trimmed)) {
-                pasteBtn.style.display = 'flex';
-                clipboardItem = { type: 'url', text: trimmed };
-                return;
-            }
-        }
-        
-        pasteBtn.style.display = 'none';
-        clipboardItem = null;
-    } catch (err) {
-        pasteBtn.style.display = 'none';
-        clipboardItem = null;
-    }
-}
 
 function addEmptyBookmark() {
     openAddBookmarkModal('', 'https://');
@@ -388,7 +437,7 @@ async function init() {
     }
     
     ensureLoadingStyles();
-    initContextMenu();
+
     initQuickActions();
     initFaviconToggle();
 	
@@ -404,32 +453,16 @@ async function init() {
         await chrome.storage.session.remove('pendingBookmarkAdd');
         
         if (!stored[STORAGE_KEY]) {
-            showSection('setup');
+            showSetupSection();
         } else {
-            showSection('login');
-            
-            const pendingNotification = document.getElementById('pending-bookmark-notification');
-            if (pendingNotification) {
-                pendingNotification.style.display = 'block';
-                
-                const pageTitle = pendingBookmark.title || 'Current page';
-                const notificationText = document.getElementById('pending-notification-text');
-                const instructionText = document.getElementById('pending-instruction-text');
-                
-                if (notificationText) {
-                    notificationText.textContent = `📌 ${getMessage('pendingBookmarkNotification') || 'Bookmark pending!'}`;
-                }
-                
-                if (instructionText) {
-                    instructionText.textContent = `${getMessage('pendingBookmarkInstruction') || 'A bookmark is waiting to be added. Please unlock to continue.'} (${pageTitle})`;
-                }
-            }
+            // Уведомление будет показано автоматически в showLoginSection()
+            showLoginSection(); // Один вызов, всё включено
         }
     } else {
         if (!stored[STORAGE_KEY]) {
-            showSection('setup');
+            showSetupSection();
         } else {
-            showSection('login');
+            showLoginSection();
         }
     }
     
@@ -448,7 +481,7 @@ async function init() {
         '#change-pass': changeMasterPassword,
         '#modal-cancel': () => getCachedElement('#add-bookmark-modal').style.display = 'none',
         '#manager-btn': openmanager,
-        '#faq-btn': () => chrome.tabs.create({ url: chrome.runtime.getURL('faq.html') }),
+        '#faq-btn': () => chrome.tabs.create({ url: 'https://osv-it-studio.github.io/holy-private-bookmarks#faq' }),
 		'#quick-add-bookmark': addEmptyBookmark,
 		'#quick-add-folder': addFolder
     };
@@ -493,11 +526,12 @@ async function init() {
         modalSaveBtn.addEventListener('click', handleModalSave);
     }
     
-    if (!stored[STORAGE_KEY]) {
-        showSection('setup');
-    } else {
-        showSection('login');
-    }
+if (!stored[STORAGE_KEY]) {
+	showSetupSection();
+
+} else {
+    showLoginSection();
+}
     
     const aboutBtn = document.getElementById('about-btn');
     if (aboutBtn) {
@@ -678,7 +712,7 @@ function handleModalSave() {
     const url = urlInput.value.trim();
     
     if (!title || !url) {
-        showNotification('Title and URL are required', true);
+		showNotification(getMessage('titleRequired'), true);
         return;
     }
     
@@ -795,10 +829,13 @@ async function unlock() {
         const decrypted = await CryptoManager.decrypt(encrypted);
         data = JSON.parse(decrypted);
         
-        const pendingNotification = document.getElementById('pending-bookmark-notification');
-        if (pendingNotification) {
-            pendingNotification.style.display = 'none';
+		 
+
+        const loginSection = document.getElementById('login');
+        if (loginSection) {
+            loginSection.remove(); 
         }
+		
         
         showSection('main');
         
@@ -840,6 +877,12 @@ async function createMasterPassword() {
     
     data = { folders: [] };
     await saveEncrypted(data, salt, CryptoManager);
+	
+	const setupSection = document.getElementById('setup');
+    if (setupSection) {
+        setupSection.remove(); 
+    }
+	
     showSection('main');
 }
 
@@ -869,6 +912,7 @@ async function changeMasterPassword() {
     const decrypted = await CryptoManager.decrypt(encrypted);
     data = JSON.parse(decrypted);
     
+	
     const success = await CryptoManager.init(p1, newSalt);
     if (!success) throw new Error('Init failed');
     
@@ -1179,32 +1223,28 @@ function renderEmptyState(container) {
     
     container.innerHTML = `
         <div class="empty-tree-message" style="text-align: center; padding: 40px 20px; color: var(--text-secondary); font-size: 16px; line-height: 1.5;">
-            <div style="font-size: 48px; margin-bottom: 16px;"><img src="icons/no-bookmarks.png"></div>
+            <div class="empty-state__icon" style="
+    width
+Specifies the width of the content area, padding area or border area (depending on 'box-sizing') of certain boxes.
+
+Widely available across major browsers (Baseline since January 2018)
+Learn more
+
+Don't show: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+    color: var(--accent);
+    opacity: 0.7;';
+">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+    </svg>
+</div>
             <h3 style="margin: 0 0 8px 0; color: var(--text-primary);">${messages.title}</h3>
             <p style="margin: 0 0 20px 0;">${messages.subtitle}</p>
-            <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
-                <button class="btn-secondary" id="empty-add-bookmark" style="font-size: 14px; padding: 8px 16px;">
-                    ${messages.addBookmark}
-                </button>
-                <button class="btn-secondary" id="empty-add-folder" style="font-size: 14px; padding: 8px 16px;">
-                    ${messages.newFolder}
-                </button>
-            </div>
+            
         </div>
     `;
-    
-    setTimeout(() => {
-        const addBookmarkBtn = document.getElementById('empty-add-bookmark');
-        const addFolderBtn = document.getElementById('empty-add-folder');
-        
-        if (addBookmarkBtn) {
-            addBookmarkBtn.addEventListener('click', () => openAddBookmarkModal('New Bookmark', 'https://'));
-        }
-        
-        if (addFolderBtn) {
-            addFolderBtn.addEventListener('click', addFolder);
-        }
-    }, 0);
 }
 
 function createFolderElement(item, path) {
@@ -1217,18 +1257,38 @@ function createFolderElement(item, path) {
     
     div.innerHTML = `
         <div class="item-header folder">
-            <div class="item-title">
-                <span class="arrow">▶</span>
-                <span class="icon folder-icon">📁</span>
-                <span class="folder-name">${escapeHtml(item.name)}</span>
-                <span class="folder-badge">${itemCount}</span>
-            </div>
-            <div class="actions">
-                <button class="action-btn" data-action="rename" data-path="${path.join(',')}">✏️</button>
-                <button class="action-btn delete" data-action="delete" data-path="${path.join(',')}">🗑️</button>
-            </div>
-        </div>
-        <div class="subitems collapsed"></div>
+    <div class="item-title">
+        <span class="arrow">▶</span>
+        
+        <span class="icon folder-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+            </svg>
+        </span>
+        
+        <span class="folder-name">${escapeHtml(item.name)}</span>
+        <span class="folder-badge">${itemCount}</span>
+    </div>
+    
+    <div class="actions">
+        <button class="action-btn" data-action="rename" data-path="${path.join(',')}" title="Rename">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
+            </svg>
+        </button>
+        
+        <button class="action-btn delete" data-action="delete" data-path="${path.join(',')}" title="Delete">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6" />
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                <line x1="10" y1="11" x2="10" y2="17" />
+                <line x1="14" y1="11" x2="14" y2="17" />
+            </svg>
+        </button>
+    </div>
+</div>
+
+<div class="subitems collapsed"></div>
     `;
     
     return div;
@@ -1248,10 +1308,17 @@ function createBookmarkElement(item, path) {
     link.title = item.url;
     link.className = 'bookmark-link';
     
+ 
     const privateBtn = document.createElement('button');
     privateBtn.className = 'quick-action-btn-small';
     privateBtn.title = getMessage('openPrivate') || 'Open in private tab';
-    privateBtn.textContent = '👁️';
+    privateBtn.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="6" width="10" height="8" rx="1" ry="1" />
+            <path d="M5 6V4a3 3 0 0 1 6 0v2" />
+            <circle cx="8" cy="10" r="1" />
+        </svg>
+    `;
     privateBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         e.preventDefault();
@@ -1274,9 +1341,14 @@ function createBookmarkElement(item, path) {
     const titleDiv = document.createElement('div');
     titleDiv.className = 'item-title';
     
+
     const iconSpan = document.createElement('span');
     iconSpan.className = 'icon bookmark';
-    iconSpan.textContent = '🔗';
+    iconSpan.innerHTML = `
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5 4C5 2.89543 5.89543 2 7 2H17C18.1046 2 19 2.89543 19 4V21L12 17L5 21V4Z" fill="currentColor"/>
+</svg>
+    `;
     
     const textSpan = document.createElement('span');
     textSpan.className = 'bookmark-title';
@@ -1290,34 +1362,54 @@ function createBookmarkElement(item, path) {
     domainSpan.textContent = domain;
     titleDiv.appendChild(domainSpan);
     
+
     const quickActions = document.createElement('div');
     quickActions.className = 'quick-actions-hover';
-	quickActions.style.display = 'none';
+    quickActions.style.display = 'none';
     
+
     const editBtn = document.createElement('button');
     editBtn.className = 'quick-action-btn-small';
     editBtn.title = getMessage('edit') || 'Edit';
-    editBtn.textContent = '✏️';
+    editBtn.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11.5 2.5a2 2 0 0 1 3 3L6 14l-4 1 1-4 8.5-8.5z" />
+        </svg>
+    `;
     editBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         e.preventDefault();
         editBookmark(path.join(','));
     });
     
+
     const copyBtn = document.createElement('button');
     copyBtn.className = 'quick-action-btn-small';
     copyBtn.title = getMessage('copyUrl') || 'Copy URL';
-    copyBtn.textContent = '📋';
+    copyBtn.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="10" height="10" rx="1" ry="1" />
+            <path d="M4 2h8a2 2 0 0 1 2 2v8" />
+        </svg>
+    `;
     copyBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         e.preventDefault();
         copyBookmarkUrl(item.url);
     });
     
+
     const deleteBtn = document.createElement('button');
     deleteBtn.className = 'quick-action-btn-small delete';
     deleteBtn.title = getMessage('delete') || 'Delete';
-    deleteBtn.textContent = '🗑️';
+    deleteBtn.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                <line x1="10" y1="11" x2="10" y2="17"></line>
+                <line x1="14" y1="11" x2="14" y2="17"></line>
+            </svg>
+    `;
     deleteBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         e.preventDefault();
@@ -1418,15 +1510,26 @@ function createDragGhost(item, clientX, clientY) {
     const title = item.querySelector('.item-title span:nth-child(3)')?.textContent || 
                   item.querySelector('.item-title span:nth-child(2)')?.textContent || 
                   'Element';
-    const icon = item.querySelector('.icon')?.textContent || '📄';
     
     const isFolder = !!item.querySelector('.folder-badge');
     const count = isFolder ? item.querySelector('.folder-badge')?.textContent : '';
     
+  
+    let iconSvg = '';
+    if (isFolder) {
+        iconSvg = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M18 15a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8z"/>
+        </svg>`;
+    } else {
+        iconSvg = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 4h10v12l-5-3-5 3V4z"/>
+        </svg>`;
+    }
+    
     const ghost = document.createElement('div');
     ghost.className = 'drag-ghost';
     ghost.innerHTML = `
-        <span class="icon">${icon}</span>
+        <span class="icon">${iconSvg}</span>
         <span class="text">${title}</span>
         ${count ? `<span class="count">${count}</span>` : ''}
     `;
@@ -1815,7 +1918,7 @@ async function importData(e) {
         
         setTimeout(() => {
             lock();
-            showSection('login');
+            showLoginSection();
         }, 500);
         
     } catch (error) {
@@ -2026,9 +2129,12 @@ function lock() {
         virtualScrollCache.clear();
     }
     clearElementCache();
-    
-    showSection('login');
-    document.getElementById('password').value = '';
+	
+    const tree = document.getElementById('tree');
+    if (tree) {
+        tree.innerHTML = ''; 
+    }
+    showLoginSection();
 }
 
 async function clearBookmarksHistoryByDomain() {
@@ -2038,7 +2144,7 @@ async function clearBookmarksHistoryByDomain() {
     
 
     const clearHistoryBtn = getCachedElement('#clear-history');
-    const buttonIcon = getCachedElement('#clear-historydiv');
+    const buttonIcon = getCachedElement('#clear-history');
     
     if (!clearHistoryBtn || !buttonIcon) return;
     

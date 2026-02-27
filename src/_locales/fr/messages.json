@@ -18,7 +18,7 @@
     "message": "Confirmez le mot de passe"
   },
   "createStorage": {
-    "message": "🔐 Créer l'espace de stockage"
+    "message": "Créer l'espace de stockage"
   },
   "enterMasterPassword": {
     "message": "Entrez votre mot de passe maître pour déverrouiller"
@@ -27,7 +27,7 @@
     "message": "Mot de passe maître"
   },
   "unlock": {
-    "message": "🔓 Déverrouiller"
+    "message": "Déverrouiller"
   },
   "wrongPassword": {
     "message": "Mot de passe incorrect"
@@ -39,19 +39,19 @@
     "message": "Vos marque-pages sont protégés en toute sécurité"
   },
   "addCurrentPage": {
-    "message": "➕ Ajouter la page actuelle"
+    "message": "Ajouter la page actuelle"
   },
   "newFolder": {
-    "message": "📁 Nouveau dossier"
+    "message": "Nouveau dossier"
   },
   "clearHistory": {
-    "message": "🧹️ Effacer l'historique"
+    "message": "Effacer l'historique"
   },
   "supportProject": {
-    "message": "❤️ Soutenir le projet"
+    "message": "Soutenir le projet"
   },
   "settings": {
-    "message": "⚙️ Paramètres"
+    "message": "Paramètres"
   },
   "settingsbtn": {
     "message": "⚙️"
@@ -69,13 +69,13 @@
     "message": "Confirmez le nouveau mot de passe"
   },
   "changePassword": {
-    "message": "🔑 Changer le mot de passe"
+    "message": "Changer le mot de passe"
   },
   "exportImport": {
     "message": "Exporter & Importer"
   },
   "export": {
-    "message": "📤 Exporter"
+    "message": "Exporter"
   },
   "openPrivate": {
     "message": "Ouvrir dans un onglet privé"
@@ -117,7 +117,7 @@
     "message": "← Retour"
   },
   "addBookmark": {
-    "message": "📌 Ajouter un marque-page"
+    "message": "Ajouter un marque-page"
   },
   "editBookmark": {
     "message": "Modifier le marque-page"
@@ -195,7 +195,7 @@
     "message": "Ajoutez votre premier marque-page ou dossier pour commencer"
   },
   "historyCleared": {
-    "message": "🧹 Historique effacé !\n$count$ visite(s) supprimée(s) de $domains$ domaine(s).",
+    "message": "Historique effacé !\n$count$ visite(s) supprimée(s) de $domains$ domaine(s).",
     "placeholders": {
       "count": {
         "content": "$1"
@@ -215,7 +215,7 @@
     "message": "Soutenir le projet — Holy Private Bookmarks"
   },
   "supportTitle": {
-    "message": "❤️ Soutenir le Projet"
+    "message": "Soutenir le Projet"
   },
   "supportDescription": {
     "message": "Si l'extension vous est utile — toute aide est appréciée"
@@ -359,10 +359,10 @@
     "message": "Gestionnaire verrouillé"
   },
   "lockManager": {
-    "message": "🔓 Verrouiller le gestionnaire"
+    "message": "Verrouiller le gestionnaire"
   },
   "manager": {
-    "message": "🗂 Ouvrir le gestionnaire complet"
+    "message": "Ouvrir le gestionnaire complet"
   },
   "rename": {
     "message": "Renommer"
@@ -403,182 +403,8 @@
   "pendingBookmarkInstruction": {
     "message": "Un marque-page attend d'être ajouté. Veuillez déverrouiller pour continuer."
   },
-  "faqTitle": {
-    "message": "FAQ — Holy Private Bookmarks"
-  },
-  "faqSubtitle": {
-    "message": "Trouvez des réponses aux questions courantes sur Holy Private Bookmarks"
-  },
-  "searchFAQ": {
-    "message": "Rechercher des questions..."
-  },
-  "faqSecurity1": {
-    "message": "Mes données sont-elles sécurisées ?"
-  },
-  "faqSecurity1Answer": {
-    "message": "Tous vos marque-pages sont chiffrés localement en utilisant le chiffrement AES-256-GCM avec un mot de passe maître. Vos données ne quittent jamais votre ordinateur. Même nous ne pouvons pas accéder à vos marque-pages sans votre mot de passe."
-  },
-  "faqSecurity2": {
-    "message": "Que se passe-t-il si j'oublie mon mot de passe ?"
-  },
-  "faqSecurity2Answer": {
-    "message": "Attention : Votre mot de passe ne peut pas être récupéré. Nous ne stockons pas votre mot de passe ni aucune clé de récupération. Si vous oubliez votre mot de passe, vous perdrez définitivement l'accès à tous vos marque-pages chiffrés. Veuillez sauvegarder votre mot de passe dans un gestionnaire de mots de passe sécurisé."
-  },
-  "faqSecurity3": {
-    "message": "Pourquoi dois-je saisir mon mot de passe à chaque fois ?"
-  },
-  "faqSecurity3Warning": {
-    "message": "⚠️ C'est voulu et ne peut pas être modifié"
-  },
-  "faqSecurity3Answer": {
-    "message": "Holy Private Bookmarks est construit sur un modèle de sécurité « zero-trust ». Exiger la saisie du mot de passe à chaque fois n'est pas une limitation, c'est la fonctionnalité de sécurité principale."
-  },
-  "faqSecurity3WhyTitle": {
-    "message": "Pourquoi c'est non-négociable :"
-  },
-  "faqSecurity3Reason1": {
-    "message": "Véritable « zero-knowledge » : Nous ne stockons jamais votre mot de passe, vos jetons de session ou vos clés de déchiffrement"
-  },
-  "faqSecurity3Reason2": {
-    "message": "Défense en profondeur : Même avec un accès physique à votre ordinateur, vos marque-pages restent protégés"
-  },
-  "faqSecurity3Reason3": {
-    "message": "Pas de point de défaillance unique : Il n'y a pas de portes dérobées, de clés de récupération ou d'options de réinitialisation de mot de passe"
-  },
-  "faqSecurity3Reason4": {
-    "message": "Limitations de sécurité du navigateur : Les extensions Chrome ne peuvent pas conserver de manière sécurisée l'authentification entre les sessions"
-  },
-  "faqSecurity3BenefitsTitle": {
-    "message": "Avantages en matière de sécurité :"
-  },
-  "faqSecurity3Benefit1": {
-    "message": "Protection contre le vol : Si votre appareil est volé, vos marque-pages restent chiffrés"
-  },
-  "faqSecurity3Benefit2": {
-    "message": "Aucune trace forensique : Rien n'est stocké dans le stockage du navigateur qui pourrait être récupéré"
-  },
-  "faqSecurity3Benefit3": {
-    "message": "Résistance aux logiciels malveillants : Même les enregistreurs de frappe ne capturent qu'une seule saisie de mot de passe"
-  },
-  "faqSecurity3TipTitle": {
-    "message": "Conseil de pro :"
-  },
-  "faqSecurity3TipText": {
-    "message": "Utilisez un gestionnaire de mots de passe comme Bitwarden ou KeePass. Avec la saisie automatique, entrer votre mot de passe ne prend que 2 secondes tout en maintenant une sécurité maximale."
-  },
-  "faqSecurity3Conclusion": {
-    "message": "Rappelez-vous : Chaque fois que vous entrez votre mot de passe, vous vérifiez que VOUS êtes la seule personne qui peut accéder à vos marque-pages privés. C'est le prix d'une confidentialité réelle."
-  },
-  "faqUsage1": {
-    "message": "Comment ajouter des marque-pages ?"
-  },
-  "faqUsage1Answer": {
-    "message": "Vous pouvez ajouter des marque-pages de plusieurs façons :"
-  },
-  "faqUsage1Method1": {
-    "message": "Cliquez sur le bouton '+' dans la popup pour ajouter la page actuelle"
-  },
-  "faqUsage1Method2": {
-    "message": "Faites un clic droit sur n'importe quelle page ou lien et sélectionnez 'Ajouter à Holy Private Bookmarks'"
-  },
-  "faqUsage1Method3": {
-    "message": "Utilisez le gestionnaire pour ajouter des marque-pages manuellement"
-  },
-  "faqUsage1Method4": {
-    "message": "Importer depuis les marque-pages Chrome via les Paramètres"
-  },
-  "faqUsage2": {
-    "message": "Comment organiser les marque-pages dans des dossiers ?"
-  },
-  "faqUsage2Answer": {
-    "message": "Vous pouvez créer des dossiers et sous-dossiers pour organiser vos marque-pages :"
-  },
-  "faqUsage2Step1": {
-    "message": "Ouvrez la popup de l'extension"
-  },
-  "faqUsage2Step2": {
-    "message": "Cliquez sur 'Nouveau dossier' ou faites un clic droit dans l'arborescence"
-  },
-  "faqUsage2Step3": {
-    "message": "Glissez-déposez les marque-pages dans les dossiers"
-  },
-  "faqUsage2Step4": {
-    "message": "Utilisez le gestionnaire pour une organisation avancée"
-  },
-  "faqFeatures1": {
-    "message": "Quelle est la différence entre la popup et le gestionnaire ?"
-  },
-  "faqFeatures1Answer": {
-    "message": "Popup : Accès rapide pour ajouter/voir les marque-pages. Se verrouille automatiquement après 10 minutes.\n\nGestionnaire : Interface complète avec recherche, vue en grille, édition avancée et gestion des dossiers. Se verrouille également automatiquement pour la sécurité."
-  },
-  "faqFeatures2": {
-    "message": "Puis-je sauvegarder mes marque-pages ?"
-  },
-  "faqFeatures2Answer": {
-    "message": "Oui ! Allez dans Paramètres → Exporter & Importer → Exporter les marque-pages. Cela crée un fichier de sauvegarde chiffré. Vous pouvez le restaurer à tout moment en utilisant l'option Importer."
-  },
-  "faqFeatures3": {
-    "message": "Que fait 'Effacer l'historique' ?"
-  },
-  "faqFeatures3Answer": {
-    "message": "Cette fonctionnalité supprime votre historique de navigation Chrome pour les domaines qui sont dans vos marque-pages. Elle aide à maintenir la confidentialité en effaçant automatiquement les traces d'historique des sites mis en marque-page."
-  },
-  "faqUsage3": {
-    "message": "Comment rechercher mes marque-pages ?"
-  },
-  "faqUsage3Answer": {
-    "message": "Utilisez la barre de recherche dans le gestionnaire (interface complète) pour rechercher dans tous vos marque-pages par titre ou URL. La popup affiche une vue arborescente filtrée de tous les marque-pages."
-  },
-  "faqTrouble2": {
-    "message": "Mes marque-pages seront-ils synchronisés entre les appareils ?"
-  },
-  "faqTrouble2Answer": {
-    "message": "Actuellement, les marque-pages sont stockés localement sur votre appareil. Vous pouvez exporter/importer manuellement pour les transférer entre appareils. La synchronisation dans le cloud est prévue pour les versions futures."
-  },
-  "faqTrouble3": {
-    "message": "L'option du menu contextuel est manquante"
-  },
-  "faqTrouble3Answer": {
-    "message": "Si 'Ajouter à Holy Private Bookmarks' n'apparaît pas dans le menu contextuel (clic droit) :"
-  },
-  "faqTrouble3Step1": {
-    "message": "Rechargez l'extension"
-  },
-  "faqTrouble3Step2": {
-    "message": "Vérifiez les permissions de l'extension"
-  },
-  "faqTrouble3Step3": {
-    "message": "Essayez sur une page différente (certaines pages restreignent les menus contextuels)"
-  },
-  "faqStillQuestions": {
-    "message": "Encore des questions ?"
-  },
-  "faqContactUs": {
-    "message": "Contactez-nous ou consultez le dépôt GitHub :"
-  },
-  "noResultsTitle": {
-    "message": "Aucune question trouvée"
-  },
-  "noResultsText": {
-    "message": "Essayez un terme de recherche ou une catégorie différente"
-  },
-  "openGitHub": {
-    "message": "GitHub"
-  },
-  "supportProject": {
-    "message": "Soutenir le projet"
-  },
-  "faqButtonTitle": {
-    "message": "Foire Aux Questions"
-  },
-  "contactEmail": {
-    "message": "osv-it-studio@googlegroups.com"
-  },
-  "emailUs": {
-    "message": "Envoyez-nous un email"
-  },
   "dragSuccess": {
-    "message": "✅ Élément déplacé avec succès"
+    "message": "Élément déplacé avec succès"
   },
   "invalidDestinationFolder": {
     "message": "Dossier de destination invalide"
@@ -716,5 +542,14 @@
     },
     "importWarning": {
         "message": "Tous les favoris existants seront remplacés"
-    }
+    },
+	"developer": {
+    "message": "Développeur :"
+},
+"lock": {
+    "message": "Verrouiller"
+},
+  "faqButtonTitle": {
+    "message": "Foire Aux Questions"
+  }
 }

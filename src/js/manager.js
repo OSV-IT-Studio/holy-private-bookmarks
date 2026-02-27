@@ -231,6 +231,79 @@ async function lockManager() {
     data = { folders: [] };
     clearBookmarksCache();
     
+
+    const folderTree = document.getElementById('folder-tree');
+    if (folderTree) {
+
+        folderTree.innerHTML = `
+            <li class="folder-item all-bookmarks active" data-folder-id="all">
+                <div class="folder-content">
+                    <span class="folder-toggle">▶</span>
+                    <div class="folder-icon">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="9 1 11.5 6.5 17 7.5 13 11.5 14 17 9 14 4 17 5 11.5 1 7.5 6.5 6.5 9 1" fill="currentColor" fill-opacity="0.15"/>
+                        </svg>
+                    </div>
+                    <div class="folder-name" data-i18n="allBookmarks">All Bookmarks</div>
+                </div>
+                <div class="folder-count" id="all-count">0</div>
+            </li>
+        `;
+    }
+    
+
+    const bookmarksGrid = document.getElementById('bookmarks-grid');
+    if (bookmarksGrid) {
+        bookmarksGrid.innerHTML = ''; 
+        bookmarksGrid.style.display = 'none';
+    }
+    
+
+    const loadMoreTrigger = document.getElementById('load-more-trigger');
+    if (loadMoreTrigger) {
+        loadMoreTrigger.remove();
+    }
+    
+
+    const emptyState = document.getElementById('empty-state');
+    if (emptyState) {
+        emptyState.style.display = 'flex';
+        
+
+        const emptyStateIcon = emptyState.querySelector('.empty-state__icon');
+        const emptyStateTitle = emptyState.querySelector('h3');
+        const emptyStateDesc = emptyState.querySelector('p');
+        
+        if (emptyStateIcon) {
+            emptyStateIcon.innerHTML = `
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                </svg>
+            `;
+        }
+        if (emptyStateTitle) emptyStateTitle.textContent = getMessage('noBookmarksInFolder') || 'No bookmarks in this folder';
+        if (emptyStateDesc) emptyStateDesc.textContent = getMessage('addBookmarksToGetStarted') || 'Add bookmarks to get started';
+    }
+    
+
+    const allCount = document.getElementById('all-count');
+    if (allCount) allCount.textContent = '0';
+    
+    const bookmarksCount = document.getElementById('bookmarks-count');
+    if (bookmarksCount) bookmarksCount.textContent = `0 ${getMessage('bookmarks') || 'bookmarks'}`;
+    
+
+    renderedBookmarks = [];
+    currentPage = 0;
+    hasMoreBookmarks = true;
+    
+
+    if (intersectionObserver) {
+        intersectionObserver.disconnect();
+        intersectionObserver = null;
+    }
+    
+
     document.getElementById('lock-screen').style.display = 'flex';
     document.querySelector('.container').style.display = 'none';
     
@@ -322,19 +395,41 @@ function createSelectionToolbar() {
             <span>${selectedText}</span>
         </div>
         <div class="selection-actions">
-            <button class="selection-btn move" id="selection-move" title="${moveTitle}">
-                <span class="btn-icon">📦</span>
-                <span>${moveText}</span>
-            </button>
-            
-            <button class="selection-btn delete" id="selection-delete" title="${deleteTitle}">
-                <span class="btn-icon">🗑️</span>
-                <span>${deleteText}</span>
-            </button>
-            <button class="selection-btn cancel" id="selection-cancel" title="${cancelTitle}">
-                <span class="btn-icon">✖</span>
-            </button>
-        </div>
+
+    <button class="selection-btn selection-btn--move" id="selection-move" title="${moveTitle}">
+        <span class="selection-btn__icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 5L2 14C2 15.1 2.9 16 4 16L14 16C15.1 16 16 15.1 16 14L16 7C16 5.9 15.1 5 14 5L9 5L7 3L4 3C2.9 3 2 3.9 2 5Z" />
+    <path d="M6 10.5L12 10.5M9 7.5L9 13.5" />
+    <path d="M10 9L12 10.5L10 12" />
+</svg>
+        </span>
+        <span class="selection-btn__text">${moveText}</span>
+    </button>
+    
+
+    <button class="selection-btn selection-btn--delete" id="selection-delete" title="${deleteTitle}">
+        <span class="selection-btn__icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                <line x1="10" y1="11" x2="10" y2="17"></line>
+                <line x1="14" y1="11" x2="14" y2="17"></line>
+            </svg>
+        </span>
+        <span class="selection-btn__text">${deleteText}</span>
+    </button>
+    
+
+    <button class="selection-btn selection-btn--cancel" id="selection-cancel" title="${cancelTitle}">
+        <span class="selection-btn__icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="4" x2="4" y2="12"/>
+                <line x1="4" y1="4" x2="12" y2="12"/>
+            </svg>
+        </span>
+    </button>
+</div>
     `;
     
     document.querySelector('.main-content').insertBefore(toolbar, document.querySelector('.bookmarks-container'));
@@ -503,15 +598,44 @@ function renderFoldersRecursive(items, container, path = [], depth = 0) {
             
             li.innerHTML = `
                 <div class="folder-content">
-                    <span class="folder-toggle">${hasSubfolders ? '▶' : ''}</span>
-                    <div class="folder-icon">${hasSubfolders ? '📁' : '📂'}</div>
-                    <div class="folder-name">${escapeHtml(item.name)}</div>
-                    <div class="folder-actions">
-                        <button class="folder-action-btn edit" title="${getMessage('rename') || 'Rename'}">✏️</button>
-                        <button class="folder-action-btn delete" title="${getMessage('delete') || 'Delete'}">🗑️</button>
-                    </div>
-                </div>
-                <div class="folder-count">${itemCount}</div>
+    <!-- Toggle arrow -->
+    <span class="folder-toggle">${hasSubfolders ? '▶' : ''}</span>
+    
+    <!-- Folder icon -->
+    <div class="folder-icon">
+        ${hasSubfolders ? 
+            `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>` :
+            `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>`
+        }
+    </div>
+    
+    <!-- Folder name -->
+    <div class="folder-name">${escapeHtml(item.name)}</div>
+    
+    <!-- Folder actions -->
+    <div class="folder-actions">
+        <button class="folder-action-btn edit" title="${getMessage('rename') || 'Rename'}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+            </svg>
+        </button>
+        <button class="folder-action-btn delete" title="${getMessage('delete') || 'Delete'}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                <line x1="10" y1="11" x2="10" y2="17"></line>
+                <line x1="14" y1="11" x2="14" y2="17"></line>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<!-- Folder count badge -->
+<div class="folder-count">${itemCount}</div>
             `;
             
             container.appendChild(li);
@@ -682,21 +806,32 @@ async function renderBookmarks() {
         bookmarksGrid.style.display = 'none';
         
         if (emptyState) {
-            emptyState.style.display = 'block';
+            emptyState.style.display = 'flex';
             
-            const emptyStateIcon = emptyState.querySelector('.empty-state-icon');
-            const emptyStateTitle = emptyState.querySelector('h3');
-            const emptyStateDesc = emptyState.querySelector('p');
-            
-            if (searchQuery && searchQuery.trim() !== '') {
-                emptyStateIcon.textContent = '🔍';
-                emptyStateTitle.textContent = getMessage('noSearchResults') || 'No bookmarks found';
-                emptyStateDesc.textContent = getMessage('noSearchResultsDesc') || 'Try a different search term';
-            } else {
-                emptyStateIcon.textContent = '📚';
-                emptyStateTitle.textContent = getMessage('noBookmarksInFolder') || 'No bookmarks in this folder';
-                emptyStateDesc.textContent = getMessage('addBookmarksToGetStarted') || 'Add bookmarks to get started';
-            }
+            const emptyStateIcon = emptyState.querySelector('.empty-state__icon');
+const emptyStateTitle = emptyState.querySelector('h3');
+const emptyStateDesc = emptyState.querySelector('p');
+
+if (searchQuery && searchQuery.trim() !== '') {
+
+    emptyStateIcon.innerHTML = `
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+    `;
+    emptyStateTitle.textContent = getMessage('noSearchResults') || 'No bookmarks found';
+    emptyStateDesc.textContent = getMessage('noSearchResultsDesc') || 'Try a different search term';
+} else {
+
+    emptyStateIcon.innerHTML = `
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+        </svg>
+    `;
+    emptyStateTitle.textContent = getMessage('noBookmarksInFolder') || 'No bookmarks in this folder';
+    emptyStateDesc.textContent = getMessage('addBookmarksToGetStarted') || 'Add bookmarks to get started';
+}
         }
         return;
     }
@@ -781,31 +916,95 @@ async function createBookmarkItem(bookmark, index) {
     
     item.innerHTML = `
         ${faviconUrl ? 
-            `<img src="${faviconUrl}" class="bookmark-item-favicon" alt="${escapeHtml(domain)}" loading="lazy">` :
-            `<div class="bookmark-item-favicon-placeholder">🔗</div>`
+            `<img src="${faviconUrl}" class="bookmark-item__favicon" alt="${escapeHtml(domain)}" loading="lazy">` :
+            `<div class="bookmark-item__favicon-placeholder">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5 4C5 2.89543 5.89543 2 7 2H17C18.1046 2 19 2.89543 19 4V21L12 17L5 21V4Z" fill="currentColor"/>
+</svg>
+            </div>`
         }
-        <div class="bookmark-item-content">
-            <div class="bookmark-item-title">${escapeHtml(bookmark.title)}</div>
+
+        <div class="bookmark-item__content">
+            <div class="bookmark-item__title">${escapeHtml(bookmark.title)}</div>
         </div>
-        <div class="bookmark-item-domain">${escapeHtml(domain)}</div>
-        <div class="bookmark-item-actions">
-            <button class="action-btn edit" title="${getMessage('edit') || 'Edit'}">✏️</button>
-            <button class="action-btn copy" title="${getMessage('copyUrl') || 'Copy URL'}">📋</button>
-            <button class="action-btn private" title="${getMessage('openPrivate') || 'Open in private tab'}">👁️</button>
-            <button class="action-btn delete" title="${getMessage('delete') || 'Delete'}">🗑</button>
+
+        <div class="bookmark-item__domain">${escapeHtml(domain)}</div>
+
+        <div class="bookmark-item__actions">
+            
+            <button class="bookmark-item__action" data-action="edit" title="${getMessage('edit') || 'Edit'}">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11.5 2.5a2 2 0 0 1 3 3L6 14l-4 1 1-4 8.5-8.5z"></path>
+        </svg>
+            </button>
+            
+            
+            <button class="bookmark-item__action" data-action="copy" title="${getMessage('copyUrl') || 'Copy URL'}">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="10" height="10" rx="1" ry="1"></rect>
+            <path d="M4 2h8a2 2 0 0 1 2 2v8"></path>
+        </svg>
+            </button>
+            
+           
+            <button class="bookmark-item__action" data-action="private" title="${getMessage('openPrivate') || 'Open in private tab'}">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="6" width="10" height="8" rx="1" ry="1"></rect>
+            <path d="M5 6V4a3 3 0 0 1 6 0v2"></path>
+            <circle cx="8" cy="10" r="1"></circle>
+        </svg>
+            </button>
+            
+            
+            <button class="bookmark-item__action bookmark-item__action--delete" data-action="delete" title="${getMessage('delete') || 'Delete'}">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                <line x1="10" y1="11" x2="10" y2="17"></line>
+                <line x1="14" y1="11" x2="14" y2="17"></line>
+            </svg>
+            </button>
         </div>
     `;
     
-    const actions = item.querySelector('.bookmark-item-actions');
-    const editBtn = actions.querySelector('.edit');
-    const copyBtn = actions.querySelector('.copy');
-    const privateBtn = actions.querySelector('.private');
-    const deleteBtn = actions.querySelector('.delete');
+    const actions = item.querySelector('.bookmark-item__actions');
+    
+    
+    actions.addEventListener('click', (e) => {
+        const button = e.target.closest('.bookmark-item__action');
+        if (!button) return;
+        
+        e.stopPropagation();
+        
+        const action = button.dataset.action;
+        
+        switch(action) {
+            case 'edit':
+                editBookmark(bookmark);
+                break;
+            case 'copy':
+                navigator.clipboard.writeText(bookmark.url).then(() => {
+                    showNotification(getMessage('urlCopied') || 'URL copied to clipboard');
+                });
+                break;
+            case 'private':
+                openInPrivateTab(bookmark.url);
+                break;
+            case 'delete':
+                if (confirm(getMessage('deleteConfirm') || 'Delete this bookmark?')) {
+                    deleteBookmark(bookmark);
+                }
+                break;
+        }
+    });
+    
     
     item.addEventListener('click', (e) => {
+        
+        if (e.target.closest('.bookmark-item__actions')) return;
+        
         if (isCtrlPressed) {
             e.preventDefault();
-            e.stopPropagation();
             
             if (selectedBookmarks.has(bookmark)) {
                 selectedBookmarks.delete(bookmark);
@@ -816,15 +1015,14 @@ async function createBookmarkItem(bookmark, index) {
             }
             
             updateSelectionToolbar();
-        } else if (!e.target.closest('.bookmark-item-actions')) {
-            if (selectedBookmarks.size > 0) {
-                clearSelection();
-            } else {
-                window.open(bookmark.url, '_blank');
-            }
+        } else if (selectedBookmarks.size > 0) {
+            clearSelection();
+        } else {
+            window.open(bookmark.url, '_blank');
         }
     });
     
+   
     item.addEventListener('click', (e) => {
         if (e.shiftKey && lastSelectedIndex !== -1 && lastSelectedIndex !== index) {
             e.preventDefault();
@@ -848,30 +1046,6 @@ async function createBookmarkItem(bookmark, index) {
         }
         
         lastSelectedIndex = index;
-    });
-    
-    editBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        editBookmark(bookmark);
-    });
-    
-    copyBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navigator.clipboard.writeText(bookmark.url).then(() => {
-            showNotification(getMessage('urlCopied') || 'URL copied to clipboard');
-        });
-    });
-    
-    privateBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        openInPrivateTab(bookmark.url);
-    });
-    
-    deleteBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (confirm(getMessage('deleteConfirm') || 'Delete this bookmark?')) {
-            deleteBookmark(bookmark);
-        }
     });
     
     return item;
@@ -924,7 +1098,7 @@ function handleModalSave() {
     const url = urlInput.value.trim();
     
     if (!title || !url) {
-        showNotification('Title and URL are required', true);
+        showNotification(getMessage('titleRequired'), true);
         return;
     }
     
@@ -1777,14 +1951,18 @@ function updateToggleIcon(theme) {
     const quickToggle = document.getElementById('quick-theme-toggle');
     if (!quickToggle) return;
     
+
+    quickToggle.removeAttribute('data-theme');
+    
+
     if (theme === window.ThemeManager.THEMES.DARK) {
-        quickToggle.textContent = '🌙';
+        quickToggle.setAttribute('data-theme', 'dark');
         quickToggle.title = chrome.i18n.getMessage('themeDark') || 'Dark';
     } else if (theme === window.ThemeManager.THEMES.LIGHT) {
-        quickToggle.textContent = '☀️';
+        quickToggle.setAttribute('data-theme', 'light');
         quickToggle.title = chrome.i18n.getMessage('themeLight') || 'Light';
     } else {
-        quickToggle.textContent = '💻';
+        quickToggle.setAttribute('data-theme', 'system');
         quickToggle.title = chrome.i18n.getMessage('themeSystem') || 'System';
     }
 }

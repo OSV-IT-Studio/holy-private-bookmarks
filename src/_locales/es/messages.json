@@ -18,7 +18,7 @@
     "message": "Confirmar contraseña"
   },
   "createStorage": {
-    "message": "🔐 Crear almacenamiento"
+    "message": "Crear almacenamiento"
   },
   "enterMasterPassword": {
     "message": "Ingresa tu contraseña maestra para desbloquear"
@@ -27,7 +27,7 @@
     "message": "Contraseña maestra"
   },
   "unlock": {
-    "message": "🔓 Desbloquear"
+    "message": "Desbloquear"
   },
   "wrongPassword": {
     "message": "Contraseña incorrecta"
@@ -39,19 +39,19 @@
     "message": "Tus marcadores están protegidos de forma segura"
   },
   "addCurrentPage": {
-    "message": "➕ Agregar página actual"
+    "message": "Agregar página actual"
   },
   "newFolder": {
-    "message": "📁 Nueva carpeta"
+    "message": "Nueva carpeta"
   },
   "clearHistory": {
-    "message": "🧹️ Limpiar historial"
+    "message": "Limpiar historial"
   },
   "supportProject": {
-    "message": "❤️ Apoyar el proyecto"
+    "message": "Apoyar el proyecto"
   },
   "settings": {
-    "message": "⚙️ Configuración"
+    "message": "Configuración"
   },
   "settingsbtn": {
     "message": "⚙️"
@@ -69,13 +69,13 @@
     "message": "Confirmar nueva contraseña"
   },
   "changePassword": {
-    "message": "🔑 Cambiar contraseña"
+    "message": "Cambiar contraseña"
   },
   "exportImport": {
     "message": "Exportar e Importar"
   },
   "export": {
-    "message": "📤 Exportar"
+    "message": "Exportar"
   },
   "openPrivate": {
     "message": "Abrir en pestaña privada"
@@ -117,7 +117,7 @@
     "message": "← Atrás"
   },
   "addBookmark": {
-    "message": "📌 Agregar marcador"
+    "message": "Agregar marcador"
   },
   "editBookmark": {
     "message": "Editar marcador"
@@ -195,7 +195,7 @@
     "message": "Agrega tu primer marcador o carpeta para comenzar"
   },
   "historyCleared": {
-    "message": "🧹 ¡Historial limpiado!\nSe eliminaron $count$ visita(s) de $domains$ dominio(s).",
+    "message": "¡Historial limpiado!\nSe eliminaron $count$ visita(s) de $domains$ dominio(s).",
     "placeholders": {
       "count": {
         "content": "$1"
@@ -215,7 +215,7 @@
     "message": "Apoyar el proyecto — Holy Private Bookmarks"
   },
   "supportTitle": {
-    "message": "❤️ Apoyar el Proyecto"
+    "message": "Apoyar el Proyecto"
   },
   "supportDescription": {
     "message": "Si la extensión te es útil, cualquier ayuda es apreciada"
@@ -359,10 +359,10 @@
     "message": "Gestor bloqueado"
   },
   "lockManager": {
-    "message": "🔓 Bloquear Gestor"
+    "message": "Bloquear Gestor"
   },
   "manager": {
-    "message": "🗂 Abrir gestor completo"
+    "message": "Abrir gestor completo"
   },
   "rename": {
     "message": "Renombrar"
@@ -403,182 +403,8 @@
   "pendingBookmarkInstruction": {
     "message": "Hay un marcador esperando ser agregado. Por favor, desbloquea para continuar."
   },
-  "faqTitle": {
-    "message": "Preguntas Frecuentes — Holy Private Bookmarks"
-  },
-  "faqSubtitle": {
-    "message": "Encuentra respuestas a preguntas comunes sobre Holy Private Bookmarks"
-  },
-  "searchFAQ": {
-    "message": "Buscar preguntas..."
-  },
-  "faqSecurity1": {
-    "message": "¿Qué tan seguros están mis datos?"
-  },
-  "faqSecurity1Answer": {
-    "message": "Todos tus marcadores se encriptan localmente usando encriptación AES-256-GCM con una contraseña maestra. Tus datos nunca salen de tu computadora. Ni siquiera nosotros podemos acceder a tus marcadores sin tu contraseña."
-  },
-  "faqSecurity2": {
-    "message": "¿Qué pasa si olvido mi contraseña?"
-  },
-  "faqSecurity2Answer": {
-    "message": "Advertencia: Tu contraseña no se puede recuperar. No almacenamos tu contraseña ni ninguna clave de recuperación. Si olvidas tu contraseña, perderás el acceso a todos tus marcadores encriptados permanentemente. Por favor, guarda tu contraseña en un gestor de contraseñas seguro."
-  },
-  "faqSecurity3": {
-    "message": "¿Por qué necesito ingresar mi contraseña cada vez?"
-  },
-  "faqSecurity3Warning": {
-    "message": "⚠️ Esto es por diseño y no se puede cambiar"
-  },
-  "faqSecurity3Answer": {
-    "message": "Holy Private Bookmarks está construido sobre un modelo de seguridad de cero confianza. Requerir la entrada de la contraseña cada vez no es una limitación, es la característica de seguridad principal."
-  },
-  "faqSecurity3WhyTitle": {
-    "message": "Por qué esto es innegociable:"
-  },
-  "faqSecurity3Reason1": {
-    "message": "Verdadero conocimiento cero: Nunca almacenamos tu contraseña, tokens de sesión o claves de descifrado"
-  },
-  "faqSecurity3Reason2": {
-    "message": "Defensa en profundidad: Incluso con acceso físico a tu computadora, tus marcadores permanecen protegidos"
-  },
-  "faqSecurity3Reason3": {
-    "message": "Sin punto único de fallo: No hay puertas traseras, claves de recuperación u opciones de restablecimiento de contraseña"
-  },
-  "faqSecurity3Reason4": {
-    "message": "Limitaciones de seguridad del navegador: Las extensiones de Chrome no pueden almacenar autenticación de forma segura entre sesiones"
-  },
-  "faqSecurity3BenefitsTitle": {
-    "message": "Beneficios de seguridad:"
-  },
-  "faqSecurity3Benefit1": {
-    "message": "Protección contra robo: Si tu dispositivo es robado, tus marcadores permanecen encriptados"
-  },
-  "faqSecurity3Benefit2": {
-    "message": "Sin rastros forenses: Nada se almacena en el almacenamiento del navegador que pueda ser recuperado"
-  },
-  "faqSecurity3Benefit3": {
-    "message": "Resistencia a malware: Incluso los keyloggers solo capturan la entrada única de la contraseña"
-  },
-  "faqSecurity3TipTitle": {
-    "message": "Consejo profesional:"
-  },
-  "faqSecurity3TipText": {
-    "message": "Usa un gestor de contraseñas como Bitwarden o KeePass. Con el autocompletado, ingresar tu contraseña toma solo 2 segundos mientras se mantiene la máxima seguridad."
-  },
-  "faqSecurity3Conclusion": {
-    "message": "Recuerda: Cada vez que ingresas tu contraseña, estás verificando que TÚ eres la única persona que puede acceder a tus marcadores privados. Este es el precio de la verdadera privacidad."
-  },
-  "faqUsage1": {
-    "message": "¿Cómo agrego marcadores?"
-  },
-  "faqUsage1Answer": {
-    "message": "Puedes agregar marcadores de varias maneras:"
-  },
-  "faqUsage1Method1": {
-    "message": "Haz clic en el botón '+' en la ventana emergente para agregar la página actual"
-  },
-  "faqUsage1Method2": {
-    "message": "Haz clic derecho en cualquier página o enlace y selecciona 'Agregar a Holy Private Bookmarks'"
-  },
-  "faqUsage1Method3": {
-    "message": "Usa el gestor para agregar marcadores manualmente"
-  },
-  "faqUsage1Method4": {
-    "message": "Importar desde los marcadores de Chrome a través de Configuración"
-  },
-  "faqUsage2": {
-    "message": "¿Cómo organizo los marcadores en carpetas?"
-  },
-  "faqUsage2Answer": {
-    "message": "Puedes crear carpetas y subcarpetas para organizar tus marcadores:"
-  },
-  "faqUsage2Step1": {
-    "message": "Abre la ventana emergente de la extensión"
-  },
-  "faqUsage2Step2": {
-    "message": "Haz clic en 'Nueva carpeta' o haz clic derecho en la vista de árbol"
-  },
-  "faqUsage2Step3": {
-    "message": "Arrastra y suelta los marcadores en las carpetas"
-  },
-  "faqUsage2Step4": {
-    "message": "Usa el gestor para una organización avanzada"
-  },
-  "faqFeatures1": {
-    "message": "¿Cuál es la diferencia entre la ventana emergente y el gestor?"
-  },
-  "faqFeatures1Answer": {
-    "message": "Ventana emergente: Acceso rápido para agregar/ver marcadores. Se bloquea automáticamente después de 10 minutos.\n\nGestor: Interfaz con todas las funciones, con búsqueda, vista de cuadrícula, edición avanzada y gestión de carpetas. También se bloquea automáticamente por seguridad."
-  },
-  "faqFeatures2": {
-    "message": "¿Puedo hacer una copia de seguridad de mis marcadores?"
-  },
-  "faqFeatures2Answer": {
-    "message": "¡Sí! Ve a Configuración → Exportar e Importar → Exportar Marcadores. Esto crea un archivo de respaldo encriptado. Puedes restaurarlo en cualquier momento usando la opción Importar."
-  },
-  "faqFeatures3": {
-    "message": "¿Qué hace 'Limpiar Historial'?"
-  },
-  "faqFeatures3Answer": {
-    "message": "Esta función elimina tu historial de navegación de Chrome para los dominios que están en tus marcadores. Ayuda a mantener la privacidad al eliminar automáticamente los rastros del historial de sitios marcados."
-  },
-  "faqUsage3": {
-    "message": "¿Cómo buscar mis marcadores?"
-  },
-  "faqUsage3Answer": {
-    "message": "Usa la barra de búsqueda en el gestor (interfaz completa) para buscar en todos tus marcadores por título o URL. La ventana emergente muestra una vista de árbol filtrada de todos los marcadores."
-  },
-  "faqTrouble2": {
-    "message": "¿Mis marcadores se sincronizarán entre dispositivos?"
-  },
-  "faqTrouble2Answer": {
-    "message": "Actualmente, los marcadores se almacenan localmente en tu dispositivo. Puedes exportar/importar manualmente para transferir entre dispositivos. La sincronización en la nube está planificada para versiones futuras."
-  },
-  "faqTrouble3": {
-    "message": "Falta la opción del menú contextual"
-  },
-  "faqTrouble3Answer": {
-    "message": "Si 'Agregar a Holy Private Bookmarks' no aparece en el menú de clic derecho:"
-  },
-  "faqTrouble3Step1": {
-    "message": "Recarga la extensión"
-  },
-  "faqTrouble3Step2": {
-    "message": "Verifica los permisos de la extensión"
-  },
-  "faqTrouble3Step3": {
-    "message": "Prueba en una página diferente (algunas páginas restringen los menús contextuales)"
-  },
-  "faqStillQuestions": {
-    "message": "¿Aún tienes preguntas?"
-  },
-  "faqContactUs": {
-    "message": "Contáctanos o consulta el repositorio de GitHub:"
-  },
-  "noResultsTitle": {
-    "message": "No se encontraron preguntas"
-  },
-  "noResultsText": {
-    "message": "Prueba con un término de búsqueda o categoría diferente"
-  },
-  "openGitHub": {
-    "message": "GitHub"
-  },
-  "supportProject": {
-    "message": "Apoyar el Proyecto"
-  },  
-  "faqButtonTitle": {
-    "message": "Preguntas Frecuentes"
-  },
-  "contactEmail": {
-    "message": "osv-it-studio@googlegroups.com"
-  },
-  "emailUs": {
-    "message": "Envíanos un correo"
-  },
   "dragSuccess": {
-    "message": "✅ Elemento movido exitosamente"
+    "message": "Elemento movido exitosamente"
   },
   "invalidDestinationFolder": {
     "message": "Carpeta de destino no válida"
@@ -716,5 +542,14 @@
     },
     "importWarning": {
         "message": "Todos los marcadores existentes serán reemplazados"
-    }
+    },
+	"developer": {
+    "message": "Desarrollador:"
+},
+"lock": {
+    "message": "Bloquear"
+},  
+  "faqButtonTitle": {
+    "message": "Preguntas Frecuentes"
+  }
 }
