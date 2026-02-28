@@ -38,12 +38,11 @@ Visit our **[official website](https://osv-it-studio.github.io/holy-private-book
 
 ## Screenshots
 
-![Main screen](screenshots/main-1.png)
-![Main screen](screenshots/main-2.png)
-![Main screen](screenshots/main-3.png)
-![Main screen](screenshots/main-4.png)
-![Settings](screenshots/settings.png)
-![Settings](screenshots/settings-2.png)
+![Main screen](screenshots/screenshots(1).PNG)
+![Main screen](screenshots/screenshots(2).PNG)
+![Settings](screenshots/screenshots(3).PNG)
+![Settings screen](screenshots/screenshots(4).PNG)
+![Manager](screenshots/screenshots(5).PNG)
 
 > 📸 **More screenshots available on our [website](https://osv-it-studio.github.io/holy-private-bookmarks/)**
 
