@@ -255,7 +255,8 @@ function loadLoginContent(showNotification = false, bookmarkTitle = '') {
 ` : '<div id="pending-bookmark-notification" style="display: none;"></div>';
 
 loginSection.innerHTML = `
-    <h1 data-i18n="extensionName"></h1>
+    <div class="lock-icon"><img src="icons/icon128.png"></div>
+	<h1 data-i18n="extensionName"></h1>
     <p class="subtitle" data-i18n="enterMasterPassword"></p>
     
     ${notificationHtml}
@@ -290,6 +291,20 @@ function showLoginSection() {
         loginSection = document.createElement('div');
         loginSection.id = 'login';
         loginSection.className = 'section';
+		
+	Object.assign(loginSection.style, {
+        display: 'block',
+        background: 'var(--sidebar-bg)',
+        borderRadius: 'var(--radius-lg)',
+        padding: '48px',
+        textAlign: 'center',
+        width: '90%',
+        backdropFilter: 'blur(20px)',
+        border: '1px solid var(--card-border)',
+        boxShadow: 'var(--shadow)',
+        margin: 'auto'
+    });
+	
         document.querySelector('.container').appendChild(loginSection);
     }
     

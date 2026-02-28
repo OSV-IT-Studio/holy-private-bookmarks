@@ -591,54 +591,101 @@ function renderFoldersRecursive(items, container, path = [], depth = 0) {
             
             const hasSubfolders = item.children && item.children.some(child => child.type === 'folder');
             
+            
             const li = document.createElement('li');
             li.className = 'folder-item';
             if (hasSubfolders) li.classList.add('has-children');
             li.dataset.folderId = folderId;
             
-            li.innerHTML = `
-                <div class="folder-content">
-    <!-- Toggle arrow -->
-    <span class="folder-toggle">${hasSubfolders ? '▶' : ''}</span>
-    
-    <!-- Folder icon -->
-    <div class="folder-icon">
-        ${hasSubfolders ? 
-            `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-            </svg>` :
-            `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-            </svg>`
-        }
-    </div>
-    
-    <!-- Folder name -->
-    <div class="folder-name">${escapeHtml(item.name)}</div>
-    
-    <!-- Folder actions -->
-    <div class="folder-actions">
-        <button class="folder-action-btn edit" title="${getMessage('rename') || 'Rename'}">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
-            </svg>
-        </button>
-        <button class="folder-action-btn delete" title="${getMessage('delete') || 'Delete'}">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="3 6 5 6 21 6"></polyline>
-                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                <line x1="10" y1="11" x2="10" y2="17"></line>
-                <line x1="14" y1="11" x2="14" y2="17"></line>
-            </svg>
-        </button>
-    </div>
-</div>
-
-<!-- Folder count badge -->
-<div class="folder-count">${itemCount}</div>
+           
+            const folderContent = document.createElement('div');
+            folderContent.className = 'folder-content';
+            
+            
+            const toggleSpan = document.createElement('span');
+            toggleSpan.className = 'folder-toggle';
+            if (hasSubfolders) {
+                toggleSpan.textContent = '▶'; 
+            }
+            folderContent.appendChild(toggleSpan);
+            
+            
+            const iconDiv = document.createElement('div');
+            iconDiv.className = 'folder-icon';
+            if (hasSubfolders) {
+                iconDiv.innerHTML = `
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                `;
+            } else {
+                iconDiv.innerHTML = `
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                `;
+            }
+            folderContent.appendChild(iconDiv);
+            
+            
+            const nameDiv = document.createElement('div');
+            nameDiv.className = 'folder-name';
+            nameDiv.textContent = item.name; 
+            folderContent.appendChild(nameDiv);
+            
+            
+            const actionsDiv = document.createElement('div');
+            actionsDiv.className = 'folder-actions';
+            
+            
+            const editBtn = document.createElement('button');
+            editBtn.className = 'folder-action-btn edit';
+            editBtn.title = getMessage('rename') || 'Rename';
+            editBtn.innerHTML = `
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                </svg>
             `;
+            editBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const folderItem = this.closest('.folder-item');
+                const folderId = folderItem.dataset.folderId;
+                renameFolder(folderId);
+            });
+            
+            
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'folder-action-btn delete';
+            deleteBtn.title = getMessage('delete') || 'Delete';
+            deleteBtn.innerHTML = `
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                </svg>
+            `;
+            deleteBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const folderItem = this.closest('.folder-item');
+                const folderId = folderItem.dataset.folderId;
+                deleteFolder(folderId);
+            });
+            
+            actionsDiv.appendChild(editBtn);
+            actionsDiv.appendChild(deleteBtn);
+            folderContent.appendChild(actionsDiv);
+            
+            li.appendChild(folderContent);
+            
+            
+            const countDiv = document.createElement('div');
+            countDiv.className = 'folder-count';
+            countDiv.textContent = itemCount; 
+            li.appendChild(countDiv);
             
             container.appendChild(li);
+            
             
             if (hasSubfolders) {
                 const subUl = document.createElement('ul');
@@ -1159,7 +1206,7 @@ function addNewBookmarkToPath(title, url, targetPath) {
     } else {
         const folder = getItemByPath(targetPath);
         if (!folder || folder.type !== 'folder' || !Array.isArray(folder.children)) {
-            console.error('Target path is not a folder:', targetPath);
+            
             return;
         }
         targetArray = folder.children;
@@ -2053,7 +2100,6 @@ async function unlock() {
         renderFolderTree();
         renderBookmarks();
     } catch (e) {
-        console.error('Unlock error:', e);
         showNotification(getMessage('wrongPassword') || 'Wrong password', true);
         CryptoManager.clear();
     }

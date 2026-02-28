@@ -19,7 +19,34 @@
  */
 const SecureCrypto = (function() {
   let _masterKey = null;
-  let _currentSalt = null; 
+  let _currentSalt = null;
+  
+
+  function secureWipe() {
+
+    if (_masterKey) {
+      try {
+
+        _masterKey = null;
+      } catch (e) {
+        _masterKey = null;
+      }
+    }
+    
+
+    if (_currentSalt) {
+      try {
+
+        for (let i = 0; i < _currentSalt.length; i++) {
+          _currentSalt[i] = 0;
+        }
+      } catch (e) {}
+      _currentSalt = null;
+    }
+    
+
+    
+  }
   
   async function deriveKey(password, salt) {
     const enc = new TextEncoder();
@@ -42,34 +69,46 @@ const SecureCrypto = (function() {
   return {
     async init(password, salt) {
       try {
+
+        this.clear();
+        
         _masterKey = await deriveKey(password, salt);
-        _currentSalt = salt; 
+        _currentSalt = new Uint8Array(salt); 
         return true;
       } catch (e) {
-        console.error('Crypto init failed:', e);
+
+        this.clear();
         return false;
       }
     },
     
     async encrypt(text) {
       if (!_masterKey) throw new Error('No key');
+      
       const iv = crypto.getRandomValues(new Uint8Array(12));
+      const encoded = new TextEncoder().encode(text);
+      
+
       const encrypted = await crypto.subtle.encrypt(
         { name: 'AES-GCM', iv }, 
         _masterKey, 
-        new TextEncoder().encode(text)
+        encoded
       );
+      
+
+      for (let i = 0; i < encoded.length; i++) {
+        encoded[i] = 0;
+      }
+      
       return { 
         iv: Array.from(iv), 
         data: Array.from(new Uint8Array(encrypted)) 
       };
     },
     
-
     async decrypt(encryptedObj) {
       if (!_masterKey) throw new Error('No key');
       
-
       if (!encryptedObj || !encryptedObj.iv || !encryptedObj.data) {
         throw new Error('Invalid encrypted object');
       }
@@ -79,18 +118,33 @@ const SecureCrypto = (function() {
         _masterKey, 
         new Uint8Array(encryptedObj.data)
       );
-      return new TextDecoder().decode(decrypted);
+      
+      const decoded = new TextDecoder().decode(decrypted);
+      
+
+      const decryptedArray = new Uint8Array(decrypted);
+      for (let i = 0; i < decryptedArray.length; i++) {
+        decryptedArray[i] = 0;
+      }
+      
+      return decoded;
     },
     
-
     async verifyPassword(password, salt, encryptedObj) {
       try {
         const testKey = await deriveKey(password, salt);
-        await crypto.subtle.decrypt(
+        const result = await crypto.subtle.decrypt(
           { name: 'AES-GCM', iv: new Uint8Array(encryptedObj.iv) },
           testKey,
           new Uint8Array(encryptedObj.data)
         );
+        
+
+        const resultArray = new Uint8Array(result);
+        for (let i = 0; i < resultArray.length; i++) {
+          resultArray[i] = 0;
+        }
+        
         return true;
       } catch (e) {
         return false;
@@ -104,8 +158,7 @@ const SecureCrypto = (function() {
     },
     
     clear() {
-      _masterKey = null;
-      _currentSalt = null;
+      secureWipe();
     },
     
     isReady() {
