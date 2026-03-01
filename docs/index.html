@@ -1,60 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+
   <title>Holy Private Bookmarks — Secure Encrypted Bookmark Manager</title>
+  <meta name="title" content="Holy Private Bookmarks — Secure Encrypted Bookmark Manager">
   <meta name="description" content="Privacy-first browser extension with military-grade AES-256 encryption for your bookmarks. Local storage, master password, folders, and complete privacy.">
   <meta name="keywords" content="encrypted bookmarks, private bookmarks, secure bookmarks, password protected bookmarks, chrome extension, bookmark manager, privacy, aes-256 encryption">
   <meta name="author" content="OSV IT-Studio">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  <meta name="revisit-after" content="7 days">
+ 
   <meta name="google-site-verification" content="tSWlNfduThdXsXJMsFnpH-ezIT5H549niRBjzikMNz8" />
   <meta name="google-site-verification" content="KIAW8bgORhv7sdzbwrA6Qhr5ezmO7qyUEjil_J93TGE" />
+  
+
   <link rel="canonical" href="https://osv-it-studio.github.io/holy-private-bookmarks/">
- 
+  
+
   <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon48.png">
   <link rel="icon" type="image/png" sizes="128x128" href="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon128.png">
   <link rel="apple-touch-icon" sizes="128x128" href="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon128.png">
   
 
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://osv-it-studio.github.io/holy-private-bookmarks/">
   <meta property="og:title" content="Holy Private Bookmarks — Encrypted Bookmark Manager">
   <meta property="og:description" content="Military-grade AES-256 encryption for your bookmarks. Local storage, master password, complete privacy.">
-  <meta property="og:url" content="https://osv-it-studio.github.io/holy-private-bookmarks/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon128.png">
-  <meta property="og:image:width" content="128">
-  <meta property="og:image:height" content="128">
+  <meta property="og:image" content="https://osv-it-studio.github.io/holy-private-bookmarks/screenshots/popup-main.png">
+<meta property="og:image:width" content="659">
+<meta property="og:image:height" content="602">
   <meta property="og:site_name" content="Holy Private Bookmarks">
-  
+  <meta property="og:locale" content="en_US">
 
-  <meta name="twitter:card" content="summary">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://osv-it-studio.github.io/holy-private-bookmarks/">
   <meta name="twitter:title" content="Holy Private Bookmarks — Encrypted Bookmark Manager">
   <meta name="twitter:description" content="Military-grade AES-256 encryption for your bookmarks. Local storage, master password, complete privacy.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon128.png">
+  <meta name="twitter:image" content="https://osv-it-studio.github.io/holy-private-bookmarks/screenshots/popup-main.png">
   
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Holy Private Bookmarks",
+    "applicationCategory": "BrowserExtension",
+    "operatingSystem": "Chrome OS, Windows, macOS, Linux",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Privacy-first bookmark manager with military-grade AES-256 encryption. Store bookmarks locally with master password protection.",
+    
+    "featureList": [
+      "AES-256 Encryption",
+      "Master Password Protection",
+      "Auto-Lock Timer",
+      "Folder Organization",
+      "Import from Chrome",
+      "Dark/Light Theme"
+    ],
+    "screenshot": "https://osv-it-studio.github.io/holy-private-bookmarks/screenshots/manager-list.png",
+    "softwareVersion": "1.0",
+    "url": "https://chromewebstore.google.com/detail/holy-private-bookmarks/nnafnomgekidkehbgkfmhapccelgdbch",
+    "author": {
+      "@type": "Organization",
+      "name": "OSV IT-Studio",
+      "url": "https://github.com/OSV-IT-Studio"
+    }
+  }
+  </script>
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How secure is my data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All your bookmarks are encrypted locally using AES-256-GCM encryption with a master password. Your data never leaves your computer. Even we cannot access your bookmarks without your password."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I forget my password?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Password cannot be recovered. If you forget your master password, you will permanently lose access to all your encrypted bookmarks. Please save your password in a secure password manager."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why enter password every time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This is a core security feature built on a zero-trust model: We never store your password or session tokens. Even with physical access, bookmarks remain protected. No backdoors or password reset options. Browser extensions cannot securely persist authentication."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I add bookmarks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Click '+' in popup to add current page. Use 'Add Bookmark' button in toolbar. Right-click any page and select 'Add to Holy Private Bookmarks'. Add manually in the manager."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I create folders?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open the extension popup. Click 'New Folder' button in toolbar. Enter folder name. Drag and drop bookmarks into folders."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I backup my bookmarks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Go to Settings → Export & Import → Export Bookmarks. This creates an encrypted backup file. You can restore it anytime using the Import option."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does 'Clear History' do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Removes Chrome browsing history for domains in your bookmarks. Helps maintain privacy by automatically clearing history traces of bookmarked sites."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "The extension won't unlock",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you can't unlock: Make sure you're entering the correct master password. Try reloading the extension. If password is forgotten, it cannot be recovered."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will bookmarks sync?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Currently, bookmarks are stored locally on your device. You can manually export/import to transfer between devices. Cloud sync is planned for future versions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import from Chrome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Go to Settings → Import from Chrome. You can import all bookmarks or select specific folders. Existing bookmarks are preserved."
+        }
+      }
+    ]
+  }
+  </script>
+
+
+
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://osv-it-studio.github.io/holy-private-bookmarks/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Features",
+        "item": "https://osv-it-studio.github.io/holy-private-bookmarks/#features"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "FAQ",
+        "item": "https://osv-it-studio.github.io/holy-private-bookmarks/#faq"
+      }
+    ]
+  }
+  </script>
+
+ 
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+
+  <link rel="preload" as="image" href="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon128.png">
 </head>
 <body>
 
   <section class="hero">
     <div class="hero-content">
-      <img src="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon128.png" alt="Holy Private Bookmarks Logo" class="hero-logo">
+      <img src="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon128.png" 
+           alt="Holy Private Bookmarks - Encrypted Bookmark Manager Logo" 
+           class="hero-logo"
+           width="128"
+           height="128">
       <h1>Holy Private Bookmarks</h1>
-      <p class="hero-subtitle">Privacy-first bookmark manager with military-grade encryption</p>
+      <p class="hero-subtitle">Privacy-first bookmark manager with military-grade <strong>AES-256 encryption</strong></p>
       <div class="hero-buttons">
-        <a href="https://chromewebstore.google.com/detail/holy-private-bookmarks/nnafnomgekidkehbgkfmhapccelgdbch" class="btn btn-primary">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
+        <a href="https://chromewebstore.google.com/detail/holy-private-bookmarks/nnafnomgekidkehbgkfmhapccelgdbch" 
+           class="btn btn-primary"
+           rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <line x1="21.17" y1="8" x2="12" y2="8"></line>
+                    <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+                    <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+                </svg>
           Install Extension
         </a>
-        <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks" class="btn btn-secondary">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks" 
+           class="btn btn-secondary"
+           rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
           </svg>
           View on GitHub
@@ -63,13 +242,13 @@
     </div>
   </section>
 
-
-  <section class="features">
+  <section class="features" id="features">
     <div class="container">
       <h2 class="section-title">Why Holy Private Bookmarks?</h2>
+      <p class="section-subtitle">The most secure way to save and organize your favorite websites</p>
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">
+          <div class="feature-icon" aria-hidden="true">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
               <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
@@ -79,7 +258,7 @@
           <p>Your bookmarks are encrypted locally with AES-256-GCM. Even we can't access them without your password.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
+          <div class="feature-icon" aria-hidden="true">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10"></circle>
               <polyline points="12 6 12 12 16 14"></polyline>
@@ -89,7 +268,7 @@
           <p>Automatically locks after 10 minutes of inactivity. Your bookmarks stay safe when you're away.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
+          <div class="feature-icon" aria-hidden="true">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
             </svg>
@@ -98,7 +277,7 @@
           <p>Create nested folders, drag & drop bookmarks, and keep everything perfectly organized.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
+          <div class="feature-icon" aria-hidden="true">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="3 6 5 6 21 6"></polyline>
               <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
@@ -108,20 +287,20 @@
           <p>Automatically remove browsing history for bookmarked domains to maintain privacy.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
+          <div class="feature-icon" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <circle cx="12" cy="12" r="4"></circle>
-                    <line x1="21.17" y1="8" x2="12" y2="8"></line>
-                    <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
-                    <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
-                </svg>
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="4"></circle>
+              <line x1="21.17" y1="8" x2="12" y2="8"></line>
+              <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+              <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+            </svg>
           </div>
           <h3>Import from Chrome</h3>
           <p>Easily import your existing Chrome bookmarks with full folder structure preserved.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
+          <div class="feature-icon" aria-hidden="true">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -141,7 +320,6 @@
     </div>
   </section>
 
-
   <section class="demo-section alt-bg">
     <div class="container">
       <h2 class="section-title">Add Bookmarks</h2>
@@ -149,7 +327,12 @@
       
       <div class="demo-grid">
         <div class="demo-image">
-          <img src="screenshots/add-bookmark.png" alt="Add Bookmark Modal" class="screenshot">
+          <img src="screenshots/add-bookmark.png" 
+               alt="Adding a bookmark to a selected folder in Holy Private Bookmarks" 
+               class="screenshot"
+               width="659"
+               height="601"
+               loading="lazy">
           <div class="demo-caption">Add bookmark modal with folder selection</div>
         </div>
         
@@ -157,7 +340,7 @@
           <h3>Add Bookmark Methods:</h3>
           <ul class="feature-list">
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="12" y1="5" x2="12" y2="19"></line>
                   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -169,7 +352,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="12" y1="5" x2="12" y2="19"></line>
                   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -181,7 +364,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="12" cy="12" r="10"></circle>
                   <line x1="12" y1="8" x2="12" y2="16"></line>
@@ -190,16 +373,14 @@
               </span>
               <div>
                 <strong>Context Menu</strong>
-                <p>Right-click any page and select "Add to Holy Private Bookmarks</p>
+                <p>Right-click any page and select "Add to Holy Private Bookmarks"</p>
               </div>
             </li>
-            
           </ul>
         </div>
       </div>
     </div>
   </section>
-
 
   <section class="demo-section">
     <div class="container">
@@ -211,7 +392,7 @@
           <h3>Folder Creation Methods:</h3>
           <ul class="feature-list">
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
                   <line x1="12" y1="11" x2="12" y2="17"></line>
@@ -224,7 +405,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
                 </svg>
@@ -235,7 +416,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M3 9h18v10H3V9z"></path>
                   <path d="M3 5h18v4H3z"></path>
@@ -247,7 +428,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
                 </svg>
@@ -261,22 +442,26 @@
         </div>
         
         <div class="demo-image">
-          <img src="screenshots/create-folder.png" alt="Create Folder" class="screenshot">
+          <img src="screenshots/create-folder.png" 
+               alt="Creating a new folder in Holy Private Bookmarks" 
+               class="screenshot"
+               width="661"
+               height="602"
+               loading="lazy">
           <div class="demo-caption">Create new folder dialog</div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <section class="demo-section  alt-bg">
+  <section class="demo-section alt-bg">
     <div class="container">
       <h2 class="section-title">Folder Organization</h2>
       <p class="section-subtitle">Drag & drop, counters, and visual hierarchy</p>
       
-      <div class="features-grid">
+      <div class="features-grid" style="grid-template-columns: repeat(3, 1fr);">
         <div class="feature-card">
-          <div class="feature-icon">
+          <div class="feature-icon" aria-hidden="true">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
               <path d="M12 11v6"></path>
@@ -288,7 +473,7 @@
         </div>
         
         <div class="feature-card">
-          <div class="feature-icon">
+          <div class="feature-icon" aria-hidden="true">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="12" y1="8" x2="12" y2="16"></line>
@@ -300,7 +485,7 @@
         </div>
         
         <div class="feature-card">
-          <div class="feature-icon">
+          <div class="feature-icon" aria-hidden="true">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M3 9h18v10H3V9z"></path>
               <path d="M3 5h18v4H3z"></path>
@@ -313,7 +498,6 @@
     </div>
   </section>
 
-
   <section class="demo-section">
     <div class="container">
       <h2 class="section-title">Popup Interface</h2>
@@ -321,7 +505,12 @@
       
       <div class="demo-grid">
         <div class="demo-image">
-          <img src="screenshots/popup-main.png" alt="Popup Main Interface" class="screenshot">
+          <img src="screenshots/popup-main.png" 
+               alt="Main popup window showing bookmarks tree in Holy Private Bookmarks" 
+               class="screenshot"
+               width="659"
+               height="602"
+               loading="lazy">
           <div class="demo-caption">Main popup window with bookmarks tree</div>
         </div>
         
@@ -329,7 +518,7 @@
           <h3>Popup Features:</h3>
           <ul class="feature-list">
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="12" y1="5" x2="12" y2="19"></line>
                   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -341,7 +530,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
                 </svg>
@@ -352,7 +541,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polyline points="3 6 5 6 21 6"></polyline>
                   <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
@@ -364,7 +553,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                   <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
@@ -381,70 +570,71 @@
     </div>
   </section>
 
-
-
-<section class="demo-section  alt-bg">
-  <div class="container">
-    <h2 class="section-title">Full Manager Interface</h2>
-    <p class="section-subtitle">Complete bookmark management with advanced features</p>
-    
-    <div class="demo-grid reverse">
-      <div class="demo-features">
-        <h3>Manager Features:</h3>
-        <ul class="feature-list">
-          <li>
-            <span class="feature-marker">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </span>
-            <div>
-              <strong>Search Bookmarks</strong>
-              <p>Real-time search through all your bookmarks by title or URL</p>
-            </div>
-          </li>
-          <li>
-            <span class="feature-marker">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="8" y1="6" x2="21" y2="6"></line>
-                <line x1="8" y1="12" x2="21" y2="12"></line>
-                <line x1="8" y1="18" x2="21" y2="18"></line>
-                <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                <line x1="3" y1="18" x2="3.01" y2="18"></line>
-              </svg>
-            </span>
-            <div>
-              <strong>List View</strong>
-              <p>Clean list layout with website favicons and domains</p>
-            </div>
-          </li>
-          <li>
-            <span class="feature-marker">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="1"></circle>
-                <circle cx="19" cy="12" r="1"></circle>
-                <circle cx="5" cy="12" r="1"></circle>
-              </svg>
-            </span>
-            <div>
-              <strong>Bulk Operations</strong>
-              <p>Select multiple bookmarks to move, copy, or delete</p>
-            </div>
-          </li>
-          
-        </ul>
-      </div>
+  <section class="demo-section alt-bg">
+    <div class="container">
+      <h2 class="section-title">Full Manager Interface</h2>
+      <p class="section-subtitle">Complete bookmark management with advanced features</p>
       
-      <div class="demo-image">
-        <img src="screenshots/manager-list.png" alt="Manager List View" class="screenshot">
-        <div class="demo-caption">Manager with list view, favicons and domains</div>
+      <div class="demo-grid reverse">
+        <div class="demo-features">
+          <h3>Manager Features:</h3>
+          <ul class="feature-list">
+            <li>
+              <span class="feature-marker" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </span>
+              <div>
+                <strong>Search Bookmarks</strong>
+                <p>Real-time search through all your bookmarks by title or URL</p>
+              </div>
+            </li>
+            <li>
+              <span class="feature-marker" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+              </span>
+              <div>
+                <strong>List View</strong>
+                <p>Clean list layout with website favicons and domains</p>
+              </div>
+            </li>
+            <li>
+              <span class="feature-marker" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="1"></circle>
+                  <circle cx="19" cy="12" r="1"></circle>
+                  <circle cx="5" cy="12" r="1"></circle>
+                </svg>
+              </span>
+              <div>
+                <strong>Bulk Operations</strong>
+                <p>Select multiple bookmarks to move, copy, or delete</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="demo-image">
+          <img src="screenshots/manager-list.png" 
+               alt="Bookmark manager with list view and favicons in Holy Private Bookmarks" 
+               class="screenshot"
+               width="1366"
+               height="605"
+               loading="lazy">
+          <div class="demo-caption">Manager with list view, favicons and domains</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <section class="demo-section">
     <div class="container">
@@ -453,7 +643,12 @@
       
       <div class="demo-grid">
         <div class="demo-image">
-          <img src="screenshots/lock-screen.png" alt="Lock Screen" class="screenshot">
+          <img src="screenshots/lock-screen.png" 
+               alt="Lock screen with master password input in Holy Private Bookmarks" 
+               class="screenshot"
+               width="660"
+               height="602"
+               loading="lazy">
           <div class="demo-caption">Secure lock screen with master password</div>
         </div>
         
@@ -461,7 +656,7 @@
           <h3>Security Features:</h3>
           <ul class="feature-list">
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                   <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
@@ -473,7 +668,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="12" cy="12" r="10"></circle>
                   <polyline points="12 6 12 12 16 14"></polyline>
@@ -485,7 +680,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                   <circle cx="12" cy="7" r="4"></circle>
@@ -497,7 +692,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="12" cy="12" r="10"></circle>
                   <line x1="12" y1="8" x2="12" y2="12"></line>
@@ -515,7 +710,6 @@
     </div>
   </section>
 
- 
   <section class="demo-section alt-bg">
     <div class="container">
       <h2 class="section-title">Settings & Import</h2>
@@ -526,7 +720,7 @@
           <h3>Settings Features:</h3>
           <ul class="feature-list">
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="12" cy="12" r="3"></circle>
                   <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
@@ -538,7 +732,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>
@@ -551,13 +745,13 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <circle cx="12" cy="12" r="4"></circle>
-                    <line x1="21.17" y1="8" x2="12" y2="8"></line>
-                    <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
-                    <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <line x1="21.17" y1="8" x2="12" y2="8"></line>
+                  <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+                  <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
                 </svg>
               </span>
               <div>
@@ -566,7 +760,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>
@@ -582,15 +776,17 @@
         </div>
         
         <div class="demo-image">
-          <img src="screenshots/settings.png" alt="Settings Panel" class="screenshot">
+          <img src="screenshots/settings.png" 
+               alt="Settings panel with theme selector in Holy Private Bookmarks" 
+               class="screenshot"
+               width="659"
+               height="601"
+               loading="lazy">
           <div class="demo-caption">Settings with theme selector and import options</div>
         </div>
       </div>
     </div>
   </section>
-
-  
-
 
   <section class="demo-section">
     <div class="container">
@@ -602,7 +798,7 @@
           <h3>Folder Features:</h3>
           <ul class="feature-list">
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
                   <line x1="12" y1="11" x2="12" y2="17"></line>
@@ -615,7 +811,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M3 9h18v10H3V9z"></path>
                   <path d="M3 5h18v4H3z"></path>
@@ -627,7 +823,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
                 </svg>
@@ -638,7 +834,7 @@
               </div>
             </li>
             <li>
-              <span class="feature-marker">
+              <span class="feature-marker" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="12" cy="12" r="10"></circle>
                   <line x1="12" y1="8" x2="12" y2="16"></line>
@@ -654,24 +850,30 @@
         </div>
         
         <div class="demo-image">
-          <img src="screenshots/folder-tree.png" alt="Folder Tree" class="screenshot">
+          <img src="screenshots/folder-tree.png" 
+               alt="Nested folders with item counters in Holy Private Bookmarks" 
+               class="screenshot"
+               width="658"
+               height="604"
+               loading="lazy">
           <div class="demo-caption">Nested folders with item counters</div>
         </div>
       </div>
     </div>
   </section>
 
- 
-
-  <section class="demo-section  alt-bg">
+  <section class="demo-section alt-bg">
     <div class="container">
       <h2 class="section-title">Import Options</h2>
       <p class="section-subtitle">Multiple ways to bring your bookmarks</p>
       
       <div class="import-grid">
         <div class="import-card">
-          <img src="screenshots/import-chrome.png" alt="Import from Chrome" class="import-screenshot">
-          <div class="import-icon">
+          <img src="screenshots/import-chrome.png" 
+               alt="Importing bookmarks from Chrome in Holy Private Bookmarks" 
+               class="import-screenshot"
+               loading="lazy">
+          <div class="import-icon" aria-hidden="true">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <circle cx="12" cy="12" r="10"></circle>
               <circle cx="12" cy="12" r="4"></circle>
@@ -684,8 +886,11 @@
           <p>Import all Chrome bookmarks with full folder structure</p>
         </div>
         <div class="import-card">
-          <img src="screenshots/import-html.png" alt="Import from HTML" class="import-screenshot">
-          <div class="import-icon">
+          <img src="screenshots/import-html.png" 
+               alt="Importing bookmarks from HTML file in Holy Private Bookmarks" 
+               class="import-screenshot"
+               loading="lazy">
+          <div class="import-icon" aria-hidden="true">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
               <polyline points="14 2 14 8 20 8"></polyline>
@@ -698,8 +903,11 @@
           <p>Import bookmarks from Netscape HTML format</p>
         </div>
         <div class="import-card">
-          <img src="screenshots/import-selective.png" alt="Selective Import" class="import-screenshot">
-          <div class="import-icon">
+          <img src="screenshots/import-selective.png" 
+               alt="Selective folder import from Chrome in Holy Private Bookmarks" 
+               class="import-screenshot"
+               loading="lazy">
+          <div class="import-icon" aria-hidden="true">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"></path>
               <line x1="12" y1="10" x2="12" y2="16"></line>
@@ -713,244 +921,244 @@
     </div>
   </section>
 
-  
-
-<section class="faq-section" id="faq">
-  <div class="container">
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <p class="section-subtitle">Quick answers to common questions</p>
-    
-    <div class="faq-grid">
- 
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-          </span>
-          <h3>How secure is my data?</h3>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>All your bookmarks are encrypted locally using AES-256-GCM encryption with a master password. Your data never leaves your computer. Even we cannot access your bookmarks without your password.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v20M2 12h20"></path>
-            </svg>
-          </span>
-          <h3>What if I forget my password?</h3>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <div class="warning" style="margin: 0 0 16px 0;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="8" x2="12" y2="12"></line>
-              <circle cx="12" cy="16" r="1"></circle>
-            </svg>
-            Password cannot be recovered
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Quick answers to common questions</p>
+      
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </span>
+            <h3>How secure is my data?</h3>
+            <span class="faq-toggle" aria-label="Toggle answer">+</span>
           </div>
-          <p>We don't store your password or any recovery keys. If you forget your password, you will permanently lose access to all your encrypted bookmarks. Please save your password in a secure password manager.</p>
+          <div class="faq-answer">
+            <p>All your bookmarks are encrypted locally using AES-256-GCM encryption with a master password. Your data never leaves your computer. Even we cannot access your bookmarks without your password.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M2 12h20"></path>
+              </svg>
+            </span>
+            <h3>What if I forget my password?</h3>
+            <span class="faq-toggle" aria-label="Toggle answer">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="warning" style="margin: 0 0 16px 0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <circle cx="12" cy="16" r="1"></circle>
+              </svg>
+              Password cannot be recovered
+            </div>
+            <p>We don't store your password or any recovery keys. If you forget your password, you will permanently lose access to all your encrypted bookmarks. Please save your password in a secure password manager.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </span>
+            <h3>Why enter password every time?</h3>
+            <span class="faq-toggle" aria-label="Toggle answer">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>This is a core security feature built on a zero-trust model:</p>
+            <ul>
+              <li>We never store your password or session tokens</li>
+              <li>Even with physical access, bookmarks remain protected</li>
+              <li>No backdoors or password reset options</li>
+              <li>Browser extensions cannot securely persist authentication</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+            <h3>How do I add bookmarks?</h3>
+            <span class="faq-toggle" aria-label="Toggle answer">+</span>
+          </div>
+          <div class="faq-answer">
+            <ul>
+              <li>Click '+' in popup to add current page</li>
+              <li>Use 'Add Bookmark' button in toolbar</li>
+              <li>Right-click any page and select "Add to Holy Private Bookmarks"</li>
+              <li>Add manually in the manager</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </span>
+            <h3>How do I create folders?</h3>
+            <span class="faq-toggle" aria-label="Toggle answer">+</span>
+          </div>
+          <div class="faq-answer">
+            <ol>
+              <li>Open the extension popup</li>
+              <li>Click 'New Folder' button in toolbar</li>
+              <li>Enter folder name</li>
+              <li>Drag and drop bookmarks into folders</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </span>
+            <h3>Can I backup my bookmarks?</h3>
+            <span class="faq-toggle" aria-label="Toggle answer">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! Go to Settings → Export & Import → Export Bookmarks. This creates an encrypted backup file. You can restore it anytime using the Import option.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+            </span>
+            <h3>What does 'Clear History' do?</h3>
+            <span class="faq-toggle" aria-label="Toggle answer">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Removes Chrome browsing history for domains in your bookmarks. Helps maintain privacy by automatically clearing history traces of bookmarked sites.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </span>
+            <h3>The extension won't unlock</h3>
+            <span class="faq-toggle" aria-label="Toggle answer">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>If you can't unlock:</p>
+            <ul>
+              <li>Make sure you're entering the correct master password</li>
+              <li>Try reloading the extension</li>
+              <li>If password is forgotten, it cannot be recovered</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </span>
+            <h3>Will bookmarks sync?</h3>
+            <span class="faq-toggle" aria-label="Toggle answer">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Currently, bookmarks are stored locally on your device. You can manually export/import to transfer between devices. Cloud sync is planned for future versions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="4"></circle>
+                <line x1="21.17" y1="8" x2="12" y2="8"></line>
+                <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+                <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+              </svg>
+            </span>
+            <h3>Can I import from Chrome?</h3>
+            <span class="faq-toggle" aria-label="Toggle answer">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! Go to Settings → Import from Chrome. You can import all bookmarks or select specific folders. Existing bookmarks are preserved.</p>
+          </div>
         </div>
       </div>
 
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
+      <div class="faq-contact">
+        <h3>Still have questions?</h3>
+        <p>Contact us or check the GitHub repository:</p>
+        <div class="faq-contact-buttons">
+          <a href="mailto:osv-it-studio@googlegroups.com" class="contact-btn email-btn" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
-          </span>
-          <h3>Why enter password every time?</h3>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>This is a core security feature built on a zero-trust model:</p>
-          <ul>
-            <li>We never store your password or session tokens</li>
-            <li>Even with physical access, bookmarks remain protected</li>
-            <li>No backdoors or password reset options</li>
-            <li>Browser extensions cannot securely persist authentication</li>
-          </ul>
-        </div>
-      </div>
-
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"></line>
-              <line x1="5" y1="12" x2="19" y2="12"></line>
+            Email Us
+          </a>
+          <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks" target="_blank" rel="noopener noreferrer" class="contact-btn github-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
             </svg>
-          </span>
-          <h3>How do I add bookmarks?</h3>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <ul>
-            <li>Click '+' in popup to add current page</li>
-            <li>Use 'Add Bookmark' button in toolbar</li>
-            <li>Right-click any page and select "Add to Holy Private Bookmarks"</li>
-            <li>Add manually in the manager</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-            </svg>
-          </span>
-          <h3>How do I create folders?</h3>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <ol>
-            <li>Open the extension popup</li>
-            <li>Click 'New Folder' button in toolbar</li>
-            <li>Enter folder name</li>
-            <li>Drag and drop bookmarks into folders</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-          </span>
-          <h3>Can I backup my bookmarks?</h3>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Yes! Go to Settings → Export & Import → Export Bookmarks. This creates an encrypted backup file. You can restore it anytime using the Import option.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="3 6 5 6 21 6"></polyline>
-              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-            </svg>
-          </span>
-          <h3>What does 'Clear History' do?</h3>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Removes Chrome browsing history for domains in your bookmarks. Helps maintain privacy by automatically clearing history traces of bookmarked sites.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="8" x2="12" y2="12"></line>
-              <line x1="12" y1="16" x2="12.01" y2="16"></line>
-            </svg>
-          </span>
-          <h3>The extension won't unlock</h3>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>If you can't unlock:</p>
-          <ul>
-            <li>Make sure you're entering the correct master password</li>
-            <li>Try reloading the extension</li>
-            <li>If password is forgotten, it cannot be recovered</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-          </span>
-          <h3>Will bookmarks sync?</h3>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Currently, bookmarks are stored locally on your device. You can manually export/import to transfer between devices. Cloud sync is planned for future versions.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10"></circle>
-              <circle cx="12" cy="12" r="4"></circle>
-              <line x1="21.17" y1="8" x2="12" y2="8"></line>
-              <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
-              <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
-            </svg>
-          </span>
-          <h3>Can I import from Chrome?</h3>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Yes! Go to Settings → Import from Chrome. You can import all bookmarks or select specific folders. Existing bookmarks are preserved.</p>
+            GitHub
+          </a>
         </div>
       </div>
     </div>
-
- 
-    <div class="faq-contact">
-      <h3>Still have questions?</h3>
-      <p>Contact us or check the GitHub repository:</p>
-      <div class="faq-contact-buttons">
-        <a href="mailto:osv-it-studio@googlegroups.com" class="contact-btn email-btn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-          Email Us
-        </a>
-        <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks" target="_blank" class="contact-btn github-btn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-          </svg>
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
-          <img src="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon128.png" alt="Logo" class="footer-logo-img">
+          <img src="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon128.png" 
+               alt="Holy Private Bookmarks footer logo" 
+               class="footer-logo-img"
+               width="32"
+               height="32"
+               loading="lazy">
           <span>Holy Private Bookmarks</span>
         </div>
         <div class="footer-links">
-          <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks">GitHub</a>
+          <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks" rel="noopener noreferrer">GitHub</a>
           <a href="mailto:osv-it-studio@googlegroups.com">Contact</a>
-          <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks?tab=readme-ov-file#support-the-project">Support</a>
+          <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks?tab=readme-ov-file#support-the-project" rel="noopener noreferrer">Support</a>
+          <a href="#faq">FAQ</a>
         </div>
         <div class="footer-copyright">
           © 2026 OSV IT-Studio. Open source under GPLv3.
@@ -959,9 +1167,8 @@
     </div>
   </footer>
 
-
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -976,11 +1183,4 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
