@@ -66,12 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     threshold: 0.1
   });
 
-  document.querySelectorAll('.feature-card, .demo-grid, .action-item, .import-card, .theme-card, .folder-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-  });
+  
 
 
   document.querySelectorAll('.folder-item').forEach(item => {
@@ -101,4 +96,5 @@ document.querySelectorAll('.faq-question').forEach(question => {
  
     item.classList.toggle('active');
   });
+
 });
