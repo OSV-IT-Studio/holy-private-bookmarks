@@ -258,6 +258,7 @@ body.light-theme .alt-bg {
 
 .screenshot {
   max-width: 100%;
+  max-height: fit-content;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   border: 1px solid var(--card-border);
@@ -943,4 +944,5 @@ section {
     width: 100%;
     justify-content: center;
   }
+
 }
