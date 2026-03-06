@@ -551,5 +551,60 @@
 },
   "faqButtonTitle": {
     "message": "Foire Aux Questions"
-  }
+  },
+  "clearingHistory": {
+    "message": "Effacement de l'historique",
+    "description": "Titre pour la fenêtre de progression de l'effacement de l'historique"
+  },
+  "preparingToClear": {
+    "message": "Préparation de l'effacement de l'historique...",
+    "description": "Message de statut initial"
+  },
+  "progress": {
+    "message": "Progression",
+    "description": "Étiquette de progression"
+  },
+  "domainsProcessed": {
+    "message": "Domaines traités",
+    "description": "Étiquette pour le compteur de domaines traités"
+  },
+  "entriesDeleted": {
+    "message": "Entrées supprimées",
+    "description": "Étiquette pour le compteur d'entrées supprimées"
+  },
+  "processing": {
+    "message": "Traitement en cours...",
+    "description": "Message de statut pendant le traitement"
+  },
+  "startingCleanup": {
+    "message": "Démarrage du nettoyage...",
+    "description": "Statut au démarrage"
+  },
+  "finalizingCleanup": {
+    "message": "Finalisation du nettoyage...",
+    "description": "Statut lors de la finalisation"
+  },
+  "cancelling": {
+    "message": "Annulation en cours...",
+    "description": "Statut lors de l'annulation"
+  },
+  "clearCancelled": {
+    "message": "Opération annulée",
+    "description": "Notification en cas d'annulation"
+  },
+  "fillAllFields": {
+  "message": "Veuillez remplir tous les champs"
+},
+"setupComplete": {
+  "message": "Configuration terminée!"
+},
+"migrationSuccess": {
+  "message": "Données migrées avec succès vers un format sécurisé!"
+},
+"migrationRequired": {
+  "message": "Mise à jour du format de données requise"
+},
+"migrationInstruction": {
+  "message": "Entrez votre mot de passe pour passer automatiquement à un format plus sécurisé."
+}
 }

@@ -2,25 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' 'unsafe-inline'; 
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com;
-    img-src 'self' data: https://www.google.com https://www.google.com https://*.google.com https://www.google.com/s2 https://www.google.com/s2/favicons https://*.gstatic.com;
-    connect-src 'self';
-    frame-src 'none';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'none';
-">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holy Private Bookmarks</title>
     <link rel="stylesheet" href="css/popup.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/loader.css">
+	<link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
+
+ <div id="theme-loader-block">
+    <div class="loader-container">
+      <div class="loader-spinner"></div>
+    </div>
+  </div>
+
+
     <div class="container">
 
 
@@ -349,7 +347,7 @@
             <div style="background: rgba(255, 255, 255, 0.05); padding: 16px; border-radius: 12px; margin-bottom: 20px;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);" data-i18n="version">Version:</span>
-                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4.17</span>
+                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4.22</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);" data-i18n="developer">Developer:</span>
@@ -391,11 +389,15 @@
  
 
 
-	<script src="js/crypto-wrapper.js"></script>
-	<script src="js/theme.js"></script>
-	<script src="js/shared.js"></script>
-	<script src="js/html-importer.js"></script>
-    <script src="js/popup.js"></script>
+<script src="js/modules/crypto-wrapper.js"></script>
+<script src="js/modules/theme.js"></script>
+<script src="js/modules/shared.js"></script>
+<script src="js/modules/history-cleaner.js"></script>
+<script src="js/modules/html-importer.js"></script>
+<script src="js/modules/import-export-manager.js"></script>
+<script src="js/modules/drag-drop.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/popup.js"></script>
 	
 </body>
 

@@ -102,7 +102,6 @@ h1 {
   box-sizing: border-box;
   min-height: 620px;
 }
-
 input[type="password"],
 input[type="text"],
 select {
@@ -1778,3 +1777,4 @@ body.light-theme input:checked + .slider {
 .action-menu__lock:active {
     transform: translateX(-50%) scale(0.98);
 }
+

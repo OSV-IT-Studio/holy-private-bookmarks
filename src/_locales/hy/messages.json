@@ -554,5 +554,60 @@
 },
   "faqButtonTitle": {
     "message": "Հաճախ տրվող հարցեր"
-  }
+  },
+  "clearingHistory": {
+    "message": "Պատմության մաքրում",
+    "description": "Վերնագիր պատմության մաքրման ընթացքի մոդալի համար"
+  },
+  "preparingToClear": {
+    "message": "Պատմության մաքրման նախապատրաստում...",
+    "description": "Սկզբնական կարգավիճակի հաղորդագրություն"
+  },
+  "progress": {
+    "message": "Ընթացք",
+    "description": "Ընթացքի պիտակ"
+  },
+  "domainsProcessed": {
+    "message": "Մշակված դոմեններ",
+    "description": "Պիտակ մշակված դոմենների քանակի համար"
+  },
+  "entriesDeleted": {
+    "message": "Ջնջված գրառումներ",
+    "description": "Պիտակ ջնջված գրառումների քանակի համար"
+  },
+  "processing": {
+    "message": "Մշակում...",
+    "description": "Կարգավիճակի հաղորդագրություն մշակման ընթացքում"
+  },
+  "startingCleanup": {
+    "message": "Մաքրումը սկսվում է...",
+    "description": "Կարգավիճակը մեկնարկի ժամանակ"
+  },
+  "finalizingCleanup": {
+    "message": "Մաքրումը ավարտվում է...",
+    "description": "Կարգավիճակը ավարտի ժամանակ"
+  },
+  "cancelling": {
+    "message": "Չեղարկում...",
+    "description": "Կարգավիճակը չեղարկման ժամանակ"
+  },
+  "clearCancelled": {
+    "message": "Գործողությունը չեղարկվեց",
+    "description": "Ծանուցում չեղարկման դեպքում"
+  },
+  "fillAllFields": {
+  "message": "Խնդրում ենք լրացնել բոլոր դաշտերը"
+},
+"setupComplete": {
+  "message": "Կարգավորումն ավարտված է!"
+},
+"migrationSuccess": {
+  "message": "Տվյալները հաջողությամբ տեղափոխվեցին անվտանգ ձևաչափի!"
+},
+"migrationRequired": {
+  "message": "Տվյալների ձևաչափի թարմացում պահանջվում է"
+},
+"migrationInstruction": {
+  "message": "Մուտքագրեք ձեր գաղտնաբառը ավտոմատ կերպով ավելի անվտանգ ձևաչափի թարմացնելու համար:"
+}
 }

@@ -531,5 +531,60 @@
 },
   "faqButtonTitle": {
     "message": "常见问题解答"
-  }
+  },
+  "clearingHistory": {
+    "message": "正在清除历史记录",
+    "description": "历史记录清除进度模态框的标题"
+  },
+  "preparingToClear": {
+    "message": "正在准备清除历史记录...",
+    "description": "初始状态消息"
+  },
+  "progress": {
+    "message": "进度",
+    "description": "进度标签"
+  },
+  "domainsProcessed": {
+    "message": "已处理的域名",
+    "description": "已处理域名计数的标签"
+  },
+  "entriesDeleted": {
+    "message": "已删除的条目",
+    "description": "已删除条目计数的标签"
+  },
+  "processing": {
+    "message": "处理中...",
+    "description": "处理时的状态消息"
+  },
+  "startingCleanup": {
+    "message": "开始清理...",
+    "description": "开始时的状态"
+  },
+  "finalizingCleanup": {
+    "message": "正在完成清理...",
+    "description": "完成时的状态"
+  },
+  "cancelling": {
+    "message": "正在取消...",
+    "description": "取消时的状态"
+  },
+  "clearCancelled": {
+    "message": "操作已取消",
+    "description": "取消时的通知"
+  },
+  "fillAllFields": {
+  "message": "请填写所有字段"
+},
+"setupComplete": {
+  "message": "设置完成！"
+},
+"migrationSuccess": {
+  "message": "数据已成功迁移到安全格式！"
+},
+"migrationRequired": {
+  "message": "需要更新数据格式"
+},
+"migrationInstruction": {
+  "message": "输入您的密码以自动升级到更安全的格式。"
+}
 }

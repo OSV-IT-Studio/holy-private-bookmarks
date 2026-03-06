@@ -556,5 +556,60 @@
 },  
   "faqButtonTitle": {
     "message": "Frequently Asked Questions"
+  },
+  "clearingHistory": {
+    "message": "Clearing History",
+    "description": "Title for history clearing progress modal"
+  },
+  "preparingToClear": {
+    "message": "Preparing to clear history...",
+    "description": "Initial status message"
+  },
+  "progress": {
+    "message": "Progress",
+    "description": "Progress label"
+  },
+  "domainsProcessed": {
+    "message": "Domains processed",
+    "description": "Label for domains processed count"
+  },
+  "entriesDeleted": {
+    "message": "Entries deleted",
+    "description": "Label for deleted entries count"
+  },
+  "processing": {
+    "message": "Processing...",
+    "description": "Status message while processing"
+  },
+  "startingCleanup": {
+    "message": "Starting cleanup...",
+    "description": "Status when starting"
+  },
+  "finalizingCleanup": {
+    "message": "Finalizing cleanup...",
+    "description": "Status when finalizing"
+  },
+  "cancelling": {
+    "message": "Cancelling...",
+    "description": "Status when cancelling"
+  },
+  "clearCancelled": {
+    "message": "Operation cancelled",
+    "description": "Notification when cancelled"
+  },
+  "fillAllFields": {
+    "message": "Please fill all fields"
+  },
+  "setupComplete": {
+    "message": "Setup complete!"
+  },
+    "migrationSuccess": {
+    "message": "Data successfully migrated to secure format!"
+  },
+    "migrationRequired": {
+    "message": "Data format update required"
+  },
+  "migrationInstruction": {
+    "message": "Enter your password to automatically upgrade to more secure format."
   }
 }

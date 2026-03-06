@@ -548,5 +548,60 @@
 },
   "faqButtonTitle": {
     "message": "Häufig gestellte Fragen"
-  }
+  },
+  "clearingHistory": {
+    "message": "Verlauf wird gelöscht",
+    "description": "Titel für den Fortschrittsdialog beim Löschen des Verlaufs"
+  },
+  "preparingToClear": {
+    "message": "Löschen des Verlaufs wird vorbereitet...",
+    "description": "Erste Statusmeldung"
+  },
+  "progress": {
+    "message": "Fortschritt",
+    "description": "Fortschrittsbezeichnung"
+  },
+  "domainsProcessed": {
+    "message": "Verarbeitete Domains",
+    "description": "Bezeichnung für die Anzahl verarbeiteter Domains"
+  },
+  "entriesDeleted": {
+    "message": "Gelöschte Einträge",
+    "description": "Bezeichnung für die Anzahl gelöschter Einträge"
+  },
+  "processing": {
+    "message": "Verarbeitung läuft...",
+    "description": "Statusmeldung während der Verarbeitung"
+  },
+  "startingCleanup": {
+    "message": "Bereinigung wird gestartet...",
+    "description": "Status beim Starten"
+  },
+  "finalizingCleanup": {
+    "message": "Bereinigung wird abgeschlossen...",
+    "description": "Status beim Abschließen"
+  },
+  "cancelling": {
+    "message": "Abbruch läuft...",
+    "description": "Status beim Abbrechen"
+  },
+  "clearCancelled": {
+    "message": "Vorgang abgebrochen",
+    "description": "Benachrichtigung bei Abbruch"
+  },
+  "fillAllFields": {
+  "message": "Bitte füllen Sie alle Felder aus"
+},
+"setupComplete": {
+  "message": "Einrichtung abgeschlossen!"
+},
+"migrationSuccess": {
+  "message": "Daten erfolgreich in ein sicheres Format migriert!"
+},
+"migrationRequired": {
+  "message": "Aktualisierung des Datenformats erforderlich"
+},
+"migrationInstruction": {
+  "message": "Geben Sie Ihr Passwort ein, um automatisch auf ein sichereres Format zu aktualisieren."
+}
 }

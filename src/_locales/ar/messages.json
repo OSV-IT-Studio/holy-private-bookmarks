@@ -545,5 +545,60 @@
 },
   "faqButtonTitle": {
     "message": "الأسئلة الشائعة"
-  }
+  },
+  "clearingHistory": {
+    "message": "جارٍ مسح السجل",
+    "description": "عنوان نافذة تقدم مسح السجل"
+  },
+  "preparingToClear": {
+    "message": "جارٍ التحضير لمسح السجل...",
+    "description": "رسالة الحالة الأولية"
+  },
+  "progress": {
+    "message": "التقدم",
+    "description": "تسمية التقدم"
+  },
+  "domainsProcessed": {
+    "message": "تمت معالجة النطاقات",
+    "description": "تسمية لعدد النطاقات التي تمت معالجتها"
+  },
+  "entriesDeleted": {
+    "message": "تم حذف المدخلات",
+    "description": "تسمية لعدد المدخلات المحذوفة"
+  },
+  "processing": {
+    "message": "جارٍ المعالجة...",
+    "description": "رسالة الحالة أثناء المعالجة"
+  },
+  "startingCleanup": {
+    "message": "بدء التنظيف...",
+    "description": "الحالة عند البدء"
+  },
+  "finalizingCleanup": {
+    "message": "إنهاء التنظيف...",
+    "description": "الحالة عند الانتهاء"
+  },
+  "cancelling": {
+    "message": "جارٍ الإلغاء...",
+    "description": "الحالة عند الإلغاء"
+  },
+  "clearCancelled": {
+    "message": "تم إلغاء العملية",
+    "description": "إشعار عند الإلغاء"
+  },
+  "fillAllFields": {
+  "message": "يرجى ملء جميع الحقول"
+},
+"setupComplete": {
+  "message": "اكتمل الإعداد!"
+},
+"migrationSuccess": {
+  "message": "تم ترحيل البيانات بنجاح إلى تنسيق آمن!"
+},
+"migrationRequired": {
+  "message": "تحديث تنسيق البيانات مطلوب"
+},
+"migrationInstruction": {
+  "message": "أدخل كلمة المرور الخاصة بك للترقية تلقائيًا إلى تنسيق أكثر أمانًا."
+}
 }

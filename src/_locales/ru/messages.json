@@ -535,5 +535,61 @@
 },
   "faqButtonTitle": {
     "message": "Часто задаваемые вопросы"
+  },
+
+  "clearingHistory": {
+    "message": "Очистка истории",
+    "description": "Заголовок модального окна прогресса очистки"
+  },
+  "preparingToClear": {
+    "message": "Подготовка к очистке истории...",
+    "description": "Начальный статус"
+  },
+  "progress": {
+    "message": "Прогресс",
+    "description": "Метка прогресса"
+  },
+  "domainsProcessed": {
+    "message": "Обработано доменов",
+    "description": "Метка для счетчика обработанных доменов"
+  },
+  "entriesDeleted": {
+    "message": "Удалено записей",
+    "description": "Метка для счетчика удаленных записей"
+  },
+  "processing": {
+    "message": "Обработка...",
+    "description": "Статус во время обработки"
+  },
+  "startingCleanup": {
+    "message": "Запуск очистки...",
+    "description": "Статус при запуске"
+  },
+  "finalizingCleanup": {
+    "message": "Завершение очистки...",
+    "description": "Статус при завершении"
+  },
+  "cancelling": {
+    "message": "Отмена...",
+    "description": "Статус при отмене"
+  },
+  "clearCancelled": {
+    "message": "Операция отменена",
+    "description": "Уведомление при отмене"
+  },
+  "fillAllFields": {
+    "message": "Пожалуйста, заполните все поля"
+  },
+  "setupComplete": {
+    "message": "Настройка завершена!"
+  },
+  "migrationSuccess": {
+    "message": "Данные успешно перенесены в защищенный формат!"
+  },
+  "migrationRequired": {
+    "message": "Требуется обновление формата данных"
+  },
+  "migrationInstruction": {
+    "message": "Введите ваш пароль для автоматического обновления до более защищенного формата."
   }
-}
+} 

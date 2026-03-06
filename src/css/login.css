@@ -1,0 +1,295 @@
+/* ========== LOGIN SECTION ========== */
+
+.login-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.login-container {
+    max-width: 80%;
+    width: 80%;
+    padding: 40px 32px;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--card-border);
+    border-radius: 32px;
+    box-shadow: var(--shadow), 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-icon img {
+    width: 100px;
+    height: 100px;
+}
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+
+.login-header {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.login-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+
+
+.login-subtitle {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+
+.migration-notice,
+.pending-notification {
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin: 0 0 24px 0;
+    text-align: left;
+    font-size: 14px;
+    color: var(--text-secondary);
+    backdrop-filter: blur(10px);
+    animation: slideDown 0.3s ease;
+}
+
+.migration-notice {
+    background: rgba(255, 193, 7, 0.12);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.pending-notification {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(0, 150, 255, 0.08));
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.notice-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+	color: var(--text-secondary);
+}
+
+.notice-icon,
+.pending-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.notice-icon {
+    background: rgba(255, 193, 7, 0.2);
+}
+
+.pending-icon {
+    background: rgba(0, 212, 255, 0.15);
+}
+
+.notice-icon svg,
+.pending-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.notice-title {
+    margin: 0 0 4px 0;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.notice-title.migration {
+    color: #ffc107;
+}
+
+.notice-title.pending {
+    color: var(--accent);
+}
+
+.notice-text {
+    margin: 0px 0px 8px 0px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.notice-text strong {
+    color: var(--accent);
+    display: inline-block;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+
+
+.password-field {
+    margin-bottom: 24px;
+}
+
+.password-input {
+    width: 100%;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    color: var(--text-primary);
+    font-size: 16px;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    line-height: normal;
+}
+
+.password-input:focus {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1);
+}
+
+.password-input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+
+.unlock-button {
+        width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--accent), #0099cc);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.unlock-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(0, 212, 255, 0.4);
+}
+
+.unlock-button:active {
+    transform: translateY(0);
+}
+
+.unlock-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    pointer-events: none;
+}
+
+.unlock-button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.unlock-button-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.unlock-button-content svg {
+    width: 20px;
+    height: 20px;
+}
+#login-notification-bar {
+    position: fixed;
+                    top: 0;
+                    left: 0;
+                    z-index: 11;
+                    width: 100%;
+    padding: 16px 20px;
+    margin: 0 0 24px 0;
+    text-align: left;
+    font-size: 14px;
+    color: var(--text-secondary);
+    backdrop-filter: blur(10px);
+    animation: slideDown 0.3s ease;
+	    background: linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(0, 150, 255, 0.08));
+    border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+box-shadow: rgba(0, 212, 255, 0.4) 0px 10px 30px -5px;
+                    right: 0;
+}
+
+
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 10px 20px -5px rgba(0, 212, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 15px 30px -5px rgba(0, 212, 255, 0.5);
+    }
+}

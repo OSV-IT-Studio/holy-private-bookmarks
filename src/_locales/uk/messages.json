@@ -545,5 +545,60 @@
 },  
   "faqButtonTitle": {
     "message": "Поширені запитання"
-  }
+  },
+  "clearingHistory": {
+    "message": "Очищення історії",
+    "description": "Заголовок вікна прогресу очищення історії"
+  },
+  "preparingToClear": {
+    "message": "Підготовка до очищення історії...",
+    "description": "Початковий статус"
+  },
+  "progress": {
+    "message": "Прогрес",
+    "description": "Мітка прогресу"
+  },
+  "domainsProcessed": {
+    "message": "Доменів оброблено",
+    "description": "Мітка для лічильника оброблених доменів"
+  },
+  "entriesDeleted": {
+    "message": "Записів видалено",
+    "description": "Мітка для лічильника видалених записів"
+  },
+  "processing": {
+    "message": "Обробка...",
+    "description": "Статус під час обробки"
+  },
+  "startingCleanup": {
+    "message": "Запуск очищення...",
+    "description": "Статус при запуску"
+  },
+  "finalizingCleanup": {
+    "message": "Завершення очищення...",
+    "description": "Статус при завершенні"
+  },
+  "cancelling": {
+    "message": "Скасування...",
+    "description": "Статус при скасуванні"
+  },
+  "clearCancelled": {
+    "message": "Операцію скасовано",
+    "description": "Сповіщення при скасуванні"
+  },
+  "fillAllFields": {
+  "message": "Будь ласка, заповніть всі поля"
+},
+"setupComplete": {
+  "message": "Налаштування завершено!"
+},
+"migrationSuccess": {
+  "message": "Дані успішно перенесено у захищений формат!"
+},
+"migrationRequired": {
+  "message": "Потрібне оновлення формату даних"
+},
+"migrationInstruction": {
+  "message": "Введіть ваш пароль для автоматичного оновлення до більш захищеного формату."
+}
 }
