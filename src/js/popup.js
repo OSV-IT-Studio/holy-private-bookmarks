@@ -31,10 +31,10 @@ if (!window.SecureCrypto) {
 }
 
 if (!window.HTMLImporter) {
-    console.warn('HTMLImporter module is not loaded. HTML import functionality will be unavailable.');
+	throw new Error('HTMLImporter module is not loaded. HTML import functionality will be unavailable.');
 }
 if (!window.DragDropManager) {
-    console.error('DragDropManager not loaded!');
+	throw new Error('DragDropManager not loaded!');
 }
 
 const {
@@ -308,7 +308,14 @@ function showSetupSection() {
 // LOGIN 
 
 function loadLoginContent(showPendingNotification = false, bookmarkTitle = '') {
+    if (!document.getElementById('login-temp-styles')) {
+    const loginStyles = document.createElement('link');
+    loginStyles.id = 'login-temp-styles';
+    loginStyles.rel = 'stylesheet';
+    loginStyles.href = 'css/login.css';
     
+    document.head.appendChild(loginStyles);
+}
     if (isLoginContentLoading) {
         
         return;
@@ -403,7 +410,7 @@ function loadLoginContent(showPendingNotification = false, bookmarkTitle = '') {
                                 
                                     <p class="notice-text">${getMessage('pendingBookmarkInstruction')}</p>
                                     ${bookmarkTitle ? `
-                                        <div class="tree-item" style=" width: 100%;">
+                                        <div class="tree-item w-100">
                         
                             <div class="item-header">
                                 <div class="item-title">
@@ -584,7 +591,10 @@ if (storedData.version !== 2) {
         if (loginSection) {
             loginSection.remove();
         }
-        
+        const tempStyles = document.getElementById('login-temp-styles');
+		if (tempStyles) {
+			tempStyles.remove();
+		}
         showSection('main');
         startAutoLock();
         

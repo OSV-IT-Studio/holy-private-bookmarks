@@ -1,0 +1,64 @@
+:root {
+  --bg: linear-gradient(135deg, #0f0f17 0%, #1a1a2e 50%, #16213e 100%);
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --sidebar-bg: rgba(20, 20, 35, 0.95);
+  --card-hover: rgba(255, 255, 255, 0.15);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #ffffff;
+
+  --text-secondary: rgba(255, 255, 255, 0.75);
+  --accent: #00d4ff;
+  --accent-hover: #00b8ff;
+  --danger: #ff4060;
+  --danger-hover: #ff0066;
+  --success: #00ff9d;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --radius-lg: 24px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s ease;
+  --btn-bg: rgba(255, 255, 255, 0.03);
+    --btn-hover: rgba(255, 255, 255, 0.06);
+    --btn-border: rgba(255, 255, 255, 0.08);
+    --btn-accent: #00d4ff;
+    --btn-text: #fff;
+    --btn-text-secondary: rgba(255, 255, 255, 0.55);
+  
+}
+
+body.light-theme {
+    --bg: linear-gradient(135deg, #f5f7fa 0%, #edf1f7 50%, #e6ecf3 100%);
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --card-hover: rgba(255, 255, 255, 0.95);
+    --sidebar-bg: rgba(245, 247, 250, 0.95);
+    --card-border: rgba(100, 115, 130, 0.12);
+    --text-primary: #2c3e50;
+    --text-secondary: #4a5f73;
+    --text-tertiary: #6b7f94;
+    --accent: #2b5f8a;
+    --accent-hover: #1e4a70;
+    --accent-soft: rgba(43, 95, 138, 0.06);
+    --danger: #b84a4a;
+    --danger-hover: #9e3d3d;
+    --success: #2d7a5a;
+    --shadow: 0 8px 32px rgba(70, 80, 95, 0.08);
+    --shadow-hover: 0 12px 40px rgba(70, 80, 95, 0.12);
+    --border-light: rgba(100, 115, 130, 0.06);
+    
+    --btn-bg: rgba(70, 80, 95, 0.02);
+    --btn-hover: rgba(70, 80, 95, 0.04);
+    --btn-border: rgba(70, 80, 95, 0.08);
+    --btn-accent: #2b5f8a;
+    --btn-text: #2c3e50;
+    --btn-text-secondary: #6b7f94;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}

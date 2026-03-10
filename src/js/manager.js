@@ -405,7 +405,7 @@ function performFullCleanup() {
 
 function clearSelection() {
     selectedBookmarks.clear();
-    document.querySelectorAll('.bookmark-item.selected').forEach(item => {
+    document.querySelectorAll('.tree-item.selected').forEach(item => {
         item.classList.remove('selected');
     });
     updateSelectionToolbar();
@@ -671,7 +671,7 @@ async function loadMoreBookmarks() {
 
 async function createBookmarkItem(bookmark, index) {
     const item = document.createElement('div');
-    item.className = 'bookmark-item';
+    item.className = 'tree-item';
     item.dataset.index = index;
     
     if (selectedBookmarks.has(bookmark)) {
@@ -683,37 +683,37 @@ async function createBookmarkItem(bookmark, index) {
     
     item.innerHTML = `
         ${faviconUrl ? 
-            `<img src="${faviconUrl}" class="bookmark-item__favicon" alt="${escapeHtml(domain)}" loading="lazy">` :
-            `<div class="bookmark-item__favicon-placeholder">
+            `<img src="${faviconUrl}" class="tree-item__favicon" alt="${escapeHtml(domain)}" loading="lazy">` :
+            `<div class="tree-item__favicon-placeholder">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 4C5 2.89543 5.89543 2 7 2H17C18.1046 2 19 2.89543 19 4V21L12 17L5 21V4Z" fill="currentColor"/>
                 </svg>
             </div>`
         }
-        <div class="bookmark-item__content">
-            <div class="bookmark-item__title">${escapeHtml(bookmark.title)}</div>
+        <div class="tree-item__content">
+            <div class="bookmark-title">${escapeHtml(bookmark.title)}</div>
         </div>
-        <div class="bookmark-item__domain">${escapeHtml(domain)}</div>
-        <div class="bookmark-item__actions">
-            <button class="bookmark-item__action" data-action="edit" title="${getMessage('edit') || 'Edit'}">
+        <div class="item-domain">${escapeHtml(domain)}</div>
+        <div class="quick-actions-hover">
+            <button class="quick-action-btn-small edit" data-action="edit" title="${getMessage('edit') || 'Edit'}">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
                     <path d="M11.5 2.5a2 2 0 0 1 3 3L6 14l-4 1 1-4 8.5-8.5z"></path>
                 </svg>
             </button>
-            <button class="bookmark-item__action" data-action="copy" title="${getMessage('copyUrl') || 'Copy URL'}">
+            <button class="quick-action-btn-small copy" data-action="copy" title="${getMessage('copyUrl') || 'Copy URL'}">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
                     <rect x="2" y="4" width="10" height="10" rx="1" ry="1"></rect>
                     <path d="M4 2h8a2 2 0 0 1 2 2v8"></path>
                 </svg>
             </button>
-            <button class="bookmark-item__action" data-action="private" title="${getMessage('openPrivate') || 'Open in private tab'}">
+            <button class="quick-action-btn-small private" data-action="private" title="${getMessage('openPrivate') || 'Open in private tab'}">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
                     <rect x="3" y="6" width="10" height="8" rx="1" ry="1"></rect>
                     <path d="M5 6V4a3 3 0 0 1 6 0v2"></path>
                     <circle cx="8" cy="10" r="1"></circle>
                 </svg>
             </button>
-            <button class="bookmark-item__action bookmark-item__action--delete" data-action="delete" title="${getMessage('delete') || 'Delete'}">
+            <button class="quick-action-btn-small delete" data-action="delete" title="${getMessage('delete') || 'Delete'}">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="3 6 5 6 21 6"></polyline>
                     <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
@@ -724,10 +724,10 @@ async function createBookmarkItem(bookmark, index) {
         </div>
     `;
     
-    const actions = item.querySelector('.bookmark-item__actions');
+    const actions = item.querySelector('.quick-actions-hover');
     
     actions.addEventListener('click', (e) => {
-        const button = e.target.closest('.bookmark-item__action');
+        const button = e.target.closest('.quick-action-btn-small');
         if (!button) return;
         
         e.stopPropagation();
@@ -755,7 +755,7 @@ async function createBookmarkItem(bookmark, index) {
     });
     
     item.addEventListener('click', (e) => {
-        if (e.target.closest('.bookmark-item__actions')) return;
+        if (e.target.closest('.quick-actions-hover')) return;
         
         if (isCtrlPressed) {
             e.preventDefault();
@@ -789,7 +789,7 @@ async function createBookmarkItem(bookmark, index) {
                 selectedBookmarks.add(bookmarks[i]);
             }
             
-            document.querySelectorAll('.bookmark-item').forEach((el, i) => {
+            document.querySelectorAll('.tree-item').forEach((el, i) => {
                 if (i >= start && i <= end) {
                     el.classList.add('selected');
                 }
@@ -1599,50 +1599,6 @@ function updateToggleIcon(theme) {
 // ADDING STYLES
 
 
-function addLoadingStyles() {
-    const style = document.createElement('style');
-    style.textContent = `
-        .loading-indicator {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            width: 100%;
-            color: var(--text-secondary);
-        }
-        
-        .spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--border-color);
-            border-top-color: var(--accent-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-right: 10px;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        .bookmarks-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            min-height: 200px;
-        }
-        
-        .bookmark-item {
-            opacity: 1;
-            transition: opacity 0.2s ease;
-        }
-        
-        .bookmark-item.loading {
-            opacity: 0.5;
-        }
-    `;
-    document.head.appendChild(style);
-}
 
 
 function addNewBookmarkFromManager() {
@@ -1688,12 +1644,12 @@ async function unlock() {
     const password = document.getElementById('password-input').value;
     
     if (!password) {
-        showNotification(getMessage('enterPassword') || 'Please enter password', true);
+        showNotification(getMessage('wrongPassword') || 'Please enter password', true);
         return;
     }
     
     try {
-        showLoadingIndicator(document.body, 'Verifying...');
+        
         
         const stored = await chrome.storage.local.get(STORAGE_KEY);
         const storedData = stored[STORAGE_KEY];
@@ -1824,12 +1780,16 @@ if (stored[STORAGE_KEY]) {
     
     if (needsMigration) {
         // Message about the need for migration via popup
-        document.querySelector('.lock-container').innerHTML = `
-            <div class="lock-icon"><img src="icons/icon128.png"></div>
+        document.querySelector('.login-container').innerHTML = `
+            <div class="login-header">
+			<div class="login-icon"><img src="icons/icon128.png"></div>
+			</div>
             <h1 class="lock-title">Update Required</h1>
-            <p class="lock-description">The extension has been updated with improved security.</p>
-            <p class="lock-description" style="margin-bottom: 20px;">Please open the extension popup to migrate your data to the new secure format.</p>
-            <button id="open-popup" class="unlock-btn">Open Popup</button>
+			</div>
+            <p class="login-subtitle">The extension has been updated with improved security.</p>
+            <p class="login-subtitle" style="margin-bottom: 20px;">Please open the extension popup to migrate your data to the new secure format.</p>
+			</div>
+            <button id="open-popup" class="unlock-button">Open Popup</button>
         `;
         
         document.getElementById('open-popup').addEventListener('click', () => {
@@ -1840,16 +1800,22 @@ if (stored[STORAGE_KEY]) {
     }
 }
     if (!stored[STORAGE_KEY]) {
-        document.querySelector('.lock-container').innerHTML = `
-            <div class="lock-icon"><img src="icons/icon128.png"></div>
-            <h1 class="lock-title">Holy Private Bookmarks</h1>
-            <p class="lock-description">Extension not set up yet. Please open the extension popup to create a password.</p>
-            <button id="open-extension" class="unlock-btn" style="margin-top: 20px;">Open Extension</button>
-        `;
+        document.querySelector('.login-container').innerHTML = `
+            <div class="login-header">
+				<div class="login-icon"><img src="icons/icon128.png"></div>
+				<h1 class="lock-title">Holy Private Bookmarks</h1>
+					<p class="login-subtitle">Extension not set up yet. Please open the extension popup to create a password.</p>
+				</div>
+			<button id="open-extension" class="unlock-button" style="margin-top: 20px;">Open Extension</button>
+			</div>
+		`;
         
         document.getElementById('open-extension').addEventListener('click', () => {
-            chrome.runtime.openOptionsPage();
-        });
+
+    if (chrome.action && chrome.action.openPopup) {
+        chrome.action.openPopup();
+    } 
+});
         
         return;
     }
@@ -1957,12 +1923,12 @@ if (stored[STORAGE_KEY]) {
     }
     
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('.bookmark-item') && !e.target.closest('.selection-toolbar') && !isCtrlPressed) {
+        if (!e.target.closest('.tree-item') && !e.target.closest('.selection-toolbar') && !isCtrlPressed) {
             clearSelection();
         }
     });
     
-    addLoadingStyles();
+
 }
 
 
@@ -1973,10 +1939,12 @@ function showReloadingScreen() {
     if (lockScreen) {
         lockScreen.style.display = 'flex';
         lockScreen.innerHTML = `
-            <div class="lock-container">
-                <div class="lock-icon" style="animation: spin 1.5s linear infinite;">↻</div>
+            <div class="login-container">
+               <div class="login-header">
+				<div class="login-icon"><img src="icons/icon128.png"></div>
                 <h1 class="lock-title">Holy Private Bookmarks</h1>
-                <p class="lock-description">manager is reloading...</p>
+				
+                <p class="login-subtitle">manager is reloading...</p>
                 <div style="margin-top: 20px; color: var(--text-secondary); font-size: 14px;">
                     Please wait while the manager updates
                 </div>

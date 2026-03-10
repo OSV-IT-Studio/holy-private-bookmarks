@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holy Private Bookmarks - manager</title>
+    <title>Manager - Holy Private Bookmarks</title>
     <link rel="stylesheet" href="css/manager.css">
 	<link rel="stylesheet" href="css/loader.css">
+	<link rel="stylesheet" id="login-temp-styles" href="css/login.css">
 </head>
 <body>
  <div id="theme-loader-block">
@@ -15,13 +16,17 @@
     </div>
   </div>
 
-  <div id="lock-screen" class="lock-screen" style="display: flex;">
-    <div class="lock-container">
-      <div class="lock-icon"><img src="icons/icon128.png"></div>
+  <div id="lock-screen" class="login-section" style="opacity: 1;">
+    <div class="login-container">
+	<div class="login-header">
+      <div class="login-icon"><img src="icons/icon128.png"></div>
       <h1 class="lock-title">Holy Private Bookmarks</h1>
-      <p class="lock-description" data-i18n="enterMasterPassword">Enter your master password to access bookmarks</p>
-      <input type="password" id="password-input" data-i18n="masterPassword" class="password-input" placeholder="Master password" autofocus>
-      <button id="unlock-btn" class="unlock-btn" data-i18n="unlock">Unlock</button>
+      <p class="login-subtitle" data-i18n="enterMasterPassword">Enter your master password to access bookmarks</p>
+      </div>
+	  <div class="password-field">
+	  <input type="password" id="password-input" data-i18n="masterPassword" class="password-input" placeholder="Master password" autofocus>
+	  </div>
+      <button id="unlock-btn" class="unlock-button" data-i18n="unlock">Unlock</button>
       
     </div>
   </div>
@@ -34,10 +39,12 @@
       </div>
 <div class="actions-container" style="margin-bottom: 24px;">
 
-  <button id="manual-lock-btn" class="modern-btn primary-glass" data-i18n="lockManager">
-    <span class="btn-icon">🔒</span>
-    <span class="btn-text">Lock Manager</span>
-    <div class="btn-glow"></div>
+  <button id="manual-lock-btn" class="lockManager">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+    <span class="btn-text"  data-i18n="lockManager">Lock Manager</span>
   </button>
   
 
@@ -71,7 +78,7 @@
 
            <div class="toolbar">
         <div class="search-container">
-          <input type="text" id="search-input" class="search-input" placeholder="Search bookmarks..." data-i18n="searchBookmarks">
+          <input type="search" id="search-input" class="search-input" placeholder="Search bookmarks..." data-i18n="searchBookmarks">
           <span class="search-icon">🔍</span>
         </div>
        <div class="toolbar-buttons">
@@ -136,7 +143,7 @@
         <select id="folder-select">
           <option value="" data-i18n="rootFolder">Root folder</option>
         </select>
-        <button id="new-folder-in-modal" data-i18n="new">+ New</button>
+        <button id="new-folder-in-modal" class="btn-secondary" data-i18n="new">+ New</button>
       </div>
       
       <div class="modal-buttons">

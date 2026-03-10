@@ -7,7 +7,7 @@
     <title>Holy Private Bookmarks</title>
     <link rel="stylesheet" href="css/popup.css">
 	<link rel="stylesheet" href="css/loader.css">
-	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" id="login-temp-styles" href="css/login.css">
 </head>
 
 <body>
@@ -304,16 +304,17 @@
         </button>
     </div>
 </div>
+
 </div>
          <div id="add-bookmark-modal">
         <div class="modal-content">
             <h2 style="margin-top:0; color:var(--accent);" id="modal-title-text">Add bookmark</h2>
             <p><strong data-i18n="page">Page</strong> <span id="modal-page-title"></span></p>
-            <label data-i18n="title">Title:</label>
+            <label data-i18n="title" for="modal-bookmark-title">Title:</label>
             <input type="text" id="modal-bookmark-title" data-i18n="title" placeholder="Bookmark title">
-            <label data-i18n="url">URL:</label>
+            <label data-i18n="url" for="modal-bookmark-url">URL:</label>
             <input type="text" id="modal-bookmark-url" data-i18n="url" placeholder="https://example.com">
-            <label data-i18n="folder">Folder:</label>
+            <label data-i18n="folder" for="folder-select">Folder:</label>
             <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 20px;">
                 <select id="folder-select" style="flex: 1;">
                     <option value="" data-i18n="rootFolder">Root folder</option>
@@ -347,7 +348,7 @@
             <div style="background: rgba(255, 255, 255, 0.05); padding: 16px; border-radius: 12px; margin-bottom: 20px;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);" data-i18n="version">Version:</span>
-                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4.22</span>
+                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4.25</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);" data-i18n="developer">Developer:</span>
