@@ -47,9 +47,6 @@
   "clearHistory": {
     "message": "Cancella cronologia"
   },
-  "supportProject": {
-    "message": "Supporta il progetto"
-  },
   "settings": {
     "message": "Impostazioni"
   },
@@ -211,14 +208,45 @@
   "cannotAddPage": {
     "message": "Impossibile aggiungere questa pagina (URL non valido)"
   },
+
+  "supportProject": {
+    "message": "Supporta il progetto"
+  },
   "supportPageTitle": {
-    "message": "Supporta il progetto — Holy Private Bookmarks"
+    "message": "Sostieni Holy Private Bookmarks"
   },
-  "supportTitle": {
-    "message": "Supporta il Progetto"
+  "donateHeroTitle": {
+    "message": "Sostieni lo sviluppo incentrato sulla privacy"
   },
-  "supportDescription": {
-    "message": "Se l'estensione ti è utile — qualsiasi aiuto è gradito"
+  "donateHeroSubtitle": {
+    "message": "Holy Private Bookmarks è <strong>100% gratuito e open-source</strong>, e lo rimarrà per sempre. Il tuo sostegno aiuta gli sviluppatori a dedicare tempo alla manutenzione e al miglioramento dell'estensione per tutti coloro che hanno a cuore la privacy."
+  },
+  "whySupport": {
+    "message": "Perché il tuo sostegno è importante"
+  },
+  "timeInvestment": {
+    "message": "Tempo di sviluppo"
+  },
+  "timeInvestmentDesc": {
+    "message": "Ogni funzionalità, correzione di bug e miglioramento della sicurezza rappresenta ore di lavoro. Il tuo contributo valorizza quel tempo e mantiene il progetto sostenibile."
+  },
+  "longTerm": {
+    "message": "Impegno a lungo termine"
+  },
+  "longTermDesc": {
+    "message": "Il tuo sostegno garantisce che l'estensione rimanga attivamente mantenuta, compatibile con i futuri aggiornamenti di Chrome e continuamente migliorata."
+  },
+  "futureFeatures": {
+    "message": "Funzionalità future"
+  },
+  "futureFeaturesDesc": {
+    "message": "Con il tuo aiuto, possiamo dare priorità a nuove funzionalità, una migliore interfaccia utente e caratteristiche di sicurezza potenziate che avvantaggiano l'intera comunità."
+  },
+  "donateCtaText": {
+    "message": "<strong>Niente abbonamenti. Niente paywall. Niente finanziamenti aziendali.</strong> Solo persone che costruiscono qualcosa di utile per gli altri. Se questa estensione ti fa risparmiare tempo o ti dà tranquillità, prendi in considerazione l'idea di offrire un caffè agli sviluppatori."
+  },
+  "donateCryptoTitle": {
+    "message": "Sostieni con Criptovalute"
   },
   "bitcoinTitle": {
     "message": "Bitcoin (BTC)"
@@ -229,12 +257,13 @@
   "copyAddress": {
     "message": "Copia indirizzo"
   },
-  "copiedToClipboard": {
-    "message": "Indirizzo copiato negli appunti!"
+  "donateThanks": {
+    "message": "Grazie per sostenere lo sviluppo open-source indipendente"
   },
-  "clickToCopy": {
-    "message": "Clicca per copiare"
+  "donateThanksNote": {
+    "message": "Ogni contributo, grande o piccolo, significa moltissimo per noi."
   },
+
   "importantWarning": {
     "message": "AVVERTENZA IMPORTANTE:"
   },
@@ -440,9 +469,6 @@
     "message": "Annulla selezione"
   },
   "deleteSelectedConfirm": {
-    "message": "Eliminare il segnalibro selezionato?"
-  },
-  "deleteSelectedConfirm": {
     "message": "Eliminare {count} segnalibro$plural$ selezionato?",
     "placeholders": {
       "count": {
@@ -600,5 +626,29 @@
 },
 "migrationInstruction": {
   "message": "Inserisci la tua password per passare automaticamente a un formato più sicuro."
-}
+},
+"exportSuccess": {
+    "message": "Esportazione riuscita",
+    "description": "Notifica quando l'esportazione dei dati viene completata con successo"
+  },
+  "unlocking": {
+    "message": "Sblocco in corso...",
+    "description": "Mostrato durante la decifratura dei segnalibri"
+  },
+  "changingPassword": {
+    "message": "Modifica password in corso...",
+    "description": "Mostrato durante la modifica della password principale"
+  },
+  "settingUpEncryption": {
+    "message": "Impostazione crittografia...",
+    "description": "Mostrato durante la configurazione iniziale"
+  },
+  "migratingData": {
+    "message": "Migrazione dati in formato sicuro...",
+    "description": "Mostrato durante la migrazione da v1 a v2"
+  },
+  "loading": {
+    "message": "Caricamento...",
+    "description": "Messaggio di caricamento generico"
+  }
 }

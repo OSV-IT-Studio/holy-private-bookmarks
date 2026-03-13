@@ -47,9 +47,6 @@
   "clearHistory": {
     "message": "Limpiar historial"
   },
-  "supportProject": {
-    "message": "Apoyar el proyecto"
-  },
   "settings": {
     "message": "Configuración"
   },
@@ -211,14 +208,45 @@
   "cannotAddPage": {
     "message": "No se puede agregar esta página (URL no válida)"
   },
+
+  "supportProject": {
+    "message": "Apoya el proyecto"
+  },
   "supportPageTitle": {
-    "message": "Apoyar el proyecto — Holy Private Bookmarks"
+    "message": "Apoya a Holy Private Bookmarks"
   },
-  "supportTitle": {
-    "message": "Apoyar el Proyecto"
+  "donateHeroTitle": {
+    "message": "Apoya el desarrollo centrado en la privacidad"
   },
-  "supportDescription": {
-    "message": "Si la extensión te es útil, cualquier ayuda es apreciada"
+  "donateHeroSubtitle": {
+    "message": "Holy Private Bookmarks es <strong>100% gratuito y de código abierto</strong>, y siempre lo será. Tu apoyo ayuda a los desarrolladores a dedicar tiempo a mantener y mejorar la extensión para todos los que se preocupan por la privacidad."
+  },
+  "whySupport": {
+    "message": "Por qué tu apoyo es importante"
+  },
+  "timeInvestment": {
+    "message": "Tiempo de desarrollo"
+  },
+  "timeInvestmentDesc": {
+    "message": "Cada función, corrección de errores y mejora de seguridad representa horas de trabajo. Tu contribución valora ese tiempo y mantiene el proyecto sostenible."
+  },
+  "longTerm": {
+    "message": "Compromiso a largo plazo"
+  },
+  "longTermDesc": {
+    "message": "Tu apoyo asegura que la extensión se mantenga activa, compatible con futuras actualizaciones de Chrome y en continua mejora."
+  },
+  "futureFeatures": {
+    "message": "Funciones futuras"
+  },
+  "futureFeaturesDesc": {
+    "message": "Con tu ayuda, podemos priorizar nuevas funcionalidades, una mejor interfaz y características de seguridad mejoradas que beneficien a toda la comunidad."
+  },
+  "donateCtaText": {
+    "message": "<strong>Sin suscripciones. Sin muros de pago. Sin financiación corporativa.</strong> Solo personas construyendo algo útil para otros. Si esta extensión te ahorra tiempo o te da tranquilidad, considera invitar a los desarrolladores a un café."
+  },
+  "donateCryptoTitle": {
+    "message": "Apoya con Criptomonedas"
   },
   "bitcoinTitle": {
     "message": "Bitcoin (BTC)"
@@ -229,12 +257,13 @@
   "copyAddress": {
     "message": "Copiar dirección"
   },
-  "copiedToClipboard": {
-    "message": "¡Dirección copiada al portapapeles!"
+  "donateThanks": {
+    "message": "Gracias por apoyar el desarrollo independiente de código abierto"
   },
-  "clickToCopy": {
-    "message": "Haz clic para copiar"
+  "donateThanksNote": {
+    "message": "Cada contribución, grande o pequeña, significa mucho para nosotros."
   },
+
   "importantWarning": {
     "message": "ADVERTENCIA IMPORTANTE:"
   },
@@ -424,12 +453,6 @@
   "selectDestinationFolder": {
     "message": "Seleccionar carpeta de destino:"
   },
-  "rootFolder": {
-    "message": "Carpeta raíz"
-  },
-  "cancel": {
-    "message": "Cancelar"
-  },
   "move": {
     "message": "Mover"
   },
@@ -444,9 +467,6 @@
   },
   "cancelSelectionTitle": {
     "message": "Cancelar selección"
-  },
-  "deleteSelectedConfirm": {
-    "message": "¿Eliminar marcador seleccionado?"
   },
   "deleteSelectedConfirm": {
     "message": "¿Eliminar {count} marcador seleccionado$plural$?",
@@ -606,5 +626,29 @@
 },
 "migrationInstruction": {
   "message": "Ingrese su contraseña para actualizar automáticamente a un formato más seguro."
-}
+},
+"exportSuccess": {
+    "message": "Exportación exitosa",
+    "description": "Notificación cuando la exportación de datos se completa con éxito"
+  },
+  "unlocking": {
+    "message": "Desbloqueando...",
+    "description": "Se muestra mientras se descifran los marcadores"
+  },
+  "changingPassword": {
+    "message": "Cambiando contraseña...",
+    "description": "Se muestra mientras se cambia la contraseña maestra"
+  },
+  "settingUpEncryption": {
+    "message": "Configurando cifrado...",
+    "description": "Se muestra durante la configuración inicial"
+  },
+  "migratingData": {
+    "message": "Migrando datos a formato seguro...",
+    "description": "Se muestra durante la migración de v1 a v2"
+  },
+  "loading": {
+    "message": "Cargando...",
+    "description": "Mensaje genérico de carga"
+  }
 }

@@ -47,9 +47,7 @@
   "clearHistory": {
     "message": "Clear history"
   },
-  "supportProject": {
-    "message": "Support the project"
-  },
+
   "settings": {
     "message": "Settings"
   },
@@ -211,14 +209,45 @@
   "cannotAddPage": {
     "message": "Cannot add this page (no valid URL)"
   },
+
+    "supportProject": {
+    "message": "Support the project"
+  },
   "supportPageTitle": {
-    "message": "Support project — Holy Private Bookmarks"
+    "message": "Support Holy Private Bookmarks"
   },
-  "supportTitle": {
-    "message": "Support the Project"
+  "donateHeroTitle": {
+    "message": "Support privacy-focused development"
   },
-  "supportDescription": {
-    "message": "If the extension is useful to you — any help is appreciated"
+  "donateHeroSubtitle": {
+    "message": "Holy Private Bookmarks is <strong>100% free and open-source</strong>, and always will be. Your support helps the developers dedicate time to maintaining and improving the extension for everyone who cares about privacy."
+  },
+  "whySupport": {
+    "message": "Why your support matters"
+  },
+  "timeInvestment": {
+    "message": "Developer time"
+  },
+  "timeInvestmentDesc": {
+    "message": "Every feature, bug fix, and security improvement represents hours of work. Your contribution values that time and keeps the project sustainable."
+  },
+  "longTerm": {
+    "message": "Long-term commitment"
+  },
+  "longTermDesc": {
+    "message": "Your support ensures the extension stays actively maintained, compatible with future Chrome updates, and continuously improved."
+  },
+  "futureFeatures": {
+    "message": "Future features"
+  },
+  "futureFeaturesDesc": {
+    "message": "With your help, we can prioritize new functionality, better UI, and enhanced security features that benefit the entire community."
+  },
+  "donateCtaText": {
+    "message": "<strong>No subscriptions. No paywalls. No corporate funding.</strong> Just people building something useful for others. If this extension saves you time or gives you peace of mind, consider buying the developers a coffee."
+  },
+  "donateCryptoTitle": {
+    "message": "Support with Crypto"
   },
   "bitcoinTitle": {
     "message": "Bitcoin (BTC)"
@@ -229,12 +258,13 @@
   "copyAddress": {
     "message": "Copy address"
   },
-  "copiedToClipboard": {
-    "message": "Address copied to clipboard!"
+  "donateThanks": {
+    "message": "Thank you for supporting independent open-source development"
   },
-  "clickToCopy": {
-    "message": "Click to copy"
+  "donateThanksNote": {
+    "message": "Every contribution, big or small, means the world to us."
   },
+
   "importantWarning": {
     "message": "IMPORTANT WARNING:"
   },
@@ -424,12 +454,6 @@
   "selectDestinationFolder": {
     "message": "Select destination folder:"
   },
-  "rootFolder": {
-    "message": "Root folder"
-  },
-  "cancel": {
-    "message": "Cancel"
-  },
   "move": {
     "message": "Move"
   },
@@ -439,17 +463,11 @@
   "moveSelectedTitle": {
     "message": "Move selected"
   },
-  "move": {
-    "message": "Move"
-  },
   "deleteSelectedTitle": {
     "message": "Delete selected"
   },
   "cancelSelectionTitle": {
     "message": "Cancel selection"
-  },
-    "deleteSelectedConfirm": {
-    "message": "Delete selected bookmark?"
   },
 "deleteSelectedConfirm": {
   "message": "Delete {count} selected bookmark$plural$?",
@@ -577,10 +595,6 @@
     "message": "Entries deleted",
     "description": "Label for deleted entries count"
   },
-  "processing": {
-    "message": "Processing...",
-    "description": "Status message while processing"
-  },
   "startingCleanup": {
     "message": "Starting cleanup...",
     "description": "Status when starting"
@@ -611,5 +625,35 @@
   },
   "migrationInstruction": {
     "message": "Enter your password to automatically upgrade to more secure format."
+  },
+    "exportSuccess": {
+    "message": "Export successful",
+    "description": "Notification when data export completes successfully"
+  },
+  "processing": {
+    "message": "Processing...",
+    "description": "Generic processing message for loading indicators"
+  },
+    "unlocking": {
+    "message": "Unlocking...",
+    "description": "Shown while decrypting bookmarks"
+  },
+  "changingPassword": {
+    "message": "Changing password...",
+    "description": "Shown while changing master password"
+  },
+  "settingUpEncryption": {
+    "message": "Setting up encryption...",
+    "description": "Shown during first-time setup"
+  },
+  "migratingData": {
+    "message": "Migrating data to secure format...",
+    "description": "Shown during v1 to v2 migration"
+  },
+  "loading": {
+    "message": "Loading...",
+    "description": "Generic loading message"
   }
+  
+  
 }

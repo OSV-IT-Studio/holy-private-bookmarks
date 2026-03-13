@@ -47,9 +47,6 @@
   "clearHistory": {
     "message": "مسح السجل"
   },
-  "supportProject": {
-    "message": "دعم المشروع"
-  },
   "settings": {
     "message": "الإعدادات"
   },
@@ -211,14 +208,45 @@
   "cannotAddPage": {
     "message": "لا يمكن إضافة هذه الصفحة (لا يوجد رابط صالح)"
   },
+
+  "supportProject": {
+    "message": "ادعم المشروع"
+  },
   "supportPageTitle": {
-    "message": "دعم المشروع — Holy Private Bookmarks"
+    "message": "ادعم Holy Private Bookmarks"
   },
-  "supportTitle": {
-    "message": "دعم المشروع"
+  "donateHeroTitle": {
+    "message": "ادعم التطوير الذي يركز على الخصوصية"
   },
-  "supportDescription": {
-    "message": "إذا كانت الإضافة مفيدة لك - أي مساعدة موضع تقدير"
+  "donateHeroSubtitle": {
+    "message": "Holy Private Bookmarks هو <strong>مجاني ومفتوح المصدر 100%</strong>، وسيظل كذلك دائمًا. دعمك يساعد المطورين على تخصيص الوقت لصيانة وتحسين الإضافة لكل من يهتم بالخصوصية."
+  },
+  "whySupport": {
+    "message": "لماذا دعمك مهم"
+  },
+  "timeInvestment": {
+    "message": "وقت المطورين"
+  },
+  "timeInvestmentDesc": {
+    "message": "كل ميزة، وإصلاح خطأ، وتحسين أمني يمثل ساعات من العمل. مساهمتك تقدر ذلك الوقت وتحافظ على استدامة المشروع."
+  },
+  "longTerm": {
+    "message": "التزام طويل الأمد"
+  },
+  "longTermDesc": {
+    "message": "دعمك يضمن بقاء الإضافة قيد الصيانة النشطة، ومتوافقة مع تحديثات كروم المستقبلية، ويتم تحسينها باستمرار."
+  },
+  "futureFeatures": {
+    "message": "ميزات مستقبلية"
+  },
+  "futureFeaturesDesc": {
+    "message": "بمساعدتك، يمكننا تحديد أولويات الوظائف الجديدة، وواجهة مستخدم أفضل، وميزات أمان محسنة تفيد المجتمع بأكمله."
+  },
+  "donateCtaText": {
+    "message": "<strong>لا اشتراكات. لا حواجز دفع. لا تمويل شركات.</strong> مجرد أشخاص يصنعون شيئًا مفيدًا للآخرين. إذا كانت هذه الإضافة توفر لك الوقت أو تمنحك راحة البال، ففكر في دعوة المطورين لتناول فنجان قهوة."
+  },
+  "donateCryptoTitle": {
+    "message": "ادعم بالعملات الرقمية"
   },
   "bitcoinTitle": {
     "message": "Bitcoin (BTC)"
@@ -229,12 +257,13 @@
   "copyAddress": {
     "message": "نسخ العنوان"
   },
-  "copiedToClipboard": {
-    "message": "تم نسخ العنوان إلى الحافظة!"
+  "donateThanks": {
+    "message": "شكرًا لدعمك التطوير المستقل مفتوح المصدر"
   },
-  "clickToCopy": {
-    "message": "انقر للنسخ"
+  "donateThanksNote": {
+    "message": "كل مساهمة، كبيرة كانت أم صغيرة، تعني لنا الكثير."
   },
+
   "importantWarning": {
     "message": "تحذير مهم:"
   },
@@ -440,9 +469,6 @@
     "message": "إلغاء التحديد"
   },
   "deleteSelectedConfirm": {
-    "message": "حذف الإشارة المرجعية المحددة؟"
-  },
-  "deleteSelectedConfirm": {
     "message": "حذف {count} إشارة مرجعية محددة$plural$؟",
     "placeholders": {
       "count": {
@@ -600,5 +626,29 @@
 },
 "migrationInstruction": {
   "message": "أدخل كلمة المرور الخاصة بك للترقية تلقائيًا إلى تنسيق أكثر أمانًا."
-}
+},
+"exportSuccess": {
+    "message": "تم التصدير بنجاح",
+    "description": "إشعار عند اكتمال تصدير البيانات بنجاح"
+  },
+  "unlocking": {
+    "message": "جاري فتح القفل...",
+    "description": "يظهر أثناء فك تشفير الإشارات المرجعية"
+  },
+  "changingPassword": {
+    "message": "جاري تغيير كلمة المرور...",
+    "description": "يظهر أثناء تغيير كلمة المرور الرئيسية"
+  },
+  "settingUpEncryption": {
+    "message": "جاري إعداد التشفير...",
+    "description": "يظهر أثناء الإعداد الأولي"
+  },
+  "migratingData": {
+    "message": "جاري ترحيل البيانات إلى تنسيق آمن...",
+    "description": "يظهر أثناء الترحيل من الإصدار v1 إلى v2"
+  },
+  "loading": {
+    "message": "جاري التحميل...",
+    "description": "رسالة تحميل عامة"
+  }
 }

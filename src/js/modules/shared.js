@@ -779,30 +779,13 @@ async function saveEncrypted(data, cryptoManager) {
 
     // LOADING INDICATORS 
     
-    function showLoadingIndicator(container, text = 'Loading...') {
-        hideLoadingIndicator(container);
-        
-        const loader = document.createElement('div');
-        loader.className = 'folder-loader';
-        loader.innerHTML = `
-            <div class="spinner"></div>
-            <span>${text}</span>
-        `;
-        container.appendChild(loader);
-    }
-
-    function hideLoadingIndicator(container) {
-        const oldLoader = container.querySelector('.folder-loader');
-        if (oldLoader) {
-            oldLoader.remove();
-        }
-    }
-
-    function ensureLoadingStyles() {
-        if (document.getElementById('shared-loading-styles')) return;
-        
+function showLoadingIndicator(container, text = null) {
+    hideLoadingIndicator(container);
+    
+    
+    if (!document.getElementById('folder-loader-styles')) {
         const style = document.createElement('style');
-        style.id = 'shared-loading-styles';
+        style.id = 'folder-loader-styles';
         style.textContent = `
             .loading-indicator {
                 display: flex;
@@ -812,17 +795,8 @@ async function saveEncrypted(data, cryptoManager) {
                 width: 100%;
                 color: var(--text-secondary);
             }
-            .spinner {
-                display: inline-block;
-                width: 24px;
-                height: 24px;
-                border: 3px solid rgba(255, 255, 255, 0.3);
-                border-radius: 50%;
-                border-top-color: var(--accent, #00d4ff);
-                border-right-color: var(--accent, #00d4ff);
-                animation: spin 0.8s linear infinite;
-                box-sizing: border-box;
-            }
+            
+            
             
             .folder-loader {
                 display: flex;
@@ -847,23 +821,203 @@ async function saveEncrypted(data, cryptoManager) {
                 animation: spin 0.8s linear infinite;
             }
             
-            @keyframes spin {
-                to { transform: rotate(360deg); }
+            
+        `;
+        document.head.appendChild(style);
+    }
+    const displayText = text || (window.HolyShared?.getMessage ? 
+     window.HolyShared.getMessage('loading') : 'Loading...');
+    
+    const loader = document.createElement('div');
+    loader.className = 'folder-loader';
+    loader.innerHTML = `
+        <div class="spinner"></div>
+        <span>${displayText}</span>
+    `;
+    container.appendChild(loader);
+}
+
+function hideLoadingIndicator(container) {
+    const oldLoader = container.querySelector('.folder-loader');
+    if (oldLoader) {
+        oldLoader.remove();
+    }
+	 const style = document.getElementById('folder-loader-styles');
+    if (style) {
+        style.remove();
+    }
+}
+
+// GLOBAL LOADING INDICATOR 
+
+function showGlobalLoadingIndicator(container = null, text = null) {
+    hideGlobalLoadingIndicator();
+    
+    
+    const targetContainer = container || document.body;
+    
+    
+    if (!document.getElementById('accent-line-styles')) {
+        const style = document.createElement('style');
+        style.id = 'accent-line-styles';
+        style.textContent = `
+            .global-loader-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+				background: var(--bg);
+                backdrop-filter: blur(12px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                border-radius: inherit;
             }
             
-            @keyframes loaderPulse {
-                0%, 100% {
-                    background: rgba(0, 212, 255, 0.03);
-                    border-color: rgba(0, 212, 255, 0.2);
-                }
-                50% {
-                    background: rgba(0, 212, 255, 0.06);
-                    border-color: rgba(0, 212, 255, 0.4);
-                }
+            .global-loader-accent-line {
+                background: var(--card-bg);
+				backdrop-filter: blur(20px);
+				border: 1px solid var(--card-border);
+				border-radius: var(--radius);
+				padding: 24px;
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+            }
+            
+            .accent-line-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .accent-line-icon {
+                width: 48px;
+                height: 48px;
+                background: rgba(0, 212, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--accent);
+                animation: pulseGlow 2s ease-in-out infinite;
+            }
+            
+            .accent-line-icon svg {
+                width: 24px;
+                height: 24px;
+                stroke: currentColor;
+            }
+            
+            @keyframes pulseGlow {
+                0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.3); }
+                50% { box-shadow: 0 0 20px 5px rgba(0, 212, 255, 0.5); }
+            }
+            
+            .accent-line-text {
+                color: var(--text-primary);
+                font-size: 16px;
+                font-weight: 500;
+                text-align: center;
+            }
+            
+            .accent-line-progress {
+                width: 100%;
+                height: 4px;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 2px;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .accent-line-fill {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 0%;
+                background: linear-gradient(90deg, var(--accent), #a0f1ff);
+                border-radius: 2px;
+            }
+            
+            .accent-line-fill.animated {
+                animation: lineProgress 2s ease-in-out infinite;
+            }
+            
+            @keyframes lineProgress {
+                0% { width: 0%; left: 0; }
+                50% { width: 100%; left: 0; }
+                100% { width: 0%; left: 100%; }
             }
         `;
         document.head.appendChild(style);
     }
+    
+    const displayText = text || (window.HolyShared?.getMessage ? 
+        window.HolyShared.getMessage('Processing') : 'Processing...');
+    
+    
+    const computedStyle = window.getComputedStyle(targetContainer);
+    if (computedStyle.position === 'static') {
+        targetContainer.style.position = 'relative';
+    }
+    
+    
+    const overlay = document.createElement('div');
+    overlay.className = 'global-loader-container';
+    
+    
+    const loader = document.createElement('div');
+    loader.className = 'global-loader-accent-line';
+    loader.innerHTML = `
+        <div class="accent-line-container">
+            <div class="accent-line-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+            </div>
+            
+            <div class="accent-line-text">${displayText}</div>
+            
+            <div class="accent-line-progress">
+                <div class="accent-line-fill animated"></div>
+            </div>
+        </div>
+    `;
+    
+    overlay.appendChild(loader);
+    targetContainer.appendChild(overlay);
+}
+
+function hideGlobalLoadingIndicator(container = null) {
+    if (container) {
+        
+        const overlay = container.querySelector('.global-loader-container');
+        if (overlay) {
+            overlay.remove();
+        }
+    } else {
+        
+        const overlays = document.querySelectorAll('.global-loader-container');
+        overlays.forEach(overlay => overlay.remove());
+    }
+    
+    
+    if (!document.querySelector('.global-loader-container')) {
+        const style = document.getElementById('accent-line-styles');
+        if (style) {
+            style.remove();
+        }
+    }
+}
+
 
     // EXPORT 
     
@@ -946,7 +1100,8 @@ async function saveEncrypted(data, cryptoManager) {
             
             showLoadingIndicator,
             hideLoadingIndicator,
-            ensureLoadingStyles
+			showGlobalLoadingIndicator,  
+			hideGlobalLoadingIndicator   
         };
     }
 

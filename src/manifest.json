@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_Name__",
-  "version": "1.8.4.25",
+  "version": "1.8.4.34",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
@@ -32,16 +32,24 @@
   "web_accessible_resources": [{
     "resources": [
       "donate.html", 
-      "js/donate.js", 
-      "js/html-importer.js", 
-      "js/shared.js",  
-      "js/crypto-wrapper.js", 
+      "js/donate.js",
       "manager.html", 
       "js/manager.js", 
-      "js/loader.js", 
-      "js/history-cleaner.js",
-      "js/import-export-manager.js",
-      "js/drag-drop.js", 
+      "js/loader.js",
+	  "js/modules/shared.js", 	  
+      "js/modules/theme.js",  
+      "js/modules/crypto-wrapper.js",
+      "js/modules/manager-lock.js",
+      "js/modules/manager-folders.js",
+      "js/modules/manager-bookmarks.js",
+      "js/modules/popup-html-importer.js", 
+      "js/modules/popup-history-cleaner.js",
+      "js/modules/popup-import-export-manager.js",
+      "js/modules/popup-drag-drop.js",
+      "js/modules/popup-auth.js",
+      "js/modules/popup-ui.js",
+      "js/modules/popup-tree.js",
+      "js/modules/popup-bookmarks.js",
       "icons/*.png"
     ],
     "matches": ["chrome-extension://*/*"]

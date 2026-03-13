@@ -147,7 +147,7 @@
         </label>
     </div>
 </div>
-            <div class="settings-section">
+            <div class="settings-section change-master-password">
                 <h3 class="section-title" data-i18n="changeMasterPassword">Change Master Password</h3>
                 <input type="password" id="old-pass" data-i18n="currentPassword" placeholder="Current password">
                 <input type="password" id="new-pass2" data-i18n="newPassword2" placeholder="New password">
@@ -315,7 +315,7 @@
             <label data-i18n="url" for="modal-bookmark-url">URL:</label>
             <input type="text" id="modal-bookmark-url" data-i18n="url" placeholder="https://example.com">
             <label data-i18n="folder" for="folder-select">Folder:</label>
-            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 20px;">
+            <div class="folder-select-container">
                 <select id="folder-select" style="flex: 1;">
                     <option value="" data-i18n="rootFolder">Root folder</option>
                 </select>
@@ -348,7 +348,7 @@
             <div style="background: rgba(255, 255, 255, 0.05); padding: 16px; border-radius: 12px; margin-bottom: 20px;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);" data-i18n="version">Version:</span>
-                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4.25</span>
+                    <span style="color: var(--text-primary); font-weight: 600;">1.8.4.34</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);" data-i18n="developer">Developer:</span>
@@ -393,11 +393,15 @@
 <script src="js/modules/crypto-wrapper.js"></script>
 <script src="js/modules/theme.js"></script>
 <script src="js/modules/shared.js"></script>
-<script src="js/modules/history-cleaner.js"></script>
-<script src="js/modules/html-importer.js"></script>
-<script src="js/modules/import-export-manager.js"></script>
-<script src="js/modules/drag-drop.js"></script>
+<script src="js/modules/popup-history-cleaner.js"></script>
+<script src="js/modules/popup-html-importer.js"></script>
+<script src="js/modules/popup-import-export-manager.js"></script>
+<script src="js/modules/popup-drag-drop.js"></script>
 <script src="js/loader.js"></script>
+<script src="js/modules/popup-auth.js"></script>
+<script src="js/modules/popup-ui.js"></script>
+<script src="js/modules/popup-tree.js"></script>
+<script src="js/modules/popup-bookmarks.js"></script>
 <script src="js/popup.js"></script>
 	
 </body>

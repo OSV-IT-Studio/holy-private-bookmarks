@@ -47,9 +47,6 @@
   "clearHistory": {
     "message": "Verlauf löschen"
   },
-  "supportProject": {
-    "message": "Projekt unterstützen"
-  },
   "settings": {
     "message": "Einstellungen"
   },
@@ -211,14 +208,45 @@
   "cannotAddPage": {
     "message": "Diese Seite kann nicht hinzugefügt werden (keine gültige URL)"
   },
+
+  "supportProject": {
+    "message": "Unterstütze das Projekt"
+  },
   "supportPageTitle": {
-    "message": "Projekt unterstützen — Holy Private Bookmarks"
+    "message": "Unterstütze Holy Private Bookmarks"
   },
-  "supportTitle": {
-    "message": "Projekt unterstützen"
+  "donateHeroTitle": {
+    "message": "Unterstütze datenschutzorientierte Entwicklung"
   },
-  "supportDescription": {
-    "message": "Wenn dir die Erweiterung nützlich ist — jede Hilfe wird geschätzt"
+  "donateHeroSubtitle": {
+    "message": "Holy Private Bookmarks ist <strong>100% kostenlos und Open-Source</strong> und wird es immer bleiben. Deine Unterstützung hilft den Entwicklern, Zeit für die Wartung und Verbesserung der Erweiterung für alle, denen Datenschutz wichtig ist, aufzuwenden."
+  },
+  "whySupport": {
+    "message": "Warum deine Unterstützung wichtig ist"
+  },
+  "timeInvestment": {
+    "message": "Entwicklungszeit"
+  },
+  "timeInvestmentDesc": {
+    "message": "Jede Funktion, Fehlerbehebung und Sicherheitsverbesserung bedeutet Stunden Arbeit. Dein Beitrag würdigt diese Zeit und hält das Projekt nachhaltig."
+  },
+  "longTerm": {
+    "message": "Langfristiges Engagement"
+  },
+  "longTermDesc": {
+    "message": "Deine Unterstützung stellt sicher, dass die Erweiterung aktiv gepflegt wird, mit zukünftigen Chrome-Updates kompatibel bleibt und kontinuierlich verbessert wird."
+  },
+  "futureFeatures": {
+    "message": "Zukünftige Funktionen"
+  },
+  "futureFeaturesDesc": {
+    "message": "Mit deiner Hilfe können wir neue Funktionen, eine bessere Benutzeroberfläche und erweiterte Sicherheitsmerkmale priorisieren, von denen die gesamte Gemeinschaft profitiert."
+  },
+  "donateCtaText": {
+    "message": "<strong>Keine Abonnements. Keine Bezahlschranken. Keine Unternehmensfinanzierung.</strong> Nur Menschen, die etwas Nützliches für andere entwickeln. Wenn diese Erweiterung dir Zeit spart oder dir ein beruhigendes Gefühl gibt, denk darüber nach, den Entwicklern einen Kaffee auszugeben."
+  },
+  "donateCryptoTitle": {
+    "message": "Mit Krypto unterstützen"
   },
   "bitcoinTitle": {
     "message": "Bitcoin (BTC)"
@@ -229,12 +257,13 @@
   "copyAddress": {
     "message": "Adresse kopieren"
   },
-  "copiedToClipboard": {
-    "message": "Adresse in die Zwischenablage kopiert!"
+  "donateThanks": {
+    "message": "Danke, dass du unabhängige Open-Source-Entwicklung unterstützt"
   },
-  "clickToCopy": {
-    "message": "Zum Kopieren klicken"
+  "donateThanksNote": {
+    "message": "Jeder Beitrag, groß oder klein, bedeutet uns die Welt."
   },
+
   "importantWarning": {
     "message": "WICHTIGE WARNUNG:"
   },
@@ -424,12 +453,6 @@
   "selectDestinationFolder": {
     "message": "Zielordner auswählen:"
   },
-  "rootFolder": {
-    "message": "Hauptverzeichnis"
-  },
-  "cancel": {
-    "message": "Abbrechen"
-  },
   "move": {
     "message": "Verschieben"
   },
@@ -444,9 +467,6 @@
   },
   "cancelSelectionTitle": {
     "message": "Auswahl aufheben"
-  },
-  "deleteSelectedConfirm": {
-    "message": "Ausgewähltes Lesezeichen löschen?"
   },
   "deleteSelectedConfirm": {
     "message": "{count} ausgewähltes Lesezeichen löschen?",
@@ -603,5 +623,29 @@
 },
 "migrationInstruction": {
   "message": "Geben Sie Ihr Passwort ein, um automatisch auf ein sichereres Format zu aktualisieren."
-}
+},
+  "exportSuccess": {
+    "message": "Export erfolgreich",
+    "description": "Benachrichtigung bei erfolgreichem Datenexport"
+  },
+  "unlocking": {
+    "message": "Entsperren...",
+    "description": "Wird beim Entschlüsseln von Lesezeichen angezeigt"
+  },
+  "changingPassword": {
+    "message": "Passwort wird geändert...",
+    "description": "Wird beim Ändern des Master-Passworts angezeigt"
+  },
+  "settingUpEncryption": {
+    "message": "Verschlüsselung wird eingerichtet...",
+    "description": "Während der Ersteinrichtung angezeigt"
+  },
+  "migratingData": {
+    "message": "Daten werden in ein sicheres Format migriert...",
+    "description": "Wird während der Migration von v1 zu v2 angezeigt"
+  },
+  "loading": {
+    "message": "Laden...",
+    "description": "Allgemeine Lade-Nachricht"
+  }
 }

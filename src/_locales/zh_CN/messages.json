@@ -211,30 +211,62 @@
   "cannotAddPage": {
     "message": "无法添加此页面（无有效网址）"
   },
+
+  "supportProject": {
+    "message": "支持项目"
+  },
   "supportPageTitle": {
-    "message": "支持项目 — Holy Private Bookmarks"
+    "message": "支持 Holy Private Bookmarks"
   },
-  "supportTitle": {
-    "message": "❤️ 支持项目"
+  "donateHeroTitle": {
+    "message": "支持注重隐私的开发"
   },
-  "supportDescription": {
-    "message": "如果此扩展对您有帮助 — 任何支持都感激不尽"
+  "donateHeroSubtitle": {
+    "message": "Holy Private Bookmarks 是<strong>100% 免费且开源的</strong>，并将永远如此。您的支持有助于开发者投入时间，为所有关心隐私的用户维护和改进此扩展程序。"
+  },
+  "whySupport": {
+    "message": "为什么您的支持很重要"
+  },
+  "timeInvestment": {
+    "message": "开发者时间"
+  },
+  "timeInvestmentDesc": {
+    "message": "每个功能、错误修复和安全改进都代表着数小时的工作。您的贡献珍视这些时间，并使项目能够持续发展。"
+  },
+  "longTerm": {
+    "message": "长期承诺"
+  },
+  "longTermDesc": {
+    "message": "您的支持确保扩展程序保持积极维护、与未来的 Chrome 更新兼容，并持续改进。"
+  },
+  "futureFeatures": {
+    "message": "未来功能"
+  },
+  "futureFeaturesDesc": {
+    "message": "在您的帮助下，我们可以优先考虑使整个社区受益的新功能、更好的用户界面和增强的安全特性。"
+  },
+  "donateCtaText": {
+    "message": "<strong>没有订阅。没有付费墙。没有企业资助。</strong>只是人们为他人构建有用的东西。如果这个扩展程序为您节省了时间或让您安心，可以考虑请开发者喝杯咖啡。"
+  },
+  "donateCryptoTitle": {
+    "message": "使用加密货币支持"
   },
   "bitcoinTitle": {
-    "message": "比特币 (BTC)"
+    "message": "Bitcoin (BTC)"
   },
   "ethereumTitle": {
-    "message": "以太坊 (ETH)"
+    "message": "Ethereum (ETH)"
   },
   "copyAddress": {
     "message": "复制地址"
   },
-  "copiedToClipboard": {
-    "message": "地址已复制到剪贴板！"
+  "donateThanks": {
+    "message": "感谢您支持独立的开源开发"
   },
-  "clickToCopy": {
-    "message": "点击复制"
+  "donateThanksNote": {
+    "message": "每一份贡献，无论大小，对我们来说都意义非凡。"
   },
+
   "importantWarning": {
     "message": "重要警告："
   },
@@ -586,5 +618,29 @@
 },
 "migrationInstruction": {
   "message": "输入您的密码以自动升级到更安全的格式。"
-}
+},
+"exportSuccess": {
+    "message": "导出成功",
+    "description": "数据导出成功完成时的通知"
+  },
+  "unlocking": {
+    "message": "正在解锁...",
+    "description": "解密书签时显示"
+  },
+  "changingPassword": {
+    "message": "正在更改密码...",
+    "description": "更改主密码时显示"
+  },
+  "settingUpEncryption": {
+    "message": "正在设置加密...",
+    "description": "首次设置时显示"
+  },
+  "migratingData": {
+    "message": "正在迁移数据至安全格式...",
+    "description": "从v1迁移到v2时显示"
+  },
+  "loading": {
+    "message": "正在加载...",
+    "description": "通用加载消息"
+  }
 }

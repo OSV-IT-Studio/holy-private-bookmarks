@@ -79,7 +79,7 @@ h1 {
 
 .modal-content label {
   display: block;
-  margin: 16px 0 8px 0;
+  margin: 8px 0 8px 0;
   font-weight: 500;
   color: var(--text-primary);
 }
@@ -129,6 +129,12 @@ h1 {
   background: linear-gradient(135deg, var(--accent-hover), #0088bb);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 212, 255, 0.3);
+}
+.folder-select-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 20px;
 }
 .btn-secondary {
 background: var(--card-bg);
@@ -240,7 +246,6 @@ input[type="password"], input[type="text"], select {
     backdrop-filter: blur(10px);
     transition: var(--transition);
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
 }
 .folder-select option,
 #folder-select option {
@@ -261,6 +266,11 @@ input[type="password"], input[type="text"], select {
 }
 
 .folder-icon {
+	  width: 18px;
+  height: 18px;
+	  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #FFD700;
 }
 
@@ -401,7 +411,6 @@ button {
     text-overflow: ellipsis;
     max-width: 300px;
 }
-
 @media (max-width: 600px) {
   .modal-content {
     padding: 20px;

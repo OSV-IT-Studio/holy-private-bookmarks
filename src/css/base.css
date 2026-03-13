@@ -1,57 +1,116 @@
-:root {
-  --bg: linear-gradient(135deg, #0f0f17 0%, #1a1a2e 50%, #16213e 100%);
-  --card-bg: rgba(255, 255, 255, 0.08);
-  --sidebar-bg: rgba(20, 20, 35, 0.95);
-  --card-hover: rgba(255, 255, 255, 0.15);
-  --card-border: rgba(255, 255, 255, 0.1);
-  --text-primary: #ffffff;
 
-  --text-secondary: rgba(255, 255, 255, 0.75);
+:root {
+  --font-main: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  /* Backgrounds */
+  --bg: linear-gradient(135deg, #0f0f17 0%, #1a1a2e 50%, #16213e 100%);
+  --sidebar-bg: rgba(20, 20, 35, 0.95);
+  --surface-1: rgba(255, 255, 255, 0.08);
+  --surface-2: rgba(255, 255, 255, 0.12);
+  --surface-3: rgba(255, 255, 255, 0.18);
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-muted: rgba(255, 255, 255, 0.10);
+  --border-accent: rgba(0, 212, 255, 0.40);
+
+  /* Accent */
   --accent: #00d4ff;
+  --accent-bright: #4de1ff;
+  --accent-dim: rgba(0, 212, 255, 0.13);
   --accent-hover: #00b8ff;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.75);
+  --text-tertiary: rgba(255, 255, 255, 0.55);
+
+  /* Status */
   --danger: #ff4060;
-  --danger-hover: #ff0066;
+  --danger-bg: rgba(255, 64, 96, 0.15);
   --success: #00ff9d;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.3);
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --radius: 18px;
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --shadow-accent: 0 0 0 3px rgba(0, 212, 255, 0.25);
+
+  /* Radii */
+  --radius-xs: 8px;
   --radius-sm: 12px;
+  --radius: 18px;
   --radius-lg: 24px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: all 0.2s ease;
-  --btn-bg: rgba(255, 255, 255, 0.03);
-    --btn-hover: rgba(255, 255, 255, 0.06);
-    --btn-border: rgba(255, 255, 255, 0.08);
-    --btn-accent: #00d4ff;
-    --btn-text: #fff;
-    --btn-text-secondary: rgba(255, 255, 255, 0.55);
+  --radius-xl: 30px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 0.15s;
+  --dur-med: 0.3s;
+  --dur-slow: 0.4s;
+
+  /* Compat with existing CSS vars */
+  --card-bg: var(--surface-1);
+  --card-hover: rgba(255, 255, 255, 0.15);
+  --card-border: var(--border-subtle);
+  --transition: all var(--dur-med) var(--ease-in-out);
+  --transition-fast: all var(--dur-fast) ease;
   
+  /* Button specific */
+  --btn-bg: rgba(255, 255, 255, 0.03);
+  --btn-hover: rgba(255, 255, 255, 0.06);
+  --btn-border: rgba(255, 255, 255, 0.08);
+  --btn-accent: #00d4ff;
+  --btn-text: #ffffff;
+  --btn-text-secondary: rgba(255, 255, 255, 0.55);
 }
 
+/* ── Light theme for second palette ───────────────────── */
 body.light-theme {
-    --bg: linear-gradient(135deg, #f5f7fa 0%, #edf1f7 50%, #e6ecf3 100%);
-    --card-bg: rgba(255, 255, 255, 0.85);
-    --card-hover: rgba(255, 255, 255, 0.95);
-    --sidebar-bg: rgba(245, 247, 250, 0.95);
-    --card-border: rgba(100, 115, 130, 0.12);
-    --text-primary: #2c3e50;
-    --text-secondary: #4a5f73;
-    --text-tertiary: #6b7f94;
-    --accent: #2b5f8a;
-    --accent-hover: #1e4a70;
-    --accent-soft: rgba(43, 95, 138, 0.06);
-    --danger: #b84a4a;
-    --danger-hover: #9e3d3d;
-    --success: #2d7a5a;
-    --shadow: 0 8px 32px rgba(70, 80, 95, 0.08);
-    --shadow-hover: 0 12px 40px rgba(70, 80, 95, 0.12);
-    --border-light: rgba(100, 115, 130, 0.06);
-    
-    --btn-bg: rgba(70, 80, 95, 0.02);
-    --btn-hover: rgba(70, 80, 95, 0.04);
-    --btn-border: rgba(70, 80, 95, 0.08);
-    --btn-accent: #2b5f8a;
-    --btn-text: #2c3e50;
-    --btn-text-secondary: #6b7f94;
+  --bg: linear-gradient(135deg, #f5f7fa 0%, #edf1f7 50%, #e6ecf3 100%);
+  --sidebar-bg: rgba(245, 247, 250, 0.95);
+  --surface-1: rgba(255, 255, 255, 0.85);
+  --surface-2: rgba(255, 255, 255, 0.92);
+  --surface-3: #ffffff;
+
+  --border-subtle: rgba(100, 115, 130, 0.06);
+  --border-muted: rgba(100, 115, 130, 0.12);
+  --border-accent: rgba(43, 95, 138, 0.35);
+
+  --accent: #2b5f8a;
+  --accent-bright: #3a7aa8;
+  --accent-dim: rgba(43, 95, 138, 0.06);
+  --accent-hover: #1e4a70;
+  --accent-soft: rgba(43, 95, 138, 0.06);
+
+  --text-primary: #2c3e50;
+  --text-secondary: #4a5f73;
+  --text-tertiary: #6b7f94;
+
+  --danger: #b84a4a;
+  --danger-bg: rgba(184, 74, 74, 0.07);
+  --danger-hover: #9e3d3d;
+  --success: #2d7a5a;
+
+  --shadow-sm: 0 4px 16px rgba(70, 80, 95, 0.05);
+  --shadow: 0 8px 32px rgba(70, 80, 95, 0.08);
+  --shadow-lg: 0 16px 48px rgba(70, 80, 95, 0.12);
+  --shadow-hover: 0 12px 40px rgba(70, 80, 95, 0.12);
+  --shadow-accent: 0 0 0 3px rgba(43, 95, 138, 0.18);
+
+  --card-bg: var(--surface-1);
+  --card-hover: rgba(255, 255, 255, 0.95);
+  --card-border: var(--border-subtle);
+  --border-light: rgba(100, 115, 130, 0.06);
+  
+  --btn-bg: rgba(70, 80, 95, 0.02);
+  --btn-hover: rgba(70, 80, 95, 0.04);
+  --btn-border: rgba(70, 80, 95, 0.08);
+  --btn-accent: #2b5f8a;
+  --btn-text: #2c3e50;
+  --btn-text-secondary: #6b7f94;
 }
 * {
   box-sizing: border-box;
