@@ -360,9 +360,6 @@
   "allBookmarks": {
     "message": "Всі закладки"
   },
-  "bookmarksCount": {
-    "message": "закладок"
-  },
   "searchBookmarks": {
     "message": "Пошук закладок..."
   },
@@ -419,9 +416,6 @@
   },
   "cannotDeleteAll": {
     "message": "Неможливо видалити папку \"Всі закладки\""
-  },
-  "foldersCount": {
-    "message": "{0} папок"
   },
   "bookmarkAdded": {
     "message": "Закладку додано"
@@ -650,5 +644,23 @@
   "loading": {
     "message": "Завантаження...",
     "description": "Загальне повідомлення про завантаження"
+  },
+  "donationReminderTitle": {
+    "message": "Підтримайте проєкт"
+  },
+  "donationReminderText": {
+    "message": "Якщо вам подобається це розширення, підтримайте його розробку!"
+  },
+  "remindLater": {
+    "message": "Нагадати пізніше"
+  },
+  "supportNow": {
+    "message": "Підтримати"
+  },
+  "remindNever": {
+    "message": "Більше не показувати"
+  },
+  "confirmDismiss": {
+    "message": "Вимкнути нагадування про пожертви назавжди?"
   }
 }

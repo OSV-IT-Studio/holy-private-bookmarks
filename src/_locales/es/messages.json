@@ -360,9 +360,6 @@
   "allBookmarks": {
     "message": "Todos los Marcadores"
   },
-  "bookmarksCount": {
-    "message": "marcadores"
-  },
   "searchBookmarks": {
     "message": "Buscar marcadores..."
   },
@@ -419,9 +416,6 @@
   },
   "cannotDeleteAll": {
     "message": "No se puede eliminar la carpeta \"Todos los Marcadores\""
-  },
-  "foldersCount": {
-    "message": "{0} carpetas"
   },
   "bookmarkAdded": {
     "message": "Marcador agregado"
@@ -650,5 +644,23 @@
   "loading": {
     "message": "Cargando...",
     "description": "Mensaje genérico de carga"
+  },
+  "donationReminderTitle": {
+    "message": "Apoya el proyecto"
+  },
+  "donationReminderText": {
+    "message": "Si te gusta esta extensión, ¡apoya su desarrollo!"
+  },
+  "remindLater": {
+    "message": "Recordar más tarde"
+  },
+  "supportNow": {
+    "message": "Apoyar ahora"
+  },
+  "remindNever": {
+    "message": "No volver a mostrar"
+  },
+  "confirmDismiss": {
+    "message": "¿Desactivar los recordatorios de donación para siempre?"
   }
 }

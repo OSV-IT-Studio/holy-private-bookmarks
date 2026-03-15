@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_Name__",
-  "version": "1.8.4.34",
+  "version": "1.8.4.38",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
@@ -50,6 +50,7 @@
       "js/modules/popup-ui.js",
       "js/modules/popup-tree.js",
       "js/modules/popup-bookmarks.js",
+	  "js/modules/donation-reminder.js",
       "icons/*.png"
     ],
     "matches": ["chrome-extension://*/*"]

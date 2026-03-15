@@ -360,9 +360,6 @@
   "allBookmarks": {
     "message": "Alle Lesezeichen"
   },
-  "bookmarksCount": {
-    "message": "Lesezeichen"
-  },
   "searchBookmarks": {
     "message": "Lesezeichen durchsuchen..."
   },
@@ -419,9 +416,6 @@
   },
   "cannotDeleteAll": {
     "message": "Der Ordner \"Alle Lesezeichen\" kann nicht gelöscht werden"
-  },
-  "foldersCount": {
-    "message": "{0} Ordner"
   },
   "bookmarkAdded": {
     "message": "Lesezeichen hinzugefügt"
@@ -647,5 +641,23 @@
   "loading": {
     "message": "Laden...",
     "description": "Allgemeine Lade-Nachricht"
+  },
+    "donationReminderTitle": {
+    "message": "Unterstütze das Projekt"
+  },
+  "donationReminderText": {
+    "message": "Wenn dir diese Erweiterung gefällt, unterstütze bitte ihre Entwicklung!"
+  },
+  "remindLater": {
+    "message": "Später erinnern"
+  },
+  "supportNow": {
+    "message": "Jetzt unterstützen"
+  },
+  "remindNever": {
+    "message": "Nicht mehr zeigen"
+  },
+  "confirmDismiss": {
+    "message": "Spenden-Erinnerungen dauerhaft deaktivieren?"
   }
 }

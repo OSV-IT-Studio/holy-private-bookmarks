@@ -360,9 +360,6 @@
   "allBookmarks": {
     "message": "Tutti i segnalibri"
   },
-  "bookmarksCount": {
-    "message": "segnalibri"
-  },
   "searchBookmarks": {
     "message": "Cerca segnalibri..."
   },
@@ -419,9 +416,6 @@
   },
   "cannotDeleteAll": {
     "message": "Impossibile eliminare la cartella \"Tutti i segnalibri\""
-  },
-  "foldersCount": {
-    "message": "{0} cartelle"
   },
   "bookmarkAdded": {
     "message": "Segnalibro aggiunto"
@@ -650,5 +644,23 @@
   "loading": {
     "message": "Caricamento...",
     "description": "Messaggio di caricamento generico"
+  },
+  "donationReminderTitle": {
+    "message": "Sostieni il progetto"
+  },
+  "donationReminderText": {
+    "message": "Se ti piace questa estensione, sostieni il suo sviluppo!"
+  },
+  "remindLater": {
+    "message": "Ricorda più tardi"
+  },
+  "supportNow": {
+    "message": "Sostieni ora"
+  },
+  "remindNever": {
+    "message": "Non mostrare più"
+  },
+  "confirmDismiss": {
+    "message": "Disattivare definitivamente i promemoria per le donazioni?"
   }
 }

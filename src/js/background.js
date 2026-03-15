@@ -73,7 +73,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
 
 chrome.runtime.onInstalled.addListener((details) => {
-
+if (details.reason === 'install') {
+    
+    chrome.storage.local.set({ 'donationReminderJustInstalled': true });
+  }
   const uninstallURL = 'https://docs.google.com/forms/d/e/1FAIpQLSeC7QN0uyKRdEw5MXko2_RLE1y8oQxgkZShqNQOjnVr3FKpnA/viewform?usp=publish-editor';
   chrome.runtime.setUninstallURL(uninstallURL);
 });

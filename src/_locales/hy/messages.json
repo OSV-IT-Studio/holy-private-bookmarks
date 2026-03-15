@@ -360,9 +360,6 @@
   "allBookmarks": {
     "message": "Բոլոր էջանիշերը"
   },
-  "bookmarksCount": {
-    "message": "էջանիշեր"
-  },
   "searchBookmarks": {
     "message": "Որոնել էջանիշեր..."
   },
@@ -416,9 +413,6 @@
   },
   "cannotDeleteAll": {
     "message": "Հնարավոր չէ ջնջել \"Բոլոր էջանիշերը\" թղթապանակը"
-  },
-  "foldersCount": {
-    "message": "{0} թղթապանակ"
   },
   "bookmarkAdded": {
     "message": "Էջանիշը ավելացվեց"
@@ -656,5 +650,23 @@
   "loading": {
     "message": "Բեռնում...",
     "description": "Ընդհանուր բեռնման հաղորդագրություն"
+  },
+  "donationReminderTitle": {
+    "message": "Աջակցել նախագծին"
+  },
+  "donationReminderText": {
+    "message": "Եթե ձեզ դուր է գալիս այս ընդլայնումը, խնդրում ենք աջակցել դրա մշակմանը:"
+  },
+  "remindLater": {
+    "message": "Հիշեցնել ավելի ուշ"
+  },
+  "supportNow": {
+    "message": "Աջակցել հիմա"
+  },
+  "remindNever": {
+    "message": "Այլևս չցուցադրել"
+  },
+  "confirmDismiss": {
+    "message": "Ընդմիշտ անջատե՞լ նվիրատվությունների հիշեցումները:"
   }
 }

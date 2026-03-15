@@ -28,6 +28,7 @@ if (!window.PopupAuth)           throw new Error('PopupAuth module not loaded!')
 if (!window.PopupUI)             throw new Error('PopupUI module not loaded!');
 if (!window.PopupTree)           throw new Error('PopupTree module not loaded!');
 if (!window.PopupBookmarks)      throw new Error('PopupBookmarks module not loaded!');
+if (!window.DonationReminder)    throw new Error('DonationReminder module not loaded!');
 
 if (!window.ImportExportManager) console.error('ImportExportManager not loaded!');
 
@@ -237,8 +238,14 @@ function buildDeps() {
 
 async function init() {
     if (isInitialized) return;
-
-    // Theme init with safety timeout
+	const justInstalled = await chrome.storage.local.get('donationReminderJustInstalled');
+    if (justInstalled.donationReminderJustInstalled) {
+        if (typeof window.DonationReminder !== 'undefined') {
+            await window.DonationReminder.initOnInstall();
+            await chrome.storage.local.remove('donationReminderJustInstalled');
+        }
+    }
+    
     const safetyTimeout = setTimeout(() => { console.warn('Theme init timeout'); hideThemeLoader(); }, 3000);
     if (window.ThemeManager) {
         await window.ThemeManager.init();

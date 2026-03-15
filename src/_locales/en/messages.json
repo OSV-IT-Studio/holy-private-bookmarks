@@ -361,9 +361,6 @@
   "allBookmarks": {
     "message": "All Bookmarks"
   },
-  "bookmarksCount": {
-    "message": "bookmarks"
-  },
   "searchBookmarks": {
     "message": "Search bookmarks..."
   },
@@ -420,9 +417,6 @@
   },
   "cannotDeleteAll": {
     "message": "Cannot delete \"All Bookmarks\" folder"
-  },
-  "foldersCount": {
-    "message": "{0} folders"
   },
   "bookmarkAdded": {
     "message": "Bookmark added"
@@ -653,7 +647,23 @@
   "loading": {
     "message": "Loading...",
     "description": "Generic loading message"
+  },
+  "donationReminderTitle": {
+    "message": "Support the project"
+  },
+  "donationReminderText": {
+    "message": "If you like this extension, please support its development!"
+  },
+  "remindLater": {
+    "message": "Remind later"
+  },
+  "supportNow": {
+    "message": "Support now"
+  },
+  "remindNever": {
+    "message": "Don't show again"
+  },
+  "confirmDismiss": {
+    "message": "Never show donation reminders again?"
   }
-  
-  
 }

@@ -360,9 +360,6 @@
   "allBookmarks": {
     "message": "جميع الإشارات المرجعية"
   },
-  "bookmarksCount": {
-    "message": "إشارات مرجعية"
-  },
   "searchBookmarks": {
     "message": "البحث في الإشارات المرجعية..."
   },
@@ -419,9 +416,6 @@
   },
   "cannotDeleteAll": {
     "message": "لا يمكن حذف مجلد \"جميع الإشارات المرجعية\""
-  },
-  "foldersCount": {
-    "message": "{0} مجلدات"
   },
   "bookmarkAdded": {
     "message": "تمت إضافة الإشارة المرجعية"
@@ -650,5 +644,23 @@
   "loading": {
     "message": "جاري التحميل...",
     "description": "رسالة تحميل عامة"
+  },
+   "donationReminderTitle": {
+    "message": "ادعم المشروع"
+  },
+  "donationReminderText": {
+    "message": "إذا أعجبك هذه الإضافة، يرجى دعم تطويرها!"
+  },
+  "remindLater": {
+    "message": "لاحقًا"
+  },
+  "supportNow": {
+    "message": "ادعم الآن"
+  },
+  "remindNever": {
+    "message": "لا تظهر مرة أخرى"
+  },
+  "confirmDismiss": {
+    "message": "هل تريد إيقاف تذكيرات التبرع إلى الأبد؟"
   }
 }

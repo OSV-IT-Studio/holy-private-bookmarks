@@ -103,12 +103,16 @@ const PopupAuth = (function () {
 
             showSection('main');
             _get('all').startAutoLock();
-
+			
             if (pendingBookmarkRef.value) {
                 openAddBookmarkModal(pendingBookmarkRef.value.title, pendingBookmarkRef.value.url);
                 pendingBookmarkRef.value = null;
             }
-
+			if (typeof window.DonationReminder !== 'undefined') {
+                setTimeout(() => {
+                    window.DonationReminder.checkAndShowReminder();
+                }, 3000); 
+            }
         } catch (e) {
             showNotification(getMessage('unlockFailed') || 'Failed to unlock: ' + e.message, true);
             SecureCrypto.clear();

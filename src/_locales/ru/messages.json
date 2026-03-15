@@ -360,9 +360,6 @@
   "allBookmarks": {
     "message": "Все закладки"
   },
-  "bookmarksCount": {
-    "message": "закладки(ок)"
-  },
   "searchBookmarks": {
     "message": "Поиск закладок..."
   },
@@ -416,9 +413,6 @@
   },
   "cannotDeleteAll": {
     "message": "Нельзя удалить папку \"Все закладки\""
-  },
-  "foldersCount": {
-    "message": "{0} папок(и)"
   },
   "bookmarkAdded": {
     "message": "Закладка добавлена"
@@ -644,5 +638,23 @@
   "loading": {
     "message": "Загрузка...",
     "description": "Общее сообщение загрузки"
+  },
+  "donationReminderTitle": {
+    "message": "Поддержите проект"
+  },
+  "donationReminderText": {
+    "message": "Если вам нравится это расширение, поддержите его разработку!"
+  },
+  "remindLater": {
+    "message": "Напомнить позже"
+  },
+  "supportNow": {
+    "message": "Поддержать"
+  },
+  "remindNever": {
+    "message": "Больше не показывать"
+  },
+  "confirmDismiss": {
+    "message": "Отключить напоминания о пожертвованиях навсегда?"
   }
 } 

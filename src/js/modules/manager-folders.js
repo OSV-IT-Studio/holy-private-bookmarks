@@ -257,53 +257,48 @@ const ManagerFolders = (function () {
     }
 
     async function deleteFolder(folderId) {
-        const { getMessage, showNotification, getData, saveChanges, clearBookmarksCache,
-                resetInactivityTimer, countFoldersInFolder, removeItemByPath,
-                getFolderPathById, findFolderById, getCurrentFolderId } = _deps;
+    const { getMessage, showNotification, getData, saveChanges, clearBookmarksCache,
+            resetInactivityTimer, countFoldersInFolder, removeItemByPath,
+            getFolderPathById, findFolderById, getCurrentFolderId } = _deps;
 
-        if (folderId === 'all') {
-            showNotification(getMessage('cannotDeleteAll') || 'Cannot delete "All Bookmarks" folder', true);
-            return;
-        }
-
-        const folder = findFolderById(getData().folders, folderId);
-        if (!folder) return;
-
-        const bookmarkCount = _deps.countBookmarksInFolder(folderId);
-        const folderCount   = countFoldersInFolder(folder);
-
-        let message = (getMessage('deleteFolderConfirm') || 'Delete folder "{0}"?')
-            .replace('{0}', folder.name)
-            .replace('{name}', folder.name);
-
-        if (bookmarkCount > 0 || folderCount > 0) {
-            message += '\n\n';
-            if (bookmarkCount > 0) message += '• ' + (getMessage('bookmarksCount') || '{0} bookmarks')
-                .replace('{0}', bookmarkCount).replace('{count}', bookmarkCount) + '\n';
-            if (folderCount   > 0) message += '• ' + (getMessage('foldersCount')   || '{0} folders')
-                .replace('{0}', folderCount)  .replace('{count}', folderCount)   + '\n';
-            message += '\n' + (getMessage('deleteFolderWarning') || 'All content will be permanently deleted.');
-        }
-
-        if (!confirm(message)) return;
-
-        const path = getFolderPathById(folderId);
-        if (!path) return;
-
-        removeItemByPath(getData(), path);
-        await saveChanges();
-        clearBookmarksCache();
-
-        if (getCurrentFolderId() === folderId) {
-            setActiveFolder('all');
-        } else {
-            renderFolderTree();
-            _deps.renderBookmarks();
-        }
-
-        showNotification(getMessage('folderDeleted') || 'Folder deleted successfully');
-        resetInactivityTimer();
+    if (folderId === 'all') {
+        showNotification(getMessage('cannotDeleteAll') || 'Cannot delete "All Bookmarks" folder', true);
+        return;
     }
+
+    const folder = findFolderById(getData().folders, folderId);
+    if (!folder) return;
+
+    const bookmarkCount = _deps.countBookmarksInFolder(folderId);
+    const folderCount   = countFoldersInFolder(folder);
+
+    let message = (getMessage('deleteFolderConfirm') || 'Delete folder "{0}"?')
+        .replace('{0}', folder.name)
+        .replace('{name}', folder.name);
+
+    if (bookmarkCount > 0 || folderCount > 0) {
+        message += '\n\n' + (getMessage('deleteFolderWarning') || 'All content will be permanently deleted.');
+    }
+
+    if (!confirm(message)) return;
+
+    const path = getFolderPathById(folderId);
+    if (!path) return;
+
+    removeItemByPath(getData(), path);
+    await saveChanges();
+    clearBookmarksCache();
+
+    if (getCurrentFolderId() === folderId) {
+        setActiveFolder('all');
+    } else {
+        renderFolderTree();
+        _deps.renderBookmarks();
+    }
+
+    showNotification(getMessage('folderDeleted') || 'Folder deleted successfully');
+    resetInactivityTimer();
+}
 
     function initNewFolderButton() {
         document.getElementById('new-folder-btn')?.addEventListener('click', () => createNewFolder());

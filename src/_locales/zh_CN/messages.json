@@ -363,9 +363,6 @@
   "allBookmarks": {
     "message": "所有书签"
   },
-  "bookmarksCount": {
-    "message": "个书签"
-  },
   "searchBookmarks": {
     "message": "搜索书签..."
   },
@@ -419,9 +416,6 @@
   },
   "cannotDeleteAll": {
     "message": "无法删除“所有书签”文件夹"
-  },
-  "foldersCount": {
-    "message": "{0} 个文件夹"
   },
   "bookmarkAdded": {
     "message": "书签已添加"
@@ -642,5 +636,23 @@
   "loading": {
     "message": "正在加载...",
     "description": "通用加载消息"
+  },
+    "donationReminderTitle": {
+    "message": "支持项目"
+  },
+  "donationReminderText": {
+    "message": "如果您喜欢这个扩展，请支持它的开发！"
+  },
+  "remindLater": {
+    "message": "稍后提醒"
+  },
+  "supportNow": {
+    "message": "立即支持"
+  },
+  "remindNever": {
+    "message": "不再显示"
+  },
+  "confirmDismiss": {
+    "message": "永久关闭捐赠提醒？"
   }
 }

@@ -360,9 +360,6 @@
   "allBookmarks": {
     "message": "Tous les marque-pages"
   },
-  "bookmarksCount": {
-    "message": "marque-pages"
-  },
   "searchBookmarks": {
     "message": "Rechercher des marque-pages..."
   },
@@ -419,9 +416,6 @@
   },
   "cannotDeleteAll": {
     "message": "Impossible de supprimer le dossier \"Tous les marque-pages\""
-  },
-  "foldersCount": {
-    "message": "{0} dossiers"
   },
   "bookmarkAdded": {
     "message": "Marque-page ajouté"
@@ -650,5 +644,23 @@
   "loading": {
     "message": "Chargement...",
     "description": "Message de chargement générique"
+  },
+  "donationReminderTitle": {
+    "message": "Soutenez le projet"
+  },
+  "donationReminderText": {
+    "message": "Si vous aimez cette extension, soutenez son développement !"
+  },
+  "remindLater": {
+    "message": "Rappeler plus tard"
+  },
+  "supportNow": {
+    "message": "Soutenir maintenant"
+  },
+  "remindNever": {
+    "message": "Ne plus afficher"
+  },
+  "confirmDismiss": {
+    "message": "Désactiver définitivement les rappels de don ?"
   }
 }
