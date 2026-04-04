@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google" content="notranslate">
+    <title>Holy Private Bookmarks</title>
+    <link rel="stylesheet" href="css/popup.css">
+	<link rel="stylesheet" href="css/loader.css">
+</head>
+
+<body>
+
+ <div id="theme-loader-block">
+    <div class="loader-container">
+      <div class="loader-spinner"></div>
+    </div>
+  </div>
+
+
+    <div class="container">
+
+
+        <!-- Main Menu -->
+        <div id="main" class="section">
+		<div class="popup-header">
+		<span class="popup-header-inner">
+		<h1 data-i18n="extensionName"></h1>
+		<span  id="ext-version" class="header-badge"></span>
+		</span>
+		<div class="top-right-buttons">
+		
+    <button id="faq-btn" class="top-right-btn" data-i18n-title="faqButtonTitle" title="FAQ">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+        </svg>
+    </button>
+    
+    <button id="support-btn" class="top-right-btn" data-i18n-title="supportProject" title="Support Project">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+    </button>
+    
+    <button id="settings-btn" class="top-right-btn" data-i18n-title="settings" title="Settings">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+    </button>
+</div>
+</div>
+            
+
+<div class="section-main">
+<div class="action-menu">
+
+    <div class="action-menu__panel">
+        <button class="action-menu__btn action-menu__btn--add" id="add-current">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="2" y1="10" x2="18" y2="10"/>
+    <line x1="10" y1="2" x2="10" y2="18"/>
+</svg>
+            <span data-i18n="addCurrentPage"></span>
+        </button>
+        
+        <div class="action-menu__spacer"></div>
+        
+        <button class="action-menu__btn action-menu__btn--clear" id="clear-history">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                <line x1="10" y1="11" x2="10" y2="17"></line>
+                <line x1="14" y1="11" x2="14" y2="17"></line>
+            </svg>
+            <span data-i18n="clearHistory"></span>
+        </button>
+    </div>
+    
+
+    <button class="action-menu__lock" id="lock" data-i18n-title="lock" title="Lock">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        </svg>
+    </button>
+    
+    
+</div>
+<div class="action-bar">
+    <div class="action-bar__left">
+        <span class="action-bar__label" data-i18n="bookmarksAndFolders"></span>
+    </div>
+
+    <div class="action-bar__right">
+	    <button id="manager-btn" class="icon-button" data-i18n-title="openmanager" title="Manager">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+        </button>
+        <button id="quick-add-bookmark" class="icon-button" data-i18n-title="addBookmark" title="Add bookmark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+        </button>
+        
+        <button id="quick-add-folder" class="icon-button" data-i18n-title="newFolder" title="New folder">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                <line x1="12" y1="11" x2="12" y2="17" />
+                <line x1="9" y1="14" x2="15" y2="14" />
+            </svg>
+        </button>
+    </div>
+</div>
+            <div id="tree"></div>
+        </div>
+</div>
+
+        <div id="settings" class="section">
+            <button id="back" data-i18n="back"></button>
+           <h1 class="settings-title">
+    <span class="settings-title__icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+    </span>
+    <span data-i18n="settings"></span>
+</h1>
+
+<div class="settings-section">
+    <h3 class="section-title" data-i18n="theme"></h3>
+    <div id="theme-selector-container"></div>
+
+</div>
+<div class="settings-section">
+    <h3 class="section-title" data-i18n="privacy"></h3>
+    <div class="settings-option" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0;">
+        <div>
+            <div class="option-title" data-i18n="showFavicons"></div>
+            <div class="option-description" data-i18n="showFaviconsDesc"></div>
+        </div>
+        <label class="switch">
+            <input type="checkbox" id="favicon-toggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div class="settings-option" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-top: 1px solid var(--border-color);">
+        <div>
+            <div class="option-title" data-i18n="quickCloseTab"></div>
+            <div class="option-description" data-i18n="quickCloseTabDesc"></div>
+        </div>
+        <label class="switch">
+            <input type="checkbox" id="quick-close-toggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div style="padding: 8px 0 4px 0;">
+        <button id="change-shortcut-btn" class="btn-change-shortcut">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="6" width="20" height="12" rx="2"/>
+                <path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/>
+            </svg>
+            <span data-i18n="changeShortcut"></span>
+            
+        </button>
+    </div>
+</div>
+            <div class="settings-section change-master-password">
+                <h3 class="section-title" data-i18n="changeMasterPassword"></h3>
+                <input type="password" id="old-pass" data-i18n="currentPassword" placeholder="Current password">
+                <input type="password" id="new-pass2" data-i18n="newPassword2" placeholder="New password">
+                <input type="password" id="confirm-pass2" data-i18n="confirmNewPassword"
+                    placeholder="Confirm new password">
+                <button class="btn-primary w-100 mt-16" id="change-pass" data-i18n="changePassword"></button>
+            </div>
+
+            <div class="settings-section exportImport">
+    <h3 class="section-title" data-i18n="exportImport"></h3>
+    <div class="settings-buttons-grid">
+  
+        <button class="settings-btn" id="export">
+            <span class="settings-btn__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="export"></span>
+            </div>
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
+
+
+        
+
+
+        <button class="settings-btn settings-btn--warning" id="import-btn">
+            <span class="settings-btn__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="setupTabRestore"></span>
+                <span class="settings-btn__caption">
+                    <span class="warning-text" data-i18n="importWarning"></span>
+                </span>
+            </div>
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
+
+  
+        <button class="settings-btn" id="import-html-btn">
+            <span class="settings-btn__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+                    <polyline points="8 12 12 16 16 12" />
+                    <line x1="12" y1="2" x2="12" y2="16" />
+                </svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="importFromHtml"></span>
+                <span class="settings-btn__caption">
+                    <span class="settings-btn__badge">1MB</span>
+                    <span class="settings-btn__divider">•</span>
+                    <span data-i18n="importHtmlSizeNote"></span>
+                </span>
+            </div>
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
+		<button class="settings-btn" id="export-html-btn">
+            <span class="settings-btn__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="exportHtml"></span>
+                <span class="settings-btn__caption">
+                    <span data-i18n="exportHtmlNote"></span>
+                </span>
+            </div>
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
+    </div>
+    <input type="file" id="import-html-file" accept=".html,.htm" style="display:none">
+</div>
+
+<div class="settings-section">
+    <h3 class="section-title" data-i18n="importFromChrome"></h3>
+    <div class="settings-buttons-grid">
+
+        <button class="settings-btn" id="import-from-chrome">
+            <span class="settings-btn__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="4" />
+                    <line x1="21.17" y1="8" x2="12" y2="8" />
+                    <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
+                    <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
+                </svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="importChromeBookmarks"></span>
+            </div>
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
+
+        <!-- Selective Import -->
+        <button class="settings-btn" id="import-from-chrome-advanced">
+            <span class="settings-btn__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
+                    <line x1="12" y1="10" x2="12" y2="16" />
+                    <line x1="9" y1="13" x2="15" y2="13" />
+                </svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="importChromeBookmarksAdvanced"></span>
+            </div>
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
+    </div>
+</div>
+
+<div class="settings-section">
+    <h3 class="section-title" data-i18n="about"></h3>
+	
+<div class="settings-buttons-grid">
+<button class="settings-btn" id="changelog-btn">
+    <span class="settings-btn__icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+    </span>
+    <div class="settings-btn__content">
+        <span class="settings-btn__title" data-i18n="changelog"></span>
+    </div>
+    <span class="settings-btn__arrow">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </span>
+</button>
+
+<button class="settings-btn" id="rate-btn">
+    <span class="settings-btn__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2 L15 9 L22 9 L16.5 14 L19 22 L12 17.5 L5 22 L7.5 14 L2 9 L9 9 L12 2Z" 
+          fill="currentColor" 
+          stroke="currentColor" 
+          stroke-width="1.2"
+          stroke-linejoin="round"/>
+</svg>
+    </span>
+    <div class="settings-btn__content">
+        <span class="settings-btn__title" data-i18n="rateExtension"></span>
+    </div>
+    <span class="settings-btn__arrow">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </span>
+</button>
+
+<button class="settings-btn" id="survey-btn">
+    <span class="settings-btn__icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+        </svg>
+    </span>
+    <div class="settings-btn__content">
+        <span class="settings-btn__title" data-i18n="survey"></span>
+    </div>
+    <span class="settings-btn__arrow">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+        </svg>
+    </span>
+</button>
+    
+        <!-- About Button -->
+        <button class="settings-btn" id="about-btn">
+            <span class="settings-btn__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="aboutExtension"></span>
+            </div>
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </span>
+        </button>
+    </div>
+	
+</div>
+
+</div>
+
+
+
+    <input type="file" id="import-file" accept=".json" style="display:none">
+<div id="about-modal" class="hpb-modal">
+    <div class="hpb-modal__dialog">
+        <h2 class="hpb-modal__title hpb-modal__title--center" data-i18n="extensionName"></h2>
+        <div class="hpb-modal__body about-body">
+            <div class="about-header">
+                <div class="about-icon"><img src="icons/icon48.png" alt=""></div>
+                <h3 class="about-subtitle" data-i18n="extensionDescription"></h3>
+            </div>
+            <dl class="about-info-grid">
+                <dt data-i18n="version"></dt>
+                <dd id="about-version"></dd>
+                <dt data-i18n="developer"></dt>
+                <dd>OSV IT-Studio</dd>
+                <dt>License:</dt>
+                <dd data-i18n="openSource"></dd>
+            </dl>
+            <div>
+                <h4 class="about-repo-label" data-i18n="githubRepo"></h4>
+                <div class="about-repo-link-wrap">
+                    <a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks"
+                       target="_blank" class="about-repo-link">
+                        <span class="about-repo-icon"><img src="icons/github.png" alt="GitHub"></span>
+                        <span>github.com/OSV-IT-Studio/holy-private-bookmarks</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hpb-modal__footer">
+            <button class="btn-secondary" id="close-about" data-i18n="close"></button>
+            <button class="btn-primary"   id="open-github">
+                <span>🔗</span>
+                <span data-i18n="openGitHub"></span>
+            </button>
+        </div>
+		
+    </div>
+</div>
+        
+ 
+
+
+<script src="js/modules/i18n.js"></script>
+<script src="js/modules/secure-utils.js"></script>
+<script src="js/modules/crypto-wrapper.js"></script>
+<script src="js/modules/theme.js"></script>
+<script src="js/modules/shared.js"></script>
+<script src="js/modules/popup-history-cleaner.js"></script>
+<script src="js/modules/popup-html-importer.js"></script>
+<script src="js/modules/popup-import-export-manager.js"></script>
+<script src="js/modules/popup-drag-drop.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/modules/popup-auth.js"></script>
+<script src="js/modules/login-ui.js"></script>
+<script src="js/modules/popup-ui.js"></script>
+<script src="js/modules/popup-tree.js"></script>
+<script src="js/modules/popup-bookmarks.js"></script>
+<script src="js/modules/donation-reminder.js"></script>
+<script src="js/popup.js"></script>
+	
+</body>
+
+</html>

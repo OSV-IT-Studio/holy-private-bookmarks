@@ -1,0 +1,803 @@
+{
+  "Name": {
+    "message": "Holy Private Bookmarks — Verschlüsselter lokaler Lesezeichen-Manager"
+  },
+  "extensionName": {
+    "message": "Holy Private Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "Vollständig private Lesezeichen mit Master-Passwort, Ordnern und Verschlüsselung"
+  },
+  "managerTitle": {
+    "message": "HPB - Lesezeichenmanager"
+  },
+  "createPassword": {
+    "message": "Erstelle ein Master-Passwort für die vollständige Lesezeichen-Verschlüsselung"
+  },
+  "newPassword": {
+    "message": "Neues Passwort (min. 6 Zeichen)"
+  },
+  "confirmPassword": {
+    "message": "Passwort bestätigen"
+  },
+  "createStorage": {
+    "message": "Speicher erstellen"
+  },
+  "enterMasterPassword": {
+    "message": ""
+  },
+  "masterPassword": {
+    "message": "Master-Passwort"
+  },
+  "unlock": {
+    "message": "Entsperren"
+  },
+  "wrongPassword": {
+    "message": "Falsches Passwort"
+  },
+  "passwordsMismatch": {
+    "message": "Passwörter stimmen nicht überein oder sind zu kurz"
+  },
+  "bookmarksProtected": {
+    "message": "Deine Lesezeichen sind sicher geschützt"
+  },
+  "addCurrentPage": {
+    "message": "Aktuelle Seite hinzufügen"
+  },
+  "newFolder": {
+    "message": "Neuer Ordner"
+  },
+  "clearHistory": {
+    "message": "Verlauf löschen"
+  },
+  "settings": {
+    "message": "Einstellungen"
+  },
+  "settingsbtn": {
+    "message": "⚙️"
+  },
+  "changeMasterPassword": {
+    "message": "Master-Passwort ändern"
+  },
+  "currentPassword": {
+    "message": "Aktuelles Master-Passwort"
+  },
+  "newPassword2": {
+    "message": "Neues Passwort"
+  },
+  "confirmNewPassword": {
+    "message": "Neues Passwort bestätigen"
+  },
+  "changePassword": {
+    "message": "Passwort ändern"
+  },
+  "exportImport": {
+    "message": "Export & Import"
+  },
+  "export": {
+    "message": "Backup erstellen"
+  },
+  "openPrivate": {
+    "message": "Im privaten Tab öffnen"
+  },
+  "import": {
+    "message": "Importieren"
+  },
+  "importFromChrome": {
+    "message": "Von Chrome importieren"
+  },
+  "importChromeBookmarks": {
+    "message": "Alle Chrome-Lesezeichen importieren"
+  },
+  "importChromeBookmarksAdvanced": {
+    "message": "Ordner zum Importieren auswählen"
+  },
+  "importChromeConfirm": {
+    "message": "Alle Lesezeichen von Chrome importieren? Vorhandene Lesezeichen bleiben erhalten."
+  },
+  "importChromeSuccess": {
+    "message": "Lesezeichen erfolgreich importiert!"
+  },
+  "importChromeError": {
+    "message": "Fehler beim Importieren der Lesezeichen"
+  },
+  "selectFoldersToImport": {
+    "message": "Wähle Ordner zum Importieren aus"
+  },
+  "selectAll": {
+    "message": "Alle auswählen"
+  },
+  "deselectAll": {
+    "message": "Alle abwählen"
+  },
+  "importSelected": {
+    "message": "Importieren"
+  },
+  "back": {
+    "message": "← Zurück"
+  },
+  "addBookmark": {
+    "message": "Lesezeichen hinzufügen"
+  },
+  "editBookmark": {
+    "message": "Lesezeichen bearbeiten"
+  },
+  "page": {
+    "message": "Seite"
+  },
+  "title": {
+    "message": "Titel"
+  },
+  "url": {
+    "message": "URL"
+  },
+  "folder": {
+    "message": "Ordner"
+  },
+  "rootFolder": {
+    "message": "Hauptverzeichnis"
+  },
+  "new": {
+    "message": "+ Neu"
+  },
+  "cancel": {
+    "message": "Abbrechen"
+  },
+  "save": {
+    "message": "Speichern"
+  },
+  "deleteConfirm": {
+    "message": "Lesezeichen löschen"
+  },
+  "folderName": {
+    "message": "Ordnername:"
+  },
+  "newName": {
+    "message": "Neuer Name:"
+  },
+  "titleRequired": {
+    "message": "Titel und URL sind erforderlich"
+  },
+  "validUrl": {
+    "message": "Die URL muss mit http:// oder https:// beginnen"
+  },
+  "passwordChanged": {
+    "message": "Passwort erfolgreich geändert!"
+  },
+  "importSuccess": {
+    "message": "Backup erfolgreich importiert! Bitte öffne das Popup neu."
+  },
+  "invalidFile": {
+    "message": "Ungültige Backup-Datei"
+  },
+  "clearHistoryConfirm": {
+    "message": "⚠️ ALLE Browser-Verlaufseinträge für Domains löschen, die in deinen Holy Private Bookmarks vorkommen?"
+  },
+  "noBookmarks": {
+    "message": "Keine Lesezeichen gefunden — nichts zu löschen."
+  },
+  "noDomains": {
+    "message": "Keine gültigen Domains in den Lesezeichen gefunden."
+  },
+  "newBookmark": {
+    "message": "Neues Lesezeichen"
+  },
+  "paste": {
+    "message": "Einfügen"
+  },
+  "ctxnewFolder": {
+    "message": "Neuer Ordner"
+  },
+  "emptyTreeTitle": {
+    "message": "Noch keine Lesezeichen"
+  },
+  "emptyTreeSubtitle": {
+    "message": "Füge dein erstes Lesezeichen oder einen Ordner hinzu, um zu beginnen"
+  },
+  "historyCleared": {
+    "message": "Verlauf gelöscht!\n$count$ Besuch(e) von $domains$ Domain(s) entfernt.",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domains": {
+        "content": "$2"
+      }
+    }
+  },
+  "addToHoly": {
+    "message": "Zu Holy Private Bookmarks hinzufügen"
+  },
+  "cannotAddPage": {
+    "message": "Diese Seite kann nicht hinzugefügt werden (keine gültige URL)"
+  },
+  "supportProject": {
+    "message": "Unterstütze das Projekt"
+  },
+  "supportPageTitle": {
+    "message": "Unterstütze Holy Private Bookmarks"
+  },
+  "donateHeroTitle": {
+    "message": "Unterstütze datenschutzorientierte Entwicklung"
+  },
+  "donateHeroSubtitle": {
+    "message": "Holy Private Bookmarks ist 100% kostenlos und Open-Source und wird es immer bleiben. Deine Unterstützung hilft den Entwicklern, Zeit für die Wartung und Verbesserung der Erweiterung für alle, denen Datenschutz wichtig ist, aufzuwenden."
+  },
+  "whySupport": {
+    "message": "Warum deine Unterstützung wichtig ist"
+  },
+  "timeInvestment": {
+    "message": "Entwicklungszeit"
+  },
+  "timeInvestmentDesc": {
+    "message": "Jede Funktion, Fehlerbehebung und Sicherheitsverbesserung bedeutet Stunden Arbeit. Dein Beitrag würdigt diese Zeit und hält das Projekt nachhaltig."
+  },
+  "longTerm": {
+    "message": "Langfristiges Engagement"
+  },
+  "longTermDesc": {
+    "message": "Deine Unterstützung stellt sicher, dass die Erweiterung aktiv gepflegt wird, mit zukünftigen Chrome-Updates kompatibel bleibt und kontinuierlich verbessert wird."
+  },
+  "futureFeatures": {
+    "message": "Zukünftige Funktionen"
+  },
+  "futureFeaturesDesc": {
+    "message": "Mit deiner Hilfe können wir neue Funktionen, eine bessere Benutzeroberfläche und erweiterte Sicherheitsmerkmale priorisieren, von denen die gesamte Gemeinschaft profitiert."
+  },
+  "donateCtaText": {
+    "message": "Keine Abonnements. Keine Bezahlschranken. Keine Unternehmensfinanzierung. Nur Menschen, die etwas Nützliches für andere entwickeln. Wenn diese Erweiterung dir Zeit spart oder dir ein beruhigendes Gefühl gibt, denk darüber nach, den Entwicklern einen Kaffee auszugeben."
+  },
+  "donateCryptoTitle": {
+    "message": "Mit Krypto unterstützen"
+  },
+  "copyAddress": {
+    "message": "Adresse kopieren"
+  },
+  "donateThanks": {
+    "message": "Danke, dass du unabhängige Open-Source-Entwicklung unterstützt"
+  },
+  "donateThanksNote": {
+    "message": "Jeder Beitrag, groß oder klein, bedeutet uns die Welt."
+  },
+  "importantWarning": {
+    "message": "WICHTIGE WARNUNG:"
+  },
+  "passwordCannotBeRecovered": {
+    "message": "Dieses Passwort kann NICHT wiederhergestellt werden!"
+  },
+  "noPasswordReset": {
+    "message": "Es gibt KEINE Option zum Zurücksetzen des Passworts"
+  },
+  "weDontStorePassword": {
+    "message": "Wir speichern dein Passwort an KEINEM Ort"
+  },
+  "bookmarksEncrypted": {
+    "message": "Deine Lesezeichen werden nur mit diesem Passwort verschlüsselt"
+  },
+  "savePasswordSecurely": {
+    "message": "Bewahre dieses Passwort sicher auf!"
+  },
+  "copyUrl": {
+    "message": "URL kopieren"
+  },
+  "edit": {
+    "message": "Bearbeiten"
+  },
+  "delete": {
+    "message": "Löschen"
+  },
+  "urlCopied": {
+    "message": "URL in die Zwischenablage kopiert"
+  },
+  "about": {
+    "message": "Über"
+  },
+  "aboutExtension": {
+    "message": "Über die Erweiterung"
+  },
+  "openGitHub": {
+    "message": "GitHub öffnen"
+  },
+  "close": {
+    "message": "Schließen"
+  },
+  "features": {
+    "message": "Funktionen"
+  },
+  "troubleshooting": {
+    "message": "Fehlerbehebung"
+  },
+  "encryption": {
+    "message": "Verschlüsselung"
+  },
+  "encryptionDesc": {
+    "message": "AES-256-Verschlüsselung"
+  },
+  "localStorage": {
+    "message": "Lokaler Speicher"
+  },
+  "localStorageDesc": {
+    "message": "Daten verbleiben auf deinem Gerät"
+  },
+  "privacy": {
+    "message": "Datenschutz"
+  },
+  "privacyDesc": {
+    "message": "Kein Tracking oder Analysen"
+  },
+  "openSource": {
+    "message": "GPLv3"
+  },
+  "viewOnGitHub": {
+    "message": "Auf GitHub ansehen"
+  },
+  "githubRepo": {
+    "message": "GitHub-Repository"
+  },
+  "githubRepoDesc": {
+    "message": "Quellcode ansehen, Probleme melden, mitwirken"
+  },
+  "version": {
+    "message": "Version"
+  },
+  "openmanager": {
+    "message": "Manager öffnen"
+  },
+  "managerDesc": {
+    "message": "Vollbild-Lesezeichen-Manager öffnen"
+  },
+  "folders": {
+    "message": "Ordner"
+  },
+  "bookmarks": {
+    "message": "Lesezeichen"
+  },
+  "allBookmarks": {
+    "message": "Alle Lesezeichen"
+  },
+  "searchBookmarks": {
+    "message": "Lesezeichen durchsuchen..."
+  },
+  "noBookmarksInFolder": {
+    "message": "Keine Lesezeichen in diesem Ordner"
+  },
+  "addBookmarksToGetStarted": {
+    "message": "Füge Lesezeichen hinzu, um zu beginnen"
+  },
+  "bookmarkUpdated": {
+    "message": "Lesezeichen aktualisiert"
+  },
+  "bookmarkDeleted": {
+    "message": "Lesezeichen gelöscht"
+  },
+  "renameFolder": {
+    "message": "Ordner umbenennen"
+  },
+  "folderCreated": {
+    "message": "Ordner erfolgreich erstellt"
+  },
+  "managerLocked": {
+    "message": "Manager gesperrt"
+  },
+  "lockManager": {
+    "message": "Manager sperren"
+  },
+  "rename": {
+    "message": "Umbenennen"
+  },
+  "deleteFolder": {
+    "message": "Ordner löschen"
+  },
+  "deleteFolderConfirm": {
+    "message": "Ordner \"{0}\" löschen?"
+  },
+  "deleteFolderWarning": {
+    "message": "Der gesamte Inhalt wird endgültig gelöscht."
+  },
+  "folderRenamed": {
+    "message": "Ordner erfolgreich umbenannt"
+  },
+  "folderDeleted": {
+    "message": "Ordner erfolgreich gelöscht"
+  },
+  "cannotRenameAll": {
+    "message": "Der Ordner \"Alle Lesezeichen\" kann nicht umbenannt werden"
+  },
+  "cannotDeleteAll": {
+    "message": "Der Ordner \"Alle Lesezeichen\" kann nicht gelöscht werden"
+  },
+  "bookmarkAdded": {
+    "message": "Lesezeichen hinzugefügt"
+  },
+  "pendingBookmarkNotification": {
+    "message": "Lesezeichen wartet!"
+  },
+  "pendingBookmarkInstruction": {
+    "message": "Ein Lesezeichen wartet darauf, hinzugefügt zu werden. Bitte entsperren, um fortzufahren."
+  },
+  "dragSuccess": {
+    "message": "Element erfolgreich verschoben"
+  },
+  "invalidDestinationFolder": {
+    "message": "Ungültiger Zielordner"
+  },
+  "moveFailed": {
+    "message": "Verschieben der Lesezeichen fehlgeschlagen"
+  },
+  "noBookmarksSelected": {
+    "message": "Keine Lesezeichen ausgewählt"
+  },
+  "selectDestinationFolder": {
+    "message": "Zielordner auswählen:"
+  },
+  "move": {
+    "message": "Verschieben"
+  },
+  "selected": {
+    "message": "ausgewählt"
+  },
+  "moveSelectedTitle": {
+    "message": "Ausgewählte verschieben"
+  },
+  "deleteSelectedTitle": {
+    "message": "Ausgewählte löschen"
+  },
+  "cancelSelectionTitle": {
+    "message": "Auswahl aufheben"
+  },
+  "emptyFolder": {
+    "message": "Ordner ist leer",
+    "description": "Message shown when a folder has no bookmarks"
+  },
+  "noSearchResults": {
+    "message": "Keine Lesezeichen gefunden",
+    "description": "Message when search returns no results"
+  },
+  "noSearchResultsDesc": {
+    "message": "Versuche einen anderen Suchbegriff",
+    "description": "Description for empty search results"
+  },
+  "theme": {
+    "message": "Design"
+  },
+  "themeDark": {
+    "message": "Dunkel",
+    "description": "Dark theme name"
+  },
+  "themeLight": {
+    "message": "Hell",
+    "description": "Light theme name"
+  },
+  "themeSystem": {
+    "message": "System",
+    "description": "System theme name"
+  },
+  "themeToggle": {
+    "message": "Design wechseln",
+    "description": "Tooltip for theme toggle button"
+  },
+  "showFavicons": {
+    "message": "Webseiten-Favicons anzeigen"
+  },
+  "showFaviconsDesc": {
+    "message": "Kann den Browserverlauf an Google-Server weitergeben"
+  },
+  "bookmarksAndFolders": {
+    "message": "Lesezeichen & Ordner"
+  },
+  "importFromHtml": {
+    "message": "Aus HTML importieren"
+  },
+  "importHtmlSuccess": {
+    "message": "HTML-Lesezeichen erfolgreich importiert! $COUNT$ Lesezeichen hinzugefügt.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "htmlImporterNoFileSelected": {
+    "message": "Keine Datei ausgewählt"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "Datei zu groß (max. 1 MB)"
+  },
+  "htmlImporterParseError": {
+    "message": "Fehler beim Importieren der HTML-Datei: $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "Keine Lesezeichen in der Datei gefunden"
+  },
+  "importHtmlError": {
+    "message": "Fehler beim Parsen der HTML-Datei. Bitte überprüfen Sie das Dateiformat."
+  },
+  "importHtmlSizeWarning": {
+    "message": "1MB-Grenze"
+  },
+  "importHtmlSizeNote": {
+    "message": "max. ~2500 Lesezeichen"
+  },
+  "importWarning": {
+    "message": "Alle vorhandenen Lesezeichen werden ersetzt"
+  },
+  "developer": {
+    "message": "Entwickler:"
+  },
+  "lock": {
+    "message": "Sperren"
+  },
+  "faqButtonTitle": {
+    "message": "Häufig gestellte Fragen"
+  },
+  "clearingHistory": {
+    "message": "Verlauf wird gelöscht",
+    "description": "Titel für den Fortschrittsdialog beim Löschen des Verlaufs"
+  },
+  "preparingToClear": {
+    "message": "Löschen des Verlaufs wird vorbereitet...",
+    "description": "Erste Statusmeldung"
+  },
+  "progress": {
+    "message": "Fortschritt",
+    "description": "Fortschrittsbezeichnung"
+  },
+  "domainsProcessed": {
+    "message": "Verarbeitete Domains",
+    "description": "Bezeichnung für die Anzahl verarbeiteter Domains"
+  },
+  "entriesDeleted": {
+    "message": "Gelöschte Einträge",
+    "description": "Bezeichnung für die Anzahl gelöschter Einträge"
+  },
+  "processing": {
+    "message": "Verarbeitung läuft...",
+    "description": "Statusmeldung während der Verarbeitung"
+  },
+  "startingCleanup": {
+    "message": "Bereinigung wird gestartet...",
+    "description": "Status beim Starten"
+  },
+  "finalizingCleanup": {
+    "message": "Bereinigung wird abgeschlossen...",
+    "description": "Status beim Abschließen"
+  },
+  "cancelling": {
+    "message": "Abbruch läuft...",
+    "description": "Status beim Abbrechen"
+  },
+  "clearCancelled": {
+    "message": "Vorgang abgebrochen",
+    "description": "Benachrichtigung bei Abbruch"
+  },
+  "fillAllFields": {
+    "message": "Bitte füllen Sie alle Felder aus"
+  },
+  "setupComplete": {
+    "message": "Einrichtung abgeschlossen!"
+  },
+  "migrationSuccess": {
+    "message": "Daten erfolgreich in ein sicheres Format migriert!"
+  },
+  "migrationRequired": {
+    "message": "Aktualisierung des Datenformats erforderlich"
+  },
+  "migrationInstruction": {
+    "message": "Geben Sie Ihr Passwort ein, um automatisch auf ein sichereres Format zu aktualisieren."
+  },
+  "exportSuccess": {
+    "message": "Export erfolgreich",
+    "description": "Benachrichtigung bei erfolgreichem Datenexport"
+  },
+  "unlocking": {
+    "message": "Entsperren...",
+    "description": "Wird beim Entschlüsseln von Lesezeichen angezeigt"
+  },
+  "changingPassword": {
+    "message": "Passwort wird geändert...",
+    "description": "Wird beim Ändern des Master-Passworts angezeigt"
+  },
+  "settingUpEncryption": {
+    "message": "Verschlüsselung wird eingerichtet...",
+    "description": "Während der Ersteinrichtung angezeigt"
+  },
+  "migratingData": {
+    "message": "Daten werden in ein sicheres Format migriert...",
+    "description": "Wird während der Migration von v1 zu v2 angezeigt"
+  },
+  "loading": {
+    "message": "Laden...",
+    "description": "Allgemeine Lade-Nachricht"
+  },
+  "donationReminderTitle": {
+    "message": "Unterstütze das Projekt"
+  },
+  "donationReminderText": {
+    "message": "Wenn dir diese Erweiterung gefällt, unterstütze bitte ihre Entwicklung!"
+  },
+  "remindLater": {
+    "message": "Später erinnern"
+  },
+  "supportNow": {
+    "message": "Jetzt unterstützen"
+  },
+  "remindNever": {
+    "message": "Nicht mehr zeigen"
+  },
+  "confirmDismiss": {
+    "message": "Spenden-Erinnerungen dauerhaft deaktivieren?"
+  },
+  "bookmarkAlreadyInFolder": {
+    "message": "Element ist bereits in diesem Ordner"
+  },
+  "cannotMoveIntoSelf": {
+    "message": "Ein Ordner kann nicht in sich selbst verschoben werden"
+  },
+  "bookmarksMoved": {
+    "message": "{0} Element{1} verschoben"
+  },
+  "deleteSelectedConfirm": {
+    "message": "{count} ausgewähltes Element{plural} löschen?",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "bookmarksDeleted": {
+    "message": "{count} Element{plural} gelöscht",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "moveBookmarksTitle": {
+    "message": "{0} Element{1} verschieben"
+  },
+  "setupTabNew": {
+    "message": "Neu erstellen",
+    "description": "Tab label for creating new password"
+  },
+  "setupTabRestore": {
+    "message": "Backup wiederherstellen",
+    "description": "Tab label for restoring from backup"
+  },
+  "restoreDropTitle": {
+    "message": "Backupdatei hier ablegen oder zum Auswählen klicken",
+    "description": "Text for drag & drop area in restore tab"
+  },
+  "strengthWeak": {
+    "message": "Schwach",
+    "description": "Password strength indicator"
+  },
+  "strengthFair": {
+    "message": "Mittel",
+    "description": "Password strength indicator"
+  },
+  "strengthGood": {
+    "message": "Gut",
+    "description": "Password strength indicator"
+  },
+  "strengthStrong": {
+    "message": "Stark",
+    "description": "Password strength indicator"
+  },
+  "importingBackup": {
+    "message": "Backup wird wiederhergestellt...",
+    "description": "Loading message during backup import"
+  },
+  "unlockTitle": {
+    "message": "Master-Passwort eingeben"
+  },
+  "warningRemember": {
+    "message": "Haben Sie Ihr Passwort gespeichert?"
+  },
+  "yesRemember": {
+    "message": "Ja, ich habe es"
+  },
+  "survey": {
+    "message": "Feedback geben"
+  },
+  "changelog": {
+    "message": "Änderungsprotokoll"
+  },
+  "rateExtension": {
+    "message": "Im Chrome Web Store bewerten"
+  },
+  "migrationScreenTitle": {
+    "message": "Update erforderlich",
+    "description": "Title on the manager migration screen"
+  },
+  "migrationScreenBody1": {
+    "message": "Die Erweiterung wurde mit verbesserter Sicherheit aktualisiert.",
+    "description": "First line on the manager migration screen"
+  },
+  "migrationScreenBody2": {
+    "message": "Bitte öffnen Sie das Erweiterungs-Popup, um Ihre Daten in das neue sichere Format zu migrieren.",
+    "description": "Second line on the manager migration screen"
+  },
+  "migrationScreenButton": {
+    "message": "Erweiterung öffnen",
+    "description": "Button on the manager migration screen"
+  },
+  "notSetUpTitle": {
+    "message": "Erweiterung nicht eingerichtet",
+    "description": "manager-lock: notSetUpTitle"
+  },
+  "notSetUpSubtitle": {
+    "message": "Erweiterung noch nicht eingerichtet. Bitte öffnen Sie das Erweiterungs-Popup, um ein Passwort zu erstellen.",
+    "description": "manager-lock: notSetUpSubtitle"
+  },
+  "notSetUpButton": {
+    "message": "Erweiterung öffnen",
+    "description": "manager-lock: notSetUpButton"
+  },
+  "reloadingSubtitle": {
+    "message": "Manager wird neu geladen...",
+    "description": "manager-lock: reloadingSubtitle"
+  },
+  "reloadingWait": {
+    "message": "Bitte warten Sie, während der Manager aktualisiert wird",
+    "description": "manager-lock: reloadingWait"
+  },
+  "exportHtml": {
+    "message": "Als HTML exportieren"
+  },
+  "exportHtmlNote": {
+    "message": "Netscape-Lesezeichen-Format"
+  },
+  "exportHtmlSuccess": {
+    "message": "HTML-Export erfolgreich"
+  },
+  "exportHtmlConfirmTitle": {
+    "message": "Passwort bestätigen"
+  },
+  "exportHtmlConfirmDesc": {
+    "message": "Ihre Lesezeichen werden als Klartext exportiert. Geben Sie Ihr Masterpasswort zur Bestätigung ein."
+  },
+  "exportHtmlPasswordRequired": {
+    "message": "Bitte Passwort eingeben"
+  },
+  "exportHtmlConfirmBtn": {
+    "message": "Exportieren"
+  },
+  "exportHtmlVerifying": {
+    "message": "Passwort wird überprüft…"
+  },
+  "copiedToClipboard": {
+    "message": "In Zwischenablage kopiert!"
+  },
+  "copyFailed": {
+    "message": "Kopieren fehlgeschlagen"
+  },
+  "clickToCopy": {
+    "message": "Zum Kopieren klicken"
+  },
+  "qrCodeFor": {
+    "message": "QR-Code für $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "quickCloseTab": {
+    "message": "Tab schnell schließen (Alt+A)"
+  },
+  "quickCloseTabDesc": {
+    "message": "Schließt den aktuellen Tab und löscht den Browserverlauf der Domain"
+  },
+  "quickCloseTabCommand": {
+    "message": "Tab schließen und Domain-Verlauf löschen"
+  },
+  "changeShortcut": {
+    "message": "Tastenkürzel ändern →"
+  }
+}

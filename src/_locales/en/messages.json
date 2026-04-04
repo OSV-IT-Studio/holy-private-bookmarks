@@ -1,0 +1,806 @@
+{
+  "Name": {
+    "message": "Holy Private Bookmarks — Encrypted Local Bookmark Manager"
+  },
+  "extensionName": {
+    "message": "Holy Private Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "Fully private bookmarks with master password, folders and encryption"
+  },
+  "managerTitle": {
+    "message": "HPB - Bookmark manager"
+  },
+  "createPassword": {
+    "message": "Create a master password for full bookmark encryption"
+  },
+  "newPassword": {
+    "message": "New password (min. 6 characters)"
+  },
+  "confirmPassword": {
+    "message": "Confirm password"
+  },
+  "createStorage": {
+    "message": "Create storage"
+  },
+  "enterMasterPassword": {
+    "message": ""
+  },
+  "masterPassword": {
+    "message": "Master password"
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "wrongPassword": {
+    "message": "Wrong password"
+  },
+  "passwordsMismatch": {
+    "message": "Passwords do not match or too short"
+  },
+  "bookmarksProtected": {
+    "message": "Your bookmarks are securely protected"
+  },
+  "addCurrentPage": {
+    "message": "Add current page"
+  },
+  "newFolder": {
+    "message": "New folder"
+  },
+  "clearHistory": {
+    "message": "Clear history"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "settingsbtn": {
+    "message": "⚙️"
+  },
+  "changeMasterPassword": {
+    "message": "Change master password"
+  },
+  "currentPassword": {
+    "message": "Current master password"
+  },
+  "newPassword2": {
+    "message": "New password"
+  },
+  "confirmNewPassword": {
+    "message": "Confirm new password"
+  },
+  "changePassword": {
+    "message": "Change password"
+  },
+  "exportImport": {
+    "message": "Export & Import"
+  },
+  "export": {
+    "message": "Create Backup"
+  },
+  "openPrivate": {
+    "message": "Open in private tab"
+  },
+  "import": {
+    "message": "Import"
+  },
+  "importFromChrome": {
+    "message": "Import from Chrome"
+  },
+  "importChromeBookmarks": {
+    "message": "Import all Chrome bookmarks"
+  },
+  "importChromeBookmarksAdvanced": {
+    "message": "Select folders to import"
+  },
+  "importChromeConfirm": {
+    "message": "Import all bookmarks from Chrome? Existing bookmarks will be preserved."
+  },
+  "importChromeSuccess": {
+    "message": "Bookmarks imported successfully!"
+  },
+  "importChromeError": {
+    "message": "Failed to import bookmarks"
+  },
+  "selectFoldersToImport": {
+    "message": "Select folders to import"
+  },
+  "selectAll": {
+    "message": "Select all"
+  },
+  "deselectAll": {
+    "message": "Deselect all"
+  },
+  "importSelected": {
+    "message": "Import"
+  },
+  "back": {
+    "message": "← Back"
+  },
+  "addBookmark": {
+    "message": "Add bookmark"
+  },
+  "editBookmark": {
+    "message": "Edit bookmark"
+  },
+  "page": {
+    "message": "Page"
+  },
+  "title": {
+    "message": "Title"
+  },
+  "url": {
+    "message": "URL"
+  },
+  "folder": {
+    "message": "Folder"
+  },
+  "rootFolder": {
+    "message": "Root folder"
+  },
+  "new": {
+    "message": "+ New"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "deleteConfirm": {
+    "message": "Delete bookmark"
+  },
+  "folderName": {
+    "message": "Folder name:"
+  },
+  "newName": {
+    "message": "New name:"
+  },
+  "titleRequired": {
+    "message": "Title and URL are required"
+  },
+  "validUrl": {
+    "message": "URL must start with http:// or https://"
+  },
+  "passwordChanged": {
+    "message": "Password changed successfully!"
+  },
+  "importSuccess": {
+    "message": "Backup imported successfully! Please reopen the popup."
+  },
+  "invalidFile": {
+    "message": "Invalid backup file"
+  },
+  "clearHistoryConfirm": {
+    "message": "⚠️ Delete ALL browser history entries for domains present in your Holy Private Bookmarks?"
+  },
+  "noBookmarks": {
+    "message": "No bookmarks found — nothing to clear."
+  },
+  "noDomains": {
+    "message": "No valid domains found in bookmarks."
+  },
+  "newBookmark": {
+    "message": "New bookmark"
+  },
+  "paste": {
+    "message": "Paste"
+  },
+  "ctxnewFolder": {
+    "message": "New folder"
+  },
+  "emptyTreeTitle": {
+    "message": "No bookmarks yet"
+  },
+  "emptyTreeSubtitle": {
+    "message": "Add your first bookmark or folder to get started"
+  },
+  "historyCleared": {
+    "message": "History cleared!\nRemoved $count$ visit(s) from $domains$ domain(s).",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domains": {
+        "content": "$2"
+      }
+    }
+  },
+  "addToHoly": {
+    "message": "Add to Holy Private Bookmarks"
+  },
+  "cannotAddPage": {
+    "message": "Cannot add this page (no valid URL)"
+  },
+  "supportProject": {
+    "message": "Support the project"
+  },
+  "supportPageTitle": {
+    "message": "Support Holy Private Bookmarks"
+  },
+  "donateHeroTitle": {
+    "message": "Support privacy-focused development"
+  },
+  "donateHeroSubtitle": {
+    "message": "Holy Private Bookmarks is 100% free and open-source, and always will be. Your support helps the developers dedicate time to maintaining and improving the extension for everyone who cares about privacy."
+  },
+  "whySupport": {
+    "message": "Why your support matters"
+  },
+  "timeInvestment": {
+    "message": "Developer time"
+  },
+  "timeInvestmentDesc": {
+    "message": "Every feature, bug fix, and security improvement represents hours of work. Your contribution values that time and keeps the project sustainable."
+  },
+  "longTerm": {
+    "message": "Long-term commitment"
+  },
+  "longTermDesc": {
+    "message": "Your support ensures the extension stays actively maintained, compatible with future Chrome updates, and continuously improved."
+  },
+  "futureFeatures": {
+    "message": "Future features"
+  },
+  "futureFeaturesDesc": {
+    "message": "With your help, we can prioritize new functionality, better UI, and enhanced security features that benefit the entire community."
+  },
+  "donateCtaText": {
+    "message": "No subscriptions. No paywalls. No corporate funding. Just people building something useful for others. If this extension saves you time or gives you peace of mind, consider buying the developers a coffee."
+  },
+  "donateCryptoTitle": {
+    "message": "Support with Crypto"
+  },
+  "copyAddress": {
+    "message": "Copy address"
+  },
+  "donateThanks": {
+    "message": "Thank you for supporting independent open-source development"
+  },
+  "donateThanksNote": {
+    "message": "Every contribution, big or small, means the world to us."
+  },
+  "importantWarning": {
+    "message": "IMPORTANT WARNING:"
+  },
+  "passwordCannotBeRecovered": {
+    "message": "This password CANNOT be recovered!"
+  },
+  "noPasswordReset": {
+    "message": "There is NO password reset option"
+  },
+  "weDontStorePassword": {
+    "message": "We do NOT store your password anywhere"
+  },
+  "bookmarksEncrypted": {
+    "message": "Your bookmarks are encrypted with this password only"
+  },
+  "savePasswordSecurely": {
+    "message": "Save this password securely!"
+  },
+  "copyUrl": {
+    "message": "Copy URL"
+  },
+  "edit": {
+    "message": "Edit"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "urlCopied": {
+    "message": "URL copied to clipboard"
+  },
+  "about": {
+    "message": "About"
+  },
+  "aboutExtension": {
+    "message": "About Extension"
+  },
+  "openGitHub": {
+    "message": "Open GitHub"
+  },
+  "close": {
+    "message": "Close"
+  },
+  "features": {
+    "message": "Features"
+  },
+  "troubleshooting": {
+    "message": "Troubleshooting"
+  },
+  "encryption": {
+    "message": "Encryption"
+  },
+  "encryptionDesc": {
+    "message": "AES-256 encryption"
+  },
+  "localStorage": {
+    "message": "Local Storage"
+  },
+  "localStorageDesc": {
+    "message": "Data stays on your device"
+  },
+  "privacy": {
+    "message": "Privacy"
+  },
+  "privacyDesc": {
+    "message": "No tracking or analytics"
+  },
+  "openSource": {
+    "message": "GPLv3"
+  },
+  "viewOnGitHub": {
+    "message": "View on GitHub"
+  },
+  "githubRepo": {
+    "message": "GitHub Repository"
+  },
+  "githubRepoDesc": {
+    "message": "View source code, report issues, contribute"
+  },
+  "version": {
+    "message": "Version"
+  },
+  "openmanager": {
+    "message": "Open manager"
+  },
+  "managerDesc": {
+    "message": "Open fullscreen bookmark manager"
+  },
+  "folders": {
+    "message": "Folders"
+  },
+  "bookmarks": {
+    "message": "bookmarks"
+  },
+  "allBookmarks": {
+    "message": "All Bookmarks"
+  },
+  "searchBookmarks": {
+    "message": "Search bookmarks..."
+  },
+  "noBookmarksInFolder": {
+    "message": "No bookmarks in this folder"
+  },
+  "addBookmarksToGetStarted": {
+    "message": "Add bookmarks to get started"
+  },
+  "bookmarkUpdated": {
+    "message": "Bookmark updated"
+  },
+  "bookmarkDeleted": {
+    "message": "Bookmark deleted"
+  },
+  "renameFolder": {
+    "message": "Rename folder"
+  },
+  "folderCreated": {
+    "message": "Folder created successfully"
+  },
+  "managerLocked": {
+    "message": "Manager locked"
+  },
+  "lockManager": {
+    "message": "Lock Manager"
+  },
+  "rename": {
+    "message": "Rename"
+  },
+  "deleteFolder": {
+    "message": "Delete folder"
+  },
+  "deleteFolderConfirm": {
+    "message": "Delete folder \"{0}\"?"
+  },
+  "deleteFolderWarning": {
+    "message": "All content will be permanently deleted."
+  },
+  "folderRenamed": {
+    "message": "Folder renamed successfully"
+  },
+  "folderDeleted": {
+    "message": "Folder deleted successfully"
+  },
+  "cannotRenameAll": {
+    "message": "Cannot rename \"All Bookmarks\" folder"
+  },
+  "cannotDeleteAll": {
+    "message": "Cannot delete \"All Bookmarks\" folder"
+  },
+  "bookmarkAdded": {
+    "message": "Bookmark added"
+  },
+  "pendingBookmarkNotification": {
+    "message": "Bookmark pending!"
+  },
+  "pendingBookmarkInstruction": {
+    "message": "A bookmark is waiting to be added. Please unlock to continue."
+  },
+  "dragSuccess": {
+    "message": "Item moved successfully"
+  },
+  "invalidDestinationFolder": {
+    "message": "Invalid destination folder"
+  },
+  "moveFailed": {
+    "message": "Failed to move bookmarks"
+  },
+  "noBookmarksSelected": {
+    "message": "No bookmarks selected"
+  },
+  "selectDestinationFolder": {
+    "message": "Select destination folder:"
+  },
+  "move": {
+    "message": "Move"
+  },
+  "selected": {
+    "message": "selected"
+  },
+  "moveSelectedTitle": {
+    "message": "Move selected"
+  },
+  "deleteSelectedTitle": {
+    "message": "Delete selected"
+  },
+  "cancelSelectionTitle": {
+    "message": "Cancel selection"
+  },
+  "emptyFolder": {
+    "message": "Folder is empty",
+    "description": "Message shown when a folder has no bookmarks"
+  },
+  "noSearchResults": {
+    "message": "No bookmarks found",
+    "description": "Message when search returns no results"
+  },
+  "noSearchResultsDesc": {
+    "message": "Try a different search term",
+    "description": "Description for empty search results"
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDark": {
+    "message": "Dark",
+    "description": "Dark theme name"
+  },
+  "themeLight": {
+    "message": "Light",
+    "description": "Light theme name"
+  },
+  "themeSystem": {
+    "message": "System",
+    "description": "System theme name"
+  },
+  "themeToggle": {
+    "message": "Switch theme",
+    "description": "Tooltip for theme toggle button"
+  },
+  "showFavicons": {
+    "message": "Show website favicons"
+  },
+  "showFaviconsDesc": {
+    "message": "May leak browsing history to Google's servers"
+  },
+  "bookmarksAndFolders": {
+    "message": "Bookmarks & Folders"
+  },
+  "importFromHtml": {
+    "message": "Import from HTML"
+  },
+  "importHtmlSuccess": {
+    "message": "HTML bookmarks imported successfully! $COUNT$ bookmarks added.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "htmlImporterNoFileSelected": {
+    "message": "No file selected"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "File too large (max 1MB)"
+  },
+  "htmlImporterParseError": {
+    "message": "Failed to import HTML: $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "No bookmarks found in file"
+  },
+  "importHtmlError": {
+    "message": "Failed to parse HTML file. Please check the file format."
+  },
+  "importHtmlSizeWarning": {
+    "message": "1MB Limit"
+  },
+  "importHtmlSizeNote": {
+    "message": "~2500 bookmarks max"
+  },
+  "importWarning": {
+    "message": "All existing bookmarks will be replaced"
+  },
+  "developer": {
+    "message": "Developer:"
+  },
+  "lock": {
+    "message": "Lock"
+  },
+  "faqButtonTitle": {
+    "message": "Frequently Asked Questions"
+  },
+  "clearingHistory": {
+    "message": "Clearing History",
+    "description": "Title for history clearing progress modal"
+  },
+  "preparingToClear": {
+    "message": "Preparing to clear history...",
+    "description": "Initial status message"
+  },
+  "progress": {
+    "message": "Progress",
+    "description": "Progress label"
+  },
+  "domainsProcessed": {
+    "message": "Domains processed",
+    "description": "Label for domains processed count"
+  },
+  "entriesDeleted": {
+    "message": "Entries deleted",
+    "description": "Label for deleted entries count"
+  },
+  "startingCleanup": {
+    "message": "Starting cleanup...",
+    "description": "Status when starting"
+  },
+  "finalizingCleanup": {
+    "message": "Finalizing cleanup...",
+    "description": "Status when finalizing"
+  },
+  "cancelling": {
+    "message": "Cancelling...",
+    "description": "Status when cancelling"
+  },
+  "clearCancelled": {
+    "message": "Operation cancelled",
+    "description": "Notification when cancelled"
+  },
+  "fillAllFields": {
+    "message": "Please fill all fields"
+  },
+  "setupComplete": {
+    "message": "Setup complete!"
+  },
+  "migrationSuccess": {
+    "message": "Data successfully migrated to secure format!"
+  },
+  "migrationRequired": {
+    "message": "Data format update required"
+  },
+  "migrationInstruction": {
+    "message": "Enter your password to automatically upgrade to more secure format."
+  },
+  "exportSuccess": {
+    "message": "Export successful",
+    "description": "Notification when data export completes successfully"
+  },
+  "processing": {
+    "message": "Processing...",
+    "description": "Generic processing message for loading indicators"
+  },
+  "unlocking": {
+    "message": "Unlocking...",
+    "description": "Shown while decrypting bookmarks"
+  },
+  "changingPassword": {
+    "message": "Changing password...",
+    "description": "Shown while changing master password"
+  },
+  "settingUpEncryption": {
+    "message": "Setting up encryption...",
+    "description": "Shown during first-time setup"
+  },
+  "migratingData": {
+    "message": "Migrating data to secure format...",
+    "description": "Shown during v1 to v2 migration"
+  },
+  "loading": {
+    "message": "Loading...",
+    "description": "Generic loading message"
+  },
+  "donationReminderTitle": {
+    "message": "Support the project"
+  },
+  "donationReminderText": {
+    "message": "If you like this extension, please support its development!"
+  },
+  "remindLater": {
+    "message": "Remind later"
+  },
+  "supportNow": {
+    "message": "Support now"
+  },
+  "remindNever": {
+    "message": "Don't show again"
+  },
+  "confirmDismiss": {
+    "message": "Never show donation reminders again?"
+  },
+  "bookmarkAlreadyInFolder": {
+    "message": "Element is already in this folder"
+  },
+  "cannotMoveIntoSelf": {
+    "message": "Cannot move a folder into itself"
+  },
+  "bookmarksMoved": {
+    "message": "{0} element{1} moved"
+  },
+  "deleteSelectedConfirm": {
+    "message": "Delete {count} selected element{plural}?",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "bookmarksDeleted": {
+    "message": "{count} element{plural} deleted",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "moveBookmarksTitle": {
+    "message": "Move {0} element{1}"
+  },
+  "setupTabNew": {
+    "message": "Create New",
+    "description": "Tab label for creating new password"
+  },
+  "setupTabRestore": {
+    "message": "Restore Backup",
+    "description": "Tab label for restoring from backup"
+  },
+  "restoreDropTitle": {
+    "message": "Drop backup file here or click to select",
+    "description": "Text for drag & drop area in restore tab"
+  },
+  "strengthWeak": {
+    "message": "Weak",
+    "description": "Password strength indicator"
+  },
+  "strengthFair": {
+    "message": "Fair",
+    "description": "Password strength indicator"
+  },
+  "strengthGood": {
+    "message": "Good",
+    "description": "Password strength indicator"
+  },
+  "strengthStrong": {
+    "message": "Strong",
+    "description": "Password strength indicator"
+  },
+  "importingBackup": {
+    "message": "Restoring backup...",
+    "description": "Loading message during backup import"
+  },
+  "unlockTitle": {
+    "message": "Enter master password"
+  },
+  "warningRemember": {
+    "message": "Do you remember your password?"
+  },
+  "yesRemember": {
+    "message": "Yes, I remember"
+  },
+  "survey": {
+    "message": "Feedback Survey"
+  },
+  "Error": {
+    "message": "Error"
+  },
+  "changelog": {
+    "message": "Changelog"
+  },
+  "rateExtension": {
+    "message": "Rate on Chrome Web Store"
+  },
+  "migrationScreenTitle": {
+    "message": "Update Required",
+    "description": "Title on the manager migration screen"
+  },
+  "migrationScreenBody1": {
+    "message": "The extension has been updated with improved security.",
+    "description": "First line on the manager migration screen"
+  },
+  "migrationScreenBody2": {
+    "message": "Please open the extension popup to migrate your data to the new secure format.",
+    "description": "Second line on the manager migration screen"
+  },
+  "migrationScreenButton": {
+    "message": "Open Extension",
+    "description": "Button on the manager migration screen"
+  },
+  "notSetUpTitle": {
+    "message": "Extension Not Set Up",
+    "description": "manager-lock: notSetUpTitle"
+  },
+  "notSetUpSubtitle": {
+    "message": "Extension not set up yet. Please open the extension popup to create a password.",
+    "description": "manager-lock: notSetUpSubtitle"
+  },
+  "notSetUpButton": {
+    "message": "Open Extension",
+    "description": "manager-lock: notSetUpButton"
+  },
+  "reloadingSubtitle": {
+    "message": "Manager is reloading...",
+    "description": "manager-lock: reloadingSubtitle"
+  },
+  "reloadingWait": {
+    "message": "Please wait while the manager updates",
+    "description": "manager-lock: reloadingWait"
+  },
+  "exportHtml": {
+    "message": "Export to HTML"
+  },
+  "exportHtmlNote": {
+    "message": "Netscape Bookmarks format"
+  },
+  "exportHtmlSuccess": {
+    "message": "HTML export successful"
+  },
+  "exportHtmlConfirmTitle": {
+    "message": "Confirm your password"
+  },
+  "exportHtmlConfirmDesc": {
+    "message": "Your bookmarks will be exported as plain text. Enter your master password to confirm."
+  },
+  "exportHtmlPasswordRequired": {
+    "message": "Please enter your password"
+  },
+  "exportHtmlConfirmBtn": {
+    "message": "Export"
+  },
+  "exportHtmlVerifying": {
+    "message": "Verifying password…"
+  },
+  "copiedToClipboard": {
+    "message": "Copied to clipboard!"
+  },
+  "copyFailed": {
+    "message": "Failed to copy"
+  },
+  "clickToCopy": {
+    "message": "Click to copy"
+  },
+  "qrCodeFor": {
+    "message": "QR code for $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "quickCloseTab": {
+    "message": "Quick close tab (Alt+A)"
+  },
+  "quickCloseTabDesc": {
+    "message": "Closes the current tab and deletes browsing history for its domain"
+  },
+  "quickCloseTabCommand": {
+    "message": "Close tab and clear domain history"
+  },
+  "changeShortcut": {
+    "message": "Change shortcut →"
+  }
+}

@@ -1,0 +1,202 @@
+[
+{
+  "version": "1.8.4.83",
+  "changes": [
+    "Added Quick Close Tab feature — press Alt+A to instantly close the current tab and delete all browsing history for its domain",
+    "Quick Close Tab is disabled by default and can be enabled in Settings under Privacy"
+  ]
+},
+{
+    "version": "1.8.4.82",
+    "changes": [
+      "Minor UI display fixes"
+    ]
+  },
+{
+    "version": "1.8.4.80",
+    "changes": [
+      "Minor UI display fixes"
+    ]
+  },
+{
+    "version": "1.8.4.79",
+    "changes": [
+      "Added HTML bookmarks export — export bookmarks to Netscape HTML format (compatible with Chrome, Firefox, Edge, etc.)"
+    ]
+  },
+
+{
+    "version": "1.8.4.72",
+    "changes": [
+      "Minor UI display fixes"
+    ]
+  },
+  {
+    "version": "1.8.4.70",
+    "changes": [
+      "Minor UI display fixes"
+    ]
+  },
+  {
+    "version": "1.8.4.69",
+    "changes": [
+      "Added \"Changelog\" button in settings — view the update history right inside the extension",
+      "Extension version is now shown in the popup header"
+    ]
+  },
+  {
+    "version": "1.8.4.67",
+    "changes": [
+      "Added \"Feedback Survey\" button in settings",
+      "Renamed button: \"Export\" → \"Create Backup\"",
+      "Simplified lock screen titles and labels"
+    ]
+  },
+  {
+    "version": "1.8.4.65",
+    "changes": [
+      "Folder picker when adding or editing a bookmark is now a visual tree instead of a plain dropdown list"
+    ]
+  },
+  {
+    "version": "1.8.4.64",
+    "changes": [
+      "Redesigned interface: lighter and faster styles across the popup, login, and settings screens",
+      "Added protection against browser auto-translate (Google Translate no longer breaks the UI)",
+      "Drag & drop now shows a nice ghost element with an icon and name while dragging"
+    ]
+  },
+  {
+    "version": "1.8.4.61",
+    "changes": [
+      "Fixed a bug with folders in the bookmark manager"
+    ]
+  },
+  {
+    "version": "1.8.4.60",
+    "changes": [
+      "The sidebar in the bookmark manager is now resizable — drag the divider to adjust its width",
+      "All notification and error messages are now fully translated into all supported languages",
+      "Redesigned lock screen and page structure"
+    ]
+  },
+  {
+    "version": "1.8.4.57",
+    "changes": [
+      "Minor style fixes on the setup screen"
+    ]
+  },
+  {
+    "version": "1.8.4.56",
+    "changes": [
+      "Improved appearance of the initial setup screen"
+    ]
+  },
+  {
+    "version": "1.8.4.55",
+    "changes": [
+      "Fixed the \"Unlock\" button not responding to clicks"
+    ]
+  },
+  {
+    "version": "1.8.4.54",
+    "changes": [
+      "New first-run setup screen with two tabs: \"Create New\" and \"Restore Backup\"",
+      "Password strength indicator added when creating a new vault",
+      "Backup restore is now available directly on the setup screen — drag a file or click to select",
+      "Master password change is now safer: data is saved with a backup point in case of an error",
+      "Site favicons now load from a more reliable source"
+    ]
+  },
+  {
+    "version": "1.8.4.51",
+    "changes": [
+      "Minor UI display fixes"
+    ]
+  },
+  {
+    "version": "1.8.4.50",
+    "changes": [
+      "Fixed minor animation and initialization issues"
+    ]
+  },
+  {
+    "version": "1.8.4.49",
+    "changes": [
+      "Visual polish: updated styles across popup, manager, and donation screens"
+    ]
+  },
+  {
+    "version": "1.8.4.48",
+    "changes": [
+      "Minor popup style improvements"
+    ]
+  },
+  {
+    "version": "1.8.4.47",
+    "changes": [
+      "Drag & drop in the bookmark manager now supports reordering items within the grid, not just moving into folders",
+      "Items can now be dropped directly onto folders in the bookmark manager sidebar"
+    ]
+  },
+  {
+    "version": "1.8.4.46",
+    "changes": [
+      "Folders now have stable IDs — open/collapsed state is preserved correctly after saving or reloading",
+      "The popup remembers which folders were open between sessions"
+    ]
+  },
+  {
+    "version": "1.8.4.45",
+    "changes": [
+      "Added breadcrumb navigation in the bookmark manager — shows your current folder path with clickable segments",
+      "The bookmark manager now remembers which folders were expanded when refreshing the folder tree",
+      "Clicking a bookmark now automatically expands and highlights its parent folder in the sidebar"
+    ]
+  },
+  {
+    "version": "1.8.4.43",
+    "changes": [
+      "Fixed sidebar display after unlocking the bookmark manager"
+    ]
+  },
+  {
+    "version": "1.8.4.42",
+    "changes": [
+      "Drag & drop added to the bookmark manager — move bookmarks and folders by dragging them",
+      "Search in the bookmark manager now works across all folders, not just the current one",
+      "Improved bookmark count display in the sidebar"
+    ]
+  },
+  {
+    "version": "1.8.4.39",
+    "changes": [
+      "Removed emoji from interface labels for a cleaner look",
+      "Fixed Chinese (Simplified) translation"
+    ]
+  },
+  {
+    "version": "1.8.4.38",
+    "changes": [
+      "Fixed bookmark and folder count display in the bookmark manager sidebar"
+    ]
+  },
+  {
+    "version": "1.8.4.36",
+    "changes": [
+      "Minor donation reminder fixes"
+    ]
+  },
+  {
+    "version": "1.8.4.35",
+    "changes": [
+      "Added donation reminder — a non-intrusive prompt shown occasionally to support the project, with options to remind later or dismiss permanently"
+    ]
+  },
+  {
+    "version": "1.8.4.34",
+    "changes": [
+      "Fixed duplicate text in localization files"
+    ]
+  }
+]

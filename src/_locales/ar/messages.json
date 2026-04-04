@@ -1,0 +1,803 @@
+{
+  "Name": {
+    "message": "Holy Private Bookmarks — مدير الإشارات المرجعية المشفرة محلياً"
+  },
+  "extensionName": {
+    "message": "Holy Private Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "إشارات مرجعية خاصة تماماً مع كلمة مرور رئيسية ومجلدات وتشفير"
+  },
+  "managerTitle": {
+    "message": "HPB - مدير الإشارات المرجعية"
+  },
+  "createPassword": {
+    "message": "إنشاء كلمة مرور رئيسية للتشفير الكامل للإشارات المرجعية"
+  },
+  "newPassword": {
+    "message": "كلمة مرور جديدة (6 أحرف على الأقل)"
+  },
+  "confirmPassword": {
+    "message": "تأكيد كلمة المرور"
+  },
+  "createStorage": {
+    "message": "إنشاء تخزين"
+  },
+  "enterMasterPassword": {
+    "message": ""
+  },
+  "masterPassword": {
+    "message": "كلمة المرور الرئيسية"
+  },
+  "unlock": {
+    "message": "فتح"
+  },
+  "wrongPassword": {
+    "message": "كلمة مرور خاطئة"
+  },
+  "passwordsMismatch": {
+    "message": "كلمات المرور غير متطابقة أو قصيرة جداً"
+  },
+  "bookmarksProtected": {
+    "message": "إشاراتك المرجعية محمية بشكل آمن"
+  },
+  "addCurrentPage": {
+    "message": "إضافة الصفحة الحالية"
+  },
+  "newFolder": {
+    "message": "مجلد جديد"
+  },
+  "clearHistory": {
+    "message": "مسح السجل"
+  },
+  "settings": {
+    "message": "الإعدادات"
+  },
+  "settingsbtn": {
+    "message": "⚙️"
+  },
+  "changeMasterPassword": {
+    "message": "تغيير كلمة المرور الرئيسية"
+  },
+  "currentPassword": {
+    "message": "كلمة المرور الرئيسية الحالية"
+  },
+  "newPassword2": {
+    "message": "كلمة المرور الجديدة"
+  },
+  "confirmNewPassword": {
+    "message": "تأكيد كلمة المرور الجديدة"
+  },
+  "changePassword": {
+    "message": "تغيير كلمة المرور"
+  },
+  "exportImport": {
+    "message": "تصدير واستيراد"
+  },
+  "export": {
+    "message": "إنشاء نسخة احتياطية"
+  },
+  "openPrivate": {
+    "message": "فتح في تبويب خاص"
+  },
+  "import": {
+    "message": "استيراد"
+  },
+  "importFromChrome": {
+    "message": "استيراد من Chrome"
+  },
+  "importChromeBookmarks": {
+    "message": "استيراد جميع إشارات Chrome المرجعية"
+  },
+  "importChromeBookmarksAdvanced": {
+    "message": "تحديد المجلدات للاستيراد"
+  },
+  "importChromeConfirm": {
+    "message": "استيراد جميع الإشارات المرجعية من Chrome؟ سيتم الاحتفاظ بالإشارات المرجعية الموجودة."
+  },
+  "importChromeSuccess": {
+    "message": "تم استيراد الإشارات المرجعية بنجاح!"
+  },
+  "importChromeError": {
+    "message": "فشل استيراد الإشارات المرجعية"
+  },
+  "selectFoldersToImport": {
+    "message": "حدد المجلدات المراد استيرادها"
+  },
+  "selectAll": {
+    "message": "تحديد الكل"
+  },
+  "deselectAll": {
+    "message": "إلغاء تحديد الكل"
+  },
+  "importSelected": {
+    "message": "استيراد"
+  },
+  "back": {
+    "message": "← رجوع"
+  },
+  "addBookmark": {
+    "message": "إضافة إشارة مرجعية"
+  },
+  "editBookmark": {
+    "message": "تعديل الإشارة المرجعية"
+  },
+  "page": {
+    "message": "صفحة"
+  },
+  "title": {
+    "message": "العنوان"
+  },
+  "url": {
+    "message": "الرابط"
+  },
+  "folder": {
+    "message": "المجلد"
+  },
+  "rootFolder": {
+    "message": "المجلد الجذري"
+  },
+  "new": {
+    "message": "+ جديد"
+  },
+  "cancel": {
+    "message": "إلغاء"
+  },
+  "save": {
+    "message": "حفظ"
+  },
+  "deleteConfirm": {
+    "message": "حذف الإشارة المرجعية"
+  },
+  "folderName": {
+    "message": "اسم المجلد:"
+  },
+  "newName": {
+    "message": "الاسم الجديد:"
+  },
+  "titleRequired": {
+    "message": "العنوان والرابط مطلوبان"
+  },
+  "validUrl": {
+    "message": "يجب أن يبدأ الرابط بـ http:// أو https://"
+  },
+  "passwordChanged": {
+    "message": "تم تغيير كلمة المرور بنجاح!"
+  },
+  "importSuccess": {
+    "message": "تم استيراد النسخة الاحتياطية بنجاح! يرجى إعادة فتح النافذة المنبثقة."
+  },
+  "invalidFile": {
+    "message": "ملف نسخ احتياطي غير صالح"
+  },
+  "clearHistoryConfirm": {
+    "message": "⚠️ حذف جميع إدخالات سجل المتصفح للنطاقات الموجودة في Holy Private Bookmarks الخاصة بك؟"
+  },
+  "noBookmarks": {
+    "message": "لم يتم العثور على إشارات مرجعية - لا شيء لمسحه."
+  },
+  "noDomains": {
+    "message": "لم يتم العثور على نطاقات صالحة في الإشارات المرجعية."
+  },
+  "newBookmark": {
+    "message": "إشارة مرجعية جديدة"
+  },
+  "paste": {
+    "message": "لصق"
+  },
+  "ctxnewFolder": {
+    "message": "مجلد جديد"
+  },
+  "emptyTreeTitle": {
+    "message": "لا توجد إشارات مرجعية بعد"
+  },
+  "emptyTreeSubtitle": {
+    "message": "أضف أول إشارة مرجعية أو مجلد للبدء"
+  },
+  "historyCleared": {
+    "message": "تم مسح السجل!\nتمت إزالة $count$ زيارة من $domains$ نطاق(نطاقات).",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domains": {
+        "content": "$2"
+      }
+    }
+  },
+  "addToHoly": {
+    "message": "إضافة إلى Holy Private Bookmarks"
+  },
+  "cannotAddPage": {
+    "message": "لا يمكن إضافة هذه الصفحة (لا يوجد رابط صالح)"
+  },
+  "supportProject": {
+    "message": "ادعم المشروع"
+  },
+  "supportPageTitle": {
+    "message": "ادعم Holy Private Bookmarks"
+  },
+  "donateHeroTitle": {
+    "message": "ادعم التطوير الذي يركز على الخصوصية"
+  },
+  "donateHeroSubtitle": {
+    "message": "Holy Private Bookmarks هو مجاني ومفتوح المصدر 100%، وسيظل كذلك دائمًا. دعمك يساعد المطورين على تخصيص الوقت لصيانة وتحسين الإضافة لكل من يهتم بالخصوصية."
+  },
+  "whySupport": {
+    "message": "لماذا دعمك مهم"
+  },
+  "timeInvestment": {
+    "message": "وقت المطورين"
+  },
+  "timeInvestmentDesc": {
+    "message": "كل ميزة، وإصلاح خطأ، وتحسين أمني يمثل ساعات من العمل. مساهمتك تقدر ذلك الوقت وتحافظ على استدامة المشروع."
+  },
+  "longTerm": {
+    "message": "التزام طويل الأمد"
+  },
+  "longTermDesc": {
+    "message": "دعمك يضمن بقاء الإضافة قيد الصيانة النشطة، ومتوافقة مع تحديثات كروم المستقبلية، ويتم تحسينها باستمرار."
+  },
+  "futureFeatures": {
+    "message": "ميزات مستقبلية"
+  },
+  "futureFeaturesDesc": {
+    "message": "بمساعدتك، يمكننا تحديد أولويات الوظائف الجديدة، وواجهة مستخدم أفضل، وميزات أمان محسنة تفيد المجتمع بأكمله."
+  },
+  "donateCtaText": {
+    "message": "لا اشتراكات. لا حواجز دفع. لا تمويل شركات. مجرد أشخاص يصنعون شيئًا مفيدًا للآخرين. إذا كانت هذه الإضافة توفر لك الوقت أو تمنحك راحة البال، ففكر في دعوة المطورين لتناول فنجان قهوة."
+  },
+  "donateCryptoTitle": {
+    "message": "ادعم بالعملات الرقمية"
+  },
+  "copyAddress": {
+    "message": "نسخ العنوان"
+  },
+  "donateThanks": {
+    "message": "شكرًا لدعمك التطوير المستقل مفتوح المصدر"
+  },
+  "donateThanksNote": {
+    "message": "كل مساهمة، كبيرة كانت أم صغيرة، تعني لنا الكثير."
+  },
+  "importantWarning": {
+    "message": "تحذير مهم:"
+  },
+  "passwordCannotBeRecovered": {
+    "message": "لا يمكن استرداد كلمة المرور هذه!"
+  },
+  "noPasswordReset": {
+    "message": "لا يوجد خيار لإعادة تعيين كلمة المرور"
+  },
+  "weDontStorePassword": {
+    "message": "نحن لا نخزن كلمة المرور الخاصة بك في أي مكان"
+  },
+  "bookmarksEncrypted": {
+    "message": "إشاراتك المرجعية مشفرة بكلمة المرور هذه فقط"
+  },
+  "savePasswordSecurely": {
+    "message": "احفظ كلمة المرور هذه بشكل آمن!"
+  },
+  "copyUrl": {
+    "message": "نسخ الرابط"
+  },
+  "edit": {
+    "message": "تعديل"
+  },
+  "delete": {
+    "message": "حذف"
+  },
+  "urlCopied": {
+    "message": "تم نسخ الرابط إلى الحافظة"
+  },
+  "about": {
+    "message": "حول"
+  },
+  "aboutExtension": {
+    "message": "حول الإضافة"
+  },
+  "openGitHub": {
+    "message": "فتح GitHub"
+  },
+  "close": {
+    "message": "إغلاق"
+  },
+  "features": {
+    "message": "الميزات"
+  },
+  "troubleshooting": {
+    "message": "استكشاف الأخطاء وإصلاحها"
+  },
+  "encryption": {
+    "message": "التشفير"
+  },
+  "encryptionDesc": {
+    "message": "تشفير AES-256"
+  },
+  "localStorage": {
+    "message": "تخزين محلي"
+  },
+  "localStorageDesc": {
+    "message": "البيانات تبقى على جهازك"
+  },
+  "privacy": {
+    "message": "الخصوصية"
+  },
+  "privacyDesc": {
+    "message": "لا تتبع أو تحليلات"
+  },
+  "openSource": {
+    "message": "GPLv3"
+  },
+  "viewOnGitHub": {
+    "message": "عرض على GitHub"
+  },
+  "githubRepo": {
+    "message": "مستودع GitHub"
+  },
+  "githubRepoDesc": {
+    "message": "عرض الكود المصدري، الإبلاغ عن المشكلات، المساهمة"
+  },
+  "version": {
+    "message": "الإصدار"
+  },
+  "openmanager": {
+    "message": "فتح المدير"
+  },
+  "managerDesc": {
+    "message": "فتح مدير الإشارات المرجعية بملء الشاشة"
+  },
+  "folders": {
+    "message": "المجلدات"
+  },
+  "bookmarks": {
+    "message": "إشارات مرجعية"
+  },
+  "allBookmarks": {
+    "message": "جميع الإشارات المرجعية"
+  },
+  "searchBookmarks": {
+    "message": "البحث في الإشارات المرجعية..."
+  },
+  "noBookmarksInFolder": {
+    "message": "لا توجد إشارات مرجعية في هذا المجلد"
+  },
+  "addBookmarksToGetStarted": {
+    "message": "أضف إشارات مرجعية للبدء"
+  },
+  "bookmarkUpdated": {
+    "message": "تم تحديث الإشارة المرجعية"
+  },
+  "bookmarkDeleted": {
+    "message": "تم حذف الإشارة المرجعية"
+  },
+  "renameFolder": {
+    "message": "إعادة تسمية المجلد"
+  },
+  "folderCreated": {
+    "message": "تم إنشاء المجلد بنجاح"
+  },
+  "managerLocked": {
+    "message": "المدير مقفل"
+  },
+  "lockManager": {
+    "message": "قفل المدير"
+  },
+  "rename": {
+    "message": "إعادة تسمية"
+  },
+  "deleteFolder": {
+    "message": "حذف المجلد"
+  },
+  "deleteFolderConfirm": {
+    "message": "حذف المجلد \"{0}\"؟"
+  },
+  "deleteFolderWarning": {
+    "message": "سيتم حذف كل المحتوى بشكل دائم."
+  },
+  "folderRenamed": {
+    "message": "تمت إعادة تسمية المجلد بنجاح"
+  },
+  "folderDeleted": {
+    "message": "تم حذف المجلد بنجاح"
+  },
+  "cannotRenameAll": {
+    "message": "لا يمكن إعادة تسمية مجلد \"جميع الإشارات المرجعية\""
+  },
+  "cannotDeleteAll": {
+    "message": "لا يمكن حذف مجلد \"جميع الإشارات المرجعية\""
+  },
+  "bookmarkAdded": {
+    "message": "تمت إضافة الإشارة المرجعية"
+  },
+  "pendingBookmarkNotification": {
+    "message": "إشارة مرجعية معلقة!"
+  },
+  "pendingBookmarkInstruction": {
+    "message": "إشارة مرجعية في انتظار الإضافة. يرجى فتح القفل للمتابعة."
+  },
+  "dragSuccess": {
+    "message": "تم نقل العنصر بنجاح"
+  },
+  "invalidDestinationFolder": {
+    "message": "مجلد الوجهة غير صالح"
+  },
+  "moveFailed": {
+    "message": "فشل نقل الإشارات المرجعية"
+  },
+  "noBookmarksSelected": {
+    "message": "لم يتم تحديد إشارات مرجعية"
+  },
+  "selectDestinationFolder": {
+    "message": "حدد مجلد الوجهة:"
+  },
+  "selected": {
+    "message": "محدد"
+  },
+  "moveSelectedTitle": {
+    "message": "نقل المحدد"
+  },
+  "move": {
+    "message": "نقل"
+  },
+  "deleteSelectedTitle": {
+    "message": "حذف المحدد"
+  },
+  "cancelSelectionTitle": {
+    "message": "إلغاء التحديد"
+  },
+  "emptyFolder": {
+    "message": "المجلد فارغ",
+    "description": "Message shown when a folder has no bookmarks"
+  },
+  "noSearchResults": {
+    "message": "لم يتم العثور على إشارات مرجعية",
+    "description": "Message when search returns no results"
+  },
+  "noSearchResultsDesc": {
+    "message": "جرب مصطلح بحث مختلف",
+    "description": "Description for empty search results"
+  },
+  "theme": {
+    "message": "المظهر"
+  },
+  "themeDark": {
+    "message": "داكن",
+    "description": "Dark theme name"
+  },
+  "themeLight": {
+    "message": "فاتح",
+    "description": "Light theme name"
+  },
+  "themeSystem": {
+    "message": "النظام",
+    "description": "System theme name"
+  },
+  "themeToggle": {
+    "message": "تبديل المظهر",
+    "description": "Tooltip for theme toggle button"
+  },
+  "showFavicons": {
+    "message": "عرض أيقونات المواقع"
+  },
+  "showFaviconsDesc": {
+    "message": "قد يؤدي إلى تسرب سجل التصفح إلى خوادم Google"
+  },
+  "bookmarksAndFolders": {
+    "message": "الإشارات المرجعية والمجلدات"
+  },
+  "importFromHtml": {
+    "message": "استيراد من HTML"
+  },
+  "importHtmlSuccess": {
+    "message": "تم استيراد الإشارات المرجعية من HTML بنجاح! تمت إضافة $COUNT$ إشارة مرجعية.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "htmlImporterNoFileSelected": {
+    "message": "لم يتم تحديد ملف"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "الملف كبير جدًا (الحد الأقصى 1 ميجابايت)"
+  },
+  "htmlImporterParseError": {
+    "message": "فشل استيراد HTML: $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "لم يتم العثور على إشارات مرجعية في الملف"
+  },
+  "importHtmlError": {
+    "message": "فشل تحليل ملف HTML. يرجى التحقق من تنسيق الملف."
+  },
+  "importHtmlSizeWarning": {
+    "message": "حد 1 ميجابايت"
+  },
+  "importHtmlSizeNote": {
+    "message": "الحد الأقصى ~2500 إشارة مرجعية"
+  },
+  "importWarning": {
+    "message": "سيتم استبدال جميع الإشارات المرجعية الموجودة"
+  },
+  "developer": {
+    "message": "المطور:"
+  },
+  "lock": {
+    "message": "قفل"
+  },
+  "faqButtonTitle": {
+    "message": "الأسئلة الشائعة"
+  },
+  "clearingHistory": {
+    "message": "جارٍ مسح السجل",
+    "description": "عنوان نافذة تقدم مسح السجل"
+  },
+  "preparingToClear": {
+    "message": "جارٍ التحضير لمسح السجل...",
+    "description": "رسالة الحالة الأولية"
+  },
+  "progress": {
+    "message": "التقدم",
+    "description": "تسمية التقدم"
+  },
+  "domainsProcessed": {
+    "message": "تمت معالجة النطاقات",
+    "description": "تسمية لعدد النطاقات التي تمت معالجتها"
+  },
+  "entriesDeleted": {
+    "message": "تم حذف المدخلات",
+    "description": "تسمية لعدد المدخلات المحذوفة"
+  },
+  "processing": {
+    "message": "جارٍ المعالجة...",
+    "description": "رسالة الحالة أثناء المعالجة"
+  },
+  "startingCleanup": {
+    "message": "بدء التنظيف...",
+    "description": "الحالة عند البدء"
+  },
+  "finalizingCleanup": {
+    "message": "إنهاء التنظيف...",
+    "description": "الحالة عند الانتهاء"
+  },
+  "cancelling": {
+    "message": "جارٍ الإلغاء...",
+    "description": "الحالة عند الإلغاء"
+  },
+  "clearCancelled": {
+    "message": "تم إلغاء العملية",
+    "description": "إشعار عند الإلغاء"
+  },
+  "fillAllFields": {
+    "message": "يرجى ملء جميع الحقول"
+  },
+  "setupComplete": {
+    "message": "اكتمل الإعداد!"
+  },
+  "migrationSuccess": {
+    "message": "تم ترحيل البيانات بنجاح إلى تنسيق آمن!"
+  },
+  "migrationRequired": {
+    "message": "تحديث تنسيق البيانات مطلوب"
+  },
+  "migrationInstruction": {
+    "message": "أدخل كلمة المرور الخاصة بك للترقية تلقائيًا إلى تنسيق أكثر أمانًا."
+  },
+  "exportSuccess": {
+    "message": "تم التصدير بنجاح",
+    "description": "إشعار عند اكتمال تصدير البيانات بنجاح"
+  },
+  "unlocking": {
+    "message": "جاري فتح القفل...",
+    "description": "يظهر أثناء فك تشفير الإشارات المرجعية"
+  },
+  "changingPassword": {
+    "message": "جاري تغيير كلمة المرور...",
+    "description": "يظهر أثناء تغيير كلمة المرور الرئيسية"
+  },
+  "settingUpEncryption": {
+    "message": "جاري إعداد التشفير...",
+    "description": "يظهر أثناء الإعداد الأولي"
+  },
+  "migratingData": {
+    "message": "جاري ترحيل البيانات إلى تنسيق آمن...",
+    "description": "يظهر أثناء الترحيل من الإصدار v1 إلى v2"
+  },
+  "loading": {
+    "message": "جاري التحميل...",
+    "description": "رسالة تحميل عامة"
+  },
+  "donationReminderTitle": {
+    "message": "ادعم المشروع"
+  },
+  "donationReminderText": {
+    "message": "إذا أعجبك هذه الإضافة، يرجى دعم تطويرها!"
+  },
+  "remindLater": {
+    "message": "لاحقًا"
+  },
+  "supportNow": {
+    "message": "ادعم الآن"
+  },
+  "remindNever": {
+    "message": "لا تظهر مرة أخرى"
+  },
+  "confirmDismiss": {
+    "message": "هل تريد إيقاف تذكيرات التبرع إلى الأبد؟"
+  },
+  "bookmarkAlreadyInFolder": {
+    "message": "العنصر موجود بالفعل في هذا المجلد"
+  },
+  "cannotMoveIntoSelf": {
+    "message": "لا يمكن نقل مجلد داخل نفسه"
+  },
+  "bookmarksMoved": {
+    "message": "تم نقل {0} عنصر"
+  },
+  "deleteSelectedConfirm": {
+    "message": "هل تريد حذف {count} عنصر محدد؟",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "bookmarksDeleted": {
+    "message": "تم حذف {count} عنصر",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "moveBookmarksTitle": {
+    "message": "نقل {0} عنصر"
+  },
+  "setupTabNew": {
+    "message": "إنشاء جديد",
+    "description": "Tab label for creating new password"
+  },
+  "setupTabRestore": {
+    "message": "استعادة نسخة احتياطية",
+    "description": "Tab label for restoring from backup"
+  },
+  "restoreDropTitle": {
+    "message": "أسقط ملف النسخ الاحتياطي هنا أو انقر للاختيار",
+    "description": "Text for drag & drop area in restore tab"
+  },
+  "strengthWeak": {
+    "message": "ضعيف",
+    "description": "Password strength indicator"
+  },
+  "strengthFair": {
+    "message": "متوسط",
+    "description": "Password strength indicator"
+  },
+  "strengthGood": {
+    "message": "جيد",
+    "description": "Password strength indicator"
+  },
+  "strengthStrong": {
+    "message": "قوي",
+    "description": "Password strength indicator"
+  },
+  "importingBackup": {
+    "message": "جارٍ استعادة النسخة الاحتياطية...",
+    "description": "Loading message during backup import"
+  },
+  "unlockTitle": {
+    "message": "أدخل كلمة المرور الرئيسية"
+  },
+  "warningRemember": {
+    "message": "هل تذكرت كلمة المرور؟"
+  },
+  "yesRemember": {
+    "message": "نعم، أتذكره"
+  },
+  "survey": {
+    "message": "تقديم ملاحظات"
+  },
+  "changelog": {
+    "message": "سجل التغييرات"
+  },
+  "rateExtension": {
+    "message": "قيّم على متجر كروم"
+  },
+  "migrationScreenTitle": {
+    "message": "التحديث مطلوب",
+    "description": "Title on the manager migration screen"
+  },
+  "migrationScreenBody1": {
+    "message": "تم تحديث الامتداد بأمان محسّن.",
+    "description": "First line on the manager migration screen"
+  },
+  "migrationScreenBody2": {
+    "message": "يرجى فتح نافذة الامتداد المنبثقة لترحيل بياناتك إلى التنسيق الآمن الجديد.",
+    "description": "Second line on the manager migration screen"
+  },
+  "migrationScreenButton": {
+    "message": "فتح الامتداد",
+    "description": "Button on the manager migration screen"
+  },
+  "notSetUpTitle": {
+    "message": "الامتداد غير مُعدّ",
+    "description": "manager-lock: notSetUpTitle"
+  },
+  "notSetUpSubtitle": {
+    "message": "لم يتم إعداد الامتداد بعد. يرجى فتح نافذة الامتداد المنبثقة لإنشاء كلمة مرور.",
+    "description": "manager-lock: notSetUpSubtitle"
+  },
+  "notSetUpButton": {
+    "message": "فتح الامتداد",
+    "description": "manager-lock: notSetUpButton"
+  },
+  "reloadingSubtitle": {
+    "message": "يتم إعادة تحميل المدير...",
+    "description": "manager-lock: reloadingSubtitle"
+  },
+  "reloadingWait": {
+    "message": "يرجى الانتظار أثناء تحديث المدير",
+    "description": "manager-lock: reloadingWait"
+  },
+  "exportHtml": {
+    "message": "تصدير إلى HTML"
+  },
+  "exportHtmlNote": {
+    "message": "تنسيق Netscape للإشارات المرجعية"
+  },
+  "exportHtmlSuccess": {
+    "message": "تم تصدير HTML بنجاح"
+  },
+  "exportHtmlConfirmTitle": {
+    "message": "تأكيد كلمة المرور"
+  },
+  "exportHtmlConfirmDesc": {
+    "message": "سيتم تصدير إشاراتك المرجعية كنص عادي. أدخل كلمة المرور الرئيسية للتأكيد."
+  },
+  "exportHtmlPasswordRequired": {
+    "message": "الرجاء إدخال كلمة المرور"
+  },
+  "exportHtmlConfirmBtn": {
+    "message": "تصدير"
+  },
+  "exportHtmlVerifying": {
+    "message": "جارٍ التحقق من كلمة المرور…"
+  },
+  "copiedToClipboard": {
+    "message": "تم النسخ إلى الحافظة!"
+  },
+  "copyFailed": {
+    "message": "فشل النسخ"
+  },
+  "clickToCopy": {
+    "message": "انقر للنسخ"
+  },
+  "qrCodeFor": {
+    "message": "رمز QR لـ $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "quickCloseTab": {
+    "message": "إغلاق سريع للتبويب (Alt+A)"
+  },
+  "quickCloseTabDesc": {
+    "message": "يغلق التبويب الحالي ويحذف سجل التصفح للنطاق"
+  },
+  "quickCloseTabCommand": {
+    "message": "إغلاق التبويب ومسح سجل النطاق"
+  },
+  "changeShortcut": {
+    "message": "تغيير الاختصار →"
+  }
+}
