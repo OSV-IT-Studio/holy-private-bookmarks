@@ -1,5 +1,11 @@
 [
 {
+    "version": "1.8.4.84",
+    "changes": [
+      "Minor UI display fixes"
+    ]
+  },
+{
   "version": "1.8.4.83",
   "changes": [
     "Added Quick Close Tab feature — press Alt+A to instantly close the current tab and delete all browsing history for its domain",

@@ -201,6 +201,6 @@ body.light-theme .changelog-version{border-color:rgba(37,99,235,.25)}
 .changelog-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
 .changelog-list li{display:flex;align-items:flex-start;gap:10px;font-size:.8125rem;color:var(--text-secondary);line-height:1.55}
 .changelog-list li::before{content:'';flex-shrink:0;width:5px;height:5px;border-radius:50%;background:rgba(0,212,255,.55);margin-top:6px}
-.btn-change-shortcut{all:unset;box-sizing: border-box;display:inline-flex; line-height: 0px; align-items:center;gap:6px;padding:5px 12px;border-radius:20px;border:1px solid var(--border-color);background:transparent;color:var(--text-secondary);font-size:12px;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
-.btn-change-shortcut:hover{color:var(--btn-accent);border-color:var(--btn-accent);background:rgba(0,212,255,.06)}
+.btn-change-shortcut{all:unset;box-sizing: border-box;display:inline-flex; line-height: 0px; align-items:center;gap:6px;border-radius:20px;border:1px solid var(--border-color);background:transparent;color:var(--text-secondary);font-size:12px;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
+.btn-change-shortcut:hover{color:var(--btn-accent);}
 .btn-change-shortcut:active{transform:scale(.97)}
