@@ -18,7 +18,7 @@
  * Source code: https://github.com/OSV-IT-Studio/holy-private-bookmarks
  */
 
-// Quick Close Tab (Alt+A)
+// Quick Close Tab (Alt+A on Windows/Linux, Command+Shift+A on Mac)
 chrome.commands.onCommand.addListener(async (command) => {
     if (command !== 'quick-close-tab') return;
 

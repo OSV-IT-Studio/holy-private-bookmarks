@@ -1,5 +1,12 @@
 [
 {
+    "version": "1.8.4.85",
+    "changes": [
+      "Added keyboard shortcut support for macOS — Quick Close Tab now uses Command+Shift+A on Mac (Alt+A on  Windows/Linux)",
+	  "Keyboard shortcut in the Quick Close Tab label now reflects the actual assigned shortcut dynamically"
+    ]
+  },
+{
     "version": "1.8.4.84",
     "changes": [
       "Minor UI display fixes"

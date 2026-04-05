@@ -789,7 +789,7 @@
     }
   },
   "quickCloseTab": {
-    "message": "快速关闭标签页 (Alt+A)"
+    "message": "快速关闭标签页 ($1)"
   },
   "quickCloseTabDesc": {
     "message": "关闭当前标签页并删除该域名的浏览记录"

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_Name__",
-  "version": "1.8.4.84",
+  "version": "1.8.4.85",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
@@ -17,7 +17,8 @@
   "commands": {
     "quick-close-tab": {
       "suggested_key": {
-        "default": "Alt+A"
+        "default": "Alt+A",
+        "mac": "Command+Shift+A"
       },
       "description": "__MSG_quickCloseTabCommand__"
     }

@@ -789,7 +789,7 @@
     }
   },
   "quickCloseTab": {
-    "message": "Cierre rápido de pestaña (Alt+A)"
+    "message": "Cierre rápido de pestaña ($1)"
   },
   "quickCloseTabDesc": {
     "message": "Cierra la pestaña actual y elimina el historial del dominio"

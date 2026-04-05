@@ -789,7 +789,7 @@
     }
   },
   "quickCloseTab": {
-    "message": "Tab schnell schließen (Alt+A)"
+    "message": "Tab schnell schließen ($1)"
   },
   "quickCloseTabDesc": {
     "message": "Schließt den aktuellen Tab und löscht den Browserverlauf der Domain"

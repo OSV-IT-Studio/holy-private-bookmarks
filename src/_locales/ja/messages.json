@@ -789,7 +789,7 @@
     }
   },
   "quickCloseTab": {
-    "message": "タブをすばやく閉じる (Alt+A)"
+    "message": "タブをすばやく閉じる ($1)"
   },
   "quickCloseTabDesc": {
     "message": "現在のタブを閉じ、そのドメインの閲覧履歴を削除します"

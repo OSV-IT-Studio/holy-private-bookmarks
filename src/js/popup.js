@@ -191,13 +191,24 @@ async function initFaviconToggle() {
     });
 }
 
-// Quick Close toggle (Alt+A)
+// Quick Close toggle (shortcut injected dynamically)
 
 async function initQuickCloseToggle() {
     const toggle = document.getElementById('quick-close-toggle');
     if (!toggle) return;
 
    
+    try {
+        const commands = await chrome.commands.getAll();
+        const cmd = commands.find(c => c.name === 'quick-close-tab');
+        const shortcut = cmd?.shortcut || 'Alt+A';
+        const titleEl = document.querySelector('[data-i18n="quickCloseTab"]');
+        if (titleEl) {
+            titleEl.setAttribute('data-i18n-args', JSON.stringify([shortcut]));
+            titleEl.textContent = chrome.i18n.getMessage('quickCloseTab', [shortcut]) || titleEl.textContent;
+        }
+    } catch (e) { }
+
     const result = await chrome.storage.local.get('holyQuickCloseEnabled');
     const enabled = !!result.holyQuickCloseEnabled;
     toggle.checked = enabled;

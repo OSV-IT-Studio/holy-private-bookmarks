@@ -792,7 +792,7 @@
     }
   },
   "quickCloseTab": {
-    "message": "Quick close tab (Alt+A)"
+    "message": "Quick close tab ($1)"
   },
   "quickCloseTabDesc": {
     "message": "Closes the current tab and deletes browsing history for its domain"

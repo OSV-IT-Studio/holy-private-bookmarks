@@ -792,7 +792,7 @@
     }
   },
   "quickCloseTab": {
-    "message": "Szybkie zamknięcie karty (Alt+A)"
+    "message": "Szybkie zamknięcie karty ($1)"
   },
   "quickCloseTabDesc": {
     "message": "Zamyka bieżącą kartę i usuwa historię przeglądania domeny"

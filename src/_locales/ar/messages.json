@@ -789,7 +789,7 @@
     }
   },
   "quickCloseTab": {
-    "message": "إغلاق سريع للتبويب (Alt+A)"
+    "message": "إغلاق سريع للتبويب ($1)"
   },
   "quickCloseTabDesc": {
     "message": "يغلق التبويب الحالي ويحذف سجل التصفح للنطاق"

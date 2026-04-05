@@ -50,7 +50,9 @@ const HolyI18n = (function () {
     function localizePage() {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key  = el.getAttribute('data-i18n');
-            const text = getMessage(key);
+            const argsAttr = el.getAttribute('data-i18n-args');
+            const args = argsAttr ? JSON.parse(argsAttr) : [];
+            const text = args.length ? chrome.i18n.getMessage(key, args) : getMessage(key);
             if (!text) return;
 
             if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {

@@ -789,7 +789,7 @@
     }
   },
   "quickCloseTab": {
-    "message": "Chiusura rapida scheda (Alt+A)"
+    "message": "Chiusura rapida scheda ($1)"
   },
   "quickCloseTabDesc": {
     "message": "Chiude la scheda corrente e cancella la cronologia del dominio"

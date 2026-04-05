@@ -789,7 +789,7 @@
     }
   },
   "quickCloseTab": {
-    "message": "Fermeture rapide de l'onglet (Alt+A)"
+    "message": "Fermeture rapide de l'onglet ($1)"
   },
   "quickCloseTabDesc": {
     "message": "Ferme l'onglet actif et supprime l'historique du domaine"
