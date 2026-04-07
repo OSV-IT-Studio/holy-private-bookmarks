@@ -1,5 +1,11 @@
 [
 {
+    "version": "1.8.4.86",
+    "changes": [
+      "Updated donation page"
+    ]
+},
+{
     "version": "1.8.4.85",
     "changes": [
       "Added keyboard shortcut support for macOS — Quick Close Tab now uses Command+Shift+A on Mac (Alt+A on  Windows/Linux)",
