@@ -76,6 +76,7 @@ The complete license text is available in the [LICENSE](LICENSE) file.
 
 If you find the extension useful, any support is greatly appreciated:
 
+- USDT (TRC20): `TFy6hrDvi2jiKJcQQ9zibkr41TmLVtKaSC`
 - Bitcoin (BTC): `bc1q9rz9uu9c48ydrmgrmu9kzqjp9mrdzavcll09uq`
 - Ethereum (ETH): `0xAc862138b1ebF8d7F4fdb23D821489Cf91c314d0`
 
