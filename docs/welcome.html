@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thanks for Installing — Holy Private Bookmarks</title>
+  <meta name="description" content="Quick setup guide for Holy Private Bookmarks" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Mono&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon16.png">
+  <style>
+    :root {
+      --bg-from:       #0f0f17;
+      --bg-mid:        #1a1a2e;
+      --bg-to:         #16213e;
+      --sidebar-bg:    rgba(20, 20, 35, 0.95);
+      --surface-1:     rgba(255, 255, 255, 0.06);
+      --surface-2:     rgba(255, 255, 255, 0.10);
+      --surface-3:     rgba(255, 255, 255, 0.16);
+
+      --border-subtle: rgba(255, 255, 255, 0.05);
+      --border-muted:  rgba(255, 255, 255, 0.10);
+      --border-accent: rgba(0, 212, 255, 0.40);
+
+      --accent:        #00d4ff;
+      --accent-light:  #a0f1ff;
+      --accent-bright: #4de1ff;
+      --accent-dim:    rgba(0, 212, 255, 0.13);
+      --accent-glow:   rgba(0, 212, 255, 0.22);
+
+      --text-primary:   #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.70);
+      --text-tertiary:  rgba(255, 255, 255, 0.45);
+
+      --success:  #00ff9d;
+      --danger:   #ff4060;
+
+      --shadow:    0 8px 32px rgba(0, 0, 0, 0.45);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.60);
+      --shadow-accent: 0 0 0 1px rgba(0, 212, 255, 0.25), 0 8px 32px rgba(0, 212, 255, 0.10);
+
+      --radius-sm: 12px;
+      --radius:    18px;
+      --radius-lg: 24px;
+      --radius-xl: 30px;
+
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --dur-med:  0.35s;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: linear-gradient(135deg, var(--bg-from) 0%, var(--bg-mid) 50%, var(--bg-to) 100%);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 40px 20px 72px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+
+    .hero {
+      text-align: center;
+      margin-bottom: 48px;
+      animation: fadeUp .55s var(--ease-out) both;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,212,255,.10);
+      border: 1px solid rgba(0,212,255,.25);
+      border-radius: 999px;
+      padding: 6px 16px 6px 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: .01em;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .hero-icon {
+      width: 88px; height: 88px;
+      
+      display: grid;
+      place-items: center;
+      margin: 0 auto 28px;
+    }
+
+    .hero-icon svg { width: 44px; height: 44px; color: var(--accent); }
+
+    h1 {
+      font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      /* Accent gradient on title */
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--text-secondary);
+      font-size: clamp(16px, 2vw, 19px);
+      line-height: 1.75;
+    }
+
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+
+    .card {
+      background: var(--surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform var(--dur-med) var(--ease-out),
+                  box-shadow var(--dur-med) var(--ease-out),
+                  border-color var(--dur-med) ease;
+      animation: fadeUp .6s var(--ease-out) both;
+    }
+
+    .card:nth-child(2) { animation-delay: .08s; }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-accent);
+    }
+
+    .card-inner { padding: 30px; }
+
+    .card::before {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity var(--dur-med) ease;
+    }
+    .card:hover::before { opacity: 1; }
+
+    .step-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .step-number {
+      width: 50px; height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #0c0e14;
+      box-shadow: 0 8px 24px rgba(0, 212, 255, 0.30);
+      flex-shrink: 0;
+      letter-spacing: -.02em;
+    }
+
+    .step-title {
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -.02em;
+      line-height: 1.25;
+    }
+
+    .step-text {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .image-box {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border-muted);
+      background: rgba(0,0,0,.25);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+    }
+
+    .image-box img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+
+    .footer-box {
+      background: var(--surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      padding: 44px 32px;
+      text-align: center;
+      animation: fadeUp .75s var(--ease-out) .12s both;
+      position: relative;
+      overflow: hidden;
+    }
+
+
+    .footer-box::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: 50%; transform: translateX(-50%);
+      width: 340px; height: 200px;
+      background: radial-gradient(ellipse, rgba(0,212,255,.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .footer-icon {
+      width: 68px; height: 68px;
+      margin: 0 auto 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(0,212,255,.15), rgba(0,212,255,.06));
+      border: 1px solid rgba(0,212,255,.25);
+      box-shadow: 0 0 28px rgba(0,212,255,.12), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .footer-icon svg { width: 30px; height: 30px; color: var(--accent); }
+
+    .footer-box h2 {
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-box p {
+      color: var(--text-secondary);
+      font-size: 17px;
+      line-height: 1.75;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 6px var(--accent); }
+      50%       { opacity: .5; box-shadow: 0 0 14px var(--accent); }
+    }
+
+ 
+    @media (max-width: 860px) {
+      .steps { grid-template-columns: 1fr; }
+      .card-inner { padding: 24px; }
+    }
+
+    @media (max-width: 560px) {
+      body { padding: 24px 14px 48px; }
+      .hero { margin-bottom: 36px; }
+      .step-top { align-items: flex-start; }
+      .step-number { width: 44px; height: 44px; font-size: 18px; border-radius: 14px; }
+      .footer-box { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+
+    <section class="hero">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Extension installed successfully
+      </div>
+
+      <img src="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon128.png" alt="Holy Private Bookmarks - Encrypted Bookmark Manager Logo" class="hero-icon">
+
+      <h1>Thanks for Installing</h1>
+      <p class="subtitle">
+        Pin <strong style="color:#fff;font-weight:700;">Holy Private Bookmarks</strong> to your Chrome toolbar for one-click access to your encrypted bookmarks.
+      </p>
+    </section>
+
+
+    <section class="steps">
+      <article class="card">
+        <div class="card-inner">
+          <div class="step-top">
+            <div class="step-number">1</div>
+            <h2 class="step-title">Open the Extensions Menu</h2>
+          </div>
+          <p class="step-text">
+            Click the <span class="highlight">puzzle icon</span> in the top-right corner of your Chrome browser to open the extensions panel.
+          </p>
+          <div class="image-box">
+            <img src="screenshots/step1.png" alt="Step 1 — Click the puzzle icon in Chrome">
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-inner">
+          <div class="step-top">
+            <div class="step-number">2</div>
+            <h2 class="step-title">Pin the Extension</h2>
+          </div>
+          <p class="step-text">
+            Click the <span class="highlight">pin icon</span> next to Holy Private Bookmarks so it stays visible in your toolbar at all times.
+          </p>
+          <div class="image-box">
+            <img src="screenshots/step2.png" alt="Step 2 — Pin the extension in Chrome">
+          </div>
+        </div>
+      </article>
+    </section>
+
+
+    <section class="footer-box">
+      <div class="footer-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+      </div>
+
+      <h2>You're All Set</h2>
+      <p>
+        Click the <span class="highlight">extension icon</span> in your toolbar to launch
+        <span class="highlight">Holy Private Bookmarks</span> and create your secure vault.
+      </p>
+    </section>
+
+  </div>
+</body>
+</html>
