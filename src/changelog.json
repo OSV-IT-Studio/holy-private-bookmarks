@@ -1,5 +1,11 @@
 [
 {
+    "version": "1.8.4.88",
+    "changes": [
+      "Added welcome page — opens automatically after installation"
+    ]
+},
+{
     "version": "1.8.4.86",
     "changes": [
       "Updated donation page"

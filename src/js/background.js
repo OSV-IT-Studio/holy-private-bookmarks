@@ -163,6 +163,7 @@ chrome.runtime.onInstalled.addListener((details) => {
     // First install
     if (details.reason === 'install') {
         chrome.storage.local.set({ 'donationReminderJustInstalled': true });
+        chrome.tabs.create({ url: 'https://osv-it-studio.github.io/holy-private-bookmarks/welcome.html' });
     }
 
     // Uninstall feedback
