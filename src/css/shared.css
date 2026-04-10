@@ -84,15 +84,17 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 
 .folder-icon{display:flex;align-items:center;justify-content:center;width:18px;height:18px;color:#ffd700}
 .folder-icon svg,.icon.folder-icon svg{width:18px;height:18px;stroke:currentColor}
-.folder-badge{background:rgba(0,212,255,.2);color:var(--accent);font-size:10px;padding:2px 8px;border-radius:10px;margin-left:8px;font-weight:600}
+.folder-badge{background:rgba(0,212,255,.2);color:var(--accent);font-size:10px;padding:2px 8px;border-radius:10px;margin:0px 20px 0px 8px;font-weight:600}
 .folder-badge.large{font-size:11px;padding:3px 10px}
 
 .mt-16{margin-top:16px}
 .w-100{width:100%}
 .text-center{text-align:center}
 
-.quick-actions-hover{position:absolute;right:10px;top:50%;transform:translateY(-50%);display:none;gap:4px;background:var(--card-bg);backdrop-filter:blur(50px);border:1px solid var(--card-border);border-radius:8px;padding:4px;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-.bookmark-item:hover .quick-actions-hover,.tree-item:hover .quick-actions-hover{display:flex;animation:quickActionsFadeIn .15s ease}
+.quick-actions-hover{position:absolute;right:36px;top:50%;transform:translateY(-50%);display:none;gap:4px;background:var(--card-bg);backdrop-filter:blur(50px);border:1px solid var(--card-border);border-radius:8px;padding:4px;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.quick-actions-hover.active{display:flex;animation:quickActionsFadeIn .15s ease}
+.quick-actions-trigger{position:absolute;right:6px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:24px;height:24px;border:none;background:transparent;cursor:pointer;color:var(--text-secondary,#888);border-radius:6px;padding:0;z-index:10;opacity:.7;transition:opacity .15s,background .15s}
+.quick-actions-trigger:hover{opacity:1;background:var(--hover-bg,rgba(128,128,128,.15))}
 @keyframes quickActionsFadeIn{from{opacity:0;transform:translateY(-50%) scale(.9)}to{opacity:1;transform:translateY(-50%) scale(1)}}
 
 .quick-action-btn-small{all:unset;box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.1);border:1px solid var(--card-border);color:var(--text-secondary);cursor:pointer;transition:background var(--dur-fast) ease,transform var(--dur-fast) ease}
@@ -104,7 +106,7 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 .tree-item:hover{background:var(--surface-2)}
 
 .bookmark-title{color:var(--text-primary);font-weight:500;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}
-.item-domain{font-size:11px;color:var(--accent);font-family:monospace;opacity:.7;margin-left:8px;background:rgba(0,212,255,.1);padding:2px 8px;border-radius:12px;white-space:nowrap;flex-shrink:0;max-width:120px;overflow:hidden;text-overflow:ellipsis}
+.item-domain{font-size:11px;color:var(--accent);font-family:monospace;opacity:.7;margin:0px 20px 0px 8px;background:rgba(0,212,255,.1);padding:2px 8px;border-radius:12px;white-space:nowrap;flex-shrink:0;max-width:120px;overflow:hidden;text-overflow:ellipsis}
 
 .tree-item.dragging{opacity:.4;transform:scale(.98);box-shadow:0 12px 40px rgba(0,212,255,.3);cursor:grabbing}
 

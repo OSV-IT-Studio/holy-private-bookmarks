@@ -6,7 +6,7 @@
     "message": "Holy Private Bookmarks"
   },
   "extensionDescription": {
-    "message": "W pełni prywatne zakładki z hasłem głównym, folderami i szyfrowaniem"
+    "message": "Prywatne zakładki z hasłem głównym i szyfrowaniem AES-256. Wszystkie dane zostają na Twoim urządzeniu — bez chmury i śledzenia."
   },
   "managerTitle": {
     "message": "HPB - Menedżer zakładek"
@@ -802,5 +802,8 @@
   },
   "changeShortcut": {
     "message": "Zmień skrót →"
+  },
+  "actions": {
+    "message": "Akcje"
   }
 }

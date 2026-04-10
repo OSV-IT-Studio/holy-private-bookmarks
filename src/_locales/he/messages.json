@@ -6,7 +6,7 @@
     "message": "Holy Private Bookmarks"
   },
   "extensionDescription": {
-    "message": "סימניות פרטיות לחלוטין עם סיסמת מאסטר, תיקיות והצפנה"
+    "message": "סימניות פרטיות עם סיסמת אב והצפנת AES-256. כל הנתונים נשארים במכשיר שלך — ללא ענן ומעקב."
   },
   "managerTitle": {
     "message": "HPB - מנהל סימניות"
@@ -802,5 +802,8 @@
   },
   "changeShortcut": {
     "message": "שנה קיצור דרך →"
+  },
+  "actions": {
+    "message": "פעולות"
   }
 }

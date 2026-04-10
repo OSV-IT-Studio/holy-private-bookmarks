@@ -6,7 +6,7 @@
     "message": "Holy Private Bookmarks"
   },
   "extensionDescription": {
-    "message": "إشارات مرجعية خاصة تماماً مع كلمة مرور رئيسية ومجلدات وتشفير"
+    "message": "إشارات مرجعية خاصة محمية بكلمة مرور رئيسية وتشفير AES-256. جميع البيانات تبقى على جهازك — بلا سحابة ولا تتبع."
   },
   "managerTitle": {
     "message": "HPB - مدير الإشارات المرجعية"
@@ -799,5 +799,8 @@
   },
   "changeShortcut": {
     "message": "تغيير الاختصار →"
+  },
+  "actions": {
+    "message": "الإجراءات"
   }
 }

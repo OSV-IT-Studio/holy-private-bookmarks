@@ -6,7 +6,7 @@
     "message": "Holy Private Bookmarks"
   },
   "extensionDescription": {
-    "message": "Fully private bookmarks with master password, folders and encryption"
+    "message": "Keep your bookmarks private with master password and AES-256 encryption. All data stays on your device — no cloud, no tracking."
   },
   "managerTitle": {
     "message": "HPB - Bookmark manager"
@@ -802,5 +802,8 @@
   },
   "changeShortcut": {
     "message": "Change shortcut →"
+  },
+  "actions": {
+    "message": "Actions"
   }
 }

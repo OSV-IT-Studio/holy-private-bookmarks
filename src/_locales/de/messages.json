@@ -6,7 +6,7 @@
     "message": "Holy Private Bookmarks"
   },
   "extensionDescription": {
-    "message": "Vollständig private Lesezeichen mit Master-Passwort, Ordnern und Verschlüsselung"
+    "message": "Private Lesezeichen mit Masterpasswort und AES-256-Verschlüsselung. Alle Daten bleiben auf Ihrem Gerät — keine Cloud, kein Tracking."
   },
   "managerTitle": {
     "message": "HPB - Lesezeichenmanager"
@@ -799,5 +799,8 @@
   },
   "changeShortcut": {
     "message": "Tastenkürzel ändern →"
+  },
+  "actions": {
+    "message": "Aktionen"
   }
 }

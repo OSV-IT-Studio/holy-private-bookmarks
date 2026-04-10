@@ -68,13 +68,14 @@ const PopupTree = (function () {
                     <span class="folder-name">${escapeHtml(item.name)}</span>
                     <span class="folder-badge">${countItemsInFolder(item)}</span>
                 </div>
-                <div class="actions">
-                    <button class="action-btn" data-action="rename" data-path="${path.join(',')}" title="Rename">
+                <button class="quick-actions-trigger" title="${getMessage('actions')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
+                <div class="quick-actions-hover">
+                    <button class="quick-action-btn-small" data-action="rename" data-path="${path.join(',')}" title="Rename">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
                         </svg>
                     </button>
-                    <button class="action-btn delete" data-action="delete" data-path="${path.join(',')}" title="Delete">
+                    <button class="quick-action-btn-small delete" data-action="delete" data-path="${path.join(',')}" title="Delete">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="3 6 5 6 21 6" />
                             <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
@@ -138,9 +139,13 @@ const PopupTree = (function () {
         titleDiv.appendChild(textSpan);
 
         
+        const quickActionsTrigger = document.createElement('button');
+        quickActionsTrigger.className = 'quick-actions-trigger';
+        quickActionsTrigger.title = getMessage('actions');
+        quickActionsTrigger.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg>';
+
         const quickActions = document.createElement('div');
         quickActions.className = 'quick-actions-hover';
-        quickActions.style.display = 'none';
 
         const pathStr = path.join(',');
 
@@ -177,15 +182,15 @@ const PopupTree = (function () {
             </button>
         `;
 
+        titleDiv.appendChild(quickActionsTrigger);
         titleDiv.appendChild(quickActions);
         header.appendChild(titleDiv);
         header.appendChild(domainSpan);
         link.appendChild(header);
         div.appendChild(link);
 
-        
         link.addEventListener('click', e => {
-            if (e.target.closest('.quick-actions-hover')) return;
+            if (e.target.closest('.quick-actions-hover') || e.target.closest('.quick-actions-trigger')) return;
             chrome.tabs.create({ url: item.url, active: !e.ctrlKey && !e.metaKey });
         });
 
@@ -319,9 +324,23 @@ const PopupTree = (function () {
         requestAnimationFrame(() => openNext(0));
     }
 
-    // Click delegation — handles both tree actions and quick-action buttons
+    // Click delegation
 
     async function handleTreeClick(e) {
+
+
+        const trigger = e.target.closest('.quick-actions-trigger');
+        if (trigger) {
+            e.stopPropagation();
+            e.preventDefault();
+            const item  = trigger.closest('.tree-item');
+            const panel = item && item.querySelector('.quick-actions-hover');
+            if (!panel) return;
+            const isOpen = panel.classList.contains('active');
+            document.querySelectorAll('.quick-actions-hover.active').forEach(p => p.classList.remove('active'));
+            if (!isOpen) panel.classList.add('active');
+            return;
+        }
 
         const qaBtn = e.target.closest('[data-qa]');
         if (qaBtn) {
@@ -355,13 +374,13 @@ const PopupTree = (function () {
         }
 
         // Folder rename / delete action buttons
-        if (e.target.closest('.action-btn')) {
-            const btn = e.target.closest('.action-btn');
+        const folderActionBtn = e.target.closest('.quick-action-btn-small[data-action]');
+        if (folderActionBtn) {
             e.preventDefault();
             e.stopPropagation();
 
-            const action    = btn.dataset.action;
-            const path      = btn.dataset.path;
+            const action    = folderActionBtn.dataset.action;
+            const path      = folderActionBtn.dataset.path;
             if (!path) return;
             const pathArray = path.split(',').map(Number);
 
@@ -380,23 +399,7 @@ const PopupTree = (function () {
     }
 
     
-    function handleTreeHover(e) {
-        const item = e.target.closest('.tree-item');
-        if (!item) return;
-        
-        if (item.querySelector('.item-header.folder')) return;
-        const qa = item.querySelector('.quick-actions-hover');
-        if (!qa) return;
 
-        if (e.type === 'mouseenter') {
-            qa.style.display = 'flex';
-        } else {
-            
-            const related = e.relatedTarget;
-            if (related && item.contains(related)) return;
-            qa.style.display = 'none';
-        }
-    }
 
     function setupGlobalClickHandler() {
         if (_eventHandlersInitialized) return;
@@ -406,11 +409,10 @@ const PopupTree = (function () {
         tree.removeEventListener('click', handleTreeClick);
         tree.addEventListener('click', handleTreeClick);
 
-        
-        tree.removeEventListener('mouseenter', handleTreeHover, true);
-        tree.removeEventListener('mouseleave', handleTreeHover, true);
-        tree.addEventListener('mouseenter', handleTreeHover, true);
-        tree.addEventListener('mouseleave', handleTreeHover, true);
+        document.addEventListener('click', e => {
+            if (e.target.closest('.quick-actions-trigger') || e.target.closest('.quick-actions-hover')) return;
+            document.querySelectorAll('.quick-actions-hover.active').forEach(p => p.classList.remove('active'));
+        }, { passive: true });
 
         _eventHandlersInitialized = true;
     }

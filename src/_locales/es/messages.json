@@ -6,7 +6,7 @@
     "message": "Holy Private Bookmarks"
   },
   "extensionDescription": {
-    "message": "Marcadores totalmente privados con contraseña maestra, carpetas y encriptación"
+    "message": "Marcadores privados con contraseña maestra y cifrado AES-256. Todos los datos permanecen en tu dispositivo — sin nube ni rastreo."
   },
   "managerTitle": {
     "message": "HPB - Gestor de marcadores"
@@ -799,5 +799,8 @@
   },
   "changeShortcut": {
     "message": "Cambiar atajo →"
+  },
+  "actions": {
+    "message": "Acciones"
   }
 }

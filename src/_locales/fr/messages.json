@@ -6,7 +6,7 @@
     "message": "Holy Private Bookmarks"
   },
   "extensionDescription": {
-    "message": "Marque-pages entièrement privés avec mot de passe maître, dossiers et chiffrement"
+    "message": "Marque-pages privés avec mot de passe maître et chiffrement AES-256. Toutes les données restent sur votre appareil — sans cloud ni suivi."
   },
   "managerTitle": {
     "message": "HPB - Gestionnaire de signets"
@@ -799,5 +799,8 @@
   },
   "changeShortcut": {
     "message": "Modifier le raccourci →"
+  },
+  "actions": {
+    "message": "Actions"
   }
 }

@@ -1,4 +1,11 @@
 [
+  {
+    "version": "1.8.4.91",
+    "changes": [
+      "Quick actions panel now opens on button click instead of mouse hover — both in the manager and popup",
+      "Added a persistent three-dot (⋮) button on each bookmark and folder item to toggle the quick actions panel"
+    ]
+  },
 {
     "version": "1.8.4.88",
     "changes": [

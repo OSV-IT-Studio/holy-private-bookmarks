@@ -6,7 +6,7 @@
     "message": "Holy Private Bookmarks"
   },
   "extensionDescription": {
-    "message": "マスターパスワード、フォルダ、暗号化による完全プライベートなブックマーク"
+    "message": "マスターパスワードとAES-256暗号化でブックマークを完全保護。すべてのデータはあなたのデバイスに保存されます — クラウドなし、トラッキングなし。"
   },
   "managerTitle": {
     "message": "HPB - ブックマークマネージャー"
@@ -799,5 +799,8 @@
   },
   "changeShortcut": {
     "message": "ショートカットを変更 →"
+  },
+  "actions": {
+    "message": "アクション"
   }
 }

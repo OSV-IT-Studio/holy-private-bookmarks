@@ -188,11 +188,11 @@
   
         <button class="settings-btn" id="export">
             <span class="settings-btn__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>   
             </span>
             <div class="settings-btn__content">
                 <span class="settings-btn__title" data-i18n="export"></span>
@@ -211,11 +211,13 @@
 
         <button class="settings-btn settings-btn--warning" id="import-btn">
             <span class="settings-btn__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="17 8 12 3 7 8" />
-                    <line x1="12" y1="3" x2="12" y2="15" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
                 </svg>
+			
+                
             </span>
             <div class="settings-btn__content">
                 <span class="settings-btn__title" data-i18n="setupTabRestore"></span>
@@ -417,11 +419,11 @@
     <input type="file" id="import-file" accept=".json" style="display:none">
 <div id="about-modal" class="hpb-modal">
     <div class="hpb-modal__dialog">
-        <h2 class="hpb-modal__title hpb-modal__title--center" data-i18n="extensionName"></h2>
+        <h2 class="hpb-modal__title hpb-modal__title--center" data-i18n="aboutExtension"></h2>
         <div class="hpb-modal__body about-body">
             <div class="about-header">
                 <div class="about-icon"><img src="icons/icon48.png" alt=""></div>
-                <h3 class="about-subtitle" data-i18n="extensionDescription"></h3>
+                <h3 class="about-subtitle" data-i18n="extensionName"></h3>
             </div>
             <dl class="about-info-grid">
                 <dt data-i18n="version"></dt>

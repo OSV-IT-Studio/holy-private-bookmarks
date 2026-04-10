@@ -6,7 +6,7 @@
     "message": "Holy Private Bookmarks"
   },
   "extensionDescription": {
-    "message": "完全私密书签，支持主密码、文件夹和加密功能"
+    "message": "使用主密码和AES-256加密保护您的书签。所有数据保存在本地设备上——无云端，无跟踪。"
   },
   "managerTitle": {
     "message": "HPB - 书签管理器"
@@ -799,5 +799,8 @@
   },
   "changeShortcut": {
     "message": "修改快捷键 →"
+  },
+  "actions": {
+    "message": "操作"
   }
 }

@@ -6,7 +6,7 @@
     "message": "Holy Private Bookmarks"
   },
   "extensionDescription": {
-    "message": "Segnalibri completamente privati con password principale, cartelle e crittografia"
+    "message": "Segnalibri privati con password master e cifratura AES-256. Tutti i dati restano sul tuo dispositivo — nessun cloud, nessun tracciamento."
   },
   "managerTitle": {
     "message": "HPB - Gestore segnalibri"
@@ -799,5 +799,8 @@
   },
   "changeShortcut": {
     "message": "Cambia scorciatoia →"
+  },
+  "actions": {
+    "message": "Azioni"
   }
 }

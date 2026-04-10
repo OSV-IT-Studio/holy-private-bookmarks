@@ -114,7 +114,7 @@ const DragDropManager = (function() {
 
     function handleDragStart(e) {
         const item = e.target.closest('.tree-item');
-        if (!item || e.target.closest('.action-btn, .quick-action-btn-small')) {
+        if (!item || e.target.closest('.quick-actions-trigger, .quick-action-btn-small, .quick-actions-hover')) {
             e.preventDefault();
             return false;
         }

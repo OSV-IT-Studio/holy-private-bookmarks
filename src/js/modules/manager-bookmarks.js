@@ -158,10 +158,40 @@ const ManagerBookmarks = (function () {
 
     // Virtual scroll
 
+    let _quickActionsListenerAttached = false;
+
+    function _setupQuickActionsListener() {
+        if (_quickActionsListenerAttached) return;
+        const container = document.querySelector('.bookmarks-container') || document.getElementById('bookmarks-grid');
+        if (!container) return;
+
+        container.addEventListener('click', e => {
+            const trigger = e.target.closest('.quick-actions-trigger');
+            if (!trigger) return;
+            e.stopPropagation();
+            const item  = trigger.closest('.tree-item');
+            if (!item) return;
+            const panel = item.querySelector('.quick-actions-hover');
+            if (!panel) return;
+
+            const isOpen = panel.classList.contains('active');
+            document.querySelectorAll('.quick-actions-hover.active').forEach(p => p.classList.remove('active'));
+            if (!isOpen) panel.classList.add('active');
+        }, true);
+
+        document.addEventListener('click', e => {
+            if (e.target.closest('.quick-actions-trigger') || e.target.closest('.quick-actions-hover')) return;
+            document.querySelectorAll('.quick-actions-hover.active').forEach(p => p.classList.remove('active'));
+        }, { passive: true });
+
+        _quickActionsListenerAttached = true;
+    }
+
     function initVirtualScroll() {
         _bookmarksContainer = document.querySelector('.bookmarks-container');
         _bookmarksGrid      = document.getElementById('bookmarks-grid');
         if (!_bookmarksContainer || !_bookmarksGrid) return;
+        _setupQuickActionsListener();
 
         _intersectionObserver?.disconnect?.();
         _intersectionObserver = new IntersectionObserver(entries => {
@@ -253,6 +283,7 @@ const ManagerBookmarks = (function () {
             <div class="bookmark-title">${escapeHtml(folder.name)}</div>
         </div>
         <div class="folder-badge">${childCount}</div>
+        <button class="quick-actions-trigger" title="${getMessage('actions')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
         <div class="quick-actions-hover">
             <button class="quick-action-btn-small edit" data-action="rename" title="${getMessage('rename')}">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11.5 2.5a2 2 0 0 1 3 3L6 14l-4 1 1-4 8.5-8.5z"></path></svg>
@@ -312,6 +343,7 @@ const ManagerBookmarks = (function () {
 
     item.addEventListener('click', e => {
         if (e.target.closest('.quick-actions-hover')) return;
+        if (e.target.closest('.quick-actions-trigger')) return;
         
         if (_isCtrlPressed) {
             e.preventDefault();
@@ -416,7 +448,8 @@ const ManagerBookmarks = (function () {
                 <div class="bookmark-title">${escapeHtml(bookmark.title)}</div>
             </div>
             <div class="item-domain">${escapeHtml(domain)}</div>
-            <div class="quick-actions-hover">
+            <button class="quick-actions-trigger" title="${getMessage('actions')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
+        <div class="quick-actions-hover">
                 <button class="quick-action-btn-small edit"    data-action="edit"    title="${getMessage('edit')}">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11.5 2.5a2 2 0 0 1 3 3L6 14l-4 1 1-4 8.5-8.5z"></path></svg>
                 </button>
@@ -463,6 +496,7 @@ const ManagerBookmarks = (function () {
         // Item click
         item.addEventListener('click', e => {
             if (e.target.closest('.quick-actions-hover')) return;
+            if (e.target.closest('.quick-actions-trigger')) return;
 
             if (_isCtrlPressed) {
                 e.preventDefault();
@@ -1068,3 +1102,4 @@ async function _moveSelectedBookmarks(targetPath, bookmarksList) {
 
 if (typeof window !== 'undefined') window.ManagerBookmarks = ManagerBookmarks;
 if (typeof module !== 'undefined') module.exports = ManagerBookmarks;
+

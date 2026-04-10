@@ -4,21 +4,12 @@
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;width:650px;min-height:601px;margin:0;padding:0;background:var(--bg);color:var(--text-primary);overflow-x:hidden;transition:background .3s ease,color .3s ease}
 
 a,button,input,select,
-.tree-item,.action-btn,.icon-button,.settings-btn,
+.tree-item,.icon-button,.settings-btn,
 .settings-full-btn,.top-right-btn,.theme-option,
 .item-header,.load-more-btn,.action-menu__btn,
 .action-menu__lock,.folder-lazy,.subitems,
 .settings-btn__arrow,.btn-arrow,.arrow svg{transition:background-color .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease,opacity .2s ease}
-.header-badge {
-    font-size: 10px;
-    background: #6366f1;
-    color: #fff;
-    border-radius: 4px;
-    padding: 2px 6px;
-    margin-left: 8px;
-    vertical-align: middle;
-    font-weight: 500;
-    letter-spacing: 0.04em;
+.header-badge { font-size: 10px; background: #6366f1; color: #fff; border-radius: 4px; padding: 2px 6px; margin-left: 8px; vertical-align: middle; font-weight: 500; letter-spacing: 0.04em;
 }
 .subtitle{text-align:center;color:var(--text-secondary);font-size:14px;margin-bottom:24px;line-height:1.5}
 .container{display:flex;flex-direction:column;box-sizing:border-box;min-height:600px}
@@ -66,11 +57,7 @@ a,button,input,select,
 
 .bookmark-link{display:block;color:inherit;min-width:0;width:100%;cursor:pointer}
 
-.actions{display:flex;gap:8px;opacity:.7}
-.tree-item:hover .actions{opacity:1}
-.action-btn{width:36px;height:36px;border-radius:50%;background:var(--card-bg);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(10px);padding:0;color:var(--text-secondary);font-size:16px}
-.action-btn:hover{border-color:var(--accent);color:var(--accent)}
-.action-btn.delete:hover{border-color:var(--danger);color:var(--danger)}
+
 
 .subitems{padding:5px 5px 5px 10px;border-left:2px solid rgba(0,212,255,.3);margin:0 18px 8px;overflow:hidden;max-height:2000px}
 .subitems.collapsed{max-height:0!important;opacity:0;padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important}
