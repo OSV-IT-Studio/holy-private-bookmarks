@@ -802,5 +802,11 @@
   },
   "actions": {
     "message": "Acciones"
+  },
+  "qrCode": {
+    "message": "Código QR"
+  },
+  "qrScanHint": {
+    "message": "Escanea el código QR para abrir el enlace en tu dispositivo."
   }
 }

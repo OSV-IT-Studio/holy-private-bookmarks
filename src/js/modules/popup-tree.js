@@ -69,21 +69,6 @@ const PopupTree = (function () {
                     <span class="folder-badge">${countItemsInFolder(item)}</span>
                 </div>
                 <button class="quick-actions-trigger" title="${getMessage('actions')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
-                <div class="quick-actions-hover">
-                    <button class="quick-action-btn-small" data-action="rename" data-path="${path.join(',')}" title="Rename">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
-                        </svg>
-                    </button>
-                    <button class="quick-action-btn-small delete" data-action="delete" data-path="${path.join(',')}" title="Delete">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="3 6 5 6 21 6" />
-                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-                            <line x1="10" y1="11" x2="10" y2="17" />
-                            <line x1="14" y1="11" x2="14" y2="17" />
-                        </svg>
-                    </button>
-                </div>
             </div>
             <div class="subitems collapsed"></div>
         `;
@@ -144,46 +129,9 @@ const PopupTree = (function () {
         quickActionsTrigger.title = getMessage('actions');
         quickActionsTrigger.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg>';
 
-        const quickActions = document.createElement('div');
-        quickActions.className = 'quick-actions-hover';
-
         const pathStr = path.join(',');
 
-        quickActions.innerHTML = `
-            <button class="quick-action-btn-small" data-qa="edit" data-path="${pathStr}"
-                    title="${getMessage('edit')}">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                    <path d="M11.5 2.5a2 2 0 0 1 3 3L6 14l-4 1 1-4 8.5-8.5z"></path>
-                </svg>
-            </button>
-            <button class="quick-action-btn-small" data-qa="copy" data-url="${escapeHtml(item.url)}"
-                    title="${getMessage('copyUrl')}">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                    <rect x="2" y="4" width="10" height="10" rx="1" ry="1"></rect>
-                    <path d="M4 2h8a2 2 0 0 1 2 2v8"></path>
-                </svg>
-            </button>
-            <button class="quick-action-btn-small" data-qa="private" data-url="${escapeHtml(item.url)}"
-                    title="${getMessage('openPrivate')}">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <line x1="3" y1="3" x2="21" y2="21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-            </button>
-            <button class="quick-action-btn-small delete" data-qa="delete" data-path="${pathStr}"
-                    title="${getMessage('delete')}">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="3 6 5 6 21 6"></polyline>
-                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                    <line x1="10" y1="11" x2="10" y2="17"></line>
-                    <line x1="14" y1="11" x2="14" y2="17"></line>
-                </svg>
-            </button>
-        `;
-
         titleDiv.appendChild(quickActionsTrigger);
-        titleDiv.appendChild(quickActions);
         header.appendChild(titleDiv);
         header.appendChild(domainSpan);
         link.appendChild(header);
@@ -326,36 +274,80 @@ const PopupTree = (function () {
 
     // Click delegation
 
-    async function handleTreeClick(e) {
+    function _buildPopupFolderPanel(path, getMessage) {
+        return QuickActions.buildPanel([
+            { action: 'rename', title: getMessage('rename'), icon: 'rename',
+              dataset: { path } },
+            { action: 'delete', title: getMessage('delete'), icon: 'delete', className: 'delete',
+              dataset: { path } },
+        ]);
+    }
 
+    function _buildPopupBookmarkPanel(pathStr, url, getMessage) {
+        return QuickActions.buildPanel([
+            { action: 'edit',    title: getMessage('edit'),        icon: 'edit',
+              dataset: { path: pathStr, 'item-type': 'bookmark' } },
+            { action: 'copy',    title: getMessage('copyUrl'),     icon: 'copy',
+              dataset: { url } },
+            { action: 'qr',     title: getMessage('qrCode') || 'QR Code', icon: 'qr',
+              dataset: { url } },
+            { action: 'private', title: getMessage('openPrivate'), icon: 'private', className: 'private',
+              dataset: { url } },
+            { action: 'delete',  title: getMessage('delete'),      icon: 'delete',  className: 'delete',
+              dataset: { path: pathStr, 'item-type': 'bookmark' } },
+        ]);
+    }
+
+    async function handleTreeClick(e) {
 
         const trigger = e.target.closest('.quick-actions-trigger');
         if (trigger) {
             e.stopPropagation();
             e.preventDefault();
-            const item  = trigger.closest('.tree-item');
-            const panel = item && item.querySelector('.quick-actions-hover');
-            if (!panel) return;
-            const isOpen = panel.classList.contains('active');
-            document.querySelectorAll('.quick-actions-hover.active').forEach(p => p.classList.remove('active'));
-            if (!isOpen) panel.classList.add('active');
+            const { getMessage, escapeHtml } = _deps;
+            const item           = trigger.closest('.tree-item');
+            const isFolderHeader = !!trigger.closest('.item-header.folder');
+
+            QuickActions.toggle(trigger, () => {
+                const path   = item?.dataset.path ?? '';
+                const linkEl = item?.querySelector('.bookmark-link') ?? null;
+                if (isFolderHeader) {
+                    return _buildPopupFolderPanel(path, getMessage);
+                } else {
+                    const rawUrl = linkEl?.dataset.url ?? '';
+                    const url    = escapeHtml ? escapeHtml(rawUrl) : rawUrl;
+                    return _buildPopupBookmarkPanel(path, url, getMessage);
+                }
+            });
             return;
         }
 
-        const qaBtn = e.target.closest('[data-qa]');
-        if (qaBtn) {
+        // Bookmark action buttons (edit / copy / private / delete)
+        const actionBtn = e.target.closest('.quick-action-btn-small[data-action]');
+        if (actionBtn) {
             e.preventDefault();
             e.stopPropagation();
             const { editBookmark, deleteBookmark, copyBookmarkUrl, openInPrivateTab,
                     showNotification, getMessage } = _deps;
-            const qa = qaBtn.dataset.qa;
+            const action = actionBtn.dataset.action;
 
-            if (qa === 'edit') {
-                editBookmark(qaBtn.dataset.path);
-            } else if (qa === 'copy') {
-                copyBookmarkUrl(qaBtn.dataset.url);
-            } else if (qa === 'private') {
-                const url = qaBtn.dataset.url;
+            // Folder rename / delete
+            if (action === 'rename' || (action === 'delete' && actionBtn.dataset.itemType !== 'bookmark')) {
+                const path = actionBtn.dataset.path;
+                if (!path) return;
+                const pathArray = path.split(',').map(Number);
+                if (action === 'rename') _deps.renameItem(pathArray);
+                else                     _deps.deleteItem(pathArray);
+                return;
+            }
+
+            // Bookmark actions
+            if (action === 'edit') {
+                editBookmark(actionBtn.dataset.path);
+            } else if (action === 'copy') {
+                copyBookmarkUrl(actionBtn.dataset.url);
+            } else if (action === 'private') {
+                const url = actionBtn.dataset.url;
                 try {
                     const urlObj = new URL(url);
                     if (!urlObj.protocol.startsWith('http')) {
@@ -366,26 +358,14 @@ const PopupTree = (function () {
                 } catch {
                     showNotification(getMessage('invalidUrl'), true);
                 }
-            } else if (qa === 'delete') {
-				deleteBookmark(qaBtn.dataset.path);
-
-}
-            return;
-        }
-
-        // Folder rename / delete action buttons
-        const folderActionBtn = e.target.closest('.quick-action-btn-small[data-action]');
-        if (folderActionBtn) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const action    = folderActionBtn.dataset.action;
-            const path      = folderActionBtn.dataset.path;
-            if (!path) return;
-            const pathArray = path.split(',').map(Number);
-
-            if (action === 'rename') _deps.renameItem(pathArray);
-            else if (action === 'delete') _deps.deleteItem(pathArray);
+            } else if (action === 'qr') {
+                const bookmarkLink = actionBtn.dataset.url;
+                const treeItem     = actionBtn.closest?.('.tree-item') ?? document.querySelector(`.tree-item[data-path="${actionBtn.dataset.path}"]`);
+                const bookmarkTitle = treeItem?.querySelector('.bookmark-title')?.textContent ?? '';
+                if (window.QrModal) window.QrModal.showQrModal(bookmarkLink, bookmarkTitle, getMessage);
+            } else if (action === 'delete') {
+                deleteBookmark(actionBtn.dataset.path);
+            }
             return;
         }
 
@@ -394,6 +374,7 @@ const PopupTree = (function () {
         if (folderHeader) {
             e.preventDefault();
             e.stopPropagation();
+			QuickActions.closeAll();
             toggleFolder(folderHeader);
         }
     }
@@ -409,10 +390,7 @@ const PopupTree = (function () {
         tree.removeEventListener('click', handleTreeClick);
         tree.addEventListener('click', handleTreeClick);
 
-        document.addEventListener('click', e => {
-            if (e.target.closest('.quick-actions-trigger') || e.target.closest('.quick-actions-hover')) return;
-            document.querySelectorAll('.quick-actions-hover.active').forEach(p => p.classList.remove('active'));
-        }, { passive: true });
+        QuickActions.attachGlobalCloseListener();
 
         _eventHandlersInitialized = true;
     }

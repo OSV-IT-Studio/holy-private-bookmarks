@@ -186,6 +186,8 @@ buildFolderTreePicker,
 		
         renderFolderTree:      ()      => ManagerFolders.renderFolderTree(),
         renderBookmarks:       ()      => ManagerBookmarks.renderBookmarks(),
+        editBookmark:          (bm)    => ManagerBookmarks.editBookmark(bm),
+        deleteBookmark:        (bm)    => ManagerBookmarks.deleteBookmark(bm),
         clearManagerCaches:    ()      => ManagerBookmarks.clearManagerCaches(),
         clearBookmarksCache:   ()      => ManagerBookmarks.clearBookmarksCache(),
         countBookmarksInFolder: (id)   => ManagerBookmarks.countBookmarksInFolder(id),

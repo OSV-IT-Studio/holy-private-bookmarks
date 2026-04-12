@@ -29,7 +29,7 @@ a,button,input,select,
 #tree{flex:1;overflow-y:auto;background:var(--card-bg);border-radius:0 0 18px 18px;padding:18px;backdrop-filter:blur(12px);border:1px solid var(--card-border);box-shadow:inset 0 4px 15px rgba(0,0,0,.2);position:relative;will-change:scroll-position}
 
 .tree-item{position:relative;margin:0 5px 6px;overflow:hidden;background:var(--surface-1);border:1px solid var(--border-subtle);box-shadow:var(--item-shadow);border-radius:var(--radius-sm)}
-.tree-item.open,.tree-item.open:hover{background:var(--card-bg)!important;box-shadow:none!important;border-color:var(--border-accent);transform:none!important}
+.tree-item.open,.tree-item.open:hover{background:var(--card-bg)!important;box-shadow:none!important;transform:none!important}
 
 .tree-item.loading > .item-header::after,
 .tree-item.loading > .bookmark-link > .item-header::after{content:'';position:absolute;top:0;left:0;height:2px;width:40%;background:linear-gradient(90deg,transparent,var(--accent),transparent);animation:folderLoadSweep .6s ease-in-out infinite;border-radius:1px}

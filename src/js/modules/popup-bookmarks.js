@@ -268,6 +268,7 @@ const PopupBookmarks = (function () {
     if (nameEl) {
         nameEl.textContent = newName.trim();
         _deps.saveChanges();
+        _deps.virtualScrollCache?.clear?.();
         showNotification(getMessage('folderRenamed'));
         return;
     }
@@ -279,6 +280,7 @@ const PopupBookmarks = (function () {
     if (titleEl) {
         titleEl.textContent = newName.trim();
         _deps.saveChanges();
+        _deps.virtualScrollCache?.clear?.();
         showNotification(getMessage('bookmarkUpdated'));
         return;
     }

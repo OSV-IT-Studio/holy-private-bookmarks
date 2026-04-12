@@ -802,5 +802,11 @@
   },
   "actions": {
     "message": "الإجراءات"
+  },
+  "qrCode": {
+    "message": "رمز QR"
+  },
+  "qrScanHint": {
+    "message": "امسح رمز QR للانتقال إلى الرابط على جهازك."
   }
 }

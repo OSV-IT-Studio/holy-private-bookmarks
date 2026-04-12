@@ -805,5 +805,11 @@
   },
   "actions": {
     "message": "Actions"
+  },
+  "qrCode": {
+    "message": "QR Code"
+  },
+  "qrScanHint": {
+    "message": "Scan the QR code to open the link on your device."
   }
 }

@@ -128,6 +128,8 @@ const DragDropManager = (function() {
         item.classList.add('dragging');
         item.setAttribute('aria-grabbed', 'true');
 
+        if (typeof QuickActions !== 'undefined') QuickActions.closeAll();
+
         e.dataTransfer.effectAllowed = 'move';
         e.dataTransfer.setData('text/plain', item.dataset.path || '');
 

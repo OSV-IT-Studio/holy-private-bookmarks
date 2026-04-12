@@ -1,4 +1,18 @@
 [
+
+  {
+    "version": "1.8.4.98",
+    "changes": [
+	  "Quick actions panel now displays each action as an icon with a text label instead of icon-only buttons",
+      "Added QR code button to the quick actions panel"
+    ]
+  },
+  {
+    "version": "1.8.4.94",
+    "changes": [
+      "Minor UI display fixes"
+    ]
+  },
   {
     "version": "1.8.4.91",
     "changes": [

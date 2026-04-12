@@ -91,17 +91,16 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 .w-100{width:100%}
 .text-center{text-align:center}
 
-.quick-actions-hover{position:absolute;right:36px;top:50%;transform:translateY(-50%);display:none;gap:4px;background:var(--card-bg);backdrop-filter:blur(50px);border:1px solid var(--card-border);border-radius:8px;padding:4px;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-.quick-actions-hover.active{display:flex;animation:quickActionsFadeIn .15s ease}
+.quick-actions-hover{position:fixed;display:flex;flex-direction:column;gap:2px;background:var(--card-bg);backdrop-filter:blur(50px);border:1px solid var(--card-border);border-radius:10px;padding:4px;z-index:99999;box-shadow:0 4px 16px rgba(0,0,0,.35);animation:quickActionsFadeIn .15s ease;min-width:155px}
 .quick-actions-trigger{position:absolute;right:6px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:24px;height:24px;border:none;background:transparent;cursor:pointer;color:var(--text-secondary,#888);border-radius:6px;padding:0;z-index:10;opacity:.7;transition:opacity .15s,background .15s}
 .quick-actions-trigger:hover{opacity:1;background:var(--hover-bg,rgba(128,128,128,.15))}
-@keyframes quickActionsFadeIn{from{opacity:0;transform:translateY(-50%) scale(.9)}to{opacity:1;transform:translateY(-50%) scale(1)}}
+@keyframes quickActionsFadeIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
 
-.quick-action-btn-small{all:unset;box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.1);border:1px solid var(--card-border);color:var(--text-secondary);cursor:pointer;transition:background var(--dur-fast) ease,transform var(--dur-fast) ease}
-.quick-action-btn-small:hover{background:rgba(255,255,255,.15);transform:scale(1.05)}
+.quick-action-btn-small{all:unset;box-sizing:border-box;display:flex;align-items:center;justify-content:flex-start;gap:8px;width:100%;height:30px;padding:0 10px 0 8px;border-radius:7px;color:var(--text-secondary);cursor:pointer;white-space:nowrap;transition:background var(--dur-fast) ease,color var(--dur-fast) ease}
+.quick-action-btn-small:hover{background:var(--card-hover,rgba(255,255,255,.1));color:var(--text-primary)}
 .quick-action-btn-small:hover svg{color:var(--accent)}
 .quick-action-btn-small.delete:hover svg{color:var(--danger)}
-.quick-action-btn-small svg{width:16px;height:16px;stroke:currentColor}
+.quick-action-btn-small svg{width:14px;height:14px;stroke:currentColor;flex-shrink:0}.qa-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0}.qa-label{font-size:12px;font-weight:500;line-height:1;letter-spacing:.01em}
 
 .tree-item:hover{background:var(--surface-2)}
 

@@ -103,6 +103,8 @@ const ManagerDragDrop = (function () {
 
         el.classList.add('dragging');
 
+        if (typeof QuickActions !== 'undefined') QuickActions.closeAll();
+
         _ghostEl = window.HolyShared.dragCreateGhost(el, e.clientX, e.clientY, GHOST_X, GHOST_Y);
 
         const blank = Object.assign(document.createElement('div'), { style: 'opacity:0' });

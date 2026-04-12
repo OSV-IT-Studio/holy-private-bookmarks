@@ -805,5 +805,11 @@
   },
   "actions": {
     "message": "פעולות"
+  },
+  "qrCode": {
+    "message": "קוד QR"
+  },
+  "qrScanHint": {
+    "message": "סרוק את קוד ה-QR כדי לפתוח את הקישור במכשיר שלך."
   }
 }

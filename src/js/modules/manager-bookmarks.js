@@ -57,14 +57,9 @@ const ManagerBookmarks = (function () {
     }
 
     function clearBookmarksCache() {
-        _bookmarksCache.clear();
-        _folderCountsCache.clear();
-        
-
         _bumpDataVersion();
         _bookmarksCache    = new Map();
         _folderCountsCache = new Map();
-		
     }
 
     function clearManagerCaches() {
@@ -160,6 +155,23 @@ const ManagerBookmarks = (function () {
 
     let _quickActionsListenerAttached = false;
 
+    function _buildFolderQuickActionsPanel(folder, getMessage) {
+        return QuickActions.buildPanel([
+            { action: 'rename',        title: getMessage('rename'), icon: 'rename', className: 'edit'   },
+            { action: 'delete-folder', title: getMessage('delete'), icon: 'delete', className: 'delete' },
+        ]);
+    }
+
+    function _buildBookmarkQuickActionsPanel(bookmark, getMessage) {
+        return QuickActions.buildPanel([
+            { action: 'edit',    title: getMessage('edit'),                    icon: 'edit'                         },
+            { action: 'copy',    title: getMessage('copyUrl'),                 icon: 'copy'                         },
+            { action: 'qr',     title: getMessage('qrCode') || 'QR Code',    icon: 'qr'                            },
+            { action: 'private', title: getMessage('openPrivate'),             icon: 'private', className: 'private' },
+            { action: 'delete',  title: getMessage('delete'),                  icon: 'delete',  className: 'delete'  },
+        ]);
+    }
+
     function _setupQuickActionsListener() {
         if (_quickActionsListenerAttached) return;
         const container = document.querySelector('.bookmarks-container') || document.getElementById('bookmarks-grid');
@@ -167,23 +179,66 @@ const ManagerBookmarks = (function () {
 
         container.addEventListener('click', e => {
             const trigger = e.target.closest('.quick-actions-trigger');
-            if (!trigger) return;
-            e.stopPropagation();
-            const item  = trigger.closest('.tree-item');
-            if (!item) return;
-            const panel = item.querySelector('.quick-actions-hover');
-            if (!panel) return;
+            if (trigger) {
+                e.stopPropagation();
+                const item = trigger.closest('.tree-item');
+                if (!item) return;
+                const { getMessage } = _deps;
+                const boundData = item._boundData;
+                const isFolder  = item.classList.contains('tree-item--folder');
+                QuickActions.toggle(trigger, () => isFolder
+                    ? _buildFolderQuickActionsPanel(boundData, getMessage)
+                    : _buildBookmarkQuickActionsPanel(boundData, getMessage)
+                );
+                return;
+            }
 
-            const isOpen = panel.classList.contains('active');
-            document.querySelectorAll('.quick-actions-hover.active').forEach(p => p.classList.remove('active'));
-            if (!isOpen) panel.classList.add('active');
+            const btn = e.target.closest('.quick-action-btn-small');
+            if (!btn) return;
+            e.stopPropagation();
+
+            const panel     = btn.closest('.quick-actions-hover') || btn._sourcePanel;
+            const item      = panel?._trigger?.closest('.tree-item') ?? panel?.parentElement?.closest('.tree-item');
+            const boundData = item?._boundData;
+            if (!boundData) return;
+
+            const { editBookmark, deleteBookmark, openInPrivateTab,
+                    showNotification, showConfirm, getMessage: gm } = _deps;
+
+            (async () => {
+                switch (btn.dataset.action) {
+                    case 'edit':    editBookmark(boundData); break;
+                    case 'copy':
+                        navigator.clipboard.writeText(boundData.url)
+                            .then(() => showNotification(gm('urlCopied')));
+                        break;
+                    case 'qr':
+                        if (window.QrModal) window.QrModal.showQrModal(boundData.url, boundData.title || '', gm);
+                        break;
+                    case 'private': openInPrivateTab(boundData.url); break;
+                    case 'delete': {
+                        const name = boundData?.title || boundData?.name || '';
+                        if (await showConfirm({ title: `${gm('deleteConfirm')} "${name}"?` }))
+                            deleteBookmark(boundData);
+                        break;
+                    }
+                    case 'rename':
+                    case 'delete-folder': {
+                        const pathArr = _deps.findItemPath(_deps.getData(), boundData);
+                        if (!pathArr) break;
+                        const folderId = pathArr.join(',');
+                        if (btn.dataset.action === 'rename' && window.ManagerFolders)
+                            ManagerFolders.renameFolder(folderId);
+                        else if (btn.dataset.action === 'delete-folder' && window.ManagerFolders)
+                            ManagerFolders.deleteFolder(folderId);
+                        break;
+                    }
+                }
+                QuickActions.closeAll();
+            })();
         }, true);
 
-        document.addEventListener('click', e => {
-            if (e.target.closest('.quick-actions-trigger') || e.target.closest('.quick-actions-hover')) return;
-            document.querySelectorAll('.quick-actions-hover.active').forEach(p => p.classList.remove('active'));
-        }, { passive: true });
-
+        QuickActions.attachGlobalCloseListener();
         _quickActionsListenerAttached = true;
     }
 
@@ -284,15 +339,8 @@ const ManagerBookmarks = (function () {
         </div>
         <div class="folder-badge">${childCount}</div>
         <button class="quick-actions-trigger" title="${getMessage('actions')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
-        <div class="quick-actions-hover">
-            <button class="quick-action-btn-small edit" data-action="rename" title="${getMessage('rename')}">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11.5 2.5a2 2 0 0 1 3 3L6 14l-4 1 1-4 8.5-8.5z"></path></svg>
-            </button>
-            <button class="quick-action-btn-small delete" data-action="delete-folder" title="${getMessage('delete')}">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-            </button>
-        </div>
     `;
+    item._boundData = folder;
 
 
     function expandFolderInSidebar(folderId) {
@@ -396,21 +444,6 @@ const ManagerBookmarks = (function () {
         _lastSelectedIndex = index;
     });
 
-    
-    item.querySelector('.quick-actions-hover').addEventListener('click', e => {
-        const btn = e.target.closest('.quick-action-btn-small');
-        if (!btn) return;
-        e.stopPropagation();
-        const pathArr = _deps.findItemPath(_deps.getData(), folder);
-        if (!pathArr) return;
-        const folderId = pathArr.join(',');
-        if (btn.dataset.action === 'rename' && window.ManagerFolders) {
-            ManagerFolders.renameFolder(folderId);
-        } else if (btn.dataset.action === 'delete-folder' && window.ManagerFolders) {
-            ManagerFolders.deleteFolder(folderId);
-        }
-    });
-
     return item;
 }
 
@@ -449,49 +482,13 @@ const ManagerBookmarks = (function () {
             </div>
             <div class="item-domain">${escapeHtml(domain)}</div>
             <button class="quick-actions-trigger" title="${getMessage('actions')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
-        <div class="quick-actions-hover">
-                <button class="quick-action-btn-small edit"    data-action="edit"    title="${getMessage('edit')}">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11.5 2.5a2 2 0 0 1 3 3L6 14l-4 1 1-4 8.5-8.5z"></path></svg>
-                </button>
-                <button class="quick-action-btn-small copy"    data-action="copy"    title="${getMessage('copyUrl')}">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="10" height="10" rx="1" ry="1"></rect><path d="M4 2h8a2 2 0 0 1 2 2v8"></path></svg>
-                </button>
-                <button class="quick-action-btn-small private" data-action="private" title="${getMessage('openPrivate')}">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-					<circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
-					<line x1="3" y1="3" x2="21" y2="21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-					</svg>
-                </button>
-                <button class="quick-action-btn-small delete"  data-action="delete"  title="${getMessage('delete')}">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                </button>
-            </div>
         `;
 
-        
+        item._boundData = bookmark;
+
         // favicon
         const iconEl = item.querySelector('.tree-item__favicon-placeholder');
         if (iconEl) _deps.loadFaviconAsync?.(bookmark.url, iconEl);
-
-        item.querySelector('.quick-actions-hover').addEventListener('click', async e => {
-            const btn = e.target.closest('.quick-action-btn-small');
-            if (!btn) return;
-            e.stopPropagation();
-            switch (btn.dataset.action) {
-                case 'edit':    editBookmark(bookmark); break;
-                case 'copy':
-                    navigator.clipboard.writeText(bookmark.url)
-                        .then(() => showNotification(getMessage('urlCopied')));
-                    break;
-                case 'private': openInPrivateTab(bookmark.url); break;
-                case 'delete':
-				const _delName = bookmark?.title || bookmark?.name || '';
-				if (await _deps.showConfirm({ title: `${getMessage('deleteConfirm')} "${_delName}"?` }))
-					deleteBookmark(bookmark);
-					break;
-            }
-        });
 
         // Item click
         item.addEventListener('click', e => {

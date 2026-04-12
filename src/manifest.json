@@ -1,18 +1,18 @@
 {
   "manifest_version": 3,
   "name": "__MSG_Name__",
-  "version": "1.8.4.91",
+  "version": "1.8.4.98",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
-    "storage", 
-    "contextMenus", 
-    "activeTab", 
+    "storage",
+    "contextMenus",
+    "activeTab",
     "history",
-    "bookmarks", 
+    "bookmarks",
     "clipboardRead",
     "clipboardWrite",
-	"tabs"
+    "tabs"
   ],
   "commands": {
     "quick-close-tab": {
@@ -40,35 +40,41 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "web_accessible_resources": [{
-    "resources": [
-      "donate.html", 
-      "js/donate.js",
-      "manager.html", 
-      "js/manager.js", 
-      "js/loader.js",
-	  "js/modules/shared.js", 		
-	  "js/modules/i18n.js",
-	  "js/modules/secure-utils.js",
-      "js/modules/theme.js",  
-      "js/modules/crypto-wrapper.js",
-      "js/modules/manager-lock.js",
-      "js/modules/manager-folders.js",
-      "js/modules/manager-bookmarks.js",
-	  "js/modules/manager-drag-drop.js",
-      "js/modules/popup-html-importer.js", 
-      "js/modules/popup-history-cleaner.js",
-      "js/modules/popup-import-export-manager.js",
-      "js/modules/popup-drag-drop.js",
-      "js/modules/popup-auth.js",
-      "js/modules/popup-ui.js",
-      "js/modules/popup-tree.js",
-      "js/modules/popup-bookmarks.js",
-	  "js/modules/donation-reminder.js",
-      "icons/*.png"
-    ],
-    "matches": ["chrome-extension://*/*"]
-  }],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "donate.html",
+        "js/donate.js",
+        "manager.html",
+        "js/manager.js",
+        "js/loader.js",
+        "js/modules/shared.js",
+        "js/modules/i18n.js",
+        "js/modules/secure-utils.js",
+        "js/modules/theme.js",
+        "js/modules/crypto-wrapper.js",
+        "js/modules/manager-lock.js",
+        "js/modules/manager-folders.js",
+        "js/modules/manager-bookmarks.js",
+        "js/modules/manager-drag-drop.js",
+        "js/modules/popup-html-importer.js",
+        "js/modules/popup-history-cleaner.js",
+        "js/modules/popup-import-export-manager.js",
+        "js/modules/popup-drag-drop.js",
+        "js/modules/popup-auth.js",
+        "js/modules/popup-ui.js",
+        "js/modules/popup-tree.js",
+        "js/modules/popup-bookmarks.js",
+        "js/modules/donation-reminder.js",
+        "icons/*.png",
+        "js/modules/qrcode.js",
+        "js/modules/qr-modal.js"
+      ],
+      "matches": [
+        "chrome-extension://*/*"
+      ]
+    }
+  ],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   }
