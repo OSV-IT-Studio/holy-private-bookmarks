@@ -28,12 +28,18 @@ Visit our **[official website](https://osv-it-studio.github.io/holy-private-book
 ## Features
 
 - 🔒 Full bookmark encryption (AES-GCM + PBKDF2)
-- ☁️ No servers — everything is stored locally
-- 📥 Import from standard Chrome bookmarks
-- 📁 Support for folders and nested structure
-- 🖱️ Context menu for quick bookmark adding
+- ☁️ No servers — everything is stored locally on your device
+- 📁 Folders and nested structure support
+- 🖱️ Quick actions panel on every bookmark and folder (edit, copy URL, QR code, open in private tab, delete)
+- 🔍 Search across all folders in the bookmark manager
+- 📥 Import from Netscape HTML format
+- 📥 Import directly from Chrome's built-in bookmarks
+- 📤 Export to Netscape HTML format (compatible with Chrome, Firefox, Edge, etc.)
+- 💾 Backup and restore — create encrypted backups and restore them on the setup screen
+- 🗂️ Fullscreen Bookmark Manager for bulk operations — move, rename, delete, search
+- 🖱️ Context menu integration for quick bookmark adding from any page
+- ⌨️ Quick Close Tab — press Alt+A (or Command+Shift+A on Mac) to instantly close a tab and clear its domain history
 - ⏰ Auto-lock after 10 minutes of inactivity
-- 🧹 Clear browsing history for domains present in bookmarks
 - 🌓 Dark/Light theme support
 
 ## Screenshots
