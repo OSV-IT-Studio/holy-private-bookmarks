@@ -60,6 +60,14 @@ Or load it manually:
 3. Enable "Developer mode"
 4. Click "Load unpacked" and select the folder
 
+## Open Source Libraries
+
+This project uses the following open source libraries:
+
+| Library | Author | License |
+|---------|--------|---------|
+| [QR Code Generator](https://github.com/kazuhikoarase/qrcode-generator) | © 2009 Kazuhiko Arase | MIT |
+
 ## License
 
 Copyright (C) 2026 OSV-IT-Studio
