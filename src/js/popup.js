@@ -116,6 +116,7 @@ function startAutoLock() {
 
 function lock() {
     clearTimeout(autoLockTimer);
+	QuickActions?.closeAll();
     if (data) wipeUserData(data);
     CryptoManager.clear();
     data = { folders: [] };

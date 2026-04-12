@@ -1,5 +1,10 @@
 [
-
+  {
+    "version": "1.8.4.99",
+    "changes": [
+	  "Fix quick-actions panel remaining visible after auto-lock"
+    ]
+  },
   {
     "version": "1.8.4.98",
     "changes": [

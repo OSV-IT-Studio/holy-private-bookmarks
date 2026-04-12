@@ -58,7 +58,7 @@ const ManagerLock = (function () {
 
         if (_isLocked || !CryptoManager?.isReady()) return;
         _isLocked = true;
-
+		window.QuickActions?.closeAll();
         if (_deps.getData()) wipeUserData(_deps.getData());
 
         CryptoManager.clear();
