@@ -304,8 +304,32 @@ async function init() {
         return;
     }
 
-    // Show login form via shared LoginUI
-    ManagerLock.showLockScreen();
+    // Try to restore session key
+    const stayPref = await chrome.storage.local.get('holyStayUnlocked');
+    if (stayPref.holyStayUnlocked) {
+        const restored = await CryptoManager.restoreFromSession().catch(() => false);
+        if (restored) {
+            try {
+                const storedData = stored[STORAGE_KEY];
+                const decrypted  = await CryptoManager.decrypt(storedData.encrypted);
+                const loadedData = JSON.parse(decrypted);
+                if (window.HolyShared?.ensureFolderUids) window.HolyShared.ensureFolderUids(loadedData.folders);
+                setData(loadedData);
+                document.querySelector('.container').style.display = 'flex';
+                ManagerLock.resetInactivityTimer();
+                deps.onUnlockSuccess();
+            } catch (e) {
+                CryptoManager.clear();
+                await CryptoManager.clearSession().catch(() => {});
+                ManagerLock.showLockScreen();
+            }
+        } else {
+            ManagerLock.showLockScreen();
+        }
+    } else {
+
+        ManagerLock.showLockScreen();
+    }
 
     // Search
     const searchInput = document.getElementById('search-input');
@@ -379,6 +403,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === 'closeForPopup') {
         window.close();
         chrome.runtime.sendMessage({ action: 'managerClosed' });
+        return true;
+    }
+    if (message.action === 'lockExtension') {
+        ManagerLock.lockManager();
         return true;
     }
 });

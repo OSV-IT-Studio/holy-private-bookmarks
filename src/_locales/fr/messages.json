@@ -171,7 +171,7 @@
     "message": "Fichier de sauvegarde invalide"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ Supprimer TOUTES les entrées de l'historique de navigation pour les domaines présents dans vos Holy Private Bookmarks ?"
+    "message": "Supprimer TOUTES les entrées de l'historique de navigation pour les domaines présents dans vos Holy Private Bookmarks ?"
   },
   "noBookmarks": {
     "message": "Aucun marque-page trouvé — rien à effacer."
@@ -798,7 +798,7 @@
     "message": "Fermer l'onglet et effacer l'historique du domaine"
   },
   "changeShortcut": {
-    "message": "Modifier le raccourci →"
+    "message": "Modifier les raccourcis clavier"
   },
   "actions": {
     "message": "Actions"
@@ -808,5 +808,35 @@
   },
   "qrScanHint": {
     "message": "Scannez le QR code pour ouvrir le lien sur votre appareil."
+  },
+  "stayUnlocked": {
+    "message": "Rester déverrouillé entre les sessions"
+  },
+  "stayUnlockedDesc": {
+    "message": "Reste déverrouillé tant que le navigateur est ouvert"
+  },
+  "stayUnlockedWarning": {
+    "message": "Réduit la sécurité : la clé de chiffrement est stockée dans le stockage de session du navigateur. Toute personne ayant accès à votre profil de navigateur peut potentiellement la lire."
+  },
+  "enable": {
+    "message": "Activer"
+  },
+  "managerIsOpen": {
+    "message": "Le gestionnaire de signets est ouvert"
+  },
+  "managerIsOpenDesc": {
+    "message": "Fermez le gestionnaire de signets pour utiliser le popup."
+  },
+  "switchToManager": {
+    "message": "Passer au gestionnaire"
+  },
+  "hotkeys": {
+    "message": "Raccourcis clavier"
+  },
+  "lockExtensionCommand": {
+    "message": "Verrouiller l'extension"
+  },
+  "openManagerCommand": {
+    "message": "Ouvrir le gestionnaire de favoris"
   }
 }

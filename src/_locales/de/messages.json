@@ -171,7 +171,7 @@
     "message": "Ungültige Backup-Datei"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ ALLE Browser-Verlaufseinträge für Domains löschen, die in deinen Holy Private Bookmarks vorkommen?"
+    "message": "ALLE Browser-Verlaufseinträge für Domains löschen, die in deinen Holy Private Bookmarks vorkommen?"
   },
   "noBookmarks": {
     "message": "Keine Lesezeichen gefunden — nichts zu löschen."
@@ -798,7 +798,7 @@
     "message": "Tab schließen und Domain-Verlauf löschen"
   },
   "changeShortcut": {
-    "message": "Tastenkürzel ändern →"
+    "message": "Tastenkürzel ändern"
   },
   "actions": {
     "message": "Aktionen"
@@ -808,5 +808,35 @@
   },
   "qrScanHint": {
     "message": "Scannen Sie den QR-Code, um den Link auf Ihrem Gerät zu öffnen."
+  },
+  "stayUnlocked": {
+    "message": "Zwischen Sitzungen entsperrt bleiben"
+  },
+  "stayUnlockedDesc": {
+    "message": "Bleibt entsperrt, solange der Browser geöffnet ist"
+  },
+  "stayUnlockedWarning": {
+    "message": "Verringert die Sicherheit: Der Verschlüsselungsschlüssel wird im Sitzungsspeicher des Browsers gespeichert. Jeder mit Zugriff auf Ihr Browserprofil kann ihn möglicherweise lesen."
+  },
+  "enable": {
+    "message": "Aktivieren"
+  },
+  "managerIsOpen": {
+    "message": "Lesezeichen-Manager ist geöffnet"
+  },
+  "managerIsOpenDesc": {
+    "message": "Schließen Sie den Lesezeichen-Manager, um das Popup zu verwenden."
+  },
+  "switchToManager": {
+    "message": "Zum Manager wechseln"
+  },
+  "hotkeys": {
+    "message": "Tastenkürzel"
+  },
+  "lockExtensionCommand": {
+    "message": "Erweiterung sperren"
+  },
+  "openManagerCommand": {
+    "message": "Lesezeichenverwaltung öffnen"
   }
 }

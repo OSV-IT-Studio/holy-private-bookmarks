@@ -171,7 +171,7 @@
     "message": "File di backup non valido"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ Eliminare TUTTE le voci della cronologia del browser per i domini presenti nei tuoi Holy Private Bookmarks?"
+    "message": "Eliminare TUTTE le voci della cronologia del browser per i domini presenti nei tuoi Holy Private Bookmarks?"
   },
   "noBookmarks": {
     "message": "Nessun segnalibro trovato — nulla da cancellare."
@@ -798,7 +798,7 @@
     "message": "Chiudi scheda e cancella cronologia del dominio"
   },
   "changeShortcut": {
-    "message": "Cambia scorciatoia →"
+    "message": "Cambia le scorciatoie da tastiera"
   },
   "actions": {
     "message": "Azioni"
@@ -808,5 +808,35 @@
   },
   "qrScanHint": {
     "message": "Scansiona il codice QR per aprire il link sul tuo dispositivo."
+  },
+  "stayUnlocked": {
+    "message": "Rimani sbloccato tra le sessioni"
+  },
+  "stayUnlockedDesc": {
+    "message": "Non chiede la password finché il browser è aperto"
+  },
+  "stayUnlockedWarning": {
+    "message": "Riduce la sicurezza: la chiave di cifratura viene salvata nella memoria di sessione del browser. Chiunque abbia accesso al tuo profilo browser potrebbe leggerla."
+  },
+  "enable": {
+    "message": "Attiva"
+  },
+  "managerIsOpen": {
+    "message": "Il gestore dei segnalibri è aperto"
+  },
+  "managerIsOpenDesc": {
+    "message": "Chiudi il gestore dei segnalibri per usare il popup."
+  },
+  "switchToManager": {
+    "message": "Passa al gestore"
+  },
+  "hotkeys": {
+    "message": "Scorciatoie da tastiera"
+  },
+  "lockExtensionCommand": {
+    "message": "Blocca l'estensione"
+  },
+  "openManagerCommand": {
+    "message": "Apri il gestore dei segnalibri"
   }
 }

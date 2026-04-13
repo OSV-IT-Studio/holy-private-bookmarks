@@ -89,6 +89,7 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 
 .mt-16{margin-top:16px}
 .w-100{width:100%}
+.w-au{width:auto}
 .text-center{text-align:center}
 
 .quick-actions-hover{position:fixed;display:flex;flex-direction:column;gap:2px;background:var(--card-bg);backdrop-filter:blur(50px);border:1px solid var(--card-border);border-radius:10px;padding:4px;z-index:99999;box-shadow:0 4px 16px rgba(0,0,0,.35);animation:quickActionsFadeIn .15s ease;min-width:155px}

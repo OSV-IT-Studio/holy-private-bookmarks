@@ -56,6 +56,7 @@ const PopupUI = (function () {
                 pb.value = null;
             }
         }
+
     }
 
     //Setup screen

@@ -20,6 +20,7 @@
 
 const SecureCrypto = (function() {
     let _masterKey = null;
+    let _masterKeyExtractable = null; // extractable copy used only for session save
     let _currentSalt = null;
 
     
@@ -73,6 +74,8 @@ const SecureCrypto = (function() {
                 _masterKey = null;
             }
         }
+
+        _masterKeyExtractable = null;
         
         if (_currentSalt) {
             secureWipeArray(_currentSalt);
@@ -112,6 +115,27 @@ const SecureCrypto = (function() {
             );
             
             return key;
+        } finally {
+            secureWipeArray(passwordBuffer);
+        }
+    }
+
+    // Same derivation but extractable: true — used only for session wrapping.
+    // The extractable key never leaves the extension; it is wrapped before storage.
+    async function deriveEncryptionKeyExtractable(password, salt) {
+        const encoder = new TextEncoder();
+        const passwordBuffer = encoder.encode(password);
+        try {
+            const keyMaterial = await crypto.subtle.importKey(
+                'raw', passwordBuffer, { name: 'PBKDF2' }, false, ['deriveKey']
+            );
+            return await crypto.subtle.deriveKey(
+                { name: 'PBKDF2', salt, iterations: ITERATIONS.KEY, hash: 'SHA-256' },
+                keyMaterial,
+                { name: 'AES-GCM', length: 256 },
+                true,               // extractable
+                ['encrypt', 'decrypt']
+            );
         } finally {
             secureWipeArray(passwordBuffer);
         }
@@ -223,7 +247,10 @@ const SecureCrypto = (function() {
                 const hashSalt = crypto.getRandomValues(new Uint8Array(SALT_SIZES.HASH));
                 
                 
-                _masterKey = await deriveEncryptionKey(password, encryptionSalt);
+                [_masterKey, _masterKeyExtractable] = await Promise.all([
+                    deriveEncryptionKey(password, encryptionSalt),
+                    deriveEncryptionKeyExtractable(password, encryptionSalt),
+                ]);
                 _currentSalt = encryptionSalt;
                 
                 
@@ -288,7 +315,10 @@ const SecureCrypto = (function() {
                 }
                 
                 const encryptionSalt = new Uint8Array(storedData.encryptionSalt);
-                _masterKey = await deriveEncryptionKey(password, encryptionSalt);
+                [_masterKey, _masterKeyExtractable] = await Promise.all([
+                    deriveEncryptionKey(password, encryptionSalt),
+                    deriveEncryptionKeyExtractable(password, encryptionSalt),
+                ]);
                 _currentSalt = encryptionSalt;
                 
                 return true;
@@ -315,7 +345,10 @@ const SecureCrypto = (function() {
                 const saltCopy = new Uint8Array(salt.length);
                 saltCopy.set(salt);
                 
-                _masterKey = await deriveEncryptionKey(password, saltCopy);
+                [_masterKey, _masterKeyExtractable] = await Promise.all([
+                    deriveEncryptionKey(password, saltCopy),
+                    deriveEncryptionKeyExtractable(password, saltCopy),
+                ]);
                 _currentSalt = saltCopy;
                 
                 return true;
@@ -406,6 +439,82 @@ const SecureCrypto = (function() {
             return saltCopy;
         },
         
+
+        // Session key persistence via chrome.storage.session.
+        // Survives popup close; wiped automatically when the browser exits.
+        // The master key is exported via AES-KW using a random per-session wrapping key.
+        // Both the wrapped key and the raw wrapping key are stored in session storage —
+        // an attacker would need access to the browser profile to read session storage,
+        // which is the same threat model as accessing the profile data itself.
+
+        async saveToSession() {
+            if (!_masterKeyExtractable || !_currentSalt) return;
+            try {
+                const wrapKey = await crypto.subtle.generateKey(
+                    { name: 'AES-KW', length: 256 }, true, ['wrapKey', 'unwrapKey']
+                );
+                const wrapKeyRaw = await crypto.subtle.exportKey('raw', wrapKey);
+                const wrapped    = await crypto.subtle.wrapKey('raw', _masterKeyExtractable, wrapKey, 'AES-KW');
+
+                await chrome.storage.session.set({
+                    _hpbSession: {
+                        wrappedKey: Array.from(new Uint8Array(wrapped)),
+                        wrapKeyRaw: Array.from(new Uint8Array(wrapKeyRaw)),
+                        salt:       Array.from(_currentSalt),
+                    }
+                });
+            } catch (e) {
+                // best-effort, silently skip
+            }
+        },
+
+        async restoreFromSession() {
+            try {
+                const result = await chrome.storage.session.get('_hpbSession');
+                const s = result._hpbSession;
+                if (!s || !s.wrappedKey || !s.wrapKeyRaw || !s.salt) return false;
+
+                const wrapKeyRaw = new Uint8Array(s.wrapKeyRaw);
+                const wrapped    = new Uint8Array(s.wrappedKey);
+                const salt       = new Uint8Array(s.salt);
+
+                const wrapKey = await crypto.subtle.importKey(
+                    'raw', wrapKeyRaw, { name: 'AES-KW' }, false, ['unwrapKey']
+                );
+
+                // Unwrap non-extractable copy for actual crypto operations
+                const masterKey = await crypto.subtle.unwrapKey(
+                    'raw', wrapped, wrapKey,
+                    { name: 'AES-KW' },
+                    { name: 'AES-GCM', length: 256 },
+                    false, ['encrypt', 'decrypt']
+                );
+
+                // Unwrap extractable copy so future saveToSession calls work
+                const wrapKey2 = await crypto.subtle.importKey(
+                    'raw', wrapKeyRaw, { name: 'AES-KW' }, false, ['unwrapKey']
+                );
+                const masterKeyExtractable = await crypto.subtle.unwrapKey(
+                    'raw', wrapped, wrapKey2,
+                    { name: 'AES-KW' },
+                    { name: 'AES-GCM', length: 256 },
+                    true, ['encrypt', 'decrypt']
+                );
+
+                _masterKey            = masterKey;
+                _masterKeyExtractable = masterKeyExtractable;
+                _currentSalt          = salt;
+                return true;
+            } catch (e) {
+                return false;
+            }
+        },
+
+        async clearSession() {
+            try {
+                await chrome.storage.session.remove('_hpbSession');
+            } catch (e) {}
+        },
 
         CONSTANTS: {
             ALGORITHMS,

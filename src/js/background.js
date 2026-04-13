@@ -18,8 +18,49 @@
  * Source code: https://github.com/OSV-IT-Studio/holy-private-bookmarks
  */
 
+// Opens the manager tab, or focuses it if already open
+function openManager() {
+    const managerUrl = chrome.runtime.getURL('manager.html');
+    chrome.storage.session.get('managerTabId', (stored) => {
+        const existingId = stored.managerTabId ?? null;
+        if (existingId !== null) {
+            chrome.tabs.get(existingId, (t) => {
+                if (chrome.runtime.lastError || !t) {
+                    chrome.tabs.create({ url: managerUrl });
+                } else {
+                    chrome.tabs.update(existingId, { active: true });
+                    chrome.windows.update(t.windowId, { focused: true });
+                }
+            });
+        } else {
+            chrome.tabs.create({ url: managerUrl });
+        }
+    });
+}
+
 // Quick Close Tab (Alt+A on Windows/Linux, Command+Shift+A on Mac)
+// Lock Extension (Alt+L on Windows/Linux, Command+Shift+L on Mac)
+// Open Manager   (Alt+M on Windows/Linux, Command+Shift+M on Mac)
 chrome.commands.onCommand.addListener(async (command) => {
+    if (command === 'open-manager') {
+        openManager();
+        return;
+    }
+
+    if (command === 'lock-extension') {
+
+        const tabs = await chrome.tabs.query({});
+        const extensionOrigin = chrome.runtime.getURL('');
+        for (const tab of tabs) {
+            if (tab.url && tab.url.startsWith(extensionOrigin)) {
+                chrome.tabs.sendMessage(tab.id, { action: 'lockExtension' }).catch(() => {});
+            }
+        }
+
+        chrome.runtime.sendMessage({ action: 'lockExtension' }).catch(() => {});
+        return;
+    }
+
     if (command !== 'quick-close-tab') return;
 
     
@@ -77,22 +118,7 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
             chrome.tabs.create({ url: chrome.runtime.getURL("popup.html") });
         }
     } else if (info.menuItemId === "add-current-tab") {
-        const managerUrl = chrome.runtime.getURL('manager.html');
-        chrome.storage.session.get('managerTabId', (stored) => {
-            const existingId = stored.managerTabId ?? null;
-            if (existingId !== null) {
-                chrome.tabs.get(existingId, (t) => {
-                    if (chrome.runtime.lastError || !t) {
-                        chrome.tabs.create({ url: managerUrl });
-                    } else {
-                        chrome.tabs.update(existingId, { active: true });
-                        chrome.windows.update(t.windowId, { focused: true });
-                    }
-                });
-            } else {
-                chrome.tabs.create({ url: managerUrl });
-            }
-        });
+        openManager();
     }
 });
 
@@ -142,6 +168,34 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         });
     }
 
+    if (message.action === 'isManagerOpen') {
+        chrome.storage.session.get('managerTabId', (stored) => {
+            const existingId = stored.managerTabId ?? null;
+            if (existingId === null) {
+                sendResponse({ open: false });
+                return;
+            }
+            chrome.tabs.get(existingId, (tab) => {
+                if (chrome.runtime.lastError || !tab) {
+                    chrome.storage.session.remove('managerTabId');
+                    sendResponse({ open: false });
+                } else {
+                    sendResponse({ open: true, tabId: existingId, windowId: tab.windowId });
+                }
+            });
+        });
+        return true;
+    }
+if (message.action === 'openPopupAfterManager') {
+    const tabId = sender.tab?.id;
+    chrome.tabs.remove(tabId, () => {
+        setTimeout(() => {
+            if (chrome.action.openPopup) {
+                chrome.action.openPopup();
+            }
+        }, 150);
+    });
+}
     if (message.action === 'setQuickCloseEnabled') {
         chrome.storage.local.set({ holyQuickCloseEnabled: !!message.enabled });
     }

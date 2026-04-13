@@ -32,7 +32,11 @@ const ManagerLock = (function () {
     function resetInactivityTimer() {
         clearTimeout(_inactivityTimer);
         if (!_isLocked && _deps.CryptoManager?.isReady()) {
-            _inactivityTimer = setTimeout(lockManager, _deps.INACTIVITY_TIMEOUT);
+            chrome.storage.local.get('holyStayUnlocked', (r) => {
+                if (!r.holyStayUnlocked) {
+                    _inactivityTimer = setTimeout(lockManager, _deps.INACTIVITY_TIMEOUT);
+                }
+            });
         }
     }
 
@@ -62,6 +66,7 @@ const ManagerLock = (function () {
         if (_deps.getData()) wipeUserData(_deps.getData());
 
         CryptoManager.clear();
+        CryptoManager.clearSession().catch(() => {});
         setData({ folders: [] });
         clearManagerCaches();
         clearAllSharedCaches();
@@ -195,6 +200,11 @@ if (breadcrumbs) {
             reset();
             onUnlockSuccess();
 
+            // Save session key if user enabled "stay unlocked"
+            chrome.storage.local.get('holyStayUnlocked').then(r => {
+                if (r.holyStayUnlocked) CryptoManager.saveToSession().catch(() => {});
+            }).catch(() => {});
+
         } catch (e) {
             console.error('Unlock error:', e);
             showNotification(getMessage('unlockFailed') + e.message, true);
@@ -221,12 +231,12 @@ if (breadcrumbs) {
                     <h1 class="lock-title">${getMessage('notSetUpTitle')}</h1>
                     <p class="login-subtitle">${getMessage('notSetUpSubtitle')}</p>
                 </div>
-                <button id="open-extension" class="unlock-button" style="margin-top:20px;">${getMessage('notSetUpButton')}</button>
+                <button id="open-popup" class="unlock-button" style="margin-top:20px;">${getMessage('notSetUpButton')}</button>
             </div>
         `;
-        document.getElementById('open-extension')?.addEventListener('click', () => {
-            if (chrome.action?.openPopup) chrome.action.openPopup();
-        });
+        document.getElementById('open-popup')?.addEventListener('click', () => {
+    chrome.runtime.sendMessage({ action: 'openPopupAfterManager' });
+});
     }
 
     function showMigrationScreen() {
@@ -248,8 +258,8 @@ if (breadcrumbs) {
             </div>
         `;
         document.getElementById('open-popup')?.addEventListener('click', () => {
-            chrome.action.openPopup();
-        });
+    chrome.runtime.sendMessage({ action: 'openPopupAfterManager' });
+});
     }
 
     function showReloadingScreen() {

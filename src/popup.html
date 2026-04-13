@@ -162,17 +162,45 @@
             <span class="slider round"></span>
         </label>
     </div>
-    <div style="padding: 8px 0 4px 0;">
-        <button id="change-shortcut-btn" class="btn-change-shortcut">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="6" width="20" height="12" rx="2"/>
-                <path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/>
-            </svg>
-            <span data-i18n="changeShortcut"></span>
-            
-        </button>
+    <div class="settings-option" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-top: 1px solid var(--border-color);">
+        <div>
+            <div class="option-title" data-i18n="stayUnlocked"></div>
+            <div class="option-description" data-i18n="stayUnlockedDesc"></div>
+        </div>
+        <label class="switch">
+            <input type="checkbox" id="stay-unlocked-toggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div id="stay-unlocked-warning" style="display:none; margin: 2px 0 8px 0; padding: 8px 10px; border-radius: 6px; background: var(--warning-bg, rgba(255,180,0,0.12)); border: 1px solid var(--warning-border, rgba(255,180,0,0.35)); color: var(--warning-text, #b8860b);">
+        <div style="display:flex; gap:7px; align-items:flex-start;">
+            <svg style="flex-shrink:0;margin-top:1px;" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span style="font-size:12px; line-height:1.45;" data-i18n="stayUnlockedWarning"></span>
+        </div>
     </div>
 </div>
+        <div class="settings-section">
+            <h3 class="section-title" data-i18n="hotkeys"></h3>
+            <div class="settings-buttons-grid">
+                <button class="settings-btn" id="change-shortcut-btn">
+                    <span class="settings-btn__icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="6" width="20" height="12" rx="2"/>
+                            <path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/>
+                        </svg>
+                    </span>
+                    <div class="settings-btn__content">
+                        <span class="settings-btn__title" data-i18n="changeShortcut"></span>
+                    </div>
+                    <span class="settings-btn__arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
             <div class="settings-section change-master-password">
                 <h3 class="section-title" data-i18n="changeMasterPassword"></h3>
                 <input type="password" id="old-pass" data-i18n="currentPassword" placeholder="Current password">

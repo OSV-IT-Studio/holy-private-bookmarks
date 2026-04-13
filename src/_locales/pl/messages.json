@@ -171,7 +171,7 @@
     "message": "Nieprawidłowy plik kopii zapasowej"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ Usunąć WSZYSTKIE wpisy historii przeglądarki dla domen obecnych w Twoich zakładkach Holy Private Bookmarks?"
+    "message": "Usunąć WSZYSTKIE wpisy historii przeglądarki dla domen obecnych w Twoich zakładkach Holy Private Bookmarks?"
   },
   "noBookmarks": {
     "message": "Nie znaleziono zakładek — nic do wyczyszczenia."
@@ -801,7 +801,7 @@
     "message": "Zamknij kartę i wyczyść historię domeny"
   },
   "changeShortcut": {
-    "message": "Zmień skrót →"
+    "message": "Zmień skróty klawiszowe"
   },
   "actions": {
     "message": "Akcje"
@@ -811,5 +811,35 @@
   },
   "qrScanHint": {
     "message": "Zeskanuj kod QR, aby otworzyć link na swoim urządzeniu."
+  },
+  "stayUnlocked": {
+    "message": "Pozostań odblokowany między sesjami"
+  },
+  "stayUnlockedDesc": {
+    "message": "Nie pyta o hasło, gdy przeglądarka jest otwarta"
+  },
+  "stayUnlockedWarning": {
+    "message": "Zmniejsza bezpieczeństwo: klucz szyfrowania jest przechowywany w pamięci sesji przeglądarki. Każdy z dostępem do Twojego profilu może go potencjalnie odczytać."
+  },
+  "enable": {
+    "message": "Włącz"
+  },
+  "managerIsOpen": {
+    "message": "Menedżer zakładek jest otwarty"
+  },
+  "managerIsOpenDesc": {
+    "message": "Zamknij menedżer zakładek, aby użyć wyskakującego okna."
+  },
+  "switchToManager": {
+    "message": "Przełącz na menedżer"
+  },
+  "hotkeys": {
+    "message": "Skróty klawiszowe"
+  },
+  "lockExtensionCommand": {
+    "message": "Zablokuj rozszerzenie"
+  },
+  "openManagerCommand": {
+    "message": "Otwórz menedżer zakładek"
   }
 }

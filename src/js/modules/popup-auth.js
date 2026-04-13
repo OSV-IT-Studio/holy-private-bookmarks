@@ -101,6 +101,11 @@ const PopupAuth = (function () {
             _get('all').setData(loadedData);
             if (_get('all').saveChanges) await _get('all').saveChanges();
 
+            // Save key to session only if user has enabled "stay unlocked"
+            chrome.storage.local.get('holyStayUnlocked').then(r => {
+                if (r.holyStayUnlocked) SecureCrypto.saveToSession().catch(() => {});
+            }).catch(() => {});
+
             document.getElementById('login-notification-bar')?.remove();
             document.getElementById('login')?.remove();
             document.getElementById('login-temp-styles')?.remove();
@@ -176,7 +181,6 @@ const PopupAuth = (function () {
 
             SecureCrypto.clear();
 
-            showGlobalLoadingIndicator(); 
             showNotification(getMessage('migrationSuccess'), false, 2000);
 
             setTimeout(() => window.location.reload(), 1000);

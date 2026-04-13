@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_Name__",
-  "version": "1.8.4.99",
+  "version": "1.8.5.08",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
@@ -21,6 +21,20 @@
         "mac": "Command+Shift+A"
       },
       "description": "__MSG_quickCloseTabCommand__"
+    },
+    "lock-extension": {
+      "suggested_key": {
+        "default": "Alt+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "__MSG_lockExtensionCommand__"
+    },
+    "open-manager": {
+      "suggested_key": {
+        "default": "Alt+M",
+        "mac": "Command+Shift+M"
+      },
+      "description": "__MSG_openManagerCommand__"
     }
   },
   "incognito": "spanning",

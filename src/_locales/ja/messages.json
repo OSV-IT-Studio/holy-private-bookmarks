@@ -171,7 +171,7 @@
     "message": "無効なバックアップファイルです"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ Holy Private Bookmarks に存在するドメインのブラウザ履歴エントリをすべて削除しますか？"
+    "message": "Holy Private Bookmarks に存在するドメインのブラウザ履歴エントリをすべて削除しますか？"
   },
   "noBookmarks": {
     "message": "ブックマークが見つかりません — 消去するものはありません。"
@@ -798,7 +798,7 @@
     "message": "タブを閉じてドメイン履歴を削除"
   },
   "changeShortcut": {
-    "message": "ショートカットを変更 →"
+    "message": "ホットキーを変更"
   },
   "actions": {
     "message": "アクション"
@@ -808,5 +808,35 @@
   },
   "qrScanHint": {
     "message": "QRコードをスキャンしてデバイスでリンクを開いてください。"
+  },
+  "stayUnlocked": {
+    "message": "セッション間でロック解除を維持"
+  },
+  "stayUnlockedDesc": {
+    "message": "ブラウザが開いている間はパスワードを求めません"
+  },
+  "stayUnlockedWarning": {
+    "message": "セキュリティが低下します：暗号化キーがブラウザのセッションストレージに保存されます。ブラウザプロファイルにアクセスできる人は誰でも読み取れる可能性があります。"
+  },
+  "enable": {
+    "message": "有効にする"
+  },
+  "managerIsOpen": {
+    "message": "ブックマークマネージャーが開いています"
+  },
+  "managerIsOpenDesc": {
+    "message": "ポップアップを使用するには、ブックマークマネージャーを閉じてください。"
+  },
+  "switchToManager": {
+    "message": "マネージャーに切り替える"
+  },
+  "hotkeys": {
+    "message": "ホットキー"
+  },
+  "lockExtensionCommand": {
+    "message": "拡張機能をロック"
+  },
+  "openManagerCommand": {
+    "message": "ブックマークマネージャーを開く"
   }
 }

@@ -171,7 +171,7 @@
     "message": "Archivo de respaldo inválido"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ ¿Eliminar TODAS las entradas del historial del navegador para los dominios presentes en tus Holy Private Bookmarks?"
+    "message": "¿Eliminar TODAS las entradas del historial del navegador para los dominios presentes en tus Holy Private Bookmarks?"
   },
   "noBookmarks": {
     "message": "No se encontraron marcadores — nada que limpiar."
@@ -798,7 +798,7 @@
     "message": "Cerrar pestaña y borrar historial del dominio"
   },
   "changeShortcut": {
-    "message": "Cambiar atajo →"
+    "message": "Cambiar atajos de teclado"
   },
   "actions": {
     "message": "Acciones"
@@ -808,5 +808,35 @@
   },
   "qrScanHint": {
     "message": "Escanea el código QR para abrir el enlace en tu dispositivo."
+  },
+  "stayUnlocked": {
+    "message": "Permanecer desbloqueado entre sesiones"
+  },
+  "stayUnlockedDesc": {
+    "message": "No pide contraseña mientras el navegador esté abierto"
+  },
+  "stayUnlockedWarning": {
+    "message": "Reduce la seguridad: la clave de cifrado se almacena en el almacenamiento de sesión del navegador. Cualquiera con acceso a tu perfil del navegador podría leerla."
+  },
+  "enable": {
+    "message": "Activar"
+  },
+  "managerIsOpen": {
+    "message": "El administrador de marcadores está abierto"
+  },
+  "managerIsOpenDesc": {
+    "message": "Cierre el administrador de marcadores para usar el popup."
+  },
+  "switchToManager": {
+    "message": "Cambiar al administrador"
+  },
+  "hotkeys": {
+    "message": "Teclas de acceso rápido"
+  },
+  "lockExtensionCommand": {
+    "message": "Bloquear la extensión"
+  },
+  "openManagerCommand": {
+    "message": "Abrir el administrador de marcadores"
   }
 }

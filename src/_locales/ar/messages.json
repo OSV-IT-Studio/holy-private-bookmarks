@@ -171,7 +171,7 @@
     "message": "ملف نسخ احتياطي غير صالح"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ حذف جميع إدخالات سجل المتصفح للنطاقات الموجودة في Holy Private Bookmarks الخاصة بك؟"
+    "message": "حذف جميع إدخالات سجل المتصفح للنطاقات الموجودة في Holy Private Bookmarks الخاصة بك؟"
   },
   "noBookmarks": {
     "message": "لم يتم العثور على إشارات مرجعية - لا شيء لمسحه."
@@ -798,7 +798,7 @@
     "message": "إغلاق التبويب ومسح سجل النطاق"
   },
   "changeShortcut": {
-    "message": "تغيير الاختصار →"
+    "message": "تغيير اختصارات لوحة المفاتيح"
   },
   "actions": {
     "message": "الإجراءات"
@@ -808,5 +808,35 @@
   },
   "qrScanHint": {
     "message": "امسح رمز QR للانتقال إلى الرابط على جهازك."
+  },
+  "stayUnlocked": {
+    "message": "البقاء غير مقفل بين الجلسات"
+  },
+  "stayUnlockedDesc": {
+    "message": "لا يطلب كلمة المرور طالما المتصفح مفتوح"
+  },
+  "stayUnlockedWarning": {
+    "message": "يقلل الأمان: يتم تخزين مفتاح التشفير في تخزين جلسة المتصفح. يمكن لأي شخص لديه إمكانية الوصول إلى ملف تعريف متصفحك قراءته."
+  },
+  "enable": {
+    "message": "تمكين"
+  },
+  "managerIsOpen": {
+    "message": "مدير الإشارات المرجعية مفتوح"
+  },
+  "managerIsOpenDesc": {
+    "message": "أغلق مدير الإشارات المرجعية لاستخدام النافذة المنبثقة."
+  },
+  "switchToManager": {
+    "message": "التبديل إلى المدير"
+  },
+  "hotkeys": {
+    "message": "اختصارات لوحة المفاتيح"
+  },
+  "lockExtensionCommand": {
+    "message": "قفل الامتداد"
+  },
+  "openManagerCommand": {
+    "message": "فتح مدير الإشارات المرجعية"
   }
 }

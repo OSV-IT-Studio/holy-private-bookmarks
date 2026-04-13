@@ -171,7 +171,7 @@
     "message": "无效的备份文件"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ 删除您在 Holy Private Bookmarks 中出现的所有域名的浏览器历史记录条目？"
+    "message": "删除您在 Holy Private Bookmarks 中出现的所有域名的浏览器历史记录条目？"
   },
   "noBookmarks": {
     "message": "未找到书签 — 无需清除。"
@@ -798,7 +798,7 @@
     "message": "关闭标签页并清除域名历史"
   },
   "changeShortcut": {
-    "message": "修改快捷键 →"
+    "message": "修改快捷键"
   },
   "actions": {
     "message": "操作"
@@ -808,5 +808,26 @@
   },
   "qrScanHint": {
     "message": "扫描二维码，在您的设备上打开链接。"
+  },
+  "stayUnlocked": {
+    "message": "在会话之间保持解锁"
+  },
+  "stayUnlockedDesc": {
+    "message": "浏览器打开时不再要求输入密码"
+  },
+  "stayUnlockedWarning": {
+    "message": "降低安全性：加密密钥存储在浏览器的会话存储中。任何可以访问您浏览器配置文件的人都可能读取该密钥。"
+  },
+  "enable": {
+    "message": "启用"
+  },
+  "hotkeys": {
+    "message": "快捷键"
+  },
+  "lockExtensionCommand": {
+    "message": "锁定扩展"
+  },
+  "openManagerCommand": {
+    "message": "打开书签管理器"
   }
 }

@@ -95,6 +95,7 @@ buildFolderTreePicker,
 const STORAGE_KEY       = SHARED_STORAGE_KEY || 'holyPrivateData';
 const INACTIVITY_TIMEOUT = SHARED_INACTIVITY_TIMEOUT || 10 * 60 * 1000;
 const CryptoManager     = window.SecureCrypto;
+const SESSION_PREF_KEY  = 'holyStayUnlocked'; 
 
 let data              = { folders: [] };
 let autoLockTimer;
@@ -111,7 +112,11 @@ const setData  = (d) => { data = d; };
 
 function startAutoLock() {
     clearTimeout(autoLockTimer);
-    autoLockTimer = setTimeout(lock, INACTIVITY_TIMEOUT);
+    chrome.storage.local.get(SESSION_PREF_KEY, (r) => {
+        if (!r[SESSION_PREF_KEY]) {
+            autoLockTimer = setTimeout(lock, INACTIVITY_TIMEOUT);
+        }
+    });
 }
 
 function lock() {
@@ -119,6 +124,7 @@ function lock() {
 	QuickActions?.closeAll();
     if (data) wipeUserData(data);
     CryptoManager.clear();
+    CryptoManager.clearSession().catch(() => {});
     data = { folders: [] };
     pendingBookmarkRef.value = null;
     virtualScrollCache?.clear?.();
@@ -193,6 +199,50 @@ async function initFaviconToggle() {
 }
 
 // Quick Close toggle (shortcut injected dynamically)
+
+async function isStayUnlockedEnabled() {
+    const result = await chrome.storage.local.get(SESSION_PREF_KEY);
+    return !!result[SESSION_PREF_KEY];
+}
+
+async function initStayUnlockedToggle() {
+    const toggle  = document.getElementById('stay-unlocked-toggle');
+    const warning = document.getElementById('stay-unlocked-warning');
+    if (!toggle) return;
+
+    const enabled = await isStayUnlockedEnabled();
+    toggle.checked = enabled;
+    if (warning) warning.style.display = enabled ? 'block' : 'none';
+
+    toggle.addEventListener('change', async (e) => {
+        const val = e.target.checked;
+
+        if (val) {
+
+            const confirmed = await showConfirm({
+                warning: `
+				<h2 class="hpb-modal__title hpb-modal__title--center">${getMessage('stayUnlocked')}</h2>
+				<div style="text-align:left">${getMessage('stayUnlockedWarning')}</div>`,
+                confirmLabel: getMessage('enable'),
+                cancelLabel:  getMessage('cancel'),
+            });
+            if (!confirmed) {
+                toggle.checked = false;
+                return;
+            }
+            await chrome.storage.local.set({ [SESSION_PREF_KEY]: true });
+            if (warning) warning.style.display = 'block';
+
+            if (CryptoManager.isReady()) {
+                await CryptoManager.saveToSession();
+            }
+        } else {
+            await chrome.storage.local.set({ [SESSION_PREF_KEY]: false });
+            if (warning) warning.style.display = 'none';
+            await CryptoManager.clearSession();
+        }
+    });
+}
 
 async function initQuickCloseToggle() {
     const toggle = document.getElementById('quick-close-toggle');
@@ -289,10 +339,115 @@ function buildDeps() {
     };
 }
 
+// Show blocking screen when manager tab is open
+
+function showManagerBlockScreen(tabId, windowId) {
+
+    document.querySelectorAll('section, .section, [id$="-section"]').forEach(el => {
+        el.style.display = 'none';
+    });
+
+    const title       = getMessage('managerIsOpen');
+    const desc        = getMessage('managerIsOpenDesc');
+    const switchLabel = getMessage('switchToManager');
+
+    const screen = document.createElement('div');
+    screen.id = 'manager-block-screen';
+    screen.style.cssText = [
+        'position:fixed',
+        'inset:0',
+        'display:flex',
+        'flex-direction:column',
+        'align-items:center',
+        'justify-content:center',
+        'gap:20px',
+        'padding:40px 32px',
+        'text-align:center',
+        'box-sizing:border-box',
+        'z-index:99999',
+        'background:var(--bg)',
+    ].join(';');
+
+
+    screen.innerHTML = `
+        <div style="
+            width:72px;height:72px;border-radius:50%;
+            background:rgba(0,212,255,0.1);
+            border:1.5px solid rgba(0,212,255,0.25);
+            display:flex;align-items:center;justify-content:center;
+            color:var(--accent);
+            box-shadow:0 0 32px rgba(0,212,255,0.12);
+        ">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.6"
+                 stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M3 9h18"/>
+                <circle cx="7" cy="6" r="1" fill="currentColor" stroke="none"/>
+                <circle cx="10" cy="6" r="1" fill="currentColor" stroke="none"/>
+                <path d="M12 14v3M12 14l-2-2M12 14l2-2" stroke-width="1.5"/>
+            </svg>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;max-width:280px;">
+            <div style="font-weight:700;font-size:16px;color:var(--text-primary);letter-spacing:-.01em;">
+                ${escapeHtml(title)}
+            </div>
+            <div style="font-size:13px;color:var(--text-tertiary);line-height:1.6;">
+                ${escapeHtml(desc)}
+            </div>
+        </div>
+
+        <button id="manager-block-switch" class="btn-primary w-au mt-16">
+            
+            ${escapeHtml(switchLabel)}
+        </button>
+    `;
+
+    document.body.appendChild(screen);
+
+    const btn = document.getElementById('manager-block-switch');
+    btn?.addEventListener('mouseenter', () => {
+        btn.style.transform = 'translateY(-2px)';
+        btn.style.boxShadow = '0 8px 24px rgba(0,212,255,0.35)';
+    });
+    btn?.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+        btn.style.boxShadow = '0 4px 16px rgba(0,212,255,0.25)';
+    });
+    btn?.addEventListener('click', async () => {
+        try {
+            await chrome.tabs.update(tabId, { active: true });
+            await chrome.windows.update(windowId, { focused: true });
+        } catch {
+            const managerUrl = chrome.runtime.getURL('manager.html');
+            chrome.tabs.create({ url: managerUrl });
+        }
+        window.close();
+    });
+}
+
 // Main initialization
 
 async function init() {
     if (isInitialized) return;
+
+    try {
+        const managerStatus = await chrome.runtime.sendMessage({ action: 'isManagerOpen' });
+        if (managerStatus?.open) {
+            if (window.HolyI18n?.localizePage) window.HolyI18n.localizePage();
+            if (window.ThemeManager) {
+                await window.ThemeManager.init().catch(() => {});
+            }
+            hideThemeLoader();
+            showManagerBlockScreen(managerStatus.tabId, managerStatus.windowId);
+            return;
+        }
+    } catch {  }
+
+
+    if (window.HolyI18n?.localizePage) window.HolyI18n.localizePage();
+
 	const justInstalled = await chrome.storage.local.get('donationReminderJustInstalled');
     if (justInstalled.donationReminderJustInstalled) {
         if (typeof window.DonationReminder !== 'undefined') {
@@ -319,12 +474,13 @@ async function init() {
 
     initFaviconToggle();
     initQuickCloseToggle();
-    chrome.runtime.sendMessage({ action: 'reloadmanager' }).catch(() => {});
+    initStayUnlockedToggle();
 
     
-    const [stored, session] = await Promise.all([
+    const [stored, session, stayPref] = await Promise.all([
         chrome.storage.local.get(STORAGE_KEY),
-        chrome.storage.session.get('pendingBookmarkAdd')
+        chrome.storage.session.get(['pendingBookmarkAdd', '_hpbSession']),
+        chrome.storage.local.get(SESSION_PREF_KEY),
     ]);
 
     if (session.pendingBookmarkAdd) {
@@ -345,7 +501,41 @@ async function init() {
     if (!stored[STORAGE_KEY]) {
         PopupUI.showSetupSection();
     } else {
-        PopupUI.showLoginSection();
+
+        const stayUnlocked = !!stayPref[SESSION_PREF_KEY];
+        if (stayUnlocked && session._hpbSession && stored[STORAGE_KEY]) {
+            const restored = await CryptoManager.restoreFromSession();
+            if (restored) {
+                try {
+                    const storedData = stored[STORAGE_KEY];
+                    const decrypted = await CryptoManager.decrypt(storedData.encrypted);
+                    const loadedData = JSON.parse(decrypted);
+                    if (ensureFolderUids) ensureFolderUids(loadedData.folders);
+                    setData(loadedData);
+                    await saveChanges();
+                    PopupUI.showSection('main');
+                    startAutoLock();
+                    if (pendingBookmarkRef.value) {
+                        PopupBookmarks.openAddBookmarkModal(pendingBookmarkRef.value.title, pendingBookmarkRef.value.url);
+                        pendingBookmarkRef.value = null;
+                    }
+                    if (typeof window.DonationReminder !== 'undefined') {
+                        setTimeout(() => window.DonationReminder.checkAndShowReminder(), 3000);
+                    }
+                    isInitialized = true;
+                   
+                } catch (e) {
+                    
+                    CryptoManager.clear();
+                    await CryptoManager.clearSession();
+                    PopupUI.showLoginSection();
+                }
+            } else {
+                PopupUI.showLoginSection();
+            }
+        } else {
+            PopupUI.showLoginSection();
+        }
     }
 
     // Event handlers
@@ -542,6 +732,13 @@ window.addEventListener('visibilitychange', () => {
         messageCache?.clear?.();
         faviconCache?.clear?.();
         faviconPromises?.clear?.();
+    }
+});
+
+// Global hotkey: lock extension (Alt+L / Command+Shift+L)
+chrome.runtime.onMessage.addListener((message) => {
+    if (message.action === 'lockExtension') {
+        lock();
     }
 });
 

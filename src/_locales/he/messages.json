@@ -801,7 +801,7 @@
     "message": "סגור כרטיסייה ומחק היסטוריית דומיין"
   },
   "changeShortcut": {
-    "message": "שנה קיצור דרך →"
+    "message": "שנה קיצורי דרך"
   },
   "actions": {
     "message": "פעולות"
@@ -811,5 +811,35 @@
   },
   "qrScanHint": {
     "message": "סרוק את קוד ה-QR כדי לפתוח את הקישור במכשיר שלך."
+  },
+  "stayUnlocked": {
+    "message": "הישאר פתוח בין סשנים"
+  },
+  "stayUnlockedDesc": {
+    "message": "לא מבקש סיסמה כל עוד הדפדפן פתוח"
+  },
+  "stayUnlockedWarning": {
+    "message": "מפחית אבטחה: מפתח ההצפנה נשמר באחסון הסשן של הדפדפן. כל מי שיש לו גישה לפרופיל הדפדפן שלך עלול לקרוא אותו."
+  },
+  "enable": {
+    "message": "הפעל"
+  },
+  "managerIsOpen": {
+    "message": "מנהל הסימניות פתוח"
+  },
+  "managerIsOpenDesc": {
+    "message": "סגור את מנהל הסימניות כדי להשתמש בחלון הקופץ."
+  },
+  "switchToManager": {
+    "message": "עבור למנהל"
+  },
+  "hotkeys": {
+    "message": "מקשי קיצור"
+  },
+  "lockExtensionCommand": {
+    "message": "נעל את ההרחבה"
+  },
+  "openManagerCommand": {
+    "message": "פתח את מנהל הסימניות"
   }
 }

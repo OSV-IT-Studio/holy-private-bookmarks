@@ -171,7 +171,7 @@
     "message": "Invalid backup file"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ Delete ALL browser history entries for domains present in your Holy Private Bookmarks?"
+    "message": "Delete ALL browser history entries for domains present in your Holy Private Bookmarks?"
   },
   "noBookmarks": {
     "message": "No bookmarks found — nothing to clear."
@@ -801,7 +801,7 @@
     "message": "Close tab and clear domain history"
   },
   "changeShortcut": {
-    "message": "Change shortcut →"
+    "message": "Change hotkeys"
   },
   "actions": {
     "message": "Actions"
@@ -811,5 +811,35 @@
   },
   "qrScanHint": {
     "message": "Scan the QR code to open the link on your device."
+  },
+  "stayUnlocked": {
+    "message": "Stay unlocked between sessions"
+  },
+  "stayUnlockedDesc": {
+    "message": "Keeps you unlocked while the browser is open"
+  },
+  "stayUnlockedWarning": {
+    "message": "Reduces security: the encryption key is stored in browser session storage. Anyone with access to your browser profile can potentially read it."
+  },
+  "enable": {
+    "message": "Enable"
+  },
+  "managerIsOpen": {
+    "message": "Bookmark Manager is open"
+  },
+  "managerIsOpenDesc": {
+    "message": "Close the bookmark manager tab to use the popup."
+  },
+  "switchToManager": {
+    "message": "Switch to Manager"
+  },
+  "hotkeys": {
+    "message": "Hotkeys"
+  },
+  "lockExtensionCommand": {
+    "message": "Lock the extension"
+  },
+  "openManagerCommand": {
+    "message": "Open bookmark manager"
   }
 }
