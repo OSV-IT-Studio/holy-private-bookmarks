@@ -5,10 +5,10 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;width:650px;min-heig
 
 a,button,input,select,
 .tree-item,.icon-button,.settings-btn,
-.settings-full-btn,.top-right-btn,.theme-option,
-.item-header,.load-more-btn,.action-menu__btn,
-.action-menu__lock,.folder-lazy,.subitems,
-.settings-btn__arrow,.btn-arrow,.arrow svg{transition:background-color .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease,opacity .2s ease}
+.top-right-btn,.theme-option,
+.item-header,.action-menu__btn,
+.action-menu__lock,.subitems,
+.settings-btn__arrow,.arrow svg{transition:background-color .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease,opacity .2s ease}
 .header-badge { font-size: 10px; background: #6366f1; color: #fff; border-radius: 4px; padding: 2px 6px; margin-left: 8px; vertical-align: middle; font-weight: 500; letter-spacing: 0.04em;
 }
 .subtitle{text-align:center;color:var(--text-secondary);font-size:14px;margin-bottom:24px;line-height:1.5}
@@ -23,8 +23,6 @@ a,button,input,select,
 .settings-title__icon{display:flex;align-items:center;justify-content:center;width:40px;height:40px;color:var(--accent);-webkit-text-fill-color:initial}
 .settings-title__icon svg{width:32px;height:32px;stroke:currentColor}
 
-.btn-icon-left{justify-content:flex-start;text-align:left}
-.btn-icon-left .icon{font-size:18px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2));width:24px;display:flex;align-items:center;justify-content:center}
 
 #tree{flex:1;overflow-y:auto;background:var(--card-bg);border-radius:0 0 18px 18px;padding:18px;backdrop-filter:blur(12px);border:1px solid var(--card-border);box-shadow:inset 0 4px 15px rgba(0,0,0,.2);position:relative;will-change:scroll-position}
 
@@ -79,26 +77,13 @@ a,button,input,select,
 .section-title{font-size:15px;font-weight:600;color:var(--text-secondary);margin-bottom:20px;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:12px;width:100%}
 .section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--card-border),transparent)}
 .settings-buttons-grid{display:flex;flex-direction:column;gap:12px;width:100%}
-.settings-full-btn{width:100%;padding:16px 20px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-primary);font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:flex-start;gap:14px;text-align:left;position:relative;overflow:hidden}
-.settings-full-btn:hover{background:var(--card-hover);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
-.settings-full-btn:active{transform:translateY(0)}
-.settings-full-btn .icon{font-size:20px;width:24px;display:flex;align-items:center;justify-content:center}
-.settings-full-btn .btn-content{flex:1;display:flex;flex-direction:column;gap:4px}
-.settings-full-btn .btn-title{font-weight:600;font-size:15px;color:var(--text-primary)}
-.settings-full-btn .btn-description{font-size:13px;color:var(--text-secondary);line-height:1.4}
-.settings-full-btn .btn-arrow{font-size:18px;opacity:.7}
-.settings-full-btn:hover .btn-arrow{opacity:1;transform:translateX(4px)}
 
-.folder-drop-indicator{background:rgba(0,212,255,.1);border-radius:var(--radius-sm);margin:4px 0;padding:8px;text-align:center;color:var(--accent);font-size:12px;font-weight:600;border:1px dashed var(--accent);backdrop-filter:blur(5px)}
 
 .folder-virtual-scroll{max-height:400px;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;position:relative;padding-left:8px;scroll-behavior:smooth}
 .folder-virtual-scroll::-webkit-scrollbar{width:6px}
 .folder-virtual-scroll::-webkit-scrollbar-track{background:var(--card-bg);border-radius:3px}
 .folder-virtual-scroll::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
 .folder-virtual-scroll::-webkit-scrollbar-thumb:hover{background:var(--accent-hover)}
-.tree-item.folder-lazy.loading{opacity:.7;pointer-events:none}
-.virtual-scroll-loader{display:flex;align-items:center;justify-content:center;padding:20px;color:var(--text-secondary);font-size:14px;gap:12px;background:var(--card-bg);border-radius:var(--radius-sm);margin:8px 0;animation:fadeIn .3s ease}
-.virtual-scroll-loader .spinner{width:20px;height:20px;border-width:2px}
 .folder-loader span{color:var(--accent);font-size:13px;font-weight:500;letter-spacing:.5px}
 
 .empty-folder-message{padding:24px;text-align:center;color:var(--text-secondary);font-style:italic;background:var(--card-bg);border-radius:var(--radius-sm);margin:8px;border:1px dashed var(--card-border)}

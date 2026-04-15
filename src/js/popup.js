@@ -427,6 +427,72 @@ function showManagerBlockScreen(tabId, windowId) {
     });
 }
 
+// About modal
+function _openAboutModal() {
+    const existing = document.getElementById('about-modal');
+    if (existing) { openModal(existing); return; }
+
+    const version = chrome.runtime.getManifest().version;
+
+    const modal = document.createElement('div');
+    modal.id        = 'about-modal';
+    modal.className = 'hpb-modal';
+
+    modal.innerHTML = `
+        <div class="hpb-modal__dialog">
+            <h2 class="hpb-modal__title hpb-modal__title--center">${getMessage('aboutExtension')}</h2>
+            <div class="hpb-modal__body about-body">
+                <div class="about-header">
+                    <div class="about-icon"><img src="icons/icon48.png" alt=""></div>
+                    <h3 class="about-subtitle">${getMessage('extensionName')}</h3>
+                </div>
+                <dl class="about-info-grid">
+                    <dt>${getMessage('version')}</dt>
+                    <dd>${escapeHtml(version)}</dd>
+                    <dt>${getMessage('developer')}</dt>
+                    <dd>OSV IT-Studio</dd>
+                    <dt>License:</dt>
+                    <dd>${getMessage('openSource')}</dd>
+					
+					<dt>${getMessage('githubRepo')}:</dt>
+                    <dd><a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks" target="_blank" style="color:inherit;opacity:.7;font-size:11px">https://github.com/OSV-IT-Studio/holy-private-bookmarks</a></dd>
+					
+                    <dt>Open Source libs:</dt>
+                    <dd><a href="https://github.com/kazuhikoarase/qrcode-generator" target="_blank" style="color:inherit;opacity:.7;font-size:11px">QR Code Generator &copy; 2009 Kazuhiko Arase (MIT)</a></dd>
+                </dl>
+                
+            </div>
+            <div class="hpb-modal__footer">
+                <button class="btn-secondary" id="close-about">${getMessage('close')}</button>
+                
+            </div>
+        </div>
+    `;
+
+    const closeAndRemove = () => {
+        closeModal(modal);
+        modal.addEventListener('animationend', function onEnd(e) {
+            if (e.target !== modal) return;
+            modal.removeEventListener('animationend', onEnd);
+            modal.remove();
+        });
+        document.removeEventListener('keydown', escHandler);
+    };
+
+    modal.querySelector('#close-about').addEventListener('click', closeAndRemove);
+    modal.addEventListener('click', e => {
+        if (e.target === modal && Date.now() - (modal._hpbOpenedAt || 0) > 50) closeAndRemove();
+    });
+
+    const escHandler = e => {
+        if (e.key === 'Escape') closeAndRemove();
+    };
+    document.addEventListener('keydown', escHandler);
+
+    document.body.appendChild(modal);
+    openModal(modal);
+}
+
 // Main initialization
 
 async function init() {
@@ -562,8 +628,7 @@ async function init() {
 		'#rate-btn':                 () => { chrome.tabs.create({ url: 'https://chromewebstore.google.com/detail/holy-private-bookmarks-%E2%80%94/nnafnomgekidkehbgkfmhapccelgdbch/reviews' 
 		});
 		},
-        '#about-btn':                () => { openModal(getCachedElement('#about-modal')); },
-        '#close-about':              () => { closeModal(getCachedElement('#about-modal')); },
+        '#about-btn':                () => { _openAboutModal(); },
         '#quick-add-folder':         () => PopupBookmarks.addFolder(),
         '#change-shortcut-btn':      () => chrome.tabs.create({ url: 'chrome://extensions/shortcuts' }),
         '#clear-history':            () => {
@@ -665,11 +730,6 @@ async function init() {
         getCachedElement(selector)?.addEventListener('click', handler);
     });
 
-   
-    getCachedElement('#about-modal')?.addEventListener('click', e => {
-        if (e.target.id === 'about-modal' && (Date.now() - (e.target._hpbOpenedAt || 0) > 50)) closeModal(e.target);
-    });
-
     // JSON import
     getCachedElement('#import-file')?.addEventListener('change', e => {
         ImportExportManager.importData(e, () => { lock(); PopupUI.showLoginSection(); });
@@ -677,7 +737,6 @@ async function init() {
 
     // HTML import
     if (window.HTMLImporter) {
-        window.HTMLImporter._getCurrentData = getData;
         window.HTMLImporter.initPopupImporter({
             maxFileSize: 1 * 1024 * 1024,
             onSuccess: async result => {
@@ -746,7 +805,5 @@ document.addEventListener('DOMContentLoaded', init);
 document.addEventListener('DOMContentLoaded', () => {
   const version = chrome.runtime.getManifest().version;
   const badge = document.getElementById('ext-version');
-  const about = document.getElementById('about-version');
   if (badge) badge.textContent = 'v' + version;
-  if (about) about.textContent = version;
 });

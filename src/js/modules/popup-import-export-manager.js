@@ -31,6 +31,7 @@ const ImportExportManager = (function() {
         countItemsInFolder,
         getItemByPath,
         closeModal,
+        showConfirm,
         data
     } = Shared;
 
@@ -110,7 +111,11 @@ const ImportExportManager = (function() {
     
 
     async function importFromChromeBookmarks(dataRef, saveCallback) {
-        if (!confirm(getMessage('importChromeConfirm'))) {
+        const confirmed = await (window.HolyShared.showConfirm || showConfirm)({
+            title: getMessage('importChromeConfirm'),
+            confirmLabel: getMessage('importSelected'),
+        });
+        if (!confirmed) {
             return;
         }
         
@@ -414,7 +419,6 @@ const ImportExportManager = (function() {
         exportData,
         exportToHTML,
         importData,
-        validateImportedData,
         importFromChromeBookmarks,
         importFromChromeBookmarksAdvanced,
         

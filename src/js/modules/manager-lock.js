@@ -312,7 +312,6 @@ if (breadcrumbs) {
 
         unlock,
         lockManager,
-        manualLock,
         initLockButton,
         initActivityTracking,
         resetInactivityTimer,

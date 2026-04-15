@@ -10,9 +10,6 @@
 .login-subtitle{margin:0;color:var(--text-secondary);font-size:15px;line-height:1.5;text-align:center}
 
 /* Notice banners */
-.migration-notice,.pending-notification{border-radius:16px;padding:16px 20px;margin:0 0 24px;font-size:14px;color:var(--text-secondary);backdrop-filter:blur(10px);animation:slideDown var(--dur-med) ease}
-.migration-notice{background:rgba(255,193,7,.12);border:1px solid rgba(255,193,7,.3)}
-.pending-notification{background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(0,150,255,.08));border:1px solid rgba(0,212,255,.3)}
 .notice-content{display:flex;align-items:flex-start;gap:12px;color:var(--text-secondary)}
 .notice-icon,.pending-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .notice-icon{background:rgba(255,193,7,.2)}
@@ -36,8 +33,6 @@
 .unlock-button:active{transform:translateY(0)}
 .unlock-button::after{content:'';position:absolute;inset:0;background:radial-gradient(circle,rgba(255,255,255,.3) 0%,transparent 70%);transform:scale(0);transition:transform .5s ease;pointer-events:none}
 .unlock-button:hover::after{transform:scale(1.5)}
-.unlock-button-content{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:8px}
-.unlock-button-content svg{width:20px;height:20px}
 
 /* Notification bar */
 #login-notification-bar{position:fixed;top:0;left:0;right:0;z-index:11;padding:16px 20px;font-size:14px;color:var(--text-secondary);backdrop-filter:blur(10px);background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(0,150,255,.08));border-bottom:1px solid rgba(0,212,255,.3);box-shadow:0 10px 30px -5px rgba(0,212,255,.4);animation:slideDown var(--dur-med) ease}

@@ -281,29 +281,20 @@ const SecureCrypto = (function() {
                 if (!password || !storedData) return false;
                 
                 
-                if (storedData.version === 2) {
-                    const hashSalt = new Uint8Array(storedData.hashSalt);
-                    const storedHash = new Uint8Array(storedData.passwordHash);
-                    
-                    const computedHash = await createPasswordHash(password, hashSalt);
-                    const isValid = constantTimeEqual(computedHash, storedHash);
-                    
-                    secureWipeArray(computedHash);
-                    return isValid;
-                }
-                
-                
-                return false;
+                if (storedData.version !== 2) return false;
+
+                const hashSalt = new Uint8Array(storedData.hashSalt);
+                const storedHash = new Uint8Array(storedData.passwordHash);
+                const computedHash = await createPasswordHash(password, hashSalt);
+                const isValid = constantTimeEqual(computedHash, storedHash);
+                secureWipeArray(computedHash);
+                return isValid;
                 
             } catch (e) {
                 return false;
             }
         },
         
-
-        async verifyPasswordLegacy(password, salt, encryptedObj) {
-            return _verifyPasswordLegacy(password, salt, encryptedObj);
-        },
         
 
         async initAfterVerification(password, storedData) {

@@ -1313,7 +1313,6 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             INACTIVITY_TIMEOUT,
             BOOKMARKS_PER_PAGE,
             VIRTUAL_SCROLL_CONFIG,
-            FAVICON_ENABLED_KEY,
             
             
             LRUMap,
@@ -1325,7 +1324,6 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             
             secureWipeArray,
             secureWipeString,
-            wipeSensitiveData,
             wipeUserData,
             clearAllSharedCaches,
             
@@ -1358,9 +1356,7 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             
             isFaviconEnabled,
             setFaviconEnabled,
-            getFaviconUrl,
             getDomainFromUrl,
-            getFaviconWithCache,
             loadFaviconAsync,
             
             isQuickCloseEnabled,
@@ -1399,7 +1395,6 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
 			showGlobalLoadingIndicator,  
 			hideGlobalLoadingIndicator,
 			dragCreateGhost,
-			dragGetFaviconUrl,
 			dragMoveGhost,
 			dragClearIndicators,
 			dragHandleEscape			
@@ -1418,7 +1413,6 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             
             secureWipeArray,
             secureWipeString,
-            wipeSensitiveData,
             wipeUserData,
             clearAllSharedCaches,
             
@@ -1442,9 +1436,7 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             
             isFaviconEnabled,
             setFaviconEnabled,
-            getFaviconUrl,
             getDomainFromUrl,
-            getFaviconWithCache,
             loadFaviconAsync,
             
             isQuickCloseEnabled,

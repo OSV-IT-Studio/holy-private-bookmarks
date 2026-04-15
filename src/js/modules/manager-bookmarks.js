@@ -958,7 +958,7 @@ async function _moveSelectedBookmarks(targetPath, bookmarksList) {
 
     if (validBookmarks.length === 0) {
         showNotification(
-            getMessage('noValidItemsToMove'), 
+            getMessage('cannotMoveIntoSelf'), 
             true
         );
         return;
@@ -990,10 +990,8 @@ async function _moveSelectedBookmarks(targetPath, bookmarksList) {
     if (moved > 0) {
         await saveChanges();
   
-        if (window.ManagerBookmarks) {
-            window.ManagerBookmarks.clearBookmarksCache();
-            window.ManagerBookmarks.clearSelection();
-        }
+        clearBookmarksCache();
+        clearSelection();
         
         const msg = getMessage('bookmarksMoved')
                 .replace('{count}', moved)
@@ -1010,43 +1008,57 @@ async function _moveSelectedBookmarks(targetPath, bookmarksList) {
     }
 }
 
-    async function deleteSelectedBookmarks() {
-        const { getMessage, showNotification, getData, saveChanges,
-                findItemPath, removeItemByPath, renderFolderTree } = _deps;
-
-        if (_selectedBookmarks.size === 0) return;
-        const count = _selectedBookmarks.size;
-
-        const confirmMsg = getMessage('deleteSelectedConfirm')
-		.replace('{count}', count)
-		.replace('{plural}', count > 1 ? 's' : '');
-        if (!await _deps.showConfirm({ title: confirmMsg })) return;
-
-        const paths = [];
-		for (const bookmark of Array.from(_selectedBookmarks)) {
-		const path = findItemPath(getData(), bookmark);
-			if (path) paths.push(path);
-		}
-
-		paths.sort((a, b) => {
-			for (let i = 0; i < Math.min(a.length, b.length); i++) {
-				if (a[i] !== b[i]) return b[i] - a[i];
-		}
-		return b.length - a.length;
-		});
-		for (const path of paths) removeItemByPath(getData(), path);
-
-        await saveChanges();
-        clearBookmarksCache();
-        clearSelection();
-
-        const successMsg = getMessage('bookmarksDeleted')
-		.replace('{count}', count)
-		.replace('{0}', count);
-        showNotification(successMsg);
-        renderFolderTree();
-        renderBookmarks();
+async function deleteSelectedBookmarks() {
+    const { getMessage, showNotification, getData, saveChanges,
+            findItemPath, removeItemByPath, renderFolderTree } = _deps;
+    
+    if (_selectedBookmarks.size === 0) return;
+    
+    const paths = [];
+    
+    for (const bookmark of Array.from(_selectedBookmarks)) {
+        const path = findItemPath(getData(), bookmark);
+        if (path && Array.isArray(path) && path.length > 0) {
+            paths.push(path);
+        }
     }
+    
+    if (paths.length === 0) {
+        showNotification(getMessage('deleteFailed'), true);
+        return;
+    }
+    
+    const count = paths.length;
+    
+    const confirmMsg = getMessage('deleteSelectedConfirm')
+        .replace('{count}', count)
+        .replace('{plural}', count > 1 ? 's' : '');
+    
+    if (!await _deps.showConfirm({ title: confirmMsg })) return;
+    
+    paths.sort((a, b) => {
+        for (let i = 0; i < Math.min(a.length, b.length); i++) {
+            if (a[i] !== b[i]) return b[i] - a[i];
+        }
+        return b.length - a.length;
+    });
+    
+    for (const path of paths) {
+        removeItemByPath(getData(), path);
+    }
+    
+    await saveChanges();
+    clearBookmarksCache();
+    clearSelection();
+    renderFolderTree();
+    renderBookmarks();
+    
+    const successMsg = getMessage('bookmarksDeleted')
+        .replace('{count}', count)
+        .replace('{0}', count);
+    
+    showNotification(successMsg);
+}
 
     // Ctrl key tracking
 
@@ -1077,19 +1089,13 @@ async function _moveSelectedBookmarks(targetPath, bookmarksList) {
         // Render
         initVirtualScroll,
         renderBookmarks,
-        loadMoreBookmarks,
 
         // CRUD
         editBookmark,
         deleteBookmark,
         addNewBookmarkFromManager,
-        handleModalSave,
-        handleNewFolderInModal,
 
         // Selection
-        clearSelection,
-        deleteSelectedBookmarks,
-        showMoveSelectedDialog,
 
         // Keyboard
         initKeyboardHandlers

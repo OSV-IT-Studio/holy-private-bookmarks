@@ -360,7 +360,6 @@ saveAndRefresh();
     }
 
     
-    function initNewFolderInModal() {}
 
     // Public API
 
@@ -377,8 +376,7 @@ saveAndRefresh();
         addFolder,
         renameItem,
         deleteItem,
-        addCurrentPage,
-        initNewFolderInModal
+        addCurrentPage
     };
 
 })();

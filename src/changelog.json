@@ -1,4 +1,10 @@
 [
+{
+  "version": "1.8.5.11",
+  "changes": [
+    "Fixed batch deletion of selected bookmarks in the bookmark manager"
+  ]
+},
   {
     "version": "1.8.5.08",
     "changes": [

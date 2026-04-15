@@ -14,8 +14,6 @@
 
 .hpb-modal__icon{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;margin-bottom:16px;transition:all .2s}
 .hpb-modal__icon--danger{background:rgba(255,64,96,.12);color:#ef4444;box-shadow:0 0 0 1px rgba(255,64,96,.2)}
-.hpb-modal__icon--accent{background:rgba(0,212,255,.12);color:var(--accent);box-shadow:0 0 0 1px rgba(0,212,255,.2)}
-.hpb-modal__icon--success{background:rgba(0,255,157,.12);color:var(--success);box-shadow:0 0 0 1px rgba(0,255,157,.2)}
 .hpb-modal__icon svg{width:28px;height:28px;stroke-width:1.8;stroke:currentColor}
 
 .hpb-modal__desc{font-size:.875rem;color:var(--text-secondary);text-align:center;line-height:1.6;margin:auto;}
@@ -33,7 +31,6 @@
 
 .hpb-modal__body .hpb-modal__input[type="password"] {margin-top: 20px;}
 .hpb-modal__footer{display:flex;gap:12px;margin-top:20px;padding-top:8px}
-.hpb-modal__footer--center{justify-content:center}
 .hpb-modal__footer .btn-primary,
 .hpb-modal__footer .btn-secondary,
 .hpb-modal__footer .btn-danger{flex:1;font-size:.875rem;font-weight:600;padding:12px 16px;border-radius:var(--radius-md,14px);transition:all var(--dur-fast);cursor:pointer}
@@ -90,7 +87,6 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 .mt-16{margin-top:16px}
 .w-100{width:100%}
 .w-au{width:auto}
-.text-center{text-align:center}
 
 .quick-actions-hover{position:fixed;display:flex;flex-direction:column;gap:2px;background:var(--card-bg);backdrop-filter:blur(50px);border:1px solid var(--card-border);border-radius:10px;padding:4px;z-index:99999;box-shadow:0 4px 16px rgba(0,0,0,.35);animation:quickActionsFadeIn .15s ease;min-width:155px}
 .quick-actions-trigger{position:absolute;right:6px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:24px;height:24px;border:none;background:transparent;cursor:pointer;color:var(--text-secondary,#888);border-radius:6px;padding:0;z-index:10;opacity:.7;transition:opacity .15s,background .15s}
@@ -141,7 +137,6 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 .tree-item.drop-below::after{bottom:-2px}
 .tree-item.drop-into-folder{background:var(--accent-dim)!important;border-color:var(--accent)!important;box-shadow:0 0 0 2px var(--accent),inset 0 0 16px rgba(0,212,255,.12)!important}
 .tree-item.drop-forbidden{background:rgba(255,64,96,.2)!important;border:2px solid var(--danger);cursor:not-allowed!important}
-.drop-forbidden-message{position:absolute;top:-30px;left:50%;transform:translateX(-50%);background:var(--danger);color:#fff;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;white-space:nowrap;z-index:1000;box-shadow:0 4px 15px rgba(255,64,96,.3);animation:ddMessageFadeIn .2s ease}
 .tree-item.move-success{animation:ddMoveSuccess .5s ease}
 .folder-item.drop-target{border:2px solid var(--accent);box-shadow:0 0 0 2px rgba(0,212,255,.2);padding:5px 7px}
 
@@ -157,10 +152,7 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 .about-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;background:var(--surface-4);padding:16px;border-radius:var(--radius-sm)}
 .about-info-grid dt{color:var(--text-secondary);font-weight:400}
 .about-info-grid dd{margin:0;color:var(--text-primary);font-weight:600;text-align:right}
-.about-repo-label{color:var(--text-secondary);margin:0 0 8px;font-size:14px;font-weight:500}
-.about-repo-link-wrap{background:var(--accent-dim);padding:12px;border-radius:var(--radius-xs);word-break:break-all}
-.about-repo-link{color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:8px}
-.about-repo-icon img{width:18px;height:18px;display:block}
+
 
 #chrome-import-modal .hpb-modal__dialog{max-width:500px;max-height:80vh;overflow-y:auto}
 .import-folders-list{max-height:300px;overflow-y:auto;margin:4px 0}
@@ -172,7 +164,6 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 
 #history-cleaner-progress{z-index:10000}
 #history-cleaner-progress .hpb-modal__dialog{max-width:400px;text-align:center}
-.progress-spinner{width:48px;height:48px;border-width:4px;margin:0 auto 16px}
 .progress-title{color:var(--accent);margin:0 0 8px;font-size:20px}
 .progress-status{color:var(--text-secondary);margin:0;font-size:14px}
 .progress-bar-wrap{margin:16px 0}

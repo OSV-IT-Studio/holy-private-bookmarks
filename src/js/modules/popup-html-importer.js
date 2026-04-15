@@ -20,7 +20,6 @@
 
 const HTMLImporter = (function() {
   
-  let _currentData = null;
   let _callbacks = {
     onSuccess: null,
     onError: null,
@@ -251,50 +250,8 @@ const HTMLImporter = (function() {
     return true;
   }
 
-  function initManagerImporter(callbacks = {}) {
-    setCallbacks(callbacks);
-    
-    const importBtn = document.getElementById('import-html-btn');
-    const importFile = document.getElementById('import-html-file');
-    
-    if (!importBtn || !importFile) {
-      console.warn('HTML importer elements not found');
-      return false;
-    }
-
-    importBtn.addEventListener('click', () => {
-      importFile.click();
-    });
-
-    importFile.addEventListener('change', async (e) => {
-      const file = e.target.files[0];
-      if (file) {
-        await importFromHTML(file);
-      }
-      importFile.value = '';
-    });
-
-    return true;
-  }
-
-  function setCurrentData(data) {
-    _currentData = data;
-  }
-
-  function _getCurrentData() {
-    return _currentData;
-  }
-
   return {
-    importFromHTML,
-    parseNetscapeHTML,
-    createFolderStructure,
     initPopupImporter,
-    initManagerImporter,
-    setCurrentData,
-    _getCurrentData,
-
-    getLocalizedMessage
   };
 })();
 

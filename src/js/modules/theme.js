@@ -201,31 +201,14 @@ const ThemeManager = (function() {
         return currentTheme;
     }
     
-
-    function getAvailableThemes() {
-        return { ...THEMES };
-    }
     
-
-    function refreshAllSelectors() {
-
-        messageCache.clear();
-        
-
-        document.querySelectorAll('#theme-selector-container').forEach(container => {
-            container.innerHTML = '';
-            createThemeSelector(container);
-        });
-    }
     
 
     return {
         init,
         setTheme,
         getCurrentTheme,
-        getAvailableThemes,
         createThemeSelector,
-        refreshAllSelectors,
         THEMES
     };
 })();
