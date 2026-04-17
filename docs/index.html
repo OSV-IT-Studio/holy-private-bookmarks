@@ -196,7 +196,12 @@
         <img src="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon32.png" width="24" height="24" alt="">
         Holy Private Bookmarks
       </a>
-      <div class="nav-links">
+      <button class="nav-burger" id="nav-burger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
         <a href="#features" class="nav-link">Features</a>
         <a href="#security" class="nav-link">Security</a>
         <a href="#faq" class="nav-link">FAQ</a>
@@ -317,7 +322,9 @@
             </svg>
           </div>
           <h3>QR Code</h3>
-          <p>Click the three-dot icon (⋮) next to any bookmark and select "QR Code". Instantly open it on your phone — no copying needed.</p>
+          <p>Click the three-dot icon <span class="icon-button">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"></circle><circle cx="8" cy="8" r="1.5"></circle><circle cx="8" cy="13" r="1.5"></circle></svg>
+        </span> next to any bookmark and select "QR Code". Instantly open it on your phone — no copying needed.</p>
         </div>
 
         <div class="feature-card">
