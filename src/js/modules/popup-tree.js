@@ -144,7 +144,7 @@ const PopupTree = (function () {
 
         
         if (isFaviconEnabled()) {
-            setTimeout(() => loadFaviconAsync(item.url, iconSpan), 0);
+            loadFaviconAsync(item.url, iconSpan);
         }
 
         return div;

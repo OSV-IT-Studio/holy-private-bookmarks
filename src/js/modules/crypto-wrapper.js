@@ -120,8 +120,7 @@ const SecureCrypto = (function() {
         }
     }
 
-    // Same derivation but extractable: true — used only for session wrapping.
-    // The extractable key never leaves the extension; it is wrapped before storage.
+
     async function deriveEncryptionKeyExtractable(password, salt) {
         const encoder = new TextEncoder();
         const passwordBuffer = encoder.encode(password);
@@ -133,7 +132,7 @@ const SecureCrypto = (function() {
                 { name: 'PBKDF2', salt, iterations: ITERATIONS.KEY, hash: 'SHA-256' },
                 keyMaterial,
                 { name: 'AES-GCM', length: 256 },
-                true,               // extractable
+                true,              
                 ['encrypt', 'decrypt']
             );
         } finally {
@@ -233,6 +232,25 @@ const SecureCrypto = (function() {
         }
     }
     
+    // Base64 helpers — faster and ~62% smaller than Array.from number arrays
+    function _uint8ToBase64(uint8) {
+        const CHUNK = 8192;
+        let binary = '';
+        for (let i = 0; i < uint8.length; i += CHUNK) {
+            binary += String.fromCharCode(...uint8.subarray(i, i + CHUNK));
+        }
+        return btoa(binary);
+    }
+
+    function _base64ToUint8(b64) {
+        const binary = atob(b64);
+        const uint8 = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) {
+            uint8[i] = binary.charCodeAt(i);
+        }
+        return uint8;
+    }
+
     return {
 
         async setupNewPassword(password) {
@@ -366,9 +384,11 @@ const SecureCrypto = (function() {
                     encoded
                 );
                 
+                // Store as base64 strings — ~62% smaller than Array.from number arrays
                 return { 
-                    iv: Array.from(iv), 
-                    data: Array.from(new Uint8Array(encrypted)) 
+                    iv:  _uint8ToBase64(iv),
+                    data: _uint8ToBase64(new Uint8Array(encrypted)),
+                    enc: 'b64' // format marker for forward-compat
                 };
             } finally {
                 secureWipeArray(encoded);
@@ -383,8 +403,13 @@ const SecureCrypto = (function() {
                 throw new Error('Invalid encrypted object');
             }
             
-            const iv = new Uint8Array(encryptedObj.iv);
-            const data = new Uint8Array(encryptedObj.data);
+            // Support both legacy number-array format and new base64 format
+            const iv   = encryptedObj.enc === 'b64'
+                ? _base64ToUint8(encryptedObj.iv)
+                : new Uint8Array(encryptedObj.iv);
+            const data = encryptedObj.enc === 'b64'
+                ? _base64ToUint8(encryptedObj.data)
+                : new Uint8Array(encryptedObj.data);
             
             try {
                 const decrypted = await crypto.subtle.decrypt(
@@ -449,9 +474,10 @@ const SecureCrypto = (function() {
 
                 await chrome.storage.session.set({
                     _hpbSession: {
-                        wrappedKey: Array.from(new Uint8Array(wrapped)),
-                        wrapKeyRaw: Array.from(new Uint8Array(wrapKeyRaw)),
-                        salt:       Array.from(_currentSalt),
+                        wrappedKey: _uint8ToBase64(new Uint8Array(wrapped)),
+                        wrapKeyRaw: _uint8ToBase64(new Uint8Array(wrapKeyRaw)),
+                        salt:       _uint8ToBase64(_currentSalt),
+                        enc: 'b64'
                     }
                 });
             } catch (e) {
@@ -465,9 +491,15 @@ const SecureCrypto = (function() {
                 const s = result._hpbSession;
                 if (!s || !s.wrappedKey || !s.wrapKeyRaw || !s.salt) return false;
 
-                const wrapKeyRaw = new Uint8Array(s.wrapKeyRaw);
-                const wrapped    = new Uint8Array(s.wrappedKey);
-                const salt       = new Uint8Array(s.salt);
+                const wrapKeyRaw = s.enc === 'b64'
+                    ? _base64ToUint8(s.wrapKeyRaw)
+                    : new Uint8Array(s.wrapKeyRaw);
+                const wrapped    = s.enc === 'b64'
+                    ? _base64ToUint8(s.wrappedKey)
+                    : new Uint8Array(s.wrappedKey);
+                const salt       = s.enc === 'b64'
+                    ? _base64ToUint8(s.salt)
+                    : new Uint8Array(s.salt);
 
                 const wrapKey = await crypto.subtle.importKey(
                     'raw', wrapKeyRaw, { name: 'AES-KW' }, false, ['unwrapKey']

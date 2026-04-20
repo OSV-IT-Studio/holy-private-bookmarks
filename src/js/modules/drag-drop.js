@@ -82,9 +82,12 @@ const DragDropManager = (function() {
 
 
     function refreshDragItems() {
-        document.querySelectorAll('.tree-item').forEach(item => {
+        const tree = document.getElementById('tree');
+        if (!tree) return;
+        tree.querySelectorAll('.tree-item:not([data-drag-ready])').forEach(item => {
             item.setAttribute('draggable', 'true');
             item.setAttribute('aria-grabbed', 'false');
+            item.setAttribute('data-drag-ready', '1');
         });
     }
 

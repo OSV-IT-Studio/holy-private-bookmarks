@@ -414,10 +414,10 @@ const ManagerBookmarks = (function () {
             const all = getBookmarksForFolder(getCurrentFolderId());
             const start = Math.min(_lastSelectedIndex, index);
             const end = Math.max(_lastSelectedIndex, index);
+            const domItems = _bookmarksGrid ? _bookmarksGrid.querySelectorAll('.tree-item') : [];
             for (let i = start; i <= end; i++) {
-                const item = all[i];
-                _selectedBookmarks.add(item);
-                document.querySelectorAll('.tree-item')[i]?.classList.add('selected');
+                _selectedBookmarks.add(all[i]);
+                domItems[i]?.classList.add('selected');
             }
             _updateSelectionToolbar();
             _lastSelectedIndex = index;
@@ -514,10 +514,11 @@ const ManagerBookmarks = (function () {
                 const all   = getBookmarksForFolder(getCurrentFolderId());
                 const start = Math.min(_lastSelectedIndex, index);
                 const end   = Math.max(_lastSelectedIndex, index);
-                for (let i = start; i <= end; i++) _selectedBookmarks.add(all[i]);
-                document.querySelectorAll('.tree-item').forEach((el, i) => {
-                    if (i >= start && i <= end) el.classList.add('selected');
-                });
+                const domItems = _bookmarksGrid ? _bookmarksGrid.querySelectorAll('.tree-item') : [];
+                for (let i = start; i <= end; i++) {
+                    _selectedBookmarks.add(all[i]);
+                    domItems[i]?.classList.add('selected');
+                }
                 _updateSelectionToolbar();
                 _lastSelectedIndex = index;
                 return;

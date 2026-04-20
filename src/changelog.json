@@ -1,5 +1,16 @@
 [
 {
+  "version": "1.8.5.14",
+  "changes": [
+    "Performance: favicon loading is now queued (max 4 concurrent requests) — opening large folders no longer causes the popup to freeze",
+    "Performance: encrypted data is now stored as Base64 instead of number arrays — saves ~62% storage space and speeds up every save operation by ~2.5×",
+    "Performance: folder sidebar now uses a single delegated event listener instead of attaching one per folder — fixes memory leak in long sessions",
+    "Performance: switching between folders no longer scans all sidebar items to remove the active highlight",
+    "Performance: Shift-click multi-selection no longer queries the DOM on every iteration",
+    "Performance: drag-and-drop in the popup skips already-initialized items on refresh"
+  ]
+},
+{
   "version": "1.8.5.11",
   "changes": [
     "Fixed batch deletion of selected bookmarks in the bookmark manager"

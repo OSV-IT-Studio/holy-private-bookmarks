@@ -22,12 +22,12 @@
     // CONSTANTS 
     const STORAGE_KEY = 'holyPrivateData';
     const INACTIVITY_TIMEOUT = 10 * 60 * 1000; // 10 minutes
-    const BOOKMARKS_PER_PAGE = 50;
+    const BOOKMARKS_PER_PAGE = 20;
     const FAVICON_ENABLED_KEY = 'holyFaviconEnabled';
     const QUICK_CLOSE_KEY = 'holyQuickCloseEnabled';
     
     const VIRTUAL_SCROLL_CONFIG = {
-        initialLoadCount: 50,
+        initialLoadCount: 20,
         batchSize: 10,
         loadMoreCount: 30,
         renderDelay: 5
@@ -68,6 +68,26 @@
 
     const faviconCache = new LRUMap(200);
     const faviconPromises = new Map();
+
+    // FAVICON QUEUE — limits concurrent favicon requests to avoid browser stall
+    const _faviconQueue = [];
+    let _faviconRunning = 0;
+    const FAVICON_CONCURRENCY = 4;
+
+    function _drainFaviconQueue() {
+        while (_faviconRunning < FAVICON_CONCURRENCY && _faviconQueue.length > 0) {
+            const { url, iconElement, force } = _faviconQueue.shift();
+            _faviconRunning++;
+            _loadFaviconNow(url, iconElement, force).finally(() => {
+                _faviconRunning--;
+                _drainFaviconQueue();
+            });
+        }
+    }
+
+    function _cancelFaviconQueue() {
+        _faviconQueue.length = 0;
+    }
 
     // DOM ELEMENTS 
     let elementCache = {};
@@ -204,6 +224,9 @@
                 faviconPromises.clear();
             } catch (e) {}
         }
+
+        // Drain pending favicon queue so locked state doesn't fire requests
+        _cancelFaviconQueue();
 
         
         
@@ -513,15 +536,50 @@
         return promise;
     }
 
+    // Internal: actually fires the network request (no concurrency limit)
+    function _loadFaviconNow(url, iconElement, force = false) {
+        if (!force && !isFaviconEnabled()) return Promise.resolve();
+        if (!iconElement) return Promise.resolve();
+
+        if (faviconCache.has(url) && faviconCache.get(url) === null) return Promise.resolve();
+
+        if (faviconCache.has(url)) {
+            const cached = faviconCache.get(url);
+            if (iconElement.isConnected) {
+                iconElement.style.setProperty('--favicon-url', 'url("' + cached + '")');
+                iconElement.classList.add('has-favicon');
+            }
+            return Promise.resolve();
+        }
+
+        const faviconUrl = getFaviconUrl(url);
+        if (!faviconUrl) return Promise.resolve();
+
+        return new Promise(resolve => {
+            const probe = new Image();
+            probe.onload = () => {
+                faviconCache.set(url, faviconUrl);
+                if (iconElement.isConnected) {
+                    iconElement.style.setProperty('--favicon-url', 'url("' + faviconUrl + '")');
+                    iconElement.classList.add('has-favicon');
+                }
+                resolve();
+            };
+            probe.onerror = () => {
+                faviconCache.set(url, null);
+                resolve();
+            };
+            probe.src = faviconUrl;
+        });
+    }
+
+    // Public: enqueues favicon load, respects FAVICON_CONCURRENCY limit
     function loadFaviconAsync(url, iconElement, force = false) {
-        
         if (!force && !isFaviconEnabled()) return;
         if (!iconElement) return;
-
-        
         if (faviconCache.has(url) && faviconCache.get(url) === null) return;
 
-        
+        // Cache hit — apply immediately, no queue needed
         if (faviconCache.has(url)) {
             const cached = faviconCache.get(url);
             iconElement.style.setProperty('--favicon-url', 'url("' + cached + '")');
@@ -529,21 +587,8 @@
             return;
         }
 
-        const faviconUrl = getFaviconUrl(url);
-        if (!faviconUrl) return;
-
-        const probe = new Image();
-        probe.onload = () => {
-            faviconCache.set(url, faviconUrl);
-            if (!iconElement.isConnected) return;
-            iconElement.style.setProperty('--favicon-url', 'url("' + faviconUrl + '")');
-            iconElement.classList.add('has-favicon');
-        };
-        probe.onerror = () => {
-            
-            faviconCache.set(url, null);
-        };
-        probe.src = faviconUrl;
+        _faviconQueue.push({ url, iconElement, force });
+        _drainFaviconQueue();
     }
 
     // UI COMPONENTS 

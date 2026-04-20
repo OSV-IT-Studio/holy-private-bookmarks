@@ -26,6 +26,10 @@ const ManagerFolders = (function () {
 
     let _deps = {};
 
+    // Module-level state
+    let _activeFolderEl      = null; // tracks active sidebar item to avoid querySelectorAll
+    let _treeListenerAttached = false;
+
     function _generateUid() {
         if (_deps.generateFolderUid) return _deps.generateFolderUid();
         
@@ -44,6 +48,7 @@ const ManagerFolders = (function () {
 
     const allBookmarksItem = tree.querySelector('.all-bookmarks');
     tree.innerHTML = '';
+    _activeFolderEl = null; // DOM wiped, reference is stale
     if (allBookmarksItem) tree.appendChild(allBookmarksItem);
 
     const allCount = document.getElementById('all-count');
@@ -53,7 +58,8 @@ const ManagerFolders = (function () {
     _renderFoldersRecursive(getData().folders, fragment, []);
     tree.appendChild(fragment);
 
-    _addFolderTreeEventListeners();
+    _attachDelegatedTreeListener(); // no-op after first call
+    _addFolderTreeEventListeners(); // now a no-op, kept for clarity
     
     
     restoreFoldersState();
@@ -63,6 +69,10 @@ const ManagerFolders = (function () {
         const active = document.querySelector(`.folder-item[data-folder-id="${currentId}"]`) ||
                        document.querySelector('.all-bookmarks');
         if (active) active.classList.add('active');
+        _activeFolderEl = active || null;
+    } else {
+        // Fallback: pick up the element that already has .active in the DOM (e.g. set in HTML)
+        _activeFolderEl = tree.querySelector('.folder-item.active') || null;
     }
 
     resetInactivityTimer();
@@ -117,20 +127,14 @@ const ManagerFolders = (function () {
         const editBtn = document.createElement('button');
         editBtn.className = 'folder-action-btn edit';
         editBtn.title     = getMessage('rename');
+        editBtn.dataset.action = 'rename';
         editBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>`;
-        editBtn.addEventListener('click', e => {
-            e.stopPropagation();
-            renameFolder(e.currentTarget.closest('.folder-item').dataset.folderId);
-        });
 
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'folder-action-btn delete';
         deleteBtn.title     = getMessage('delete');
+        deleteBtn.dataset.action = 'delete-folder';
         deleteBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>`;
-        deleteBtn.addEventListener('click', e => {
-            e.stopPropagation();
-            deleteFolder(e.currentTarget.closest('.folder-item').dataset.folderId);
-        });
 
         actionsDiv.appendChild(editBtn);
         actionsDiv.appendChild(deleteBtn);
@@ -156,24 +160,50 @@ if (hasSubfolders) {
     }
 }
 
-    function _addFolderTreeEventListeners() {
-        
-        document.querySelectorAll('.folder-item.has-children .folder-toggle').forEach(toggle => {
-            toggle.addEventListener('click', e => {
+    // Single delegated listener attached once — no per-element listeners needed
+
+    function _attachDelegatedTreeListener() {
+        if (_treeListenerAttached) return;
+        const tree = document.getElementById('folder-tree');
+        if (!tree) return;
+
+        tree.addEventListener('click', e => {
+            // Toggle arrow
+            const toggle = e.target.closest('.folder-toggle');
+            if (toggle) {
                 e.stopPropagation();
-                _toggleFolderExpand(toggle.closest('.folder-item'));
-            });
+                const folderItem = toggle.closest('.folder-item');
+                if (folderItem) _toggleFolderExpand(folderItem);
+                return;
+            }
+
+            // Action buttons (rename / delete)
+            const actionBtn = e.target.closest('.folder-action-btn[data-action]');
+            if (actionBtn) {
+                e.stopPropagation();
+                const folderItem = actionBtn.closest('.folder-item');
+                if (!folderItem) return;
+                const folderId = folderItem.dataset.folderId;
+                if (actionBtn.dataset.action === 'rename') renameFolder(folderId);
+                else if (actionBtn.dataset.action === 'delete-folder') deleteFolder(folderId);
+                return;
+            }
+
+            // Folder action buttons area — stop propagation
+            if (e.target.closest('.folder-actions')) return;
+
+            // Folder item click → set active
+            const folderItem = e.target.closest('.folder-item');
+            if (folderItem) {
+                setActiveFolder(folderItem.dataset.folderId || 'all');
+            }
         });
 
-        
-        document.querySelectorAll('.folder-item').forEach(item => {
-            item.addEventListener('click', e => {
-                if (e.target.closest('.folder-toggle')) return;
-                if (e.target.closest('.folder-actions')) return;
-                setActiveFolder(item.dataset.folderId || 'all');
-            });
-        });
+        _treeListenerAttached = true;
     }
+
+    // No-op: real setup now happens once via _attachDelegatedTreeListener
+    function _addFolderTreeEventListeners() {}
 
     function _toggleFolderExpand(folderItem) {
     const toggle  = folderItem.querySelector('.folder-toggle');
@@ -208,10 +238,11 @@ if (hasSubfolders) {
     setCurrentFolderId(folderId);
     resetPagination();
 
-    document.querySelectorAll('.folder-item').forEach(i => i.classList.remove('active'));
+    if (_activeFolderEl) _activeFolderEl.classList.remove('active');
     const active = document.querySelector(`.folder-item[data-folder-id="${folderId}"]`) ||
                    document.querySelector('.all-bookmarks');
     if (active) active.classList.add('active');
+    _activeFolderEl = active || null;
 
     
     updateBreadcrumbs(folderId);
@@ -507,7 +538,11 @@ function restoreFoldersState() {
     // Public API
 
     return {
-        init(deps) { Object.assign(_deps, deps); },
+        init(deps) {
+            Object.assign(_deps, deps);
+            // Pick up .active element already set in HTML before first renderFolderTree
+            _activeFolderEl = document.querySelector('.folder-item.active') || null;
+        },
 
         renderFolderTree,
         setActiveFolder,
