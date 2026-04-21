@@ -28,7 +28,6 @@ async function initThemeAndHideLoader() {
     if (window.ThemeManager) {
         await window.ThemeManager.init();
     }
-    hideThemeLoader();
 }
 
 

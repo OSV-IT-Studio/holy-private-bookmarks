@@ -517,7 +517,6 @@ async function init() {
             if (window.ThemeManager) {
                 await window.ThemeManager.init().catch(() => {});
             }
-            hideThemeLoader();
             showManagerBlockScreen(managerStatus.tabId, managerStatus.windowId);
             return;
         }
@@ -534,14 +533,12 @@ async function init() {
         }
     }
     
-    const safetyTimeout = setTimeout(() => { console.warn('Theme init timeout'); hideThemeLoader(); }, 3000);
+
     if (window.ThemeManager) {
         await window.ThemeManager.init();
         const themeContainer = document.getElementById('theme-selector-container');
         if (themeContainer) window.ThemeManager.createThemeSelector(themeContainer);
     }
-    clearTimeout(safetyTimeout);
-    hideThemeLoader();
 
     // Wire all modules
     const deps = buildDeps();

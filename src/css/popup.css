@@ -166,7 +166,7 @@ input:checked + .slider::before{transform:translateX(24px)}
 
 .changelog-version-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .changelog-version{font-family:var(--font-mono,monospace);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid rgba(0,212,255,.22);border-radius:6px;padding:3px 10px;flex-shrink:0}
-body.light-theme .changelog-version{border-color:rgba(37,99,235,.25)}
+html.holy-light-theme body .changelog-version{border-color:rgba(37,99,235,.25)}
 .changelog-badge-latest{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);border-radius:20px;padding:2px 9px;flex-shrink:0}
 .changelog-version-divider{flex:1;height:1px;background:var(--border-subtle)}
 

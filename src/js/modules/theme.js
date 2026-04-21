@@ -41,6 +41,7 @@ const ThemeManager = (function() {
         const stored = await chrome.storage.local.get(STORAGE_KEY);
         if (stored[STORAGE_KEY]) {
             currentTheme = stored[STORAGE_KEY];
+            localStorage.setItem(STORAGE_KEY, currentTheme);
         }
         
 
@@ -60,15 +61,12 @@ const ThemeManager = (function() {
             themeToApply = getSystemTheme();
         }
         
-
+        const html = document.documentElement;
+        html.classList.remove('holy-light-theme');
         document.body.classList.remove('light-theme', 'dark-theme');
-        
- 
-        if (themeToApply === THEMES.LIGHT) {
-            document.body.classList.add('light-theme');
-        } else {
 
-            document.body.classList.remove('light-theme');
+        if (themeToApply === THEMES.LIGHT) {
+            html.classList.add('holy-light-theme');
         }
         
         currentTheme = theme;
@@ -101,6 +99,7 @@ const ThemeManager = (function() {
         
 
         await chrome.storage.local.set({ [STORAGE_KEY]: theme });
+        localStorage.setItem(STORAGE_KEY, theme);
         
 
         applyTheme(theme);

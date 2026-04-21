@@ -249,7 +249,6 @@ async function init() {
     // Theme
     if (window.ThemeManager) {
         await window.ThemeManager.init();
-        hideThemeLoader();
 
         const quickToggle = document.getElementById('quick-theme-toggle');
         if (quickToggle) {

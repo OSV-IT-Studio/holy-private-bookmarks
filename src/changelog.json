@@ -1,5 +1,11 @@
 [
   {
+    "version": "1.8.5.19",
+    "changes": [
+      "Fixed theme color flash on startup: the selected theme (dark/light/system) is now applied synchronously before the first render, so the page no longer briefly flashes the wrong colors when opening the popup, manager, or donate page"
+    ]
+  },
+  {
     "version": "1.8.5.18",
     "changes": [
       "Added 'Stay unlocked between sessions' checkbox directly on the login screen — no need to go into settings to enable it"

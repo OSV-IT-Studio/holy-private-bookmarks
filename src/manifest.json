@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_Name__",
-  "version": "1.8.5.18",
+  "version": "1.8.5.19",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
@@ -61,7 +61,7 @@
         "js/donate.js",
         "manager.html",
         "js/manager.js",
-        "js/loader.js",
+        "js/theme-init.js",
         "js/modules/shared.js",
         "js/modules/i18n.js",
         "js/modules/secure-utils.js",
