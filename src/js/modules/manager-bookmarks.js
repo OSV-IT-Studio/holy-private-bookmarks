@@ -163,13 +163,16 @@ const ManagerBookmarks = (function () {
     }
 
     function _buildBookmarkQuickActionsPanel(bookmark, getMessage) {
-        return QuickActions.buildPanel([
+        const actions = [
             { action: 'edit',    title: getMessage('edit'),                    icon: 'edit'                         },
             { action: 'copy',    title: getMessage('copyUrl'),                 icon: 'copy'                         },
             { action: 'qr',     title: getMessage('qrCode') || 'QR Code',    icon: 'qr'                            },
-            { action: 'private', title: getMessage('openPrivate'),             icon: 'private', className: 'private' },
-            { action: 'delete',  title: getMessage('delete'),                  icon: 'delete',  className: 'delete'  },
-        ]);
+        ];
+        if (!_deps.isAlwaysIncognito || !_deps.isAlwaysIncognito()) {
+            actions.push({ action: 'private', title: getMessage('openPrivate'), icon: 'private', className: 'private' });
+        }
+        actions.push({ action: 'delete',  title: getMessage('delete'),  icon: 'delete',  className: 'delete'  });
+        return QuickActions.buildPanel(actions);
     }
 
     function _setupQuickActionsListener() {
@@ -460,7 +463,7 @@ const ManagerBookmarks = (function () {
 
     function _createBookmarkItem(bookmark, index) {
         const { getDomainFromUrl, escapeHtml,
-                getMessage, openInPrivateTab, showNotification,
+                getMessage, openInPrivateTab, isAlwaysIncognito, showNotification,
                 getCurrentFolderId } = _deps;
 
         const item     = document.createElement('div');
@@ -527,7 +530,11 @@ const ManagerBookmarks = (function () {
             if (_selectedBookmarks.size > 0) {
                 clearSelection();
             } else {
-                window.open(bookmark.url, '_blank');
+                if (isAlwaysIncognito && isAlwaysIncognito()) {
+                    openInPrivateTab(bookmark.url);
+                } else {
+                    window.open(bookmark.url, '_blank');
+                }
             }
 
             _lastSelectedIndex = index;

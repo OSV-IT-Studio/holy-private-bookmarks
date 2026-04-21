@@ -81,7 +81,7 @@ const PopupTree = (function () {
     function createBookmarkElement(item, path) {
         const { getDomainFromUrl, getMessage, escapeHtml,
                 isFaviconEnabled, loadFaviconAsync,
-                openInPrivateTab, showNotification,
+                openInPrivateTab, isAlwaysIncognito, showNotification,
                 editBookmark, deleteBookmark, copyBookmarkUrl } = _deps;
 
         const div = document.createElement('div');
@@ -139,7 +139,11 @@ const PopupTree = (function () {
 
         link.addEventListener('click', e => {
             if (e.target.closest('.quick-actions-hover') || e.target.closest('.quick-actions-trigger')) return;
-            chrome.tabs.create({ url: item.url, active: !e.ctrlKey && !e.metaKey });
+            if (isAlwaysIncognito()) {
+                openInPrivateTab(item.url);
+            } else {
+                chrome.tabs.create({ url: item.url, active: !e.ctrlKey && !e.metaKey });
+            }
         });
 
         
@@ -284,18 +288,21 @@ const PopupTree = (function () {
     }
 
     function _buildPopupBookmarkPanel(pathStr, url, getMessage) {
-        return QuickActions.buildPanel([
+        const actions = [
             { action: 'edit',    title: getMessage('edit'),        icon: 'edit',
               dataset: { path: pathStr, 'item-type': 'bookmark' } },
             { action: 'copy',    title: getMessage('copyUrl'),     icon: 'copy',
               dataset: { url } },
             { action: 'qr',     title: getMessage('qrCode') || 'QR Code', icon: 'qr',
               dataset: { url } },
-            { action: 'private', title: getMessage('openPrivate'), icon: 'private', className: 'private',
-              dataset: { url } },
-            { action: 'delete',  title: getMessage('delete'),      icon: 'delete',  className: 'delete',
-              dataset: { path: pathStr, 'item-type': 'bookmark' } },
-        ]);
+        ];
+        if (!_deps.isAlwaysIncognito || !_deps.isAlwaysIncognito()) {
+            actions.push({ action: 'private', title: getMessage('openPrivate'), icon: 'private', className: 'private',
+              dataset: { url } });
+        }
+        actions.push({ action: 'delete',  title: getMessage('delete'),      icon: 'delete',  className: 'delete',
+              dataset: { path: pathStr, 'item-type': 'bookmark' } });
+        return QuickActions.buildPanel(actions);
     }
 
     async function handleTreeClick(e) {

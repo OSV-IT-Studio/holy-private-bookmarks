@@ -821,6 +821,12 @@
   "stayUnlockedWarning": {
     "message": "Zmniejsza bezpieczeństwo: klucz szyfrowania jest przechowywany w pamięci sesji przeglądarki. Każdy z dostępem do Twojego profilu może go potencjalnie odczytać."
   },
+  "alwaysIncognito": {
+    "message": "Otwieraj zakładki zawsze w trybie incognito"
+  },
+  "alwaysIncognitoDesc": {
+    "message": "Wszystkie zakładki będą otwierane w prywatnym oknie"
+  },
   "enable": {
     "message": "Włącz"
   },

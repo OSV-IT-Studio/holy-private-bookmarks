@@ -818,6 +818,12 @@
   "stayUnlockedWarning": {
     "message": "Reduce la seguridad: la clave de cifrado se almacena en el almacenamiento de sesión del navegador. Cualquiera con acceso a tu perfil del navegador podría leerla."
   },
+  "alwaysIncognito": {
+    "message": "Abrir marcadores siempre en modo incógnito"
+  },
+  "alwaysIncognitoDesc": {
+    "message": "Todos los marcadores se abrirán en una ventana privada"
+  },
   "enable": {
     "message": "Activar"
   },

@@ -25,6 +25,7 @@
     const BOOKMARKS_PER_PAGE = 20;
     const FAVICON_ENABLED_KEY = 'holyFaviconEnabled';
     const QUICK_CLOSE_KEY = 'holyQuickCloseEnabled';
+    const ALWAYS_INCOGNITO_KEY = 'holyAlwaysIncognito';
     
     const VIRTUAL_SCROLL_CONFIG = {
         initialLoadCount: 20,
@@ -492,6 +493,16 @@
 
     function setQuickCloseEnabled(enabled) {
         localStorage.setItem(QUICK_CLOSE_KEY, enabled.toString());
+    }
+
+    // ALWAYS INCOGNITO
+
+    function isAlwaysIncognito() {
+        return localStorage.getItem(ALWAYS_INCOGNITO_KEY) === 'true';
+    }
+
+    function setAlwaysIncognito(enabled) {
+        localStorage.setItem(ALWAYS_INCOGNITO_KEY, enabled.toString());
     }
 
     function getFaviconUrl(url) {
@@ -1140,7 +1151,7 @@ function dragCreateGhost(item, clientX, clientY, offsetX, offsetY) {
     // Title
     const textEl = document.createElement('span');
     textEl.className = 'drag-ghost__text';
-    textEl.textContent = title.length > 40 ? title.slice(0, 40) + '…' : title;
+    textEl.textContent = title.length > 20 ? title.slice(0, 20) + '…' : title;
     ghost.appendChild(textEl);
 
     ghost.style.cssText = `position:fixed;top:${clientY + offsetY}px;left:${clientX + offsetX}px;z-index:99999;pointer-events:none;`;
@@ -1407,6 +1418,9 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             isQuickCloseEnabled,
             setQuickCloseEnabled,
             
+            isAlwaysIncognito,
+            setAlwaysIncognito,
+            
             
             buildFolderOptions,
             buildFolderTreePicker,
@@ -1486,6 +1500,9 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             
             isQuickCloseEnabled,
             setQuickCloseEnabled,
+            
+            isAlwaysIncognito,
+            setAlwaysIncognito,
             
             buildFolderOptions,
             buildFolderTreePicker,

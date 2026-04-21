@@ -818,6 +818,12 @@
   "stayUnlockedWarning": {
     "message": "Riduce la sicurezza: la chiave di cifratura viene salvata nella memoria di sessione del browser. Chiunque abbia accesso al tuo profilo browser potrebbe leggerla."
   },
+  "alwaysIncognito": {
+    "message": "Apri i segnalibri sempre in modalità privata"
+  },
+  "alwaysIncognitoDesc": {
+    "message": "Tutti i segnalibri si apriranno in una finestra privata"
+  },
   "enable": {
     "message": "Attiva"
   },

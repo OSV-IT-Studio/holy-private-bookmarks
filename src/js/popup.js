@@ -72,6 +72,9 @@ buildFolderTreePicker,
     isQuickCloseEnabled,
     setQuickCloseEnabled,
 
+    isAlwaysIncognito,
+    setAlwaysIncognito,
+
     saveEncrypted,
     showNotification,
     showConfirm,
@@ -207,12 +210,10 @@ async function isStayUnlockedEnabled() {
 
 async function initStayUnlockedToggle() {
     const toggle  = document.getElementById('stay-unlocked-toggle');
-    const warning = document.getElementById('stay-unlocked-warning');
     if (!toggle) return;
 
     const enabled = await isStayUnlockedEnabled();
     toggle.checked = enabled;
-    if (warning) warning.style.display = enabled ? 'block' : 'none';
 
     toggle.addEventListener('change', async (e) => {
         const val = e.target.checked;
@@ -231,14 +232,12 @@ async function initStayUnlockedToggle() {
                 return;
             }
             await chrome.storage.local.set({ [SESSION_PREF_KEY]: true });
-            if (warning) warning.style.display = 'block';
 
             if (CryptoManager.isReady()) {
                 await CryptoManager.saveToSession();
             }
         } else {
             await chrome.storage.local.set({ [SESSION_PREF_KEY]: false });
-            if (warning) warning.style.display = 'none';
             await CryptoManager.clearSession();
         }
     });
@@ -271,6 +270,15 @@ async function initQuickCloseToggle() {
         setQuickCloseEnabled(val);
        
         chrome.runtime.sendMessage({ action: 'setQuickCloseEnabled', enabled: val }).catch(() => {});
+    });
+}
+
+async function initAlwaysIncognitoToggle() {
+    const toggle = document.getElementById('always-incognito-toggle');
+    if (!toggle) return;
+    toggle.checked = isAlwaysIncognito();
+    toggle.addEventListener('change', e => {
+        setAlwaysIncognito(e.target.checked);
     });
 }
 
@@ -313,6 +321,7 @@ function buildDeps() {
         getDomainFromUrl,
         loadFaviconAsync,
         openInPrivateTab,
+        isAlwaysIncognito,
         virtualScrollCache,
 		showGlobalLoadingIndicator,
         hideGlobalLoadingIndicator,
@@ -541,6 +550,7 @@ async function init() {
     initFaviconToggle();
     initQuickCloseToggle();
     initStayUnlockedToggle();
+    initAlwaysIncognitoToggle();
 
     
     const [stored, session, stayPref] = await Promise.all([

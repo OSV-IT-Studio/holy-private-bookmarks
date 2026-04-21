@@ -1,4 +1,10 @@
 [
+  {
+    "version": "1.8.5.17",
+    "changes": [
+      "Added 'Always open bookmarks in incognito' option in Settings under Privacy — when enabled, all bookmarks open in a private window automatically"
+    ]
+  },
 {
   "version": "1.8.5.14",
   "changes": [

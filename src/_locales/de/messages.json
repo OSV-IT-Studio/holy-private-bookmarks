@@ -818,6 +818,12 @@
   "stayUnlockedWarning": {
     "message": "Verringert die Sicherheit: Der Verschlüsselungsschlüssel wird im Sitzungsspeicher des Browsers gespeichert. Jeder mit Zugriff auf Ihr Browserprofil kann ihn möglicherweise lesen."
   },
+  "alwaysIncognito": {
+    "message": "Lesezeichen immer im Inkognito-Modus öffnen"
+  },
+  "alwaysIncognitoDesc": {
+    "message": "Alle Lesezeichen werden in einem privaten Fenster geöffnet"
+  },
   "enable": {
     "message": "Aktivieren"
   },

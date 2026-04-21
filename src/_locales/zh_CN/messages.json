@@ -818,6 +818,12 @@
   "stayUnlockedWarning": {
     "message": "降低安全性：加密密钥存储在浏览器的会话存储中。任何可以访问您浏览器配置文件的人都可能读取该密钥。"
   },
+  "alwaysIncognito": {
+    "message": "始终在无痕模式下打开书签"
+  },
+  "alwaysIncognitoDesc": {
+    "message": "所有书签将在私人窗口中打开"
+  },
   "enable": {
     "message": "启用"
   },

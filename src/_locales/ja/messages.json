@@ -818,6 +818,12 @@
   "stayUnlockedWarning": {
     "message": "セキュリティが低下します：暗号化キーがブラウザのセッションストレージに保存されます。ブラウザプロファイルにアクセスできる人は誰でも読み取れる可能性があります。"
   },
+  "alwaysIncognito": {
+    "message": "ブックマークを常にシークレットモードで開く"
+  },
+  "alwaysIncognitoDesc": {
+    "message": "すべてのブックマークはプライベートウィンドウで開かれます"
+  },
   "enable": {
     "message": "有効にする"
   },

@@ -58,6 +58,10 @@ const DragDropManager = (function() {
 
     let dataRef = null;
     let saveCallback = null;
+    let _boundHandlers = null;
+
+    // SCROLL THROTTLE
+    let _scrollPending = false;
 
     // INITIALIZATION 
 
@@ -69,14 +73,20 @@ const DragDropManager = (function() {
         if (!tree) return;
         
         removeDragListeners();
-        
-        tree.addEventListener('dragstart', handleDragStart, { capture: true });
-        tree.addEventListener('dragend', handleDragEnd, { capture: true });
-        tree.addEventListener('dragover', handleDragOver, { capture: true });
-        tree.addEventListener('dragenter', handleDragEnter, { capture: true });
-        tree.addEventListener('dragleave', handleDragLeave, { capture: true });
-        tree.addEventListener('drop', handleDrop, { capture: true });
-        
+
+        _boundHandlers = {
+            dragstart: handleDragStart,
+            dragend:   handleDragEnd,
+            dragover:  handleDragOver,
+            dragenter: handleDragEnter,
+            dragleave: handleDragLeave,
+            drop:      handleDrop
+        };
+
+        for (const [evt, fn] of Object.entries(_boundHandlers)) {
+            tree.addEventListener(evt, fn, { capture: true });
+        }
+
         refreshDragItems();
     }
 
@@ -94,12 +104,12 @@ const DragDropManager = (function() {
 
     function removeDragListeners() {
         const tree = document.getElementById('tree');
-        if (!tree) return;
-        
-        const events = ['dragstart', 'dragend', 'dragover', 'dragenter', 'dragleave', 'drop'];
-        events.forEach(event => {
-            tree.removeEventListener(event, handleDragStart, { capture: true });
-        });
+        if (!tree || !_boundHandlers) return;
+
+        for (const [evt, fn] of Object.entries(_boundHandlers)) {
+            tree.removeEventListener(evt, fn, { capture: true });
+        }
+        _boundHandlers = null;
     }
 
     // DRAG & DROP HANDLERS 
@@ -233,31 +243,37 @@ const DragDropManager = (function() {
     }
 
     function clearDropIndicators() {
-        document.querySelectorAll(
-            '.drop-over-spacer, .drop-into-folder, .drop-above, .drop-below, .drop-forbidden'
-        ).forEach(el => {
-            el.classList.remove(
-                'drop-over-spacer', 
-                'drop-into-folder', 
-                'drop-above', 
-                'drop-below', 
-                'drop-forbidden'
-            );
+        const indicatorClasses = [
+            'drop-over-spacer',
+            'drop-into-folder',
+            'drop-above',
+            'drop-below',
+            'drop-forbidden'
+        ];
+
+        // Remove indicators from known targets — no querySelectorAll on entire document needed
+        [dragState.dragOverItem, dragState.lastValidTarget].forEach(el => {
+            if (el) el.classList.remove(...indicatorClasses);
         });
-        
+
         const message = document.querySelector('.drop-forbidden-message');
         if (message) message.remove();
     }
 
     function handleAutoScroll(mouseY) {
-        const tree = document.getElementById('tree');
-        const rect = tree.getBoundingClientRect();
-        
-        if (mouseY < rect.top + DRAG_CONFIG.edgeThreshold) {
-            tree.scrollTop -= DRAG_CONFIG.autoScrollSpeed;
-        } else if (mouseY > rect.bottom - DRAG_CONFIG.edgeThreshold) {
-            tree.scrollTop += DRAG_CONFIG.autoScrollSpeed;
-        }
+        if (_scrollPending) return;
+        _scrollPending = true;
+        requestAnimationFrame(() => {
+            _scrollPending = false;
+            const tree = document.getElementById('tree');
+            if (!tree) return;
+            const rect = tree.getBoundingClientRect();
+            if (mouseY < rect.top + DRAG_CONFIG.edgeThreshold) {
+                tree.scrollTop -= DRAG_CONFIG.autoScrollSpeed;
+            } else if (mouseY > rect.bottom - DRAG_CONFIG.edgeThreshold) {
+                tree.scrollTop += DRAG_CONFIG.autoScrollSpeed;
+            }
+        });
     }
 
     function handleDragEnter(e) {
@@ -419,6 +435,8 @@ const DragDropManager = (function() {
         if (dragState.tooltipElement) {
             dragState.tooltipElement.remove();
         }
+
+        _scrollPending = false;
         
         dragState = {
             draggedItem: null,

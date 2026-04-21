@@ -172,12 +172,17 @@
             <span class="slider round"></span>
         </label>
     </div>
-    <div id="stay-unlocked-warning" style="display:none; margin: 2px 0 8px 0; padding: 8px 10px; border-radius: 6px; background: var(--warning-bg, rgba(255,180,0,0.12)); border: 1px solid var(--warning-border, rgba(255,180,0,0.35)); color: var(--warning-text, #b8860b);">
-        <div style="display:flex; gap:7px; align-items:flex-start;">
-            <svg style="flex-shrink:0;margin-top:1px;" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            <span style="font-size:12px; line-height:1.45;" data-i18n="stayUnlockedWarning"></span>
+    <div class="settings-option" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-top: 1px solid var(--border-color);">
+        <div>
+            <div class="option-title" data-i18n="alwaysIncognito"></div>
+            <div class="option-description" data-i18n="alwaysIncognitoDesc"></div>
         </div>
+        <label class="switch">
+            <input type="checkbox" id="always-incognito-toggle">
+            <span class="slider round"></span>
+        </label>
     </div>
+    
 </div>
         <div class="settings-section">
             <h3 class="section-title" data-i18n="hotkeys"></h3>

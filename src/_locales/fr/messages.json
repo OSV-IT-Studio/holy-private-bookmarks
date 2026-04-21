@@ -818,6 +818,12 @@
   "stayUnlockedWarning": {
     "message": "Réduit la sécurité : la clé de chiffrement est stockée dans le stockage de session du navigateur. Toute personne ayant accès à votre profil de navigateur peut potentiellement la lire."
   },
+  "alwaysIncognito": {
+    "message": "Toujours ouvrir les favoris en navigation privée"
+  },
+  "alwaysIncognitoDesc": {
+    "message": "Tous les favoris s'ouvriront dans une fenêtre privée"
+  },
   "enable": {
     "message": "Activer"
   },

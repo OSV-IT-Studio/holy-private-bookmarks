@@ -821,6 +821,12 @@
   "stayUnlockedWarning": {
     "message": "Reduces security: the encryption key is stored in browser session storage. Anyone with access to your browser profile can potentially read it."
   },
+  "alwaysIncognito": {
+    "message": "Always open bookmarks in incognito"
+  },
+  "alwaysIncognitoDesc": {
+    "message": "All bookmarks will open in a private window"
+  },
   "enable": {
     "message": "Enable"
   },
