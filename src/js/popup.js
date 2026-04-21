@@ -215,6 +215,9 @@ async function initStayUnlockedToggle() {
     const enabled = await isStayUnlockedEnabled();
     toggle.checked = enabled;
 
+    if (toggle._stayUnlockedListenerAttached) return;
+    toggle._stayUnlockedListenerAttached = true;
+
     toggle.addEventListener('change', async (e) => {
         const val = e.target.checked;
 
@@ -627,7 +630,7 @@ async function init() {
         '#import-from-chrome':       () => ImportExportManager.importFromChromeBookmarks(data, saveAndRefresh),
         '#import-from-chrome-advanced': () => ImportExportManager.importFromChromeBookmarksAdvanced(data, saveAndRefresh),
         '#support-btn':              () => chrome.tabs.create({ url: chrome.runtime.getURL('donate.html') }),
-        '#settings-btn':             () => PopupUI.showSection('settings'),
+        '#settings-btn':             () => { PopupUI.showSection('settings'); initStayUnlockedToggle(); },
         '#back':                     () => PopupUI.showSection('main'),
         '#change-pass':              () => PopupAuth.changeMasterPassword(),
         '#manager-btn':              openManager,

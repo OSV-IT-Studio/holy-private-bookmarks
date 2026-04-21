@@ -480,7 +480,7 @@
     "message": "Mostra le favicon dei siti web"
   },
   "showFaviconsDesc": {
-    "message": "Potrebbe divulgare la cronologia di navigazione ai server di Google"
+    "message": "Le icone vengono caricate tramite il servizio Google"
   },
   "bookmarksAndFolders": {
     "message": "Segnalibri e Cartelle"
@@ -844,5 +844,8 @@
   },
   "openManagerCommand": {
     "message": "Apri il gestore dei segnalibri"
+  },
+  "Error": {
+    "message": "Errore"
   }
 }

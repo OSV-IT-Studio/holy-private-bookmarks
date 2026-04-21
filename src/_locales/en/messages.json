@@ -480,7 +480,7 @@
     "message": "Show website favicons"
   },
   "showFaviconsDesc": {
-    "message": "May leak browsing history to Google's servers"
+    "message": "Icons are loaded via Google's favicon service"
   },
   "bookmarksAndFolders": {
     "message": "Bookmarks & Folders"

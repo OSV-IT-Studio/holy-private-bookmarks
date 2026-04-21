@@ -477,7 +477,7 @@
     "message": "Показывать иконки сайтов (favicons)"
   },
   "showFaviconsDesc": {
-    "message": "Может передавать историю просмотров на серверы Google"
+    "message": "Для загрузки иконок используется сервис Google"
   },
   "bookmarksAndFolders": {
     "message": "Закладки и папки",
@@ -842,5 +842,8 @@
   },
   "openManagerCommand": {
     "message": "Открыть менеджер закладок"
+  },
+  "Error": {
+    "message": "Ошибка"
   }
 }

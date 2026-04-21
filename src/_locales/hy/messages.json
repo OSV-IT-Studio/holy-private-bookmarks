@@ -461,25 +461,13 @@
     "message": "Մուգ",
     "description": "Dark theme name"
   },
-  "themeDarkDesc": {
-    "message": "Գիշերային օգտագործման համար",
-    "description": "Dark theme description"
-  },
   "themeLight": {
     "message": "Բաց",
     "description": "Light theme name"
   },
-  "themeLightDesc": {
-    "message": "Ցերեկային օգտագործման համար",
-    "description": "Light theme description"
-  },
   "themeSystem": {
     "message": "Համակարգային",
     "description": "System theme name"
-  },
-  "themeSystemDesc": {
-    "message": "Հետևում է համակարգի կարգավորումներին",
-    "description": "System theme description"
   },
   "themeToggle": {
     "message": "Փոխել թեման",
@@ -489,7 +477,7 @@
     "message": "Ցուցադրել կայքերի favicon-ները"
   },
   "showFaviconsDesc": {
-    "message": "Կարող է զննարկման պատմությունը փոխանցել Google-ի սերվերներին"
+    "message": "Պատկերակները բեռնվում են Google-ի ծառայության միջոցով"
   },
   "bookmarksAndFolders": {
     "message": "Էջանիշեր և պանակներ"
@@ -853,5 +841,11 @@
   },
   "openManagerCommand": {
     "message": "Բացել էջանիշերի կառավարիչը"
+  },
+  "theme": {
+    "message": "Թեմա"
+  },
+  "Error": {
+    "message": "Սխալ"
   }
 }

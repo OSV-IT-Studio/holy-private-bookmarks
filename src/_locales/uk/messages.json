@@ -480,7 +480,7 @@
     "message": "Показувати іконки сайтів (favicons)"
   },
   "showFaviconsDesc": {
-    "message": "Може передавати історію переглядів на сервери Google"
+    "message": "Іконки завантажуються через сервіс Google"
   },
   "bookmarksAndFolders": {
     "message": "Закладки та теки"
@@ -835,5 +835,17 @@
   },
   "openManagerCommand": {
     "message": "Відкрити менеджер закладок"
+  },
+  "switchToManager": {
+    "message": "Перейти до менеджера"
+  },
+  "managerIsOpen": {
+    "message": "Менеджер закладок відкрито"
+  },
+  "managerIsOpenDesc": {
+    "message": "Закрийте вкладку менеджера закладок, щоб використовувати спливаюче вікно."
+  },
+  "Error": {
+    "message": "Помилка"
   }
 }

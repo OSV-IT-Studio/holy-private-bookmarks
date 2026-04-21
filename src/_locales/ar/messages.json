@@ -480,7 +480,7 @@
     "message": "عرض أيقونات المواقع"
   },
   "showFaviconsDesc": {
-    "message": "قد يؤدي إلى تسرب سجل التصفح إلى خوادم Google"
+    "message": "يتم تحميل الأيقونات عبر خدمة Google"
   },
   "bookmarksAndFolders": {
     "message": "الإشارات المرجعية والمجلدات"
@@ -844,5 +844,8 @@
   },
   "openManagerCommand": {
     "message": "فتح مدير الإشارات المرجعية"
+  },
+  "Error": {
+    "message": "خطأ"
   }
 }

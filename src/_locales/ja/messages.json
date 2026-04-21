@@ -480,7 +480,7 @@
     "message": "ウェブサイトのファビコンを表示"
   },
   "showFaviconsDesc": {
-    "message": "閲覧履歴がGoogleのサーバーに漏洩する可能性があります"
+    "message": "アイコンはGoogleのサービスを通じて読み込まれます"
   },
   "bookmarksAndFolders": {
     "message": "ブックマーク＆フォルダ"
@@ -844,5 +844,8 @@
   },
   "openManagerCommand": {
     "message": "ブックマークマネージャーを開く"
+  },
+  "Error": {
+    "message": "エラー"
   }
 }

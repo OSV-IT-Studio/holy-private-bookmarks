@@ -1,5 +1,11 @@
 [
   {
+    "version": "1.8.5.18",
+    "changes": [
+      "Added 'Stay unlocked between sessions' checkbox directly on the login screen — no need to go into settings to enable it"
+    ]
+  },
+  {
     "version": "1.8.5.17",
     "changes": [
       "Added 'Always open bookmarks in incognito' option in Settings under Privacy — when enabled, all bookmarks open in a private window automatically"

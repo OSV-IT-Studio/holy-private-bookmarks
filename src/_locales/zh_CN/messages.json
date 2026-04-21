@@ -480,7 +480,7 @@
     "message": "显示网站图标"
   },
   "showFaviconsDesc": {
-    "message": "可能会向 Google 服务器泄露浏览历史"
+    "message": "图标通过 Google 服务加载"
   },
   "bookmarksAndFolders": {
     "message": "书签与文件夹"
@@ -835,5 +835,17 @@
   },
   "openManagerCommand": {
     "message": "打开书签管理器"
+  },
+  "switchToManager": {
+    "message": "切换到管理器"
+  },
+  "managerIsOpen": {
+    "message": "书签管理器已打开"
+  },
+  "managerIsOpenDesc": {
+    "message": "请关闭书签管理器标签页以使用弹出窗口。"
+  },
+  "Error": {
+    "message": "错误"
   }
 }

@@ -95,6 +95,14 @@ const LoginUI = (function () {
                                data-i18n="masterPassword" placeholder="" autofocus>
                     </div>
 
+                    <div class="login-stay-unlocked">
+                        <label class="login-stay-unlocked__label">
+                            <input type="checkbox" id="login-stay-unlocked-checkbox" class="login-stay-unlocked__checkbox">
+                            <span class="login-stay-unlocked__toggle" aria-hidden="true"></span>
+							<span class="login-stay-unlocked__text" data-i18n="stayUnlocked"></span>
+                        </label>
+                    </div>
+
                     <button class="unlock-button" id="unlock">
                         <span data-i18n="unlock">Unlock</span>
                     </button>
@@ -165,6 +173,18 @@ const LoginUI = (function () {
             document.getElementById('password')?.addEventListener('keypress', e => {
                 if (e.key === 'Enter') unlock();
             });
+
+            // Stay unlocked checkbox
+            const stayCheckbox = document.getElementById('login-stay-unlocked-checkbox');
+            if (stayCheckbox) {
+                chrome.storage.local.get('holyStayUnlocked').then(r => {
+                    stayCheckbox.checked = !!r.holyStayUnlocked;
+                }).catch(() => {});
+
+                stayCheckbox.addEventListener('change', async (e) => {
+                    await chrome.storage.local.set({ holyStayUnlocked: e.target.checked }).catch(() => {});
+                });
+            }
 
             if (window.HolyI18n?.localizePage) window.HolyI18n.localizePage();
             _isLoading = false;

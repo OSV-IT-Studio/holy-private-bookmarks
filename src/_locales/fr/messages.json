@@ -480,7 +480,7 @@
     "message": "Afficher les favicons des sites web"
   },
   "showFaviconsDesc": {
-    "message": "Peut divulguer l'historique de navigation aux serveurs de Google"
+    "message": "Les icônes sont chargées via le service Google"
   },
   "bookmarksAndFolders": {
     "message": "Marque-pages et Dossiers"
@@ -844,5 +844,8 @@
   },
   "openManagerCommand": {
     "message": "Ouvrir le gestionnaire de favoris"
+  },
+  "Error": {
+    "message": "Erreur"
   }
 }

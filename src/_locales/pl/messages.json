@@ -480,7 +480,7 @@
     "message": "Pokazuj ikony witryn"
   },
   "showFaviconsDesc": {
-    "message": "Może ujawnić historię przeglądania serwerom Google"
+    "message": "Ikony są ładowane za pośrednictwem usługi Google"
   },
   "bookmarksAndFolders": {
     "message": "Zakładki i foldery"

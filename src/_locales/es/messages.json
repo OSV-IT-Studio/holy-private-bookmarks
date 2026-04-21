@@ -480,7 +480,7 @@
     "message": "Mostrar favicons de sitios web"
   },
   "showFaviconsDesc": {
-    "message": "Puede filtrar el historial de navegación a los servidores de Google"
+    "message": "Los iconos se cargan a través del servicio de Google"
   },
   "bookmarksAndFolders": {
     "message": "Marcadores y Carpetas"
@@ -844,5 +844,8 @@
   },
   "openManagerCommand": {
     "message": "Abrir el administrador de marcadores"
+  },
+  "Error": {
+    "message": "Error"
   }
 }

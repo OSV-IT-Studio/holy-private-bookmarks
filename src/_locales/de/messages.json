@@ -480,7 +480,7 @@
     "message": "Webseiten-Favicons anzeigen"
   },
   "showFaviconsDesc": {
-    "message": "Kann den Browserverlauf an Google-Server weitergeben"
+    "message": "Symbole werden über den Google-Dienst geladen"
   },
   "bookmarksAndFolders": {
     "message": "Lesezeichen & Ordner"
@@ -844,5 +844,8 @@
   },
   "openManagerCommand": {
     "message": "Lesezeichenverwaltung öffnen"
+  },
+  "Error": {
+    "message": "Fehler"
   }
 }
