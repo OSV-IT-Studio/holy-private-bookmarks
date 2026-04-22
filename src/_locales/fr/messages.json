@@ -847,5 +847,14 @@
   },
   "Error": {
     "message": "Erreur"
+  },
+  "blurPage": {
+    "message": "Flouter la page ($1)"
+  },
+  "blurPageDesc": {
+    "message": "Floute l'onglet actuel lors de l'activation"
+  },
+  "blurPageCommand": {
+    "message": "Flouter la page"
   }
 }

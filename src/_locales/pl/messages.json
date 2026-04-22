@@ -847,5 +847,14 @@
   },
   "openManagerCommand": {
     "message": "Otwórz menedżer zakładek"
+  },
+  "blurPage": {
+    "message": "Rozmycie strony ($1)"
+  },
+  "blurPageDesc": {
+    "message": "Rozmywa bieżącą kartę po aktywacji"
+  },
+  "blurPageCommand": {
+    "message": "Rozmyj stronę"
   }
 }

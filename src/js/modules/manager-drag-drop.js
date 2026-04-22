@@ -22,21 +22,23 @@
 
 const ManagerDragDrop = (function () {
 
-    let _deps = {};
-
-    //  Drag state
-
-    let _dragged      = null;
-    let _draggedPath  = null;
-    let _draggedEl    = null;
-    let _isFolder     = false;
-    let _ghostEl      = null;
-    let _escHandler   = null;
-
     const GHOST_X = 20;
     const GHOST_Y = 20;
 
-    //  Public API
+    //  State 
+
+    let _deps        = {};
+    let _dragged     = null;
+    let _draggedPath = null;
+    let _draggedEl   = null;
+    let _isFolder    = false;
+    let _ghostEl     = null;
+    let _escHandler  = null;
+
+    let _rafPending     = false;
+    let _latestDragOver = null;
+
+    //  Public API 
 
     function init(deps) {
         Object.assign(_deps, deps);
@@ -50,7 +52,7 @@ const ManagerDragDrop = (function () {
         });
     }
 
-    // Grid listeners (delegated)
+    //  Grid listeners (delegated) 
 
     function _attachGridListeners() {
         const grid = document.getElementById('bookmarks-grid');
@@ -63,7 +65,7 @@ const ManagerDragDrop = (function () {
         grid.addEventListener('drop',       _onGridDrop);
     }
 
-    // Sidebar listeners
+    //  Sidebar listeners 
 
     function _attachSidebarListeners() {
         const tree = document.querySelector('.sidebar .folder-tree');
@@ -81,7 +83,7 @@ const ManagerDragDrop = (function () {
         }
     }
 
-    //  Drag start / end
+    //  Drag start / end 
 
     function _onGridDragStart(e) {
         const el = e.target.closest('.tree-item');
@@ -107,6 +109,7 @@ const ManagerDragDrop = (function () {
 
         _ghostEl = window.HolyShared.dragCreateGhost(el, e.clientX, e.clientY, GHOST_X, GHOST_Y);
 
+        // Invisible drag image
         const blank = Object.assign(document.createElement('div'), { style: 'opacity:0' });
         document.body.appendChild(blank);
         e.dataTransfer.setDragImage(blank, 0, 0);
@@ -118,20 +121,21 @@ const ManagerDragDrop = (function () {
             path:   _draggedPath,
         }));
 
-        const onMove = ev => window.HolyShared.dragMoveGhost(_ghostEl, ev.clientX, ev.clientY, GHOST_X, GHOST_Y);
-        const onEnd  = () => {
-            document.removeEventListener('dragover', onMove);
-            document.removeEventListener('dragend',  onEnd);
+        const _onMove = ev => window.HolyShared.dragMoveGhost(_ghostEl, ev.clientX, ev.clientY, GHOST_X, GHOST_Y);
+        const _onEnd  = () => {
+            document.removeEventListener('dragover', _onMove);
+            document.removeEventListener('dragend',  _onEnd);
         };
-        document.addEventListener('dragover', onMove);
-        document.addEventListener('dragend',  onEnd);
+        document.addEventListener('dragover', _onMove);
+        document.addEventListener('dragend',  _onEnd);
 
         _escHandler = window.HolyShared.dragHandleEscape(
             () => !!_dragged,
             () => {
                 if (_draggedEl) _draggedEl.classList.remove('dragging');
-                if (_ghostEl) { _ghostEl.remove(); _ghostEl = null; }
-                window.HolyShared.dragClearIndicators();
+                if (_ghostEl)   { _ghostEl.remove(); _ghostEl = null; }
+                _clearGridIndicators();
+                _clearSidebarIndicators();
                 _dragged     = null;
                 _draggedPath = null;
                 _draggedEl   = null;
@@ -141,30 +145,48 @@ const ManagerDragDrop = (function () {
         );
     }
 
-    function _onGridDragEnd(e) {
-        const el = e.target.closest('.tree-item');
-        if (el) el.classList.remove('dragging');
-        if (_ghostEl) { _ghostEl.remove(); _ghostEl = null; }
-        if (_escHandler) { document.removeEventListener('keydown', _escHandler); _escHandler = null; }
-        window.HolyShared.dragClearIndicators();
+    function _onGridDragEnd() {
+        if (_draggedEl) _draggedEl.classList.remove('dragging');
+        if (_ghostEl)   { _ghostEl.remove(); _ghostEl = null; }
+        if (_escHandler){ document.removeEventListener('keydown', _escHandler); _escHandler = null; }
+
+        _clearGridIndicators();
+        _clearSidebarIndicators();
+
         _dragged     = null;
         _draggedPath = null;
         _draggedEl   = null;
         _isFolder    = false;
+        _rafPending     = false;
+        _latestDragOver = null;
     }
+
+    //  Grid dragover (rAF-throttled) 
 
     function _onGridDragOver(e) {
         if (!_dragged) return;
         e.preventDefault();
         e.dataTransfer.dropEffect = 'move';
 
+        _latestDragOver = e;
+        if (!_rafPending) {
+            _rafPending = true;
+            requestAnimationFrame(_processGridDragOver);
+        }
+    }
+
+    function _processGridDragOver() {
+        _rafPending = false;
+        const e = _latestDragOver;
+        if (!e || !_dragged) return;
+
         const target = e.target.closest('.tree-item');
         if (!target || target === _draggedEl) {
-            window.HolyShared.dragClearIndicators(document.getElementById('bookmarks-grid'));
+            _clearGridIndicators();
             return;
         }
 
-        window.HolyShared.dragClearIndicators(document.getElementById('bookmarks-grid'));
+        _clearGridIndicators();
 
         const rect           = target.getBoundingClientRect();
         const relY           = e.clientY - rect.top;
@@ -180,19 +202,19 @@ const ManagerDragDrop = (function () {
 
     function _onGridDragLeave(e) {
         const target = e.target.closest('.tree-item');
-        if (target) {
-            target.classList.remove('drop-above', 'drop-below', 'drop-into-folder');
-        }
+        if (target) target.classList.remove('drop-above', 'drop-below', 'drop-into-folder');
     }
+
+    //  Grid drop 
 
     function _onGridDrop(e) {
         e.preventDefault();
         e.stopPropagation();
         if (!_dragged || !_draggedPath) return;
 
-        const target = e.target.closest('.tree-item');
-        window.HolyShared.dragClearIndicators(document.getElementById('bookmarks-grid'));
+        _clearGridIndicators();
 
+        const target = e.target.closest('.tree-item');
         if (!target || target === _draggedEl) return;
 
         const rect           = target.getBoundingClientRect();
@@ -211,14 +233,14 @@ const ManagerDragDrop = (function () {
 
         if (dropInto) {
             if (!_validateMove(_draggedPath, targetPath)) return;
-            _moveInto(_draggedPath, targetPath);
+            _applyMove(_draggedPath, targetPath, true, false);
         } else {
             const isAbove = relY <= rect.height / 2;
-            _reorderItem(_draggedPath, targetPath, isAbove);
+            _applyMove(_draggedPath, targetPath, false, isAbove);
         }
     }
 
-    //  Sidebar drag-over / drop
+    //  Sidebar dragover / drop 
 
     function _onSidebarDragOver(e) {
         if (!_dragged) return;
@@ -229,7 +251,7 @@ const ManagerDragDrop = (function () {
         if (!folderEl) return;
         if (_draggedEl && folderEl.contains(_draggedEl)) return;
 
-        window.HolyShared.dragClearIndicators(document.querySelector('.sidebar'));
+        _clearSidebarIndicators();
         folderEl.classList.add('drop-target');
     }
 
@@ -250,24 +272,19 @@ const ManagerDragDrop = (function () {
         const folderId = folderEl.dataset.folderId;
         if (!folderId) return;
 
-        let targetPathArray = [];
-        if (folderId !== 'all') {
-            targetPathArray = folderId.split(',').map(Number);
-        }
+        const targetPathArray = folderId !== 'all' ? folderId.split(',').map(Number) : [];
 
         const sourceParentPath = _draggedPath.slice(0, -1);
         if (sourceParentPath.join(',') === targetPathArray.join(',')) {
-            _deps.showNotification(
-                _deps.getMessage('bookmarkAlreadyInFolder'), true
-            );
+            _deps.showNotification(_deps.getMessage('bookmarkAlreadyInFolder'), true);
             return;
         }
 
         if (!_validateMove(_draggedPath, targetPathArray, true)) return;
-        _moveIntoByPath(_draggedPath, targetPathArray);
+        _applyMove(_draggedPath, targetPathArray, true, false);
     }
 
-    //  Move operations
+    //  Validation 
 
     function _validateMove(sourcePath, targetPath, targetIsFolder = false) {
         if (!_isFolder) return true;
@@ -277,70 +294,61 @@ const ManagerDragDrop = (function () {
             ? targetPath.join(',')
             : targetPath.slice(0, -1).join(',');
 
-        if (targetStr === sourcePath.slice(0, -1).join(',') && targetIsFolder) return true;
+        if (targetIsFolder && targetStr === sourcePath.slice(0, -1).join(',')) return true;
 
         if (targetStr === sourceStr || targetStr.startsWith(sourceStr + ',')) {
-            _deps.showNotification(
-                _deps.getMessage('cannotMoveIntoSelf'), true
-            );
+            _deps.showNotification(_deps.getMessage('cannotMoveIntoSelf'), true);
             return false;
         }
         return true;
     }
 
-    async function _moveInto(sourcePath, targetFolderPath) {
-        const { getData, getItemByPath, getParentByPath, saveChanges,
-                showNotification, getMessage,
-                renderFolderTree, renderBookmarks, resetInactivityTimer } = _deps;
+    async function _applyMove(sourcePath, targetPath, intoFolder, insertAbove) {
+        const {
+            getData, getItemByPath, getParentByPath,
+            saveChanges, showNotification, getMessage,
+            renderFolderTree, renderBookmarks, resetInactivityTimer,
+        } = _deps;
 
-        const data = getData();
-
-        const targetFolder = getItemByPath(data, targetFolderPath);
-        if (!targetFolder || targetFolder.type !== 'folder') return;
-        const targetArray = targetFolder.children;
-
+        const data         = getData();
         const sourceParent = getParentByPath(data, sourcePath.slice(0, -1));
         const sourceIndex  = sourcePath[sourcePath.length - 1];
+
         if (!sourceParent || sourceParent[sourceIndex] !== _dragged) return;
-        sourceParent.splice(sourceIndex, 1);
 
-        targetArray.push(_dragged);
-        _dragged.dateModified = Date.now();
+        let targetArray, insertPos;
 
-        await saveChanges();
-        ManagerBookmarks.clearBookmarksCache();
-        renderFolderTree();
-        ManagerBookmarks.resetPagination();
-        renderBookmarks();
-        showNotification(getMessage('dragSuccess'));
-        resetInactivityTimer();
-    }
+        if (intoFolder) {
 
-    async function _moveIntoByPath(sourcePath, targetPathArray) {
-        const { getData, getItemByPath, getParentByPath, saveChanges,
-                showNotification, getMessage,
-                renderFolderTree, renderBookmarks, resetInactivityTimer } = _deps;
-
-        const data = getData();
-
-        let targetArray;
-        if (targetPathArray.length === 0) {
-            targetArray = data.folders;
-        } else {
-            const folder = getItemByPath(data, targetPathArray);
-            if (!folder || folder.type !== 'folder') {
-                showNotification(getMessage('invalidDestinationFolder'), true);
-                return;
+            let targetArray_;
+            if (targetPath.length === 0) {
+                targetArray_ = data.folders;
+            } else {
+                const folder = getItemByPath(data, targetPath);
+                if (!folder || folder.type !== 'folder') {
+                    showNotification(getMessage('invalidDestinationFolder'), true);
+                    return;
+                }
+                targetArray_ = folder.children;
             }
-            targetArray = folder.children;
+            targetArray = targetArray_;
+
+            sourceParent.splice(sourceIndex, 1);
+            insertPos = targetArray.length;
+        } else {
+            const targetParent = getParentByPath(data, targetPath.slice(0, -1));
+            if (!targetParent) return;
+            let targetIndex = targetPath[targetPath.length - 1];
+
+            sourceParent.splice(sourceIndex, 1);
+
+            if (sourceParent === targetParent && sourceIndex < targetIndex) targetIndex--;
+
+            insertPos   = insertAbove ? targetIndex : targetIndex + 1;
+            targetArray = targetParent;
         }
 
-        const sourceParent = getParentByPath(data, sourcePath.slice(0, -1));
-        const sourceIndex  = sourcePath[sourcePath.length - 1];
-        if (!sourceParent || sourceParent[sourceIndex] !== _dragged) return;
-        sourceParent.splice(sourceIndex, 1);
-
-        targetArray.push(_dragged);
+        targetArray.splice(insertPos, 0, _dragged);
         _dragged.dateModified = Date.now();
 
         await saveChanges();
@@ -352,43 +360,19 @@ const ManagerDragDrop = (function () {
         resetInactivityTimer();
     }
 
-    async function _reorderItem(sourcePath, targetPath, insertAbove) {
-        const { getData, getParentByPath, saveChanges,
-                showNotification, getMessage,
-                renderFolderTree, renderBookmarks, resetInactivityTimer } = _deps;
+    //  Indicator helpers 
 
-        const data = getData();
-
-        const sourceParentPath = sourcePath.slice(0, -1);
-        const targetParentPath = targetPath.slice(0, -1);
-        const sourceParent     = getParentByPath(data, sourceParentPath);
-        const targetParent     = getParentByPath(data, targetParentPath);
-        const sourceIndex      = sourcePath[sourcePath.length - 1];
-        let   targetIndex      = targetPath[targetPath.length - 1];
-
-        if (!sourceParent || !targetParent) return;
-        if (sourceParent[sourceIndex] !== _dragged) return;
-
-        sourceParent.splice(sourceIndex, 1);
-
-        if (sourceParent === targetParent && sourceIndex < targetIndex) {
-            targetIndex--;
-        }
-
-        const insertAt = insertAbove ? targetIndex : targetIndex + 1;
-        targetParent.splice(insertAt, 0, _dragged);
-        _dragged.dateModified = Date.now();
-
-        await saveChanges();
-        ManagerBookmarks.clearBookmarksCache();
-        renderFolderTree();
-        ManagerBookmarks.resetPagination();
-        renderBookmarks();
-        showNotification(getMessage('dragSuccess'));
-        resetInactivityTimer();
+    function _clearGridIndicators() {
+        const grid = document.getElementById('bookmarks-grid');
+        window.HolyShared.dragClearIndicators(grid || undefined);
     }
 
-    //  Public
+    function _clearSidebarIndicators() {
+        const sidebar = document.querySelector('.sidebar');
+        window.HolyShared.dragClearIndicators(sidebar || undefined);
+    }
+
+    //  Public 
 
     return { init, refreshDraggable };
 

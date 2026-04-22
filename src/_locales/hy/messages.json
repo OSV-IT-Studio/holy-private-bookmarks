@@ -847,5 +847,14 @@
   },
   "Error": {
     "message": "Սխալ"
+  },
+  "blurPage": {
+    "message": "Էջի մշուշ ($1)"
+  },
+  "blurPageDesc": {
+    "message": "Մշուշում է ընթացիկ ներդիրը ակտիվացման ժամանակ"
+  },
+  "blurPageCommand": {
+    "message": "Մշուշել էջ"
   }
 }

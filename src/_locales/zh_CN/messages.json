@@ -847,5 +847,14 @@
   },
   "Error": {
     "message": "错误"
+  },
+  "blurPage": {
+    "message": "模糊页面 ($1)"
+  },
+  "blurPageDesc": {
+    "message": "激活时模糊当前标签页"
+  },
+  "blurPageCommand": {
+    "message": "模糊页面"
   }
 }

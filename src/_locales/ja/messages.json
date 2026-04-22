@@ -847,5 +847,14 @@
   },
   "Error": {
     "message": "エラー"
+  },
+  "blurPage": {
+    "message": "ページをぼかす ($1)"
+  },
+  "blurPageDesc": {
+    "message": "アクティブ化するとページをぼかします"
+  },
+  "blurPageCommand": {
+    "message": "ページをぼかす"
   }
 }

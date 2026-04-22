@@ -847,5 +847,14 @@
   },
   "Error": {
     "message": "خطأ"
+  },
+  "blurPage": {
+    "message": "تمويه الصفحة ($1)"
+  },
+  "blurPageDesc": {
+    "message": "يموّه علامة التبويب الحالية عند التفعيل"
+  },
+  "blurPageCommand": {
+    "message": "تمويه الصفحة"
   }
 }

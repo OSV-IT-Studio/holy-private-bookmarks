@@ -1,5 +1,14 @@
 [
   {
+    "version": "1.8.5.22",
+    "changes": [
+	  "Added Blur Page feature — press Alt+B (Cmd+Shift+B on Mac) to instantly blur the current tab with a frosted-glass overlay, hiding its content from prying eyes",
+      "Blur Page is disabled by default and can be enabled in Settings under Privacy",
+      "Pressing the shortcut again removes the blur",
+      "Fixed drag-and-drop freezing when dragging over long bookmark lists"
+    ]
+  },
+  {
     "version": "1.8.5.19",
     "changes": [
       "Fixed theme color flash on startup: the selected theme (dark/light/system) is now applied synchronously before the first render, so the page no longer briefly flashes the wrong colors when opening the popup, manager, or donate page"

@@ -847,5 +847,14 @@
   },
   "openManagerCommand": {
     "message": "Open bookmark manager"
+  },
+  "blurPage": {
+    "message": "Blur page ($1)"
+  },
+  "blurPageDesc": {
+    "message": "Blurs the current tab when activated"
+  },
+  "blurPageCommand": {
+    "message": "Blur page"
   }
 }

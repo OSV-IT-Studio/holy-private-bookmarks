@@ -75,6 +75,9 @@ buildFolderTreePicker,
     isAlwaysIncognito,
     setAlwaysIncognito,
 
+    isBlurPageEnabled,
+    setBlurPageEnabled,
+
     saveEncrypted,
     showNotification,
     showConfirm,
@@ -282,6 +285,30 @@ async function initAlwaysIncognitoToggle() {
     toggle.checked = isAlwaysIncognito();
     toggle.addEventListener('change', e => {
         setAlwaysIncognito(e.target.checked);
+    });
+}
+
+async function initBlurPageToggle() {
+    const toggle = document.getElementById('blur-page-toggle');
+    if (!toggle) return;
+
+    try {
+        const commands = await chrome.commands.getAll();
+        const cmd = commands.find(c => c.name === 'blur-page');
+        const shortcut = cmd?.shortcut || 'Alt+B';
+        const titleEl = document.querySelector('[data-i18n="blurPage"]');
+        if (titleEl) {
+            titleEl.setAttribute('data-i18n-args', JSON.stringify([shortcut]));
+            titleEl.textContent = chrome.i18n.getMessage('blurPage', [shortcut]) || titleEl.textContent;
+        }
+    } catch (e) {}
+
+    const result = await chrome.storage.local.get('holyBlurPageEnabled');
+    toggle.checked = !!result.holyBlurPageEnabled;
+    setBlurPageEnabled(!!result.holyBlurPageEnabled);
+
+    toggle.addEventListener('change', e => {
+        setBlurPageEnabled(e.target.checked);
     });
 }
 
@@ -551,6 +578,7 @@ async function init() {
     initQuickCloseToggle();
     initStayUnlockedToggle();
     initAlwaysIncognitoToggle();
+    initBlurPageToggle();
 
     
     const [stored, session, stayPref] = await Promise.all([

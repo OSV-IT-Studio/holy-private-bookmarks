@@ -847,5 +847,14 @@
   },
   "openManagerCommand": {
     "message": "פתח את מנהל הסימניות"
+  },
+  "blurPage": {
+    "message": "טשטוש הדף ($1)"
+  },
+  "blurPageDesc": {
+    "message": "מטשטש את הלשונית הנוכחית בעת הפעלה"
+  },
+  "blurPageCommand": {
+    "message": "טשטש דף"
   }
 }

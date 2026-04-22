@@ -26,6 +26,7 @@
     const FAVICON_ENABLED_KEY = 'holyFaviconEnabled';
     const QUICK_CLOSE_KEY = 'holyQuickCloseEnabled';
     const ALWAYS_INCOGNITO_KEY = 'holyAlwaysIncognito';
+    const BLUR_PAGE_KEY = 'holyBlurPageEnabled';
     
     const VIRTUAL_SCROLL_CONFIG = {
         initialLoadCount: 20,
@@ -503,6 +504,15 @@
 
     function setAlwaysIncognito(enabled) {
         localStorage.setItem(ALWAYS_INCOGNITO_KEY, enabled.toString());
+    }
+
+    function isBlurPageEnabled() {
+        return localStorage.getItem(BLUR_PAGE_KEY) === 'true';
+    }
+
+    function setBlurPageEnabled(enabled) {
+        localStorage.setItem(BLUR_PAGE_KEY, enabled.toString());
+        chrome.storage.local.set({ holyBlurPageEnabled: enabled });
     }
 
     function getFaviconUrl(url) {
@@ -1421,6 +1431,9 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             isAlwaysIncognito,
             setAlwaysIncognito,
             
+            isBlurPageEnabled,
+            setBlurPageEnabled,
+            
             
             buildFolderOptions,
             buildFolderTreePicker,
@@ -1503,6 +1516,9 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             
             isAlwaysIncognito,
             setAlwaysIncognito,
+            
+            isBlurPageEnabled,
+            setBlurPageEnabled,
             
             buildFolderOptions,
             buildFolderTreePicker,

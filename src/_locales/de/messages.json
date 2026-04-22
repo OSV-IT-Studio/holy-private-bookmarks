@@ -847,5 +847,14 @@
   },
   "Error": {
     "message": "Fehler"
+  },
+  "blurPage": {
+    "message": "Seite unscharf machen ($1)"
+  },
+  "blurPageDesc": {
+    "message": "Blendet die aktuelle Seite aus"
+  },
+  "blurPageCommand": {
+    "message": "Seite unscharf machen"
   }
 }

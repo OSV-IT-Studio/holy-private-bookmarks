@@ -845,5 +845,14 @@
   },
   "Error": {
     "message": "Ошибка"
+  },
+  "blurPage": {
+    "message": "Размытие страницы ($1)"
+  },
+  "blurPageDesc": {
+    "message": "Размывает текущую вкладку при активации"
+  },
+  "blurPageCommand": {
+    "message": "Размыть страницу"
   }
 }

@@ -1,13 +1,14 @@
 {
   "manifest_version": 3,
   "name": "__MSG_Name__",
-  "version": "1.8.5.19",
+  "version": "1.8.5.22",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
     "storage",
     "contextMenus",
     "activeTab",
+    "scripting",
     "history",
     "bookmarks",
     "clipboardRead",
@@ -35,6 +36,13 @@
         "mac": "Command+Shift+M"
       },
       "description": "__MSG_openManagerCommand__"
+    },
+    "blur-page": {
+      "suggested_key": {
+        "default": "Alt+B",
+        "mac": "Command+Shift+B"
+      },
+      "description": "__MSG_blurPageCommand__"
     }
   },
   "incognito": "spanning",

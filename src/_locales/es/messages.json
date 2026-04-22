@@ -847,5 +847,14 @@
   },
   "Error": {
     "message": "Error"
+  },
+  "blurPage": {
+    "message": "Difuminar página ($1)"
+  },
+  "blurPageDesc": {
+    "message": "Difumina la pestaña actual al activarse"
+  },
+  "blurPageCommand": {
+    "message": "Difuminar página"
   }
 }

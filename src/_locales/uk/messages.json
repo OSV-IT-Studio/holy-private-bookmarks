@@ -847,5 +847,14 @@
   },
   "Error": {
     "message": "Помилка"
+  },
+  "blurPage": {
+    "message": "Розмиття сторінки ($1)"
+  },
+  "blurPageDesc": {
+    "message": "Розмиває поточну вкладку при активації"
+  },
+  "blurPageCommand": {
+    "message": "Розмити сторінку"
   }
 }

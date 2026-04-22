@@ -847,5 +847,14 @@
   },
   "Error": {
     "message": "Errore"
+  },
+  "blurPage": {
+    "message": "Sfoca la pagina ($1)"
+  },
+  "blurPageDesc": {
+    "message": "Sfoca la scheda corrente quando attivato"
+  },
+  "blurPageCommand": {
+    "message": "Sfoca la pagina"
   }
 }

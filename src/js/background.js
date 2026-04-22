@@ -61,6 +61,30 @@ chrome.commands.onCommand.addListener(async (command) => {
         return;
     }
 
+    if (command === 'blur-page') {
+        chrome.storage.local.get('holyBlurPageEnabled', async (result) => {
+            if (!result.holyBlurPageEnabled) return;
+            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+            if (!tab?.id) return;
+            chrome.scripting.executeScript({
+                target: { tabId: tab.id },
+                func: () => {
+                    const OVERLAY_ID = 'holy-blur-overlay';
+                    const existing = document.getElementById(OVERLAY_ID);
+                    if (existing) {
+                        existing.remove();
+                    } else {
+                        const o = document.createElement('div');
+                        o.id = OVERLAY_ID;
+                        o.style.cssText = 'position:fixed;inset:0;z-index:2147483647;backdrop-filter:blur(50px);-webkit-backdrop-filter:blur(50px);pointer-events:none;transition:opacity 0.15s ease';
+                        document.documentElement.appendChild(o);
+                    }
+                }
+            }).catch(() => {});
+        });
+        return;
+    }
+
     if (command !== 'quick-close-tab') return;
 
     

@@ -18,55 +18,44 @@
  * Source code: https://github.com/OSV-IT-Studio/holy-private-bookmarks
  */
 
-const DragDropManager = (function() {
-    // DEPENDENCIES
-    const Shared = window.HolyShared || {};
-    const {
-        getMessage,
-        showNotification,
-        getParentByPath,
-        getItemByPath,
-        isAncestor,
-        arraysEqual,
-        virtualScrollCache
-    } = Shared;
+const DragDropManager = (function () {
 
-    // CONFIGURATION
     const DRAG_CONFIG = {
         autoScrollSpeed: 15,
-        edgeThreshold: 30,
-        ghostOffsetX: 20,
-        ghostOffsetY: 20,
-        longPressDelay: 500,
-        animationDuration: 200
+        edgeThreshold:   30,
+        ghostOffsetX:    20,
+        ghostOffsetY:    20,
     };
 
-    // STATE
-    let dragState = {
-        draggedItem: null,
-        dragPath: null,
-        dragOverItem: null,
-        isDragging: false,
-        ghostElement: null,
-        tooltipElement: null,
-        startX: 0,
-        startY: 0,
-        canDrop: true,
-        lastValidTarget: null,
-        dropPosition: null,
-        _escHandler: null
-    };
+    //  State 
 
-    let dataRef = null;
-    let saveCallback = null;
+    function _emptyState() {
+        return {
+            draggedItem:     null,
+            dragPath:        null,
+            dragOverItem:    null,
+            isDragging:      false,
+            ghostElement:    null,
+            dropPosition:    null,
+            lastValidTarget: null,
+            _escHandler:     null,
+        };
+    }
 
+    let _state         = _emptyState();
+    let _dataRef       = null;
+    let _saveCallback  = null;
     let _boundHandlers = null;
 
-    // INITIALIZATION
+    // rAF throttle
+    let _rafPending     = false;
+    let _latestDragOver = null;
+
+    //  Init 
 
     function initDragAndDrop(data, saveFn) {
-        dataRef = data;
-        saveCallback = saveFn;
+        _dataRef      = data;
+        _saveCallback = saveFn;
 
         const tree = document.getElementById('tree');
         if (!tree) return;
@@ -74,12 +63,12 @@ const DragDropManager = (function() {
         removeDragListeners();
 
         _boundHandlers = {
-            dragstart: handleDragStart,
-            dragend:   handleDragEnd,
-            dragover:  handleDragOver,
-            dragenter: handleDragEnter,
-            dragleave: handleDragLeave,
-            drop:      handleDrop
+            dragstart: _onDragStart,
+            dragend:   _onDragEnd,
+            dragover:  _onDragOver,
+            dragenter: _onDragEnter,
+            dragleave: _onDragLeave,
+            drop:      _onDrop,
         };
 
         for (const [evt, fn] of Object.entries(_boundHandlers)) {
@@ -92,7 +81,6 @@ const DragDropManager = (function() {
     function refreshDragItems() {
         const tree = document.getElementById('tree');
         if (!tree) return;
-
         tree.querySelectorAll('.tree-item:not([data-drag-ready])').forEach(item => {
             item.setAttribute('draggable', 'true');
             item.setAttribute('aria-grabbed', 'false');
@@ -103,27 +91,24 @@ const DragDropManager = (function() {
     function removeDragListeners() {
         const tree = document.getElementById('tree');
         if (!tree || !_boundHandlers) return;
-
         for (const [evt, fn] of Object.entries(_boundHandlers)) {
             tree.removeEventListener(evt, fn, { capture: true });
         }
         _boundHandlers = null;
     }
 
-    // DRAG & DROP HANDLERS
+    //  Drag start / end 
 
-    function handleDragStart(e) {
+    function _onDragStart(e) {
         const item = e.target.closest('.tree-item');
         if (!item || e.target.closest('.quick-actions-trigger, .quick-action-btn-small, .quick-actions-hover')) {
             e.preventDefault();
             return false;
         }
 
-        dragState.draggedItem = item;
-        dragState.dragPath    = item.dataset.path ? item.dataset.path.split(',').map(Number) : null;
-        dragState.isDragging  = true;
-        dragState.startX      = e.clientX;
-        dragState.startY      = e.clientY;
+        _state.draggedItem = item;
+        _state.dragPath    = item.dataset.path ? item.dataset.path.split(',').map(Number) : null;
+        _state.isDragging  = true;
 
         item.classList.add('dragging');
         item.setAttribute('aria-grabbed', 'true');
@@ -133,96 +118,131 @@ const DragDropManager = (function() {
         e.dataTransfer.effectAllowed = 'move';
         e.dataTransfer.setData('text/plain', item.dataset.path || '');
 
-        dragState.ghostElement = Shared.dragCreateGhost(
+        _state.ghostElement = window.HolyShared.dragCreateGhost(
             item, e.clientX, e.clientY,
             DRAG_CONFIG.ghostOffsetX, DRAG_CONFIG.ghostOffsetY
         );
         e.dataTransfer.setDragImage(new Image(), 0, 0);
 
-        dragState._escHandler = Shared.dragHandleEscape(
-            () => dragState.isDragging,
+        _state._escHandler = window.HolyShared.dragHandleEscape(
+            () => _state.isDragging,
             () => {
-                if (dragState.draggedItem) {
-                    dragState.draggedItem.classList.remove('dragging');
-                    dragState.draggedItem.setAttribute('aria-grabbed', 'false');
+                if (_state.draggedItem) {
+                    _state.draggedItem.classList.remove('dragging');
+                    _state.draggedItem.setAttribute('aria-grabbed', 'false');
                 }
-                resetDragState();
-                showNotification('Drag cancelled', false);
+                _resetState();
+                window.HolyShared.showNotification('Drag cancelled', false);
             }
         );
 
         return true;
     }
 
-    function handleDragOver(e) {
-        e.preventDefault();
-        e.stopPropagation();
+    function _onDragEnd() {
+        document.querySelectorAll('#tree .tree-item.dragging').forEach(el => {
+            el.classList.remove('dragging');
+            el.setAttribute('aria-grabbed', 'false');
+        });
+        _resetState();
+    }
 
-        Shared.dragMoveGhost(
-            dragState.ghostElement, e.clientX, e.clientY,
+    //  Drag over (rAF-throttled) 
+
+    function _onDragOver(e) {
+        e.preventDefault();
+        if (!_state.isDragging) return;
+
+        window.HolyShared.dragMoveGhost(
+            _state.ghostElement, e.clientX, e.clientY,
             DRAG_CONFIG.ghostOffsetX, DRAG_CONFIG.ghostOffsetY
         );
 
+        _latestDragOver = e;
+        if (!_rafPending) {
+            _rafPending = true;
+            requestAnimationFrame(_processDragOver);
+        }
+    }
+
+    function _processDragOver() {
+        _rafPending = false;
+        const e = _latestDragOver;
+        if (!e || !_state.isDragging) return;
+
+        // Auto-scroll
+        const tree = document.getElementById('tree');
+        if (tree) {
+            const r = tree.getBoundingClientRect();
+            if (e.clientY < r.top + DRAG_CONFIG.edgeThreshold) {
+                tree.scrollTop -= DRAG_CONFIG.autoScrollSpeed;
+            } else if (e.clientY > r.bottom - DRAG_CONFIG.edgeThreshold) {
+                tree.scrollTop += DRAG_CONFIG.autoScrollSpeed;
+            }
+        }
+
         const target = e.target.closest('.tree-item');
-        if (!target || target === dragState.draggedItem) {
-            e.dataTransfer.dropEffect = 'none';
+
+        if (!target || target === _state.draggedItem) {
+            _clearIndicators();
             return;
         }
 
-        if (!validateDropTarget(target)) {
-            e.dataTransfer.dropEffect = 'none';
-            showForbiddenIndicator(target);
-            return;
+        // Clear previous indicator
+        if (_state.dragOverItem && _state.dragOverItem !== target) {
+            _state.dragOverItem.classList.remove(
+                'drop-above', 'drop-below', 'drop-into-folder', 'drop-forbidden'
+            );
         }
 
-        e.dataTransfer.dropEffect = 'move';
+        if (!_validateTarget(target)) {
+            target.classList.remove('drop-above', 'drop-below', 'drop-into-folder');
+            target.classList.add('drop-forbidden');
+            _state.dragOverItem    = target;
+            _state.lastValidTarget = target;
+            return;
+        }
 
         const rect     = target.getBoundingClientRect();
         const relY     = e.clientY - rect.top;
         const isFolder = !!target.querySelector('.item-header.folder');
 
-        if (dragState.dragOverItem && dragState.dragOverItem !== target) {
-            dragState.dragOverItem.classList.remove(
-                'drop-above', 'drop-below', 'drop-into-folder', 'drop-forbidden'
-            );
-        }
+        target.classList.remove('drop-above', 'drop-below', 'drop-into-folder', 'drop-forbidden');
 
         if (isFolder) {
             const zone = rect.height / 3;
             if (relY < zone) {
-                dragState.dropPosition = 'before';
-                target.classList.remove('drop-below', 'drop-into-folder', 'drop-forbidden');
                 target.classList.add('drop-above');
+                _state.dropPosition = 'before';
             } else if (relY > rect.height - zone) {
-                dragState.dropPosition = 'after';
-                target.classList.remove('drop-above', 'drop-into-folder', 'drop-forbidden');
                 target.classList.add('drop-below');
+                _state.dropPosition = 'after';
             } else {
-                dragState.dropPosition = 'inside';
-                target.classList.remove('drop-above', 'drop-below', 'drop-forbidden');
                 target.classList.add('drop-into-folder');
+                _state.dropPosition = 'inside';
             }
         } else {
             if (relY < rect.height / 2) {
-                dragState.dropPosition = 'before';
-                target.classList.remove('drop-below', 'drop-forbidden');
                 target.classList.add('drop-above');
+                _state.dropPosition = 'before';
             } else {
-                dragState.dropPosition = 'after';
-                target.classList.remove('drop-above', 'drop-forbidden');
                 target.classList.add('drop-below');
+                _state.dropPosition = 'after';
             }
         }
 
-        dragState.dragOverItem = target;
+        _state.dragOverItem    = target;
+        _state.lastValidTarget = target;
     }
 
-    function handleDragEnter(e) {
+    //  Drag enter / leave 
+
+    function _onDragEnter(e) {
         e.preventDefault();
         e.stopPropagation();
     }
 
-    function handleDragLeave(e) {
+    function _onDragLeave(e) {
         e.stopPropagation();
         const target = e.target.closest('.tree-item');
         if (target && !target.contains(e.relatedTarget)) {
@@ -230,68 +250,64 @@ const DragDropManager = (function() {
         }
     }
 
-    function handleDrop(e) {
+    //  Drop 
+
+    function _onDrop(e) {
         e.preventDefault();
         e.stopPropagation();
 
-        if (!dragState.isDragging || !dragState.draggedItem || !dragState.dragPath) {
-            resetDragState();
+        if (!_state.isDragging || !_state.draggedItem || !_state.dragPath) {
+            _resetState();
             return;
         }
 
         const target = e.target.closest('.tree-item, .drop-spacer');
-        if (!target || target === dragState.draggedItem) {
-            resetDragState();
+        if (!target || target === _state.draggedItem) {
+            _resetState();
             return;
         }
 
-        if (!validateDropTarget(target)) {
-            showNotification('Cannot move here', true);
-            resetDragState();
+        if (!_validateTarget(target)) {
+            window.HolyShared.showNotification('Cannot move here', true);
+            _resetState();
             return;
         }
 
-        performDrop(target);
-        showSuccessAnimation(target);
+        _performDrop(target);
+        _showSuccess(target);
 
-        if (saveCallback) {
-            saveCallback().then(() => {
-                showNotification(getMessage('dragSuccess') || 'Item moved successfully');
+        if (_saveCallback) {
+            _saveCallback().then(() => {
+                window.HolyShared.showNotification(
+                    window.HolyShared.getMessage('dragSuccess') || 'Item moved successfully'
+                );
             });
         }
 
-        resetDragState();
+        _resetState();
     }
 
-    function validateDropTarget(target) {
-        if (!dragState.draggedItem || !dragState.dragPath) return false;
-        if (target === dragState.draggedItem) return false;
+    //  Helpers 
 
-        const targetPath  = target.dataset.path ? target.dataset.path.split(',').map(Number) : null;
+    function _validateTarget(target) {
+        if (!_state.dragPath) return false;
+        if (target === _state.draggedItem) return false;
+
+        const targetPath = target.dataset.path ? target.dataset.path.split(',').map(Number) : null;
         if (!targetPath) return true;
 
-        const draggedPath = dragState.dragPath;
-
-        if (target.classList.contains('tree-item')) {
-            const isFolder = target.querySelector('.item-header.folder');
-            if (isFolder) {
-                if (isAncestor(draggedPath, targetPath) || arraysEqual(draggedPath, targetPath)) {
-                    return false;
-                }
+        if (target.querySelector('.item-header.folder')) {
+            const S = window.HolyShared;
+            if (S.isAncestor(_state.dragPath, targetPath) || S.arraysEqual(_state.dragPath, targetPath)) {
+                return false;
             }
         }
 
-        dragState.canDrop = true;
         return true;
     }
 
-    function showForbiddenIndicator(target) {
-        Shared.dragClearIndicators();
-        target.classList.add('drop-forbidden');
-    }
-
-    function performDrop(target) {
-        const sourcePath = dragState.dragPath;
+    function _performDrop(target) {
+        const sourcePath = _state.dragPath;
         let targetPath, insertBefore, isIntoFolder;
 
         if (target.classList.contains('drop-spacer')) {
@@ -299,131 +315,97 @@ const DragDropManager = (function() {
             insertBefore = false;
             isIntoFolder = false;
         } else {
-            targetPath = target.dataset.path ? target.dataset.path.split(',').map(Number) : null;
-
-            if (dragState.dropPosition === 'inside') {
-                isIntoFolder = true;
-                insertBefore = false;
-            } else {
-                isIntoFolder = false;
-                insertBefore = dragState.dropPosition === 'before';
-            }
+            targetPath   = target.dataset.path ? target.dataset.path.split(',').map(Number) : null;
+            isIntoFolder = _state.dropPosition === 'inside';
+            insertBefore = !isIntoFolder && _state.dropPosition === 'before';
         }
 
-        moveItem(sourcePath, targetPath, insertBefore, isIntoFolder);
+        _moveItem(sourcePath, targetPath, insertBefore, isIntoFolder);
     }
 
-    function showSuccessAnimation(target) {
-        const item = target.closest('.tree-item');
-        if (item) {
-            item.classList.add('move-success');
-            setTimeout(() => item.classList && item.classList.remove('move-success'), 500);
-        }
-        if (dragState.draggedItem) {
-            const di = dragState.draggedItem;
-            di.classList.add('move-success');
-            setTimeout(() => di.classList && di.classList.remove('move-success'), 500);
-        }
-    }
-
-    function handleDragEnd() {
-        document.querySelectorAll('.tree-item.dragging').forEach(el => {
-            el.classList.remove('dragging');
-            el.setAttribute('aria-grabbed', 'false');
+    function _showSuccess(target) {
+        [target.closest('.tree-item'), _state.draggedItem].forEach(el => {
+            if (!el) return;
+            el.classList.add('move-success');
+            setTimeout(() => el.classList && el.classList.remove('move-success'), 500);
         });
-        resetDragState();
     }
 
-    function resetDragState() {
-        if (dragState.ghostElement) dragState.ghostElement.remove();
-        if (dragState.tooltipElement) dragState.tooltipElement.remove();
-        if (dragState._escHandler) {
-            document.removeEventListener('keydown', dragState._escHandler);
-        }
-
-        dragState = {
-            draggedItem: null,
-            dragPath: null,
-            dragOverItem: null,
-            isDragging: false,
-            ghostElement: null,
-            tooltipElement: null,
-            startX: 0,
-            startY: 0,
-            canDrop: true,
-            lastValidTarget: null,
-            dropPosition: null,
-            _escHandler: null
-        };
-
-        Shared.dragClearIndicators();
+    function _clearIndicators() {
+        const tree = document.getElementById('tree');
+        window.HolyShared.dragClearIndicators(tree || undefined);
     }
 
-    async function moveItem(sourcePath, targetPath, insertBefore = true, isIntoFolder = false) {
-        if (!dataRef) return;
+    function _resetState() {
+        if (_state.ghostElement) _state.ghostElement.remove();
+        if (_state._escHandler)  document.removeEventListener('keydown', _state._escHandler);
 
-        const sourceParent = getParentByPath(dataRef, sourcePath.slice(0, -1));
+        _clearIndicators();
+
+        _rafPending     = false;
+        _latestDragOver = null;
+        _state          = _emptyState();
+    }
+
+    //  Move logic 
+
+    function _moveItem(sourcePath, targetPath, insertBefore, isIntoFolder) {
+        if (!_dataRef) return;
+
+        const S            = window.HolyShared;
+        const sourceParent = S.getParentByPath(_dataRef, sourcePath.slice(0, -1));
         const sourceIndex  = sourcePath[sourcePath.length - 1];
-        const itemToMove   = sourceParent[sourceIndex];
+        const itemToMove   = sourceParent ? sourceParent[sourceIndex] : null;
 
-        if (!itemToMove) throw new Error('Source item not found');
+        if (!itemToMove) return;
 
+        // Guard: folder can't be moved into itself or its descendants
         if (itemToMove.type === 'folder' && targetPath) {
-            let current = dataRef.folders;
+            let cur = _dataRef.folders;
             for (let i = 0; i < targetPath.length; i++) {
                 const idx = targetPath[i];
-                if (current[idx] === itemToMove) throw new Error('Cannot move folder into itself');
-                if (current[idx]?.type === 'folder' && current[idx].children) {
-                    current = current[idx].children;
-                }
+                if (cur[idx] === itemToMove) return;
+                if (cur[idx]?.type === 'folder' && cur[idx].children) cur = cur[idx].children;
             }
         }
 
         let targetArray, insertPos;
 
         if (isIntoFolder && targetPath) {
-            const folder = getItemByPath(dataRef, targetPath);
-            if (!folder || folder.type !== 'folder') throw new Error('Target is not a folder');
+            const folder = S.getItemByPath(_dataRef, targetPath);
+            if (!folder || folder.type !== 'folder') return;
             targetArray = folder.children;
             insertPos   = targetArray.length;
         } else if (targetPath) {
-            targetArray = getParentByPath(dataRef, targetPath.slice(0, -1));
+            targetArray     = S.getParentByPath(_dataRef, targetPath.slice(0, -1));
             const targetIdx = targetPath[targetPath.length - 1];
-            insertPos = insertBefore ? targetIdx : targetIdx + 1;
+            insertPos       = insertBefore ? targetIdx : targetIdx + 1;
         } else {
-            targetArray = dataRef.folders;
+            targetArray = _dataRef.folders;
             insertPos   = targetArray.length;
         }
 
-        if (targetArray === sourceParent && !isIntoFolder) {
-            sourceParent.splice(sourceIndex, 1);
-            if (sourceIndex < insertPos) insertPos -= 1;
-            targetArray.splice(insertPos, 0, itemToMove);
-        } else {
-            sourceParent.splice(sourceIndex, 1);
-            targetArray.splice(insertPos, 0, itemToMove);
+        sourceParent.splice(sourceIndex, 1);
+        if (targetArray === sourceParent && !isIntoFolder && sourceIndex < insertPos) {
+            insertPos--;
         }
+        targetArray.splice(insertPos, 0, itemToMove);
 
         itemToMove.dateModified = Date.now();
 
-        if (virtualScrollCache?.clear) virtualScrollCache.clear();
+        if (S.virtualScrollCache?.clear) S.virtualScrollCache.clear();
     }
 
-    // PUBLIC API
+    //  Public API 
+
     return {
         initDragAndDrop,
         refreshDragItems,
         removeDragListeners,
-        DRAG_CONFIG
+        DRAG_CONFIG,
     };
 
 })();
 
-// EXPORT TO THE GLOBAL AREA
-if (typeof window !== 'undefined') {
-    window.DragDropManager = DragDropManager;
-}
-
-if (typeof module !== 'undefined') {
-    module.exports = DragDropManager;
-}
+if (typeof window !== 'undefined') window.DragDropManager = DragDropManager;
+if (typeof module !== 'undefined') module.exports = DragDropManager;
