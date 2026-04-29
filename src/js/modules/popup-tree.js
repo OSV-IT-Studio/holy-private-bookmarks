@@ -87,6 +87,7 @@ const PopupTree = (function () {
         const div = document.createElement('div');
         div.className    = 'tree-item';
         div.dataset.path = path.join(',');
+        if (item.uid) div.dataset.itemUid = item.uid;
         div.setAttribute('draggable', 'true');
         div.setAttribute('data-drag-ready', '1');
 
@@ -156,8 +157,8 @@ const PopupTree = (function () {
 
     // Folder open / close
 
-    function openFolder(folderItem, header, sub, path) {
-        const { getItemByPath, getData, virtualScrollCache, VIRTUAL_SCROLL_CONFIG, loadMoreFolderItems } = _deps;
+    function openFolder(folderItem, header, sub) {
+        const { getItemByUid, getItemByPath, getData, virtualScrollCache, VIRTUAL_SCROLL_CONFIG, loadMoreFolderItems } = _deps;
 
         sub.classList.remove('collapsed');
         const arrow = header.querySelector('.arrow');
@@ -166,17 +167,32 @@ const PopupTree = (function () {
         folderItem.classList.add('loading');
 
         if (!sub.hasChildNodes() || sub.children.length === 0) {
-            const pathArray = path.split(',').map(Number);
-            const folder    = getItemByPath(getData(), pathArray);
+            const uid       = folderItem.dataset.folderUid || null;
+            const pathArray = folderItem.dataset.path
+                ? folderItem.dataset.path.split(',').map(Number)
+                : [];
 
-            if (folder?.children) {
+            if (pathArray.some(n => !Number.isInteger(n) || n < 0)) {
+                folderItem.classList.remove('loading');
+                return;
+            }
+
+            const folder = uid
+                ? getItemByUid(getData(), uid)
+                : getItemByPath(getData(), pathArray);
+
+            if (folder?.children !== undefined) {
                 sub.innerHTML = '';
                 const scrollContainer = document.createElement('div');
                 scrollContainer.className = 'folder-virtual-scroll';
+                if (uid) scrollContainer.dataset.folderUid = uid;
                 sub.appendChild(scrollContainer);
 
                 if (virtualScrollCache?.getFolderContainer) {
-                    const folderData = virtualScrollCache.getFolderContainer(pathArray);
+                    const actualPath = uid
+                        ? (folderItem.dataset.path ? folderItem.dataset.path.split(',').map(Number) : pathArray)
+                        : pathArray;
+                    const folderData = virtualScrollCache.getFolderContainer(actualPath);
                     folderData.totalItems   = folder.children.length;
                     folderData.container    = scrollContainer;
                     folderData.isOpen       = true;
@@ -185,12 +201,16 @@ const PopupTree = (function () {
                     folderData.hasMore      = true;
 
                     loadMoreFolderItems(
-                        folder, pathArray, scrollContainer,
+                        folder, actualPath, scrollContainer,
                         0, VIRTUAL_SCROLL_CONFIG.initialLoadCount,
                         () => folderItem.classList.remove('loading')
                     );
                 }
+            } else {
+                folderItem.classList.remove('loading');
             }
+        } else {
+            folderItem.classList.remove('loading');
         }
     }
 
@@ -223,14 +243,12 @@ const PopupTree = (function () {
         if (!sub) return;
 
         if (sub.classList.contains('collapsed')) {
-            openFolder(folderItem, header, sub, folderItem.dataset.path);
+            openFolder(folderItem, header, sub);
             saveFoldersState();
         } else {
             closeFolder(folderItem, header, sub);
         }
     }
-
-    // Folder state persistence (save/restore open folders across re-renders)
 
     function saveFoldersState() {
         const openKeys = new Set();
@@ -266,7 +284,7 @@ const PopupTree = (function () {
                 const header = el.querySelector('.item-header.folder');
                 const sub    = el.querySelector('.subitems');
                 if (header && sub && sub.classList.contains('collapsed')) {
-                    openFolder(el, header, sub, el.dataset.path);
+                    openFolder(el, header, sub);
                 }
             }
 
@@ -278,30 +296,30 @@ const PopupTree = (function () {
 
     // Click delegation
 
-    function _buildPopupFolderPanel(path, getMessage) {
+    function _buildPopupFolderPanel(uid, getMessage) {
         return QuickActions.buildPanel([
             { action: 'rename', title: getMessage('rename'), icon: 'rename',
-              dataset: { path } },
+              dataset: { uid } },
             { action: 'delete', title: getMessage('delete'), icon: 'delete', className: 'delete',
-              dataset: { path } },
+              dataset: { uid } },
         ]);
     }
 
-    function _buildPopupBookmarkPanel(pathStr, url, getMessage) {
+    function _buildPopupBookmarkPanel(uid, url, getMessage) {
         const actions = [
             { action: 'edit',    title: getMessage('edit'),        icon: 'edit',
-              dataset: { path: pathStr, 'item-type': 'bookmark' } },
+              dataset: { uid, 'item-type': 'bookmark' } },
             { action: 'copy',    title: getMessage('copyUrl'),     icon: 'copy',
               dataset: { url } },
-            { action: 'qr',     title: getMessage('qrCode') || 'QR Code', icon: 'qr',
-              dataset: { url } },
+            { action: 'qr',     title: getMessage('qrCode'), icon: 'qr',
+              dataset: { url, uid } },
         ];
         if (!_deps.isAlwaysIncognito || !_deps.isAlwaysIncognito()) {
             actions.push({ action: 'private', title: getMessage('openPrivate'), icon: 'private', className: 'private',
               dataset: { url } });
         }
-        actions.push({ action: 'delete',  title: getMessage('delete'),      icon: 'delete',  className: 'delete',
-              dataset: { path: pathStr, 'item-type': 'bookmark' } });
+        actions.push({ action: 'delete', title: getMessage('delete'), icon: 'delete', className: 'delete',
+              dataset: { uid, 'item-type': 'bookmark' } });
         return QuickActions.buildPanel(actions);
     }
 
@@ -316,20 +334,21 @@ const PopupTree = (function () {
             const isFolderHeader = !!trigger.closest('.item-header.folder');
 
             QuickActions.toggle(trigger, () => {
-                const path   = item?.dataset.path ?? '';
+                const uid    = isFolderHeader
+                    ? (item?.dataset.folderUid ?? '')
+                    : (item?.dataset.itemUid ?? '');
                 const linkEl = item?.querySelector('.bookmark-link') ?? null;
                 if (isFolderHeader) {
-                    return _buildPopupFolderPanel(path, getMessage);
+                    return _buildPopupFolderPanel(uid, getMessage);
                 } else {
                     const rawUrl = linkEl?.dataset.url ?? '';
                     const url    = escapeHtml ? escapeHtml(rawUrl) : rawUrl;
-                    return _buildPopupBookmarkPanel(path, url, getMessage);
+                    return _buildPopupBookmarkPanel(uid, url, getMessage);
                 }
             });
             return;
         }
 
-        // Bookmark action buttons (edit / copy / private / delete)
         const actionBtn = e.target.closest('.quick-action-btn-small[data-action]');
         if (actionBtn) {
             e.preventDefault();
@@ -337,20 +356,17 @@ const PopupTree = (function () {
             const { editBookmark, deleteBookmark, copyBookmarkUrl, openInPrivateTab,
                     showNotification, getMessage } = _deps;
             const action = actionBtn.dataset.action;
+            const uid    = actionBtn.dataset.uid ?? null;
 
-            // Folder rename / delete
             if (action === 'rename' || (action === 'delete' && actionBtn.dataset.itemType !== 'bookmark')) {
-                const path = actionBtn.dataset.path;
-                if (!path) return;
-                const pathArray = path.split(',').map(Number);
-                if (action === 'rename') _deps.renameItem(pathArray);
-                else                     _deps.deleteItem(pathArray);
+                if (!uid) return;
+                if (action === 'rename') _deps.renameItem(uid);
+                else                     _deps.deleteItem(uid);
                 return;
             }
 
-            // Bookmark actions
             if (action === 'edit') {
-                editBookmark(actionBtn.dataset.path);
+                editBookmark(uid);
             } else if (action === 'copy') {
                 copyBookmarkUrl(actionBtn.dataset.url);
             } else if (action === 'private') {
@@ -366,12 +382,12 @@ const PopupTree = (function () {
                     showNotification(getMessage('invalidUrl'), true);
                 }
             } else if (action === 'qr') {
-                const bookmarkLink = actionBtn.dataset.url;
-                const treeItem     = actionBtn.closest?.('.tree-item') ?? document.querySelector(`.tree-item[data-path="${actionBtn.dataset.path}"]`);
+                const bookmarkLink  = actionBtn.dataset.url;
+                const treeItem      = actionBtn.closest?.('.tree-item');
                 const bookmarkTitle = treeItem?.querySelector('.bookmark-title')?.textContent ?? '';
                 if (window.QrModal) window.QrModal.showQrModal(bookmarkLink, bookmarkTitle, getMessage);
             } else if (action === 'delete') {
-                deleteBookmark(actionBtn.dataset.path);
+                deleteBookmark(uid);
             }
             return;
         }
@@ -429,8 +445,8 @@ const PopupTree = (function () {
 
         const key = _folderKey(path);
         container.dataset.folderKey = key;
+        const folderUid = folder?.uid || container.dataset.folderUid || null;
 
-        
         const sentinel = document.createElement('div');
         sentinel.className = 'load-more-sentinel';
         sentinel.style.cssText = 'height:1px;width:100%;pointer-events:none;';
@@ -444,7 +460,23 @@ const PopupTree = (function () {
             observer.disconnect();
             _sentinels.delete(key);
             sentinel.remove();
-            loadMoreFolderItems(folder, path, container, nextStartIndex, _deps.VIRTUAL_SCROLL_CONFIG.loadMoreCount);
+
+            const freshFolder = folderUid
+                ? _deps.getItemByUid(_deps.getData(), folderUid)
+                : _deps.getItemByPath(_deps.getData(), path);
+
+            if (!freshFolder || !Array.isArray(freshFolder.children)) return;
+
+            const actualPath = folderUid
+                ? (() => {
+                    const el = document.querySelector(`#tree .tree-item[data-folder-uid="${folderUid}"]`);
+                    return el?.dataset.path ? el.dataset.path.split(',').map(Number) : path;
+                })()
+                : path;
+
+            const safeStart = Math.min(nextStartIndex, freshFolder.children.length);
+            if (safeStart >= freshFolder.children.length) return;
+            loadMoreFolderItems(freshFolder, actualPath, container, safeStart, _deps.VIRTUAL_SCROLL_CONFIG.loadMoreCount);
         }, {
             
             root: document.getElementById('tree'),
@@ -458,11 +490,13 @@ const PopupTree = (function () {
 
     function renderFolderItemsBatch(folder, path, container, startIndex, endIndex, onComplete) {
         const batchSize  = 10;
-        const currentEnd = Math.min(startIndex + batchSize, endIndex);
+        const safeEnd    = Math.min(endIndex, folder.children.length);
+        const currentEnd = Math.min(startIndex + batchSize, safeEnd);
 
         const fragment = document.createDocumentFragment();
         for (let i = startIndex; i < currentEnd; i++) {
-            const child     = folder.children[i];
+            const child = folder.children[i];
+            if (!child) continue;
             const childPath = [...path, i];
             const element   = child.type === 'bookmark'
                 ? createBookmarkElement(child, childPath)
@@ -473,9 +507,9 @@ const PopupTree = (function () {
         }
         container.appendChild(fragment);
 
-        if (currentEnd < endIndex) {
+        if (currentEnd < safeEnd) {
             requestAnimationFrame(() =>
-                renderFolderItemsBatch(folder, path, container, currentEnd, endIndex, onComplete)
+                renderFolderItemsBatch(folder, path, container, currentEnd, safeEnd, onComplete)
             );
         } else {
             onComplete?.();
@@ -488,6 +522,11 @@ const PopupTree = (function () {
         if (!virtualScrollCache?.getFolderContainer) return;
         const folderData = virtualScrollCache.getFolderContainer(path);
 
+        if (!folder || !Array.isArray(folder.children)) {
+            onFirstBatchDone?.();
+            return;
+        }
+
         if (folder.children.length === 0) {
             const msg = document.createElement('div');
             msg.className   = 'empty-folder-message';
@@ -499,10 +538,11 @@ const PopupTree = (function () {
             return;
         }
 
-        const endIndex = Math.min(startIndex + countToLoad, folder.children.length);
-        renderFolderItemsBatch(folder, path, container, startIndex, endIndex, () => {
-            folderData.visibleStart = startIndex;
-            folderData.visibleCount = (folderData.visibleCount || 0) + (endIndex - startIndex);
+        const safeStart = Math.max(0, Math.min(startIndex, folder.children.length));
+        const endIndex = Math.min(safeStart + countToLoad, folder.children.length);
+        renderFolderItemsBatch(folder, path, container, safeStart, endIndex, () => {
+            folderData.visibleStart = safeStart;
+            folderData.visibleCount = (folderData.visibleCount || 0) + (endIndex - safeStart);
             folderData.hasMore      = endIndex < folder.children.length;
 
             if (endIndex < folder.children.length) {
@@ -525,21 +565,20 @@ const PopupTree = (function () {
         const tree = document.getElementById('tree');
         if (!tree) return;
 
-        // Save open state before wiping the DOM
         saveFoldersState();
 
-        if (!data.folders?.length) {
-            renderEmptyState(tree);
-            return;
-        }
-
         virtualScrollCache?.clear?.();
-        
         _sentinels.forEach(({ observer }) => observer.disconnect());
         _sentinels.clear();
         tree.innerHTML = '';
-        
         _eventHandlersInitialized = false;
+
+        if (!data.folders?.length) {
+            renderEmptyState(tree);
+            setupGlobalClickHandler();
+            DragDropManager.initDragAndDrop(data, saveAndRefresh, _deps.saveChanges);
+            return;
+        }
 
         const fragment = document.createDocumentFragment();
         for (let i = 0; i < data.folders.length; i++) {
@@ -554,11 +593,18 @@ const PopupTree = (function () {
         tree.appendChild(fragment);
 
         setupGlobalClickHandler();
-        DragDropManager.initDragAndDrop(data, saveAndRefresh);
-        
+        DragDropManager.initDragAndDrop(data, saveAndRefresh, _deps.saveChanges);
         DragDropManager.refreshDragItems();
 
         restoreFoldersState();
+    }
+
+    function clearAllSentinels() {
+        _sentinels.forEach(({ observer, sentinel }) => {
+            observer.disconnect();
+            sentinel.remove();
+        });
+        _sentinels.clear();
     }
 
     // Public API
@@ -566,9 +612,13 @@ const PopupTree = (function () {
     return {
         init(deps) { Object.assign(_deps, deps); },
         renderTree,
+        renderEmptyState,
         createFolderElement,
         createBookmarkElement,
-        loadMoreFolderItems
+        loadMoreFolderItems,
+        updateLoadMoreButton,
+        removeLoadMoreButton,
+        clearAllSentinels
     };
 
 })();

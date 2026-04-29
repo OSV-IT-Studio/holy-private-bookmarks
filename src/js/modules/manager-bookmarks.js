@@ -17,16 +17,10 @@
  *
  * Source code: https://github.com/OSV-IT-Studio/holy-private-bookmarks
  */
-
-// MODULE: manager-bookmarks.js
-// Handles: bookmark grid rendering, virtual scroll (IntersectionObserver),
-//          bookmark data cache, bookmark CRUD, multi-selection, move dialog
-
-const ManagerBookmarks = (function () {
+ 
+ const ManagerBookmarks = (function () {
 
     let _deps = {};
-
-    // State
 
     let _bookmarksCache     = new Map();
     let _folderCountsCache  = new Map();
@@ -43,18 +37,13 @@ const ManagerBookmarks = (function () {
     let _isCtrlPressed      = false;
     let _lastSelectedIndex  = -1;
 
-    let _editingBookmark     = null;
-    let _editingBookmarkPath = null;
-    
+    let _editingBookmark    = null;
+    let _editingBookmarkUid = null;
+
     let _dataVersion = Date.now();
 
-    function _getDataVersion() {
-        return _dataVersion;
-    }
-
-    function _bumpDataVersion() {
-        _dataVersion = Date.now();
-    }
+    function _getDataVersion() { return _dataVersion; }
+    function _bumpDataVersion() { _dataVersion = Date.now(); }
 
     function clearBookmarksCache() {
         _bumpDataVersion();
@@ -78,34 +67,35 @@ const ManagerBookmarks = (function () {
         _isLoadingMore     = false;
     }
 
-    // Data queries
-
-    function countBookmarksInFolder(folderId) {
+    function countBookmarksInFolder(folderUid) {
         const version = _getDataVersion();
-        const cached  = _folderCountsCache.get(folderId);
+        const cached  = _folderCountsCache.get(folderUid);
         if (cached?.version === version) return cached.count;
 
-        const count = folderId === 'all'
+        const count = folderUid === 'all'
             ? _deps.countAllBookmarks(_deps.getData())
-            : _deps.countItemsInFolder(_deps.findFolderById(_deps.getData().folders, folderId) || {});
+            : _deps.countItemsInFolder(
+                folderUid
+                    ? (_deps.getItemByUid(_deps.getData(), folderUid) || {})
+                    : {}
+              );
 
-        _folderCountsCache.set(folderId, { count, version });
+        _folderCountsCache.set(folderUid, { count, version });
         return count;
     }
 
-    function getBookmarksForFolder(folderId) {
+    function getBookmarksForFolder(folderUid) {
         const searchQuery = _deps.getSearchQuery();
-        const cacheKey    = `${folderId}_${searchQuery}`;
+        const cacheKey    = `${folderUid}_${searchQuery}`;
         const version     = _getDataVersion();
         const cached      = _bookmarksCache.get(cacheKey);
         if (cached?.version === version) return cached.bookmarks;
 
-        const data  = _deps.getData();
-        let   result = [];
+        const data = _deps.getData();
+        let result = [];
 
-        if (folderId === 'all') {
+        if (folderUid === 'all') {
             if (searchQuery) {
-                
                 const allBm = [];
                 function collectAll(items) {
                     for (const item of items) {
@@ -119,16 +109,12 @@ const ManagerBookmarks = (function () {
                     b.title.toLowerCase().includes(q) || b.url.toLowerCase().includes(q)
                 );
             } else {
-                
                 result = [...data.folders];
             }
         } else {
-           
-            const folder = _deps.findFolderById(data.folders, folderId);
+            const folder   = _deps.getItemByUid(data, folderUid);
             const children = folder?.children || [];
-
             if (searchQuery) {
-                
                 const bookmarks = [];
                 function collectSearch(items) {
                     for (const item of items) {
@@ -142,7 +128,6 @@ const ManagerBookmarks = (function () {
                     b.title.toLowerCase().includes(q) || b.url.toLowerCase().includes(q)
                 );
             } else {
-                
                 result = [...children];
             }
         }
@@ -150,8 +135,6 @@ const ManagerBookmarks = (function () {
         _bookmarksCache.set(cacheKey, { bookmarks: result, version });
         return result;
     }
-
-    // Virtual scroll
 
     let _quickActionsListenerAttached = false;
 
@@ -164,14 +147,14 @@ const ManagerBookmarks = (function () {
 
     function _buildBookmarkQuickActionsPanel(bookmark, getMessage) {
         const actions = [
-            { action: 'edit',    title: getMessage('edit'),                    icon: 'edit'                         },
-            { action: 'copy',    title: getMessage('copyUrl'),                 icon: 'copy'                         },
-            { action: 'qr',     title: getMessage('qrCode') || 'QR Code',    icon: 'qr'                            },
+            { action: 'edit',    title: getMessage('edit'),                 icon: 'edit'    },
+            { action: 'copy',    title: getMessage('copyUrl'),              icon: 'copy'    },
+            { action: 'qr',     title: getMessage('qrCode') || 'QR Code', icon: 'qr'      },
         ];
         if (!_deps.isAlwaysIncognito || !_deps.isAlwaysIncognito()) {
             actions.push({ action: 'private', title: getMessage('openPrivate'), icon: 'private', className: 'private' });
         }
-        actions.push({ action: 'delete',  title: getMessage('delete'),  icon: 'delete',  className: 'delete'  });
+        actions.push({ action: 'delete', title: getMessage('delete'), icon: 'delete', className: 'delete' });
         return QuickActions.buildPanel(actions);
     }
 
@@ -227,13 +210,12 @@ const ManagerBookmarks = (function () {
                     }
                     case 'rename':
                     case 'delete-folder': {
-                        const pathArr = _deps.findItemPath(_deps.getData(), boundData);
-                        if (!pathArr) break;
-                        const folderId = pathArr.join(',');
+                        const uid = boundData?.uid;
+                        if (!uid) break;
                         if (btn.dataset.action === 'rename' && window.ManagerFolders)
-                            ManagerFolders.renameFolder(folderId);
+                            ManagerFolders.renameFolder(uid);
                         else if (btn.dataset.action === 'delete-folder' && window.ManagerFolders)
-                            ManagerFolders.deleteFolder(folderId);
+                            ManagerFolders.deleteFolder(uid);
                         break;
                     }
                 }
@@ -302,11 +284,9 @@ const ManagerBookmarks = (function () {
 
         document.getElementById('load-more-trigger')?.remove();
         _bookmarksGrid.appendChild(fragment);
-		
-		if (window.ManagerDragDrop) {
-            window.ManagerDragDrop.refreshDraggable();
-        }
-		
+
+        if (window.ManagerDragDrop) window.ManagerDragDrop.refreshDraggable();
+
         _addLoadMoreTrigger();
 
         _renderedBookmarks = [..._renderedBookmarks, ...slice];
@@ -319,161 +299,87 @@ const ManagerBookmarks = (function () {
         resetInactivityTimer();
     }
 
-    // Folder item
-
     function _createFolderGridItem(folder, index) {
-    const { escapeHtml, countItemsInFolder, getMessage } = _deps;
+        const { escapeHtml, countItemsInFolder, getMessage } = _deps;
 
-    const item = document.createElement('div');
-    item.className = 'tree-item tree-item--folder';
-    item.dataset.index = index;
-    if (_selectedBookmarks.has(folder)) item.classList.add('selected');
+        const item = document.createElement('div');
+        item.className = 'tree-item tree-item--folder';
+        item.dataset.index = index;
+        if (folder.uid) item.dataset.folderUid = folder.uid;
+        if (_selectedBookmarks.has(folder)) item.classList.add('selected');
 
-    const childCount = countItemsInFolder(folder);
+        const childCount = countItemsInFolder(folder);
 
-    item.innerHTML = `
-        <div class="folder-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" fill="currentColor" fill-opacity="0.12"/>
-            </svg>
-        </div>
-        <div class="tree-item__content">
-            <div class="bookmark-title">${escapeHtml(folder.name)}</div>
-        </div>
-        <div class="folder-badge">${childCount}</div>
-        <button class="quick-actions-trigger" title="${getMessage('actions')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
-    `;
-    item._boundData = folder;
+        item.innerHTML = `
+            <div class="folder-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" fill="currentColor" fill-opacity="0.12"/>
+                </svg>
+            </div>
+            <div class="tree-item__content">
+                <div class="bookmark-title">${escapeHtml(folder.name)}</div>
+            </div>
+            <div class="folder-badge">${childCount}</div>
+            <button class="quick-actions-trigger" title="${getMessage('actions')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
+        `;
+        item._boundData = folder;
 
+        item.addEventListener('click', e => {
+            if (e.target.closest('.quick-actions-hover')) return;
+            if (e.target.closest('.quick-actions-trigger')) return;
 
-    function expandFolderInSidebar(folderId) {
-        if (!folderId || folderId === 'all') return;
-        
-      
-        const sidebarFolder = document.querySelector(`.folder-item[data-folder-id="${folderId}"]`);
-        if (!sidebarFolder) return;
-        
-        
-        const parentsToExpand = [];
-        let current = sidebarFolder;
-        
-        
-        while (current) {
-          
-           
-            const parentLi = current.closest('ul')?.previousElementSibling?.closest('.folder-item');
-            if (parentLi) {
-                parentsToExpand.unshift(parentLi); 
-                current = parentLi;
-            } else {
-                current = null;
-            }
-        }
-        
-       
-        parentsToExpand.forEach(parent => {
-            if (!parent.classList.contains('expanded')) {
-                const toggle = parent.querySelector('.folder-toggle');
-                if (toggle) {
-                    toggle.click();
+            if (_isCtrlPressed) {
+                e.preventDefault(); e.stopPropagation();
+                if (_selectedBookmarks.has(folder)) {
+                    _selectedBookmarks.delete(folder); item.classList.remove('selected');
+                } else {
+                    _selectedBookmarks.add(folder); item.classList.add('selected');
                 }
+                _updateSelectionToolbar(); return;
             }
+
+            if (e.shiftKey && _lastSelectedIndex !== -1 && _lastSelectedIndex !== index) {
+                e.preventDefault(); e.stopPropagation();
+                const all = getBookmarksForFolder(_deps.getCurrentFolderId());
+                const start = Math.min(_lastSelectedIndex, index);
+                const end   = Math.max(_lastSelectedIndex, index);
+                const domItems = _bookmarksGrid?.querySelectorAll('.tree-item') || [];
+                for (let i = start; i <= end; i++) {
+                    _selectedBookmarks.add(all[i]);
+                    domItems[i]?.classList.add('selected');
+                }
+                _updateSelectionToolbar(); _lastSelectedIndex = index; return;
+            }
+
+            if (_selectedBookmarks.size > 0) {
+                clearSelection();
+            } else if (folder.uid && window.ManagerFolders) {
+                ManagerFolders.setActiveFolder(folder.uid);
+            }
+            _lastSelectedIndex = index;
         });
-        
-       
-        if (!sidebarFolder.classList.contains('expanded')) {
-            const toggle = sidebarFolder.querySelector('.folder-toggle');
-            if (toggle) {
-                toggle.click();
-            }
-        }
-        
-        
-        sidebarFolder.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        return item;
     }
 
-    item.addEventListener('click', e => {
-        if (e.target.closest('.quick-actions-hover')) return;
-        if (e.target.closest('.quick-actions-trigger')) return;
-        
-        if (_isCtrlPressed) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            if (_selectedBookmarks.has(folder)) {
-                _selectedBookmarks.delete(folder);
-                item.classList.remove('selected');
-            } else {
-                _selectedBookmarks.add(folder);
-                item.classList.add('selected');
-            }
-            _updateSelectionToolbar();
-            return;
-        }
-        
-        if (e.shiftKey && _lastSelectedIndex !== -1 && _lastSelectedIndex !== index) {
-            e.preventDefault();
-            e.stopPropagation();
-            const all = getBookmarksForFolder(getCurrentFolderId());
-            const start = Math.min(_lastSelectedIndex, index);
-            const end = Math.max(_lastSelectedIndex, index);
-            const domItems = _bookmarksGrid ? _bookmarksGrid.querySelectorAll('.tree-item') : [];
-            for (let i = start; i <= end; i++) {
-                _selectedBookmarks.add(all[i]);
-                domItems[i]?.classList.add('selected');
-            }
-            _updateSelectionToolbar();
-            _lastSelectedIndex = index;
-            return;
-        }
-        
-        if (_selectedBookmarks.size > 0) {
-            clearSelection();
-        } else {
-            const pathArr = _deps.findItemPath(_deps.getData(), folder);
-            if (pathArr) {
-                const idStr = pathArr.join(',');
-                
-                
-                if (window.ManagerFolders) {
-                    ManagerFolders.setActiveFolder(idStr);
-                }
-                
-               
-                expandFolderInSidebar(idStr);
-            }
-        }
-        
-        _lastSelectedIndex = index;
-    });
-
-    return item;
-}
-
-    
-
     function _createGridItem(item, index) {
-        if (item.type === 'folder') {
-            return _createFolderGridItem(item, index);
-        }
+        if (item.type === 'folder') return _createFolderGridItem(item, index);
         return _createBookmarkItem(item, index);
     }
 
-    // Bookmark element
-
     function _createBookmarkItem(bookmark, index) {
-        const { getDomainFromUrl, escapeHtml,
-                getMessage, openInPrivateTab, isAlwaysIncognito, showNotification,
+        const { getDomainFromUrl, escapeHtml, getMessage,
+                openInPrivateTab, isAlwaysIncognito,
                 getCurrentFolderId } = _deps;
 
-        const item     = document.createElement('div');
+        const item = document.createElement('div');
         item.className = 'tree-item';
         item.dataset.index = index;
+        if (bookmark.uid) item.dataset.itemUid = bookmark.uid;
         if (_selectedBookmarks.has(bookmark)) item.classList.add('selected');
 
         const domain = getDomainFromUrl(bookmark.url);
 
-        
         item.innerHTML = `
             <div class="tree-item__favicon-placeholder icon bookmark">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -489,11 +395,9 @@ const ManagerBookmarks = (function () {
 
         item._boundData = bookmark;
 
-        // favicon
         const iconEl = item.querySelector('.tree-item__favicon-placeholder');
         if (iconEl) _deps.loadFaviconAsync?.(bookmark.url, iconEl);
 
-        // Item click
         item.addEventListener('click', e => {
             if (e.target.closest('.quick-actions-hover')) return;
             if (e.target.closest('.quick-actions-trigger')) return;
@@ -501,49 +405,37 @@ const ManagerBookmarks = (function () {
             if (_isCtrlPressed) {
                 e.preventDefault();
                 if (_selectedBookmarks.has(bookmark)) {
-                    _selectedBookmarks.delete(bookmark);
-                    item.classList.remove('selected');
+                    _selectedBookmarks.delete(bookmark); item.classList.remove('selected');
                 } else {
-                    _selectedBookmarks.add(bookmark);
-                    item.classList.add('selected');
+                    _selectedBookmarks.add(bookmark); item.classList.add('selected');
                 }
-                _updateSelectionToolbar();
-                return;
+                _updateSelectionToolbar(); return;
             }
 
             if (e.shiftKey && _lastSelectedIndex !== -1 && _lastSelectedIndex !== index) {
-                e.preventDefault();
-                e.stopPropagation();
+                e.preventDefault(); e.stopPropagation();
                 const all   = getBookmarksForFolder(getCurrentFolderId());
                 const start = Math.min(_lastSelectedIndex, index);
                 const end   = Math.max(_lastSelectedIndex, index);
-                const domItems = _bookmarksGrid ? _bookmarksGrid.querySelectorAll('.tree-item') : [];
+                const domItems = _bookmarksGrid?.querySelectorAll('.tree-item') || [];
                 for (let i = start; i <= end; i++) {
                     _selectedBookmarks.add(all[i]);
                     domItems[i]?.classList.add('selected');
                 }
-                _updateSelectionToolbar();
-                _lastSelectedIndex = index;
-                return;
+                _updateSelectionToolbar(); _lastSelectedIndex = index; return;
             }
 
             if (_selectedBookmarks.size > 0) {
                 clearSelection();
             } else {
-                if (isAlwaysIncognito && isAlwaysIncognito()) {
-                    openInPrivateTab(bookmark.url);
-                } else {
-                    window.open(bookmark.url, '_blank');
-                }
+                if (isAlwaysIncognito && isAlwaysIncognito()) openInPrivateTab(bookmark.url);
+                else window.open(bookmark.url, '_blank');
             }
-
             _lastSelectedIndex = index;
         });
 
         return item;
     }
-
-    // Render bookmarks grid
 
     async function renderBookmarks() {
         const { showLoadingIndicator, getCurrentFolderId, getMessage } = _deps;
@@ -564,15 +456,14 @@ const ManagerBookmarks = (function () {
                 const icon  = emptyState.querySelector('.empty-state__icon');
                 const title = emptyState.querySelector('h3');
                 const desc  = emptyState.querySelector('p');
-
                 if (sq?.trim()) {
-                    icon.innerHTML     = `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`;
-                    title.textContent  = getMessage('noSearchResults');
-                    desc.textContent   = getMessage('noSearchResultsDesc');
+                    icon.innerHTML    = `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`;
+                    title.textContent = getMessage('noSearchResults');
+                    desc.textContent  = getMessage('noSearchResultsDesc');
                 } else {
-                    icon.innerHTML     = `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>`;
-                    title.textContent  = getMessage('noBookmarksInFolder');
-                    desc.textContent   = getMessage('addBookmarksToGetStarted');
+                    icon.innerHTML    = `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>`;
+                    title.textContent = getMessage('noBookmarksInFolder');
+                    desc.textContent  = getMessage('addBookmarksToGetStarted');
                 }
             }
             return;
@@ -587,14 +478,39 @@ const ManagerBookmarks = (function () {
         _addLoadMoreTrigger();
     }
 
-    // Bookmark CRUD
+    async function renderBookmarksPreservingScroll() {
+        const container      = document.querySelector('.bookmarks-container');
+        const savedScrollTop = container ? container.scrollTop : 0;
+        const pagesToRestore = _currentPage || 1;
 
-    function _openBookmarkModal({ titleText, pageTitle, bookmarkTitle, bookmarkUrl, initialPath }) {
+        const { getCurrentFolderId } = _deps;
+        if (!_bookmarksGrid) {
+            _bookmarksGrid = document.getElementById('bookmarks-grid');
+            if (!_bookmarksGrid) return;
+        }
+
+        const bookmarks = getBookmarksForFolder(getCurrentFolderId());
+        if (bookmarks.length === 0) { await renderBookmarks(); return; }
+
+        _bookmarksGrid.style.display = 'flex';
+        const emptyState = document.getElementById('empty-state');
+        if (emptyState) emptyState.style.display = 'none';
+
+        resetPagination();
+        _bookmarksGrid.innerHTML = '';
+
+        for (let i = 0; i < pagesToRestore && _hasMoreBookmarks; i++) {
+            await loadMoreBookmarks();
+        }
+        _addLoadMoreTrigger();
+
+        if (container) container.scrollTop = savedScrollTop;
+    }
+
+    function _openBookmarkModal({ titleText, pageTitle, bookmarkTitle, bookmarkUrl, initialFolderUid }) {
         const { getMessage, buildFolderTreePicker, getData, resetInactivityTimer } = _deps;
 
-        
-        
-		document.getElementById('edit-bookmark-modal')?.remove();
+        document.getElementById('edit-bookmark-modal')?.remove();
 
         const modal = document.createElement('div');
         modal.id        = 'edit-bookmark-modal';
@@ -603,17 +519,22 @@ const ManagerBookmarks = (function () {
             <div class="hpb-modal__dialog">
                 <h2 class="hpb-modal__title" id="modal-title-text"></h2>
                 <div class="hpb-modal__body">
-                    <p><strong>${getMessage('page')}</strong> <span id="modal-page-title"></span></p>
+				<div class="hpb-modal__body_bookmark">
                     <label>${getMessage('title')}</label>
                     <input type="text" id="modal-bookmark-title" placeholder="Bookmark title">
-                    <label>${getMessage('url')}</label>
+                    </div>
+					<div class="hpb-modal__body_bookmark">
+					<label>${getMessage('url')}</label>
                     <input type="text" id="modal-bookmark-url" placeholder="https://example.com">
-                    <label>${getMessage('folder')}</label>
-                    <div class="folder-select-container">
+                    </div>
+					<div class="hpb-modal__body_bookmark">
+					<label>${getMessage('folder')}</label>
+                    <div class="folder-select-container w-100">
                         <div id="folder-select" class="folder-tree-picker"></div>
                         <button id="new-folder-in-modal" class="btn-secondary">${getMessage('new')}</button>
                     </div>
                 </div>
+				</div>
                 <div class="hpb-modal__footer">
                     <button class="btn-secondary" id="modal-cancel">${getMessage('cancel')}</button>
                     <button class="btn-primary"   id="modal-save">${getMessage('save')}</button>
@@ -622,31 +543,27 @@ const ManagerBookmarks = (function () {
         `;
         document.body.appendChild(modal);
 
-        // Populate fields
-        modal.querySelector('#modal-title-text').textContent  = titleText;
-        modal.querySelector('#modal-page-title').textContent  = pageTitle;
-        modal.querySelector('#modal-bookmark-title').value    = bookmarkTitle;
-        modal.querySelector('#modal-bookmark-url').value      = bookmarkUrl;
+        modal.querySelector('#modal-title-text').textContent = titleText;
+        modal.querySelector('#modal-bookmark-title').value   = bookmarkTitle;
+        modal.querySelector('#modal-bookmark-url').value     = bookmarkUrl;
 
-        buildFolderTreePicker(modal.querySelector('#folder-select'), getData().folders, initialPath, null);
+        buildFolderTreePicker(modal.querySelector('#folder-select'), getData().folders, initialFolderUid || '', null);
 
         const { _onEsc, _closeAndRemove } = (_deps.createModalEscHandler || window.HolyShared.createModalEscHandler)(modal, () => {
-            _editingBookmark     = null;
-            _editingBookmarkPath = null;
+            _editingBookmark    = null;
+            _editingBookmarkUid = null;
         });
 
         modal.querySelector('#modal-cancel').addEventListener('click', _closeAndRemove);
         modal.querySelector('#modal-save').addEventListener('click', () => handleModalSave(_closeAndRemove));
         modal.querySelector('#new-folder-in-modal').addEventListener('click', () => handleNewFolderInModal());
 
-        // Backdrop click
         modal.addEventListener('click', e => {
             if (e.target === modal && (Date.now() - (modal._hpbOpenedAt || 0) > 50)) _closeAndRemove();
         });
 
         document.addEventListener('keydown', _onEsc);
-		
-        
+
         requestAnimationFrame(() => {
             modal.classList.add('hpb-modal--open');
             modal._hpbOpenedAt = Date.now();
@@ -657,48 +574,65 @@ const ManagerBookmarks = (function () {
     }
 
     function editBookmark(bookmark) {
-        const { getMessage, getData, findItemPath } = _deps;
+        const { getMessage } = _deps;
 
-        _editingBookmark     = bookmark;
-        _editingBookmarkPath = findItemPath(getData(), bookmark);
+        _editingBookmark    = bookmark;
+        _editingBookmarkUid = bookmark.uid || null;
 
-        let initialPath = '';
-        if (_editingBookmarkPath?.length > 1) {
-            const parentPath = _editingBookmarkPath.slice(0, -1);
-            if (parentPath.length > 0) initialPath = parentPath.join('/');
-        }
+        const parentArr = _editingBookmarkUid
+            ? _deps.getParentArrayForItemUid(_deps.getData(), _editingBookmarkUid)
+            : null;
+        const parentFolder = parentArr && parentArr !== _deps.getData().folders
+            ? _deps.getAnyItemByUid
+                ? (() => {
+                    function findFolder(data, arr) {
+                        function search(items) {
+                            for (const item of items) {
+                                if (item.type === 'folder') {
+                                    if (item.children === arr) return item;
+                                    const found = search(item.children || []);
+                                    if (found) return found;
+                                }
+                            }
+                            return null;
+                        }
+                        return search(data.folders);
+                    }
+                    return findFolder(_deps.getData(), parentArr);
+                  })()
+                : null
+            : null;
+        const initialFolderUid = parentFolder?.uid || '';
 
         _openBookmarkModal({
-            titleText:     getMessage('editBookmark'),
-            pageTitle:     bookmark.title.length > 60 ? bookmark.title.slice(0, 60) + '...' : bookmark.title,
-            bookmarkTitle: bookmark.title,
-            bookmarkUrl:   bookmark.url,
-            initialPath,
+            titleText:      getMessage('editBookmark'),
+            pageTitle:      bookmark.title.length > 60 ? bookmark.title.slice(0, 60) + '...' : bookmark.title,
+            bookmarkTitle:  bookmark.title,
+            bookmarkUrl:    bookmark.url,
+            initialFolderUid,
         });
     }
 
     function addNewBookmarkFromManager() {
-        const { getMessage, getCurrentFolderId } = _deps;
+        const { getMessage, getCurrentFolderId, getItemByUid, getData } = _deps;
 
-        _editingBookmark     = null;
-        _editingBookmarkPath = null;
+        _editingBookmark    = null;
+        _editingBookmarkUid = null;
 
-        let initialPath = '';
         const fid = getCurrentFolderId();
-        if (fid !== 'all') initialPath = fid.split(',').join('/');
+        const initialFolderUid = (fid && fid !== 'all') ? fid : '';
 
         _openBookmarkModal({
-            titleText:     getMessage('addBookmark'),
-            pageTitle:     '',
-            bookmarkTitle: '',
-            bookmarkUrl:   'https://',
-            initialPath,
+            titleText:      getMessage('addBookmark'),
+            pageTitle:      '',
+            bookmarkTitle:  '',
+            bookmarkUrl:    'https://',
+            initialFolderUid,
         });
     }
 
     function handleModalSave(closeCallback) {
-        const { getMessage, showNotification, getItemByPath, getData,
-                normalizePath, getParentByPath, saveAndRefresh } = _deps;
+        const { getMessage, showNotification, getItemByUid, getData, saveAndRefresh } = _deps;
 
         const modal = document.getElementById('edit-bookmark-modal');
         if (!modal) return;
@@ -706,100 +640,99 @@ const ManagerBookmarks = (function () {
         const title = modal.querySelector('#modal-bookmark-title').value.trim();
         const url   = modal.querySelector('#modal-bookmark-url').value.trim();
 
-        if (!title || !url) {
-            showNotification(getMessage('titleRequired'), true);
-            return;
-        }
+        if (!title || !url) { showNotification(getMessage('titleRequired'), true); return; }
         if (!url.startsWith('http://') && !url.startsWith('https://')) {
-            showNotification('Please enter a valid URL starting with http:// or https://', true);
+            showNotification(getMessage('invalidUrlProtocol'), true);
             return;
         }
 
-        const pickerEl = modal.querySelector('#folder-select');
-        const pathStr  = pickerEl._getPickerValue ? pickerEl._getPickerValue() : '';
-        let   targetPath = [];
-        if (pathStr !== '') targetPath = pathStr.split('/').map(Number).filter(Number.isInteger);
+        const pickerEl    = modal.querySelector('#folder-select');
+        const folderUid   = pickerEl._getPickerValue ? pickerEl._getPickerValue() : '';
 
-        if (targetPath.length > 0) {
-            const target = getItemByPath(getData(), targetPath);
+        if (folderUid) {
+            const target = getItemByUid(getData(), folderUid);
             if (!target || target.type !== 'folder') {
-                showNotification('Selected path is not a folder', true);
+                showNotification('Selected folder no longer exists', true);
                 return;
             }
         }
 
-        const isEdit = !!_editingBookmarkPath;
+        const isEdit = !!_editingBookmarkUid;
         if (isEdit) {
-            _updateBookmark(_editingBookmarkPath, title, url, targetPath);
+            _updateBookmark(_editingBookmarkUid, title, url, folderUid);
         } else {
-            _addNewBookmarkToPath(title, url, targetPath);
+            _addNewBookmark(title, url, folderUid);
         }
 
         saveAndRefresh().then(() => {
             if (typeof closeCallback === 'function') closeCallback();
             showNotification(getMessage(isEdit ? 'bookmarkUpdated' : 'bookmarkAdded'));
-            _editingBookmark     = null;
-            _editingBookmarkPath = null;
+            _editingBookmark    = null;
+            _editingBookmarkUid = null;
         });
     }
 
-    function _addNewBookmarkToPath(title, url, targetPath) {
-        const { getItemByPath, getData } = _deps;
-        let targetArray;
-        if (targetPath.length === 0) {
-            targetArray = getData().folders;
-        } else {
-            const folder = getItemByPath(getData(), targetPath);
-            if (!folder || folder.type !== 'folder' || !Array.isArray(folder.children)) return;
-            targetArray = folder.children;
+    function _addNewBookmark(title, url, folderUid) {
+        const { getData, getItemByUid, generateFolderUid } = _deps;
+        const uid      = generateFolderUid ? generateFolderUid() : ('b_' + Date.now().toString(36));
+        const bookmark = { type: 'bookmark', title, url, dateAdded: Date.now(), uid };
+
+        if (folderUid) {
+            const folder = getItemByUid(getData(), folderUid);
+            if (folder?.children) { folder.children.push(bookmark); return; }
         }
-        targetArray.push({ type: 'bookmark', title, url, dateAdded: Date.now() });
+        getData().folders.push(bookmark);
     }
 
-    function _updateBookmark(oldPath, title, url, newPathRaw) {
-        const { normalizePath, getParentByPath, getItemByPath, getData } = _deps;
-        const data          = getData();
-        const newPath       = normalizePath(newPathRaw || []);
-        const oldFolderPath = oldPath.slice(0, -1);
-        const sourceParent  = getParentByPath(data, oldFolderPath);
-        const sourceIndex   = oldPath[oldPath.length - 1];
-        const bookmark      = sourceParent[sourceIndex];
+    function _updateBookmark(editUid, title, url, newFolderUid) {
+        const { getData, getAnyItemByUid, getItemByUid, getParentArrayForItemUid } = _deps;
+        const data     = getData();
+        const bookmark = getAnyItemByUid(data, editUid);
         if (!bookmark) return;
 
         bookmark.title = title;
         bookmark.url   = url;
 
-        if (oldFolderPath.join('/') === newPath.join('/')) return;
+        const sourceArr = getParentArrayForItemUid(data, editUid);
+        if (!sourceArr) return;
 
-        let targetArray;
-        if (newPath.length === 0) {
-            targetArray = data.folders;
+        let targetArr;
+        if (!newFolderUid) {
+            targetArr = data.folders;
         } else {
-            const folder = getItemByPath(data, newPath);
-            if (!folder || folder.type !== 'folder' || !Array.isArray(folder.children)) return;
-            targetArray = folder.children;
+            const folder = getItemByUid(data, newFolderUid);
+            if (!folder || folder.type !== 'folder') return;
+            if (!Array.isArray(folder.children)) folder.children = [];
+            targetArr = folder.children;
         }
-        sourceParent.splice(sourceIndex, 1);
-        targetArray.push(bookmark);
+
+        if (targetArr === sourceArr) return;
+
+        const idx = sourceArr.indexOf(bookmark);
+        if (idx !== -1) sourceArr.splice(idx, 1);
+        targetArr.push(bookmark);
     }
 
     async function deleteBookmark(bookmark) {
-        const { findItemPath, removeItemByPath, getData, saveChanges,
-                getMessage, showNotification,
-                renderFolderTree } = _deps;
+        const { getData, saveChanges, getMessage, showNotification,
+                renderFolderTree, getParentArrayForItemUid } = _deps;
 
-        const path = findItemPath(getData(), bookmark);
-        if (!path) return;
+        const data      = getData();
+        const parentArr = getParentArrayForItemUid(data, bookmark.uid);
+        if (!parentArr) return;
 
-        removeItemByPath(getData(), path);
+        const idx = parentArr.indexOf(bookmark);
+        if (idx === -1) return;
+        parentArr.splice(idx, 1);
+
         await saveChanges();
         showNotification(getMessage('bookmarkDeleted'));
         renderFolderTree();
-        renderBookmarks();
+        await renderBookmarksPreservingScroll();
     }
 
     async function handleNewFolderInModal() {
-        const { getMessage, getData, buildFolderTreePicker } = _deps;
+        const { getMessage, getData, buildFolderTreePicker, generateFolderUid } = _deps;
         const name = await _deps.showPrompt({
             title:        getMessage('newFolder'),
             placeholder:  getMessage('folderName'),
@@ -807,19 +740,164 @@ const ManagerBookmarks = (function () {
         });
         if (!name?.trim()) return;
 
-        getData().folders.push({ type: 'folder', name: name.trim(), children: [], dateAdded: Date.now() });
-		await _deps.saveChanges();
+        const uid = generateFolderUid ? generateFolderUid() : ('f_' + Date.now().toString(36));
+        getData().folders.push({ type: 'folder', name: name.trim(), children: [], dateAdded: Date.now(), uid });
+        await _deps.saveChanges();
+
         const modal = document.getElementById('edit-bookmark-modal');
-        const pickerContainer = modal ? modal.querySelector('#folder-select') : null;
+        const pickerContainer = modal?.querySelector('#folder-select');
         if (pickerContainer) {
-            const newIdx = (getData().folders.length - 1).toString();
-            buildFolderTreePicker(pickerContainer, getData().folders, newIdx, null);
+            buildFolderTreePicker(pickerContainer, getData().folders, uid, null);
         }
 
         clearBookmarksCache();
     }
 
-    // Selection
+    function showMoveSelectedDialog() {
+        const { getMessage, showNotification, buildFolderTreePicker, getData,
+                closeModal, closeModalWithAnimation } = _deps;
+        const _closeMoveModal = (el) => (closeModalWithAnimation || closeModal)(el);
+        const bookmarksToMove = Array.from(_selectedBookmarks);
+        if (bookmarksToMove.length === 0) {
+            showNotification(getMessage('noBookmarksSelected'), true); return;
+        }
+
+        const title = getMessage('moveBookmarksTitle')
+            .replace('{count}', bookmarksToMove.length)
+            .replace('{0}', bookmarksToMove.length)
+            .replace('{1}', bookmarksToMove.length > 1 ? 's' : '');
+
+        const overlay = document.createElement('div');
+        overlay.id = 'move-modal';
+        overlay.className = 'hpb-modal hpb-modal--open';
+        overlay.innerHTML = `
+            <div class="hpb-modal__dialog hpb-modal__dialog--sm">
+                <h2 class="hpb-modal__title">${title}</h2>
+                <div class="hpb-modal__body">
+                    <label>${getMessage('selectDestinationFolder')}</label>
+                    <div id="move-folder-select" class="folder-tree-picker"></div>
+                </div>
+                <div class="hpb-modal__footer">
+                    <button class="btn-secondary" id="move-cancel">${getMessage('cancel')}</button>
+                    <button class="btn-primary"   id="move-confirm">${getMessage('move')}</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+        buildFolderTreePicker(overlay.querySelector('#move-folder-select'), getData().folders, '', null);
+
+        const _onEsc = (e) => { if (e.key === 'Escape') { document.removeEventListener('keydown', _onEsc); _closeMoveModal(overlay); } };
+        document.addEventListener('keydown', _onEsc);
+
+        overlay.querySelector('#move-cancel').addEventListener('click', () => {
+            document.removeEventListener('keydown', _onEsc);
+            _closeMoveModal(overlay);
+        });
+        overlay.querySelector('#move-confirm').addEventListener('click', async () => {
+            const movePickerEl = overlay.querySelector('#move-folder-select');
+            const targetUid    = movePickerEl._getPickerValue ? movePickerEl._getPickerValue() : '';
+            try {
+                await _moveSelectedBookmarks(targetUid, bookmarksToMove);
+            } finally {
+                document.removeEventListener('keydown', _onEsc);
+                _closeMoveModal(overlay);
+            }
+        });
+    }
+
+    async function _moveSelectedBookmarks(targetFolderUid, bookmarksList) {
+        const { getData, getItemByUid, getParentArrayForItemUid,
+                getMessage, showNotification, saveChanges, renderFolderTree } = _deps;
+
+        if (bookmarksList.length === 0) return;
+
+        const data = getData();
+        let targetArray;
+        if (!targetFolderUid) {
+            targetArray = data.folders;
+        } else {
+            const folder = getItemByUid(data, targetFolderUid);
+            if (!folder || folder.type !== 'folder' || !Array.isArray(folder.children)) {
+                showNotification(getMessage('invalidDestinationFolder'), true); return;
+            }
+            targetArray = folder.children;
+        }
+
+        const validBookmarks = bookmarksList.filter(bm => {
+            if (bm.type !== 'folder') return true;
+            if (bm.uid === targetFolderUid) return false;
+            function isDesc(folder) {
+                if (!folder.children) return false;
+                for (const c of folder.children) {
+                    if (c.uid === targetFolderUid) return true;
+                    if (c.type === 'folder' && isDesc(c)) return true;
+                }
+                return false;
+            }
+            return !isDesc(bm);
+        });
+
+        if (validBookmarks.length === 0) {
+            showNotification(getMessage('cannotMoveIntoSelf'), true); return;
+        }
+
+        let moved = 0;
+        for (const bm of validBookmarks) {
+            const sourceArr = getParentArrayForItemUid(data, bm.uid);
+            if (!sourceArr) continue;
+            const idx = sourceArr.indexOf(bm);
+            if (idx === -1) continue;
+            if (sourceArr === targetArray) continue;
+            sourceArr.splice(idx, 1);
+            targetArray.push(bm);
+            moved++;
+        }
+
+        if (moved > 0) {
+            await saveChanges();
+            clearBookmarksCache();
+            clearSelection();
+            const msg = getMessage('bookmarksMoved')
+                .replace('{count}', moved).replace('{0}', moved).replace('{1}', moved > 1 ? 's' : '');
+            showNotification(msg);
+            renderFolderTree();
+            if (window.ManagerBookmarks) await window.ManagerBookmarks.renderBookmarksPreservingScroll();
+        } else {
+            showNotification(getMessage('moveFailed'), true);
+        }
+    }
+
+    async function deleteSelectedBookmarks() {
+        const { getMessage, showNotification, getData, saveChanges,
+                getParentArrayForItemUid, renderFolderTree } = _deps;
+
+        if (_selectedBookmarks.size === 0) return;
+
+        const snapshot   = Array.from(_selectedBookmarks);
+        const count      = snapshot.length;
+        const confirmMsg = getMessage('deleteSelectedConfirm')
+            .replace('{count}', count).replace('{plural}', count > 1 ? 's' : '');
+        if (!await _deps.showConfirm({ title: confirmMsg })) return;
+
+        const data = getData();
+        for (const bm of snapshot) {
+            if (!bm?.uid) continue;
+            const parentArr = getParentArrayForItemUid(data, bm.uid);
+            if (!parentArr) continue;
+            const idx = parentArr.indexOf(bm);
+            if (idx !== -1) parentArr.splice(idx, 1);
+        }
+
+        await saveChanges();
+        clearBookmarksCache();
+        clearSelection();
+        renderFolderTree();
+        await renderBookmarksPreservingScroll();
+
+        const successMsg = getMessage('bookmarksDeleted')
+            .replace('{count}', count).replace('{0}', count);
+        showNotification(successMsg);
+    }
 
     function clearSelection() {
         _selectedBookmarks.clear();
@@ -868,213 +946,9 @@ const ManagerBookmarks = (function () {
         document.getElementById('selection-cancel').addEventListener('click', clearSelection);
     }
 
-    // Move selected dialog
-
-    function showMoveSelectedDialog() {
-        const { getMessage, showNotification, buildFolderOptions, buildFolderTreePicker, getData,
-        getCurrentFolderId, resetInactivityTimer, openModal, closeModal, closeModalWithAnimation } = _deps;
-        const _closeMoveModal = (el) => (closeModalWithAnimation || closeModal)(el);
-        const bookmarksToMove = Array.from(_selectedBookmarks);
-        if (bookmarksToMove.length === 0) {
-            showNotification(getMessage('noBookmarksSelected'), true);
-            return;
-        }
-
-        const title = getMessage('moveBookmarksTitle')
-			.replace('{count}', bookmarksToMove.length)
-			.replace('{0}', bookmarksToMove.length)
-			.replace('{1}', bookmarksToMove.length > 1 ? 's' : '');
-
-        const overlay = document.createElement('div');
-        overlay.id = 'move-modal';
-        overlay.className = 'hpb-modal hpb-modal--open';
-        overlay.innerHTML = `
-            <div class="hpb-modal__dialog hpb-modal__dialog--sm">
-                <h2 class="hpb-modal__title">${title}</h2>
-                <div class="hpb-modal__body">
-                    <label>${getMessage('selectDestinationFolder')}</label>
-                    <div id="move-folder-select" class="folder-tree-picker"></div>
-                </div>
-                <div class="hpb-modal__footer">
-                    <button class="btn-secondary" id="move-cancel">${getMessage('cancel')}</button>
-                    <button class="btn-primary"   id="move-confirm">${getMessage('move')}</button>
-                </div>
-            </div>
-        `;
-        document.body.appendChild(overlay);
-        buildFolderTreePicker(overlay.querySelector('#move-folder-select'), getData().folders, '', null);
-
-        overlay.querySelector('#move-cancel').addEventListener('click', () => {
-            _closeMoveModal(overlay);
-        });
-        overlay.querySelector('#move-confirm').addEventListener('click', async () => {
-            const movePickerEl = overlay.querySelector('#move-folder-select');
-            const pathStr      = movePickerEl._getPickerValue ? movePickerEl._getPickerValue() : '';
-            const targetPath   = pathStr !== ''
-                ? pathStr.split('/').map(Number).filter(n => !isNaN(n))
-                : [];
-            await _moveSelectedBookmarks(targetPath, bookmarksToMove);
-            _closeMoveModal(overlay);
-        });
-    }
-
-
-async function _moveSelectedBookmarks(targetPath, bookmarksList) {
-    const { getItemByPath, getData, getParentByPath, findItemPath,
-            getMessage, showNotification, saveChanges,
-            renderFolderTree } = _deps;
-
-    if (bookmarksList.length === 0) return;
-
-    let targetArray;
-    if (targetPath.length === 0) {
-        targetArray = getData().folders;
-    } else {
-        const folder = getItemByPath(getData(), targetPath);
-        if (!folder || folder.type !== 'folder' || !Array.isArray(folder.children)) {
-           showNotification(getMessage('invalidDestinationFolder'), true);
-            return;
-        }
-        targetArray = folder.children;
-    }
-
-  
-    const targetPathStr = targetPath.join(',');
-    const validBookmarks = [];
-
-    for (const bookmark of bookmarksList) {
-        let canMove = true;
-        
-        if (bookmark.type === 'folder') {
-            const folderPath = findItemPath(getData(), bookmark);
-            if (folderPath) {
-                const folderPathStr = folderPath.join(',');
-                
-                
-                if (targetPathStr === folderPathStr || 
-                    (targetPathStr.startsWith(folderPathStr + ',') && targetPathStr.length > folderPathStr.length)) {
-                    canMove = false;
-                }
-            }
-        }
-        
-        if (canMove) {
-            validBookmarks.push(bookmark);
-        }
-  
-    }
-
-    if (validBookmarks.length === 0) {
-        showNotification(
-            getMessage('cannotMoveIntoSelf'), 
-            true
-        );
-        return;
-    }
-
-
-    const groups = new Map();
-    for (const bookmark of validBookmarks) {
-        const path = findItemPath(getData(), bookmark);
-        if (!path?.length) continue;
-        const parent = getParentByPath(getData(), path.slice(0, -1));
-        const idx = path[path.length - 1];
-        if (!groups.has(parent)) groups.set(parent, []);
-        groups.get(parent).push({ idx, bookmark });
-    }
-
-    let moved = 0;
-    for (const [parent, items] of groups) {
-        items.sort((a, b) => b.idx - a.idx);
-        for (const { idx, bookmark } of items) {
-            if (parent?.[idx] === bookmark) {
-                parent.splice(idx, 1);
-                targetArray.push(bookmark);
-                moved++;
-            }
-        }
-    }
-
-    if (moved > 0) {
-        await saveChanges();
-  
-        clearBookmarksCache();
-        clearSelection();
-        
-        const msg = getMessage('bookmarksMoved')
-                .replace('{count}', moved)
-                .replace('{0}', moved)
-                .replace('{1}', moved > 1 ? 's' : '');
-        
-        showNotification(msg);
-        renderFolderTree();
-        if (window.ManagerBookmarks) {
-            window.ManagerBookmarks.renderBookmarks();
-        }
-    } else {
-        showNotification(getMessage('moveFailed'), true);
-    }
-}
-
-async function deleteSelectedBookmarks() {
-    const { getMessage, showNotification, getData, saveChanges,
-            findItemPath, removeItemByPath, renderFolderTree } = _deps;
-    
-    if (_selectedBookmarks.size === 0) return;
-    
-    const paths = [];
-    
-    for (const bookmark of Array.from(_selectedBookmarks)) {
-        const path = findItemPath(getData(), bookmark);
-        if (path && Array.isArray(path) && path.length > 0) {
-            paths.push(path);
-        }
-    }
-    
-    if (paths.length === 0) {
-        showNotification(getMessage('deleteFailed'), true);
-        return;
-    }
-    
-    const count = paths.length;
-    
-    const confirmMsg = getMessage('deleteSelectedConfirm')
-        .replace('{count}', count)
-        .replace('{plural}', count > 1 ? 's' : '');
-    
-    if (!await _deps.showConfirm({ title: confirmMsg })) return;
-    
-    paths.sort((a, b) => {
-        for (let i = 0; i < Math.min(a.length, b.length); i++) {
-            if (a[i] !== b[i]) return b[i] - a[i];
-        }
-        return b.length - a.length;
-    });
-    
-    for (const path of paths) {
-        removeItemByPath(getData(), path);
-    }
-    
-    await saveChanges();
-    clearBookmarksCache();
-    clearSelection();
-    renderFolderTree();
-    renderBookmarks();
-    
-    const successMsg = getMessage('bookmarksDeleted')
-        .replace('{count}', count)
-        .replace('{0}', count);
-    
-    showNotification(successMsg);
-}
-
-    // Ctrl key tracking
-
     function initKeyboardHandlers() {
         document.addEventListener('keydown', e => { if (e.key === 'Control') _isCtrlPressed = true; });
         document.addEventListener('keyup',   e => { if (e.key === 'Control') _isCtrlPressed = false; });
-
-        // Deselect on click outside
         document.addEventListener('click', e => {
             if (!e.target.closest('.tree-item') && !e.target.closest('.selection-toolbar') && !_isCtrlPressed) {
                 clearSelection();
@@ -1082,30 +956,19 @@ async function deleteSelectedBookmarks() {
         });
     }
 
-    // Public API
-
     return {
         init(deps) { Object.assign(_deps, deps); },
-
-        // Data
         clearBookmarksCache,
         clearManagerCaches,
         resetPagination,
         countBookmarksInFolder,
         getBookmarksForFolder,
-
-        // Render
         initVirtualScroll,
         renderBookmarks,
-
-        // CRUD
         editBookmark,
         deleteBookmark,
         addNewBookmarkFromManager,
-
-        // Selection
-
-        // Keyboard
+        renderBookmarksPreservingScroll,
         initKeyboardHandlers
     };
 
@@ -1113,4 +976,3 @@ async function deleteSelectedBookmarks() {
 
 if (typeof window !== 'undefined') window.ManagerBookmarks = ManagerBookmarks;
 if (typeof module !== 'undefined') module.exports = ManagerBookmarks;
-

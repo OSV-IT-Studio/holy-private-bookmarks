@@ -47,9 +47,9 @@ const ImportExportManager = (function() {
             a.click();
             URL.revokeObjectURL(url);
             
-            showNotification(getMessage('exportSuccess') || 'Export successful');
+            showNotification(getMessage('exportSuccess'));
         } catch (error) {
-            showNotification(getMessage('exportFailed') || 'Export failed: ' + error.message, true);
+            showNotification(getMessage('exportFailed') + error.message, true);
         }
     }
 
@@ -75,14 +75,14 @@ const ImportExportManager = (function() {
             await chrome.storage.local.set({ [STORAGE_KEY]: importedJson });
             
             hideLoadingIndicator(document.body);
-            showNotification(getMessage('importSuccess') || 'Import successful', false);
+            showNotification(getMessage('importSuccess'), false);
             
 
             if (callback) callback();
             
         } catch (error) {
             console.error('Import error:', error);
-            showNotification(getMessage('invalidFile') || 'Invalid file format: ' + error.message, true);
+            showNotification(getMessage('invalidFile') + error.message, true);
         } finally {
             hideLoadingIndicator(document.body);
             e.target.value = '';
@@ -121,12 +121,13 @@ const ImportExportManager = (function() {
             const importedFolders = convertChromeBookmarks(chromeBookmarks[0].children || []);
             
             dataRef.folders.push(...importedFolders);
+            if (window.HolyShared?.ensureItemUids) window.HolyShared.ensureItemUids(dataRef.folders);
             
             if (saveCallback) {
                 await saveCallback();
             }
             
-            showNotification(getMessage('importChromeSuccess') || 'Chrome bookmarks imported successfully');
+            showNotification(getMessage('importChromeSuccess'));
         } catch (error) {
             showNotification(getMessage('importChromeError') + ': ' + error.message, true);
         } finally {
@@ -174,11 +175,11 @@ const ImportExportManager = (function() {
         `;
         
         content.innerHTML = `
-            <h2 style="margin-top:0; color:var(--accent);">${getMessage('selectFoldersToImport') || 'Select folders to import'}</h2>
+            <h2 style="margin-top:0; color:var(--accent);">${getMessage('selectFoldersToImport')}</h2>
             <div id="folders-list" style="margin: 20px 0; max-height: 300px; overflow-y: auto;"></div>
             <div class="modal-buttons">
                 <button class="btn-secondary" id="cancel-import">${getMessage('cancel')}</button>
-                <button class="btn-primary" id="confirm-import">${getMessage('importSelected') || 'Import selected'}</button>
+                <button class="btn-primary" id="confirm-import">${getMessage('importSelected')}</button>
             </div>
         `;
         
@@ -283,22 +284,24 @@ const ImportExportManager = (function() {
                 const converted = convertChromeBookmarks(folder.children || []);
                 if (converted.length > 0) {
                     importedData.push({
-                        type: 'folder',
-                        name: folder.title || 'Imported Folder',
-                        children: converted,
-                        dateAdded: Date.now()
+                        type:      'folder',
+                        name:      folder.title || 'Imported Folder',
+                        children:  converted,
+                        dateAdded: Date.now(),
+                        uid:       window.HolyShared?.generateFolderUid?.() || ('f_' + Date.now().toString(36) + Math.random().toString(36).slice(2,7))
                     });
                 }
             });
             
             dataRef.folders.push(...importedData);
+            if (window.HolyShared?.ensureItemUids) window.HolyShared.ensureItemUids(dataRef.folders);
             
             if (saveCallback) {
                 await saveCallback();
             }
             
             document.body.removeChild(modal);
-            showNotification(getMessage('importChromeSuccess') || 'Chrome bookmarks imported successfully');
+            showNotification(getMessage('importChromeSuccess'));
         });
     }
 

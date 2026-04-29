@@ -856,5 +856,8 @@
   },
   "blurPageCommand": {
     "message": "Blur page"
+  },
+  "invalidUrlProtocol": {
+    "message": "Please enter a valid URL starting with http:// or https://"
   }
 }

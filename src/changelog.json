@@ -1,4 +1,11 @@
 [
+{
+  "version": "1.8.5.30",
+  "changes": [
+    "All bookmarks and folders now have stable unique identifiers — operations like move, delete, and drag-and-drop no longer break after reordering",
+    "Improved drag-and-drop responsiveness"
+  ]
+},
   {
     "version": "1.8.5.22",
     "changes": [

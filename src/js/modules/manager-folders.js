@@ -17,150 +17,129 @@
  *
  * Source code: https://github.com/OSV-IT-Studio/holy-private-bookmarks
  */
-
-// MODULE: manager-folders.js
-// Handles: folder tree rendering (recursive), active folder selection,
-//          folder toggle (expand/collapse), folder CRUD (create/rename/delete)
-
-const ManagerFolders = (function () {
+ 
+ const ManagerFolders = (function () {
 
     let _deps = {};
 
-    // Module-level state
-    let _activeFolderEl      = null; // tracks active sidebar item to avoid querySelectorAll
+    let _activeFolderEl      = null;
     let _treeListenerAttached = false;
 
     function _generateUid() {
         if (_deps.generateFolderUid) return _deps.generateFolderUid();
-        
         return 'f_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
     }
 
-    
-
     function renderFolderTree() {
-    const { getData, countAllBookmarks, resetInactivityTimer } = _deps;
-    const tree = document.getElementById('folder-tree');
-    if (!tree) return;
+        const { getData, countAllBookmarks, resetInactivityTimer } = _deps;
+        const tree = document.getElementById('folder-tree');
+        if (!tree) return;
 
-    
-    saveFoldersState();
+        saveFoldersState();
 
-    const allBookmarksItem = tree.querySelector('.all-bookmarks');
-    tree.innerHTML = '';
-    _activeFolderEl = null; // DOM wiped, reference is stale
-    if (allBookmarksItem) tree.appendChild(allBookmarksItem);
+        const allBookmarksItem = tree.querySelector('.all-bookmarks');
+        tree.innerHTML = '';
+        _activeFolderEl = null;
+        if (allBookmarksItem) tree.appendChild(allBookmarksItem);
 
-    const allCount = document.getElementById('all-count');
-    if (allCount) allCount.textContent = countAllBookmarks(getData());
+        const allCount = document.getElementById('all-count');
+        if (allCount) allCount.textContent = countAllBookmarks(getData());
 
-    const fragment = document.createDocumentFragment();
-    _renderFoldersRecursive(getData().folders, fragment, []);
-    tree.appendChild(fragment);
+        const fragment = document.createDocumentFragment();
+        _renderFoldersRecursive(getData().folders, fragment, []);
+        tree.appendChild(fragment);
 
-    _attachDelegatedTreeListener(); // no-op after first call
-    _addFolderTreeEventListeners(); // now a no-op, kept for clarity
-    
-    
-    restoreFoldersState();
-    
-    const currentId = _deps.getCurrentFolderId?.();
-    if (currentId) {
-        const active = document.querySelector(`.folder-item[data-folder-id="${currentId}"]`) ||
-                       document.querySelector('.all-bookmarks');
-        if (active) active.classList.add('active');
-        _activeFolderEl = active || null;
-    } else {
-        // Fallback: pick up the element that already has .active in the DOM (e.g. set in HTML)
-        _activeFolderEl = tree.querySelector('.folder-item.active') || null;
+        _attachDelegatedTreeListener();
+        _addFolderTreeEventListeners();
+
+        restoreFoldersState();
+
+        const currentId = _deps.getCurrentFolderId?.();
+        if (currentId) {
+            const active = currentId === 'all'
+                ? document.querySelector('.all-bookmarks')
+                : (document.querySelector(`.folder-item[data-folder-uid="${currentId}"]`) ||
+                   document.querySelector('.all-bookmarks'));
+            if (active) active.classList.add('active');
+            _activeFolderEl = active || null;
+        } else {
+            _activeFolderEl = tree.querySelector('.folder-item.active') || null;
+        }
+
+        resetInactivityTimer();
     }
 
-    resetInactivityTimer();
-}
+    function _renderFoldersRecursive(items, container, path, depth = 0) {
+        const { countItemsInFolder, getMessage } = _deps;
 
-    function _renderFoldersRecursive(items, container, path = [], depth = 0) {
-    const { countItemsInFolder, getMessage } = _deps;
+        for (let i = 0; i < items.length; i++) {
+            const item = items[i];
+            if (item.type !== 'folder') continue;
 
-    for (let i = 0; i < items.length; i++) {
-        const item = items[i];
-        if (item.type !== 'folder') continue;
+            const currentPath   = [...path, i];
+            const itemCount     = countItemsInFolder(item);
+            const hasSubfolders = item.children?.some(c => c.type === 'folder');
 
-        const currentPath   = [...path, i];
-        const folderId      = currentPath.join(',');
-        const itemCount     = countItemsInFolder(item);
-        const hasSubfolders = item.children?.some(c => c.type === 'folder');
+            const li = document.createElement('li');
+            li.className = 'folder-item' + (hasSubfolders ? ' has-children' : '');
+            if (item.uid) {
+                li.dataset.folderUid = item.uid;
+            }
 
-        const li = document.createElement('li');
-        li.className    = 'folder-item' + (hasSubfolders ? ' has-children' : '');
-        li.dataset.folderId = folderId;
-        if (item.uid) li.dataset.folderUid = item.uid;
+            const folderContent = document.createElement('div');
+            folderContent.className = 'folder-content';
 
-        // Toggle arrow
-        const folderContent = document.createElement('div');
-        folderContent.className = 'folder-content';
+            const toggleSpan = document.createElement('span');
+            toggleSpan.className = 'folder-toggle';
+            if (hasSubfolders) toggleSpan.textContent = '▶';
+            folderContent.appendChild(toggleSpan);
 
-        const toggleSpan = document.createElement('span');
-        toggleSpan.className = 'folder-toggle';
-        if (hasSubfolders) toggleSpan.textContent = '▶'; 
-        folderContent.appendChild(toggleSpan);
+            const iconDiv = document.createElement('div');
+            iconDiv.className = 'folder-icon';
+            iconDiv.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>`;
+            folderContent.appendChild(iconDiv);
 
-        // Icon
-        const iconDiv = document.createElement('div');
-        iconDiv.className = 'folder-icon';
-        iconDiv.innerHTML = `
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-            </svg>
-        `;
-        folderContent.appendChild(iconDiv);
+            const nameDiv = document.createElement('div');
+            nameDiv.className   = 'folder-name';
+            nameDiv.textContent = item.name;
+            folderContent.appendChild(nameDiv);
 
-        // Name
-        const nameDiv = document.createElement('div');
-        nameDiv.className   = 'folder-name';
-        nameDiv.textContent = item.name;
-        folderContent.appendChild(nameDiv);
+            const actionsDiv = document.createElement('div');
+            actionsDiv.className = 'folder-actions';
 
-        // Action buttons
-        const actionsDiv = document.createElement('div');
-        actionsDiv.className = 'folder-actions';
+            const editBtn = document.createElement('button');
+            editBtn.className = 'folder-action-btn edit';
+            editBtn.title     = getMessage('rename');
+            editBtn.dataset.action = 'rename';
+            editBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>`;
 
-        const editBtn = document.createElement('button');
-        editBtn.className = 'folder-action-btn edit';
-        editBtn.title     = getMessage('rename');
-        editBtn.dataset.action = 'rename';
-        editBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>`;
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'folder-action-btn delete';
+            deleteBtn.title     = getMessage('delete');
+            deleteBtn.dataset.action = 'delete-folder';
+            deleteBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>`;
 
-        const deleteBtn = document.createElement('button');
-        deleteBtn.className = 'folder-action-btn delete';
-        deleteBtn.title     = getMessage('delete');
-        deleteBtn.dataset.action = 'delete-folder';
-        deleteBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>`;
+            actionsDiv.appendChild(editBtn);
+            actionsDiv.appendChild(deleteBtn);
+            folderContent.appendChild(actionsDiv);
+            li.appendChild(folderContent);
 
-        actionsDiv.appendChild(editBtn);
-        actionsDiv.appendChild(deleteBtn);
-        folderContent.appendChild(actionsDiv);
-        li.appendChild(folderContent);
+            const countDiv = document.createElement('div');
+            countDiv.className   = 'folder-badge';
+            countDiv.textContent = itemCount;
+            li.appendChild(countDiv);
 
-        // Count badge
-        const countDiv = document.createElement('div');
-        countDiv.className   = 'folder-badge';
-        countDiv.textContent = itemCount;
-        li.appendChild(countDiv);
+            container.appendChild(li);
 
-        container.appendChild(li);
-
-
-if (hasSubfolders) {
-    const subUl = document.createElement('ul');
-    subUl.className = 'subfolder-list';
-    subUl.style.display = 'none'; 
-    container.appendChild(subUl);
-    _renderFoldersRecursive(item.children, subUl, currentPath, depth + 1);
-}
+            if (hasSubfolders) {
+                const subUl = document.createElement('ul');
+                subUl.className = 'subfolder-list';
+                subUl.style.display = 'none';
+                container.appendChild(subUl);
+                _renderFoldersRecursive(item.children, subUl, currentPath, depth + 1);
+            }
+        }
     }
-}
-
-    // Single delegated listener attached once — no per-element listeners needed
 
     function _attachDelegatedTreeListener() {
         if (_treeListenerAttached) return;
@@ -168,7 +147,6 @@ if (hasSubfolders) {
         if (!tree) return;
 
         tree.addEventListener('click', e => {
-            // Toggle arrow
             const toggle = e.target.closest('.folder-toggle');
             if (toggle) {
                 e.stopPropagation();
@@ -177,85 +155,70 @@ if (hasSubfolders) {
                 return;
             }
 
-            // Action buttons (rename / delete)
             const actionBtn = e.target.closest('.folder-action-btn[data-action]');
             if (actionBtn) {
                 e.stopPropagation();
                 const folderItem = actionBtn.closest('.folder-item');
                 if (!folderItem) return;
-                const folderId = folderItem.dataset.folderId;
-                if (actionBtn.dataset.action === 'rename') renameFolder(folderId);
-                else if (actionBtn.dataset.action === 'delete-folder') deleteFolder(folderId);
+                const uid = folderItem.dataset.folderUid;
+                if (!uid) return;
+                if (actionBtn.dataset.action === 'rename') renameFolder(uid);
+                else if (actionBtn.dataset.action === 'delete-folder') deleteFolder(uid);
                 return;
             }
 
-            // Folder action buttons area — stop propagation
             if (e.target.closest('.folder-actions')) return;
 
-            // Folder item click → set active
             const folderItem = e.target.closest('.folder-item');
             if (folderItem) {
-                setActiveFolder(folderItem.dataset.folderId || 'all');
+                const uid = folderItem.dataset.folderUid;
+                setActiveFolder(uid || 'all');
             }
         });
 
         _treeListenerAttached = true;
     }
 
-    // No-op: real setup now happens once via _attachDelegatedTreeListener
     function _addFolderTreeEventListeners() {}
 
     function _toggleFolderExpand(folderItem) {
-    const toggle  = folderItem.querySelector('.folder-toggle');
-    const subList = folderItem.nextElementSibling;
-    if (!subList?.classList.contains('subfolder-list')) return;
+        const toggle  = folderItem.querySelector('.folder-toggle');
+        const subList = folderItem.nextElementSibling;
+        if (!subList?.classList.contains('subfolder-list')) return;
 
-    const isExpanded = folderItem.classList.contains('expanded');
-    
-    
-    folderItem.classList.toggle('expanded', !isExpanded);
-    
-    
-    toggle.textContent = isExpanded ? '▶' : '▼';
-    
-    
-    if (isExpanded) {
-        subList.style.display = 'none'; 
-    } else {
-        subList.style.display = 'block'; 
+        const isExpanded = folderItem.classList.contains('expanded');
+        folderItem.classList.toggle('expanded', !isExpanded);
+        toggle.textContent = isExpanded ? '▶' : '▼';
+        subList.style.display = isExpanded ? 'none' : 'block';
+
+        _deps.resetInactivityTimer();
     }
 
-    _deps.resetInactivityTimer();
-}
+    function setActiveFolder(folderUid) {
+        const { renderBookmarks, resetInactivityTimer,
+                setCurrentFolderId, resetPagination } = _deps;
 
-    // Active folder
+        setCurrentFolderId(folderUid);
+        resetPagination();
 
-    function setActiveFolder(folderId) {
-    const { getMessage, findFolderById, getBookmarksForFolder,
-            renderBookmarks, resetInactivityTimer,
-            setCurrentFolderId, resetPagination, escapeHtml } = _deps; 
+        if (_activeFolderEl) _activeFolderEl.classList.remove('active');
 
-    setCurrentFolderId(folderId);
-    resetPagination();
+        const active = folderUid === 'all' || !folderUid
+            ? document.querySelector('.all-bookmarks')
+            : (document.querySelector(`.folder-item[data-folder-uid="${folderUid}"]`) ||
+               document.querySelector('.all-bookmarks'));
 
-    if (_activeFolderEl) _activeFolderEl.classList.remove('active');
-    const active = document.querySelector(`.folder-item[data-folder-id="${folderId}"]`) ||
-                   document.querySelector('.all-bookmarks');
-    if (active) active.classList.add('active');
-    _activeFolderEl = active || null;
+        if (active) active.classList.add('active');
+        _activeFolderEl = active || null;
 
-    
-    updateBreadcrumbs(folderId);
+        updateBreadcrumbs(folderUid);
+        renderBookmarks();
+        resetInactivityTimer();
+    }
 
-    renderBookmarks();
-    resetInactivityTimer();
-}
-
-    // Folder CRUD
-
-    async function createNewFolder(parentFolderId = '') {
+    async function createNewFolder(parentFolderUid = '') {
         const { getMessage, showNotification, getData, saveChanges,
-                clearBookmarksCache, resetInactivityTimer } = _deps;
+                clearBookmarksCache, resetInactivityTimer, getItemByUid } = _deps;
 
         const folderName = await _deps.showPrompt({
             title:        getMessage('newFolder'),
@@ -265,17 +228,14 @@ if (hasSubfolders) {
         if (!folderName?.trim()) return;
 
         const newFolder = {
-            type: 'folder',
-            name: folderName.trim(),
-            children: [],
-            dateAdded: Date.now(),
-            uid: _generateUid()
+            type: 'folder', name: folderName.trim(),
+            children: [], dateAdded: Date.now(), uid: _generateUid()
         };
 
-        if (parentFolderId === '') {
+        if (!parentFolderUid || parentFolderUid === 'all') {
             getData().folders.push(newFolder);
         } else {
-            const parent = _deps.findFolderById(getData().folders, parentFolderId);
+            const parent = getItemByUid(getData(), parentFolderUid);
             if (parent) {
                 if (!parent.children) parent.children = [];
                 parent.children.push(newFolder);
@@ -287,22 +247,21 @@ if (hasSubfolders) {
         await saveChanges();
         clearBookmarksCache();
         renderFolderTree();
-        _deps.renderBookmarks();
+        await _deps.renderBookmarksPreservingScroll();
         showNotification(getMessage('folderCreated'));
         resetInactivityTimer();
     }
 
-    async function renameFolder(folderId) {
+    async function renameFolder(folderUid) {
         const { getMessage, showNotification, getData, saveChanges,
                 clearBookmarksCache, resetInactivityTimer,
-                getCurrentFolderId, findFolderById } = _deps;
+                getCurrentFolderId, getItemByUid } = _deps;
 
-        if (folderId === 'all') {
-            showNotification(getMessage('cannotRenameAll'), true);
-            return;
+        if (!folderUid || folderUid === 'all') {
+            showNotification(getMessage('cannotRenameAll'), true); return;
         }
 
-        const folder = findFolderById(getData().folders, folderId);
+        const folder = getItemByUid(getData(), folderUid);
         if (!folder) return;
 
         const newName = await _deps.showPrompt({
@@ -316,243 +275,176 @@ if (hasSubfolders) {
         await saveChanges();
         clearBookmarksCache();
         renderFolderTree();
-        _deps.renderBookmarks();
+        await _deps.renderBookmarksPreservingScroll();
 
-        if (getCurrentFolderId() === folderId) {
-            updateBreadcrumbs(folderId);
-        }
+        if (getCurrentFolderId() === folderUid) updateBreadcrumbs(folderUid);
 
         showNotification(getMessage('folderRenamed'));
         resetInactivityTimer();
     }
 
-    async function deleteFolder(folderId) {
-    const { getMessage, showNotification, getData, saveChanges, clearBookmarksCache,
-            resetInactivityTimer, countFoldersInFolder, removeItemByPath,
-            getFolderPathById, findFolderById, getCurrentFolderId } = _deps;
+    async function deleteFolder(folderUid) {
+        const { getMessage, showNotification, getData, saveChanges, clearBookmarksCache,
+                resetInactivityTimer, countFoldersInFolder,
+                getItemByUid, getParentArrayForItemUid, getCurrentFolderId } = _deps;
 
-    if (folderId === 'all') {
-        showNotification(getMessage('cannotDeleteAll'), true);
-        return;
-    }
-
-    const folder = findFolderById(getData().folders, folderId);
-    if (!folder) return;
-
-    const bookmarkCount = _deps.countBookmarksInFolder(folderId);
-    const folderCount   = countFoldersInFolder(folder);
-
-    let message = (getMessage('deleteFolderConfirm'))
-        .replace('{0}', folder.name)
-        .replace('{name}', folder.name);
-
-    if (bookmarkCount > 0 || folderCount > 0) {
-        message += '\n\n' + (getMessage('deleteFolderWarning'));
-    }
-
-    const lines   = message.split('\n\n');
-    const confirmed = await _deps.showConfirm({
-        title:   lines[0] || message,
-        warning: lines[1] || '',
-    });
-    if (!confirmed) return;
-
-    const path = getFolderPathById(folderId);
-    if (!path) return;
-
-    removeItemByPath(getData(), path);
-    await saveChanges();
-    clearBookmarksCache();
-
-
-    try {
-        const saved = sessionStorage.getItem('expandedFolders');
-        if (saved) {
-            const expandedKeys = JSON.parse(saved);
-            const filtered = expandedKeys.filter(key => key !== folderId && !key.startsWith(folderId + ','));
-            sessionStorage.setItem('expandedFolders', JSON.stringify(filtered));
+        if (!folderUid || folderUid === 'all') {
+            showNotification(getMessage('cannotDeleteAll'), true); return;
         }
-    } catch (e) {  }
 
-    renderFolderTree();  
-if (getCurrentFolderId() === folderId || getCurrentFolderId().startsWith(folderId + ',')) {
-    setActiveFolder('all');
-} else {
-    _deps.renderBookmarks();
-}
+        const folder = getItemByUid(getData(), folderUid);
+        if (!folder) return;
 
-    showNotification(getMessage('folderDeleted'));
-    resetInactivityTimer();
-}
+        const bookmarkCount = _deps.countBookmarksInFolder(folderUid);
+        const folderCount   = countFoldersInFolder(folder);
+
+        let message = getMessage('deleteFolderConfirm')
+            .replace('{0}', folder.name).replace('{name}', folder.name);
+        if (bookmarkCount > 0 || folderCount > 0) {
+            message += '\n\n' + getMessage('deleteFolderWarning');
+        }
+
+        const lines = message.split('\n\n');
+        const confirmed = await _deps.showConfirm({ title: lines[0] || message, warning: lines[1] || '' });
+        if (!confirmed) return;
+
+        const parentArr = getParentArrayForItemUid(getData(), folderUid);
+        if (!parentArr) return;
+        const idx = parentArr.indexOf(folder);
+        if (idx !== -1) parentArr.splice(idx, 1);
+
+        await saveChanges();
+        clearBookmarksCache();
+
+        try {
+            const saved = sessionStorage.getItem('expandedFolders');
+            if (saved) {
+                const keys     = JSON.parse(saved);
+                const filtered = keys.filter(k => k !== folderUid);
+                sessionStorage.setItem('expandedFolders', JSON.stringify(filtered));
+            }
+        } catch (e) {}
+
+        renderFolderTree();
+
+        const currentId = getCurrentFolderId();
+        if (currentId === folderUid) setActiveFolder('all');
+        else await _deps.renderBookmarksPreservingScroll();
+
+        showNotification(getMessage('folderDeleted'));
+        resetInactivityTimer();
+    }
 
     function initNewFolderButton() {
-    document.getElementById('new-folder-btn')?.addEventListener('click', () => {
-        const currentId = _deps.getCurrentFolderId ? _deps.getCurrentFolderId() : '';
-        createNewFolder(currentId === 'all' ? '' : currentId);
-    });
-}
-
-function updateBreadcrumbs(folderId) {
-  const { getData, findFolderById, getMessage, countBookmarksInFolder, escapeHtml, setActiveFolder } = _deps;
-  const breadcrumbsContainer = document.getElementById('breadcrumbs');
-  if (!breadcrumbsContainer) return;
-
-  let breadcrumbs = [];
-  
-  if (folderId === 'all') {
-    breadcrumbs = [{
-      id: 'all',
-      name: getMessage('allBookmarks')
-    }];
-  } else {
-    const path = folderId.split(',').map(Number);
-    let currentPath = [];
-    let currentItems = getData().folders;
-    
-   
-    breadcrumbs.push({
-      id: 'all',
-      name: getMessage('allBookmarks')
-    });
-    
- 
-    for (let i = 0; i < path.length; i++) {
-      const index = path[i];
-      const folder = currentItems[index];
-      if (folder && folder.type === 'folder') {
-        const folderPath = [...currentPath, index];
-        breadcrumbs.push({
-          id: folderPath.join(','),
-          name: folder.name
+        document.getElementById('new-folder-btn')?.addEventListener('click', () => {
+            const currentId = _deps.getCurrentFolderId ? _deps.getCurrentFolderId() : '';
+            createNewFolder(currentId === 'all' ? '' : currentId);
         });
-        currentPath = folderPath;
-        currentItems = folder.children || [];
-      } else {
-        break;
-      }
     }
-  }
 
- 
-  let html = '';
-  for (let i = 0; i < breadcrumbs.length; i++) {
-    const crumb = breadcrumbs[i];
-    const isLast = i === breadcrumbs.length - 1;
-    
-    html += `<span class="breadcrumb-item ${isLast ? 'active' : ''}" 
-                  data-folder-id="${crumb.id}"
-                  ${isLast ? 'aria-current="page"' : ''}>`;
-    
- 
-    if (i === 0) {
-      html += `<svg class="breadcrumb-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>`;
-    }
-    
-    html += `${escapeHtml(crumb.name)}</span>`;
-    
-    if (!isLast) {
-      html += `<span class="breadcrumb-separator">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="5 3 10 7 5 11" />
-        </svg>
-      </span>`;
-    }
-  }
-  
-  breadcrumbsContainer.innerHTML = html;
+    function updateBreadcrumbs(folderUid) {
+        const { getData, getItemByUid, getMessage, countBookmarksInFolder,
+                escapeHtml, setActiveFolder: setActiveFolderDep } = _deps;
+        const breadcrumbsContainer = document.getElementById('breadcrumbs');
+        if (!breadcrumbsContainer) return;
 
-  
-  breadcrumbsContainer.querySelectorAll('.breadcrumb-item:not(.active)').forEach(item => {
-    item.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const id = item.dataset.folderId;
-      if (id) {
-        setActiveFolder(id); 
-      }
-    });
-  });
+        let breadcrumbs = [{ uid: 'all', name: getMessage('allBookmarks') }];
 
-
-  const count = countBookmarksInFolder(folderId);
-  const countElement = document.getElementById('bookmarks-count');
-  if (countElement) {
-    countElement.innerHTML = `
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-      </svg>
-      <span class="count-number">${count}</span> 
-      <span>${count === 1 
-        ? (getMessage('bookmark')) 
-        : (getMessage('bookmarks'))}</span>
-    `;
-  }
-}
-
-
-function saveFoldersState() {
-    const expandedFolders = new Set();
-    
-    document.querySelectorAll('.folder-item.expanded').forEach(folder => {
-        
-        const key = folder.dataset.folderUid || folder.dataset.folderId;
-        if (key) expandedFolders.add(key);
-    });
-    
-    sessionStorage.setItem('expandedFolders', JSON.stringify(Array.from(expandedFolders)));
-    return expandedFolders;
-}
-
-
-function restoreFoldersState() {
-    try {
-        const saved = sessionStorage.getItem('expandedFolders');
-        if (!saved) return;
-        
-        const expandedKeys = new Set(JSON.parse(saved));
-        
-        expandedKeys.forEach(key => {
-            
-            const folder =
-                document.querySelector(`.folder-item[data-folder-uid="${key}"]`) ||
-                document.querySelector(`.folder-item[data-folder-id="${key}"]`);
-
-            if (folder && !folder.classList.contains('expanded')) {
-                folder.classList.add('expanded');
-                const toggle = folder.querySelector('.folder-toggle');
-                if (toggle) toggle.textContent = '▼';
-                
-                const subList = folder.nextElementSibling;
-                if (subList?.classList.contains('subfolder-list')) {
-                    subList.style.display = 'block';
+        if (folderUid && folderUid !== 'all') {
+            const folder = getItemByUid(getData(), folderUid);
+            if (folder) {
+                function buildPath(items, targetUid, path) {
+                    for (const item of items) {
+                        if (item.type !== 'folder') continue;
+                        const newPath = [...path, { uid: item.uid, name: item.name }];
+                        if (item.uid === targetUid) return newPath;
+                        if (item.children) {
+                            const found = buildPath(item.children, targetUid, newPath);
+                            if (found) return found;
+                        }
+                    }
+                    return null;
                 }
+                const path = buildPath(getData().folders, folderUid, []);
+                if (path) breadcrumbs = [{ uid: 'all', name: getMessage('allBookmarks') }, ...path];
             }
-        });
-    } catch (e) {
-    }
-}
+        }
 
-    // Public API
+        let html = '';
+        for (let i = 0; i < breadcrumbs.length; i++) {
+            const crumb  = breadcrumbs[i];
+            const isLast = i === breadcrumbs.length - 1;
+            html += `<span class="breadcrumb-item ${isLast ? 'active' : ''}" data-folder-uid="${crumb.uid}" ${isLast ? 'aria-current="page"' : ''}>`;
+            if (i === 0) html += `<svg class="breadcrumb-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`;
+            html += `${escapeHtml(crumb.name)}</span>`;
+            if (!isLast) html += `<span class="breadcrumb-separator"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 3 10 7 5 11" /></svg></span>`;
+        }
+        breadcrumbsContainer.innerHTML = html;
+
+        breadcrumbsContainer.querySelectorAll('.breadcrumb-item:not(.active)').forEach(item => {
+            item.addEventListener('click', e => {
+                e.stopPropagation();
+                const uid = item.dataset.folderUid;
+                if (uid) setActiveFolder(uid);
+            });
+        });
+
+        const count        = countBookmarksInFolder(folderUid);
+        const countElement = document.getElementById('bookmarks-count');
+        if (countElement) {
+            countElement.innerHTML = `
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+                <span class="count-number">${count}</span>
+                <span>${count === 1 ? getMessage('bookmark') : getMessage('bookmarks')}</span>
+            `;
+        }
+    }
+
+    function saveFoldersState() {
+        const expandedFolders = new Set();
+        document.querySelectorAll('.folder-item.expanded').forEach(folder => {
+            const key = folder.dataset.folderUid;
+            if (key) expandedFolders.add(key);
+        });
+        sessionStorage.setItem('expandedFolders', JSON.stringify(Array.from(expandedFolders)));
+        return expandedFolders;
+    }
+
+    function restoreFoldersState() {
+        try {
+            const saved = sessionStorage.getItem('expandedFolders');
+            if (!saved) return;
+            const expandedKeys = new Set(JSON.parse(saved));
+            expandedKeys.forEach(key => {
+                const folder = document.querySelector(`.folder-item[data-folder-uid="${key}"]`);
+                if (folder && !folder.classList.contains('expanded')) {
+                    folder.classList.add('expanded');
+                    const toggle = folder.querySelector('.folder-toggle');
+                    if (toggle) toggle.textContent = '▼';
+                    const subList = folder.nextElementSibling;
+                    if (subList?.classList.contains('subfolder-list')) subList.style.display = 'block';
+                }
+            });
+        } catch (e) {}
+    }
 
     return {
         init(deps) {
             Object.assign(_deps, deps);
-            // Pick up .active element already set in HTML before first renderFolderTree
             _activeFolderEl = document.querySelector('.folder-item.active') || null;
         },
-
         renderFolderTree,
         setActiveFolder,
         createNewFolder,
         renameFolder,
         deleteFolder,
         initNewFolderButton,
-		updateBreadcrumbs,
-		saveFoldersState,
-		restoreFoldersState
+        updateBreadcrumbs,
+        saveFoldersState,
+        restoreFoldersState
     };
 
 })();

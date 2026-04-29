@@ -137,7 +137,7 @@ const LoginUI = (function () {
                                     <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                                 </svg>
                             </div>
-                            <div style="min-width:0;">
+                            <div style="min-width:0;" class="w-100">
                                 <p class="notice-title pending">${getMessage('pendingBookmarkNotification')}</p>
                                 <p class="notice-text">${getMessage('pendingBookmarkInstruction')}</p>
                                 ${bookmarkTitle ? `

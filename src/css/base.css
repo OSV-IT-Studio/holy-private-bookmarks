@@ -7,3 +7,5 @@ html.holy-light-theme body{--bg:#e5e7eb;--sidebar-bg:#ffffff;--surface-1:#ffffff
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 body{transition:background var(--dur-slow) var(--ease-in-out),color var(--dur-slow) var(--ease-in-out)}
+
+*{scrollbar-width:thin;scrollbar-color:var(--accent) var(--surface-2)}*::-webkit-scrollbar{width:6px;height:6px}*::-webkit-scrollbar-track{background:var(--surface-2);border-radius:10px}*::-webkit-scrollbar-thumb{background:var(--accent);border-radius:10px;transition:background .2s ease}*::-webkit-scrollbar-thumb:hover{background:var(--accent-bright)}.sidebar,.bookmarks-container,.folder-tree,.subfolder-list,.folder-virtual-scroll,#tree,.hpb-modal__body,.import-folders-list,.folder-tree-picker__dropdown{scroll-behavior:smooth}

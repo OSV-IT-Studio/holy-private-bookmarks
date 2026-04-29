@@ -80,10 +80,7 @@ a,button,input,select,
 
 
 .folder-virtual-scroll{max-height:400px;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;position:relative;padding-left:8px;scroll-behavior:smooth}
-.folder-virtual-scroll::-webkit-scrollbar{width:6px}
-.folder-virtual-scroll::-webkit-scrollbar-track{background:var(--card-bg);border-radius:3px}
-.folder-virtual-scroll::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
-.folder-virtual-scroll::-webkit-scrollbar-thumb:hover{background:var(--accent-hover)}
+
 .folder-loader span{color:var(--accent);font-size:13px;font-weight:500;letter-spacing:.5px}
 
 .empty-folder-message{padding:24px;text-align:center;color:var(--text-secondary);font-style:italic;background:var(--card-bg);border-radius:var(--radius-sm);margin:8px;border:1px dashed var(--card-border)}

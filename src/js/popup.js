@@ -38,7 +38,7 @@ const {
     STORAGE_KEY: SHARED_STORAGE_KEY,
     INACTIVITY_TIMEOUT: SHARED_INACTIVITY_TIMEOUT,
     VIRTUAL_SCROLL_CONFIG,
-buildFolderTreePicker,
+    buildFolderTreePicker,
     LRUMap,
     messageCache,
     faviconCache,
@@ -54,15 +54,17 @@ buildFolderTreePicker,
 
     getMessage,
 
-    normalizePath,
     getItemByPath,
-    getParentByPath,
-    removeItemByPath,
     generateFolderUid,
+    ensureFolderUids,
+    ensureItemUids,
+    getItemByUid,
+    getParentArrayByUid,
+    getAnyItemByUid,
+    getParentArrayForItemUid,
 
     countItemsInFolder,
 	countFoldersInFolder,
-    buildFolderOptions,
 
     isFaviconEnabled,
     setFaviconEnabled,
@@ -159,7 +161,8 @@ async function saveAndRefresh() {
 
 
 
-const ensureFolderUids = Shared.ensureFolderUids;
+
+
 
 function performFullCleanup() {
     if (data) wipeUserData(data);
@@ -338,14 +341,16 @@ function buildDeps() {
         showLoadingIndicator,
         hideLoadingIndicator,
         getCachedElement,
-        normalizePath,
         getItemByPath,
-        getParentByPath,
-        removeItemByPath,
         generateFolderUid,
+        ensureFolderUids,
+        ensureItemUids,
+        getItemByUid,
+        getParentArrayByUid,
+        getAnyItemByUid,
+        getParentArrayForItemUid,
         countItemsInFolder,
 		countFoldersInFolder,
-        buildFolderOptions,
         buildFolderTreePicker,
         isFaviconEnabled,
         getDomainFromUrl,
@@ -614,7 +619,7 @@ async function init() {
                     const storedData = stored[STORAGE_KEY];
                     const decrypted = await CryptoManager.decrypt(storedData.encrypted);
                     const loadedData = JSON.parse(decrypted);
-                    if (ensureFolderUids) ensureFolderUids(loadedData.folders);
+                    if (ensureItemUids) ensureItemUids(loadedData.folders);
                     setData(loadedData);
                     await saveChanges();
                     PopupUI.showSection('main');
@@ -782,7 +787,10 @@ async function init() {
                 const rollbackLength = data.folders.length;
 
                 data.folders.push(...result.folders);
-
+				
+				if (typeof ensureItemUids === 'function') {
+					ensureItemUids(data.folders);
+				}
                 try {
                     await saveAndRefresh();
                 } catch (saveError) {

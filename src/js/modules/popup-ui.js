@@ -360,8 +360,6 @@ const PopupUI = (function () {
         setTimeout(() => document.getElementById('new-pass')?.focus(), 120);
     }
 
-    //Login screen — delegates to shared LoginUI module
-
     function loadLoginContent(showPendingNotification = false, bookmarkTitle = '', bookmarkUrl = '') {
         const { getMessage, escapeHtml, STORAGE_KEY, loadFaviconAsync, isFaviconEnabled } = _deps;
         window.LoginUI.renderLoginForm({

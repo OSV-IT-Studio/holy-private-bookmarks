@@ -151,6 +151,7 @@ if (breadcrumbs) {
         const { STORAGE_KEY, CryptoManager, secureWipeArray, getMessage,
                 showNotification, hideLoadingIndicator,
                 setData, resetInactivityTimer: reset,
+                ensureItemUids, ensureFolderUids,
                 onUnlockSuccess } = _deps;
 
         const el  = document.getElementById('password');
@@ -189,8 +190,11 @@ if (breadcrumbs) {
             const initSuccess = await CryptoManager.initAfterVerification(password, storedData);
             if (!initSuccess) throw new Error('Failed to initialize crypto');
 
-            const decrypted = await CryptoManager.decrypt(storedData.encrypted);
-            setData(JSON.parse(decrypted));
+            const decrypted  = await CryptoManager.decrypt(storedData.encrypted);
+            const loadedData = JSON.parse(decrypted);
+            const _ensure    = ensureItemUids || ensureFolderUids;
+            if (_ensure) _ensure(loadedData.folders);
+            setData(loadedData);
             _isLocked = false;
 
             

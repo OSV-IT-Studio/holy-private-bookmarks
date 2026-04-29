@@ -41,14 +41,13 @@ const {
 
     getMessage,
 
-    normalizePath,
     getItemByPath,
-    getParentByPath,
-    removeItemByPath,
-    findItemPath,
-    findFolderById,
-    getFolderPathById,
     generateFolderUid,
+    ensureFolderUids,
+    ensureItemUids,
+    getItemByUid,
+    getAnyItemByUid,
+    getParentArrayForItemUid,
 
     countItemsInFolder,
     countFoldersInFolder,
@@ -57,7 +56,6 @@ const {
     getDomainFromUrl,
     loadFaviconAsync,
 buildFolderTreePicker,
-    buildFolderOptions,
     saveEncrypted,
     showNotification,
     showConfirm,
@@ -90,7 +88,6 @@ const getSearchQuery     = ()    => _searchQuery;
 
 // Persistence
 
-const ensureFolderUids = Shared.ensureFolderUids;
 
 async function saveChanges() {
     const stored = await chrome.storage.local.get(STORAGE_KEY);
@@ -101,7 +98,7 @@ async function saveChanges() {
 async function saveAndRefresh() {
     await saveChanges();
     ManagerFolders.renderFolderTree();
-    ManagerBookmarks.renderBookmarks();
+    await ManagerBookmarks.renderBookmarksPreservingScroll();
 }
 
 // Full cleanup
@@ -132,22 +129,17 @@ function updateToggleIcon(theme) {
 
 function buildDeps() {
     return {
-        // Constants
         STORAGE_KEY,
         INACTIVITY_TIMEOUT,
         BOOKMARKS_PER_PAGE,
-buildFolderOptions,
-        // Crypto
         CryptoManager,
 
-        // State
         getData,
         setData,
         getCurrentFolderId,
         setCurrentFolderId,
         getSearchQuery,
-buildFolderTreePicker,
-        // Shared utils
+
         secureWipeArray,
         getMessage,
         escapeHtml,
@@ -156,18 +148,25 @@ buildFolderTreePicker,
         showPrompt,
         showLoadingIndicator,
         hideLoadingIndicator,
-        normalizePath,
+        showGlobalLoadingIndicator,
+        hideGlobalLoadingIndicator,
+        openModal,
+        closeModal,
+        closeModalWithAnimation,
+
         getItemByPath,
-        getParentByPath,
-        removeItemByPath,
-        findItemPath,
-        findFolderById,
-        getFolderPathById,
         generateFolderUid,
+        ensureFolderUids,
+        ensureItemUids,
+        getItemByUid,
+        getAnyItemByUid,
+        getParentArrayForItemUid,
+
         countItemsInFolder,
         countFoldersInFolder,
         countAllBookmarks,
-        buildFolderOptions,
+
+        buildFolderTreePicker,
         openInPrivateTab,
         isAlwaysIncognito,
         getDomainFromUrl,
@@ -175,34 +174,26 @@ buildFolderTreePicker,
         wipeUserData,
         clearAllSharedCaches,
 
-        // Persistence
         saveChanges,
         saveAndRefresh,
-		showGlobalLoadingIndicator,
-        hideGlobalLoadingIndicator,
-		escapeHtml,
-        openModal,
-        closeModal,
-        closeModalWithAnimation,
-        // Cross-module
-		
-        renderFolderTree:      ()      => ManagerFolders.renderFolderTree(),
-        renderBookmarks:       ()      => ManagerBookmarks.renderBookmarks(),
-        editBookmark:          (bm)    => ManagerBookmarks.editBookmark(bm),
-        deleteBookmark:        (bm)    => ManagerBookmarks.deleteBookmark(bm),
-        clearManagerCaches:    ()      => ManagerBookmarks.clearManagerCaches(),
-        clearBookmarksCache:   ()      => ManagerBookmarks.clearBookmarksCache(),
-        countBookmarksInFolder: (id)   => ManagerBookmarks.countBookmarksInFolder(id),
-        getBookmarksForFolder:  (id)   => ManagerBookmarks.getBookmarksForFolder(id),
-        resetPagination:       ()      => ManagerBookmarks.resetPagination(),
-        resetVirtualScroll:    ()      => ManagerBookmarks.resetPagination(),
-        resetInactivityTimer:  ()      => ManagerLock.resetInactivityTimer(),
-		setActiveFolder:        (id)   => ManagerFolders.setActiveFolder(id),
-        onUnlockSuccess:       ()      => {
-            
-            ensureFolderUids(data.folders);
-            saveChanges();
 
+        renderFolderTree:               ()     => ManagerFolders.renderFolderTree(),
+        renderBookmarks:                ()     => ManagerBookmarks.renderBookmarks(),
+        renderBookmarksPreservingScroll: ()     => ManagerBookmarks.renderBookmarksPreservingScroll(),
+        editBookmark:                   (bm)   => ManagerBookmarks.editBookmark(bm),
+        deleteBookmark:                 (bm)   => ManagerBookmarks.deleteBookmark(bm),
+        clearManagerCaches:             ()     => ManagerBookmarks.clearManagerCaches(),
+        clearBookmarksCache:            ()     => ManagerBookmarks.clearBookmarksCache(),
+        countBookmarksInFolder:         (uid)  => ManagerBookmarks.countBookmarksInFolder(uid),
+        getBookmarksForFolder:          (uid)  => ManagerBookmarks.getBookmarksForFolder(uid),
+        resetPagination:                ()     => ManagerBookmarks.resetPagination(),
+        resetVirtualScroll:             ()     => ManagerBookmarks.resetPagination(),
+        resetInactivityTimer:           ()     => ManagerLock.resetInactivityTimer(),
+        setActiveFolder:                (uid)  => ManagerFolders.setActiveFolder(uid),
+
+        onUnlockSuccess: () => {
+            ensureItemUids(data.folders);
+            saveChanges();
             ManagerBookmarks.initVirtualScroll();
             ManagerFolders.renderFolderTree();
             ManagerBookmarks.renderBookmarks();
@@ -314,7 +305,8 @@ async function init() {
                 const storedData = stored[STORAGE_KEY];
                 const decrypted  = await CryptoManager.decrypt(storedData.encrypted);
                 const loadedData = JSON.parse(decrypted);
-                if (window.HolyShared?.ensureFolderUids) window.HolyShared.ensureFolderUids(loadedData.folders);
+                if (window.HolyShared?.ensureItemUids) window.HolyShared.ensureItemUids(loadedData.folders);
+                else if (window.HolyShared?.ensureFolderUids) window.HolyShared.ensureFolderUids(loadedData.folders);
                 setData(loadedData);
                 document.querySelector('.container').style.display = 'flex';
                 ManagerLock.resetInactivityTimer();
@@ -372,26 +364,6 @@ window.addEventListener('beforeunload', () => {
     chrome.runtime.sendMessage({ action: 'releaseManagerTab' });
 });
 window.addEventListener('pagehide',     performFullCleanup);
-
-window.addEventListener('focus', () => {
-    if (CryptoManager.isReady() && data) {
-        setTimeout(() => {
-            ManagerFolders.renderFolderTree();
-            ManagerBookmarks.renderBookmarks();
-        }, 100);
-    }
-    ManagerLock.resetInactivityTimer();
-});
-
-document.addEventListener('visibilitychange', () => {
-    if (!document.hidden && CryptoManager.isReady() && data) {
-        setTimeout(() => {
-            ManagerFolders.renderFolderTree();
-            ManagerBookmarks.renderBookmarks();
-        }, 100);
-    }
-    ManagerLock.resetInactivityTimer();
-});
 
 // Chrome message handlers
 

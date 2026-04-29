@@ -31,7 +31,7 @@
     const VIRTUAL_SCROLL_CONFIG = {
         initialLoadCount: 20,
         batchSize: 10,
-        loadMoreCount: 30,
+        loadMoreCount: 20,
         renderDelay: 5
     };
 
@@ -277,13 +277,6 @@
 
     // WORKING WITH PATHS
     
-    function normalizePath(path) {
-        if (!Array.isArray(path)) return [];
-        return path
-		.map(i => typeof i === 'string' ? parseInt(i, 10) : i)
-		.filter(i => Number.isInteger(i) && i >= 0);
-    }
-
     function getItemByPath(data, path) {
         if (!data || !data.folders) return null;
         if (!Array.isArray(path)) return null;
@@ -300,99 +293,6 @@
             }
         }
         return null;
-    }
-
-    function getParentByPath(data, path) {
-        if (!data || !data.folders) return data?.folders || [];
-        
-        if (!path || path.length === 0) {
-            return data.folders;
-        }
-        
-        let current = data.folders;
-        
-        for (const idx of path) {
-            if (current[idx] && current[idx].type === 'folder' && current[idx].children) {
-                current = current[idx].children;
-            } else {
-				return null;
-			}
-        }
-        
-        return current;
-    }
-
-    function removeItemByPath(data, path) {
-        if (!data || !data.folders || path.length === 0) return false;
-        
-        const parent = getParentByPath(data, path.slice(0, -1));
-        const indexToRemove = path[path.length - 1];
-        
-        if (parent && parent[indexToRemove]) {
-            
-            const item = parent[indexToRemove];
-            if (item.url) secureWipeString(item.url);
-            if (item.title) secureWipeString(item.title);
-            if (item.name) secureWipeString(item.name);
-            
-            parent.splice(indexToRemove, 1);
-            return true;
-        }
-        
-        return false;
-    }
-
-    function findItemPath(data, item, items = data?.folders || [], currentPath = []) {
-        if (!data || !items) return null;
-        
-        for (let i = 0; i < items.length; i++) {
-            const currentItem = items[i];
-            const path = [...currentPath, i];
-            
-            if (currentItem === item) {
-                return path;
-            }
-            
-            if (currentItem.type === 'folder' && currentItem.children) {
-                const found = findItemPath(data, item, currentItem.children, path);
-                if (found) return found;
-            }
-        }
-        return null;
-    }
-
-    function findFolderById(items, folderId, path = []) {
-        for (let i = 0; i < items.length; i++) {
-            const item = items[i];
-            
-            if (item.type === 'folder') {
-                const currentPath = [...path, i];
-                const currentId = currentPath.join(',');
-                
-                if (currentId === folderId) {
-                    return item;
-                }
-                
-                if (item.children && item.children.length > 0) {
-                    const found = findFolderById(item.children, folderId, currentPath);
-                    if (found) return found;
-                }
-            }
-        }
-        return null;
-    }
-
-    function getFolderPathById(folderId) {
-        const parts = folderId.split(',').map(Number);
-        return parts;
-    }
-
-    function isAncestor(ancestor, descendant) {
-        if (descendant.length <= ancestor.length) return false;
-        for (let i = 0; i < ancestor.length; i++) {
-            if (ancestor[i] !== descendant[i]) return false;
-        }
-        return true;
     }
 
     function arraysEqual(a, b) {
@@ -446,7 +346,6 @@
 
         const ref = { n: 0 };
 
-        // Chrome bookmark nodes (have .url directly on children)
         if (folder.children && Array.isArray(folder.children) && folder.type !== 'folder') {
             _countChromeBookmarks(folder.children, ref);
             return ref.n;
@@ -557,7 +456,6 @@
         return promise;
     }
 
-    // Internal: actually fires the network request (no concurrency limit)
     function _loadFaviconNow(url, iconElement, force = false) {
         if (!force && !isFaviconEnabled()) return Promise.resolve();
         if (!iconElement) return Promise.resolve();
@@ -594,13 +492,11 @@
         });
     }
 
-    // Public: enqueues favicon load, respects FAVICON_CONCURRENCY limit
     function loadFaviconAsync(url, iconElement, force = false) {
         if (!force && !isFaviconEnabled()) return;
         if (!iconElement) return;
         if (faviconCache.has(url) && faviconCache.get(url) === null) return;
 
-        // Cache hit — apply immediately, no queue needed
         if (faviconCache.has(url)) {
             const cached = faviconCache.get(url);
             iconElement.style.setProperty('--favicon-url', 'url("' + cached + '")');
@@ -614,23 +510,6 @@
 
     // UI COMPONENTS 
     
-    function buildFolderOptions(items, select, prefix = '', depth = 0) {
-        for (let i = 0; i < items.length; i++) {
-            const item = items[i];
-            if (!item || item.type !== 'folder') continue;
-            
-            const option = document.createElement('option');
-            option.value = prefix ? `${prefix}/${i}` : i.toString();
-            option.textContent = '— '.repeat(depth) + item.name;
-            select.appendChild(option);
-            
-            if (Array.isArray(item.children) && item.children.length > 0) {
-                const newPrefix = prefix ? `${prefix}/${i}` : i.toString();
-                buildFolderOptions(item.children, select, newPrefix, depth + 1);
-            }
-        }
-    }
-
     // ENCRYPTION 
     
 
@@ -902,18 +781,19 @@ function openInPrivateTab(url, showNotificationFn = showNotification, getMessage
         for (const node of chromeNodes) {
             if (node.url) {
                 result.push({
-                    type: 'bookmark',
-                    title: node.title || 'Untitled',
-                    url: node.url,
-                    dateAdded: Date.now()
+                    type:      'bookmark',
+                    title:     node.title || 'Untitled',
+                    url:       node.url,
+                    dateAdded: Date.now(),
+                    uid:       generateFolderUid()
                 });
             } else if (node.children && node.children.length > 0) {
                 const folder = {
-                    type: 'folder',
-                    name: node.title || 'Unnamed Folder',
-                    children: convertChromeBookmarks(node.children),
+                    type:      'folder',
+                    name:      node.title || 'Unnamed Folder',
+                    children:  convertChromeBookmarks(node.children),
                     dateAdded: Date.now(),
-                    uid: generateFolderUid()
+                    uid:       generateFolderUid()
                 };
                 
                 if (folder.children.length > 0) {
@@ -1106,6 +986,81 @@ function hideGlobalLoadingIndicator(container = null) {
         }
     }
 
+    function getItemByUid(data, uid) {
+        if (!uid || !data?.folders) return null;
+        function search(items) {
+            for (const item of items) {
+                if (item.type === 'folder') {
+                    if (item.uid === uid) return item;
+                    if (item.children) {
+                        const found = search(item.children);
+                        if (found) return found;
+                    }
+                }
+            }
+            return null;
+        }
+        return search(data.folders);
+    }
+
+    function getParentArrayByUid(data, uid) {
+        if (!uid || !data?.folders) return null;
+        function search(items) {
+            for (const item of items) {
+                if (item.type === 'folder' && item.children) {
+                    for (const child of item.children) {
+                        if (child.type === 'folder' && child.uid === uid) return item.children;
+                    }
+                    const found = search(item.children);
+                    if (found) return found;
+                }
+            }
+            return null;
+        }
+        for (const item of data.folders) {
+            if (item.type === 'folder' && item.uid === uid) return data.folders;
+        }
+        return search(data.folders);
+    }
+
+    function getAnyItemByUid(data, uid) {
+        if (!uid || !data?.folders) return null;
+        function search(items) {
+            for (const item of items) {
+                if (item.uid === uid) return item;
+                if (item.type === 'folder' && item.children) {
+                    const found = search(item.children);
+                    if (found) return found;
+                }
+            }
+            return null;
+        }
+        return search(data.folders);
+    }
+
+    function getParentArrayForItemUid(data, uid) {
+        if (!uid || !data?.folders) return null;
+        function search(items) {
+            for (const item of items) {
+                if (item.uid === uid) return items;
+                if (item.type === 'folder' && item.children) {
+                    const found = search(item.children);
+                    if (found) return found;
+                }
+            }
+            return null;
+        }
+        return search(data.folders);
+    }
+
+    function ensureItemUids(items) {
+        if (!Array.isArray(items)) return;
+        for (const item of items) {
+            if (!item.uid) item.uid = generateFolderUid();
+            if (item.type === 'folder' && item.children) ensureItemUids(item.children);
+        }
+    }
+
 
 // Shared Drag-Drop Utils
 
@@ -1205,40 +1160,53 @@ function dragHandleEscape(isDraggingFn, cancelFn) {
 }
 
 function buildFolderTreePicker(container, folders, initialValue, onChange) {
-        
 
-        let currentValue = initialValue || '';
-
-        function getLabelForValue(val, items, prefix) {
-            for (let i = 0; i < items.length; i++) {
-                const item = items[i];
+        function getLabelForUid(uid, items) {
+            for (const item of items) {
                 if (!item || item.type !== 'folder') continue;
-                const p = prefix !== '' ? prefix + '/' + i : String(i);
-                if (p === val) return item.name;
+                if (item.uid === uid) return item.name;
                 if (Array.isArray(item.children)) {
-                    const found = getLabelForValue(val, item.children, p);
+                    const found = getLabelForUid(uid, item.children);
                     if (found) return found;
                 }
             }
             return null;
         }
 
-        function getInitialLabel() {
-            if (!currentValue) return getRootLabel();
-            return getLabelForValue(currentValue, folders, '') || getRootLabel();
+        function resolveInitialUid(val) {
+            if (!val) return '';
+            if (typeof val === 'string' && val.startsWith('f_')) return val;
+            const parts = val.split('/').map(Number);
+            let cur = folders;
+            for (let i = 0; i < parts.length; i++) {
+                const item = cur[parts[i]];
+                if (!item || item.type !== 'folder') return '';
+                if (i === parts.length - 1) return item.uid || '';
+                cur = item.children || [];
+            }
+            return '';
         }
 
+        let currentValue = resolveInitialUid(initialValue);
+
         function getRootLabel() {
-            
             const existing = container.querySelector('option[value=""]');
             if (existing) return existing.textContent;
             return 'Root folder';
         }
 
+        function getInitialLabel() {
+            if (!currentValue) return getRootLabel();
+            return getLabelForUid(currentValue, folders) || getRootLabel();
+        }
+
+        const FOLDER_SVG = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-2px;flex-shrink:0"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>';
+        const ROOT_SVG   = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-2px;flex-shrink:0"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>';
+
         container.innerHTML = `
             <div class="folder-tree-picker__trigger" tabindex="0">
-                <span class="folder-tree-picker__trigger-text"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-2px;flex-shrink:0"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>${getInitialLabel()}</span>
-                <span class="folder-tree-picker__arrow">▼</span>
+                <span class="folder-tree-picker__trigger-text">${currentValue ? FOLDER_SVG : ROOT_SVG}${getInitialLabel()}</span>
+                <span class="folder-tree-picker__arrow">\▶</span>
             </div>
             <div class="folder-tree-picker__dropdown" style="display:none"></div>
         `;
@@ -1246,27 +1214,31 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
         const trigger  = container.querySelector('.folder-tree-picker__trigger');
         const dropdown = container.querySelector('.folder-tree-picker__dropdown');
 
-        function buildNodes(items, parent, prefix) {
-            for (let i = 0; i < items.length; i++) {
-                const item = items[i];
+        function setTriggerLabel(uid, name) {
+            trigger.querySelector('.folder-tree-picker__trigger-text').innerHTML =
+                (uid ? FOLDER_SVG : ROOT_SVG) + (name || getRootLabel());
+        }
+
+        function buildNodes(items, parent, depth) {
+            for (const item of items) {
                 if (!item || item.type !== 'folder') continue;
-                const path = prefix !== '' ? prefix + '/' + i : String(i);
-                const hasChildren = Array.isArray(item.children) && item.children.filter(c => c && c.type === 'folder').length > 0;
+                const uid = item.uid || '';
+                const hasChildren = Array.isArray(item.children) &&
+                    item.children.some(c => c && c.type === 'folder');
 
                 const node = document.createElement('div');
-                node.style.paddingLeft = (prefix.split('/').filter(Boolean).length * 16 + 8) + 'px';
-                node.className = 'folder-tree-picker__node' + (path === currentValue ? ' selected' : '');
-                node.dataset.path = path;
-
-                const toggleClass = hasChildren ? 'folder-tree-picker__toggle' : 'folder-tree-picker__toggle leaf';
+                node.style.paddingLeft = (depth * 16 + 8) + 'px';
+                node.className = 'folder-tree-picker__node' + (uid === currentValue ? ' selected' : '');
+                node.dataset.uid = uid;
                 node.innerHTML = `
-                    <span class="${toggleClass}">▶</span>
+                    <span class="${hasChildren ? 'folder-tree-picker__toggle' : 'folder-tree-picker__toggle leaf'}">\▶</span>
                     <span class="folder-tree-picker__icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></span>
                     <span class="folder-tree-picker__label">${item.name}</span>
                 `;
 
                 const childrenWrap = document.createElement('div');
                 childrenWrap.className = 'folder-tree-picker__children';
+                childrenWrap.dataset.parentUid = uid;
 
                 if (hasChildren) {
                     const toggleEl = node.querySelector('.folder-tree-picker__toggle');
@@ -1276,17 +1248,17 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
                         childrenWrap.classList.toggle('open', !isOpen);
                         toggleEl.classList.toggle('expanded', !isOpen);
                     });
-                    buildNodes(item.children, childrenWrap, path);
+                    buildNodes(item.children, childrenWrap, depth + 1);
                 }
 
                 node.addEventListener('click', () => {
                     dropdown.querySelectorAll('.folder-tree-picker__node.selected')
                         .forEach(n => n.classList.remove('selected'));
                     node.classList.add('selected');
-                    currentValue = path;
-                    trigger.querySelector('.folder-tree-picker__trigger-text').innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-2px;flex-shrink:0"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>' + item.name;
+                    currentValue = uid;
+                    setTriggerLabel(uid, item.name);
                     closeDropdown();
-                    if (onChange) onChange(currentValue, item.name);
+                    if (onChange) onChange(uid, item.name);
                 });
 
                 parent.appendChild(node);
@@ -1294,14 +1266,12 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             }
         }
 
-        // Root folder option
         const rootNode = document.createElement('div');
         rootNode.className = 'folder-tree-picker__node' + (currentValue === '' ? ' selected' : '');
-        rootNode.dataset.path = '';
+        rootNode.dataset.uid = '';
         rootNode.style.paddingLeft = '8px';
-        const rootLabel = getInitialLabel() === getRootLabel() ? getRootLabel() : getRootLabel();
         rootNode.innerHTML = `
-            <span class="folder-tree-picker__toggle leaf">▶</span>
+            <span class="folder-tree-picker__toggle leaf">\u25ba</span>
             <span class="folder-tree-picker__icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
             <span class="folder-tree-picker__label">${getRootLabel()}</span>
         `;
@@ -1310,42 +1280,34 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
                 .forEach(n => n.classList.remove('selected'));
             rootNode.classList.add('selected');
             currentValue = '';
-            trigger.querySelector('.folder-tree-picker__trigger-text').innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-2px;flex-shrink:0"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>' + getRootLabel();
+            setTriggerLabel('', '');
             closeDropdown();
             if (onChange) onChange('', getRootLabel());
         });
         dropdown.appendChild(rootNode);
+        buildNodes(folders, dropdown, 0);
 
-        buildNodes(folders, dropdown, '');
-
-        // Expand path to selected node
         if (currentValue) {
-            const parts = currentValue.split('/');
-            for (let len = 1; len < parts.length; len++) {
-                const parentPath = parts.slice(0, len).join('/');
-                const parentNode = dropdown.querySelector(`[data-path="${parentPath}"]`);
-                if (parentNode) {
-                    const childrenWrap = parentNode.nextElementSibling;
-                    if (childrenWrap && childrenWrap.classList.contains('folder-tree-picker__children')) {
-                        childrenWrap.classList.add('open');
-                        parentNode.querySelector('.folder-tree-picker__toggle')?.classList.add('expanded');
+            const sel = dropdown.querySelector(`[data-uid="${currentValue}"]`);
+            if (sel) {
+                let node = sel.parentElement;
+                while (node && node !== dropdown) {
+                    if (node.classList.contains('folder-tree-picker__children')) {
+                        node.classList.add('open');
+                        node.previousElementSibling
+                            ?.querySelector('.folder-tree-picker__toggle')
+                            ?.classList.add('expanded');
                     }
+                    node = node.parentElement;
                 }
             }
         }
 
-        function openDropdown() {
-            dropdown.style.display = 'block';
-            trigger.classList.add('open');
-        }
-        function closeDropdown() {
-            dropdown.style.display = 'none';
-            trigger.classList.remove('open');
-        }
+        function openDropdown()  { dropdown.style.display = 'block'; trigger.classList.add('open'); }
+        function closeDropdown() { dropdown.style.display = 'none';  trigger.classList.remove('open'); }
 
-        trigger.addEventListener('click', () => {
-            dropdown.style.display === 'none' ? openDropdown() : closeDropdown();
-        });
+        trigger.addEventListener('click', () =>
+            dropdown.style.display === 'none' ? openDropdown() : closeDropdown());
         trigger.addEventListener('keydown', e => {
             if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dropdown.style.display === 'none' ? openDropdown() : closeDropdown(); }
             if (e.key === 'Escape') closeDropdown();
@@ -1354,18 +1316,13 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             if (!container.contains(e.target)) closeDropdown();
         }, { capture: true });
 
-       
         container._getPickerValue = () => currentValue;
-        container._setPickerValue = (val) => {
-            currentValue = val;
-            if (val === '') {
-                trigger.querySelector('.folder-tree-picker__trigger-text').innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-2px;flex-shrink:0"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>' + getRootLabel();
-            } else {
-                const label = getLabelForValue(val, folders, '');
-                if (label) trigger.querySelector('.folder-tree-picker__trigger-text').innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-2px;flex-shrink:0"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>' + label;
-            }
+        container._setPickerValue = (uid) => {
+            currentValue = uid || '';
+            const label = uid ? getLabelForUid(uid, folders) : null;
+            setTriggerLabel(uid, label);
             dropdown.querySelectorAll('.folder-tree-picker__node.selected').forEach(n => n.classList.remove('selected'));
-            const sel = dropdown.querySelector(`[data-path="${val}"]`);
+            const sel = dropdown.querySelector(`[data-uid="${currentValue}"]`);
             if (sel) sel.classList.add('selected');
         };
     }
@@ -1402,16 +1359,14 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             localizePage,
             
             
-            normalizePath,
             getItemByPath,
-            getParentByPath,
-            removeItemByPath,
-            findItemPath,
-            findFolderById,
-            getFolderPathById,
             generateFolderUid,
             ensureFolderUids,
-            isAncestor,
+            ensureItemUids,
+            getItemByUid,
+            getParentArrayByUid,
+            getAnyItemByUid,
+            getParentArrayForItemUid,
             arraysEqual,
             
             
@@ -1435,7 +1390,6 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             setBlurPageEnabled,
             
             
-            buildFolderOptions,
             buildFolderTreePicker,
             
             saveEncrypted,
@@ -1491,15 +1445,8 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             getMessage,
             localizePage,
             
-            normalizePath,
             getItemByPath,
-            getParentByPath,
-            removeItemByPath,
-            findItemPath,
-            findFolderById,
-            getFolderPathById,
             generateFolderUid,
-            isAncestor,
             arraysEqual,
             
             countItemsInFolder,
@@ -1520,15 +1467,14 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             isBlurPageEnabled,
             setBlurPageEnabled,
             
-            buildFolderOptions,
             buildFolderTreePicker,
             saveEncrypted,
             
             showNotification,
             showConfirm,
             showPrompt,
-        openModal,
-        closeModal,
+			openModal,
+			closeModal,
             escapeHtml,
             
             openInPrivateTab,

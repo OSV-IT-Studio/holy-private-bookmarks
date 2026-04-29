@@ -95,9 +95,8 @@ const PopupAuth = (function () {
             const decrypted = await SecureCrypto.decrypt(storedData.encrypted);
             const loadedData = JSON.parse(decrypted);
             
-            if (_get('all').ensureFolderUids) {
-                _get('all').ensureFolderUids(loadedData.folders);
-            }
+            const _ensure = _get('all').ensureItemUids || _get('all').ensureFolderUids;
+            if (_ensure) _ensure(loadedData.folders);
             _get('all').setData(loadedData);
             if (_get('all').saveChanges) await _get('all').saveChanges();
 
