@@ -1,860 +1,881 @@
 {
-  "Name": {
-    "message": "Holy Private Bookmarks — Գաղտնաբառով տեղային էջանիշեր"
-  },
-  "extensionName": {
-    "message": "Holy Private Bookmarks"
-  },
-  "extensionDescription": {
-    "message": "Անձնական էջանիշեր գլխավոր գաղտնաբառով և AES-256 գաղտնագրությամբ: Բոլոր տվյալները մնում են ձեր սարքում — առանց ամպի և հետևելու:"
-  },
-  "managerTitle": {
-    "message": "HPB - Էջանիշների կառավարիչ"
-  },
-  "createPassword": {
-    "message": "Ստեղծեք գլխավոր գաղտնաբառ էջանիշերի ամբողջական գաղտնագրման համար"
-  },
-  "newPassword": {
-    "message": "Նոր գաղտնաբառ (նվազագույնը 6 նիշ)"
-  },
-  "confirmPassword": {
-    "message": "Հաստատել գաղտնաբառը"
-  },
-  "createStorage": {
-    "message": "Ստեղծել պահոց"
-  },
-  "enterMasterPassword": {
-    "message": ""
-  },
-  "masterPassword": {
-    "message": "Գլխավոր գաղտնաբառ"
-  },
-  "unlock": {
-    "message": "Բացել"
-  },
-  "wrongPassword": {
-    "message": "Սխալ գաղտնաբառ"
-  },
-  "passwordsMismatch": {
-    "message": "Գաղտնաբառերը չեն համընկնում կամ շատ կարճ են"
-  },
-  "bookmarksProtected": {
-    "message": "Ձեր էջանիշերը ապահով պաշտպանված են"
-  },
-  "addCurrentPage": {
-    "message": "Ավելացնել ընթացիկ էջը"
-  },
-  "newFolder": {
-    "message": "Նոր թղթապանակ"
-  },
-  "clearHistory": {
-    "message": "Մաքրել պատմությունը"
-  },
-  "settings": {
-    "message": "Կարգավորումներ"
-  },
-  "settingsbtn": {
-    "message": "⚙️"
-  },
-  "changeMasterPassword": {
-    "message": "Փոխել գլխավոր գաղտնաբառը"
-  },
-  "currentPassword": {
-    "message": "Ընթացիկ գլխավոր գաղտնաբառ"
-  },
-  "newPassword2": {
-    "message": "Նոր գաղտնաբառ"
-  },
-  "confirmNewPassword": {
-    "message": "Հաստատել նոր գաղտնաբառը"
-  },
-  "changePassword": {
-    "message": "Փոխել գաղտնաբառը"
-  },
-  "exportImport": {
-    "message": "Արտահանում և ներմուծում"
-  },
-  "export": {
-    "message": "Ստեղծել պահուստ"
-  },
-  "openPrivate": {
-    "message": "Բացել գաղտնի ներդիրում"
-  },
-  "import": {
-    "message": "Ներմուծել"
-  },
-  "importFromChrome": {
-    "message": "Ներմուծել Chrome-ից"
-  },
-  "importChromeBookmarks": {
-    "message": "Ներմուծել Chrome-ի բոլոր էջանիշերը"
-  },
-  "importChromeBookmarksAdvanced": {
-    "message": "Ընտրել թղթապանակները ներմուծման համար"
-  },
-  "importChromeConfirm": {
-    "message": "Ներմուծել Chrome-ի բոլոր էջանիշերը: Գոյություն ունեցող էջանիշերը կպահպանվեն:"
-  },
-  "importChromeSuccess": {
-    "message": "Էջանիշերը հաջողությամբ ներմուծվեցին:"
-  },
-  "importChromeError": {
-    "message": "Չհաջողվեց ներմուծել էջանիշերը"
-  },
-  "selectFoldersToImport": {
-    "message": "Ընտրել թղթապանակները ներմուծման համար"
-  },
-  "selectAll": {
-    "message": "Ընտրել բոլորը"
-  },
-  "deselectAll": {
-    "message": "Ապաընտրել բոլորը"
-  },
-  "importSelected": {
-    "message": "Ներմուծել"
-  },
-  "back": {
-    "message": "← Հետ"
-  },
-  "addBookmark": {
-    "message": "Ավելացնել էջանիշ"
-  },
-  "editBookmark": {
-    "message": "Խմբագրել էջանիշը"
-  },
-  "page": {
-    "message": "Էջ"
-  },
-  "title": {
-    "message": "Վերնագիր"
-  },
-  "url": {
-    "message": "URL"
-  },
-  "folder": {
-    "message": "Թղթապանակ"
-  },
-  "rootFolder": {
-    "message": "Արմատային թղթապանակ"
-  },
-  "new": {
-    "message": "+ Նոր"
-  },
-  "cancel": {
-    "message": "Չեղարկել"
-  },
-  "save": {
-    "message": "Պահպանել"
-  },
-  "deleteConfirm": {
-    "message": "Ջնջել էջանիշը"
-  },
-  "folderName": {
-    "message": "Թղթապանակի անունը:"
-  },
-  "newName": {
-    "message": "Նոր անուն:"
-  },
-  "titleRequired": {
-    "message": "Վերնագիրը և URL-ն պարտադիր են"
-  },
-  "validUrl": {
-    "message": "URL-ը պետք է սկսվի http:// կամ https://-ով"
-  },
-  "passwordChanged": {
-    "message": "Գաղտնաբառը հաջողությամբ փոխվեց:"
-  },
-  "importSuccess": {
-    "message": "Պահուստային պատճենը հաջողությամբ ներմուծվեց: Խնդրում ենք վերաբացել popup-ը:"
-  },
-  "invalidFile": {
-    "message": "Անվավեր պահուստային ֆայլ"
-  },
-  "clearHistoryConfirm": {
-    "message": "Ջնջել ձեր դիտարկիչի պատմության ԲՈԼՈՐ գրառումները այն դոմենների համար, որոնք առկա են ձեր Holy Private Bookmarks-ում:"
-  },
-  "noBookmarks": {
-    "message": "Էջանիշեր չեն գտնվել — մաքրելու բան չկա:"
-  },
-  "noDomains": {
-    "message": "Էջանիշերում վավեր դոմեններ չեն գտնվել:"
-  },
-  "newBookmark": {
-    "message": "Նոր էջանիշ"
-  },
-  "paste": {
-    "message": "Տեղադրել"
-  },
-  "ctxnewFolder": {
-    "message": "Նոր թղթապանակ"
-  },
-  "emptyTreeTitle": {
-    "message": "Դեռ էջանիշեր չկան"
-  },
-  "emptyTreeSubtitle": {
-    "message": "Ավելացրեք ձեր առաջին էջանիշը կամ թղթապանակը սկսելու համար"
-  },
-  "historyCleared": {
-    "message": "Պատմությունը մաքրվեց:\nՀեռացվեց $count$ այցելություն(ներ) $domains$ դոմեն(ների)ց:",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "domains": {
-        "content": "$2"
-      }
+    "Name": {
+        "message": "Holy Private Bookmarks — Գաղտնաբառով տեղային էջանիշեր"
+    },
+    "extensionName": {
+        "message": "Holy Private Bookmarks"
+    },
+    "extensionDescription": {
+        "message": "Անձնական էջանիշեր գլխավոր գաղտնաբառով և AES-256 գաղտնագրությամբ: Բոլոր տվյալները մնում են ձեր սարքում — առանց ամպի և հետևելու:"
+    },
+    "managerTitle": {
+        "message": "HPB - Էջանիշների կառավարիչ"
+    },
+    "createPassword": {
+        "message": "Ստեղծեք գլխավոր գաղտնաբառ էջանիշերի ամբողջական գաղտնագրման համար"
+    },
+    "newPassword": {
+        "message": "Նոր գաղտնաբառ (նվազագույնը 6 նիշ)"
+    },
+    "confirmPassword": {
+        "message": "Հաստատել գաղտնաբառը"
+    },
+    "createStorage": {
+        "message": "Ստեղծել պահոց"
+    },
+    "enterMasterPassword": {
+        "message": ""
+    },
+    "masterPassword": {
+        "message": "Գլխավոր գաղտնաբառ"
+    },
+    "unlock": {
+        "message": "Բացել"
+    },
+    "wrongPassword": {
+        "message": "Սխալ գաղտնաբառ"
+    },
+    "passwordsMismatch": {
+        "message": "Գաղտնաբառերը չեն համընկնում կամ շատ կարճ են"
+    },
+    "bookmarksProtected": {
+        "message": "Ձեր էջանիշերը ապահով պաշտպանված են"
+    },
+    "addCurrentPage": {
+        "message": "Ավելացնել ընթացիկ էջը"
+    },
+    "newFolder": {
+        "message": "Նոր թղթապանակ"
+    },
+    "clearHistory": {
+        "message": "Մաքրել պատմությունը"
+    },
+    "settings": {
+        "message": "Կարգավորումներ"
+    },
+    "settingsbtn": {
+        "message": "⚙️"
+    },
+    "changeMasterPassword": {
+        "message": "Փոխել գլխավոր գաղտնաբառը"
+    },
+    "currentPassword": {
+        "message": "Ընթացիկ գլխավոր գաղտնաբառ"
+    },
+    "newPassword2": {
+        "message": "Նոր գաղտնաբառ"
+    },
+    "confirmNewPassword": {
+        "message": "Հաստատել նոր գաղտնաբառը"
+    },
+    "changePassword": {
+        "message": "Փոխել գաղտնաբառը"
+    },
+    "exportImport": {
+        "message": "Արտահանում և ներմուծում"
+    },
+    "export": {
+        "message": "Ստեղծել պահուստ"
+    },
+    "openPrivate": {
+        "message": "Բացել գաղտնի ներդիրում"
+    },
+    "import": {
+        "message": "Ներմուծել"
+    },
+    "importFromChrome": {
+        "message": "Ներմուծել Chrome-ից"
+    },
+    "importChromeBookmarks": {
+        "message": "Ներմուծել Chrome-ի բոլոր էջանիշերը"
+    },
+    "importChromeBookmarksAdvanced": {
+        "message": "Ընտրել թղթապանակները ներմուծման համար"
+    },
+    "importChromeConfirm": {
+        "message": "Ներմուծել Chrome-ի բոլոր էջանիշերը: Գոյություն ունեցող էջանիշերը կպահպանվեն:"
+    },
+    "importChromeSuccess": {
+        "message": "Էջանիշերը հաջողությամբ ներմուծվեցին:"
+    },
+    "importChromeError": {
+        "message": "Չհաջողվեց ներմուծել էջանիշերը"
+    },
+    "selectFoldersToImport": {
+        "message": "Ընտրել թղթապանակները ներմուծման համար"
+    },
+    "selectAll": {
+        "message": "Ընտրել բոլորը"
+    },
+    "deselectAll": {
+        "message": "Ապաընտրել բոլորը"
+    },
+    "importSelected": {
+        "message": "Ներմուծել"
+    },
+    "back": {
+        "message": "← Հետ"
+    },
+    "addBookmark": {
+        "message": "Ավելացնել էջանիշ"
+    },
+    "editBookmark": {
+        "message": "Խմբագրել էջանիշը"
+    },
+    "page": {
+        "message": "Էջ"
+    },
+    "title": {
+        "message": "Վերնագիր"
+    },
+    "url": {
+        "message": "URL"
+    },
+    "folder": {
+        "message": "Թղթապանակ"
+    },
+    "rootFolder": {
+        "message": "Արմատային թղթապանակ"
+    },
+    "new": {
+        "message": "+ Նոր"
+    },
+    "cancel": {
+        "message": "Չեղարկել"
+    },
+    "save": {
+        "message": "Պահպանել"
+    },
+    "deleteConfirm": {
+        "message": "Ջնջել էջանիշը"
+    },
+    "folderName": {
+        "message": "Թղթապանակի անունը:"
+    },
+    "newName": {
+        "message": "Նոր անուն:"
+    },
+    "titleRequired": {
+        "message": "Վերնագիրը և URL-ն պարտադիր են"
+    },
+    "validUrl": {
+        "message": "URL-ը պետք է սկսվի http:// կամ https://-ով"
+    },
+    "passwordChanged": {
+        "message": "Գաղտնաբառը հաջողությամբ փոխվեց:"
+    },
+    "importSuccess": {
+        "message": "Պահուստային պատճենը հաջողությամբ ներմուծվեց: Խնդրում ենք վերաբացել popup-ը:"
+    },
+    "invalidFile": {
+        "message": "Անվավեր պահուստային ֆայլ"
+    },
+    "clearHistoryConfirm": {
+        "message": "Ջնջել ձեր դիտարկիչի պատմության ԲՈԼՈՐ գրառումները այն դոմենների համար, որոնք առկա են ձեր Holy Private Bookmarks-ում:"
+    },
+    "noBookmarks": {
+        "message": "Էջանիշեր չեն գտնվել — մաքրելու բան չկա:"
+    },
+    "noDomains": {
+        "message": "Էջանիշերում վավեր դոմեններ չեն գտնվել:"
+    },
+    "newBookmark": {
+        "message": "Նոր էջանիշ"
+    },
+    "paste": {
+        "message": "Տեղադրել"
+    },
+    "ctxnewFolder": {
+        "message": "Նոր թղթապանակ"
+    },
+    "emptyTreeTitle": {
+        "message": "Դեռ էջանիշեր չկան"
+    },
+    "emptyTreeSubtitle": {
+        "message": "Ավելացրեք ձեր առաջին էջանիշը կամ թղթապանակը սկսելու համար"
+    },
+    "historyCleared": {
+        "message": "Պատմությունը մաքրվեց:\nՀեռացվեց $count$ այցելություն(ներ) $domains$ դոմեն(ների)ց:",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "domains": {
+                "content": "$2"
+            }
+        }
+    },
+    "addToHoly": {
+        "message": "Ավելացնել Holy Private Bookmarks-ում"
+    },
+    "cannotAddPage": {
+        "message": "Չի կարելի ավելացնել այս էջը (վավեր URL չկա)"
+    },
+    "supportProject": {
+        "message": "Աջակցել նախագծին"
+    },
+    "supportPageTitle": {
+        "message": "Աջակցել Holy Private Bookmarks-ին"
+    },
+    "donateHeroTitle": {
+        "message": "Աջակցեք գաղտնիության վրա կենտրոնացած զարգացմանը"
+    },
+    "donateHeroSubtitle": {
+        "message": "Holy Private Bookmarks-ը 100% անվճար է և բաց կոդով, և միշտ կմնա այդպիսին: Ձեր աջակցությունն օգնում է մշակողներին ժամանակ հատկացնել ընդլայնման պահպանման և բարելավման համար բոլոր նրանց համար, ովքեր մտահոգված են գաղտնիության հարցերով:"
+    },
+    "whySupport": {
+        "message": "Ինչու է ձեր աջակցությունը կարևոր"
+    },
+    "timeInvestment": {
+        "message": "Մշակողների ժամանակ"
+    },
+    "timeInvestmentDesc": {
+        "message": "Յուրաքանչյուր հնարավորություն, սխալի ուղղում և անվտանգության բարելավում իրենից ներկայացնում է աշխատանքի ժամեր: Ձեր ներդրումը գնահատում է այդ ժամանակը և պահպանում նախագծի կայունությունը:"
+    },
+    "longTerm": {
+        "message": "Երկարաժամկետ հանձնառություն"
+    },
+    "longTermDesc": {
+        "message": "Ձեր աջակցությունն ապահովում է, որ ընդլայնումը մնա ակտիվորեն պահպանվող, համատեղելի Chrome-ի ապագա թարմացումների հետ և շարունակաբար բարելավվի:"
+    },
+    "futureFeatures": {
+        "message": "Ապագա հնարավորություններ"
+    },
+    "futureFeaturesDesc": {
+        "message": "Ձեր օգնությամբ մենք կարող ենք առաջնահերթություն տալ նոր ֆունկցիոնալությանը, ավելի լավ ինտերֆեյսին և ընդլայնված անվտանգության առանձնահատկություններին, որոնք օգուտ են բերում ողջ համայնքին:"
+    },
+    "donateCtaText": {
+        "message": "Ոչ մի բաժանորդագրություն: Ոչ մի վճարային պատնեշ: Ոչ մի կորպորատիվ ֆինանսավորում: Պարզապես մարդիկ, ովքեր ստեղծում են ինչ-որ օգտակար բան ուրիշների համար: Եթե այս ընդլայնումը խնայում է ձեր ժամանակը կամ ձեզ հանգիստ է պարգևում, մտածեք մշակողներին սուրճ հյուրասիրելու մասին:"
+    },
+    "donateCryptoTitle": {
+        "message": "Աջակցել կրիպտոարժույթով"
+    },
+    "copyAddress": {
+        "message": "Պատճենել հասցեն"
+    },
+    "donateThanks": {
+        "message": "Շնորհակալություն անկախ բաց կոդով մշակմանն աջակցելու համար"
+    },
+    "donateThanksNote": {
+        "message": "Յուրաքանչյուր ներդրում՝ մեծ թե փոքր, մեզ համար շատ կարևոր է:"
+    },
+    "importantWarning": {
+        "message": "ԿԱՐԵՎՈՐ ՆԱԽԱԶԳՈՒՇԱՑՈՒՄ:"
+    },
+    "passwordCannotBeRecovered": {
+        "message": "Այս գաղտնաբառը ՉԻ ԿԱՐՈՂ վերականգնվել:"
+    },
+    "noPasswordReset": {
+        "message": "Չկա գաղտնաբառի վերականգնման տարբերակ"
+    },
+    "weDontStorePassword": {
+        "message": "Մենք ՉԵՆՔ պահում ձեր գաղտնաբառը ոչ մի տեղ"
+    },
+    "bookmarksEncrypted": {
+        "message": "Ձեր էջանիշերը գաղտնագրված են միայն այս գաղտնաբառով"
+    },
+    "savePasswordSecurely": {
+        "message": "Պահպանեք այս գաղտնաբառը ապահով վայրում:"
+    },
+    "copyUrl": {
+        "message": "Պատճենել URL-ը"
+    },
+    "edit": {
+        "message": "Խմբագրել"
+    },
+    "delete": {
+        "message": "Ջնջել"
+    },
+    "urlCopied": {
+        "message": "URL-ը պատճենվեց clipboard-ում"
+    },
+    "about": {
+        "message": "Մեր մասին"
+    },
+    "aboutExtension": {
+        "message": "Ընդլայնման մասին"
+    },
+    "openGitHub": {
+        "message": "Բացել GitHub-ը"
+    },
+    "close": {
+        "message": "Փակել"
+    },
+    "features": {
+        "message": "Հնարավորություններ"
+    },
+    "troubleshooting": {
+        "message": "Խնդիրների լուծում"
+    },
+    "encryption": {
+        "message": "Գաղտնագրում"
+    },
+    "encryptionDesc": {
+        "message": "AES-256 գաղտնագրում"
+    },
+    "localStorage": {
+        "message": "Տեղային պահոց"
+    },
+    "localStorageDesc": {
+        "message": "Տվյալները մնում են ձեր սարքում"
+    },
+    "privacy": {
+        "message": "Գաղտնիություն"
+    },
+    "privacyDesc": {
+        "message": "Չկա հետևում կամ վերլուծություն"
+    },
+    "openSource": {
+        "message": "GPLv3"
+    },
+    "viewOnGitHub": {
+        "message": "Դիտել GitHub-ում"
+    },
+    "githubRepo": {
+        "message": "GitHub Repository"
+    },
+    "githubRepoDesc": {
+        "message": "Դիտել կոդը, հայտնել խնդիրների մասին, մասնակցել"
+    },
+    "version": {
+        "message": "Տարբերակ"
+    },
+    "openmanager": {
+        "message": "Բացել կառավարիչը"
+    },
+    "managerDesc": {
+        "message": "Բացել էջանիշերի ամբողջական կառավարիչը"
+    },
+    "folders": {
+        "message": "Թղթապանակներ"
+    },
+    "bookmarks": {
+        "message": "էջանիշեր"
+    },
+    "allBookmarks": {
+        "message": "Բոլոր էջանիշերը"
+    },
+    "searchBookmarks": {
+        "message": "Որոնել էջանիշեր..."
+    },
+    "noBookmarksInFolder": {
+        "message": "Թղթապանակում էջանիշներ չկան"
+    },
+    "addBookmarksToGetStarted": {
+        "message": "Ավելացրեք էջանիշեր սկսելու համար"
+    },
+    "bookmarkUpdated": {
+        "message": "Էջանիշը թարմացվեց"
+    },
+    "bookmarkDeleted": {
+        "message": "Էջանիշը ջնջվեց"
+    },
+    "renameFolder": {
+        "message": "Վերանվանել թղթապանակը"
+    },
+    "folderCreated": {
+        "message": "Թղթապանակը հաջողությամբ ստեղծվեց"
+    },
+    "managerLocked": {
+        "message": "Կառավարիչը արգելափակված է"
+    },
+    "lockManager": {
+        "message": "Արգելափակել կառավարիչը"
+    },
+    "rename": {
+        "message": "Վերանվանել"
+    },
+    "deleteFolder": {
+        "message": "Ջնջել թղթապանակը"
+    },
+    "deleteFolderConfirm": {
+        "message": "Ջնջել թղթապանակը \"{0}\"?"
+    },
+    "deleteFolderWarning": {
+        "message": "Ամբողջ պարունակությունը ընդմիշտ կջնջվի:"
+    },
+    "folderRenamed": {
+        "message": "Թղթապանակը հաջողությամբ վերանվանվեց"
+    },
+    "folderDeleted": {
+        "message": "Թղթապանակը հաջողությամբ ջնջվեց"
+    },
+    "cannotRenameAll": {
+        "message": "Հնարավոր չէ վերանվանել \"Բոլոր էջանիշերը\" թղթապանակը"
+    },
+    "cannotDeleteAll": {
+        "message": "Հնարավոր չէ ջնջել \"Բոլոր էջանիշերը\" թղթապանակը"
+    },
+    "bookmarkAdded": {
+        "message": "Էջանիշը ավելացվեց"
+    },
+    "pendingBookmarkNotification": {
+        "message": "Էջանիշը սպասում է:"
+    },
+    "pendingBookmarkInstruction": {
+        "message": "Էջանիշը սպասում է ավելացման: Խնդրում ենք բացել գաղտնաբառը շարունակելու համար:"
+    },
+    "dragSuccess": {
+        "message": "Տարրը հաջողությամբ տեղափոխվեց"
+    },
+    "invalidDestinationFolder": {
+        "message": "Անվավեր նպատակակետ թղթապանակ"
+    },
+    "moveFailed": {
+        "message": "Չհաջողվեց տեղափոխել էջանիշերը"
+    },
+    "noBookmarksSelected": {
+        "message": "Էջանիշեր ընտրված չեն"
+    },
+    "selectDestinationFolder": {
+        "message": "Ընտրել նպատակակետ թղթապանակը:"
+    },
+    "move": {
+        "message": "Տեղափոխել"
+    },
+    "selected": {
+        "message": "ընտրված"
+    },
+    "moveSelectedTitle": {
+        "message": "Տեղափոխել ընտրվածը"
+    },
+    "deleteSelectedTitle": {
+        "message": "Ջնջել ընտրվածը"
+    },
+    "cancelSelectionTitle": {
+        "message": "Չեղարկել ընտրությունը"
+    },
+    "emptyFolder": {
+        "message": "Թղթապանակը դատարկ է",
+        "description": "Message shown when a folder has no bookmarks"
+    },
+    "noSearchResults": {
+        "message": "Էջանիշեր չեն գտնվել",
+        "description": "Message when search returns no results"
+    },
+    "noSearchResultsDesc": {
+        "message": "Փորձեք որոնման այլ բառ",
+        "description": "Description for empty search results"
+    },
+    "themeDark": {
+        "message": "Մուգ",
+        "description": "Dark theme name"
+    },
+    "themeLight": {
+        "message": "Բաց",
+        "description": "Light theme name"
+    },
+    "themeSystem": {
+        "message": "Համակարգային",
+        "description": "System theme name"
+    },
+    "themeToggle": {
+        "message": "Փոխել թեման",
+        "description": "Tooltip for theme toggle button"
+    },
+    "showFavicons": {
+        "message": "Ցուցադրել կայքերի favicon-ները"
+    },
+    "showFaviconsDesc": {
+        "message": "Պատկերակները բեռնվում են Google-ի ծառայության միջոցով"
+    },
+    "bookmarksAndFolders": {
+        "message": "Էջանիշեր և պանակներ"
+    },
+    "importFromHtml": {
+        "message": "Ներմուծել HTML-ից"
+    },
+    "importHtmlSuccess": {
+        "message": "HTML-ից էջանիշների ներմուծումը հաջողվեց: Ավելացվեց $COUNT$ էջանիշ:",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+        "message": "Ֆայլ ընտրված չէ"
+    },
+    "htmlImporterFileTooLarge": {
+        "message": "Ֆայլը չափազանց մեծ է (առավելագույնը 1 ՄԲ)"
+    },
+    "htmlImporterParseError": {
+        "message": "HTML-ի ներմուծումը ձախողվեց՝ $1"
+    },
+    "htmlImporterNoBookmarksFound": {
+        "message": "Ֆայլում էջանիշներ չեն գտնվել"
+    },
+    "importHtmlError": {
+        "message": "HTML ֆայլի մշակումը ձախողվեց: Խնդրում ենք ստուգել ֆայլի ֆորմատը:"
+    },
+    "importHtmlSizeWarning": {
+        "message": "1 ՄԲ սահմանաչափ"
+    },
+    "importHtmlSizeNote": {
+        "message": "առավել. ~2500 էջանիշ"
+    },
+    "importWarning": {
+        "message": "Բոլոր գոյություն ունեցող էջանիշները կփոխարինվեն"
+    },
+    "developer": {
+        "message": "Մշակող՝"
+    },
+    "lock": {
+        "message": "Կողպել"
+    },
+    "faqButtonTitle": {
+        "message": "Հաճախ տրվող հարցեր"
+    },
+    "clearingHistory": {
+        "message": "Պատմության մաքրում",
+        "description": "Վերնագիր պատմության մաքրման ընթացքի մոդալի համար"
+    },
+    "preparingToClear": {
+        "message": "Պատմության մաքրման նախապատրաստում...",
+        "description": "Սկզբնական կարգավիճակի հաղորդագրություն"
+    },
+    "progress": {
+        "message": "Ընթացք",
+        "description": "Ընթացքի պիտակ"
+    },
+    "domainsProcessed": {
+        "message": "Մշակված դոմեններ",
+        "description": "Պիտակ մշակված դոմենների քանակի համար"
+    },
+    "entriesDeleted": {
+        "message": "Ջնջված գրառումներ",
+        "description": "Պիտակ ջնջված գրառումների քանակի համար"
+    },
+    "processing": {
+        "message": "Մշակում...",
+        "description": "Կարգավիճակի հաղորդագրություն մշակման ընթացքում"
+    },
+    "startingCleanup": {
+        "message": "Մաքրումը սկսվում է...",
+        "description": "Կարգավիճակը մեկնարկի ժամանակ"
+    },
+    "finalizingCleanup": {
+        "message": "Մաքրումը ավարտվում է...",
+        "description": "Կարգավիճակը ավարտի ժամանակ"
+    },
+    "cancelling": {
+        "message": "Չեղարկում...",
+        "description": "Կարգավիճակը չեղարկման ժամանակ"
+    },
+    "clearCancelled": {
+        "message": "Գործողությունը չեղարկվեց",
+        "description": "Ծանուցում չեղարկման դեպքում"
+    },
+    "fillAllFields": {
+        "message": "Խնդրում ենք լրացնել բոլոր դաշտերը"
+    },
+    "setupComplete": {
+        "message": "Կարգավորումն ավարտված է!"
+    },
+    "migrationSuccess": {
+        "message": "Տվյալները հաջողությամբ տեղափոխվեցին անվտանգ ձևաչափի!"
+    },
+    "migrationRequired": {
+        "message": "Տվյալների ձևաչափի թարմացում պահանջվում է"
+    },
+    "migrationInstruction": {
+        "message": "Մուտքագրեք ձեր գաղտնաբառը ավտոմատ կերպով ավելի անվտանգ ձևաչափի թարմացնելու համար:"
+    },
+    "exportSuccess": {
+        "message": "Արտահանումը հաջողությամբ ավարտվեց",
+        "description": "Ծանուցում տվյալների հաջող արտահանման դեպքում"
+    },
+    "unlocking": {
+        "message": "Բացում...",
+        "description": "Ցուցադրվում է էջանիշերի վերծանման ժամանակ"
+    },
+    "changingPassword": {
+        "message": "Գաղտնաբառի փոփոխում...",
+        "description": "Ցուցադրվում է գլխավոր գաղտնաբառի փոփոխման ժամանակ"
+    },
+    "settingUpEncryption": {
+        "message": "Գաղտնագրման կարգավորում...",
+        "description": "Ցուցադրվում է առաջին կարգավորման ժամանակ"
+    },
+    "migratingData": {
+        "message": "Տվյալների տեղափոխում ապահով ձևաչափի...",
+        "description": "Ցուցադրվում է v1-ից v2 տեղափոխման ժամանակ"
+    },
+    "loading": {
+        "message": "Բեռնում...",
+        "description": "Ընդհանուր բեռնման հաղորդագրություն"
+    },
+    "donationReminderTitle": {
+        "message": "Աջակցել նախագծին"
+    },
+    "donationReminderText": {
+        "message": "Եթե ձեզ դուր է գալիս այս ընդլայնումը, խնդրում ենք աջակցել դրա մշակմանը:"
+    },
+    "remindLater": {
+        "message": "Հիշեցնել ավելի ուշ"
+    },
+    "supportNow": {
+        "message": "Աջակցել հիմա"
+    },
+    "remindNever": {
+        "message": "Այլևս չցուցադրել"
+    },
+    "confirmDismiss": {
+        "message": "Ընդմիշտ անջատե՞լ նվիրատվությունների հիշեցումները:"
+    },
+    "bookmarkAlreadyInFolder": {
+        "message": "Տարրն արդեն այս պանակում է"
+    },
+    "cannotMoveIntoSelf": {
+        "message": "Հնարավոր չէ պանակը տեղափոխել իր մեջ"
+    },
+    "bookmarksMoved": {
+        "message": "Տեղափոխվել է {0} տարր"
+    },
+    "deleteSelectedConfirm": {
+        "message": "Ջնջե՞լ ընտրված {count} տարրը:",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "bookmarksDeleted": {
+        "message": "Ջնջվել է {count} տարր",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "moveBookmarksTitle": {
+        "message": "Տեղափոխել {0} տարր"
+    },
+    "setupTabNew": {
+        "message": "Ստեղծել նոր",
+        "description": "Tab label for creating new password"
+    },
+    "setupTabRestore": {
+        "message": "Վերականգնել պահուստից",
+        "description": "Tab label for restoring from backup"
+    },
+    "restoreDropTitle": {
+        "message": "Գցեք պահուստային ֆայլը այստեղ կամ սեղմեք ընտրելու համար",
+        "description": "Text for drag & drop area in restore tab"
+    },
+    "strengthWeak": {
+        "message": "Թույլ",
+        "description": "Password strength indicator"
+    },
+    "strengthFair": {
+        "message": "Միջին",
+        "description": "Password strength indicator"
+    },
+    "strengthGood": {
+        "message": "Լավ",
+        "description": "Password strength indicator"
+    },
+    "strengthStrong": {
+        "message": "Ուժեղ",
+        "description": "Password strength indicator"
+    },
+    "importingBackup": {
+        "message": "Պահուստային պատճենի վերականգնում...",
+        "description": "Loading message during backup import"
+    },
+    "unlockTitle": {
+        "message": "Մուտքագրեք գլխավոր գաղտնաբառը"
+    },
+    "warningRemember": {
+        "message": "Հիշե՞լ եք գաղտնաբառը։"
+    },
+    "yesRemember": {
+        "message": "Այո, հիշել եմ"
+    },
+    "survey": {
+        "message": "Հետադարձ կապ"
+    },
+    "changelog": {
+        "message": "Փոփոխությունների մատյան"
+    },
+    "rateExtension": {
+        "message": "Գնահատել Chrome Web Store-ում"
+    },
+    "migrationScreenTitle": {
+        "message": "Պահանջվում է թարմացում",
+        "description": "Title on the manager migration screen"
+    },
+    "migrationScreenBody1": {
+        "message": "Ընդլայնումը թարմացվել է բարելավված անվտանգությամբ:",
+        "description": "First line on the manager migration screen"
+    },
+    "migrationScreenBody2": {
+        "message": "Խնդրում ենք բացել ընդլայնման թռուցիկ պատուհանը՝ ձեր տվյալները նոր անվտանգ ձևաչափին փոխանցելու համար:",
+        "description": "Second line on the manager migration screen"
+    },
+    "migrationScreenButton": {
+        "message": "Բացել ընդլայնումը",
+        "description": "Button on the manager migration screen"
+    },
+    "notSetUpTitle": {
+        "message": "Ընդլայնումը կարգավորված չէ",
+        "description": "manager-lock: notSetUpTitle"
+    },
+    "notSetUpSubtitle": {
+        "message": "Ընդլայնումը դեռ կարգավորված չէ։ Բացեք ընդլայնման պատուհանը գաղտնաբառ ստեղծելու համար։",
+        "description": "manager-lock: notSetUpSubtitle"
+    },
+    "notSetUpButton": {
+        "message": "Բացել ընդլայնումը",
+        "description": "manager-lock: notSetUpButton"
+    },
+    "reloadingSubtitle": {
+        "message": "Կառավարիչը թարմացվում է...",
+        "description": "manager-lock: reloadingSubtitle"
+    },
+    "reloadingWait": {
+        "message": "Խնդրում ենք սպասել, մինչ կառավարիչը թարմանա",
+        "description": "manager-lock: reloadingWait"
+    },
+    "exportHtml": {
+        "message": "Արտահանել HTML"
+    },
+    "exportHtmlNote": {
+        "message": "Netscape Bookmarks ձևաչափ"
+    },
+    "exportHtmlSuccess": {
+        "message": "HTML արտահանումը հաջողվեց"
+    },
+    "exportHtmlConfirmTitle": {
+        "message": "Հաստատե՛ք գաղտնաբառը"
+    },
+    "exportHtmlConfirmDesc": {
+        "message": "Ձեր էջանիշերը կարտահանվեն որպես պարզ տեքստ: Հաստատման համար մուտքագրե՛ք հիմնական գաղտնաբառը:"
+    },
+    "exportHtmlPasswordRequired": {
+        "message": "Խնդրում ենք մուտքագրել գաղտնաբառը"
+    },
+    "exportHtmlConfirmBtn": {
+        "message": "Արտահանել"
+    },
+    "exportHtmlVerifying": {
+        "message": "Գաղտնաբառի ստուգում…"
+    },
+    "copiedToClipboard": {
+        "message": "Պատճենվեց սեղմատախտակին!"
+    },
+    "copyFailed": {
+        "message": "Չհաջողվեց պատճենել"
+    },
+    "clickToCopy": {
+        "message": "Սեղմեք պատճենելու համար"
+    },
+    "qrCodeFor": {
+        "message": "QR կոդ $1-ի համար",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            }
+        }
+    },
+    "quickCloseTab": {
+        "message": "Ներդիրի արագ փակում ($1)"
+    },
+    "quickCloseTabDesc": {
+        "message": "Փակում է ընթացիկ ներդիրը և ջնջում դոմենի դիտման պատմությունը"
+    },
+    "quickCloseTabCommand": {
+        "message": "Փակել ներդիրը և մաքրել դոմենի պատմությունը"
+    },
+    "changeShortcut": {
+        "message": "Փոխել դյուրանցման ստեղները"
+    },
+    "actions": {
+        "message": "Գործողություններ"
+    },
+    "qrCode": {
+        "message": "QR կոդ"
+    },
+    "qrScanHint": {
+        "message": "Սկանավորեք QR կոդը՝ ձեր սարքում հղումը բացելու համար."
+    },
+    "stayUnlocked": {
+        "message": "Մնալ բացված սեսիաների միջև"
+    },
+    "stayUnlockedDesc": {
+        "message": "Գաղտնաբառ չի պահանջում, երբ բրաուզերը բաց է"
+    },
+    "stayUnlockedWarning": {
+        "message": "Նվազեցնում է անվտանգությունը. ծածկագրման բանալին պահվում է բրաուզերի սեսիոն պահեստում: Ձեր բրաուզերի պրոֆիլի հասանելիություն ունեցող ցանկացած անձ կարող է կարդալ այն:"
+    },
+    "alwaysIncognito": {
+        "message": "Բացել էջանիշները միշտ անանուն ռեժիմում"
+    },
+    "alwaysIncognitoDesc": {
+        "message": "Բոլոր էջանիշները կբացվեն մասնավոր պատուհանում"
+    },
+    "enable": {
+        "message": "Միացնել"
+    },
+    "managerIsOpen": {
+        "message": "Էջանիշերի կառավարիչը բաց է"
+    },
+    "managerIsOpenDesc": {
+        "message": "Փակեք էջանիշերի կառավարիչը՝ popup-ն օգտագործելու համար:"
+    },
+    "switchToManager": {
+        "message": "Անցնել կառավարիչ"
+    },
+    "hotkeys": {
+        "message": "Դյուրանցման ստեղներ"
+    },
+    "lockExtensionCommand": {
+        "message": "Արգելափակել ընդլայնումը"
+    },
+    "openManagerCommand": {
+        "message": "Բացել էջանիշերի կառավարիչը"
+    },
+    "theme": {
+        "message": "Թեմա"
+    },
+    "Error": {
+        "message": "Սխալ"
+    },
+    "blurPage": {
+        "message": "Էջի մշուշ ($1)"
+    },
+    "blurPageDesc": {
+        "message": "Մշուշում է ընթացիկ ներդիրը ակտիվացման ժամանակ"
+    },
+    "blurPageCommand": {
+        "message": "Մշուշել էջ"
+    },
+    "openAll": {
+        "message": "Բացել բոլորը"
+    },
+    "openAllWindow": {
+        "message": "Բացել բոլորը նոր պատուհանում"
+    },
+    "openAllGroup": {
+        "message": "Բացել բոլորը ներդիրների նոր խմբում"
+    },
+    "openAllIncognito": {
+        "message": "Բացել բոլորը անանուն ռեժիմում"
+    },
+    "saveAllTabs": {
+        "message": "Պահپанелну բոлоры բаց ներдіры"
+    },
+    "noTabsToSave": {
+        "message": "Ներդիրներ պահպանելու համար չկան"
+    },
+    "tabsSaved": {
+        "message": "Ներдիрները пахпанвел են"
     }
-  },
-  "addToHoly": {
-    "message": "Ավելացնել Holy Private Bookmarks-ում"
-  },
-  "cannotAddPage": {
-    "message": "Չի կարելի ավելացնել այս էջը (վավեր URL չկա)"
-  },
-  "supportProject": {
-    "message": "Աջակցել նախագծին"
-  },
-  "supportPageTitle": {
-    "message": "Աջակցել Holy Private Bookmarks-ին"
-  },
-  "donateHeroTitle": {
-    "message": "Աջակցեք գաղտնիության վրա կենտրոնացած զարգացմանը"
-  },
-  "donateHeroSubtitle": {
-    "message": "Holy Private Bookmarks-ը 100% անվճար է և բաց կոդով, և միշտ կմնա այդպիսին: Ձեր աջակցությունն օգնում է մշակողներին ժամանակ հատկացնել ընդլայնման պահպանման և բարելավման համար բոլոր նրանց համար, ովքեր մտահոգված են գաղտնիության հարցերով:"
-  },
-  "whySupport": {
-    "message": "Ինչու է ձեր աջակցությունը կարևոր"
-  },
-  "timeInvestment": {
-    "message": "Մշակողների ժամանակ"
-  },
-  "timeInvestmentDesc": {
-    "message": "Յուրաքանչյուր հնարավորություն, սխալի ուղղում և անվտանգության բարելավում իրենից ներկայացնում է աշխատանքի ժամեր: Ձեր ներդրումը գնահատում է այդ ժամանակը և պահպանում նախագծի կայունությունը:"
-  },
-  "longTerm": {
-    "message": "Երկարաժամկետ հանձնառություն"
-  },
-  "longTermDesc": {
-    "message": "Ձեր աջակցությունն ապահովում է, որ ընդլայնումը մնա ակտիվորեն պահպանվող, համատեղելի Chrome-ի ապագա թարմացումների հետ և շարունակաբար բարելավվի:"
-  },
-  "futureFeatures": {
-    "message": "Ապագա հնարավորություններ"
-  },
-  "futureFeaturesDesc": {
-    "message": "Ձեր օգնությամբ մենք կարող ենք առաջնահերթություն տալ նոր ֆունկցիոնալությանը, ավելի լավ ինտերֆեյսին և ընդլայնված անվտանգության առանձնահատկություններին, որոնք օգուտ են բերում ողջ համայնքին:"
-  },
-  "donateCtaText": {
-    "message": "Ոչ մի բաժանորդագրություն: Ոչ մի վճարային պատնեշ: Ոչ մի կորպորատիվ ֆինանսավորում: Պարզապես մարդիկ, ովքեր ստեղծում են ինչ-որ օգտակար բան ուրիշների համար: Եթե այս ընդլայնումը խնայում է ձեր ժամանակը կամ ձեզ հանգիստ է պարգևում, մտածեք մշակողներին սուրճ հյուրասիրելու մասին:"
-  },
-  "donateCryptoTitle": {
-    "message": "Աջակցել կրիպտոարժույթով"
-  },
-  "copyAddress": {
-    "message": "Պատճենել հասցեն"
-  },
-  "donateThanks": {
-    "message": "Շնորհակալություն անկախ բաց կոդով մշակմանն աջակցելու համար"
-  },
-  "donateThanksNote": {
-    "message": "Յուրաքանչյուր ներդրում՝ մեծ թե փոքր, մեզ համար շատ կարևոր է:"
-  },
-  "importantWarning": {
-    "message": "ԿԱՐԵՎՈՐ ՆԱԽԱԶԳՈՒՇԱՑՈՒՄ:"
-  },
-  "passwordCannotBeRecovered": {
-    "message": "Այս գաղտնաբառը ՉԻ ԿԱՐՈՂ վերականգնվել:"
-  },
-  "noPasswordReset": {
-    "message": "Չկա գաղտնաբառի վերականգնման տարբերակ"
-  },
-  "weDontStorePassword": {
-    "message": "Մենք ՉԵՆՔ պահում ձեր գաղտնաբառը ոչ մի տեղ"
-  },
-  "bookmarksEncrypted": {
-    "message": "Ձեր էջանիշերը գաղտնագրված են միայն այս գաղտնաբառով"
-  },
-  "savePasswordSecurely": {
-    "message": "Պահպանեք այս գաղտնաբառը ապահով վայրում:"
-  },
-  "copyUrl": {
-    "message": "Պատճենել URL-ը"
-  },
-  "edit": {
-    "message": "Խմբագրել"
-  },
-  "delete": {
-    "message": "Ջնջել"
-  },
-  "urlCopied": {
-    "message": "URL-ը պատճենվեց clipboard-ում"
-  },
-  "about": {
-    "message": "Մեր մասին"
-  },
-  "aboutExtension": {
-    "message": "Ընդլայնման մասին"
-  },
-  "openGitHub": {
-    "message": "Բացել GitHub-ը"
-  },
-  "close": {
-    "message": "Փակել"
-  },
-  "features": {
-    "message": "Հնարավորություններ"
-  },
-  "troubleshooting": {
-    "message": "Խնդիրների լուծում"
-  },
-  "encryption": {
-    "message": "Գաղտնագրում"
-  },
-  "encryptionDesc": {
-    "message": "AES-256 գաղտնագրում"
-  },
-  "localStorage": {
-    "message": "Տեղային պահոց"
-  },
-  "localStorageDesc": {
-    "message": "Տվյալները մնում են ձեր սարքում"
-  },
-  "privacy": {
-    "message": "Գաղտնիություն"
-  },
-  "privacyDesc": {
-    "message": "Չկա հետևում կամ վերլուծություն"
-  },
-  "openSource": {
-    "message": "GPLv3"
-  },
-  "viewOnGitHub": {
-    "message": "Դիտել GitHub-ում"
-  },
-  "githubRepo": {
-    "message": "GitHub Repository"
-  },
-  "githubRepoDesc": {
-    "message": "Դիտել կոդը, հայտնել խնդիրների մասին, մասնակցել"
-  },
-  "version": {
-    "message": "Տարբերակ"
-  },
-  "openmanager": {
-    "message": "Բացել կառավարիչը"
-  },
-  "managerDesc": {
-    "message": "Բացել էջանիշերի ամբողջական կառավարիչը"
-  },
-  "folders": {
-    "message": "Թղթապանակներ"
-  },
-  "bookmarks": {
-    "message": "էջանիշեր"
-  },
-  "allBookmarks": {
-    "message": "Բոլոր էջանիշերը"
-  },
-  "searchBookmarks": {
-    "message": "Որոնել էջանիշեր..."
-  },
-  "noBookmarksInFolder": {
-    "message": "Այս թղթապանակում էջանիշեր չկան"
-  },
-  "addBookmarksToGetStarted": {
-    "message": "Ավելացրեք էջանիշեր սկսելու համար"
-  },
-  "bookmarkUpdated": {
-    "message": "Էջանիշը թարմացվեց"
-  },
-  "bookmarkDeleted": {
-    "message": "Էջանիշը ջնջվեց"
-  },
-  "renameFolder": {
-    "message": "Վերանվանել թղթապանակը"
-  },
-  "folderCreated": {
-    "message": "Թղթապանակը հաջողությամբ ստեղծվեց"
-  },
-  "managerLocked": {
-    "message": "Կառավարիչը արգելափակված է"
-  },
-  "lockManager": {
-    "message": "Արգելափակել կառավարիչը"
-  },
-  "rename": {
-    "message": "Վերանվանել"
-  },
-  "deleteFolder": {
-    "message": "Ջնջել թղթապանակը"
-  },
-  "deleteFolderConfirm": {
-    "message": "Ջնջել թղթապանակը \"{0}\"?"
-  },
-  "deleteFolderWarning": {
-    "message": "Ամբողջ պարունակությունը ընդմիշտ կջնջվի:"
-  },
-  "folderRenamed": {
-    "message": "Թղթապանակը հաջողությամբ վերանվանվեց"
-  },
-  "folderDeleted": {
-    "message": "Թղթապանակը հաջողությամբ ջնջվեց"
-  },
-  "cannotRenameAll": {
-    "message": "Հնարավոր չէ վերանվանել \"Բոլոր էջանիշերը\" թղթապանակը"
-  },
-  "cannotDeleteAll": {
-    "message": "Հնարավոր չէ ջնջել \"Բոլոր էջանիշերը\" թղթապանակը"
-  },
-  "bookmarkAdded": {
-    "message": "Էջանիշը ավելացվեց"
-  },
-  "pendingBookmarkNotification": {
-    "message": "Էջանիշը սպասում է:"
-  },
-  "pendingBookmarkInstruction": {
-    "message": "Էջանիշը սպասում է ավելացման: Խնդրում ենք բացել գաղտնաբառը շարունակելու համար:"
-  },
-  "dragSuccess": {
-    "message": "Տարրը հաջողությամբ տեղափոխվեց"
-  },
-  "invalidDestinationFolder": {
-    "message": "Անվավեր նպատակակետ թղթապանակ"
-  },
-  "moveFailed": {
-    "message": "Չհաջողվեց տեղափոխել էջանիշերը"
-  },
-  "noBookmarksSelected": {
-    "message": "Էջանիշեր ընտրված չեն"
-  },
-  "selectDestinationFolder": {
-    "message": "Ընտրել նպատակակետ թղթապանակը:"
-  },
-  "move": {
-    "message": "Տեղափոխել"
-  },
-  "selected": {
-    "message": "ընտրված"
-  },
-  "moveSelectedTitle": {
-    "message": "Տեղափոխել ընտրվածը"
-  },
-  "deleteSelectedTitle": {
-    "message": "Ջնջել ընտրվածը"
-  },
-  "cancelSelectionTitle": {
-    "message": "Չեղարկել ընտրությունը"
-  },
-  "emptyFolder": {
-    "message": "Թղթապանակը դատարկ է",
-    "description": "Message shown when a folder has no bookmarks"
-  },
-  "noSearchResults": {
-    "message": "Էջանիշեր չեն գտնվել",
-    "description": "Message when search returns no results"
-  },
-  "noSearchResultsDesc": {
-    "message": "Փորձեք որոնման այլ բառ",
-    "description": "Description for empty search results"
-  },
-  "themeDark": {
-    "message": "Մուգ",
-    "description": "Dark theme name"
-  },
-  "themeLight": {
-    "message": "Բաց",
-    "description": "Light theme name"
-  },
-  "themeSystem": {
-    "message": "Համակարգային",
-    "description": "System theme name"
-  },
-  "themeToggle": {
-    "message": "Փոխել թեման",
-    "description": "Tooltip for theme toggle button"
-  },
-  "showFavicons": {
-    "message": "Ցուցադրել կայքերի favicon-ները"
-  },
-  "showFaviconsDesc": {
-    "message": "Պատկերակները բեռնվում են Google-ի ծառայության միջոցով"
-  },
-  "bookmarksAndFolders": {
-    "message": "Էջանիշեր և պանակներ"
-  },
-  "importFromHtml": {
-    "message": "Ներմուծել HTML-ից"
-  },
-  "importHtmlSuccess": {
-    "message": "HTML-ից էջանիշների ներմուծումը հաջողվեց: Ավելացվեց $COUNT$ էջանիշ:",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "42"
-      }
-    }
-  },
-  "htmlImporterNoFileSelected": {
-    "message": "Ֆայլ ընտրված չէ"
-  },
-  "htmlImporterFileTooLarge": {
-    "message": "Ֆայլը չափազանց մեծ է (առավելագույնը 1 ՄԲ)"
-  },
-  "htmlImporterParseError": {
-    "message": "HTML-ի ներմուծումը ձախողվեց՝ $1"
-  },
-  "htmlImporterNoBookmarksFound": {
-    "message": "Ֆայլում էջանիշներ չեն գտնվել"
-  },
-  "importHtmlError": {
-    "message": "HTML ֆայլի մշակումը ձախողվեց: Խնդրում ենք ստուգել ֆայլի ֆորմատը:"
-  },
-  "importHtmlSizeWarning": {
-    "message": "1 ՄԲ սահմանաչափ"
-  },
-  "importHtmlSizeNote": {
-    "message": "առավել. ~2500 էջանիշ"
-  },
-  "importWarning": {
-    "message": "Բոլոր գոյություն ունեցող էջանիշները կփոխարինվեն"
-  },
-  "developer": {
-    "message": "Մշակող՝"
-  },
-  "lock": {
-    "message": "Կողպել"
-  },
-  "faqButtonTitle": {
-    "message": "Հաճախ տրվող հարցեր"
-  },
-  "clearingHistory": {
-    "message": "Պատմության մաքրում",
-    "description": "Վերնագիր պատմության մաքրման ընթացքի մոդալի համար"
-  },
-  "preparingToClear": {
-    "message": "Պատմության մաքրման նախապատրաստում...",
-    "description": "Սկզբնական կարգավիճակի հաղորդագրություն"
-  },
-  "progress": {
-    "message": "Ընթացք",
-    "description": "Ընթացքի պիտակ"
-  },
-  "domainsProcessed": {
-    "message": "Մշակված դոմեններ",
-    "description": "Պիտակ մշակված դոմենների քանակի համար"
-  },
-  "entriesDeleted": {
-    "message": "Ջնջված գրառումներ",
-    "description": "Պիտակ ջնջված գրառումների քանակի համար"
-  },
-  "processing": {
-    "message": "Մշակում...",
-    "description": "Կարգավիճակի հաղորդագրություն մշակման ընթացքում"
-  },
-  "startingCleanup": {
-    "message": "Մաքրումը սկսվում է...",
-    "description": "Կարգավիճակը մեկնարկի ժամանակ"
-  },
-  "finalizingCleanup": {
-    "message": "Մաքրումը ավարտվում է...",
-    "description": "Կարգավիճակը ավարտի ժամանակ"
-  },
-  "cancelling": {
-    "message": "Չեղարկում...",
-    "description": "Կարգավիճակը չեղարկման ժամանակ"
-  },
-  "clearCancelled": {
-    "message": "Գործողությունը չեղարկվեց",
-    "description": "Ծանուցում չեղարկման դեպքում"
-  },
-  "fillAllFields": {
-    "message": "Խնդրում ենք լրացնել բոլոր դաշտերը"
-  },
-  "setupComplete": {
-    "message": "Կարգավորումն ավարտված է!"
-  },
-  "migrationSuccess": {
-    "message": "Տվյալները հաջողությամբ տեղափոխվեցին անվտանգ ձևաչափի!"
-  },
-  "migrationRequired": {
-    "message": "Տվյալների ձևաչափի թարմացում պահանջվում է"
-  },
-  "migrationInstruction": {
-    "message": "Մուտքագրեք ձեր գաղտնաբառը ավտոմատ կերպով ավելի անվտանգ ձևաչափի թարմացնելու համար:"
-  },
-  "exportSuccess": {
-    "message": "Արտահանումը հաջողությամբ ավարտվեց",
-    "description": "Ծանուցում տվյալների հաջող արտահանման դեպքում"
-  },
-  "unlocking": {
-    "message": "Բացում...",
-    "description": "Ցուցադրվում է էջանիշերի վերծանման ժամանակ"
-  },
-  "changingPassword": {
-    "message": "Գաղտնաբառի փոփոխում...",
-    "description": "Ցուցադրվում է գլխավոր գաղտնաբառի փոփոխման ժամանակ"
-  },
-  "settingUpEncryption": {
-    "message": "Գաղտնագրման կարգավորում...",
-    "description": "Ցուցադրվում է առաջին կարգավորման ժամանակ"
-  },
-  "migratingData": {
-    "message": "Տվյալների տեղափոխում ապահով ձևաչափի...",
-    "description": "Ցուցադրվում է v1-ից v2 տեղափոխման ժամանակ"
-  },
-  "loading": {
-    "message": "Բեռնում...",
-    "description": "Ընդհանուր բեռնման հաղորդագրություն"
-  },
-  "donationReminderTitle": {
-    "message": "Աջակցել նախագծին"
-  },
-  "donationReminderText": {
-    "message": "Եթե ձեզ դուր է գալիս այս ընդլայնումը, խնդրում ենք աջակցել դրա մշակմանը:"
-  },
-  "remindLater": {
-    "message": "Հիշեցնել ավելի ուշ"
-  },
-  "supportNow": {
-    "message": "Աջակցել հիմա"
-  },
-  "remindNever": {
-    "message": "Այլևս չցուցադրել"
-  },
-  "confirmDismiss": {
-    "message": "Ընդմիշտ անջատե՞լ նվիրատվությունների հիշեցումները:"
-  },
-  "bookmarkAlreadyInFolder": {
-    "message": "Տարրն արդեն այս պանակում է"
-  },
-  "cannotMoveIntoSelf": {
-    "message": "Հնարավոր չէ պանակը տեղափոխել իր մեջ"
-  },
-  "bookmarksMoved": {
-    "message": "Տեղափոխվել է {0} տարր"
-  },
-  "deleteSelectedConfirm": {
-    "message": "Ջնջե՞լ ընտրված {count} տարրը:",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "plural": {
-        "content": "$2"
-      }
-    }
-  },
-  "bookmarksDeleted": {
-    "message": "Ջնջվել է {count} տարր",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "plural": {
-        "content": "$2"
-      }
-    }
-  },
-  "moveBookmarksTitle": {
-    "message": "Տեղափոխել {0} տարր"
-  },
-  "setupTabNew": {
-    "message": "Ստեղծել նոր",
-    "description": "Tab label for creating new password"
-  },
-  "setupTabRestore": {
-    "message": "Վերականգնել պահուստից",
-    "description": "Tab label for restoring from backup"
-  },
-  "restoreDropTitle": {
-    "message": "Գցեք պահուստային ֆայլը այստեղ կամ սեղմեք ընտրելու համար",
-    "description": "Text for drag & drop area in restore tab"
-  },
-  "strengthWeak": {
-    "message": "Թույլ",
-    "description": "Password strength indicator"
-  },
-  "strengthFair": {
-    "message": "Միջին",
-    "description": "Password strength indicator"
-  },
-  "strengthGood": {
-    "message": "Լավ",
-    "description": "Password strength indicator"
-  },
-  "strengthStrong": {
-    "message": "Ուժեղ",
-    "description": "Password strength indicator"
-  },
-  "importingBackup": {
-    "message": "Պահուստային պատճենի վերականգնում...",
-    "description": "Loading message during backup import"
-  },
-  "unlockTitle": {
-    "message": "Մուտքագրեք գլխավոր գաղտնաբառը"
-  },
-  "warningRemember": {
-    "message": "Հիշե՞լ եք գաղտնաբառը։"
-  },
-  "yesRemember": {
-    "message": "Այո, հիշել եմ"
-  },
-  "survey": {
-    "message": "Հետադարձ կապ"
-  },
-  "changelog": {
-    "message": "Փոփոխությունների մատյան"
-  },
-  "rateExtension": {
-    "message": "Գնահատել Chrome Web Store-ում"
-  },
-  "migrationScreenTitle": {
-    "message": "Պահանջվում է թարմացում",
-    "description": "Title on the manager migration screen"
-  },
-  "migrationScreenBody1": {
-    "message": "Ընդլայնումը թարմացվել է բարելավված անվտանգությամբ:",
-    "description": "First line on the manager migration screen"
-  },
-  "migrationScreenBody2": {
-    "message": "Խնդրում ենք բացել ընդլայնման թռուցիկ պատուհանը՝ ձեր տվյալները նոր անվտանգ ձևաչափին փոխանցելու համար:",
-    "description": "Second line on the manager migration screen"
-  },
-  "migrationScreenButton": {
-    "message": "Բացել ընդլայնումը",
-    "description": "Button on the manager migration screen"
-  },
-  "notSetUpTitle": {
-    "message": "Ընդլայնումը կարգավորված չէ",
-    "description": "manager-lock: notSetUpTitle"
-  },
-  "notSetUpSubtitle": {
-    "message": "Ընդլայնումը դեռ կարգավորված չէ։ Բացեք ընդլայնման պատուհանը գաղտնաբառ ստեղծելու համար։",
-    "description": "manager-lock: notSetUpSubtitle"
-  },
-  "notSetUpButton": {
-    "message": "Բացել ընդլայնումը",
-    "description": "manager-lock: notSetUpButton"
-  },
-  "reloadingSubtitle": {
-    "message": "Կառավարիչը թարմացվում է...",
-    "description": "manager-lock: reloadingSubtitle"
-  },
-  "reloadingWait": {
-    "message": "Խնդրում ենք սպասել, մինչ կառավարիչը թարմանա",
-    "description": "manager-lock: reloadingWait"
-  },
-  "exportHtml": {
-    "message": "Արտահանել HTML"
-  },
-  "exportHtmlNote": {
-    "message": "Netscape Bookmarks ձևաչափ"
-  },
-  "exportHtmlSuccess": {
-    "message": "HTML արտահանումը հաջողվեց"
-  },
-  "exportHtmlConfirmTitle": {
-    "message": "Հաստատե՛ք գաղտնաբառը"
-  },
-  "exportHtmlConfirmDesc": {
-    "message": "Ձեր էջանիշերը կարտահանվեն որպես պարզ տեքստ: Հաստատման համար մուտքագրե՛ք հիմնական գաղտնաբառը:"
-  },
-  "exportHtmlPasswordRequired": {
-    "message": "Խնդրում ենք մուտքագրել գաղտնաբառը"
-  },
-  "exportHtmlConfirmBtn": {
-    "message": "Արտահանել"
-  },
-  "exportHtmlVerifying": {
-    "message": "Գաղտնաբառի ստուգում…"
-  },
-  "copiedToClipboard": {
-    "message": "Պատճենվեց սեղմատախտակին!"
-  },
-  "copyFailed": {
-    "message": "Չհաջողվեց պատճենել"
-  },
-  "clickToCopy": {
-    "message": "Սեղմեք պատճենելու համար"
-  },
-  "qrCodeFor": {
-    "message": "QR կոդ $1-ի համար",
-    "placeholders": {
-      "1": {
-        "content": "$1"
-      }
-    }
-  },
-  "quickCloseTab": {
-    "message": "Ներդիրի արագ փակում ($1)"
-  },
-  "quickCloseTabDesc": {
-    "message": "Փակում է ընթացիկ ներդիրը և ջնջում դոմենի դիտման պատմությունը"
-  },
-  "quickCloseTabCommand": {
-    "message": "Փակել ներդիրը և մաքրել դոմենի պատմությունը"
-  },
-  "changeShortcut": {
-    "message": "Փոխել դյուրանցման ստեղները"
-  },
-  "actions": {
-    "message": "Գործողություններ"
-  },
-  "qrCode": {
-    "message": "QR կոդ"
-  },
-  "qrScanHint": {
-    "message": "Սկանավորեք QR կոդը՝ ձեր սարքում հղումը բացելու համար."
-  },
-  "stayUnlocked": {
-    "message": "Մնալ բացված սեսիաների միջև"
-  },
-  "stayUnlockedDesc": {
-    "message": "Գաղտնաբառ չի պահանջում, երբ բրաուզերը բաց է"
-  },
-  "stayUnlockedWarning": {
-    "message": "Նվազեցնում է անվտանգությունը. ծածկագրման բանալին պահվում է բրաուզերի սեսիոն պահեստում: Ձեր բրաուզերի պրոֆիլի հասանելիություն ունեցող ցանկացած անձ կարող է կարդալ այն:"
-  },
-  "alwaysIncognito": {
-    "message": "Բացել էջանիշները միշտ անանուն ռեժիմում"
-  },
-  "alwaysIncognitoDesc": {
-    "message": "Բոլոր էջանիշները կբացվեն մասնավոր պատուհանում"
-  },
-  "enable": {
-    "message": "Միացնել"
-  },
-  "managerIsOpen": {
-    "message": "Էջանիշերի կառավարիչը բաց է"
-  },
-  "managerIsOpenDesc": {
-    "message": "Փակեք էջանիշերի կառավարիչը՝ popup-ն օգտագործելու համար:"
-  },
-  "switchToManager": {
-    "message": "Անցնել կառավարիչ"
-  },
-  "hotkeys": {
-    "message": "Դյուրանցման ստեղներ"
-  },
-  "lockExtensionCommand": {
-    "message": "Արգելափակել ընդլայնումը"
-  },
-  "openManagerCommand": {
-    "message": "Բացել էջանիշերի կառավարիչը"
-  },
-  "theme": {
-    "message": "Թեմա"
-  },
-  "Error": {
-    "message": "Սխալ"
-  },
-  "blurPage": {
-    "message": "Էջի մշուշ ($1)"
-  },
-  "blurPageDesc": {
-    "message": "Մշուշում է ընթացիկ ներդիրը ակտիվացման ժամանակ"
-  },
-  "blurPageCommand": {
-    "message": "Մշուշել էջ"
-  }
 }

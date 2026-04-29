@@ -1,860 +1,881 @@
 {
-  "Name": {
-    "message": "Holy Private Bookmarks — Szyfrowany lokalny menedżer zakładek"
-  },
-  "extensionName": {
-    "message": "Holy Private Bookmarks"
-  },
-  "extensionDescription": {
-    "message": "Prywatne zakładki z hasłem głównym i szyfrowaniem AES-256. Wszystkie dane zostają na Twoim urządzeniu — bez chmury i śledzenia."
-  },
-  "managerTitle": {
-    "message": "HPB - Menedżer zakładek"
-  },
-  "createPassword": {
-    "message": "Utwórz hasło główne do pełnego szyfrowania zakładek"
-  },
-  "newPassword": {
-    "message": "Nowe hasło (min. 6 znaków)"
-  },
-  "confirmPassword": {
-    "message": "Potwierdź hasło"
-  },
-  "createStorage": {
-    "message": "Utwórz magazyn"
-  },
-  "enterMasterPassword": {
-    "message": ""
-  },
-  "masterPassword": {
-    "message": "Hasło główne"
-  },
-  "unlock": {
-    "message": "Odblokuj"
-  },
-  "wrongPassword": {
-    "message": "Nieprawidłowe hasło"
-  },
-  "passwordsMismatch": {
-    "message": "Hasła nie pasują do siebie lub są za krótkie"
-  },
-  "bookmarksProtected": {
-    "message": "Twoje zakładki są bezpiecznie chronione"
-  },
-  "addCurrentPage": {
-    "message": "Dodaj bieżącą stronę"
-  },
-  "newFolder": {
-    "message": "Nowy folder"
-  },
-  "clearHistory": {
-    "message": "Wyczyść historię"
-  },
-  "settings": {
-    "message": "Ustawienia"
-  },
-  "settingsbtn": {
-    "message": "⚙️"
-  },
-  "changeMasterPassword": {
-    "message": "Zmień hasło główne"
-  },
-  "currentPassword": {
-    "message": "Bieżące hasło główne"
-  },
-  "newPassword2": {
-    "message": "Nowe hasło"
-  },
-  "confirmNewPassword": {
-    "message": "Potwierdź nowe hasło"
-  },
-  "changePassword": {
-    "message": "Zmień hasło"
-  },
-  "exportImport": {
-    "message": "Eksport i import"
-  },
-  "export": {
-    "message": "Utwórz kopię zapasową"
-  },
-  "openPrivate": {
-    "message": "Otwórz w prywatnej karcie"
-  },
-  "import": {
-    "message": "Importuj"
-  },
-  "importFromChrome": {
-    "message": "Importuj z Chrome"
-  },
-  "importChromeBookmarks": {
-    "message": "Importuj wszystkie zakładki Chrome"
-  },
-  "importChromeBookmarksAdvanced": {
-    "message": "Wybierz foldery do importu"
-  },
-  "importChromeConfirm": {
-    "message": "Importować wszystkie zakładki z Chrome? Istniejące zakładki zostaną zachowane."
-  },
-  "importChromeSuccess": {
-    "message": "Zakładki zaimportowane pomyślnie!"
-  },
-  "importChromeError": {
-    "message": "Nie udało się zaimportować zakładek"
-  },
-  "selectFoldersToImport": {
-    "message": "Wybierz foldery do importu"
-  },
-  "selectAll": {
-    "message": "Zaznacz wszystko"
-  },
-  "deselectAll": {
-    "message": "Odznacz wszystko"
-  },
-  "importSelected": {
-    "message": "Importuj"
-  },
-  "back": {
-    "message": "← Wstecz"
-  },
-  "addBookmark": {
-    "message": "Dodaj zakładkę"
-  },
-  "editBookmark": {
-    "message": "Edytuj zakładkę"
-  },
-  "page": {
-    "message": "Strona"
-  },
-  "title": {
-    "message": "Tytuł"
-  },
-  "url": {
-    "message": "URL"
-  },
-  "folder": {
-    "message": "Folder"
-  },
-  "rootFolder": {
-    "message": "Folder główny"
-  },
-  "new": {
-    "message": "+ Nowy"
-  },
-  "cancel": {
-    "message": "Anuluj"
-  },
-  "save": {
-    "message": "Zapisz"
-  },
-  "deleteConfirm": {
-    "message": "Usuń zakładkę"
-  },
-  "folderName": {
-    "message": "Nazwa folderu:"
-  },
-  "newName": {
-    "message": "Nowa nazwa:"
-  },
-  "titleRequired": {
-    "message": "Tytuł i URL są wymagane"
-  },
-  "validUrl": {
-    "message": "URL musi zaczynać się od http:// lub https://"
-  },
-  "passwordChanged": {
-    "message": "Hasło zostało pomyślnie zmienione!"
-  },
-  "importSuccess": {
-    "message": "Kopia zapasowa zaimportowana pomyślnie! Otwórz ponownie wyskakujące okienko."
-  },
-  "invalidFile": {
-    "message": "Nieprawidłowy plik kopii zapasowej"
-  },
-  "clearHistoryConfirm": {
-    "message": "Usunąć WSZYSTKIE wpisy historii przeglądarki dla domen obecnych w Twoich zakładkach Holy Private Bookmarks?"
-  },
-  "noBookmarks": {
-    "message": "Nie znaleziono zakładek — nic do wyczyszczenia."
-  },
-  "noDomains": {
-    "message": "Nie znaleziono prawidłowych domen w zakładkach."
-  },
-  "newBookmark": {
-    "message": "Nowa zakładka"
-  },
-  "paste": {
-    "message": "Wklej"
-  },
-  "ctxnewFolder": {
-    "message": "Nowy folder"
-  },
-  "emptyTreeTitle": {
-    "message": "Brak zakładek"
-  },
-  "emptyTreeSubtitle": {
-    "message": "Dodaj pierwszą zakładkę lub folder, aby rozpocząć"
-  },
-  "historyCleared": {
-    "message": "Historia wyczyszczona!\nUsunięto $count$ wizyt z $domains$ domen.",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "domains": {
-        "content": "$2"
-      }
+    "Name": {
+        "message": "Holy Private Bookmarks — Szyfrowany lokalny menedżer zakładek"
+    },
+    "extensionName": {
+        "message": "Holy Private Bookmarks"
+    },
+    "extensionDescription": {
+        "message": "Prywatne zakładki z hasłem głównym i szyfrowaniem AES-256. Wszystkie dane zostają na Twoim urządzeniu — bez chmury i śledzenia."
+    },
+    "managerTitle": {
+        "message": "HPB - Menedżer zakładek"
+    },
+    "createPassword": {
+        "message": "Utwórz hasło główne do pełnego szyfrowania zakładek"
+    },
+    "newPassword": {
+        "message": "Nowe hasło (min. 6 znaków)"
+    },
+    "confirmPassword": {
+        "message": "Potwierdź hasło"
+    },
+    "createStorage": {
+        "message": "Utwórz magazyn"
+    },
+    "enterMasterPassword": {
+        "message": ""
+    },
+    "masterPassword": {
+        "message": "Hasło główne"
+    },
+    "unlock": {
+        "message": "Odblokuj"
+    },
+    "wrongPassword": {
+        "message": "Nieprawidłowe hasło"
+    },
+    "passwordsMismatch": {
+        "message": "Hasła nie pasują do siebie lub są za krótkie"
+    },
+    "bookmarksProtected": {
+        "message": "Twoje zakładki są bezpiecznie chronione"
+    },
+    "addCurrentPage": {
+        "message": "Dodaj bieżącą stronę"
+    },
+    "newFolder": {
+        "message": "Nowy folder"
+    },
+    "clearHistory": {
+        "message": "Wyczyść historię"
+    },
+    "settings": {
+        "message": "Ustawienia"
+    },
+    "settingsbtn": {
+        "message": "⚙️"
+    },
+    "changeMasterPassword": {
+        "message": "Zmień hasło główne"
+    },
+    "currentPassword": {
+        "message": "Bieżące hasło główne"
+    },
+    "newPassword2": {
+        "message": "Nowe hasło"
+    },
+    "confirmNewPassword": {
+        "message": "Potwierdź nowe hasło"
+    },
+    "changePassword": {
+        "message": "Zmień hasło"
+    },
+    "exportImport": {
+        "message": "Eksport i import"
+    },
+    "export": {
+        "message": "Utwórz kopię zapasową"
+    },
+    "openPrivate": {
+        "message": "Otwórz w prywatnej karcie"
+    },
+    "import": {
+        "message": "Importuj"
+    },
+    "importFromChrome": {
+        "message": "Importuj z Chrome"
+    },
+    "importChromeBookmarks": {
+        "message": "Importuj wszystkie zakładki Chrome"
+    },
+    "importChromeBookmarksAdvanced": {
+        "message": "Wybierz foldery do importu"
+    },
+    "importChromeConfirm": {
+        "message": "Importować wszystkie zakładki z Chrome? Istniejące zakładki zostaną zachowane."
+    },
+    "importChromeSuccess": {
+        "message": "Zakładki zaimportowane pomyślnie!"
+    },
+    "importChromeError": {
+        "message": "Nie udało się zaimportować zakładek"
+    },
+    "selectFoldersToImport": {
+        "message": "Wybierz foldery do importu"
+    },
+    "selectAll": {
+        "message": "Zaznacz wszystko"
+    },
+    "deselectAll": {
+        "message": "Odznacz wszystko"
+    },
+    "importSelected": {
+        "message": "Importuj"
+    },
+    "back": {
+        "message": "← Wstecz"
+    },
+    "addBookmark": {
+        "message": "Dodaj zakładkę"
+    },
+    "editBookmark": {
+        "message": "Edytuj zakładkę"
+    },
+    "page": {
+        "message": "Strona"
+    },
+    "title": {
+        "message": "Tytuł"
+    },
+    "url": {
+        "message": "URL"
+    },
+    "folder": {
+        "message": "Folder"
+    },
+    "rootFolder": {
+        "message": "Folder główny"
+    },
+    "new": {
+        "message": "+ Nowy"
+    },
+    "cancel": {
+        "message": "Anuluj"
+    },
+    "save": {
+        "message": "Zapisz"
+    },
+    "deleteConfirm": {
+        "message": "Usuń zakładkę"
+    },
+    "folderName": {
+        "message": "Nazwa folderu:"
+    },
+    "newName": {
+        "message": "Nowa nazwa:"
+    },
+    "titleRequired": {
+        "message": "Tytuł i URL są wymagane"
+    },
+    "validUrl": {
+        "message": "URL musi zaczynać się od http:// lub https://"
+    },
+    "passwordChanged": {
+        "message": "Hasło zostało pomyślnie zmienione!"
+    },
+    "importSuccess": {
+        "message": "Kopia zapasowa zaimportowana pomyślnie! Otwórz ponownie wyskakujące okienko."
+    },
+    "invalidFile": {
+        "message": "Nieprawidłowy plik kopii zapasowej"
+    },
+    "clearHistoryConfirm": {
+        "message": "Usunąć WSZYSTKIE wpisy historii przeglądarki dla domen obecnych w Twoich zakładkach Holy Private Bookmarks?"
+    },
+    "noBookmarks": {
+        "message": "Nie znaleziono zakładek — nic do wyczyszczenia."
+    },
+    "noDomains": {
+        "message": "Nie znaleziono prawidłowych domen w zakładkach."
+    },
+    "newBookmark": {
+        "message": "Nowa zakładka"
+    },
+    "paste": {
+        "message": "Wklej"
+    },
+    "ctxnewFolder": {
+        "message": "Nowy folder"
+    },
+    "emptyTreeTitle": {
+        "message": "Brak zakładek"
+    },
+    "emptyTreeSubtitle": {
+        "message": "Dodaj pierwszą zakładkę lub folder, aby rozpocząć"
+    },
+    "historyCleared": {
+        "message": "Historia wyczyszczona!\nUsunięto $count$ wizyt z $domains$ domen.",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "domains": {
+                "content": "$2"
+            }
+        }
+    },
+    "addToHoly": {
+        "message": "Dodaj do Holy Private Bookmarks"
+    },
+    "cannotAddPage": {
+        "message": "Nie można dodać tej strony (brak prawidłowego URL)"
+    },
+    "supportProject": {
+        "message": "Wesprzyj projekt"
+    },
+    "supportPageTitle": {
+        "message": "Wesprzyj Holy Private Bookmarks"
+    },
+    "donateHeroTitle": {
+        "message": "Wesprzyj rozwój skupiony na prywatności"
+    },
+    "donateHeroSubtitle": {
+        "message": "Holy Private Bookmarks jest w 100% darmowy i open-source i zawsze taki pozostanie. Twoje wsparcie pomaga deweloperom poświęcać czas na utrzymanie i ulepszanie rozszerzenia dla wszystkich, którym zależy na prywatności."
+    },
+    "whySupport": {
+        "message": "Dlaczego Twoje wsparcie ma znaczenie"
+    },
+    "timeInvestment": {
+        "message": "Czas dewelopera"
+    },
+    "timeInvestmentDesc": {
+        "message": "Każda funkcja, poprawka błędu i ulepszenie bezpieczeństwa to godziny pracy. Twój wkład docenia ten czas i sprawia, że projekt pozostaje zrównoważony."
+    },
+    "longTerm": {
+        "message": "Długoterminowe zobowiązanie"
+    },
+    "longTermDesc": {
+        "message": "Twoje wsparcie zapewnia, że rozszerzenie pozostaje aktywnie utrzymywane, zgodne z przyszłymi aktualizacjami Chrome i stale ulepszane."
+    },
+    "futureFeatures": {
+        "message": "Przyszłe funkcje"
+    },
+    "futureFeaturesDesc": {
+        "message": "Z Twoją pomocą możemy priorytetyzować nowe funkcjonalności, lepszy interfejs i ulepszone funkcje bezpieczeństwa, które przyniosą korzyści całej społeczności."
+    },
+    "donateCtaText": {
+        "message": "Bez subskrypcji. Bez blokad treści. Bez finansowania korporacyjnego. Tylko ludzie budujący coś przydatnego dla innych. Jeśli to rozszerzenie oszczędza Ci czas lub daje spokój ducha, rozważ postawienie deweloperom kawy."
+    },
+    "donateCryptoTitle": {
+        "message": "Wesprzyj kryptowalutą"
+    },
+    "copyAddress": {
+        "message": "Kopiuj adres"
+    },
+    "donateThanks": {
+        "message": "Dziękujemy za wspieranie niezależnego rozwoju open-source"
+    },
+    "donateThanksNote": {
+        "message": "Każdy wkład, duży czy mały, wiele dla nas znaczy."
+    },
+    "importantWarning": {
+        "message": "WAŻNE OSTRZEŻENIE:"
+    },
+    "passwordCannotBeRecovered": {
+        "message": "Tego hasła NIE MOŻNA odzyskać!"
+    },
+    "noPasswordReset": {
+        "message": "Nie ma opcji resetowania hasła"
+    },
+    "weDontStorePassword": {
+        "message": "NIE przechowujemy Twojego hasła nigdzie"
+    },
+    "bookmarksEncrypted": {
+        "message": "Twoje zakładki są zaszyfrowane wyłącznie tym hasłem"
+    },
+    "savePasswordSecurely": {
+        "message": "Zapisz to hasło w bezpiecznym miejscu!"
+    },
+    "copyUrl": {
+        "message": "Kopiuj URL"
+    },
+    "edit": {
+        "message": "Edytuj"
+    },
+    "delete": {
+        "message": "Usuń"
+    },
+    "urlCopied": {
+        "message": "URL skopiowany do schowka"
+    },
+    "about": {
+        "message": "O rozszerzeniu"
+    },
+    "aboutExtension": {
+        "message": "O rozszerzeniu"
+    },
+    "openGitHub": {
+        "message": "Otwórz GitHub"
+    },
+    "close": {
+        "message": "Zamknij"
+    },
+    "features": {
+        "message": "Funkcje"
+    },
+    "troubleshooting": {
+        "message": "Rozwiązywanie problemów"
+    },
+    "encryption": {
+        "message": "Szyfrowanie"
+    },
+    "encryptionDesc": {
+        "message": "Szyfrowanie AES-256"
+    },
+    "localStorage": {
+        "message": "Magazyn lokalny"
+    },
+    "localStorageDesc": {
+        "message": "Dane pozostają na Twoim urządzeniu"
+    },
+    "privacy": {
+        "message": "Prywatność"
+    },
+    "privacyDesc": {
+        "message": "Bez śledzenia ani analityki"
+    },
+    "openSource": {
+        "message": "GPLv3"
+    },
+    "viewOnGitHub": {
+        "message": "Zobacz na GitHub"
+    },
+    "githubRepo": {
+        "message": "Repozytorium GitHub"
+    },
+    "githubRepoDesc": {
+        "message": "Przeglądaj kod źródłowy, zgłaszaj problemy, współtwórz"
+    },
+    "version": {
+        "message": "Wersja"
+    },
+    "openmanager": {
+        "message": "Otwórz menedżer"
+    },
+    "managerDesc": {
+        "message": "Otwórz pełnoekranowy menedżer zakładek"
+    },
+    "folders": {
+        "message": "Foldery"
+    },
+    "bookmarks": {
+        "message": "zakładki"
+    },
+    "allBookmarks": {
+        "message": "Wszystkie zakładki"
+    },
+    "searchBookmarks": {
+        "message": "Szukaj zakładek..."
+    },
+    "noBookmarksInFolder": {
+        "message": "Brak zakładek w folderze"
+    },
+    "addBookmarksToGetStarted": {
+        "message": "Dodaj zakładki, aby rozpocząć"
+    },
+    "bookmarkUpdated": {
+        "message": "Zakładka zaktualizowana"
+    },
+    "bookmarkDeleted": {
+        "message": "Zakładka usunięta"
+    },
+    "renameFolder": {
+        "message": "Zmień nazwę folderu"
+    },
+    "folderCreated": {
+        "message": "Folder utworzony pomyślnie"
+    },
+    "managerLocked": {
+        "message": "Menedżer zablokowany"
+    },
+    "lockManager": {
+        "message": "Zablokuj menedżer"
+    },
+    "rename": {
+        "message": "Zmień nazwę"
+    },
+    "deleteFolder": {
+        "message": "Usuń folder"
+    },
+    "deleteFolderConfirm": {
+        "message": "Usunąć folder \"{0}\"?"
+    },
+    "deleteFolderWarning": {
+        "message": "Cała zawartość zostanie trwale usunięta."
+    },
+    "folderRenamed": {
+        "message": "Nazwa folderu zmieniona pomyślnie"
+    },
+    "folderDeleted": {
+        "message": "Folder usunięty pomyślnie"
+    },
+    "cannotRenameAll": {
+        "message": "Nie można zmienić nazwy folderu \"Wszystkie zakładki\""
+    },
+    "cannotDeleteAll": {
+        "message": "Nie można usunąć folderu \"Wszystkie zakładki\""
+    },
+    "bookmarkAdded": {
+        "message": "Zakładka dodana"
+    },
+    "pendingBookmarkNotification": {
+        "message": "Zakładka oczekuje!"
+    },
+    "pendingBookmarkInstruction": {
+        "message": "Zakładka czeka na dodanie. Odblokuj, aby kontynuować."
+    },
+    "dragSuccess": {
+        "message": "Element przeniesiony pomyślnie"
+    },
+    "invalidDestinationFolder": {
+        "message": "Nieprawidłowy folder docelowy"
+    },
+    "moveFailed": {
+        "message": "Nie udało się przenieść zakładek"
+    },
+    "noBookmarksSelected": {
+        "message": "Nie wybrano żadnych zakładek"
+    },
+    "selectDestinationFolder": {
+        "message": "Wybierz folder docelowy:"
+    },
+    "move": {
+        "message": "Przenieś"
+    },
+    "selected": {
+        "message": "zaznaczono"
+    },
+    "moveSelectedTitle": {
+        "message": "Przenieś zaznaczone"
+    },
+    "deleteSelectedTitle": {
+        "message": "Usuń zaznaczone"
+    },
+    "cancelSelectionTitle": {
+        "message": "Anuluj zaznaczenie"
+    },
+    "emptyFolder": {
+        "message": "Folder jest pusty",
+        "description": "Message shown when a folder has no bookmarks"
+    },
+    "noSearchResults": {
+        "message": "Nie znaleziono zakładek",
+        "description": "Message when search returns no results"
+    },
+    "noSearchResultsDesc": {
+        "message": "Spróbuj innego hasła wyszukiwania",
+        "description": "Description for empty search results"
+    },
+    "theme": {
+        "message": "Motyw"
+    },
+    "themeDark": {
+        "message": "Ciemny",
+        "description": "Dark theme name"
+    },
+    "themeLight": {
+        "message": "Jasny",
+        "description": "Light theme name"
+    },
+    "themeSystem": {
+        "message": "Systemowy",
+        "description": "System theme name"
+    },
+    "themeToggle": {
+        "message": "Przełącz motyw",
+        "description": "Tooltip for theme toggle button"
+    },
+    "showFavicons": {
+        "message": "Pokazuj ikony witryn"
+    },
+    "showFaviconsDesc": {
+        "message": "Ikony są ładowane za pośrednictwem usługi Google"
+    },
+    "bookmarksAndFolders": {
+        "message": "Zakładki i foldery"
+    },
+    "importFromHtml": {
+        "message": "Importuj z HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "Zakładki HTML zaimportowane pomyślnie! Dodano $COUNT$ zakładek.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+        "message": "Nie wybrano pliku"
+    },
+    "htmlImporterFileTooLarge": {
+        "message": "Plik jest za duży (maks. 1 MB)"
+    },
+    "htmlImporterParseError": {
+        "message": "Nie udało się zaimportować HTML: $1"
+    },
+    "htmlImporterNoBookmarksFound": {
+        "message": "Nie znaleziono zakładek w pliku"
+    },
+    "importHtmlError": {
+        "message": "Nie udało się przetworzyć pliku HTML. Sprawdź format pliku."
+    },
+    "importHtmlSizeWarning": {
+        "message": "Limit 1 MB"
+    },
+    "importHtmlSizeNote": {
+        "message": "maks. ~2500 zakładek"
+    },
+    "importWarning": {
+        "message": "Wszystkie istniejące zakładki zostaną zastąpione"
+    },
+    "developer": {
+        "message": "Deweloper:"
+    },
+    "lock": {
+        "message": "Zablokuj"
+    },
+    "faqButtonTitle": {
+        "message": "Często zadawane pytania"
+    },
+    "clearingHistory": {
+        "message": "Czyszczenie historii",
+        "description": "Title for history clearing progress modal"
+    },
+    "preparingToClear": {
+        "message": "Przygotowywanie do wyczyszczenia historii...",
+        "description": "Initial status message"
+    },
+    "progress": {
+        "message": "Postęp",
+        "description": "Progress label"
+    },
+    "domainsProcessed": {
+        "message": "Przetworzone domeny",
+        "description": "Label for domains processed count"
+    },
+    "entriesDeleted": {
+        "message": "Usunięte wpisy",
+        "description": "Label for deleted entries count"
+    },
+    "startingCleanup": {
+        "message": "Rozpoczynanie czyszczenia...",
+        "description": "Status when starting"
+    },
+    "finalizingCleanup": {
+        "message": "Finalizowanie czyszczenia...",
+        "description": "Status when finalizing"
+    },
+    "cancelling": {
+        "message": "Anulowanie...",
+        "description": "Status when cancelling"
+    },
+    "clearCancelled": {
+        "message": "Operacja anulowana",
+        "description": "Notification when cancelled"
+    },
+    "fillAllFields": {
+        "message": "Proszę wypełnić wszystkie pola"
+    },
+    "setupComplete": {
+        "message": "Konfiguracja zakończona!"
+    },
+    "migrationSuccess": {
+        "message": "Dane zostały pomyślnie zmigrowane do bezpiecznego formatu!"
+    },
+    "migrationRequired": {
+        "message": "Wymagana aktualizacja formatu danych"
+    },
+    "migrationInstruction": {
+        "message": "Wprowadź hasło, aby automatycznie uaktualnić do bezpieczniejszego formatu."
+    },
+    "exportSuccess": {
+        "message": "Eksport zakończony pomyślnie",
+        "description": "Notification when data export completes successfully"
+    },
+    "processing": {
+        "message": "Przetwarzanie...",
+        "description": "Generic processing message for loading indicators"
+    },
+    "unlocking": {
+        "message": "Odblokowywanie...",
+        "description": "Shown while decrypting bookmarks"
+    },
+    "changingPassword": {
+        "message": "Zmiana hasła...",
+        "description": "Shown while changing master password"
+    },
+    "settingUpEncryption": {
+        "message": "Konfigurowanie szyfrowania...",
+        "description": "Shown during first-time setup"
+    },
+    "migratingData": {
+        "message": "Migracja danych do bezpiecznego formatu...",
+        "description": "Shown during v1 to v2 migration"
+    },
+    "loading": {
+        "message": "Ładowanie...",
+        "description": "Generic loading message"
+    },
+    "donationReminderTitle": {
+        "message": "Wesprzyj projekt"
+    },
+    "donationReminderText": {
+        "message": "Jeśli podoba Ci się to rozszerzenie, prosimy o wsparcie jego rozwoju!"
+    },
+    "remindLater": {
+        "message": "Przypomnij później"
+    },
+    "supportNow": {
+        "message": "Wesprzyj teraz"
+    },
+    "remindNever": {
+        "message": "Nie pokazuj ponownie"
+    },
+    "confirmDismiss": {
+        "message": "Nigdy więcej nie pokazywać przypomnień o donacji?"
+    },
+    "bookmarkAlreadyInFolder": {
+        "message": "Element jest już w tym folderze"
+    },
+    "cannotMoveIntoSelf": {
+        "message": "Nie można przenieść folderu do samego siebie"
+    },
+    "bookmarksMoved": {
+        "message": "Przeniesiono {0} element{1}"
+    },
+    "deleteSelectedConfirm": {
+        "message": "Usunąć {count} zaznaczony element{plural}?",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "bookmarksDeleted": {
+        "message": "Usunięto {count} element{plural}",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "moveBookmarksTitle": {
+        "message": "Przenieś {0} element{1}"
+    },
+    "setupTabNew": {
+        "message": "Utwórz nowe",
+        "description": "Tab label for creating new password"
+    },
+    "setupTabRestore": {
+        "message": "Przywróć kopię zapasową",
+        "description": "Tab label for restoring from backup"
+    },
+    "restoreDropTitle": {
+        "message": "Upuść plik kopii zapasowej tutaj lub kliknij, aby wybrać",
+        "description": "Text for drag & drop area in restore tab"
+    },
+    "strengthWeak": {
+        "message": "Słabe",
+        "description": "Password strength indicator"
+    },
+    "strengthFair": {
+        "message": "Przeciętne",
+        "description": "Password strength indicator"
+    },
+    "strengthGood": {
+        "message": "Dobre",
+        "description": "Password strength indicator"
+    },
+    "strengthStrong": {
+        "message": "Silne",
+        "description": "Password strength indicator"
+    },
+    "importingBackup": {
+        "message": "Przywracanie kopii zapasowej...",
+        "description": "Loading message during backup import"
+    },
+    "unlockTitle": {
+        "message": "Wprowadź hasło główne"
+    },
+    "warningRemember": {
+        "message": "Czy pamiętasz swoje hasło?"
+    },
+    "yesRemember": {
+        "message": "Tak, pamiętam"
+    },
+    "survey": {
+        "message": "Ankieta opinii"
+    },
+    "Error": {
+        "message": "Błąd"
+    },
+    "changelog": {
+        "message": "Historia zmian"
+    },
+    "rateExtension": {
+        "message": "Oceń w Chrome Web Store"
+    },
+    "migrationScreenTitle": {
+        "message": "Wymagana aktualizacja",
+        "description": "Title on the manager migration screen"
+    },
+    "migrationScreenBody1": {
+        "message": "Rozszerzenie zostało zaktualizowane z ulepszonym zabezpieczeniem.",
+        "description": "First line on the manager migration screen"
+    },
+    "migrationScreenBody2": {
+        "message": "Otwórz wyskakujące okienko rozszerzenia, aby przenieść dane do nowego bezpiecznego formatu.",
+        "description": "Second line on the manager migration screen"
+    },
+    "migrationScreenButton": {
+        "message": "Otwórz rozszerzenie",
+        "description": "Button on the manager migration screen"
+    },
+    "notSetUpTitle": {
+        "message": "Rozszerzenie nie skonfigurowane",
+        "description": "manager-lock: notSetUpTitle"
+    },
+    "notSetUpSubtitle": {
+        "message": "Rozszerzenie nie zostało jeszcze skonfigurowane. Otwórz wyskakujące okienko rozszerzenia, aby utworzyć hasło.",
+        "description": "manager-lock: notSetUpSubtitle"
+    },
+    "notSetUpButton": {
+        "message": "Otwórz rozszerzenie",
+        "description": "manager-lock: notSetUpButton"
+    },
+    "reloadingSubtitle": {
+        "message": "Menedżer jest przeładowywany...",
+        "description": "manager-lock: reloadingSubtitle"
+    },
+    "reloadingWait": {
+        "message": "Poczekaj, aż menedżer się zaktualizuje",
+        "description": "manager-lock: reloadingWait"
+    },
+    "exportHtml": {
+        "message": "Eksportuj do HTML"
+    },
+    "exportHtmlNote": {
+        "message": "Format Netscape Bookmarks"
+    },
+    "exportHtmlSuccess": {
+        "message": "Eksport HTML zakończony pomyślnie"
+    },
+    "exportHtmlConfirmTitle": {
+        "message": "Potwierdź swoje hasło"
+    },
+    "exportHtmlConfirmDesc": {
+        "message": "Twoje zakładki zostaną wyeksportowane jako zwykły tekst. Wprowadź hasło główne, aby potwierdzić."
+    },
+    "exportHtmlPasswordRequired": {
+        "message": "Proszę wprowadzić hasło"
+    },
+    "exportHtmlConfirmBtn": {
+        "message": "Eksportuj"
+    },
+    "exportHtmlVerifying": {
+        "message": "Weryfikacja hasła…"
+    },
+    "copiedToClipboard": {
+        "message": "Skopiowano do schowka!"
+    },
+    "copyFailed": {
+        "message": "Nie udało się skopiować"
+    },
+    "clickToCopy": {
+        "message": "Kliknij, aby skopiować"
+    },
+    "qrCodeFor": {
+        "message": "Kod QR dla $1",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            }
+        }
+    },
+    "quickCloseTab": {
+        "message": "Szybkie zamknięcie karty ($1)"
+    },
+    "quickCloseTabDesc": {
+        "message": "Zamyka bieżącą kartę i usuwa historię przeglądania domeny"
+    },
+    "quickCloseTabCommand": {
+        "message": "Zamknij kartę i wyczyść historię domeny"
+    },
+    "changeShortcut": {
+        "message": "Zmień skróty klawiszowe"
+    },
+    "actions": {
+        "message": "Akcje"
+    },
+    "qrCode": {
+        "message": "Kod QR"
+    },
+    "qrScanHint": {
+        "message": "Zeskanuj kod QR, aby otworzyć link na swoim urządzeniu."
+    },
+    "stayUnlocked": {
+        "message": "Pozostań odblokowany między sesjami"
+    },
+    "stayUnlockedDesc": {
+        "message": "Nie pyta o hasło, gdy przeglądarka jest otwarta"
+    },
+    "stayUnlockedWarning": {
+        "message": "Zmniejsza bezpieczeństwo: klucz szyfrowania jest przechowywany w pamięci sesji przeglądarki. Każdy z dostępem do Twojego profilu może go potencjalnie odczytać."
+    },
+    "alwaysIncognito": {
+        "message": "Otwieraj zakładki zawsze w trybie incognito"
+    },
+    "alwaysIncognitoDesc": {
+        "message": "Wszystkie zakładki będą otwierane w prywatnym oknie"
+    },
+    "enable": {
+        "message": "Włącz"
+    },
+    "managerIsOpen": {
+        "message": "Menedżer zakładek jest otwarty"
+    },
+    "managerIsOpenDesc": {
+        "message": "Zamknij menedżer zakładek, aby użyć wyskakującego okna."
+    },
+    "switchToManager": {
+        "message": "Przełącz na menedżer"
+    },
+    "hotkeys": {
+        "message": "Skróty klawiszowe"
+    },
+    "lockExtensionCommand": {
+        "message": "Zablokuj rozszerzenie"
+    },
+    "openManagerCommand": {
+        "message": "Otwórz menedżer zakładek"
+    },
+    "blurPage": {
+        "message": "Rozmycie strony ($1)"
+    },
+    "blurPageDesc": {
+        "message": "Rozmywa bieżącą kartę po aktywacji"
+    },
+    "blurPageCommand": {
+        "message": "Rozmyj stronę"
+    },
+    "openAll": {
+        "message": "Otwórz wszystkie"
+    },
+    "openAllWindow": {
+        "message": "Otwórz wszystkie w nowym oknie"
+    },
+    "openAllGroup": {
+        "message": "Otwórz wszystkie w nowej grupie kart"
+    },
+    "openAllIncognito": {
+        "message": "Otwórz wszystkie w trybie incognito"
+    },
+    "saveAllTabs": {
+        "message": "Zapisz wszystkie otwarte karty"
+    },
+    "noTabsToSave": {
+        "message": "Brak kart do zapisania"
+    },
+    "tabsSaved": {
+        "message": "Karty zapisane"
     }
-  },
-  "addToHoly": {
-    "message": "Dodaj do Holy Private Bookmarks"
-  },
-  "cannotAddPage": {
-    "message": "Nie można dodać tej strony (brak prawidłowego URL)"
-  },
-  "supportProject": {
-    "message": "Wesprzyj projekt"
-  },
-  "supportPageTitle": {
-    "message": "Wesprzyj Holy Private Bookmarks"
-  },
-  "donateHeroTitle": {
-    "message": "Wesprzyj rozwój skupiony na prywatności"
-  },
-  "donateHeroSubtitle": {
-    "message": "Holy Private Bookmarks jest w 100% darmowy i open-source i zawsze taki pozostanie. Twoje wsparcie pomaga deweloperom poświęcać czas na utrzymanie i ulepszanie rozszerzenia dla wszystkich, którym zależy na prywatności."
-  },
-  "whySupport": {
-    "message": "Dlaczego Twoje wsparcie ma znaczenie"
-  },
-  "timeInvestment": {
-    "message": "Czas dewelopera"
-  },
-  "timeInvestmentDesc": {
-    "message": "Każda funkcja, poprawka błędu i ulepszenie bezpieczeństwa to godziny pracy. Twój wkład docenia ten czas i sprawia, że projekt pozostaje zrównoważony."
-  },
-  "longTerm": {
-    "message": "Długoterminowe zobowiązanie"
-  },
-  "longTermDesc": {
-    "message": "Twoje wsparcie zapewnia, że rozszerzenie pozostaje aktywnie utrzymywane, zgodne z przyszłymi aktualizacjami Chrome i stale ulepszane."
-  },
-  "futureFeatures": {
-    "message": "Przyszłe funkcje"
-  },
-  "futureFeaturesDesc": {
-    "message": "Z Twoją pomocą możemy priorytetyzować nowe funkcjonalności, lepszy interfejs i ulepszone funkcje bezpieczeństwa, które przyniosą korzyści całej społeczności."
-  },
-  "donateCtaText": {
-    "message": "Bez subskrypcji. Bez blokad treści. Bez finansowania korporacyjnego. Tylko ludzie budujący coś przydatnego dla innych. Jeśli to rozszerzenie oszczędza Ci czas lub daje spokój ducha, rozważ postawienie deweloperom kawy."
-  },
-  "donateCryptoTitle": {
-    "message": "Wesprzyj kryptowalutą"
-  },
-  "copyAddress": {
-    "message": "Kopiuj adres"
-  },
-  "donateThanks": {
-    "message": "Dziękujemy za wspieranie niezależnego rozwoju open-source"
-  },
-  "donateThanksNote": {
-    "message": "Każdy wkład, duży czy mały, wiele dla nas znaczy."
-  },
-  "importantWarning": {
-    "message": "WAŻNE OSTRZEŻENIE:"
-  },
-  "passwordCannotBeRecovered": {
-    "message": "Tego hasła NIE MOŻNA odzyskać!"
-  },
-  "noPasswordReset": {
-    "message": "Nie ma opcji resetowania hasła"
-  },
-  "weDontStorePassword": {
-    "message": "NIE przechowujemy Twojego hasła nigdzie"
-  },
-  "bookmarksEncrypted": {
-    "message": "Twoje zakładki są zaszyfrowane wyłącznie tym hasłem"
-  },
-  "savePasswordSecurely": {
-    "message": "Zapisz to hasło w bezpiecznym miejscu!"
-  },
-  "copyUrl": {
-    "message": "Kopiuj URL"
-  },
-  "edit": {
-    "message": "Edytuj"
-  },
-  "delete": {
-    "message": "Usuń"
-  },
-  "urlCopied": {
-    "message": "URL skopiowany do schowka"
-  },
-  "about": {
-    "message": "O rozszerzeniu"
-  },
-  "aboutExtension": {
-    "message": "O rozszerzeniu"
-  },
-  "openGitHub": {
-    "message": "Otwórz GitHub"
-  },
-  "close": {
-    "message": "Zamknij"
-  },
-  "features": {
-    "message": "Funkcje"
-  },
-  "troubleshooting": {
-    "message": "Rozwiązywanie problemów"
-  },
-  "encryption": {
-    "message": "Szyfrowanie"
-  },
-  "encryptionDesc": {
-    "message": "Szyfrowanie AES-256"
-  },
-  "localStorage": {
-    "message": "Magazyn lokalny"
-  },
-  "localStorageDesc": {
-    "message": "Dane pozostają na Twoim urządzeniu"
-  },
-  "privacy": {
-    "message": "Prywatność"
-  },
-  "privacyDesc": {
-    "message": "Bez śledzenia ani analityki"
-  },
-  "openSource": {
-    "message": "GPLv3"
-  },
-  "viewOnGitHub": {
-    "message": "Zobacz na GitHub"
-  },
-  "githubRepo": {
-    "message": "Repozytorium GitHub"
-  },
-  "githubRepoDesc": {
-    "message": "Przeglądaj kod źródłowy, zgłaszaj problemy, współtwórz"
-  },
-  "version": {
-    "message": "Wersja"
-  },
-  "openmanager": {
-    "message": "Otwórz menedżer"
-  },
-  "managerDesc": {
-    "message": "Otwórz pełnoekranowy menedżer zakładek"
-  },
-  "folders": {
-    "message": "Foldery"
-  },
-  "bookmarks": {
-    "message": "zakładki"
-  },
-  "allBookmarks": {
-    "message": "Wszystkie zakładki"
-  },
-  "searchBookmarks": {
-    "message": "Szukaj zakładek..."
-  },
-  "noBookmarksInFolder": {
-    "message": "Brak zakładek w tym folderze"
-  },
-  "addBookmarksToGetStarted": {
-    "message": "Dodaj zakładki, aby rozpocząć"
-  },
-  "bookmarkUpdated": {
-    "message": "Zakładka zaktualizowana"
-  },
-  "bookmarkDeleted": {
-    "message": "Zakładka usunięta"
-  },
-  "renameFolder": {
-    "message": "Zmień nazwę folderu"
-  },
-  "folderCreated": {
-    "message": "Folder utworzony pomyślnie"
-  },
-  "managerLocked": {
-    "message": "Menedżer zablokowany"
-  },
-  "lockManager": {
-    "message": "Zablokuj menedżer"
-  },
-  "rename": {
-    "message": "Zmień nazwę"
-  },
-  "deleteFolder": {
-    "message": "Usuń folder"
-  },
-  "deleteFolderConfirm": {
-    "message": "Usunąć folder \"{0}\"?"
-  },
-  "deleteFolderWarning": {
-    "message": "Cała zawartość zostanie trwale usunięta."
-  },
-  "folderRenamed": {
-    "message": "Nazwa folderu zmieniona pomyślnie"
-  },
-  "folderDeleted": {
-    "message": "Folder usunięty pomyślnie"
-  },
-  "cannotRenameAll": {
-    "message": "Nie można zmienić nazwy folderu \"Wszystkie zakładki\""
-  },
-  "cannotDeleteAll": {
-    "message": "Nie można usunąć folderu \"Wszystkie zakładki\""
-  },
-  "bookmarkAdded": {
-    "message": "Zakładka dodana"
-  },
-  "pendingBookmarkNotification": {
-    "message": "Zakładka oczekuje!"
-  },
-  "pendingBookmarkInstruction": {
-    "message": "Zakładka czeka na dodanie. Odblokuj, aby kontynuować."
-  },
-  "dragSuccess": {
-    "message": "Element przeniesiony pomyślnie"
-  },
-  "invalidDestinationFolder": {
-    "message": "Nieprawidłowy folder docelowy"
-  },
-  "moveFailed": {
-    "message": "Nie udało się przenieść zakładek"
-  },
-  "noBookmarksSelected": {
-    "message": "Nie wybrano żadnych zakładek"
-  },
-  "selectDestinationFolder": {
-    "message": "Wybierz folder docelowy:"
-  },
-  "move": {
-    "message": "Przenieś"
-  },
-  "selected": {
-    "message": "zaznaczono"
-  },
-  "moveSelectedTitle": {
-    "message": "Przenieś zaznaczone"
-  },
-  "deleteSelectedTitle": {
-    "message": "Usuń zaznaczone"
-  },
-  "cancelSelectionTitle": {
-    "message": "Anuluj zaznaczenie"
-  },
-  "emptyFolder": {
-    "message": "Folder jest pusty",
-    "description": "Message shown when a folder has no bookmarks"
-  },
-  "noSearchResults": {
-    "message": "Nie znaleziono zakładek",
-    "description": "Message when search returns no results"
-  },
-  "noSearchResultsDesc": {
-    "message": "Spróbuj innego hasła wyszukiwania",
-    "description": "Description for empty search results"
-  },
-  "theme": {
-    "message": "Motyw"
-  },
-  "themeDark": {
-    "message": "Ciemny",
-    "description": "Dark theme name"
-  },
-  "themeLight": {
-    "message": "Jasny",
-    "description": "Light theme name"
-  },
-  "themeSystem": {
-    "message": "Systemowy",
-    "description": "System theme name"
-  },
-  "themeToggle": {
-    "message": "Przełącz motyw",
-    "description": "Tooltip for theme toggle button"
-  },
-  "showFavicons": {
-    "message": "Pokazuj ikony witryn"
-  },
-  "showFaviconsDesc": {
-    "message": "Ikony są ładowane za pośrednictwem usługi Google"
-  },
-  "bookmarksAndFolders": {
-    "message": "Zakładki i foldery"
-  },
-  "importFromHtml": {
-    "message": "Importuj z HTML"
-  },
-  "importHtmlSuccess": {
-    "message": "Zakładki HTML zaimportowane pomyślnie! Dodano $COUNT$ zakładek.",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "42"
-      }
-    }
-  },
-  "htmlImporterNoFileSelected": {
-    "message": "Nie wybrano pliku"
-  },
-  "htmlImporterFileTooLarge": {
-    "message": "Plik jest za duży (maks. 1 MB)"
-  },
-  "htmlImporterParseError": {
-    "message": "Nie udało się zaimportować HTML: $1"
-  },
-  "htmlImporterNoBookmarksFound": {
-    "message": "Nie znaleziono zakładek w pliku"
-  },
-  "importHtmlError": {
-    "message": "Nie udało się przetworzyć pliku HTML. Sprawdź format pliku."
-  },
-  "importHtmlSizeWarning": {
-    "message": "Limit 1 MB"
-  },
-  "importHtmlSizeNote": {
-    "message": "maks. ~2500 zakładek"
-  },
-  "importWarning": {
-    "message": "Wszystkie istniejące zakładki zostaną zastąpione"
-  },
-  "developer": {
-    "message": "Deweloper:"
-  },
-  "lock": {
-    "message": "Zablokuj"
-  },
-  "faqButtonTitle": {
-    "message": "Często zadawane pytania"
-  },
-  "clearingHistory": {
-    "message": "Czyszczenie historii",
-    "description": "Title for history clearing progress modal"
-  },
-  "preparingToClear": {
-    "message": "Przygotowywanie do wyczyszczenia historii...",
-    "description": "Initial status message"
-  },
-  "progress": {
-    "message": "Postęp",
-    "description": "Progress label"
-  },
-  "domainsProcessed": {
-    "message": "Przetworzone domeny",
-    "description": "Label for domains processed count"
-  },
-  "entriesDeleted": {
-    "message": "Usunięte wpisy",
-    "description": "Label for deleted entries count"
-  },
-  "startingCleanup": {
-    "message": "Rozpoczynanie czyszczenia...",
-    "description": "Status when starting"
-  },
-  "finalizingCleanup": {
-    "message": "Finalizowanie czyszczenia...",
-    "description": "Status when finalizing"
-  },
-  "cancelling": {
-    "message": "Anulowanie...",
-    "description": "Status when cancelling"
-  },
-  "clearCancelled": {
-    "message": "Operacja anulowana",
-    "description": "Notification when cancelled"
-  },
-  "fillAllFields": {
-    "message": "Proszę wypełnić wszystkie pola"
-  },
-  "setupComplete": {
-    "message": "Konfiguracja zakończona!"
-  },
-  "migrationSuccess": {
-    "message": "Dane zostały pomyślnie zmigrowane do bezpiecznego formatu!"
-  },
-  "migrationRequired": {
-    "message": "Wymagana aktualizacja formatu danych"
-  },
-  "migrationInstruction": {
-    "message": "Wprowadź hasło, aby automatycznie uaktualnić do bezpieczniejszego formatu."
-  },
-  "exportSuccess": {
-    "message": "Eksport zakończony pomyślnie",
-    "description": "Notification when data export completes successfully"
-  },
-  "processing": {
-    "message": "Przetwarzanie...",
-    "description": "Generic processing message for loading indicators"
-  },
-  "unlocking": {
-    "message": "Odblokowywanie...",
-    "description": "Shown while decrypting bookmarks"
-  },
-  "changingPassword": {
-    "message": "Zmiana hasła...",
-    "description": "Shown while changing master password"
-  },
-  "settingUpEncryption": {
-    "message": "Konfigurowanie szyfrowania...",
-    "description": "Shown during first-time setup"
-  },
-  "migratingData": {
-    "message": "Migracja danych do bezpiecznego formatu...",
-    "description": "Shown during v1 to v2 migration"
-  },
-  "loading": {
-    "message": "Ładowanie...",
-    "description": "Generic loading message"
-  },
-  "donationReminderTitle": {
-    "message": "Wesprzyj projekt"
-  },
-  "donationReminderText": {
-    "message": "Jeśli podoba Ci się to rozszerzenie, prosimy o wsparcie jego rozwoju!"
-  },
-  "remindLater": {
-    "message": "Przypomnij później"
-  },
-  "supportNow": {
-    "message": "Wesprzyj teraz"
-  },
-  "remindNever": {
-    "message": "Nie pokazuj ponownie"
-  },
-  "confirmDismiss": {
-    "message": "Nigdy więcej nie pokazywać przypomnień o donacji?"
-  },
-  "bookmarkAlreadyInFolder": {
-    "message": "Element jest już w tym folderze"
-  },
-  "cannotMoveIntoSelf": {
-    "message": "Nie można przenieść folderu do samego siebie"
-  },
-  "bookmarksMoved": {
-    "message": "Przeniesiono {0} element{1}"
-  },
-  "deleteSelectedConfirm": {
-    "message": "Usunąć {count} zaznaczony element{plural}?",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "plural": {
-        "content": "$2"
-      }
-    }
-  },
-  "bookmarksDeleted": {
-    "message": "Usunięto {count} element{plural}",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "plural": {
-        "content": "$2"
-      }
-    }
-  },
-  "moveBookmarksTitle": {
-    "message": "Przenieś {0} element{1}"
-  },
-  "setupTabNew": {
-    "message": "Utwórz nowe",
-    "description": "Tab label for creating new password"
-  },
-  "setupTabRestore": {
-    "message": "Przywróć kopię zapasową",
-    "description": "Tab label for restoring from backup"
-  },
-  "restoreDropTitle": {
-    "message": "Upuść plik kopii zapasowej tutaj lub kliknij, aby wybrać",
-    "description": "Text for drag & drop area in restore tab"
-  },
-  "strengthWeak": {
-    "message": "Słabe",
-    "description": "Password strength indicator"
-  },
-  "strengthFair": {
-    "message": "Przeciętne",
-    "description": "Password strength indicator"
-  },
-  "strengthGood": {
-    "message": "Dobre",
-    "description": "Password strength indicator"
-  },
-  "strengthStrong": {
-    "message": "Silne",
-    "description": "Password strength indicator"
-  },
-  "importingBackup": {
-    "message": "Przywracanie kopii zapasowej...",
-    "description": "Loading message during backup import"
-  },
-  "unlockTitle": {
-    "message": "Wprowadź hasło główne"
-  },
-  "warningRemember": {
-    "message": "Czy pamiętasz swoje hasło?"
-  },
-  "yesRemember": {
-    "message": "Tak, pamiętam"
-  },
-  "survey": {
-    "message": "Ankieta opinii"
-  },
-  "Error": {
-    "message": "Błąd"
-  },
-  "changelog": {
-    "message": "Historia zmian"
-  },
-  "rateExtension": {
-    "message": "Oceń w Chrome Web Store"
-  },
-  "migrationScreenTitle": {
-    "message": "Wymagana aktualizacja",
-    "description": "Title on the manager migration screen"
-  },
-  "migrationScreenBody1": {
-    "message": "Rozszerzenie zostało zaktualizowane z ulepszonym zabezpieczeniem.",
-    "description": "First line on the manager migration screen"
-  },
-  "migrationScreenBody2": {
-    "message": "Otwórz wyskakujące okienko rozszerzenia, aby przenieść dane do nowego bezpiecznego formatu.",
-    "description": "Second line on the manager migration screen"
-  },
-  "migrationScreenButton": {
-    "message": "Otwórz rozszerzenie",
-    "description": "Button on the manager migration screen"
-  },
-  "notSetUpTitle": {
-    "message": "Rozszerzenie nie skonfigurowane",
-    "description": "manager-lock: notSetUpTitle"
-  },
-  "notSetUpSubtitle": {
-    "message": "Rozszerzenie nie zostało jeszcze skonfigurowane. Otwórz wyskakujące okienko rozszerzenia, aby utworzyć hasło.",
-    "description": "manager-lock: notSetUpSubtitle"
-  },
-  "notSetUpButton": {
-    "message": "Otwórz rozszerzenie",
-    "description": "manager-lock: notSetUpButton"
-  },
-  "reloadingSubtitle": {
-    "message": "Menedżer jest przeładowywany...",
-    "description": "manager-lock: reloadingSubtitle"
-  },
-  "reloadingWait": {
-    "message": "Poczekaj, aż menedżer się zaktualizuje",
-    "description": "manager-lock: reloadingWait"
-  },
-  "exportHtml": {
-    "message": "Eksportuj do HTML"
-  },
-  "exportHtmlNote": {
-    "message": "Format Netscape Bookmarks"
-  },
-  "exportHtmlSuccess": {
-    "message": "Eksport HTML zakończony pomyślnie"
-  },
-  "exportHtmlConfirmTitle": {
-    "message": "Potwierdź swoje hasło"
-  },
-  "exportHtmlConfirmDesc": {
-    "message": "Twoje zakładki zostaną wyeksportowane jako zwykły tekst. Wprowadź hasło główne, aby potwierdzić."
-  },
-  "exportHtmlPasswordRequired": {
-    "message": "Proszę wprowadzić hasło"
-  },
-  "exportHtmlConfirmBtn": {
-    "message": "Eksportuj"
-  },
-  "exportHtmlVerifying": {
-    "message": "Weryfikacja hasła…"
-  },
-  "copiedToClipboard": {
-    "message": "Skopiowano do schowka!"
-  },
-  "copyFailed": {
-    "message": "Nie udało się skopiować"
-  },
-  "clickToCopy": {
-    "message": "Kliknij, aby skopiować"
-  },
-  "qrCodeFor": {
-    "message": "Kod QR dla $1",
-    "placeholders": {
-      "1": {
-        "content": "$1"
-      }
-    }
-  },
-  "quickCloseTab": {
-    "message": "Szybkie zamknięcie karty ($1)"
-  },
-  "quickCloseTabDesc": {
-    "message": "Zamyka bieżącą kartę i usuwa historię przeglądania domeny"
-  },
-  "quickCloseTabCommand": {
-    "message": "Zamknij kartę i wyczyść historię domeny"
-  },
-  "changeShortcut": {
-    "message": "Zmień skróty klawiszowe"
-  },
-  "actions": {
-    "message": "Akcje"
-  },
-  "qrCode": {
-    "message": "Kod QR"
-  },
-  "qrScanHint": {
-    "message": "Zeskanuj kod QR, aby otworzyć link na swoim urządzeniu."
-  },
-  "stayUnlocked": {
-    "message": "Pozostań odblokowany między sesjami"
-  },
-  "stayUnlockedDesc": {
-    "message": "Nie pyta o hasło, gdy przeglądarka jest otwarta"
-  },
-  "stayUnlockedWarning": {
-    "message": "Zmniejsza bezpieczeństwo: klucz szyfrowania jest przechowywany w pamięci sesji przeglądarki. Każdy z dostępem do Twojego profilu może go potencjalnie odczytać."
-  },
-  "alwaysIncognito": {
-    "message": "Otwieraj zakładki zawsze w trybie incognito"
-  },
-  "alwaysIncognitoDesc": {
-    "message": "Wszystkie zakładki będą otwierane w prywatnym oknie"
-  },
-  "enable": {
-    "message": "Włącz"
-  },
-  "managerIsOpen": {
-    "message": "Menedżer zakładek jest otwarty"
-  },
-  "managerIsOpenDesc": {
-    "message": "Zamknij menedżer zakładek, aby użyć wyskakującego okna."
-  },
-  "switchToManager": {
-    "message": "Przełącz na menedżer"
-  },
-  "hotkeys": {
-    "message": "Skróty klawiszowe"
-  },
-  "lockExtensionCommand": {
-    "message": "Zablokuj rozszerzenie"
-  },
-  "openManagerCommand": {
-    "message": "Otwórz menedżer zakładek"
-  },
-  "blurPage": {
-    "message": "Rozmycie strony ($1)"
-  },
-  "blurPageDesc": {
-    "message": "Rozmywa bieżącą kartę po aktywacji"
-  },
-  "blurPageCommand": {
-    "message": "Rozmyj stronę"
-  }
 }

@@ -1,5 +1,13 @@
 [
 {
+  "version": "1.8.5.35",
+  "changes": [
+    "Added 'Save all open tabs' button in the popup toolbar — saves all open http/https tabs in the current window into a new folder named by current date and time",
+    "Added four new actions to the folder quick actions panel in both the popup and bookmark manager: Open all, Open all in new window, Open all in new tab group, Open all in incognito — open all bookmarks in a folder at once",
+    "Tab group is automatically named after the folder"
+  ]
+},
+{
   "version": "1.8.5.30",
   "changes": [
     "All bookmarks and folders now have stable unique identifiers — operations like move, delete, and drag-and-drop no longer break after reordering",

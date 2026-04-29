@@ -140,8 +140,12 @@
 
     function _buildFolderQuickActionsPanel(folder, getMessage) {
         return QuickActions.buildPanel([
-            { action: 'rename',        title: getMessage('rename'), icon: 'rename', className: 'edit'   },
-            { action: 'delete-folder', title: getMessage('delete'), icon: 'delete', className: 'delete' },
+            { action: 'open-all',           title: getMessage('openAll'),          icon: 'openAll'                         },
+            { action: 'open-all-window',    title: getMessage('openAllWindow'),    icon: 'openWindow'                      },
+            { action: 'open-all-group',     title: getMessage('openAllGroup'),     icon: 'openGroup'                       },
+            { action: 'open-all-incognito', title: getMessage('openAllIncognito'), icon: 'openIncognito', className: 'private' },
+            { action: 'rename',             title: getMessage('rename'),           icon: 'rename', className: 'edit'       },
+            { action: 'delete-folder',      title: getMessage('delete'),           icon: 'delete', className: 'delete'     },
         ]);
     }
 
@@ -193,6 +197,37 @@
 
             (async () => {
                 switch (btn.dataset.action) {
+                    case 'open-all':
+                    case 'open-all-window':
+                    case 'open-all-incognito':
+                    case 'open-all-group': {
+                        const { collectAllBookmarkUrls, showNotification: sn, getMessage: gm2 } = _deps;
+                        const children = boundData?.children;
+                        if (!children) break;
+                        const urls = collectAllBookmarkUrls(children);
+                        if (!urls.length) { sn(gm2('noBookmarksInFolder') || 'No bookmarks in folder', true); break; }
+                        if (btn.dataset.action === 'open-all') {
+                            urls.forEach(url => chrome.tabs.create({ url, active: false }));
+                        } else if (btn.dataset.action === 'open-all-window') {
+                            chrome.windows.create({ url: urls[0], focused: true }, win => {
+                                urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
+                            });
+                        } else if (btn.dataset.action === 'open-all-incognito') {
+                            chrome.windows.create({ url: urls[0], incognito: true, focused: true }, win => {
+                                urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
+                            });
+                        } else if (btn.dataset.action === 'open-all-group') {
+                            (async () => {
+                                const tabs = await Promise.all(urls.map(url => chrome.tabs.create({ url, active: false })));
+                                const tabIds = tabs.map(t => t.id);
+                                if (chrome.tabGroups) {
+                                    const groupId = await chrome.tabs.group({ tabIds });
+                                    if (boundData.name) await chrome.tabGroups.update(groupId, { title: boundData.name });
+                                }
+                            })();
+                        }
+                        break;
+                    }
                     case 'edit':    editBookmark(boundData); break;
                     case 'copy':
                         navigator.clipboard.writeText(boundData.url)
@@ -519,21 +554,16 @@
             <div class="hpb-modal__dialog">
                 <h2 class="hpb-modal__title" id="modal-title-text"></h2>
                 <div class="hpb-modal__body">
-				<div class="hpb-modal__body_bookmark">
+				<div class="hpb-modal__bookmark-form">
                     <label>${getMessage('title')}</label>
                     <input type="text" id="modal-bookmark-title" placeholder="Bookmark title">
-                    </div>
-					<div class="hpb-modal__body_bookmark">
-					<label>${getMessage('url')}</label>
+                    <label>${getMessage('url')}</label>
                     <input type="text" id="modal-bookmark-url" placeholder="https://example.com">
-                    </div>
-					<div class="hpb-modal__body_bookmark">
-					<label>${getMessage('folder')}</label>
+                    <label>${getMessage('folder')}</label>
                     <div class="folder-select-container w-100">
                         <div id="folder-select" class="folder-tree-picker"></div>
                         <button id="new-folder-in-modal" class="btn-secondary">${getMessage('new')}</button>
                     </div>
-                </div>
 				</div>
                 <div class="hpb-modal__footer">
                     <button class="btn-secondary" id="modal-cancel">${getMessage('cancel')}</button>

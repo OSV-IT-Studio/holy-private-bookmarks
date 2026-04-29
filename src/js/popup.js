@@ -87,6 +87,7 @@ const {
     escapeHtml,
 
     openInPrivateTab,
+    collectAllBookmarkUrls,
     convertChromeBookmarks,
 
     debounce,
@@ -356,6 +357,7 @@ function buildDeps() {
         getDomainFromUrl,
         loadFaviconAsync,
         openInPrivateTab,
+        collectAllBookmarkUrls,
         isAlwaysIncognito,
         virtualScrollCache,
 		showGlobalLoadingIndicator,
@@ -667,6 +669,24 @@ async function init() {
         '#faq-btn':                  () => chrome.tabs.create({ url: 'https://osv-it-studio.github.io/holy-private-bookmarks#faq' }),
 		'#survey-btn':               () => chrome.tabs.create({ url: 'https://docs.google.com/forms/d/e/1FAIpQLSfcEpeT2NA9b3XxZeR6gJjiUFBLgMJ0xE0kb0zolPssykLTag/viewform' }),
         '#quick-add-bookmark':       () => PopupBookmarks.openAddBookmarkModal('', 'https://'),
+        '#save-all-tabs':            async () => {
+            const tabs = await chrome.tabs.query({ currentWindow: true });
+            const bookmarkTabs = tabs.filter(t => t.url && t.url.startsWith('http'));
+            if (!bookmarkTabs.length) {
+                showNotification(getMessage('noTabsToSave') || 'No tabs to save', true);
+                return;
+            }
+            const now = new Date();
+            const pad = n => String(n).padStart(2, '0');
+            const folderName = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+            const folder = { type: 'folder', name: folderName, uid: generateFolderUid(), children: [] };
+            bookmarkTabs.forEach(t => {
+                folder.children.push({ type: 'bookmark', title: t.title || t.url, url: t.url, uid: generateFolderUid() });
+            });
+            data.folders.push(folder);
+            saveAndRefresh();
+            showNotification(getMessage('tabsSaved') || `Saved ${bookmarkTabs.length} tabs`);
+        },
         '#open-github':              () => chrome.tabs.create({ url: 'https://github.com/OSV-IT-Studio/holy-private-bookmarks' }),
 		'#rate-btn':                 () => { chrome.tabs.create({ url: 'https://chromewebstore.google.com/detail/holy-private-bookmarks-%E2%80%94/nnafnomgekidkehbgkfmhapccelgdbch/reviews' 
 		});

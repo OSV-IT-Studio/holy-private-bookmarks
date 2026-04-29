@@ -49,6 +49,31 @@ const QuickActions = (() => {
                    <path d="M11.5 2.5a2 2 0 0 1 3 3L6 14l-4 1 1-4 8.5-8.5z"/>
                  </svg>`,
 
+        openAll: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15 3 21 3 21 9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>`,
+
+        openWindow: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                       <rect x="3" y="3" width="18" height="18" rx="2"/>
+                       <line x1="3" y1="9" x2="21" y2="9"/>
+                       <line x1="9" y1="9" x2="9" y2="21"/>
+                     </svg>`,
+
+        openGroup: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <rect x="2" y="6" width="20" height="14" rx="2"/>
+                      <path d="M2 10h20"/>
+                      <circle cx="6" cy="8" r="1" fill="currentColor" stroke="none"/>
+                      <circle cx="10" cy="8" r="1" fill="currentColor" stroke="none"/>
+                    </svg>`,
+
+        openIncognito: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                          <circle cx="12" cy="12" r="3"/>
+                          <line x1="3" y1="3" x2="21" y2="21" stroke-linecap="round"/>
+                        </svg>`,
+
         qr: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                <rect x="3" y="3" width="8" height="8" rx="1"/>
                <rect x="13" y="3" width="8" height="8" rx="1"/>

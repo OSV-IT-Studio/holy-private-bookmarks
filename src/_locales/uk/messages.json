@@ -1,860 +1,881 @@
 {
-  "Name": {
-    "message": "Holy Private Bookmarks — менеджер закладок із локальним шифруванням"
-  },
-  "extensionName": {
-    "message": "Holy Private Bookmarks"
-  },
-  "extensionDescription": {
-    "message": "Приватні закладки з мастер-паролем та шифруванням AES-256. Всі дані зберігаються на вашому пристрої — без хмари та відстеження."
-  },
-  "managerTitle": {
-    "message": "HPB - Менеджер закладок"
-  },
-  "createPassword": {
-    "message": "Створіть головний пароль для повного шифрування закладок"
-  },
-  "newPassword": {
-    "message": "Новий пароль (мін. 6 символів)"
-  },
-  "confirmPassword": {
-    "message": "Підтвердьте пароль"
-  },
-  "createStorage": {
-    "message": "Створити сховище"
-  },
-  "enterMasterPassword": {
-    "message": ""
-  },
-  "masterPassword": {
-    "message": "Мастер-пароль"
-  },
-  "unlock": {
-    "message": "Розблокувати"
-  },
-  "wrongPassword": {
-    "message": "Неправильний пароль"
-  },
-  "passwordsMismatch": {
-    "message": "Паролі не співпадають або занадто короткі"
-  },
-  "bookmarksProtected": {
-    "message": "Ваші закладки надійно захищені"
-  },
-  "addCurrentPage": {
-    "message": "Додати поточну сторінку"
-  },
-  "newFolder": {
-    "message": "Нова папка"
-  },
-  "clearHistory": {
-    "message": "Очистити історію"
-  },
-  "settings": {
-    "message": "Налаштування"
-  },
-  "settingsbtn": {
-    "message": "⚙️"
-  },
-  "changeMasterPassword": {
-    "message": "Змінити головний пароль"
-  },
-  "currentPassword": {
-    "message": "Поточний мастер-пароль"
-  },
-  "newPassword2": {
-    "message": "Новий пароль"
-  },
-  "confirmNewPassword": {
-    "message": "Підтвердьте новий пароль"
-  },
-  "changePassword": {
-    "message": "Змінити пароль"
-  },
-  "exportImport": {
-    "message": "Експорт та Імпорт"
-  },
-  "export": {
-    "message": "Створити резервну копію"
-  },
-  "openPrivate": {
-    "message": "Відкрити в приватній вкладці"
-  },
-  "import": {
-    "message": "Імпорт"
-  },
-  "importFromChrome": {
-    "message": "Імпортувати з Chrome"
-  },
-  "importChromeBookmarks": {
-    "message": "Імпортувати всі закладки Chrome"
-  },
-  "importChromeBookmarksAdvanced": {
-    "message": "Вибрати папки для імпорту"
-  },
-  "importChromeConfirm": {
-    "message": "Імпортувати всі закладки з Chrome? Існуючі закладки будуть збережені."
-  },
-  "importChromeSuccess": {
-    "message": "Закладки успішно імпортовано!"
-  },
-  "importChromeError": {
-    "message": "Не вдалося імпортувати закладки"
-  },
-  "selectFoldersToImport": {
-    "message": "Виберіть папки для імпорту"
-  },
-  "selectAll": {
-    "message": "Вибрати все"
-  },
-  "deselectAll": {
-    "message": "Зняти виділення"
-  },
-  "importSelected": {
-    "message": "Імпортувати"
-  },
-  "back": {
-    "message": "← Назад"
-  },
-  "addBookmark": {
-    "message": "Додати закладку"
-  },
-  "editBookmark": {
-    "message": "Редагувати закладку"
-  },
-  "page": {
-    "message": "Сторінка"
-  },
-  "title": {
-    "message": "Назва"
-  },
-  "url": {
-    "message": "URL"
-  },
-  "folder": {
-    "message": "Папка"
-  },
-  "rootFolder": {
-    "message": "Коренева папка"
-  },
-  "new": {
-    "message": "+ Нова"
-  },
-  "cancel": {
-    "message": "Скасувати"
-  },
-  "save": {
-    "message": "Зберегти"
-  },
-  "deleteConfirm": {
-    "message": "Видалити закладку"
-  },
-  "folderName": {
-    "message": "Назва папки:"
-  },
-  "newName": {
-    "message": "Нова назва:"
-  },
-  "titleRequired": {
-    "message": "Назва та URL обов'язкові"
-  },
-  "validUrl": {
-    "message": "URL має починатися з http:// або https://"
-  },
-  "passwordChanged": {
-    "message": "Пароль успішно змінено!"
-  },
-  "importSuccess": {
-    "message": "Резервну копію успішно імпортовано! Будь ласка, відкрийте попап заново."
-  },
-  "invalidFile": {
-    "message": "Недійсний файл резервної копії"
-  },
-  "clearHistoryConfirm": {
-    "message": "Видалити ВСІ записи історії браузера для доменів, присутніх у ваших Holy Private Bookmarks?"
-  },
-  "noBookmarks": {
-    "message": "Закладок не знайдено — нічого очищати."
-  },
-  "noDomains": {
-    "message": "Не знайдено дійсних доменів у закладках."
-  },
-  "newBookmark": {
-    "message": "Нова закладка"
-  },
-  "paste": {
-    "message": "Вставити"
-  },
-  "ctxnewFolder": {
-    "message": "Нова папка"
-  },
-  "emptyTreeTitle": {
-    "message": "Ще немає закладок"
-  },
-  "emptyTreeSubtitle": {
-    "message": "Додайте свою першу закладку або папку, щоб розпочати"
-  },
-  "historyCleared": {
-    "message": "Історію очищено!\nВидалено $count$ відвідувань з $domains$ доменів.",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "domains": {
-        "content": "$2"
-      }
+    "Name": {
+        "message": "Holy Private Bookmarks — менеджер закладок із локальним шифруванням"
+    },
+    "extensionName": {
+        "message": "Holy Private Bookmarks"
+    },
+    "extensionDescription": {
+        "message": "Приватні закладки з мастер-паролем та шифруванням AES-256. Всі дані зберігаються на вашому пристрої — без хмари та відстеження."
+    },
+    "managerTitle": {
+        "message": "HPB - Менеджер закладок"
+    },
+    "createPassword": {
+        "message": "Створіть головний пароль для повного шифрування закладок"
+    },
+    "newPassword": {
+        "message": "Новий пароль (мін. 6 символів)"
+    },
+    "confirmPassword": {
+        "message": "Підтвердьте пароль"
+    },
+    "createStorage": {
+        "message": "Створити сховище"
+    },
+    "enterMasterPassword": {
+        "message": ""
+    },
+    "masterPassword": {
+        "message": "Мастер-пароль"
+    },
+    "unlock": {
+        "message": "Розблокувати"
+    },
+    "wrongPassword": {
+        "message": "Неправильний пароль"
+    },
+    "passwordsMismatch": {
+        "message": "Паролі не співпадають або занадто короткі"
+    },
+    "bookmarksProtected": {
+        "message": "Ваші закладки надійно захищені"
+    },
+    "addCurrentPage": {
+        "message": "Додати поточну сторінку"
+    },
+    "newFolder": {
+        "message": "Нова папка"
+    },
+    "clearHistory": {
+        "message": "Очистити історію"
+    },
+    "settings": {
+        "message": "Налаштування"
+    },
+    "settingsbtn": {
+        "message": "⚙️"
+    },
+    "changeMasterPassword": {
+        "message": "Змінити головний пароль"
+    },
+    "currentPassword": {
+        "message": "Поточний мастер-пароль"
+    },
+    "newPassword2": {
+        "message": "Новий пароль"
+    },
+    "confirmNewPassword": {
+        "message": "Підтвердьте новий пароль"
+    },
+    "changePassword": {
+        "message": "Змінити пароль"
+    },
+    "exportImport": {
+        "message": "Експорт та Імпорт"
+    },
+    "export": {
+        "message": "Створити резервну копію"
+    },
+    "openPrivate": {
+        "message": "Відкрити в приватній вкладці"
+    },
+    "import": {
+        "message": "Імпорт"
+    },
+    "importFromChrome": {
+        "message": "Імпортувати з Chrome"
+    },
+    "importChromeBookmarks": {
+        "message": "Імпортувати всі закладки Chrome"
+    },
+    "importChromeBookmarksAdvanced": {
+        "message": "Вибрати папки для імпорту"
+    },
+    "importChromeConfirm": {
+        "message": "Імпортувати всі закладки з Chrome? Існуючі закладки будуть збережені."
+    },
+    "importChromeSuccess": {
+        "message": "Закладки успішно імпортовано!"
+    },
+    "importChromeError": {
+        "message": "Не вдалося імпортувати закладки"
+    },
+    "selectFoldersToImport": {
+        "message": "Виберіть папки для імпорту"
+    },
+    "selectAll": {
+        "message": "Вибрати все"
+    },
+    "deselectAll": {
+        "message": "Зняти виділення"
+    },
+    "importSelected": {
+        "message": "Імпортувати"
+    },
+    "back": {
+        "message": "← Назад"
+    },
+    "addBookmark": {
+        "message": "Додати закладку"
+    },
+    "editBookmark": {
+        "message": "Редагувати закладку"
+    },
+    "page": {
+        "message": "Сторінка"
+    },
+    "title": {
+        "message": "Назва"
+    },
+    "url": {
+        "message": "URL"
+    },
+    "folder": {
+        "message": "Папка"
+    },
+    "rootFolder": {
+        "message": "Коренева папка"
+    },
+    "new": {
+        "message": "+ Нова"
+    },
+    "cancel": {
+        "message": "Скасувати"
+    },
+    "save": {
+        "message": "Зберегти"
+    },
+    "deleteConfirm": {
+        "message": "Видалити закладку"
+    },
+    "folderName": {
+        "message": "Назва папки:"
+    },
+    "newName": {
+        "message": "Нова назва:"
+    },
+    "titleRequired": {
+        "message": "Назва та URL обов'язкові"
+    },
+    "validUrl": {
+        "message": "URL має починатися з http:// або https://"
+    },
+    "passwordChanged": {
+        "message": "Пароль успішно змінено!"
+    },
+    "importSuccess": {
+        "message": "Резервну копію успішно імпортовано! Будь ласка, відкрийте попап заново."
+    },
+    "invalidFile": {
+        "message": "Недійсний файл резервної копії"
+    },
+    "clearHistoryConfirm": {
+        "message": "Видалити ВСІ записи історії браузера для доменів, присутніх у ваших Holy Private Bookmarks?"
+    },
+    "noBookmarks": {
+        "message": "Закладок не знайдено — нічого очищати."
+    },
+    "noDomains": {
+        "message": "Не знайдено дійсних доменів у закладках."
+    },
+    "newBookmark": {
+        "message": "Нова закладка"
+    },
+    "paste": {
+        "message": "Вставити"
+    },
+    "ctxnewFolder": {
+        "message": "Нова папка"
+    },
+    "emptyTreeTitle": {
+        "message": "Ще немає закладок"
+    },
+    "emptyTreeSubtitle": {
+        "message": "Додайте свою першу закладку або папку, щоб розпочати"
+    },
+    "historyCleared": {
+        "message": "Історію очищено!\nВидалено $count$ відвідувань з $domains$ доменів.",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "domains": {
+                "content": "$2"
+            }
+        }
+    },
+    "addToHoly": {
+        "message": "Додати до Holy Private Bookmarks"
+    },
+    "cannotAddPage": {
+        "message": "Неможливо додати цю сторінку (немає дійсного URL)"
+    },
+    "supportProject": {
+        "message": "Підтримати проєкт"
+    },
+    "supportPageTitle": {
+        "message": "Підтримати Holy Private Bookmarks"
+    },
+    "donateHeroTitle": {
+        "message": "Підтримайте розробку, орієнтовану на конфіденційність"
+    },
+    "donateHeroSubtitle": {
+        "message": "Holy Private Bookmarks — це 100% безкоштовне та відкрите програмне забезпечення, і таким залишиться назавжди. Ваша підтримка допомагає розробникам приділяти час підтримці та покращенню розширення для всіх, кому важлива конфіденційність."
+    },
+    "whySupport": {
+        "message": "Чому ваша підтримка важлива"
+    },
+    "timeInvestment": {
+        "message": "Час розробників"
+    },
+    "timeInvestmentDesc": {
+        "message": "Кожна функція, виправлення помилки та покращення безпеки — це години роботи. Ваш внесок цінує цей час і робить проєкт стійким."
+    },
+    "longTerm": {
+        "message": "Довгострокові зобов'язання"
+    },
+    "longTermDesc": {
+        "message": "Ваша підтримка гарантує, що розширення залишатиметься активним, сумісним із майбутніми оновленнями Chrome і постійно вдосконалюватиметься."
+    },
+    "futureFeatures": {
+        "message": "Майбутні функції"
+    },
+    "futureFeaturesDesc": {
+        "message": "З вашою допомогою ми зможемо надати пріоритет новому функціоналу, кращому інтерфейсу та розширеним функціям безпеки, які принесуть користь усій спільноті."
+    },
+    "donateCtaText": {
+        "message": "Жодних підписок. Жодних платіжних стін. Жодного корпоративного фінансування. Просто люди, які створюють щось корисне для інших. Якщо це розширення економить ваш час або дарує вам спокій, подумайте про те, щоб пригостити розробників кавою."
+    },
+    "donateCryptoTitle": {
+        "message": "Підтримка криптовалютою"
+    },
+    "copyAddress": {
+        "message": "Копіювати адресу"
+    },
+    "donateThanks": {
+        "message": "Дякуємо за підтримку незалежної розробки з відкритим кодом"
+    },
+    "donateThanksNote": {
+        "message": "Кожен внесок, великий чи малий, дуже багато значить для нас."
+    },
+    "importantWarning": {
+        "message": "ВАЖЛИВЕ ПОПЕРЕДЖЕННЯ:"
+    },
+    "passwordCannotBeRecovered": {
+        "message": "Цей пароль НЕ МОЖНА відновити!"
+    },
+    "noPasswordReset": {
+        "message": "НЕМАЄ опції скидання пароля"
+    },
+    "weDontStorePassword": {
+        "message": "Ми НІДЕ не зберігаємо ваш пароль"
+    },
+    "bookmarksEncrypted": {
+        "message": "Ваші закладки зашифровані лише цим паролем"
+    },
+    "savePasswordSecurely": {
+        "message": "Збережіть цей пароль у надійному місці!"
+    },
+    "copyUrl": {
+        "message": "Копіювати URL"
+    },
+    "edit": {
+        "message": "Редагувати"
+    },
+    "delete": {
+        "message": "Видалити"
+    },
+    "urlCopied": {
+        "message": "URL скопійовано в буфер обміну"
+    },
+    "about": {
+        "message": "Про розширення"
+    },
+    "aboutExtension": {
+        "message": "Про розширення"
+    },
+    "openGitHub": {
+        "message": "Відкрити GitHub"
+    },
+    "close": {
+        "message": "Закрити"
+    },
+    "features": {
+        "message": "Можливості"
+    },
+    "troubleshooting": {
+        "message": "Усунення неполадок"
+    },
+    "encryption": {
+        "message": "Шифрування"
+    },
+    "encryptionDesc": {
+        "message": "Шифрування AES-256"
+    },
+    "localStorage": {
+        "message": "Локальне сховище"
+    },
+    "localStorageDesc": {
+        "message": "Дані залишаються на вашому пристрої"
+    },
+    "privacy": {
+        "message": "Конфіденційність"
+    },
+    "privacyDesc": {
+        "message": "Без відстеження та аналітики"
+    },
+    "openSource": {
+        "message": "GPLv3"
+    },
+    "viewOnGitHub": {
+        "message": "Переглянути на GitHub"
+    },
+    "githubRepo": {
+        "message": "Репозиторій GitHub"
+    },
+    "githubRepoDesc": {
+        "message": "Переглянути вихідний код, повідомити про проблеми, зробити внесок"
+    },
+    "version": {
+        "message": "Версія"
+    },
+    "openmanager": {
+        "message": "Відкрити менеджер"
+    },
+    "managerDesc": {
+        "message": "Відкрити повноекранний менеджер закладок"
+    },
+    "folders": {
+        "message": "Папки"
+    },
+    "bookmarks": {
+        "message": "закладки"
+    },
+    "allBookmarks": {
+        "message": "Всі закладки"
+    },
+    "searchBookmarks": {
+        "message": "Пошук закладок..."
+    },
+    "noBookmarksInFolder": {
+        "message": "У папці немає закладок"
+    },
+    "addBookmarksToGetStarted": {
+        "message": "Додайте закладки, щоб розпочати"
+    },
+    "bookmarkUpdated": {
+        "message": "Закладку оновлено"
+    },
+    "bookmarkDeleted": {
+        "message": "Закладку видалено"
+    },
+    "renameFolder": {
+        "message": "Перейменувати папку"
+    },
+    "folderCreated": {
+        "message": "Папку успішно створено"
+    },
+    "managerLocked": {
+        "message": "Менеджер заблоковано"
+    },
+    "lockManager": {
+        "message": "Блокувати менеджер"
+    },
+    "rename": {
+        "message": "Перейменувати"
+    },
+    "deleteFolder": {
+        "message": "Видалити папку"
+    },
+    "deleteFolderConfirm": {
+        "message": "Видалити папку \"{0}\"?"
+    },
+    "deleteFolderWarning": {
+        "message": "Весь вміст буде видалено назавжди."
+    },
+    "folderRenamed": {
+        "message": "Папку успішно перейменовано"
+    },
+    "folderDeleted": {
+        "message": "Папку успішно видалено"
+    },
+    "cannotRenameAll": {
+        "message": "Неможливо перейменувати папку \"Всі закладки\""
+    },
+    "cannotDeleteAll": {
+        "message": "Неможливо видалити папку \"Всі закладки\""
+    },
+    "bookmarkAdded": {
+        "message": "Закладку додано"
+    },
+    "pendingBookmarkNotification": {
+        "message": "Закладка очікує!"
+    },
+    "pendingBookmarkInstruction": {
+        "message": "Закладка очікує на додавання. Будь ласка, розблокуйте, щоб продовжити."
+    },
+    "dragSuccess": {
+        "message": "Елемент успішно переміщено"
+    },
+    "invalidDestinationFolder": {
+        "message": "Недійсна папка призначення"
+    },
+    "moveFailed": {
+        "message": "Не вдалося перемістити закладки"
+    },
+    "noBookmarksSelected": {
+        "message": "Не вибрано жодної закладки"
+    },
+    "selectDestinationFolder": {
+        "message": "Виберіть папку призначення:"
+    },
+    "selected": {
+        "message": "вибрано"
+    },
+    "moveSelectedTitle": {
+        "message": "Перемістити вибрані"
+    },
+    "move": {
+        "message": "Перемістити"
+    },
+    "deleteSelectedTitle": {
+        "message": "Видалити вибрані"
+    },
+    "cancelSelectionTitle": {
+        "message": "Скасувати вибір"
+    },
+    "emptyFolder": {
+        "message": "Папка порожня",
+        "description": "Message shown when a folder has no bookmarks"
+    },
+    "noSearchResults": {
+        "message": "Закладок не знайдено",
+        "description": "Message when search returns no results"
+    },
+    "noSearchResultsDesc": {
+        "message": "Спробуйте інший пошуковий запит",
+        "description": "Description for empty search results"
+    },
+    "theme": {
+        "message": "Тема"
+    },
+    "themeDark": {
+        "message": "Темна",
+        "description": "Dark theme name"
+    },
+    "themeLight": {
+        "message": "Світла",
+        "description": "Light theme name"
+    },
+    "themeSystem": {
+        "message": "Системна",
+        "description": "System theme name"
+    },
+    "themeToggle": {
+        "message": "Перемкнути тему",
+        "description": "Tooltip for theme toggle button"
+    },
+    "showFavicons": {
+        "message": "Показувати іконки сайтів (favicons)"
+    },
+    "showFaviconsDesc": {
+        "message": "Іконки завантажуються через сервіс Google"
+    },
+    "bookmarksAndFolders": {
+        "message": "Закладки та теки"
+    },
+    "importFromHtml": {
+        "message": "Імпорт з HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "Імпорт закладок з HTML виконано успішно! Додано закладок: $COUNT$.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+        "message": "Файл не вибрано"
+    },
+    "htmlImporterFileTooLarge": {
+        "message": "Файл занадто великий (макс. 1 МБ)"
+    },
+    "htmlImporterParseError": {
+        "message": "Не вдалося імпортувати HTML: $1"
+    },
+    "htmlImporterNoBookmarksFound": {
+        "message": "У файлі не знайдено закладок"
+    },
+    "importHtmlError": {
+        "message": "Не вдалося обробити HTML-файл. Будь ласка, перевірте формат файлу."
+    },
+    "importHtmlSizeWarning": {
+        "message": "Ліміт 1 МБ"
+    },
+    "importHtmlSizeNote": {
+        "message": "макс. ~2500 закладок"
+    },
+    "importWarning": {
+        "message": "Всі існуючі закладки будуть замінені"
+    },
+    "developer": {
+        "message": "Розробник:"
+    },
+    "lock": {
+        "message": "Блокування"
+    },
+    "faqButtonTitle": {
+        "message": "Поширені запитання"
+    },
+    "clearingHistory": {
+        "message": "Очищення історії",
+        "description": "Заголовок вікна прогресу очищення історії"
+    },
+    "preparingToClear": {
+        "message": "Підготовка до очищення історії...",
+        "description": "Початковий статус"
+    },
+    "progress": {
+        "message": "Прогрес",
+        "description": "Мітка прогресу"
+    },
+    "domainsProcessed": {
+        "message": "Доменів оброблено",
+        "description": "Мітка для лічильника оброблених доменів"
+    },
+    "entriesDeleted": {
+        "message": "Записів видалено",
+        "description": "Мітка для лічильника видалених записів"
+    },
+    "processing": {
+        "message": "Обробка...",
+        "description": "Статус під час обробки"
+    },
+    "startingCleanup": {
+        "message": "Запуск очищення...",
+        "description": "Статус при запуску"
+    },
+    "finalizingCleanup": {
+        "message": "Завершення очищення...",
+        "description": "Статус при завершенні"
+    },
+    "cancelling": {
+        "message": "Скасування...",
+        "description": "Статус при скасуванні"
+    },
+    "clearCancelled": {
+        "message": "Операцію скасовано",
+        "description": "Сповіщення при скасуванні"
+    },
+    "fillAllFields": {
+        "message": "Будь ласка, заповніть всі поля"
+    },
+    "setupComplete": {
+        "message": "Налаштування завершено!"
+    },
+    "migrationSuccess": {
+        "message": "Дані успішно перенесено у захищений формат!"
+    },
+    "migrationRequired": {
+        "message": "Потрібне оновлення формату даних"
+    },
+    "migrationInstruction": {
+        "message": "Введіть ваш пароль для автоматичного оновлення до більш захищеного формату."
+    },
+    "exportSuccess": {
+        "message": "Експорт виконано успішно",
+        "description": "Сповіщення при успішному експорті даних"
+    },
+    "unlocking": {
+        "message": "Розблокування...",
+        "description": "Показується під час розшифрування закладок"
+    },
+    "changingPassword": {
+        "message": "Зміна пароля...",
+        "description": "Показується під час зміни майстер-пароля"
+    },
+    "settingUpEncryption": {
+        "message": "Налаштування шифрування...",
+        "description": "Показується під час початкового налаштування"
+    },
+    "migratingData": {
+        "message": "Перенесення даних у захищений формат...",
+        "description": "Показується під час міграції з v1 на v2"
+    },
+    "loading": {
+        "message": "Завантаження...",
+        "description": "Загальне повідомлення про завантаження"
+    },
+    "donationReminderTitle": {
+        "message": "Підтримайте проєкт"
+    },
+    "donationReminderText": {
+        "message": "Якщо вам подобається це розширення, підтримайте його розробку!"
+    },
+    "remindLater": {
+        "message": "Нагадати пізніше"
+    },
+    "supportNow": {
+        "message": "Підтримати"
+    },
+    "remindNever": {
+        "message": "Більше не показувати"
+    },
+    "confirmDismiss": {
+        "message": "Вимкнути нагадування про пожертви назавжди?"
+    },
+    "bookmarkAlreadyInFolder": {
+        "message": "Елемент вже знаходиться в цій папці"
+    },
+    "cannotMoveIntoSelf": {
+        "message": "Неможливо перемістити папку в саму себе"
+    },
+    "bookmarksMoved": {
+        "message": "Переміщено елементів: {0}"
+    },
+    "deleteSelectedConfirm": {
+        "message": "Видалити вибрані елементи ({count})?",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "bookmarksDeleted": {
+        "message": "Видалено елементів: {count}",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "moveBookmarksTitle": {
+        "message": "Перемістити елементів: {0}"
+    },
+    "setupTabNew": {
+        "message": "Створити новий",
+        "description": "Tab label for creating new password"
+    },
+    "setupTabRestore": {
+        "message": "Відновити з резервної копії",
+        "description": "Tab label for restoring from backup"
+    },
+    "restoreDropTitle": {
+        "message": "Перетягніть файл резервної копії сюди або натисніть для вибору",
+        "description": "Text for drag & drop area in restore tab"
+    },
+    "strengthWeak": {
+        "message": "Слабкий",
+        "description": "Password strength indicator"
+    },
+    "strengthFair": {
+        "message": "Середній",
+        "description": "Password strength indicator"
+    },
+    "strengthGood": {
+        "message": "Добрий",
+        "description": "Password strength indicator"
+    },
+    "strengthStrong": {
+        "message": "Надійний",
+        "description": "Password strength indicator"
+    },
+    "importingBackup": {
+        "message": "Відновлення резервної копії...",
+        "description": "Loading message during backup import"
+    },
+    "unlockTitle": {
+        "message": "Введіть мастер-пароль"
+    },
+    "warningRemember": {
+        "message": "Ви запам'ятали пароль?"
+    },
+    "yesRemember": {
+        "message": "Так, запам'ятав"
+    },
+    "survey": {
+        "message": "Залишити відгук"
+    },
+    "changelog": {
+        "message": "Список змін"
+    },
+    "rateExtension": {
+        "message": "Оцінити в Chrome Web Store"
+    },
+    "migrationScreenTitle": {
+        "message": "Потрібне оновлення",
+        "description": "Title on the manager migration screen"
+    },
+    "migrationScreenBody1": {
+        "message": "Розширення оновлено з покращеним захистом.",
+        "description": "First line on the manager migration screen"
+    },
+    "migrationScreenBody2": {
+        "message": "Будь ласка, відкрийте спливаюче вікно розширення, щоб перенести дані в новий захищений формат.",
+        "description": "Second line on the manager migration screen"
+    },
+    "migrationScreenButton": {
+        "message": "Відкрити розширення",
+        "description": "Button on the manager migration screen"
+    },
+    "notSetUpTitle": {
+        "message": "Розширення не налаштовано",
+        "description": "manager-lock: notSetUpTitle"
+    },
+    "notSetUpSubtitle": {
+        "message": "Розширення ще не налаштовано. Відкрийте спливаюче вікно розширення для створення пароля.",
+        "description": "manager-lock: notSetUpSubtitle"
+    },
+    "notSetUpButton": {
+        "message": "Відкрити розширення",
+        "description": "manager-lock: notSetUpButton"
+    },
+    "reloadingSubtitle": {
+        "message": "Менеджер оновлюється...",
+        "description": "manager-lock: reloadingSubtitle"
+    },
+    "reloadingWait": {
+        "message": "Будь ласка, зачекайте поки менеджер оновлюється",
+        "description": "manager-lock: reloadingWait"
+    },
+    "exportHtml": {
+        "message": "Експорт у HTML"
+    },
+    "exportHtmlNote": {
+        "message": "Формат Netscape Bookmarks"
+    },
+    "exportHtmlSuccess": {
+        "message": "HTML-експорт виконано успішно"
+    },
+    "exportHtmlConfirmTitle": {
+        "message": "Підтвердіть пароль"
+    },
+    "exportHtmlConfirmDesc": {
+        "message": "Закладки буде експортовано у відкритому вигляді. Введіть майстер-пароль для підтвердження."
+    },
+    "exportHtmlPasswordRequired": {
+        "message": "Введіть пароль"
+    },
+    "exportHtmlConfirmBtn": {
+        "message": "Експортувати"
+    },
+    "exportHtmlVerifying": {
+        "message": "Перевірка пароля…"
+    },
+    "copiedToClipboard": {
+        "message": "Скопійовано!"
+    },
+    "copyFailed": {
+        "message": "Не вдалося скопіювати"
+    },
+    "clickToCopy": {
+        "message": "Натисніть для копіювання"
+    },
+    "qrCodeFor": {
+        "message": "QR-код для $1",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            }
+        }
+    },
+    "quickCloseTab": {
+        "message": "Швидке закриття вкладки ($1)"
+    },
+    "quickCloseTabDesc": {
+        "message": "Закриває поточну вкладку та видаляє історію перегляду домену"
+    },
+    "quickCloseTabCommand": {
+        "message": "Закрити вкладку та очистити історію домену"
+    },
+    "changeShortcut": {
+        "message": "Змінити гарячі клавіші"
+    },
+    "actions": {
+        "message": "Дії"
+    },
+    "qrCode": {
+        "message": "QR-код"
+    },
+    "qrScanHint": {
+        "message": "Відскануйте QR-код, щоб перейти за посиланням на вашому пристрої."
+    },
+    "stayUnlocked": {
+        "message": "Залишатися розблокованим між сесіями"
+    },
+    "stayUnlockedDesc": {
+        "message": "Не запитує пароль, поки браузер відкритий"
+    },
+    "stayUnlockedWarning": {
+        "message": "Знижує безпеку: ключ шифрування зберігається у сховищі сесії браузера. Будь-хто з доступом до вашого профілю браузера потенційно може його прочитати."
+    },
+    "alwaysIncognito": {
+        "message": "Відкривати закладки лише в режимі інкогніто"
+    },
+    "alwaysIncognitoDesc": {
+        "message": "Усі закладки відкриватимуться в приватному вікні"
+    },
+    "enable": {
+        "message": "Увімкнути"
+    },
+    "hotkeys": {
+        "message": "Гарячі клавіші"
+    },
+    "lockExtensionCommand": {
+        "message": "Заблокувати розширення"
+    },
+    "openManagerCommand": {
+        "message": "Відкрити менеджер закладок"
+    },
+    "switchToManager": {
+        "message": "Перейти до менеджера"
+    },
+    "managerIsOpen": {
+        "message": "Менеджер закладок відкрито"
+    },
+    "managerIsOpenDesc": {
+        "message": "Закрийте вкладку менеджера закладок, щоб використовувати спливаюче вікно."
+    },
+    "Error": {
+        "message": "Помилка"
+    },
+    "blurPage": {
+        "message": "Розмиття сторінки ($1)"
+    },
+    "blurPageDesc": {
+        "message": "Розмиває поточну вкладку при активації"
+    },
+    "blurPageCommand": {
+        "message": "Розмити сторінку"
+    },
+    "openAll": {
+        "message": "Відкрити всі"
+    },
+    "openAllWindow": {
+        "message": "Відкрити всі у новому вікні"
+    },
+    "openAllGroup": {
+        "message": "Відкрити всі у новій групі вкладок"
+    },
+    "openAllIncognito": {
+        "message": "Відкрити всі в режимі інкогніто"
+    },
+    "saveAllTabs": {
+        "message": "Зберегти всі активні вкладки"
+    },
+    "noTabsToSave": {
+        "message": "Немає вкладок для збереження"
+    },
+    "tabsSaved": {
+        "message": "Вкладки збережено"
     }
-  },
-  "addToHoly": {
-    "message": "Додати до Holy Private Bookmarks"
-  },
-  "cannotAddPage": {
-    "message": "Неможливо додати цю сторінку (немає дійсного URL)"
-  },
-  "supportProject": {
-    "message": "Підтримати проєкт"
-  },
-  "supportPageTitle": {
-    "message": "Підтримати Holy Private Bookmarks"
-  },
-  "donateHeroTitle": {
-    "message": "Підтримайте розробку, орієнтовану на конфіденційність"
-  },
-  "donateHeroSubtitle": {
-    "message": "Holy Private Bookmarks — це 100% безкоштовне та відкрите програмне забезпечення, і таким залишиться назавжди. Ваша підтримка допомагає розробникам приділяти час підтримці та покращенню розширення для всіх, кому важлива конфіденційність."
-  },
-  "whySupport": {
-    "message": "Чому ваша підтримка важлива"
-  },
-  "timeInvestment": {
-    "message": "Час розробників"
-  },
-  "timeInvestmentDesc": {
-    "message": "Кожна функція, виправлення помилки та покращення безпеки — це години роботи. Ваш внесок цінує цей час і робить проєкт стійким."
-  },
-  "longTerm": {
-    "message": "Довгострокові зобов'язання"
-  },
-  "longTermDesc": {
-    "message": "Ваша підтримка гарантує, що розширення залишатиметься активним, сумісним із майбутніми оновленнями Chrome і постійно вдосконалюватиметься."
-  },
-  "futureFeatures": {
-    "message": "Майбутні функції"
-  },
-  "futureFeaturesDesc": {
-    "message": "З вашою допомогою ми зможемо надати пріоритет новому функціоналу, кращому інтерфейсу та розширеним функціям безпеки, які принесуть користь усій спільноті."
-  },
-  "donateCtaText": {
-    "message": "Жодних підписок. Жодних платіжних стін. Жодного корпоративного фінансування. Просто люди, які створюють щось корисне для інших. Якщо це розширення економить ваш час або дарує вам спокій, подумайте про те, щоб пригостити розробників кавою."
-  },
-  "donateCryptoTitle": {
-    "message": "Підтримка криптовалютою"
-  },
-  "copyAddress": {
-    "message": "Копіювати адресу"
-  },
-  "donateThanks": {
-    "message": "Дякуємо за підтримку незалежної розробки з відкритим кодом"
-  },
-  "donateThanksNote": {
-    "message": "Кожен внесок, великий чи малий, дуже багато значить для нас."
-  },
-  "importantWarning": {
-    "message": "ВАЖЛИВЕ ПОПЕРЕДЖЕННЯ:"
-  },
-  "passwordCannotBeRecovered": {
-    "message": "Цей пароль НЕ МОЖНА відновити!"
-  },
-  "noPasswordReset": {
-    "message": "НЕМАЄ опції скидання пароля"
-  },
-  "weDontStorePassword": {
-    "message": "Ми НІДЕ не зберігаємо ваш пароль"
-  },
-  "bookmarksEncrypted": {
-    "message": "Ваші закладки зашифровані лише цим паролем"
-  },
-  "savePasswordSecurely": {
-    "message": "Збережіть цей пароль у надійному місці!"
-  },
-  "copyUrl": {
-    "message": "Копіювати URL"
-  },
-  "edit": {
-    "message": "Редагувати"
-  },
-  "delete": {
-    "message": "Видалити"
-  },
-  "urlCopied": {
-    "message": "URL скопійовано в буфер обміну"
-  },
-  "about": {
-    "message": "Про розширення"
-  },
-  "aboutExtension": {
-    "message": "Про розширення"
-  },
-  "openGitHub": {
-    "message": "Відкрити GitHub"
-  },
-  "close": {
-    "message": "Закрити"
-  },
-  "features": {
-    "message": "Можливості"
-  },
-  "troubleshooting": {
-    "message": "Усунення неполадок"
-  },
-  "encryption": {
-    "message": "Шифрування"
-  },
-  "encryptionDesc": {
-    "message": "Шифрування AES-256"
-  },
-  "localStorage": {
-    "message": "Локальне сховище"
-  },
-  "localStorageDesc": {
-    "message": "Дані залишаються на вашому пристрої"
-  },
-  "privacy": {
-    "message": "Конфіденційність"
-  },
-  "privacyDesc": {
-    "message": "Без відстеження та аналітики"
-  },
-  "openSource": {
-    "message": "GPLv3"
-  },
-  "viewOnGitHub": {
-    "message": "Переглянути на GitHub"
-  },
-  "githubRepo": {
-    "message": "Репозиторій GitHub"
-  },
-  "githubRepoDesc": {
-    "message": "Переглянути вихідний код, повідомити про проблеми, зробити внесок"
-  },
-  "version": {
-    "message": "Версія"
-  },
-  "openmanager": {
-    "message": "Відкрити менеджер"
-  },
-  "managerDesc": {
-    "message": "Відкрити повноекранний менеджер закладок"
-  },
-  "folders": {
-    "message": "Папки"
-  },
-  "bookmarks": {
-    "message": "закладки"
-  },
-  "allBookmarks": {
-    "message": "Всі закладки"
-  },
-  "searchBookmarks": {
-    "message": "Пошук закладок..."
-  },
-  "noBookmarksInFolder": {
-    "message": "Немає закладок у цій папці"
-  },
-  "addBookmarksToGetStarted": {
-    "message": "Додайте закладки, щоб розпочати"
-  },
-  "bookmarkUpdated": {
-    "message": "Закладку оновлено"
-  },
-  "bookmarkDeleted": {
-    "message": "Закладку видалено"
-  },
-  "renameFolder": {
-    "message": "Перейменувати папку"
-  },
-  "folderCreated": {
-    "message": "Папку успішно створено"
-  },
-  "managerLocked": {
-    "message": "Менеджер заблоковано"
-  },
-  "lockManager": {
-    "message": "Блокувати менеджер"
-  },
-  "rename": {
-    "message": "Перейменувати"
-  },
-  "deleteFolder": {
-    "message": "Видалити папку"
-  },
-  "deleteFolderConfirm": {
-    "message": "Видалити папку \"{0}\"?"
-  },
-  "deleteFolderWarning": {
-    "message": "Весь вміст буде видалено назавжди."
-  },
-  "folderRenamed": {
-    "message": "Папку успішно перейменовано"
-  },
-  "folderDeleted": {
-    "message": "Папку успішно видалено"
-  },
-  "cannotRenameAll": {
-    "message": "Неможливо перейменувати папку \"Всі закладки\""
-  },
-  "cannotDeleteAll": {
-    "message": "Неможливо видалити папку \"Всі закладки\""
-  },
-  "bookmarkAdded": {
-    "message": "Закладку додано"
-  },
-  "pendingBookmarkNotification": {
-    "message": "Закладка очікує!"
-  },
-  "pendingBookmarkInstruction": {
-    "message": "Закладка очікує на додавання. Будь ласка, розблокуйте, щоб продовжити."
-  },
-  "dragSuccess": {
-    "message": "Елемент успішно переміщено"
-  },
-  "invalidDestinationFolder": {
-    "message": "Недійсна папка призначення"
-  },
-  "moveFailed": {
-    "message": "Не вдалося перемістити закладки"
-  },
-  "noBookmarksSelected": {
-    "message": "Не вибрано жодної закладки"
-  },
-  "selectDestinationFolder": {
-    "message": "Виберіть папку призначення:"
-  },
-  "selected": {
-    "message": "вибрано"
-  },
-  "moveSelectedTitle": {
-    "message": "Перемістити вибрані"
-  },
-  "move": {
-    "message": "Перемістити"
-  },
-  "deleteSelectedTitle": {
-    "message": "Видалити вибрані"
-  },
-  "cancelSelectionTitle": {
-    "message": "Скасувати вибір"
-  },
-  "emptyFolder": {
-    "message": "Папка порожня",
-    "description": "Message shown when a folder has no bookmarks"
-  },
-  "noSearchResults": {
-    "message": "Закладок не знайдено",
-    "description": "Message when search returns no results"
-  },
-  "noSearchResultsDesc": {
-    "message": "Спробуйте інший пошуковий запит",
-    "description": "Description for empty search results"
-  },
-  "theme": {
-    "message": "Тема"
-  },
-  "themeDark": {
-    "message": "Темна",
-    "description": "Dark theme name"
-  },
-  "themeLight": {
-    "message": "Світла",
-    "description": "Light theme name"
-  },
-  "themeSystem": {
-    "message": "Системна",
-    "description": "System theme name"
-  },
-  "themeToggle": {
-    "message": "Перемкнути тему",
-    "description": "Tooltip for theme toggle button"
-  },
-  "showFavicons": {
-    "message": "Показувати іконки сайтів (favicons)"
-  },
-  "showFaviconsDesc": {
-    "message": "Іконки завантажуються через сервіс Google"
-  },
-  "bookmarksAndFolders": {
-    "message": "Закладки та теки"
-  },
-  "importFromHtml": {
-    "message": "Імпорт з HTML"
-  },
-  "importHtmlSuccess": {
-    "message": "Імпорт закладок з HTML виконано успішно! Додано закладок: $COUNT$.",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "42"
-      }
-    }
-  },
-  "htmlImporterNoFileSelected": {
-    "message": "Файл не вибрано"
-  },
-  "htmlImporterFileTooLarge": {
-    "message": "Файл занадто великий (макс. 1 МБ)"
-  },
-  "htmlImporterParseError": {
-    "message": "Не вдалося імпортувати HTML: $1"
-  },
-  "htmlImporterNoBookmarksFound": {
-    "message": "У файлі не знайдено закладок"
-  },
-  "importHtmlError": {
-    "message": "Не вдалося обробити HTML-файл. Будь ласка, перевірте формат файлу."
-  },
-  "importHtmlSizeWarning": {
-    "message": "Ліміт 1 МБ"
-  },
-  "importHtmlSizeNote": {
-    "message": "макс. ~2500 закладок"
-  },
-  "importWarning": {
-    "message": "Всі існуючі закладки будуть замінені"
-  },
-  "developer": {
-    "message": "Розробник:"
-  },
-  "lock": {
-    "message": "Блокування"
-  },
-  "faqButtonTitle": {
-    "message": "Поширені запитання"
-  },
-  "clearingHistory": {
-    "message": "Очищення історії",
-    "description": "Заголовок вікна прогресу очищення історії"
-  },
-  "preparingToClear": {
-    "message": "Підготовка до очищення історії...",
-    "description": "Початковий статус"
-  },
-  "progress": {
-    "message": "Прогрес",
-    "description": "Мітка прогресу"
-  },
-  "domainsProcessed": {
-    "message": "Доменів оброблено",
-    "description": "Мітка для лічильника оброблених доменів"
-  },
-  "entriesDeleted": {
-    "message": "Записів видалено",
-    "description": "Мітка для лічильника видалених записів"
-  },
-  "processing": {
-    "message": "Обробка...",
-    "description": "Статус під час обробки"
-  },
-  "startingCleanup": {
-    "message": "Запуск очищення...",
-    "description": "Статус при запуску"
-  },
-  "finalizingCleanup": {
-    "message": "Завершення очищення...",
-    "description": "Статус при завершенні"
-  },
-  "cancelling": {
-    "message": "Скасування...",
-    "description": "Статус при скасуванні"
-  },
-  "clearCancelled": {
-    "message": "Операцію скасовано",
-    "description": "Сповіщення при скасуванні"
-  },
-  "fillAllFields": {
-    "message": "Будь ласка, заповніть всі поля"
-  },
-  "setupComplete": {
-    "message": "Налаштування завершено!"
-  },
-  "migrationSuccess": {
-    "message": "Дані успішно перенесено у захищений формат!"
-  },
-  "migrationRequired": {
-    "message": "Потрібне оновлення формату даних"
-  },
-  "migrationInstruction": {
-    "message": "Введіть ваш пароль для автоматичного оновлення до більш захищеного формату."
-  },
-  "exportSuccess": {
-    "message": "Експорт виконано успішно",
-    "description": "Сповіщення при успішному експорті даних"
-  },
-  "unlocking": {
-    "message": "Розблокування...",
-    "description": "Показується під час розшифрування закладок"
-  },
-  "changingPassword": {
-    "message": "Зміна пароля...",
-    "description": "Показується під час зміни майстер-пароля"
-  },
-  "settingUpEncryption": {
-    "message": "Налаштування шифрування...",
-    "description": "Показується під час початкового налаштування"
-  },
-  "migratingData": {
-    "message": "Перенесення даних у захищений формат...",
-    "description": "Показується під час міграції з v1 на v2"
-  },
-  "loading": {
-    "message": "Завантаження...",
-    "description": "Загальне повідомлення про завантаження"
-  },
-  "donationReminderTitle": {
-    "message": "Підтримайте проєкт"
-  },
-  "donationReminderText": {
-    "message": "Якщо вам подобається це розширення, підтримайте його розробку!"
-  },
-  "remindLater": {
-    "message": "Нагадати пізніше"
-  },
-  "supportNow": {
-    "message": "Підтримати"
-  },
-  "remindNever": {
-    "message": "Більше не показувати"
-  },
-  "confirmDismiss": {
-    "message": "Вимкнути нагадування про пожертви назавжди?"
-  },
-  "bookmarkAlreadyInFolder": {
-    "message": "Елемент вже знаходиться в цій папці"
-  },
-  "cannotMoveIntoSelf": {
-    "message": "Неможливо перемістити папку в саму себе"
-  },
-  "bookmarksMoved": {
-    "message": "Переміщено елементів: {0}"
-  },
-  "deleteSelectedConfirm": {
-    "message": "Видалити вибрані елементи ({count})?",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "plural": {
-        "content": "$2"
-      }
-    }
-  },
-  "bookmarksDeleted": {
-    "message": "Видалено елементів: {count}",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "plural": {
-        "content": "$2"
-      }
-    }
-  },
-  "moveBookmarksTitle": {
-    "message": "Перемістити елементів: {0}"
-  },
-  "setupTabNew": {
-    "message": "Створити новий",
-    "description": "Tab label for creating new password"
-  },
-  "setupTabRestore": {
-    "message": "Відновити з резервної копії",
-    "description": "Tab label for restoring from backup"
-  },
-  "restoreDropTitle": {
-    "message": "Перетягніть файл резервної копії сюди або натисніть для вибору",
-    "description": "Text for drag & drop area in restore tab"
-  },
-  "strengthWeak": {
-    "message": "Слабкий",
-    "description": "Password strength indicator"
-  },
-  "strengthFair": {
-    "message": "Середній",
-    "description": "Password strength indicator"
-  },
-  "strengthGood": {
-    "message": "Добрий",
-    "description": "Password strength indicator"
-  },
-  "strengthStrong": {
-    "message": "Надійний",
-    "description": "Password strength indicator"
-  },
-  "importingBackup": {
-    "message": "Відновлення резервної копії...",
-    "description": "Loading message during backup import"
-  },
-  "unlockTitle": {
-    "message": "Введіть мастер-пароль"
-  },
-  "warningRemember": {
-    "message": "Ви запам'ятали пароль?"
-  },
-  "yesRemember": {
-    "message": "Так, запам'ятав"
-  },
-  "survey": {
-    "message": "Залишити відгук"
-  },
-  "changelog": {
-    "message": "Список змін"
-  },
-  "rateExtension": {
-    "message": "Оцінити в Chrome Web Store"
-  },
-  "migrationScreenTitle": {
-    "message": "Потрібне оновлення",
-    "description": "Title on the manager migration screen"
-  },
-  "migrationScreenBody1": {
-    "message": "Розширення оновлено з покращеним захистом.",
-    "description": "First line on the manager migration screen"
-  },
-  "migrationScreenBody2": {
-    "message": "Будь ласка, відкрийте спливаюче вікно розширення, щоб перенести дані в новий захищений формат.",
-    "description": "Second line on the manager migration screen"
-  },
-  "migrationScreenButton": {
-    "message": "Відкрити розширення",
-    "description": "Button on the manager migration screen"
-  },
-  "notSetUpTitle": {
-    "message": "Розширення не налаштовано",
-    "description": "manager-lock: notSetUpTitle"
-  },
-  "notSetUpSubtitle": {
-    "message": "Розширення ще не налаштовано. Відкрийте спливаюче вікно розширення для створення пароля.",
-    "description": "manager-lock: notSetUpSubtitle"
-  },
-  "notSetUpButton": {
-    "message": "Відкрити розширення",
-    "description": "manager-lock: notSetUpButton"
-  },
-  "reloadingSubtitle": {
-    "message": "Менеджер оновлюється...",
-    "description": "manager-lock: reloadingSubtitle"
-  },
-  "reloadingWait": {
-    "message": "Будь ласка, зачекайте поки менеджер оновлюється",
-    "description": "manager-lock: reloadingWait"
-  },
-  "exportHtml": {
-    "message": "Експорт у HTML"
-  },
-  "exportHtmlNote": {
-    "message": "Формат Netscape Bookmarks"
-  },
-  "exportHtmlSuccess": {
-    "message": "HTML-експорт виконано успішно"
-  },
-  "exportHtmlConfirmTitle": {
-    "message": "Підтвердіть пароль"
-  },
-  "exportHtmlConfirmDesc": {
-    "message": "Закладки буде експортовано у відкритому вигляді. Введіть майстер-пароль для підтвердження."
-  },
-  "exportHtmlPasswordRequired": {
-    "message": "Введіть пароль"
-  },
-  "exportHtmlConfirmBtn": {
-    "message": "Експортувати"
-  },
-  "exportHtmlVerifying": {
-    "message": "Перевірка пароля…"
-  },
-  "copiedToClipboard": {
-    "message": "Скопійовано!"
-  },
-  "copyFailed": {
-    "message": "Не вдалося скопіювати"
-  },
-  "clickToCopy": {
-    "message": "Натисніть для копіювання"
-  },
-  "qrCodeFor": {
-    "message": "QR-код для $1",
-    "placeholders": {
-      "1": {
-        "content": "$1"
-      }
-    }
-  },
-  "quickCloseTab": {
-    "message": "Швидке закриття вкладки ($1)"
-  },
-  "quickCloseTabDesc": {
-    "message": "Закриває поточну вкладку та видаляє історію перегляду домену"
-  },
-  "quickCloseTabCommand": {
-    "message": "Закрити вкладку та очистити історію домену"
-  },
-  "changeShortcut": {
-    "message": "Змінити гарячі клавіші"
-  },
-  "actions": {
-    "message": "Дії"
-  },
-  "qrCode": {
-    "message": "QR-код"
-  },
-  "qrScanHint": {
-    "message": "Відскануйте QR-код, щоб перейти за посиланням на вашому пристрої."
-  },
-  "stayUnlocked": {
-    "message": "Залишатися розблокованим між сесіями"
-  },
-  "stayUnlockedDesc": {
-    "message": "Не запитує пароль, поки браузер відкритий"
-  },
-  "stayUnlockedWarning": {
-    "message": "Знижує безпеку: ключ шифрування зберігається у сховищі сесії браузера. Будь-хто з доступом до вашого профілю браузера потенційно може його прочитати."
-  },
-  "alwaysIncognito": {
-    "message": "Відкривати закладки лише в режимі інкогніто"
-  },
-  "alwaysIncognitoDesc": {
-    "message": "Усі закладки відкриватимуться в приватному вікні"
-  },
-  "enable": {
-    "message": "Увімкнути"
-  },
-  "hotkeys": {
-    "message": "Гарячі клавіші"
-  },
-  "lockExtensionCommand": {
-    "message": "Заблокувати розширення"
-  },
-  "openManagerCommand": {
-    "message": "Відкрити менеджер закладок"
-  },
-  "switchToManager": {
-    "message": "Перейти до менеджера"
-  },
-  "managerIsOpen": {
-    "message": "Менеджер закладок відкрито"
-  },
-  "managerIsOpenDesc": {
-    "message": "Закрийте вкладку менеджера закладок, щоб використовувати спливаюче вікно."
-  },
-  "Error": {
-    "message": "Помилка"
-  },
-  "blurPage": {
-    "message": "Розмиття сторінки ($1)"
-  },
-  "blurPageDesc": {
-    "message": "Розмиває поточну вкладку при активації"
-  },
-  "blurPageCommand": {
-    "message": "Розмити сторінку"
-  }
 }

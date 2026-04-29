@@ -1,860 +1,881 @@
 {
-  "Name": {
-    "message": "Holy Private Bookmarks — 暗号化ローカルブックマーク管理"
-  },
-  "extensionName": {
-    "message": "Holy Private Bookmarks"
-  },
-  "extensionDescription": {
-    "message": "マスターパスワードとAES-256暗号化でブックマークを完全保護。すべてのデータはあなたのデバイスに保存されます — クラウドなし、トラッキングなし。"
-  },
-  "managerTitle": {
-    "message": "HPB - ブックマークマネージャー"
-  },
-  "createPassword": {
-    "message": "ブックマーク完全暗号化のためのマスターパスワードを作成"
-  },
-  "newPassword": {
-    "message": "新しいパスワード（6文字以上）"
-  },
-  "confirmPassword": {
-    "message": "パスワードの確認"
-  },
-  "createStorage": {
-    "message": "ストレージを作成"
-  },
-  "enterMasterPassword": {
-    "message": ""
-  },
-  "masterPassword": {
-    "message": "マスターパスワード"
-  },
-  "unlock": {
-    "message": "ロック解除"
-  },
-  "wrongPassword": {
-    "message": "パスワードが違います"
-  },
-  "passwordsMismatch": {
-    "message": "パスワードが一致しないか、短すぎます"
-  },
-  "bookmarksProtected": {
-    "message": "あなたのブックマークは安全に保護されています"
-  },
-  "addCurrentPage": {
-    "message": "現在のページを追加"
-  },
-  "newFolder": {
-    "message": "新規フォルダ"
-  },
-  "clearHistory": {
-    "message": "履歴を消去"
-  },
-  "settings": {
-    "message": "設定"
-  },
-  "settingsbtn": {
-    "message": "⚙️"
-  },
-  "changeMasterPassword": {
-    "message": "マスターパスワードを変更"
-  },
-  "currentPassword": {
-    "message": "現在のマスターパスワード"
-  },
-  "newPassword2": {
-    "message": "新しいパスワード"
-  },
-  "confirmNewPassword": {
-    "message": "新しいパスワードの確認"
-  },
-  "changePassword": {
-    "message": "パスワードを変更"
-  },
-  "exportImport": {
-    "message": "エクスポート＆インポート"
-  },
-  "export": {
-    "message": "バックアップを作成"
-  },
-  "openPrivate": {
-    "message": "プライベートタブで開く"
-  },
-  "import": {
-    "message": "インポート"
-  },
-  "importFromChrome": {
-    "message": "Chromeからインポート"
-  },
-  "importChromeBookmarks": {
-    "message": "Chromeの全ブックマークをインポート"
-  },
-  "importChromeBookmarksAdvanced": {
-    "message": "インポートするフォルダを選択"
-  },
-  "importChromeConfirm": {
-    "message": "Chromeからすべてのブックマークをインポートしますか？既存のブックマークは保持されます。"
-  },
-  "importChromeSuccess": {
-    "message": "ブックマークが正常にインポートされました！"
-  },
-  "importChromeError": {
-    "message": "ブックマークのインポートに失敗しました"
-  },
-  "selectFoldersToImport": {
-    "message": "インポートするフォルダを選択"
-  },
-  "selectAll": {
-    "message": "すべて選択"
-  },
-  "deselectAll": {
-    "message": "すべて解除"
-  },
-  "importSelected": {
-    "message": "インポート"
-  },
-  "back": {
-    "message": "← 戻る"
-  },
-  "addBookmark": {
-    "message": "ブックマークを追加"
-  },
-  "editBookmark": {
-    "message": "ブックマークを編集"
-  },
-  "page": {
-    "message": "ページ"
-  },
-  "title": {
-    "message": "タイトル"
-  },
-  "url": {
-    "message": "URL"
-  },
-  "folder": {
-    "message": "フォルダ"
-  },
-  "rootFolder": {
-    "message": "ルートフォルダ"
-  },
-  "new": {
-    "message": "+ 新規"
-  },
-  "cancel": {
-    "message": "キャンセル"
-  },
-  "save": {
-    "message": "保存"
-  },
-  "deleteConfirm": {
-    "message": "ブックマークを削除"
-  },
-  "folderName": {
-    "message": "フォルダ名："
-  },
-  "newName": {
-    "message": "新しい名前："
-  },
-  "titleRequired": {
-    "message": "タイトルとURLは必須です"
-  },
-  "validUrl": {
-    "message": "URLはhttp：// または https：// で始まる必要があります"
-  },
-  "passwordChanged": {
-    "message": "パスワードが正常に変更されました！"
-  },
-  "importSuccess": {
-    "message": "バックアップが正常にインポートされました！ポップアップを開き直してください。"
-  },
-  "invalidFile": {
-    "message": "無効なバックアップファイルです"
-  },
-  "clearHistoryConfirm": {
-    "message": "Holy Private Bookmarks に存在するドメインのブラウザ履歴エントリをすべて削除しますか？"
-  },
-  "noBookmarks": {
-    "message": "ブックマークが見つかりません — 消去するものはありません。"
-  },
-  "noDomains": {
-    "message": "ブックマークに有効なドメインが見つかりません。"
-  },
-  "newBookmark": {
-    "message": "新しいブックマーク"
-  },
-  "paste": {
-    "message": "貼り付け"
-  },
-  "ctxnewFolder": {
-    "message": "新規フォルダ"
-  },
-  "emptyTreeTitle": {
-    "message": "ブックマークはまだありません"
-  },
-  "emptyTreeSubtitle": {
-    "message": "最初のブックマークまたはフォルダを追加して開始しましょう"
-  },
-  "historyCleared": {
-    "message": "履歴を消去しました！\n$count$ 件の訪問を $domains$ 個のドメインから削除しました。",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "domains": {
-        "content": "$2"
-      }
+    "Name": {
+        "message": "Holy Private Bookmarks — 暗号化ローカルブックマーク管理"
+    },
+    "extensionName": {
+        "message": "Holy Private Bookmarks"
+    },
+    "extensionDescription": {
+        "message": "マスターパスワードとAES-256暗号化でブックマークを完全保護。すべてのデータはあなたのデバイスに保存されます — クラウドなし、トラッキングなし。"
+    },
+    "managerTitle": {
+        "message": "HPB - ブックマークマネージャー"
+    },
+    "createPassword": {
+        "message": "ブックマーク完全暗号化のためのマスターパスワードを作成"
+    },
+    "newPassword": {
+        "message": "新しいパスワード（6文字以上）"
+    },
+    "confirmPassword": {
+        "message": "パスワードの確認"
+    },
+    "createStorage": {
+        "message": "ストレージを作成"
+    },
+    "enterMasterPassword": {
+        "message": ""
+    },
+    "masterPassword": {
+        "message": "マスターパスワード"
+    },
+    "unlock": {
+        "message": "ロック解除"
+    },
+    "wrongPassword": {
+        "message": "パスワードが違います"
+    },
+    "passwordsMismatch": {
+        "message": "パスワードが一致しないか、短すぎます"
+    },
+    "bookmarksProtected": {
+        "message": "あなたのブックマークは安全に保護されています"
+    },
+    "addCurrentPage": {
+        "message": "現在のページを追加"
+    },
+    "newFolder": {
+        "message": "新規フォルダ"
+    },
+    "clearHistory": {
+        "message": "履歴を消去"
+    },
+    "settings": {
+        "message": "設定"
+    },
+    "settingsbtn": {
+        "message": "⚙️"
+    },
+    "changeMasterPassword": {
+        "message": "マスターパスワードを変更"
+    },
+    "currentPassword": {
+        "message": "現在のマスターパスワード"
+    },
+    "newPassword2": {
+        "message": "新しいパスワード"
+    },
+    "confirmNewPassword": {
+        "message": "新しいパスワードの確認"
+    },
+    "changePassword": {
+        "message": "パスワードを変更"
+    },
+    "exportImport": {
+        "message": "エクスポート＆インポート"
+    },
+    "export": {
+        "message": "バックアップを作成"
+    },
+    "openPrivate": {
+        "message": "プライベートタブで開く"
+    },
+    "import": {
+        "message": "インポート"
+    },
+    "importFromChrome": {
+        "message": "Chromeからインポート"
+    },
+    "importChromeBookmarks": {
+        "message": "Chromeの全ブックマークをインポート"
+    },
+    "importChromeBookmarksAdvanced": {
+        "message": "インポートするフォルダを選択"
+    },
+    "importChromeConfirm": {
+        "message": "Chromeからすべてのブックマークをインポートしますか？既存のブックマークは保持されます。"
+    },
+    "importChromeSuccess": {
+        "message": "ブックマークが正常にインポートされました！"
+    },
+    "importChromeError": {
+        "message": "ブックマークのインポートに失敗しました"
+    },
+    "selectFoldersToImport": {
+        "message": "インポートするフォルダを選択"
+    },
+    "selectAll": {
+        "message": "すべて選択"
+    },
+    "deselectAll": {
+        "message": "すべて解除"
+    },
+    "importSelected": {
+        "message": "インポート"
+    },
+    "back": {
+        "message": "← 戻る"
+    },
+    "addBookmark": {
+        "message": "ブックマークを追加"
+    },
+    "editBookmark": {
+        "message": "ブックマークを編集"
+    },
+    "page": {
+        "message": "ページ"
+    },
+    "title": {
+        "message": "タイトル"
+    },
+    "url": {
+        "message": "URL"
+    },
+    "folder": {
+        "message": "フォルダ"
+    },
+    "rootFolder": {
+        "message": "ルートフォルダ"
+    },
+    "new": {
+        "message": "+ 新規"
+    },
+    "cancel": {
+        "message": "キャンセル"
+    },
+    "save": {
+        "message": "保存"
+    },
+    "deleteConfirm": {
+        "message": "ブックマークを削除"
+    },
+    "folderName": {
+        "message": "フォルダ名："
+    },
+    "newName": {
+        "message": "新しい名前："
+    },
+    "titleRequired": {
+        "message": "タイトルとURLは必須です"
+    },
+    "validUrl": {
+        "message": "URLはhttp：// または https：// で始まる必要があります"
+    },
+    "passwordChanged": {
+        "message": "パスワードが正常に変更されました！"
+    },
+    "importSuccess": {
+        "message": "バックアップが正常にインポートされました！ポップアップを開き直してください。"
+    },
+    "invalidFile": {
+        "message": "無効なバックアップファイルです"
+    },
+    "clearHistoryConfirm": {
+        "message": "Holy Private Bookmarks に存在するドメインのブラウザ履歴エントリをすべて削除しますか？"
+    },
+    "noBookmarks": {
+        "message": "ブックマークが見つかりません — 消去するものはありません。"
+    },
+    "noDomains": {
+        "message": "ブックマークに有効なドメインが見つかりません。"
+    },
+    "newBookmark": {
+        "message": "新しいブックマーク"
+    },
+    "paste": {
+        "message": "貼り付け"
+    },
+    "ctxnewFolder": {
+        "message": "新規フォルダ"
+    },
+    "emptyTreeTitle": {
+        "message": "ブックマークはまだありません"
+    },
+    "emptyTreeSubtitle": {
+        "message": "最初のブックマークまたはフォルダを追加して開始しましょう"
+    },
+    "historyCleared": {
+        "message": "履歴を消去しました！\n$count$ 件の訪問を $domains$ 個のドメインから削除しました。",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "domains": {
+                "content": "$2"
+            }
+        }
+    },
+    "addToHoly": {
+        "message": "Holy Private Bookmarks に追加"
+    },
+    "cannotAddPage": {
+        "message": "このページは追加できません（有効なURLがありません）"
+    },
+    "supportProject": {
+        "message": "プロジェクトを支援する"
+    },
+    "supportPageTitle": {
+        "message": "Holy Private Bookmarks を支援"
+    },
+    "donateHeroTitle": {
+        "message": "プライバシー重視の開発を支援"
+    },
+    "donateHeroSubtitle": {
+        "message": "Holy Private Bookmarks は 100％ 無料でオープンソースであり、これからもその方針です。あなたの支援は、開発者がプライバシーを気にするすべての人のために拡張機能の維持と改善に時間を割く助けとなります。"
+    },
+    "whySupport": {
+        "message": "支援が重要な理由"
+    },
+    "timeInvestment": {
+        "message": "開発者の時間"
+    },
+    "timeInvestmentDesc": {
+        "message": "すべての機能、バグ修正、セキュリティ改善には多くの作業時間が費やされています。あなたの貢献はその時間を評価し、プロジェクトを持続可能にします。"
+    },
+    "longTerm": {
+        "message": "長期的なコミットメント"
+    },
+    "longTermDesc": {
+        "message": "あなたの支援により、拡張機能は積極的にメンテナンスされ、将来のChromeアップデートとの互換性が確保され、継続的に改善されます。"
+    },
+    "futureFeatures": {
+        "message": "将来の機能"
+    },
+    "futureFeaturesDesc": {
+        "message": "あなたの助けがあれば、コミュニティ全体に利益をもたらす新機能、より良いUI、強化されたセキュリティ機能を優先できます。"
+    },
+    "donateCtaText": {
+        "message": "サブスクリプションも、ペイウォールも、企業からの資金提供もありません。 ただ、他の人のために役立つものを作っている人々がいるだけです。この拡張機能があなたの時間を節約したり、安心感を与えたりしているなら、開発者にコーヒーをおごることを検討してください。"
+    },
+    "donateCryptoTitle": {
+        "message": "暗号資産で支援"
+    },
+    "copyAddress": {
+        "message": "アドレスをコピー"
+    },
+    "donateThanks": {
+        "message": "独立したオープンソース開発を支援していただきありがとうございます"
+    },
+    "donateThanksNote": {
+        "message": "大小を問わず、すべての貢献が私たちにとって大きな意味を持ちます。"
+    },
+    "importantWarning": {
+        "message": "重要なお知らせ："
+    },
+    "passwordCannotBeRecovered": {
+        "message": "このパスワードは復元できません！"
+    },
+    "noPasswordReset": {
+        "message": "パスワードリセット機能はありません"
+    },
+    "weDontStorePassword": {
+        "message": "私たちはあなたのパスワードをどこにも保存しません"
+    },
+    "bookmarksEncrypted": {
+        "message": "あなたのブックマークはこのパスワードのみで暗号化されています"
+    },
+    "savePasswordSecurely": {
+        "message": "このパスワードは安全に保管してください！"
+    },
+    "copyUrl": {
+        "message": "URLをコピー"
+    },
+    "edit": {
+        "message": "編集"
+    },
+    "delete": {
+        "message": "削除"
+    },
+    "urlCopied": {
+        "message": "URLをクリップボードにコピーしました"
+    },
+    "about": {
+        "message": "この拡張機能について"
+    },
+    "aboutExtension": {
+        "message": "拡張機能について"
+    },
+    "openGitHub": {
+        "message": "GitHubを開く"
+    },
+    "close": {
+        "message": "閉じる"
+    },
+    "features": {
+        "message": "機能"
+    },
+    "troubleshooting": {
+        "message": "トラブルシューティング"
+    },
+    "encryption": {
+        "message": "暗号化"
+    },
+    "encryptionDesc": {
+        "message": "AES-256暗号化"
+    },
+    "localStorage": {
+        "message": "ローカルストレージ"
+    },
+    "localStorageDesc": {
+        "message": "データはお使いのデバイスに留まります"
+    },
+    "privacy": {
+        "message": "プライバシー"
+    },
+    "privacyDesc": {
+        "message": "トラッキングや分析は行いません"
+    },
+    "openSource": {
+        "message": "GPLv3"
+    },
+    "viewOnGitHub": {
+        "message": "GitHubで見る"
+    },
+    "githubRepo": {
+        "message": "GitHubリポジトリ"
+    },
+    "githubRepoDesc": {
+        "message": "ソースコードを見る、問題を報告する、貢献する"
+    },
+    "version": {
+        "message": "バージョン"
+    },
+    "openmanager": {
+        "message": "マネージャーを開く"
+    },
+    "managerDesc": {
+        "message": "全画面ブックマークマネージャーを開く"
+    },
+    "folders": {
+        "message": "フォルダ"
+    },
+    "bookmarks": {
+        "message": "ブックマーク"
+    },
+    "allBookmarks": {
+        "message": "すべてのブックマーク"
+    },
+    "searchBookmarks": {
+        "message": "ブックマークを検索..."
+    },
+    "noBookmarksInFolder": {
+        "message": "フォルダにブックマークがありません"
+    },
+    "addBookmarksToGetStarted": {
+        "message": "ブックマークを追加して開始しましょう"
+    },
+    "bookmarkUpdated": {
+        "message": "ブックマークを更新しました"
+    },
+    "bookmarkDeleted": {
+        "message": "ブックマークを削除しました"
+    },
+    "renameFolder": {
+        "message": "フォルダ名を変更"
+    },
+    "folderCreated": {
+        "message": "フォルダを作成しました"
+    },
+    "managerLocked": {
+        "message": "マネージャーはロックされています"
+    },
+    "lockManager": {
+        "message": "マネージャーをロック"
+    },
+    "rename": {
+        "message": "名前を変更"
+    },
+    "deleteFolder": {
+        "message": "フォルダを削除"
+    },
+    "deleteFolderConfirm": {
+        "message": "フォルダ \"{0}\" を削除しますか？"
+    },
+    "deleteFolderWarning": {
+        "message": "すべてのコンテンツが完全に削除されます。"
+    },
+    "folderRenamed": {
+        "message": "フォルダ名を変更しました"
+    },
+    "folderDeleted": {
+        "message": "フォルダを削除しました"
+    },
+    "cannotRenameAll": {
+        "message": "\"すべてのブックマーク\" フォルダの名前は変更できません"
+    },
+    "cannotDeleteAll": {
+        "message": "\"すべてのブックマーク\" フォルダは削除できません"
+    },
+    "bookmarkAdded": {
+        "message": "ブックマークを追加しました"
+    },
+    "pendingBookmarkNotification": {
+        "message": "保留中のブックマークがあります！"
+    },
+    "pendingBookmarkInstruction": {
+        "message": "追加待ちのブックマークがあります。続行するにはロックを解除してください。"
+    },
+    "dragSuccess": {
+        "message": "アイテムを移動しました"
+    },
+    "invalidDestinationFolder": {
+        "message": "無効な移動先フォルダです"
+    },
+    "moveFailed": {
+        "message": "ブックマークの移動に失敗しました"
+    },
+    "noBookmarksSelected": {
+        "message": "ブックマークが選択されていません"
+    },
+    "selectDestinationFolder": {
+        "message": "移動先フォルダを選択："
+    },
+    "move": {
+        "message": "移動"
+    },
+    "selected": {
+        "message": "選択済み"
+    },
+    "moveSelectedTitle": {
+        "message": "選択項目を移動"
+    },
+    "deleteSelectedTitle": {
+        "message": "選択項目を削除"
+    },
+    "cancelSelectionTitle": {
+        "message": "選択をキャンセル"
+    },
+    "emptyFolder": {
+        "message": "フォルダは空です",
+        "description": "フォルダにブックマークがない場合に表示されるメッセージ"
+    },
+    "noSearchResults": {
+        "message": "ブックマークが見つかりません",
+        "description": "検索結果が0件の場合のメッセージ"
+    },
+    "noSearchResultsDesc": {
+        "message": "別の検索語をお試しください",
+        "description": "空の検索結果に対する説明"
+    },
+    "theme": {
+        "message": "テーマ"
+    },
+    "themeDark": {
+        "message": "ダーク",
+        "description": "ダークテーマ名"
+    },
+    "themeLight": {
+        "message": "ライト",
+        "description": "ライトテーマ名"
+    },
+    "themeSystem": {
+        "message": "システム",
+        "description": "システムテーマ名"
+    },
+    "themeToggle": {
+        "message": "テーマを切り替え",
+        "description": "テーマ切り替えボタンのツールチップ"
+    },
+    "showFavicons": {
+        "message": "ウェブサイトのファビコンを表示"
+    },
+    "showFaviconsDesc": {
+        "message": "アイコンはGoogleのサービスを通じて読み込まれます"
+    },
+    "bookmarksAndFolders": {
+        "message": "ブックマーク＆フォルダ"
+    },
+    "importFromHtml": {
+        "message": "HTMLからインポート"
+    },
+    "importHtmlSuccess": {
+        "message": "HTMLブックマークのインポートに成功しました！ $COUNT$ 件のブックマークを追加しました。",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+        "message": "ファイルが選択されていません"
+    },
+    "htmlImporterFileTooLarge": {
+        "message": "ファイルが大きすぎます（最大1MB）"
+    },
+    "htmlImporterParseError": {
+        "message": "HTMLのインポートに失敗しました： $1"
+    },
+    "htmlImporterNoBookmarksFound": {
+        "message": "ファイルにブックマークが見つかりません"
+    },
+    "importHtmlError": {
+        "message": "HTMLファイルの解析に失敗しました。ファイル形式を確認してください。"
+    },
+    "importHtmlSizeWarning": {
+        "message": "1MB制限"
+    },
+    "importHtmlSizeNote": {
+        "message": "最大約2500ブックマーク"
+    },
+    "importWarning": {
+        "message": "既存のブックマークはすべて置き換えられます"
+    },
+    "developer": {
+        "message": "開発者："
+    },
+    "lock": {
+        "message": "ロック"
+    },
+    "faqButtonTitle": {
+        "message": "よくある質問"
+    },
+    "clearingHistory": {
+        "message": "履歴を消去中",
+        "description": "履歴消去進行中モーダルのタイトル"
+    },
+    "preparingToClear": {
+        "message": "履歴消去の準備中...",
+        "description": "初期ステータスメッセージ"
+    },
+    "progress": {
+        "message": "進捗",
+        "description": "進捗ラベル"
+    },
+    "domainsProcessed": {
+        "message": "処理済みドメイン",
+        "description": "処理済みドメイン数のラベル"
+    },
+    "entriesDeleted": {
+        "message": "削除済みエントリ",
+        "description": "削除済みエントリ数のラベル"
+    },
+    "startingCleanup": {
+        "message": "クリーンアップを開始...",
+        "description": "開始時のステータス"
+    },
+    "finalizingCleanup": {
+        "message": "クリーンアップを終了中...",
+        "description": "終了処理中のステータス"
+    },
+    "cancelling": {
+        "message": "キャンセル中...",
+        "description": "キャンセル時のステータス"
+    },
+    "clearCancelled": {
+        "message": "操作はキャンセルされました",
+        "description": "キャンセル時の通知"
+    },
+    "fillAllFields": {
+        "message": "すべての項目を入力してください"
+    },
+    "setupComplete": {
+        "message": "セットアップ完了！"
+    },
+    "migrationSuccess": {
+        "message": "データは正常に安全な形式に移行されました！"
+    },
+    "migrationRequired": {
+        "message": "データ形式の更新が必要です"
+    },
+    "migrationInstruction": {
+        "message": "パスワードを入力して、より安全な形式に自動的にアップグレードします。"
+    },
+    "exportSuccess": {
+        "message": "エクスポート成功",
+        "description": "データのエクスポートが正常に完了したときの通知"
+    },
+    "processing": {
+        "message": "処理中...",
+        "description": "ローディングインジケータ用の一般的な処理中メッセージ"
+    },
+    "unlocking": {
+        "message": "ロック解除中...",
+        "description": "ブックマークを復号化している間に表示"
+    },
+    "changingPassword": {
+        "message": "パスワード変更中...",
+        "description": "マスターパスワード変更中に表示"
+    },
+    "settingUpEncryption": {
+        "message": "暗号化設定中...",
+        "description": "初回セットアップ中に表示"
+    },
+    "migratingData": {
+        "message": "データを安全な形式に移行中...",
+        "description": "v1からv2への移行中に表示"
+    },
+    "loading": {
+        "message": "読み込み中...",
+        "description": "一般的な読み込み中メッセージ"
+    },
+    "donationReminderTitle": {
+        "message": "プロジェクトを支援する"
+    },
+    "donationReminderText": {
+        "message": "この拡張機能が気に入ったら、開発を支援してください！"
+    },
+    "remindLater": {
+        "message": "後で通知"
+    },
+    "supportNow": {
+        "message": "今すぐ支援"
+    },
+    "remindNever": {
+        "message": "今後表示しない"
+    },
+    "confirmDismiss": {
+        "message": "寄付リマインダーを今後表示しませんか？"
+    },
+    "bookmarkAlreadyInFolder": {
+        "message": "要素はすでにこのフォルダーに存在します"
+    },
+    "cannotMoveIntoSelf": {
+        "message": "フォルダーをそれ自体の中に移動できません"
+    },
+    "bookmarksMoved": {
+        "message": "{0} 個の要素を移動しました"
+    },
+    "deleteSelectedConfirm": {
+        "message": "選択した {count} 個の要素を削除しますか？",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "bookmarksDeleted": {
+        "message": "{count} 個の要素を削除しました",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "moveBookmarksTitle": {
+        "message": "{0} 個の要素を移動"
+    },
+    "setupTabNew": {
+        "message": "新規作成",
+        "description": "Tab label for creating new password"
+    },
+    "setupTabRestore": {
+        "message": "バックアップから復元",
+        "description": "Tab label for restoring from backup"
+    },
+    "restoreDropTitle": {
+        "message": "バックアップファイルをここにドロップするか、クリックして選択",
+        "description": "Text for drag & drop area in restore tab"
+    },
+    "strengthWeak": {
+        "message": "弱い",
+        "description": "Password strength indicator"
+    },
+    "strengthFair": {
+        "message": "普通",
+        "description": "Password strength indicator"
+    },
+    "strengthGood": {
+        "message": "良い",
+        "description": "Password strength indicator"
+    },
+    "strengthStrong": {
+        "message": "強い",
+        "description": "Password strength indicator"
+    },
+    "importingBackup": {
+        "message": "バックアップを復元中...",
+        "description": "Loading message during backup import"
+    },
+    "unlockTitle": {
+        "message": "マスターパスワードを入力"
+    },
+    "warningRemember": {
+        "message": "パスワードを覚えましたか？"
+    },
+    "yesRemember": {
+        "message": "はい、覚えています"
+    },
+    "survey": {
+        "message": "フィードバック"
+    },
+    "changelog": {
+        "message": "変更履歴"
+    },
+    "rateExtension": {
+        "message": "Chrome ウェブストアで評価"
+    },
+    "migrationScreenTitle": {
+        "message": "アップデートが必要です",
+        "description": "Title on the manager migration screen"
+    },
+    "migrationScreenBody1": {
+        "message": "拡張機能がセキュリティ強化でアップデートされました。",
+        "description": "First line on the manager migration screen"
+    },
+    "migrationScreenBody2": {
+        "message": "拡張機能のポップアップを開いて、データを新しい安全な形式に移行してください。",
+        "description": "Second line on the manager migration screen"
+    },
+    "migrationScreenButton": {
+        "message": "拡張機能を開く",
+        "description": "Button on the manager migration screen"
+    },
+    "notSetUpTitle": {
+        "message": "拡張機能が設定されていません",
+        "description": "manager-lock: notSetUpTitle"
+    },
+    "notSetUpSubtitle": {
+        "message": "拡張機能はまだ設定されていません。パスワードを作成するには拡張機能のポップアップを開いてください。",
+        "description": "manager-lock: notSetUpSubtitle"
+    },
+    "notSetUpButton": {
+        "message": "拡張機能を開く",
+        "description": "manager-lock: notSetUpButton"
+    },
+    "reloadingSubtitle": {
+        "message": "マネージャーを再読み込み中...",
+        "description": "manager-lock: reloadingSubtitle"
+    },
+    "reloadingWait": {
+        "message": "マネージャーの更新をお待ちください",
+        "description": "manager-lock: reloadingWait"
+    },
+    "exportHtml": {
+        "message": "HTMLにエクスポート"
+    },
+    "exportHtmlNote": {
+        "message": "Netscape ブックマーク形式"
+    },
+    "exportHtmlSuccess": {
+        "message": "HTMLエクスポートが完了しました"
+    },
+    "exportHtmlConfirmTitle": {
+        "message": "パスワードを確認"
+    },
+    "exportHtmlConfirmDesc": {
+        "message": "ブックマークは平文でエクスポートされます。確認のためマスターパスワードを入力してください。"
+    },
+    "exportHtmlPasswordRequired": {
+        "message": "パスワードを入力してください"
+    },
+    "exportHtmlConfirmBtn": {
+        "message": "エクスポート"
+    },
+    "exportHtmlVerifying": {
+        "message": "パスワードを確認中…"
+    },
+    "copiedToClipboard": {
+        "message": "クリップボードにコピーしました！"
+    },
+    "copyFailed": {
+        "message": "コピーに失敗しました"
+    },
+    "clickToCopy": {
+        "message": "クリックしてコピー"
+    },
+    "qrCodeFor": {
+        "message": "$1のQRコード",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            }
+        }
+    },
+    "quickCloseTab": {
+        "message": "タブをすばやく閉じる ($1)"
+    },
+    "quickCloseTabDesc": {
+        "message": "現在のタブを閉じ、そのドメインの閲覧履歴を削除します"
+    },
+    "quickCloseTabCommand": {
+        "message": "タブを閉じてドメイン履歴を削除"
+    },
+    "changeShortcut": {
+        "message": "ホットキーを変更"
+    },
+    "actions": {
+        "message": "アクション"
+    },
+    "qrCode": {
+        "message": "QRコード"
+    },
+    "qrScanHint": {
+        "message": "QRコードをスキャンしてデバイスでリンクを開いてください。"
+    },
+    "stayUnlocked": {
+        "message": "セッション間でロック解除を維持"
+    },
+    "stayUnlockedDesc": {
+        "message": "ブラウザが開いている間はパスワードを求めません"
+    },
+    "stayUnlockedWarning": {
+        "message": "セキュリティが低下します：暗号化キーがブラウザのセッションストレージに保存されます。ブラウザプロファイルにアクセスできる人は誰でも読み取れる可能性があります。"
+    },
+    "alwaysIncognito": {
+        "message": "ブックマークを常にシークレットモードで開く"
+    },
+    "alwaysIncognitoDesc": {
+        "message": "すべてのブックマークはプライベートウィンドウで開かれます"
+    },
+    "enable": {
+        "message": "有効にする"
+    },
+    "managerIsOpen": {
+        "message": "ブックマークマネージャーが開いています"
+    },
+    "managerIsOpenDesc": {
+        "message": "ポップアップを使用するには、ブックマークマネージャーを閉じてください。"
+    },
+    "switchToManager": {
+        "message": "マネージャーに切り替える"
+    },
+    "hotkeys": {
+        "message": "ホットキー"
+    },
+    "lockExtensionCommand": {
+        "message": "拡張機能をロック"
+    },
+    "openManagerCommand": {
+        "message": "ブックマークマネージャーを開く"
+    },
+    "Error": {
+        "message": "エラー"
+    },
+    "blurPage": {
+        "message": "ページをぼかす ($1)"
+    },
+    "blurPageDesc": {
+        "message": "アクティブ化するとページをぼかします"
+    },
+    "blurPageCommand": {
+        "message": "ページをぼかす"
+    },
+    "openAll": {
+        "message": "すべて開く"
+    },
+    "openAllWindow": {
+        "message": "新しいウィンドウですべて開く"
+    },
+    "openAllGroup": {
+        "message": "新しいタブグループですべて開く"
+    },
+    "openAllIncognito": {
+        "message": "シークレットモードですべて開く"
+    },
+    "saveAllTabs": {
+        "message": "すべての開いているタブを保存"
+    },
+    "noTabsToSave": {
+        "message": "保存するタブがありません"
+    },
+    "tabsSaved": {
+        "message": "タブを保存しました"
     }
-  },
-  "addToHoly": {
-    "message": "Holy Private Bookmarks に追加"
-  },
-  "cannotAddPage": {
-    "message": "このページは追加できません（有効なURLがありません）"
-  },
-  "supportProject": {
-    "message": "プロジェクトを支援する"
-  },
-  "supportPageTitle": {
-    "message": "Holy Private Bookmarks を支援"
-  },
-  "donateHeroTitle": {
-    "message": "プライバシー重視の開発を支援"
-  },
-  "donateHeroSubtitle": {
-    "message": "Holy Private Bookmarks は 100％ 無料でオープンソースであり、これからもその方針です。あなたの支援は、開発者がプライバシーを気にするすべての人のために拡張機能の維持と改善に時間を割く助けとなります。"
-  },
-  "whySupport": {
-    "message": "支援が重要な理由"
-  },
-  "timeInvestment": {
-    "message": "開発者の時間"
-  },
-  "timeInvestmentDesc": {
-    "message": "すべての機能、バグ修正、セキュリティ改善には多くの作業時間が費やされています。あなたの貢献はその時間を評価し、プロジェクトを持続可能にします。"
-  },
-  "longTerm": {
-    "message": "長期的なコミットメント"
-  },
-  "longTermDesc": {
-    "message": "あなたの支援により、拡張機能は積極的にメンテナンスされ、将来のChromeアップデートとの互換性が確保され、継続的に改善されます。"
-  },
-  "futureFeatures": {
-    "message": "将来の機能"
-  },
-  "futureFeaturesDesc": {
-    "message": "あなたの助けがあれば、コミュニティ全体に利益をもたらす新機能、より良いUI、強化されたセキュリティ機能を優先できます。"
-  },
-  "donateCtaText": {
-    "message": "サブスクリプションも、ペイウォールも、企業からの資金提供もありません。 ただ、他の人のために役立つものを作っている人々がいるだけです。この拡張機能があなたの時間を節約したり、安心感を与えたりしているなら、開発者にコーヒーをおごることを検討してください。"
-  },
-  "donateCryptoTitle": {
-    "message": "暗号資産で支援"
-  },
-  "copyAddress": {
-    "message": "アドレスをコピー"
-  },
-  "donateThanks": {
-    "message": "独立したオープンソース開発を支援していただきありがとうございます"
-  },
-  "donateThanksNote": {
-    "message": "大小を問わず、すべての貢献が私たちにとって大きな意味を持ちます。"
-  },
-  "importantWarning": {
-    "message": "重要なお知らせ："
-  },
-  "passwordCannotBeRecovered": {
-    "message": "このパスワードは復元できません！"
-  },
-  "noPasswordReset": {
-    "message": "パスワードリセット機能はありません"
-  },
-  "weDontStorePassword": {
-    "message": "私たちはあなたのパスワードをどこにも保存しません"
-  },
-  "bookmarksEncrypted": {
-    "message": "あなたのブックマークはこのパスワードのみで暗号化されています"
-  },
-  "savePasswordSecurely": {
-    "message": "このパスワードは安全に保管してください！"
-  },
-  "copyUrl": {
-    "message": "URLをコピー"
-  },
-  "edit": {
-    "message": "編集"
-  },
-  "delete": {
-    "message": "削除"
-  },
-  "urlCopied": {
-    "message": "URLをクリップボードにコピーしました"
-  },
-  "about": {
-    "message": "この拡張機能について"
-  },
-  "aboutExtension": {
-    "message": "拡張機能について"
-  },
-  "openGitHub": {
-    "message": "GitHubを開く"
-  },
-  "close": {
-    "message": "閉じる"
-  },
-  "features": {
-    "message": "機能"
-  },
-  "troubleshooting": {
-    "message": "トラブルシューティング"
-  },
-  "encryption": {
-    "message": "暗号化"
-  },
-  "encryptionDesc": {
-    "message": "AES-256暗号化"
-  },
-  "localStorage": {
-    "message": "ローカルストレージ"
-  },
-  "localStorageDesc": {
-    "message": "データはお使いのデバイスに留まります"
-  },
-  "privacy": {
-    "message": "プライバシー"
-  },
-  "privacyDesc": {
-    "message": "トラッキングや分析は行いません"
-  },
-  "openSource": {
-    "message": "GPLv3"
-  },
-  "viewOnGitHub": {
-    "message": "GitHubで見る"
-  },
-  "githubRepo": {
-    "message": "GitHubリポジトリ"
-  },
-  "githubRepoDesc": {
-    "message": "ソースコードを見る、問題を報告する、貢献する"
-  },
-  "version": {
-    "message": "バージョン"
-  },
-  "openmanager": {
-    "message": "マネージャーを開く"
-  },
-  "managerDesc": {
-    "message": "全画面ブックマークマネージャーを開く"
-  },
-  "folders": {
-    "message": "フォルダ"
-  },
-  "bookmarks": {
-    "message": "ブックマーク"
-  },
-  "allBookmarks": {
-    "message": "すべてのブックマーク"
-  },
-  "searchBookmarks": {
-    "message": "ブックマークを検索..."
-  },
-  "noBookmarksInFolder": {
-    "message": "このフォルダにはブックマークがありません"
-  },
-  "addBookmarksToGetStarted": {
-    "message": "ブックマークを追加して開始しましょう"
-  },
-  "bookmarkUpdated": {
-    "message": "ブックマークを更新しました"
-  },
-  "bookmarkDeleted": {
-    "message": "ブックマークを削除しました"
-  },
-  "renameFolder": {
-    "message": "フォルダ名を変更"
-  },
-  "folderCreated": {
-    "message": "フォルダを作成しました"
-  },
-  "managerLocked": {
-    "message": "マネージャーはロックされています"
-  },
-  "lockManager": {
-    "message": "マネージャーをロック"
-  },
-  "rename": {
-    "message": "名前を変更"
-  },
-  "deleteFolder": {
-    "message": "フォルダを削除"
-  },
-  "deleteFolderConfirm": {
-    "message": "フォルダ \"{0}\" を削除しますか？"
-  },
-  "deleteFolderWarning": {
-    "message": "すべてのコンテンツが完全に削除されます。"
-  },
-  "folderRenamed": {
-    "message": "フォルダ名を変更しました"
-  },
-  "folderDeleted": {
-    "message": "フォルダを削除しました"
-  },
-  "cannotRenameAll": {
-    "message": "\"すべてのブックマーク\" フォルダの名前は変更できません"
-  },
-  "cannotDeleteAll": {
-    "message": "\"すべてのブックマーク\" フォルダは削除できません"
-  },
-  "bookmarkAdded": {
-    "message": "ブックマークを追加しました"
-  },
-  "pendingBookmarkNotification": {
-    "message": "保留中のブックマークがあります！"
-  },
-  "pendingBookmarkInstruction": {
-    "message": "追加待ちのブックマークがあります。続行するにはロックを解除してください。"
-  },
-  "dragSuccess": {
-    "message": "アイテムを移動しました"
-  },
-  "invalidDestinationFolder": {
-    "message": "無効な移動先フォルダです"
-  },
-  "moveFailed": {
-    "message": "ブックマークの移動に失敗しました"
-  },
-  "noBookmarksSelected": {
-    "message": "ブックマークが選択されていません"
-  },
-  "selectDestinationFolder": {
-    "message": "移動先フォルダを選択："
-  },
-  "move": {
-    "message": "移動"
-  },
-  "selected": {
-    "message": "選択済み"
-  },
-  "moveSelectedTitle": {
-    "message": "選択項目を移動"
-  },
-  "deleteSelectedTitle": {
-    "message": "選択項目を削除"
-  },
-  "cancelSelectionTitle": {
-    "message": "選択をキャンセル"
-  },
-  "emptyFolder": {
-    "message": "フォルダは空です",
-    "description": "フォルダにブックマークがない場合に表示されるメッセージ"
-  },
-  "noSearchResults": {
-    "message": "ブックマークが見つかりません",
-    "description": "検索結果が0件の場合のメッセージ"
-  },
-  "noSearchResultsDesc": {
-    "message": "別の検索語をお試しください",
-    "description": "空の検索結果に対する説明"
-  },
-  "theme": {
-    "message": "テーマ"
-  },
-  "themeDark": {
-    "message": "ダーク",
-    "description": "ダークテーマ名"
-  },
-  "themeLight": {
-    "message": "ライト",
-    "description": "ライトテーマ名"
-  },
-  "themeSystem": {
-    "message": "システム",
-    "description": "システムテーマ名"
-  },
-  "themeToggle": {
-    "message": "テーマを切り替え",
-    "description": "テーマ切り替えボタンのツールチップ"
-  },
-  "showFavicons": {
-    "message": "ウェブサイトのファビコンを表示"
-  },
-  "showFaviconsDesc": {
-    "message": "アイコンはGoogleのサービスを通じて読み込まれます"
-  },
-  "bookmarksAndFolders": {
-    "message": "ブックマーク＆フォルダ"
-  },
-  "importFromHtml": {
-    "message": "HTMLからインポート"
-  },
-  "importHtmlSuccess": {
-    "message": "HTMLブックマークのインポートに成功しました！ $COUNT$ 件のブックマークを追加しました。",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "42"
-      }
-    }
-  },
-  "htmlImporterNoFileSelected": {
-    "message": "ファイルが選択されていません"
-  },
-  "htmlImporterFileTooLarge": {
-    "message": "ファイルが大きすぎます（最大1MB）"
-  },
-  "htmlImporterParseError": {
-    "message": "HTMLのインポートに失敗しました： $1"
-  },
-  "htmlImporterNoBookmarksFound": {
-    "message": "ファイルにブックマークが見つかりません"
-  },
-  "importHtmlError": {
-    "message": "HTMLファイルの解析に失敗しました。ファイル形式を確認してください。"
-  },
-  "importHtmlSizeWarning": {
-    "message": "1MB制限"
-  },
-  "importHtmlSizeNote": {
-    "message": "最大約2500ブックマーク"
-  },
-  "importWarning": {
-    "message": "既存のブックマークはすべて置き換えられます"
-  },
-  "developer": {
-    "message": "開発者："
-  },
-  "lock": {
-    "message": "ロック"
-  },
-  "faqButtonTitle": {
-    "message": "よくある質問"
-  },
-  "clearingHistory": {
-    "message": "履歴を消去中",
-    "description": "履歴消去進行中モーダルのタイトル"
-  },
-  "preparingToClear": {
-    "message": "履歴消去の準備中...",
-    "description": "初期ステータスメッセージ"
-  },
-  "progress": {
-    "message": "進捗",
-    "description": "進捗ラベル"
-  },
-  "domainsProcessed": {
-    "message": "処理済みドメイン",
-    "description": "処理済みドメイン数のラベル"
-  },
-  "entriesDeleted": {
-    "message": "削除済みエントリ",
-    "description": "削除済みエントリ数のラベル"
-  },
-  "startingCleanup": {
-    "message": "クリーンアップを開始...",
-    "description": "開始時のステータス"
-  },
-  "finalizingCleanup": {
-    "message": "クリーンアップを終了中...",
-    "description": "終了処理中のステータス"
-  },
-  "cancelling": {
-    "message": "キャンセル中...",
-    "description": "キャンセル時のステータス"
-  },
-  "clearCancelled": {
-    "message": "操作はキャンセルされました",
-    "description": "キャンセル時の通知"
-  },
-  "fillAllFields": {
-    "message": "すべての項目を入力してください"
-  },
-  "setupComplete": {
-    "message": "セットアップ完了！"
-  },
-  "migrationSuccess": {
-    "message": "データは正常に安全な形式に移行されました！"
-  },
-  "migrationRequired": {
-    "message": "データ形式の更新が必要です"
-  },
-  "migrationInstruction": {
-    "message": "パスワードを入力して、より安全な形式に自動的にアップグレードします。"
-  },
-  "exportSuccess": {
-    "message": "エクスポート成功",
-    "description": "データのエクスポートが正常に完了したときの通知"
-  },
-  "processing": {
-    "message": "処理中...",
-    "description": "ローディングインジケータ用の一般的な処理中メッセージ"
-  },
-  "unlocking": {
-    "message": "ロック解除中...",
-    "description": "ブックマークを復号化している間に表示"
-  },
-  "changingPassword": {
-    "message": "パスワード変更中...",
-    "description": "マスターパスワード変更中に表示"
-  },
-  "settingUpEncryption": {
-    "message": "暗号化設定中...",
-    "description": "初回セットアップ中に表示"
-  },
-  "migratingData": {
-    "message": "データを安全な形式に移行中...",
-    "description": "v1からv2への移行中に表示"
-  },
-  "loading": {
-    "message": "読み込み中...",
-    "description": "一般的な読み込み中メッセージ"
-  },
-  "donationReminderTitle": {
-    "message": "プロジェクトを支援する"
-  },
-  "donationReminderText": {
-    "message": "この拡張機能が気に入ったら、開発を支援してください！"
-  },
-  "remindLater": {
-    "message": "後で通知"
-  },
-  "supportNow": {
-    "message": "今すぐ支援"
-  },
-  "remindNever": {
-    "message": "今後表示しない"
-  },
-  "confirmDismiss": {
-    "message": "寄付リマインダーを今後表示しませんか？"
-  },
-  "bookmarkAlreadyInFolder": {
-    "message": "要素はすでにこのフォルダーに存在します"
-  },
-  "cannotMoveIntoSelf": {
-    "message": "フォルダーをそれ自体の中に移動できません"
-  },
-  "bookmarksMoved": {
-    "message": "{0} 個の要素を移動しました"
-  },
-  "deleteSelectedConfirm": {
-    "message": "選択した {count} 個の要素を削除しますか？",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "plural": {
-        "content": "$2"
-      }
-    }
-  },
-  "bookmarksDeleted": {
-    "message": "{count} 個の要素を削除しました",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "plural": {
-        "content": "$2"
-      }
-    }
-  },
-  "moveBookmarksTitle": {
-    "message": "{0} 個の要素を移動"
-  },
-  "setupTabNew": {
-    "message": "新規作成",
-    "description": "Tab label for creating new password"
-  },
-  "setupTabRestore": {
-    "message": "バックアップから復元",
-    "description": "Tab label for restoring from backup"
-  },
-  "restoreDropTitle": {
-    "message": "バックアップファイルをここにドロップするか、クリックして選択",
-    "description": "Text for drag & drop area in restore tab"
-  },
-  "strengthWeak": {
-    "message": "弱い",
-    "description": "Password strength indicator"
-  },
-  "strengthFair": {
-    "message": "普通",
-    "description": "Password strength indicator"
-  },
-  "strengthGood": {
-    "message": "良い",
-    "description": "Password strength indicator"
-  },
-  "strengthStrong": {
-    "message": "強い",
-    "description": "Password strength indicator"
-  },
-  "importingBackup": {
-    "message": "バックアップを復元中...",
-    "description": "Loading message during backup import"
-  },
-  "unlockTitle": {
-    "message": "マスターパスワードを入力"
-  },
-  "warningRemember": {
-    "message": "パスワードを覚えましたか？"
-  },
-  "yesRemember": {
-    "message": "はい、覚えています"
-  },
-  "survey": {
-    "message": "フィードバック"
-  },
-  "changelog": {
-    "message": "変更履歴"
-  },
-  "rateExtension": {
-    "message": "Chrome ウェブストアで評価"
-  },
-  "migrationScreenTitle": {
-    "message": "アップデートが必要です",
-    "description": "Title on the manager migration screen"
-  },
-  "migrationScreenBody1": {
-    "message": "拡張機能がセキュリティ強化でアップデートされました。",
-    "description": "First line on the manager migration screen"
-  },
-  "migrationScreenBody2": {
-    "message": "拡張機能のポップアップを開いて、データを新しい安全な形式に移行してください。",
-    "description": "Second line on the manager migration screen"
-  },
-  "migrationScreenButton": {
-    "message": "拡張機能を開く",
-    "description": "Button on the manager migration screen"
-  },
-  "notSetUpTitle": {
-    "message": "拡張機能が設定されていません",
-    "description": "manager-lock: notSetUpTitle"
-  },
-  "notSetUpSubtitle": {
-    "message": "拡張機能はまだ設定されていません。パスワードを作成するには拡張機能のポップアップを開いてください。",
-    "description": "manager-lock: notSetUpSubtitle"
-  },
-  "notSetUpButton": {
-    "message": "拡張機能を開く",
-    "description": "manager-lock: notSetUpButton"
-  },
-  "reloadingSubtitle": {
-    "message": "マネージャーを再読み込み中...",
-    "description": "manager-lock: reloadingSubtitle"
-  },
-  "reloadingWait": {
-    "message": "マネージャーの更新をお待ちください",
-    "description": "manager-lock: reloadingWait"
-  },
-  "exportHtml": {
-    "message": "HTMLにエクスポート"
-  },
-  "exportHtmlNote": {
-    "message": "Netscape ブックマーク形式"
-  },
-  "exportHtmlSuccess": {
-    "message": "HTMLエクスポートが完了しました"
-  },
-  "exportHtmlConfirmTitle": {
-    "message": "パスワードを確認"
-  },
-  "exportHtmlConfirmDesc": {
-    "message": "ブックマークは平文でエクスポートされます。確認のためマスターパスワードを入力してください。"
-  },
-  "exportHtmlPasswordRequired": {
-    "message": "パスワードを入力してください"
-  },
-  "exportHtmlConfirmBtn": {
-    "message": "エクスポート"
-  },
-  "exportHtmlVerifying": {
-    "message": "パスワードを確認中…"
-  },
-  "copiedToClipboard": {
-    "message": "クリップボードにコピーしました！"
-  },
-  "copyFailed": {
-    "message": "コピーに失敗しました"
-  },
-  "clickToCopy": {
-    "message": "クリックしてコピー"
-  },
-  "qrCodeFor": {
-    "message": "$1のQRコード",
-    "placeholders": {
-      "1": {
-        "content": "$1"
-      }
-    }
-  },
-  "quickCloseTab": {
-    "message": "タブをすばやく閉じる ($1)"
-  },
-  "quickCloseTabDesc": {
-    "message": "現在のタブを閉じ、そのドメインの閲覧履歴を削除します"
-  },
-  "quickCloseTabCommand": {
-    "message": "タブを閉じてドメイン履歴を削除"
-  },
-  "changeShortcut": {
-    "message": "ホットキーを変更"
-  },
-  "actions": {
-    "message": "アクション"
-  },
-  "qrCode": {
-    "message": "QRコード"
-  },
-  "qrScanHint": {
-    "message": "QRコードをスキャンしてデバイスでリンクを開いてください。"
-  },
-  "stayUnlocked": {
-    "message": "セッション間でロック解除を維持"
-  },
-  "stayUnlockedDesc": {
-    "message": "ブラウザが開いている間はパスワードを求めません"
-  },
-  "stayUnlockedWarning": {
-    "message": "セキュリティが低下します：暗号化キーがブラウザのセッションストレージに保存されます。ブラウザプロファイルにアクセスできる人は誰でも読み取れる可能性があります。"
-  },
-  "alwaysIncognito": {
-    "message": "ブックマークを常にシークレットモードで開く"
-  },
-  "alwaysIncognitoDesc": {
-    "message": "すべてのブックマークはプライベートウィンドウで開かれます"
-  },
-  "enable": {
-    "message": "有効にする"
-  },
-  "managerIsOpen": {
-    "message": "ブックマークマネージャーが開いています"
-  },
-  "managerIsOpenDesc": {
-    "message": "ポップアップを使用するには、ブックマークマネージャーを閉じてください。"
-  },
-  "switchToManager": {
-    "message": "マネージャーに切り替える"
-  },
-  "hotkeys": {
-    "message": "ホットキー"
-  },
-  "lockExtensionCommand": {
-    "message": "拡張機能をロック"
-  },
-  "openManagerCommand": {
-    "message": "ブックマークマネージャーを開く"
-  },
-  "Error": {
-    "message": "エラー"
-  },
-  "blurPage": {
-    "message": "ページをぼかす ($1)"
-  },
-  "blurPageDesc": {
-    "message": "アクティブ化するとページをぼかします"
-  },
-  "blurPageCommand": {
-    "message": "ページをぼかす"
-  }
 }

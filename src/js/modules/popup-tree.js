@@ -298,6 +298,14 @@ const PopupTree = (function () {
 
     function _buildPopupFolderPanel(uid, getMessage) {
         return QuickActions.buildPanel([
+            { action: 'open-all',           title: getMessage('openAll'),           icon: 'openAll',
+              dataset: { uid } },
+            { action: 'open-all-window',    title: getMessage('openAllWindow'),     icon: 'openWindow',
+              dataset: { uid } },
+            { action: 'open-all-group',     title: getMessage('openAllGroup'),      icon: 'openGroup',
+              dataset: { uid } },
+            { action: 'open-all-incognito', title: getMessage('openAllIncognito'),  icon: 'openIncognito', className: 'private',
+              dataset: { uid } },
             { action: 'rename', title: getMessage('rename'), icon: 'rename',
               dataset: { uid } },
             { action: 'delete', title: getMessage('delete'), icon: 'delete', className: 'delete',
@@ -357,6 +365,41 @@ const PopupTree = (function () {
                     showNotification, getMessage } = _deps;
             const action = actionBtn.dataset.action;
             const uid    = actionBtn.dataset.uid ?? null;
+
+            if (action === 'open-all' || action === 'open-all-window' || action === 'open-all-incognito' || action === 'open-all-group') {
+                if (!uid) return;
+                const { getData, getItemByUid, collectAllBookmarkUrls, openInPrivateTab, showNotification, getMessage } = _deps;
+                const folder = getItemByUid(getData(), uid);
+                if (!folder || !folder.children) return;
+                const urls = collectAllBookmarkUrls(folder.children);
+                if (!urls.length) {
+                    showNotification(getMessage('noBookmarksInFolder') || 'No bookmarks in folder', true);
+                    return;
+                }
+                if (action === 'open-all') {
+                    urls.forEach(url => chrome.tabs.create({ url, active: false }));
+                } else if (action === 'open-all-window') {
+                    chrome.windows.create({ url: urls[0], focused: true }, win => {
+                        urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
+                    });
+                } else if (action === 'open-all-incognito') {
+                    chrome.windows.create({ url: urls[0], incognito: true, focused: true }, win => {
+                        urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
+                    });
+                } else if (action === 'open-all-group') {
+                    (async () => {
+                        const tabs = await Promise.all(urls.map(url => chrome.tabs.create({ url, active: false })));
+                        const tabIds = tabs.map(t => t.id);
+                        if (chrome.tabGroups) {
+                            const groupId = await chrome.tabs.group({ tabIds });
+                            if (folder.name) {
+                                await chrome.tabGroups.update(groupId, { title: folder.name });
+                            }
+                        }
+                    })();
+                }
+                return;
+            }
 
             if (action === 'rename' || (action === 'delete' && actionBtn.dataset.itemType !== 'bookmark')) {
                 if (!uid) return;

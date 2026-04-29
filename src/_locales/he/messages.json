@@ -1,860 +1,881 @@
 {
-  "Name": {
-    "message": "Holy Private Bookmarks — מנהל סימניות מקומי מוצפן"
-  },
-  "extensionName": {
-    "message": "Holy Private Bookmarks"
-  },
-  "extensionDescription": {
-    "message": "סימניות פרטיות עם סיסמת אב והצפנת AES-256. כל הנתונים נשארים במכשיר שלך — ללא ענן ומעקב."
-  },
-  "managerTitle": {
-    "message": "HPB - מנהל סימניות"
-  },
-  "createPassword": {
-    "message": "צור סיסמת מאסטר להצפנת סימניות מלאה"
-  },
-  "newPassword": {
-    "message": "סיסמה חדשה (מינימום 6 תווים)"
-  },
-  "confirmPassword": {
-    "message": "אשר סיסמה"
-  },
-  "createStorage": {
-    "message": "צור אחסון"
-  },
-  "enterMasterPassword": {
-    "message": ""
-  },
-  "masterPassword": {
-    "message": "סיסמת מאסטר"
-  },
-  "unlock": {
-    "message": "בטל נעילה"
-  },
-  "wrongPassword": {
-    "message": "סיסמה שגויה"
-  },
-  "passwordsMismatch": {
-    "message": "הסיסמאות אינן תואמות או קצרות מדי"
-  },
-  "bookmarksProtected": {
-    "message": "הסימניות שלך מוגנות באופן מאובטח"
-  },
-  "addCurrentPage": {
-    "message": "הוסף דף נוכחי"
-  },
-  "newFolder": {
-    "message": "תיקייה חדשה"
-  },
-  "clearHistory": {
-    "message": "נקה היסטוריה"
-  },
-  "settings": {
-    "message": "הגדרות"
-  },
-  "settingsbtn": {
-    "message": "⚙️"
-  },
-  "changeMasterPassword": {
-    "message": "שנה סיסמת מאסטר"
-  },
-  "currentPassword": {
-    "message": "סיסמת מאסטר נוכחית"
-  },
-  "newPassword2": {
-    "message": "סיסמה חדשה"
-  },
-  "confirmNewPassword": {
-    "message": "אשר סיסמה חדשה"
-  },
-  "changePassword": {
-    "message": "שנה סיסמה"
-  },
-  "exportImport": {
-    "message": "ייצוא וייבוא"
-  },
-  "export": {
-    "message": "צור גיבוי"
-  },
-  "openPrivate": {
-    "message": "פתח בלשונית פרטית"
-  },
-  "import": {
-    "message": "ייבוא"
-  },
-  "importFromChrome": {
-    "message": "ייבוא מ-Chrome"
-  },
-  "importChromeBookmarks": {
-    "message": "ייבא את כל סימניות Chrome"
-  },
-  "importChromeBookmarksAdvanced": {
-    "message": "בחר תיקיות לייבוא"
-  },
-  "importChromeConfirm": {
-    "message": "לייבא את כל הסימניות מ-Chrome? הסימניות הקיימות יישמרו."
-  },
-  "importChromeSuccess": {
-    "message": "הסימניות יובאו בהצלחה!"
-  },
-  "importChromeError": {
-    "message": "ייבוא הסימניות נכשל"
-  },
-  "selectFoldersToImport": {
-    "message": "בחר תיקיות לייבוא"
-  },
-  "selectAll": {
-    "message": "בחר הכל"
-  },
-  "deselectAll": {
-    "message": "בטל בחירת הכל"
-  },
-  "importSelected": {
-    "message": "ייבא"
-  },
-  "back": {
-    "message": "→ חזרה"
-  },
-  "addBookmark": {
-    "message": "הוסף סימנייה"
-  },
-  "editBookmark": {
-    "message": "ערוך סימנייה"
-  },
-  "page": {
-    "message": "דף"
-  },
-  "title": {
-    "message": "כותרת"
-  },
-  "url": {
-    "message": "כתובת URL"
-  },
-  "folder": {
-    "message": "תיקייה"
-  },
-  "rootFolder": {
-    "message": "תיקייה ראשית"
-  },
-  "new": {
-    "message": "+ חדש"
-  },
-  "cancel": {
-    "message": "ביטול"
-  },
-  "save": {
-    "message": "שמור"
-  },
-  "deleteConfirm": {
-    "message": "מחק סימנייה"
-  },
-  "folderName": {
-    "message": "שם תיקייה:"
-  },
-  "newName": {
-    "message": "שם חדש:"
-  },
-  "titleRequired": {
-    "message": "כותרת וכתובת URL נדרשות"
-  },
-  "validUrl": {
-    "message": "כתובת URL חייבת להתחיל ב-http:// או https://"
-  },
-  "passwordChanged": {
-    "message": "הסיסמה שונתה בהצלחה!"
-  },
-  "importSuccess": {
-    "message": "הגיבוי יובא בהצלחה! נא לפתוח מחדש את החלון המוקפץ."
-  },
-  "invalidFile": {
-    "message": "קובץ גיבוי לא תקין"
-  },
-  "clearHistoryConfirm": {
-    "message": "⚠️ למחוק את כל ערכי ההיסטוריה של הדפדפן עבור הדומיינים הנמצאים בסימניות Holy Private Bookmarks שלך?"
-  },
-  "noBookmarks": {
-    "message": "לא נמצאו סימניות — אין מה לנקות."
-  },
-  "noDomains": {
-    "message": "לא נמצאו דומיינים תקינים בסימניות."
-  },
-  "newBookmark": {
-    "message": "סימנייה חדשה"
-  },
-  "paste": {
-    "message": "הדבק"
-  },
-  "ctxnewFolder": {
-    "message": "תיקייה חדשה"
-  },
-  "emptyTreeTitle": {
-    "message": "אין סימניות עדיין"
-  },
-  "emptyTreeSubtitle": {
-    "message": "הוסף את הסימנייה או התיקייה הראשונה שלך כדי להתחיל"
-  },
-  "historyCleared": {
-    "message": "ההיסטוריה נוקתה!\nהוסרו $count$ ביקורים מ-$domains$ דומיינים.",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "domains": {
-        "content": "$2"
-      }
+    "Name": {
+        "message": "Holy Private Bookmarks — מנהל סימניות מקומי מוצפן"
+    },
+    "extensionName": {
+        "message": "Holy Private Bookmarks"
+    },
+    "extensionDescription": {
+        "message": "סימניות פרטיות עם סיסמת אב והצפנת AES-256. כל הנתונים נשארים במכשיר שלך — ללא ענן ומעקב."
+    },
+    "managerTitle": {
+        "message": "HPB - מנהל סימניות"
+    },
+    "createPassword": {
+        "message": "צור סיסמת מאסטר להצפנת סימניות מלאה"
+    },
+    "newPassword": {
+        "message": "סיסמה חדשה (מינימום 6 תווים)"
+    },
+    "confirmPassword": {
+        "message": "אשר סיסמה"
+    },
+    "createStorage": {
+        "message": "צור אחסון"
+    },
+    "enterMasterPassword": {
+        "message": ""
+    },
+    "masterPassword": {
+        "message": "סיסמת מאסטר"
+    },
+    "unlock": {
+        "message": "בטל נעילה"
+    },
+    "wrongPassword": {
+        "message": "סיסמה שגויה"
+    },
+    "passwordsMismatch": {
+        "message": "הסיסמאות אינן תואמות או קצרות מדי"
+    },
+    "bookmarksProtected": {
+        "message": "הסימניות שלך מוגנות באופן מאובטח"
+    },
+    "addCurrentPage": {
+        "message": "הוסף דף נוכחי"
+    },
+    "newFolder": {
+        "message": "תיקייה חדשה"
+    },
+    "clearHistory": {
+        "message": "נקה היסטוריה"
+    },
+    "settings": {
+        "message": "הגדרות"
+    },
+    "settingsbtn": {
+        "message": "⚙️"
+    },
+    "changeMasterPassword": {
+        "message": "שנה סיסמת מאסטר"
+    },
+    "currentPassword": {
+        "message": "סיסמת מאסטר נוכחית"
+    },
+    "newPassword2": {
+        "message": "סיסמה חדשה"
+    },
+    "confirmNewPassword": {
+        "message": "אשר סיסמה חדשה"
+    },
+    "changePassword": {
+        "message": "שנה סיסמה"
+    },
+    "exportImport": {
+        "message": "ייצוא וייבוא"
+    },
+    "export": {
+        "message": "צור גיבוי"
+    },
+    "openPrivate": {
+        "message": "פתח בלשונית פרטית"
+    },
+    "import": {
+        "message": "ייבוא"
+    },
+    "importFromChrome": {
+        "message": "ייבוא מ-Chrome"
+    },
+    "importChromeBookmarks": {
+        "message": "ייבא את כל סימניות Chrome"
+    },
+    "importChromeBookmarksAdvanced": {
+        "message": "בחר תיקיות לייבוא"
+    },
+    "importChromeConfirm": {
+        "message": "לייבא את כל הסימניות מ-Chrome? הסימניות הקיימות יישמרו."
+    },
+    "importChromeSuccess": {
+        "message": "הסימניות יובאו בהצלחה!"
+    },
+    "importChromeError": {
+        "message": "ייבוא הסימניות נכשל"
+    },
+    "selectFoldersToImport": {
+        "message": "בחר תיקיות לייבוא"
+    },
+    "selectAll": {
+        "message": "בחר הכל"
+    },
+    "deselectAll": {
+        "message": "בטל בחירת הכל"
+    },
+    "importSelected": {
+        "message": "ייבא"
+    },
+    "back": {
+        "message": "→ חזרה"
+    },
+    "addBookmark": {
+        "message": "הוסף סימנייה"
+    },
+    "editBookmark": {
+        "message": "ערוך סימנייה"
+    },
+    "page": {
+        "message": "דף"
+    },
+    "title": {
+        "message": "כותרת"
+    },
+    "url": {
+        "message": "כתובת URL"
+    },
+    "folder": {
+        "message": "תיקייה"
+    },
+    "rootFolder": {
+        "message": "תיקייה ראשית"
+    },
+    "new": {
+        "message": "+ חדש"
+    },
+    "cancel": {
+        "message": "ביטול"
+    },
+    "save": {
+        "message": "שמור"
+    },
+    "deleteConfirm": {
+        "message": "מחק סימנייה"
+    },
+    "folderName": {
+        "message": "שם תיקייה:"
+    },
+    "newName": {
+        "message": "שם חדש:"
+    },
+    "titleRequired": {
+        "message": "כותרת וכתובת URL נדרשות"
+    },
+    "validUrl": {
+        "message": "כתובת URL חייבת להתחיל ב-http:// או https://"
+    },
+    "passwordChanged": {
+        "message": "הסיסמה שונתה בהצלחה!"
+    },
+    "importSuccess": {
+        "message": "הגיבוי יובא בהצלחה! נא לפתוח מחדש את החלון המוקפץ."
+    },
+    "invalidFile": {
+        "message": "קובץ גיבוי לא תקין"
+    },
+    "clearHistoryConfirm": {
+        "message": "⚠️ למחוק את כל ערכי ההיסטוריה של הדפדפן עבור הדומיינים הנמצאים בסימניות Holy Private Bookmarks שלך?"
+    },
+    "noBookmarks": {
+        "message": "לא נמצאו סימניות — אין מה לנקות."
+    },
+    "noDomains": {
+        "message": "לא נמצאו דומיינים תקינים בסימניות."
+    },
+    "newBookmark": {
+        "message": "סימנייה חדשה"
+    },
+    "paste": {
+        "message": "הדבק"
+    },
+    "ctxnewFolder": {
+        "message": "תיקייה חדשה"
+    },
+    "emptyTreeTitle": {
+        "message": "אין סימניות עדיין"
+    },
+    "emptyTreeSubtitle": {
+        "message": "הוסף את הסימנייה או התיקייה הראשונה שלך כדי להתחיל"
+    },
+    "historyCleared": {
+        "message": "ההיסטוריה נוקתה!\nהוסרו $count$ ביקורים מ-$domains$ דומיינים.",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "domains": {
+                "content": "$2"
+            }
+        }
+    },
+    "addToHoly": {
+        "message": "הוסף ל-Holy Private Bookmarks"
+    },
+    "cannotAddPage": {
+        "message": "לא ניתן להוסיף דף זה (אין כתובת URL תקינה)"
+    },
+    "supportProject": {
+        "message": "תמוך בפרויקט"
+    },
+    "supportPageTitle": {
+        "message": "תמוך ב-Holy Private Bookmarks"
+    },
+    "donateHeroTitle": {
+        "message": "תמוך בפיתוח ממוקד פרטיות"
+    },
+    "donateHeroSubtitle": {
+        "message": "Holy Private Bookmarks הוא חינמי ב-100% וקוד פתוח, ויישאר כך לתמיד. התמיכה שלך עוזרת למפתחים להקדיש זמן לתחזוקה ושיפור התוסף עבור כולם שאכפת להם מפרטיות."
+    },
+    "whySupport": {
+        "message": "מדוע התמיכה שלך חשובה"
+    },
+    "timeInvestment": {
+        "message": "זמן מפתח"
+    },
+    "timeInvestmentDesc": {
+        "message": "כל תכונה, תיקון באג ושיפור אבטחה מייצגים שעות עבודה. תרומתך מעריכה את הזמן הזה ושומרת על קיימות הפרויקט."
+    },
+    "longTerm": {
+        "message": "מחויבות לטווח ארוך"
+    },
+    "longTermDesc": {
+        "message": "התמיכה שלך מבטיחה שהתוסף יישאר מתוחזק באופן פעיל, תואם לעדכוני Chrome עתידיים ומשתפר ברציפות."
+    },
+    "futureFeatures": {
+        "message": "תכונות עתידיות"
+    },
+    "futureFeaturesDesc": {
+        "message": "בעזרתך נוכל לתעדף פונקציונליות חדשה, ממשק משתמש טוב יותר ותכונות אבטחה משופרות שיועילו לכל הקהילה."
+    },
+    "donateCtaText": {
+        "message": "אין מנויים. אין חסימות תוכן. אין מימון תאגידי. רק אנשים שבונים משהו שימושי עבור אחרים. אם התוסף הזה חוסך לך זמן או נותן לך שקט נפשי, שקול לקנות למפתחים כוס קפה."
+    },
+    "donateCryptoTitle": {
+        "message": "תמוך עם מטבע קריפטו"
+    },
+    "copyAddress": {
+        "message": "העתק כתובת"
+    },
+    "donateThanks": {
+        "message": "תודה על תמיכתך בפיתוח קוד פתוח עצמאי"
+    },
+    "donateThanksNote": {
+        "message": "כל תרומה, גדולה כקטנה, חשובה לנו מאוד."
+    },
+    "importantWarning": {
+        "message": "אזהרה חשובה:"
+    },
+    "passwordCannotBeRecovered": {
+        "message": "סיסמה זו לא ניתנת לשחזור!"
+    },
+    "noPasswordReset": {
+        "message": "אין אפשרות לאיפוס סיסמה"
+    },
+    "weDontStorePassword": {
+        "message": "אנחנו לא שומרים את הסיסמה שלך בשום מקום"
+    },
+    "bookmarksEncrypted": {
+        "message": "הסימניות שלך מוצפנות עם סיסמה זו בלבד"
+    },
+    "savePasswordSecurely": {
+        "message": "שמור את הסיסמה הזו במקום בטוח!"
+    },
+    "copyUrl": {
+        "message": "העתק כתובת URL"
+    },
+    "edit": {
+        "message": "ערוך"
+    },
+    "delete": {
+        "message": "מחק"
+    },
+    "urlCopied": {
+        "message": "כתובת URL הועתקה ללוח"
+    },
+    "about": {
+        "message": "אודות"
+    },
+    "aboutExtension": {
+        "message": "אודות התוסף"
+    },
+    "openGitHub": {
+        "message": "פתח GitHub"
+    },
+    "close": {
+        "message": "סגור"
+    },
+    "features": {
+        "message": "תכונות"
+    },
+    "troubleshooting": {
+        "message": "פתרון בעיות"
+    },
+    "encryption": {
+        "message": "הצפנה"
+    },
+    "encryptionDesc": {
+        "message": "הצפנת AES-256"
+    },
+    "localStorage": {
+        "message": "אחסון מקומי"
+    },
+    "localStorageDesc": {
+        "message": "הנתונים נשארים במכשיר שלך"
+    },
+    "privacy": {
+        "message": "פרטיות"
+    },
+    "privacyDesc": {
+        "message": "ללא מעקב או אנליטיקה"
+    },
+    "openSource": {
+        "message": "GPLv3"
+    },
+    "viewOnGitHub": {
+        "message": "צפה ב-GitHub"
+    },
+    "githubRepo": {
+        "message": "מאגר GitHub"
+    },
+    "githubRepoDesc": {
+        "message": "צפה בקוד המקור, דווח על בעיות, תרום"
+    },
+    "version": {
+        "message": "גרסה"
+    },
+    "openmanager": {
+        "message": "פתח מנהל"
+    },
+    "managerDesc": {
+        "message": "פתח מנהל סימניות במסך מלא"
+    },
+    "folders": {
+        "message": "תיקיות"
+    },
+    "bookmarks": {
+        "message": "סימניות"
+    },
+    "allBookmarks": {
+        "message": "כל הסימניות"
+    },
+    "searchBookmarks": {
+        "message": "חפש סימניות..."
+    },
+    "noBookmarksInFolder": {
+        "message": "אין סימניות בתיקייה"
+    },
+    "addBookmarksToGetStarted": {
+        "message": "הוסף סימניות כדי להתחיל"
+    },
+    "bookmarkUpdated": {
+        "message": "הסימנייה עודכנה"
+    },
+    "bookmarkDeleted": {
+        "message": "הסימנייה נמחקה"
+    },
+    "renameFolder": {
+        "message": "שנה שם תיקייה"
+    },
+    "folderCreated": {
+        "message": "התיקייה נוצרה בהצלחה"
+    },
+    "managerLocked": {
+        "message": "המנהל נעול"
+    },
+    "lockManager": {
+        "message": "נעל מנהל"
+    },
+    "rename": {
+        "message": "שנה שם"
+    },
+    "deleteFolder": {
+        "message": "מחק תיקייה"
+    },
+    "deleteFolderConfirm": {
+        "message": "למחוק את התיקייה \"{0}\"?"
+    },
+    "deleteFolderWarning": {
+        "message": "כל התוכן יימחק לצמיתות."
+    },
+    "folderRenamed": {
+        "message": "שם התיקייה שונה בהצלחה"
+    },
+    "folderDeleted": {
+        "message": "התיקייה נמחקה בהצלחה"
+    },
+    "cannotRenameAll": {
+        "message": "לא ניתן לשנות שם של תיקיית \"כל הסימניות\""
+    },
+    "cannotDeleteAll": {
+        "message": "לא ניתן למחוק את תיקיית \"כל הסימניות\""
+    },
+    "bookmarkAdded": {
+        "message": "הסימנייה נוספה"
+    },
+    "pendingBookmarkNotification": {
+        "message": "סימנייה ממתינה!"
+    },
+    "pendingBookmarkInstruction": {
+        "message": "סימנייה ממתינה להוספה. אנא בטל נעילה להמשך."
+    },
+    "dragSuccess": {
+        "message": "הפריט הועבר בהצלחה"
+    },
+    "invalidDestinationFolder": {
+        "message": "תיקיית יעד לא חוקית"
+    },
+    "moveFailed": {
+        "message": "העברת הסימניות נכשלה"
+    },
+    "noBookmarksSelected": {
+        "message": "לא נבחרו סימניות"
+    },
+    "selectDestinationFolder": {
+        "message": "בחר תיקיית יעד:"
+    },
+    "move": {
+        "message": "העבר"
+    },
+    "selected": {
+        "message": "נבחרו"
+    },
+    "moveSelectedTitle": {
+        "message": "העבר נבחרים"
+    },
+    "deleteSelectedTitle": {
+        "message": "מחק נבחרים"
+    },
+    "cancelSelectionTitle": {
+        "message": "בטל בחירה"
+    },
+    "emptyFolder": {
+        "message": "התיקייה ריקה",
+        "description": "Message shown when a folder has no bookmarks"
+    },
+    "noSearchResults": {
+        "message": "לא נמצאו סימניות",
+        "description": "Message when search returns no results"
+    },
+    "noSearchResultsDesc": {
+        "message": "נסה מונח חיפוש אחר",
+        "description": "Description for empty search results"
+    },
+    "theme": {
+        "message": "ערכת נושא"
+    },
+    "themeDark": {
+        "message": "כהה",
+        "description": "Dark theme name"
+    },
+    "themeLight": {
+        "message": "בהיר",
+        "description": "Light theme name"
+    },
+    "themeSystem": {
+        "message": "מערכת",
+        "description": "System theme name"
+    },
+    "themeToggle": {
+        "message": "החלף ערכת נושא",
+        "description": "Tooltip for theme toggle button"
+    },
+    "showFavicons": {
+        "message": "הצג סמלי אתרים"
+    },
+    "showFaviconsDesc": {
+        "message": "האייקונים נטענים דרך שירות Google"
+    },
+    "bookmarksAndFolders": {
+        "message": "סימניות ותיקיות"
+    },
+    "importFromHtml": {
+        "message": "ייבא מ-HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "סימניות HTML יובאו בהצלחה! נוספו $COUNT$ סימניות.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+        "message": "לא נבחר קובץ"
+    },
+    "htmlImporterFileTooLarge": {
+        "message": "הקובץ גדול מדי (מקסימום 1MB)"
+    },
+    "htmlImporterParseError": {
+        "message": "ייבוא HTML נכשל: $1"
+    },
+    "htmlImporterNoBookmarksFound": {
+        "message": "לא נמצאו סימניות בקובץ"
+    },
+    "importHtmlError": {
+        "message": "ניתוח קובץ HTML נכשל. אנא בדוק את פורמט הקובץ."
+    },
+    "importHtmlSizeWarning": {
+        "message": "מגבלת 1MB"
+    },
+    "importHtmlSizeNote": {
+        "message": "מקסימום ~2500 סימניות"
+    },
+    "importWarning": {
+        "message": "כל הסימניות הקיימות יוחלפו"
+    },
+    "developer": {
+        "message": "מפתח:"
+    },
+    "lock": {
+        "message": "נעל"
+    },
+    "faqButtonTitle": {
+        "message": "שאלות נפוצות"
+    },
+    "clearingHistory": {
+        "message": "מנקה היסטוריה",
+        "description": "Title for history clearing progress modal"
+    },
+    "preparingToClear": {
+        "message": "מתכונן לניקוי היסטוריה...",
+        "description": "Initial status message"
+    },
+    "progress": {
+        "message": "התקדמות",
+        "description": "Progress label"
+    },
+    "domainsProcessed": {
+        "message": "דומיינים שעובדו",
+        "description": "Label for domains processed count"
+    },
+    "entriesDeleted": {
+        "message": "ערכים שנמחקו",
+        "description": "Label for deleted entries count"
+    },
+    "startingCleanup": {
+        "message": "מתחיל ניקוי...",
+        "description": "Status when starting"
+    },
+    "finalizingCleanup": {
+        "message": "מסיים ניקוי...",
+        "description": "Status when finalizing"
+    },
+    "cancelling": {
+        "message": "מבטל...",
+        "description": "Status when cancelling"
+    },
+    "clearCancelled": {
+        "message": "הפעולה בוטלה",
+        "description": "Notification when cancelled"
+    },
+    "fillAllFields": {
+        "message": "אנא מלא את כל השדות"
+    },
+    "setupComplete": {
+        "message": "ההגדרה הושלמה!"
+    },
+    "migrationSuccess": {
+        "message": "הנתונים הועברו בהצלחה לפורמט מאובטח!"
+    },
+    "migrationRequired": {
+        "message": "נדרש עדכון פורמט נתונים"
+    },
+    "migrationInstruction": {
+        "message": "הזן את הסיסמה שלך לשדרוג אוטומטי לפורמט מאובטח יותר."
+    },
+    "exportSuccess": {
+        "message": "הייצוא הצליח",
+        "description": "Notification when data export completes successfully"
+    },
+    "processing": {
+        "message": "מעבד...",
+        "description": "Generic processing message for loading indicators"
+    },
+    "unlocking": {
+        "message": "מבטל נעילה...",
+        "description": "Shown while decrypting bookmarks"
+    },
+    "changingPassword": {
+        "message": "משנה סיסמה...",
+        "description": "Shown while changing master password"
+    },
+    "settingUpEncryption": {
+        "message": "מגדיר הצפנה...",
+        "description": "Shown during first-time setup"
+    },
+    "migratingData": {
+        "message": "מעביר נתונים לפורמט מאובטח...",
+        "description": "Shown during v1 to v2 migration"
+    },
+    "loading": {
+        "message": "טוען...",
+        "description": "Generic loading message"
+    },
+    "donationReminderTitle": {
+        "message": "תמוך בפרויקט"
+    },
+    "donationReminderText": {
+        "message": "אם אתה אוהב את התוסף הזה, אנא תמוך בפיתוחו!"
+    },
+    "remindLater": {
+        "message": "הזכר לי מאוחר יותר"
+    },
+    "supportNow": {
+        "message": "תמוך עכשיו"
+    },
+    "remindNever": {
+        "message": "אל תציג שוב"
+    },
+    "confirmDismiss": {
+        "message": "לא להציג תזכורות תרומה שוב?"
+    },
+    "bookmarkAlreadyInFolder": {
+        "message": "הפריט כבר נמצא בתיקייה זו"
+    },
+    "cannotMoveIntoSelf": {
+        "message": "לא ניתן להעביר תיקייה לתוך עצמה"
+    },
+    "bookmarksMoved": {
+        "message": "{0} פריט{1} הועבר"
+    },
+    "deleteSelectedConfirm": {
+        "message": "למחוק {count} פריט{plural} נבחר?",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "bookmarksDeleted": {
+        "message": "{count} פריט{plural} נמחק",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "moveBookmarksTitle": {
+        "message": "העבר {0} פריט{1}"
+    },
+    "setupTabNew": {
+        "message": "צור חדש",
+        "description": "Tab label for creating new password"
+    },
+    "setupTabRestore": {
+        "message": "שחזר גיבוי",
+        "description": "Tab label for restoring from backup"
+    },
+    "restoreDropTitle": {
+        "message": "גרור קובץ גיבוי לכאן או לחץ לבחירה",
+        "description": "Text for drag & drop area in restore tab"
+    },
+    "strengthWeak": {
+        "message": "חלשה",
+        "description": "Password strength indicator"
+    },
+    "strengthFair": {
+        "message": "בינונית",
+        "description": "Password strength indicator"
+    },
+    "strengthGood": {
+        "message": "טובה",
+        "description": "Password strength indicator"
+    },
+    "strengthStrong": {
+        "message": "חזקה",
+        "description": "Password strength indicator"
+    },
+    "importingBackup": {
+        "message": "משחזר גיבוי...",
+        "description": "Loading message during backup import"
+    },
+    "unlockTitle": {
+        "message": "הזן סיסמת מאסטר"
+    },
+    "warningRemember": {
+        "message": "האם אתה זוכר את הסיסמה שלך?"
+    },
+    "yesRemember": {
+        "message": "כן, אני זוכר"
+    },
+    "survey": {
+        "message": "סקר משוב"
+    },
+    "Error": {
+        "message": "שגיאה"
+    },
+    "changelog": {
+        "message": "יומן שינויים"
+    },
+    "rateExtension": {
+        "message": "דרג ב-Chrome Web Store"
+    },
+    "migrationScreenTitle": {
+        "message": "נדרש עדכון",
+        "description": "Title on the manager migration screen"
+    },
+    "migrationScreenBody1": {
+        "message": "התוסף עודכן עם אבטחה משופרת.",
+        "description": "First line on the manager migration screen"
+    },
+    "migrationScreenBody2": {
+        "message": "אנא פתח את חלון התוסף המוקפץ כדי להעביר את הנתונים לפורמט המאובטח החדש.",
+        "description": "Second line on the manager migration screen"
+    },
+    "migrationScreenButton": {
+        "message": "פתח תוסף",
+        "description": "Button on the manager migration screen"
+    },
+    "notSetUpTitle": {
+        "message": "התוסף לא הוגדר",
+        "description": "manager-lock: notSetUpTitle"
+    },
+    "notSetUpSubtitle": {
+        "message": "התוסף עדיין לא הוגדר. אנא פתח את חלון התוסף המוקפץ כדי ליצור סיסמה.",
+        "description": "manager-lock: notSetUpSubtitle"
+    },
+    "notSetUpButton": {
+        "message": "פתח תוסף",
+        "description": "manager-lock: notSetUpButton"
+    },
+    "reloadingSubtitle": {
+        "message": "המנהל נטען מחדש...",
+        "description": "manager-lock: reloadingSubtitle"
+    },
+    "reloadingWait": {
+        "message": "אנא המתן בזמן שהמנהל מתעדכן",
+        "description": "manager-lock: reloadingWait"
+    },
+    "exportHtml": {
+        "message": "ייצא ל-HTML"
+    },
+    "exportHtmlNote": {
+        "message": "פורמט Netscape Bookmarks"
+    },
+    "exportHtmlSuccess": {
+        "message": "ייצוא HTML הצליח"
+    },
+    "exportHtmlConfirmTitle": {
+        "message": "אשר את הסיסמה שלך"
+    },
+    "exportHtmlConfirmDesc": {
+        "message": "הסימניות שלך ייוצאו כטקסט רגיל. הזן את סיסמת המאסטר לאישור."
+    },
+    "exportHtmlPasswordRequired": {
+        "message": "אנא הזן את הסיסמה שלך"
+    },
+    "exportHtmlConfirmBtn": {
+        "message": "ייצא"
+    },
+    "exportHtmlVerifying": {
+        "message": "מאמת סיסמה…"
+    },
+    "copiedToClipboard": {
+        "message": "הועתק ללוח!"
+    },
+    "copyFailed": {
+        "message": "ההעתקה נכשלה"
+    },
+    "clickToCopy": {
+        "message": "לחץ להעתקה"
+    },
+    "qrCodeFor": {
+        "message": "קוד QR עבור $1",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            }
+        }
+    },
+    "quickCloseTab": {
+        "message": "סגירה מהירה של כרטיסייה ($1)"
+    },
+    "quickCloseTabDesc": {
+        "message": "סוגר את הכרטיסייה הנוכחית ומוחק את היסטוריית הגלישה של הדומיין"
+    },
+    "quickCloseTabCommand": {
+        "message": "סגור כרטיסייה ומחק היסטוריית דומיין"
+    },
+    "changeShortcut": {
+        "message": "שנה קיצורי דרך"
+    },
+    "actions": {
+        "message": "פעולות"
+    },
+    "qrCode": {
+        "message": "קוד QR"
+    },
+    "qrScanHint": {
+        "message": "סרוק את קוד ה-QR כדי לפתוח את הקישור במכשיר שלך."
+    },
+    "stayUnlocked": {
+        "message": "הישאר פתוח בין סשנים"
+    },
+    "stayUnlockedDesc": {
+        "message": "לא מבקש סיסמה כל עוד הדפדפן פתוח"
+    },
+    "stayUnlockedWarning": {
+        "message": "מפחית אבטחה: מפתח ההצפנה נשמר באחסון הסשן של הדפדפן. כל מי שיש לו גישה לפרופיל הדפדפן שלך עלול לקרוא אותו."
+    },
+    "alwaysIncognito": {
+        "message": "פתח סימניות תמיד במצב גלישה פרטית"
+    },
+    "alwaysIncognitoDesc": {
+        "message": "כל הסימניות ייפתחו בחלון פרטי"
+    },
+    "enable": {
+        "message": "הפעל"
+    },
+    "managerIsOpen": {
+        "message": "מנהל הסימניות פתוח"
+    },
+    "managerIsOpenDesc": {
+        "message": "סגור את מנהל הסימניות כדי להשתמש בחלון הקופץ."
+    },
+    "switchToManager": {
+        "message": "עבור למנהל"
+    },
+    "hotkeys": {
+        "message": "מקשי קיצור"
+    },
+    "lockExtensionCommand": {
+        "message": "נעל את ההרחבה"
+    },
+    "openManagerCommand": {
+        "message": "פתח את מנהל הסימניות"
+    },
+    "blurPage": {
+        "message": "טשטוש הדף ($1)"
+    },
+    "blurPageDesc": {
+        "message": "מטשטש את הלשונית הנוכחית בעת הפעלה"
+    },
+    "blurPageCommand": {
+        "message": "טשטש דף"
+    },
+    "openAll": {
+        "message": "פתח הכל"
+    },
+    "openAllWindow": {
+        "message": "פתח הכל בחלון חדש"
+    },
+    "openAllGroup": {
+        "message": "פתח הכל בקבוצת לשוניות חדשה"
+    },
+    "openAllIncognito": {
+        "message": "פתח הכל בגלישה פרטית"
+    },
+    "saveAllTabs": {
+        "message": "שמור את כל הלשוניות הפתוחות"
+    },
+    "noTabsToSave": {
+        "message": "אין לשוניות לשמירה"
+    },
+    "tabsSaved": {
+        "message": "לשוניות נשמרו"
     }
-  },
-  "addToHoly": {
-    "message": "הוסף ל-Holy Private Bookmarks"
-  },
-  "cannotAddPage": {
-    "message": "לא ניתן להוסיף דף זה (אין כתובת URL תקינה)"
-  },
-  "supportProject": {
-    "message": "תמוך בפרויקט"
-  },
-  "supportPageTitle": {
-    "message": "תמוך ב-Holy Private Bookmarks"
-  },
-  "donateHeroTitle": {
-    "message": "תמוך בפיתוח ממוקד פרטיות"
-  },
-  "donateHeroSubtitle": {
-    "message": "Holy Private Bookmarks הוא חינמי ב-100% וקוד פתוח, ויישאר כך לתמיד. התמיכה שלך עוזרת למפתחים להקדיש זמן לתחזוקה ושיפור התוסף עבור כולם שאכפת להם מפרטיות."
-  },
-  "whySupport": {
-    "message": "מדוע התמיכה שלך חשובה"
-  },
-  "timeInvestment": {
-    "message": "זמן מפתח"
-  },
-  "timeInvestmentDesc": {
-    "message": "כל תכונה, תיקון באג ושיפור אבטחה מייצגים שעות עבודה. תרומתך מעריכה את הזמן הזה ושומרת על קיימות הפרויקט."
-  },
-  "longTerm": {
-    "message": "מחויבות לטווח ארוך"
-  },
-  "longTermDesc": {
-    "message": "התמיכה שלך מבטיחה שהתוסף יישאר מתוחזק באופן פעיל, תואם לעדכוני Chrome עתידיים ומשתפר ברציפות."
-  },
-  "futureFeatures": {
-    "message": "תכונות עתידיות"
-  },
-  "futureFeaturesDesc": {
-    "message": "בעזרתך נוכל לתעדף פונקציונליות חדשה, ממשק משתמש טוב יותר ותכונות אבטחה משופרות שיועילו לכל הקהילה."
-  },
-  "donateCtaText": {
-    "message": "אין מנויים. אין חסימות תוכן. אין מימון תאגידי. רק אנשים שבונים משהו שימושי עבור אחרים. אם התוסף הזה חוסך לך זמן או נותן לך שקט נפשי, שקול לקנות למפתחים כוס קפה."
-  },
-  "donateCryptoTitle": {
-    "message": "תמוך עם מטבע קריפטו"
-  },
-  "copyAddress": {
-    "message": "העתק כתובת"
-  },
-  "donateThanks": {
-    "message": "תודה על תמיכתך בפיתוח קוד פתוח עצמאי"
-  },
-  "donateThanksNote": {
-    "message": "כל תרומה, גדולה כקטנה, חשובה לנו מאוד."
-  },
-  "importantWarning": {
-    "message": "אזהרה חשובה:"
-  },
-  "passwordCannotBeRecovered": {
-    "message": "סיסמה זו לא ניתנת לשחזור!"
-  },
-  "noPasswordReset": {
-    "message": "אין אפשרות לאיפוס סיסמה"
-  },
-  "weDontStorePassword": {
-    "message": "אנחנו לא שומרים את הסיסמה שלך בשום מקום"
-  },
-  "bookmarksEncrypted": {
-    "message": "הסימניות שלך מוצפנות עם סיסמה זו בלבד"
-  },
-  "savePasswordSecurely": {
-    "message": "שמור את הסיסמה הזו במקום בטוח!"
-  },
-  "copyUrl": {
-    "message": "העתק כתובת URL"
-  },
-  "edit": {
-    "message": "ערוך"
-  },
-  "delete": {
-    "message": "מחק"
-  },
-  "urlCopied": {
-    "message": "כתובת URL הועתקה ללוח"
-  },
-  "about": {
-    "message": "אודות"
-  },
-  "aboutExtension": {
-    "message": "אודות התוסף"
-  },
-  "openGitHub": {
-    "message": "פתח GitHub"
-  },
-  "close": {
-    "message": "סגור"
-  },
-  "features": {
-    "message": "תכונות"
-  },
-  "troubleshooting": {
-    "message": "פתרון בעיות"
-  },
-  "encryption": {
-    "message": "הצפנה"
-  },
-  "encryptionDesc": {
-    "message": "הצפנת AES-256"
-  },
-  "localStorage": {
-    "message": "אחסון מקומי"
-  },
-  "localStorageDesc": {
-    "message": "הנתונים נשארים במכשיר שלך"
-  },
-  "privacy": {
-    "message": "פרטיות"
-  },
-  "privacyDesc": {
-    "message": "ללא מעקב או אנליטיקה"
-  },
-  "openSource": {
-    "message": "GPLv3"
-  },
-  "viewOnGitHub": {
-    "message": "צפה ב-GitHub"
-  },
-  "githubRepo": {
-    "message": "מאגר GitHub"
-  },
-  "githubRepoDesc": {
-    "message": "צפה בקוד המקור, דווח על בעיות, תרום"
-  },
-  "version": {
-    "message": "גרסה"
-  },
-  "openmanager": {
-    "message": "פתח מנהל"
-  },
-  "managerDesc": {
-    "message": "פתח מנהל סימניות במסך מלא"
-  },
-  "folders": {
-    "message": "תיקיות"
-  },
-  "bookmarks": {
-    "message": "סימניות"
-  },
-  "allBookmarks": {
-    "message": "כל הסימניות"
-  },
-  "searchBookmarks": {
-    "message": "חפש סימניות..."
-  },
-  "noBookmarksInFolder": {
-    "message": "אין סימניות בתיקייה זו"
-  },
-  "addBookmarksToGetStarted": {
-    "message": "הוסף סימניות כדי להתחיל"
-  },
-  "bookmarkUpdated": {
-    "message": "הסימנייה עודכנה"
-  },
-  "bookmarkDeleted": {
-    "message": "הסימנייה נמחקה"
-  },
-  "renameFolder": {
-    "message": "שנה שם תיקייה"
-  },
-  "folderCreated": {
-    "message": "התיקייה נוצרה בהצלחה"
-  },
-  "managerLocked": {
-    "message": "המנהל נעול"
-  },
-  "lockManager": {
-    "message": "נעל מנהל"
-  },
-  "rename": {
-    "message": "שנה שם"
-  },
-  "deleteFolder": {
-    "message": "מחק תיקייה"
-  },
-  "deleteFolderConfirm": {
-    "message": "למחוק את התיקייה \"{0}\"?"
-  },
-  "deleteFolderWarning": {
-    "message": "כל התוכן יימחק לצמיתות."
-  },
-  "folderRenamed": {
-    "message": "שם התיקייה שונה בהצלחה"
-  },
-  "folderDeleted": {
-    "message": "התיקייה נמחקה בהצלחה"
-  },
-  "cannotRenameAll": {
-    "message": "לא ניתן לשנות שם של תיקיית \"כל הסימניות\""
-  },
-  "cannotDeleteAll": {
-    "message": "לא ניתן למחוק את תיקיית \"כל הסימניות\""
-  },
-  "bookmarkAdded": {
-    "message": "הסימנייה נוספה"
-  },
-  "pendingBookmarkNotification": {
-    "message": "סימנייה ממתינה!"
-  },
-  "pendingBookmarkInstruction": {
-    "message": "סימנייה ממתינה להוספה. אנא בטל נעילה להמשך."
-  },
-  "dragSuccess": {
-    "message": "הפריט הועבר בהצלחה"
-  },
-  "invalidDestinationFolder": {
-    "message": "תיקיית יעד לא חוקית"
-  },
-  "moveFailed": {
-    "message": "העברת הסימניות נכשלה"
-  },
-  "noBookmarksSelected": {
-    "message": "לא נבחרו סימניות"
-  },
-  "selectDestinationFolder": {
-    "message": "בחר תיקיית יעד:"
-  },
-  "move": {
-    "message": "העבר"
-  },
-  "selected": {
-    "message": "נבחרו"
-  },
-  "moveSelectedTitle": {
-    "message": "העבר נבחרים"
-  },
-  "deleteSelectedTitle": {
-    "message": "מחק נבחרים"
-  },
-  "cancelSelectionTitle": {
-    "message": "בטל בחירה"
-  },
-  "emptyFolder": {
-    "message": "התיקייה ריקה",
-    "description": "Message shown when a folder has no bookmarks"
-  },
-  "noSearchResults": {
-    "message": "לא נמצאו סימניות",
-    "description": "Message when search returns no results"
-  },
-  "noSearchResultsDesc": {
-    "message": "נסה מונח חיפוש אחר",
-    "description": "Description for empty search results"
-  },
-  "theme": {
-    "message": "ערכת נושא"
-  },
-  "themeDark": {
-    "message": "כהה",
-    "description": "Dark theme name"
-  },
-  "themeLight": {
-    "message": "בהיר",
-    "description": "Light theme name"
-  },
-  "themeSystem": {
-    "message": "מערכת",
-    "description": "System theme name"
-  },
-  "themeToggle": {
-    "message": "החלף ערכת נושא",
-    "description": "Tooltip for theme toggle button"
-  },
-  "showFavicons": {
-    "message": "הצג סמלי אתרים"
-  },
-  "showFaviconsDesc": {
-    "message": "האייקונים נטענים דרך שירות Google"
-  },
-  "bookmarksAndFolders": {
-    "message": "סימניות ותיקיות"
-  },
-  "importFromHtml": {
-    "message": "ייבא מ-HTML"
-  },
-  "importHtmlSuccess": {
-    "message": "סימניות HTML יובאו בהצלחה! נוספו $COUNT$ סימניות.",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "42"
-      }
-    }
-  },
-  "htmlImporterNoFileSelected": {
-    "message": "לא נבחר קובץ"
-  },
-  "htmlImporterFileTooLarge": {
-    "message": "הקובץ גדול מדי (מקסימום 1MB)"
-  },
-  "htmlImporterParseError": {
-    "message": "ייבוא HTML נכשל: $1"
-  },
-  "htmlImporterNoBookmarksFound": {
-    "message": "לא נמצאו סימניות בקובץ"
-  },
-  "importHtmlError": {
-    "message": "ניתוח קובץ HTML נכשל. אנא בדוק את פורמט הקובץ."
-  },
-  "importHtmlSizeWarning": {
-    "message": "מגבלת 1MB"
-  },
-  "importHtmlSizeNote": {
-    "message": "מקסימום ~2500 סימניות"
-  },
-  "importWarning": {
-    "message": "כל הסימניות הקיימות יוחלפו"
-  },
-  "developer": {
-    "message": "מפתח:"
-  },
-  "lock": {
-    "message": "נעל"
-  },
-  "faqButtonTitle": {
-    "message": "שאלות נפוצות"
-  },
-  "clearingHistory": {
-    "message": "מנקה היסטוריה",
-    "description": "Title for history clearing progress modal"
-  },
-  "preparingToClear": {
-    "message": "מתכונן לניקוי היסטוריה...",
-    "description": "Initial status message"
-  },
-  "progress": {
-    "message": "התקדמות",
-    "description": "Progress label"
-  },
-  "domainsProcessed": {
-    "message": "דומיינים שעובדו",
-    "description": "Label for domains processed count"
-  },
-  "entriesDeleted": {
-    "message": "ערכים שנמחקו",
-    "description": "Label for deleted entries count"
-  },
-  "startingCleanup": {
-    "message": "מתחיל ניקוי...",
-    "description": "Status when starting"
-  },
-  "finalizingCleanup": {
-    "message": "מסיים ניקוי...",
-    "description": "Status when finalizing"
-  },
-  "cancelling": {
-    "message": "מבטל...",
-    "description": "Status when cancelling"
-  },
-  "clearCancelled": {
-    "message": "הפעולה בוטלה",
-    "description": "Notification when cancelled"
-  },
-  "fillAllFields": {
-    "message": "אנא מלא את כל השדות"
-  },
-  "setupComplete": {
-    "message": "ההגדרה הושלמה!"
-  },
-  "migrationSuccess": {
-    "message": "הנתונים הועברו בהצלחה לפורמט מאובטח!"
-  },
-  "migrationRequired": {
-    "message": "נדרש עדכון פורמט נתונים"
-  },
-  "migrationInstruction": {
-    "message": "הזן את הסיסמה שלך לשדרוג אוטומטי לפורמט מאובטח יותר."
-  },
-  "exportSuccess": {
-    "message": "הייצוא הצליח",
-    "description": "Notification when data export completes successfully"
-  },
-  "processing": {
-    "message": "מעבד...",
-    "description": "Generic processing message for loading indicators"
-  },
-  "unlocking": {
-    "message": "מבטל נעילה...",
-    "description": "Shown while decrypting bookmarks"
-  },
-  "changingPassword": {
-    "message": "משנה סיסמה...",
-    "description": "Shown while changing master password"
-  },
-  "settingUpEncryption": {
-    "message": "מגדיר הצפנה...",
-    "description": "Shown during first-time setup"
-  },
-  "migratingData": {
-    "message": "מעביר נתונים לפורמט מאובטח...",
-    "description": "Shown during v1 to v2 migration"
-  },
-  "loading": {
-    "message": "טוען...",
-    "description": "Generic loading message"
-  },
-  "donationReminderTitle": {
-    "message": "תמוך בפרויקט"
-  },
-  "donationReminderText": {
-    "message": "אם אתה אוהב את התוסף הזה, אנא תמוך בפיתוחו!"
-  },
-  "remindLater": {
-    "message": "הזכר לי מאוחר יותר"
-  },
-  "supportNow": {
-    "message": "תמוך עכשיו"
-  },
-  "remindNever": {
-    "message": "אל תציג שוב"
-  },
-  "confirmDismiss": {
-    "message": "לא להציג תזכורות תרומה שוב?"
-  },
-  "bookmarkAlreadyInFolder": {
-    "message": "הפריט כבר נמצא בתיקייה זו"
-  },
-  "cannotMoveIntoSelf": {
-    "message": "לא ניתן להעביר תיקייה לתוך עצמה"
-  },
-  "bookmarksMoved": {
-    "message": "{0} פריט{1} הועבר"
-  },
-  "deleteSelectedConfirm": {
-    "message": "למחוק {count} פריט{plural} נבחר?",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "plural": {
-        "content": "$2"
-      }
-    }
-  },
-  "bookmarksDeleted": {
-    "message": "{count} פריט{plural} נמחק",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "plural": {
-        "content": "$2"
-      }
-    }
-  },
-  "moveBookmarksTitle": {
-    "message": "העבר {0} פריט{1}"
-  },
-  "setupTabNew": {
-    "message": "צור חדש",
-    "description": "Tab label for creating new password"
-  },
-  "setupTabRestore": {
-    "message": "שחזר גיבוי",
-    "description": "Tab label for restoring from backup"
-  },
-  "restoreDropTitle": {
-    "message": "גרור קובץ גיבוי לכאן או לחץ לבחירה",
-    "description": "Text for drag & drop area in restore tab"
-  },
-  "strengthWeak": {
-    "message": "חלשה",
-    "description": "Password strength indicator"
-  },
-  "strengthFair": {
-    "message": "בינונית",
-    "description": "Password strength indicator"
-  },
-  "strengthGood": {
-    "message": "טובה",
-    "description": "Password strength indicator"
-  },
-  "strengthStrong": {
-    "message": "חזקה",
-    "description": "Password strength indicator"
-  },
-  "importingBackup": {
-    "message": "משחזר גיבוי...",
-    "description": "Loading message during backup import"
-  },
-  "unlockTitle": {
-    "message": "הזן סיסמת מאסטר"
-  },
-  "warningRemember": {
-    "message": "האם אתה זוכר את הסיסמה שלך?"
-  },
-  "yesRemember": {
-    "message": "כן, אני זוכר"
-  },
-  "survey": {
-    "message": "סקר משוב"
-  },
-  "Error": {
-    "message": "שגיאה"
-  },
-  "changelog": {
-    "message": "יומן שינויים"
-  },
-  "rateExtension": {
-    "message": "דרג ב-Chrome Web Store"
-  },
-  "migrationScreenTitle": {
-    "message": "נדרש עדכון",
-    "description": "Title on the manager migration screen"
-  },
-  "migrationScreenBody1": {
-    "message": "התוסף עודכן עם אבטחה משופרת.",
-    "description": "First line on the manager migration screen"
-  },
-  "migrationScreenBody2": {
-    "message": "אנא פתח את חלון התוסף המוקפץ כדי להעביר את הנתונים לפורמט המאובטח החדש.",
-    "description": "Second line on the manager migration screen"
-  },
-  "migrationScreenButton": {
-    "message": "פתח תוסף",
-    "description": "Button on the manager migration screen"
-  },
-  "notSetUpTitle": {
-    "message": "התוסף לא הוגדר",
-    "description": "manager-lock: notSetUpTitle"
-  },
-  "notSetUpSubtitle": {
-    "message": "התוסף עדיין לא הוגדר. אנא פתח את חלון התוסף המוקפץ כדי ליצור סיסמה.",
-    "description": "manager-lock: notSetUpSubtitle"
-  },
-  "notSetUpButton": {
-    "message": "פתח תוסף",
-    "description": "manager-lock: notSetUpButton"
-  },
-  "reloadingSubtitle": {
-    "message": "המנהל נטען מחדש...",
-    "description": "manager-lock: reloadingSubtitle"
-  },
-  "reloadingWait": {
-    "message": "אנא המתן בזמן שהמנהל מתעדכן",
-    "description": "manager-lock: reloadingWait"
-  },
-  "exportHtml": {
-    "message": "ייצא ל-HTML"
-  },
-  "exportHtmlNote": {
-    "message": "פורמט Netscape Bookmarks"
-  },
-  "exportHtmlSuccess": {
-    "message": "ייצוא HTML הצליח"
-  },
-  "exportHtmlConfirmTitle": {
-    "message": "אשר את הסיסמה שלך"
-  },
-  "exportHtmlConfirmDesc": {
-    "message": "הסימניות שלך ייוצאו כטקסט רגיל. הזן את סיסמת המאסטר לאישור."
-  },
-  "exportHtmlPasswordRequired": {
-    "message": "אנא הזן את הסיסמה שלך"
-  },
-  "exportHtmlConfirmBtn": {
-    "message": "ייצא"
-  },
-  "exportHtmlVerifying": {
-    "message": "מאמת סיסמה…"
-  },
-  "copiedToClipboard": {
-    "message": "הועתק ללוח!"
-  },
-  "copyFailed": {
-    "message": "ההעתקה נכשלה"
-  },
-  "clickToCopy": {
-    "message": "לחץ להעתקה"
-  },
-  "qrCodeFor": {
-    "message": "קוד QR עבור $1",
-    "placeholders": {
-      "1": {
-        "content": "$1"
-      }
-    }
-  },
-  "quickCloseTab": {
-    "message": "סגירה מהירה של כרטיסייה ($1)"
-  },
-  "quickCloseTabDesc": {
-    "message": "סוגר את הכרטיסייה הנוכחית ומוחק את היסטוריית הגלישה של הדומיין"
-  },
-  "quickCloseTabCommand": {
-    "message": "סגור כרטיסייה ומחק היסטוריית דומיין"
-  },
-  "changeShortcut": {
-    "message": "שנה קיצורי דרך"
-  },
-  "actions": {
-    "message": "פעולות"
-  },
-  "qrCode": {
-    "message": "קוד QR"
-  },
-  "qrScanHint": {
-    "message": "סרוק את קוד ה-QR כדי לפתוח את הקישור במכשיר שלך."
-  },
-  "stayUnlocked": {
-    "message": "הישאר פתוח בין סשנים"
-  },
-  "stayUnlockedDesc": {
-    "message": "לא מבקש סיסמה כל עוד הדפדפן פתוח"
-  },
-  "stayUnlockedWarning": {
-    "message": "מפחית אבטחה: מפתח ההצפנה נשמר באחסון הסשן של הדפדפן. כל מי שיש לו גישה לפרופיל הדפדפן שלך עלול לקרוא אותו."
-  },
-  "alwaysIncognito": {
-    "message": "פתח סימניות תמיד במצב גלישה פרטית"
-  },
-  "alwaysIncognitoDesc": {
-    "message": "כל הסימניות ייפתחו בחלון פרטי"
-  },
-  "enable": {
-    "message": "הפעל"
-  },
-  "managerIsOpen": {
-    "message": "מנהל הסימניות פתוח"
-  },
-  "managerIsOpenDesc": {
-    "message": "סגור את מנהל הסימניות כדי להשתמש בחלון הקופץ."
-  },
-  "switchToManager": {
-    "message": "עבור למנהל"
-  },
-  "hotkeys": {
-    "message": "מקשי קיצור"
-  },
-  "lockExtensionCommand": {
-    "message": "נעל את ההרחבה"
-  },
-  "openManagerCommand": {
-    "message": "פתח את מנהל הסימניות"
-  },
-  "blurPage": {
-    "message": "טשטוש הדף ($1)"
-  },
-  "blurPageDesc": {
-    "message": "מטשטש את הלשונית הנוכחית בעת הפעלה"
-  },
-  "blurPageCommand": {
-    "message": "טשטש דף"
-  }
 }

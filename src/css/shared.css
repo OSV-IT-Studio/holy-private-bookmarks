@@ -22,6 +22,8 @@
 .hpb-modal__body label{display:block;margin:8px 0 4px;font-weight:500;color:var(--text-primary);font-size:.875rem;letter-spacing:.3px}
 .hpb-modal__body_bookmark{display: flex;gap: 12px;align-items: center;}
 .hpb-modal__body_bookmark label {display: block;margin: 8px 0 8px;font-weight: 500;color: var(--text-primary);font-size: .875rem;letter-spacing: .3px;min-width: 42px;}
+.hpb-modal__bookmark-form{display:grid;grid-template-columns:max-content 1fr;gap:10px 12px;align-items:center;}
+.hpb-modal__bookmark-form label{font-weight:500;color:var(--text-primary);font-size:.875rem;letter-spacing:.3px;white-space:nowrap; margin: 8px 0 8px;}
 
 .hpb-modal__body .folder-select-container{display:flex;gap:8px;align-items:center}
 .hpb-modal__body .folder-select-container select{flex:1}

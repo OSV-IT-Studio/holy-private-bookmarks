@@ -1,858 +1,879 @@
 {
-  "Name": {
-    "message": "Holy Private Bookmarks — Зашифрованный менеджер локальных закладок"
-  },
-  "extensionName": {
-    "message": "Holy Private Bookmarks"
-  },
-  "extensionDescription": {
-    "message": "Приватные закладки с мастер-паролем и шифрованием AES-256. Все данные хранятся на вашем устройстве — без облака и отслеживания."
-  },
-  "managerTitle": {
-    "message": "HPB - Менеджер закладок"
-  },
-  "createPassword": {
-    "message": "Создайте мастер-пароль для полного шифрования закладок"
-  },
-  "newPassword": {
-    "message": "Новый пароль (минимум 6 символов)"
-  },
-  "confirmPassword": {
-    "message": "Подтвердите пароль"
-  },
-  "createStorage": {
-    "message": "Создать хранилище"
-  },
-  "enterMasterPassword": {
-    "message": ""
-  },
-  "masterPassword": {
-    "message": "Мастер-пароль"
-  },
-  "unlock": {
-    "message": "Разблокировать"
-  },
-  "wrongPassword": {
-    "message": "Неверный пароль"
-  },
-  "passwordsMismatch": {
-    "message": "Пароли не совпадают или слишком короткие"
-  },
-  "bookmarksProtected": {
-    "message": "Ваши закладки надежно защищены"
-  },
-  "addCurrentPage": {
-    "message": "Добавить текущую страницу"
-  },
-  "newFolder": {
-    "message": "Новая папка"
-  },
-  "clearHistory": {
-    "message": "Очистить историю"
-  },
-  "supportProject": {
-    "message": "Поддержать проект"
-  },
-  "supportPageTitle": {
-    "message": "Поддержать Holy Private Bookmarks"
-  },
-  "donateHeroTitle": {
-    "message": "Поддержите разработку, ориентированную на конфиденциальность"
-  },
-  "donateHeroSubtitle": {
-    "message": "Holy Private Bookmarks — это 100% бесплатное и открытое ПО, и останется таким навсегда. Ваша поддержка помогает разработчикам уделять время поддержке и улучшению расширения для всех, кто заботится о конфиденциальности."
-  },
-  "whySupport": {
-    "message": "Почему ваша поддержка важна"
-  },
-  "timeInvestment": {
-    "message": "Время разработки"
-  },
-  "timeInvestmentDesc": {
-    "message": "Каждая функция, исправление ошибки и улучшение безопасности — это часы работы. Ваш вклад ценит это время и обеспечивает устойчивость проекта."
-  },
-  "longTerm": {
-    "message": "Долгосрочные обязательства"
-  },
-  "longTermDesc": {
-    "message": "Ваша поддержка гарантирует, что расширение будет активно поддерживаться, совместимо с будущими обновлениями Chrome и постоянно улучшаться."
-  },
-  "futureFeatures": {
-    "message": "Будущие возможности"
-  },
-  "futureFeaturesDesc": {
-    "message": "С вашей помощью мы сможем расставить приоритеты в новых функциях, улучшить интерфейс и усилить безопасность на благо всего сообщества."
-  },
-  "donateCtaText": {
-    "message": "Никаких подписок. Никаких платных стен. Никакого корпоративного финансирования. Просто люди, создающие что-то полезное для других. Если это расширение экономит ваше время или дарит вам спокойствие, подумайте о том, чтобы угостить разработчиков кофе."
-  },
-  "donateCryptoTitle": {
-    "message": "Поддержка криптовалютой"
-  },
-  "copyAddress": {
-    "message": "Копировать адрес"
-  },
-  "donateThanks": {
-    "message": "Спасибо за поддержку независимой разработки с открытым исходным кодом"
-  },
-  "donateThanksNote": {
-    "message": "Каждый вклад, большой или маленький, очень много значит для нас."
-  },
-  "settings": {
-    "message": "Настройки"
-  },
-  "settingsbtn": {
-    "message": "⚙️"
-  },
-  "changeMasterPassword": {
-    "message": "Сменить мастер-пароль"
-  },
-  "currentPassword": {
-    "message": "Текущий мастер-пароль"
-  },
-  "newPassword2": {
-    "message": "Новый пароль"
-  },
-  "confirmNewPassword": {
-    "message": "Подтвердите новый пароль"
-  },
-  "changePassword": {
-    "message": "Сменить пароль"
-  },
-  "exportImport": {
-    "message": "Экспорт и импорт"
-  },
-  "export": {
-    "message": "Создать резервную копию"
-  },
-  "openPrivate": {
-    "message": "Открыть в приватной вкладке"
-  },
-  "import": {
-    "message": "Импорт"
-  },
-  "importFromChrome": {
-    "message": "Импорт из Chrome"
-  },
-  "importChromeBookmarks": {
-    "message": "Импортировать все закладки Chrome"
-  },
-  "importChromeBookmarksAdvanced": {
-    "message": "Выберите папки для импорта"
-  },
-  "importChromeConfirm": {
-    "message": "Импортировать все закладки из Chrome? Существующие закладки будут сохранены."
-  },
-  "importChromeSuccess": {
-    "message": "Закладки успешно импортированы!"
-  },
-  "importChromeError": {
-    "message": "Не удалось импортировать закладки"
-  },
-  "selectFoldersToImport": {
-    "message": "Выберите папки для импорта"
-  },
-  "selectAll": {
-    "message": "Выбрать все"
-  },
-  "deselectAll": {
-    "message": "Снять выделение"
-  },
-  "importSelected": {
-    "message": "Импортировать"
-  },
-  "back": {
-    "message": "← Назад"
-  },
-  "addBookmark": {
-    "message": "Добавить закладку"
-  },
-  "editBookmark": {
-    "message": "Редактировать закладку"
-  },
-  "page": {
-    "message": "Страница"
-  },
-  "title": {
-    "message": "Название"
-  },
-  "url": {
-    "message": "URL"
-  },
-  "folder": {
-    "message": "Папка"
-  },
-  "rootFolder": {
-    "message": "Корневая папка"
-  },
-  "new": {
-    "message": "+ Новая"
-  },
-  "cancel": {
-    "message": "Отмена"
-  },
-  "save": {
-    "message": "Сохранить"
-  },
-  "deleteConfirm": {
-    "message": "Удалить закладку"
-  },
-  "folderName": {
-    "message": "Имя папки:"
-  },
-  "newName": {
-    "message": "Новое имя:"
-  },
-  "titleRequired": {
-    "message": "Название и URL обязательны"
-  },
-  "validUrl": {
-    "message": "URL должен начинаться с http:// или https://"
-  },
-  "passwordChanged": {
-    "message": "Пароль успешно изменен!"
-  },
-  "importSuccess": {
-    "message": "Резервная копия успешно импортирована! Пожалуйста, перезапустите всплывающее окно."
-  },
-  "invalidFile": {
-    "message": "Неверный файл резервной копии"
-  },
-  "clearHistoryConfirm": {
-    "message": "Удалить ВСЕ записи истории браузера для доменов, присутствующих в ваших Holy Private Bookmarks?"
-  },
-  "noBookmarks": {
-    "message": "Закладки не найдены — нечего очищать."
-  },
-  "noDomains": {
-    "message": "В закладках не найдено допустимых доменов."
-  },
-  "newBookmark": {
-    "message": "Новая закладка"
-  },
-  "paste": {
-    "message": "Вставить"
-  },
-  "ctxnewFolder": {
-    "message": "Новая папка"
-  },
-  "emptyTreeTitle": {
-    "message": "Еще нет закладок"
-  },
-  "emptyTreeSubtitle": {
-    "message": "Добавьте свою первую закладку или папку, чтобы начать"
-  },
-  "historyCleared": {
-    "message": "История очищена!\nУдалено $count$ посещений с $domains$ домена(ов).",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "domains": {
-        "content": "$2"
-      }
+    "Name": {
+        "message": "Holy Private Bookmarks — Зашифрованный менеджер локальных закладок"
+    },
+    "extensionName": {
+        "message": "Holy Private Bookmarks"
+    },
+    "extensionDescription": {
+        "message": "Приватные закладки с мастер-паролем и шифрованием AES-256. Все данные хранятся на вашем устройстве — без облака и отслеживания."
+    },
+    "managerTitle": {
+        "message": "HPB - Менеджер закладок"
+    },
+    "createPassword": {
+        "message": "Создайте мастер-пароль для полного шифрования закладок"
+    },
+    "newPassword": {
+        "message": "Новый пароль (минимум 6 символов)"
+    },
+    "confirmPassword": {
+        "message": "Подтвердите пароль"
+    },
+    "createStorage": {
+        "message": "Создать хранилище"
+    },
+    "enterMasterPassword": {
+        "message": ""
+    },
+    "masterPassword": {
+        "message": "Мастер-пароль"
+    },
+    "unlock": {
+        "message": "Разблокировать"
+    },
+    "wrongPassword": {
+        "message": "Неверный пароль"
+    },
+    "passwordsMismatch": {
+        "message": "Пароли не совпадают или слишком короткие"
+    },
+    "bookmarksProtected": {
+        "message": "Ваши закладки надежно защищены"
+    },
+    "addCurrentPage": {
+        "message": "Добавить текущую страницу"
+    },
+    "newFolder": {
+        "message": "Новая папка"
+    },
+    "clearHistory": {
+        "message": "Очистить историю"
+    },
+    "supportProject": {
+        "message": "Поддержать проект"
+    },
+    "supportPageTitle": {
+        "message": "Поддержать Holy Private Bookmarks"
+    },
+    "donateHeroTitle": {
+        "message": "Поддержите разработку, ориентированную на конфиденциальность"
+    },
+    "donateHeroSubtitle": {
+        "message": "Holy Private Bookmarks — это 100% бесплатное и открытое ПО, и останется таким навсегда. Ваша поддержка помогает разработчикам уделять время поддержке и улучшению расширения для всех, кто заботится о конфиденциальности."
+    },
+    "whySupport": {
+        "message": "Почему ваша поддержка важна"
+    },
+    "timeInvestment": {
+        "message": "Время разработки"
+    },
+    "timeInvestmentDesc": {
+        "message": "Каждая функция, исправление ошибки и улучшение безопасности — это часы работы. Ваш вклад ценит это время и обеспечивает устойчивость проекта."
+    },
+    "longTerm": {
+        "message": "Долгосрочные обязательства"
+    },
+    "longTermDesc": {
+        "message": "Ваша поддержка гарантирует, что расширение будет активно поддерживаться, совместимо с будущими обновлениями Chrome и постоянно улучшаться."
+    },
+    "futureFeatures": {
+        "message": "Будущие возможности"
+    },
+    "futureFeaturesDesc": {
+        "message": "С вашей помощью мы сможем расставить приоритеты в новых функциях, улучшить интерфейс и усилить безопасность на благо всего сообщества."
+    },
+    "donateCtaText": {
+        "message": "Никаких подписок. Никаких платных стен. Никакого корпоративного финансирования. Просто люди, создающие что-то полезное для других. Если это расширение экономит ваше время или дарит вам спокойствие, подумайте о том, чтобы угостить разработчиков кофе."
+    },
+    "donateCryptoTitle": {
+        "message": "Поддержка криптовалютой"
+    },
+    "copyAddress": {
+        "message": "Копировать адрес"
+    },
+    "donateThanks": {
+        "message": "Спасибо за поддержку независимой разработки с открытым исходным кодом"
+    },
+    "donateThanksNote": {
+        "message": "Каждый вклад, большой или маленький, очень много значит для нас."
+    },
+    "settings": {
+        "message": "Настройки"
+    },
+    "settingsbtn": {
+        "message": "⚙️"
+    },
+    "changeMasterPassword": {
+        "message": "Сменить мастер-пароль"
+    },
+    "currentPassword": {
+        "message": "Текущий мастер-пароль"
+    },
+    "newPassword2": {
+        "message": "Новый пароль"
+    },
+    "confirmNewPassword": {
+        "message": "Подтвердите новый пароль"
+    },
+    "changePassword": {
+        "message": "Сменить пароль"
+    },
+    "exportImport": {
+        "message": "Экспорт и импорт"
+    },
+    "export": {
+        "message": "Создать резервную копию"
+    },
+    "openPrivate": {
+        "message": "Открыть в приватной вкладке"
+    },
+    "import": {
+        "message": "Импорт"
+    },
+    "importFromChrome": {
+        "message": "Импорт из Chrome"
+    },
+    "importChromeBookmarks": {
+        "message": "Импортировать все закладки Chrome"
+    },
+    "importChromeBookmarksAdvanced": {
+        "message": "Выберите папки для импорта"
+    },
+    "importChromeConfirm": {
+        "message": "Импортировать все закладки из Chrome? Существующие закладки будут сохранены."
+    },
+    "importChromeSuccess": {
+        "message": "Закладки успешно импортированы!"
+    },
+    "importChromeError": {
+        "message": "Не удалось импортировать закладки"
+    },
+    "selectFoldersToImport": {
+        "message": "Выберите папки для импорта"
+    },
+    "selectAll": {
+        "message": "Выбрать все"
+    },
+    "deselectAll": {
+        "message": "Снять выделение"
+    },
+    "importSelected": {
+        "message": "Импортировать"
+    },
+    "back": {
+        "message": "← Назад"
+    },
+    "addBookmark": {
+        "message": "Добавить закладку"
+    },
+    "editBookmark": {
+        "message": "Редактировать закладку"
+    },
+    "page": {
+        "message": "Страница"
+    },
+    "title": {
+        "message": "Название"
+    },
+    "url": {
+        "message": "URL"
+    },
+    "folder": {
+        "message": "Папка"
+    },
+    "rootFolder": {
+        "message": "Корневая папка"
+    },
+    "new": {
+        "message": "+ Новая"
+    },
+    "cancel": {
+        "message": "Отмена"
+    },
+    "save": {
+        "message": "Сохранить"
+    },
+    "deleteConfirm": {
+        "message": "Удалить закладку"
+    },
+    "folderName": {
+        "message": "Имя папки:"
+    },
+    "newName": {
+        "message": "Новое имя:"
+    },
+    "titleRequired": {
+        "message": "Название и URL обязательны"
+    },
+    "validUrl": {
+        "message": "URL должен начинаться с http:// или https://"
+    },
+    "passwordChanged": {
+        "message": "Пароль успешно изменен!"
+    },
+    "importSuccess": {
+        "message": "Резервная копия успешно импортирована! Пожалуйста, перезапустите всплывающее окно."
+    },
+    "invalidFile": {
+        "message": "Неверный файл резервной копии"
+    },
+    "clearHistoryConfirm": {
+        "message": "Удалить ВСЕ записи истории браузера для доменов, присутствующих в ваших Holy Private Bookmarks?"
+    },
+    "noBookmarks": {
+        "message": "Закладки не найдены — нечего очищать."
+    },
+    "noDomains": {
+        "message": "В закладках не найдено допустимых доменов."
+    },
+    "newBookmark": {
+        "message": "Новая закладка"
+    },
+    "paste": {
+        "message": "Вставить"
+    },
+    "ctxnewFolder": {
+        "message": "Новая папка"
+    },
+    "emptyTreeTitle": {
+        "message": "Еще нет закладок"
+    },
+    "emptyTreeSubtitle": {
+        "message": "Добавьте свою первую закладку или папку, чтобы начать"
+    },
+    "historyCleared": {
+        "message": "История очищена!\nУдалено $count$ посещений с $domains$ домена(ов).",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "domains": {
+                "content": "$2"
+            }
+        }
+    },
+    "addToHoly": {
+        "message": "Добавить в Holy Private Bookmarks"
+    },
+    "cannotAddPage": {
+        "message": "Невозможно добавить эту страницу (нет действительного URL)"
+    },
+    "importantWarning": {
+        "message": "ВАЖНОЕ ПРЕДУПРЕЖДЕНИЕ:"
+    },
+    "passwordCannotBeRecovered": {
+        "message": "Этот пароль НЕВОЗМОЖНО восстановить!"
+    },
+    "noPasswordReset": {
+        "message": "НЕТ возможности сброса пароля"
+    },
+    "weDontStorePassword": {
+        "message": "Мы НЕ храним ваш пароль где-либо"
+    },
+    "bookmarksEncrypted": {
+        "message": "Ваши закладки зашифрованы только этим паролем"
+    },
+    "savePasswordSecurely": {
+        "message": "Сохраните этот пароль в надежном месте!"
+    },
+    "copyUrl": {
+        "message": "Копировать URL"
+    },
+    "edit": {
+        "message": "Редактировать"
+    },
+    "delete": {
+        "message": "Удалить"
+    },
+    "urlCopied": {
+        "message": "URL скопирован в буфер обмена"
+    },
+    "about": {
+        "message": "О расширении"
+    },
+    "aboutExtension": {
+        "message": "О расширении"
+    },
+    "openGitHub": {
+        "message": "Открыть GitHub"
+    },
+    "close": {
+        "message": "Закрыть"
+    },
+    "features": {
+        "message": "Возможности"
+    },
+    "troubleshooting": {
+        "message": "Устранение проблем"
+    },
+    "encryption": {
+        "message": "Шифрование"
+    },
+    "encryptionDesc": {
+        "message": "Шифрование AES-256"
+    },
+    "localStorage": {
+        "message": "Локальное хранилище"
+    },
+    "localStorageDesc": {
+        "message": "Данные остаются на вашем устройстве"
+    },
+    "privacy": {
+        "message": "Конфиденциальность"
+    },
+    "privacyDesc": {
+        "message": "Нет отслеживания или аналитики"
+    },
+    "openSource": {
+        "message": "GPLv3"
+    },
+    "viewOnGitHub": {
+        "message": "Посмотреть на GitHub"
+    },
+    "githubRepo": {
+        "message": "Репозиторий GitHub"
+    },
+    "githubRepoDesc": {
+        "message": "Просмотр исходного кода, сообщение об ошибках, участие в разработке"
+    },
+    "version": {
+        "message": "Версия"
+    },
+    "openmanager": {
+        "message": "Открыть менеджер"
+    },
+    "managerDesc": {
+        "message": "Открыть полноэкранный менеджер закладок"
+    },
+    "folders": {
+        "message": "Папки"
+    },
+    "bookmarks": {
+        "message": "закладки"
+    },
+    "allBookmarks": {
+        "message": "Все закладки"
+    },
+    "searchBookmarks": {
+        "message": "Поиск закладок..."
+    },
+    "noBookmarksInFolder": {
+        "message": "В папке нет закладок"
+    },
+    "addBookmarksToGetStarted": {
+        "message": "Добавьте закладки, чтобы начать"
+    },
+    "bookmarkUpdated": {
+        "message": "Закладка обновлена"
+    },
+    "bookmarkDeleted": {
+        "message": "Закладка удалена"
+    },
+    "renameFolder": {
+        "message": "Переименовать папку"
+    },
+    "folderCreated": {
+        "message": "Папка успешно создана"
+    },
+    "managerLocked": {
+        "message": "Менеджер заблокирован"
+    },
+    "lockManager": {
+        "message": "Заблокировать менеджер"
+    },
+    "rename": {
+        "message": "Переименовать"
+    },
+    "deleteFolder": {
+        "message": "Удалить папку"
+    },
+    "deleteFolderConfirm": {
+        "message": "Удалить папку \"{0}\"?"
+    },
+    "deleteFolderWarning": {
+        "message": "Все содержимое будет безвозвратно удалено."
+    },
+    "folderRenamed": {
+        "message": "Папка успешно переименована"
+    },
+    "folderDeleted": {
+        "message": "Папка успешно удалена"
+    },
+    "cannotRenameAll": {
+        "message": "Нельзя переименовать папку \"Все закладки\""
+    },
+    "cannotDeleteAll": {
+        "message": "Нельзя удалить папку \"Все закладки\""
+    },
+    "bookmarkAdded": {
+        "message": "Закладка добавлена"
+    },
+    "pendingBookmarkNotification": {
+        "message": "Ожидает добавления закладки!"
+    },
+    "pendingBookmarkInstruction": {
+        "message": "Закладка ожидает добавления. Пожалуйста, разблокируйте, чтобы продолжить."
+    },
+    "dragSuccess": {
+        "message": "Элемент успешно перемещен"
+    },
+    "invalidDestinationFolder": {
+        "message": "Неверная папка назначения"
+    },
+    "moveFailed": {
+        "message": "Не удалось переместить закладки"
+    },
+    "noBookmarksSelected": {
+        "message": "Не выбрано ни одной закладки"
+    },
+    "selectDestinationFolder": {
+        "message": "Выберите папку назначения:"
+    },
+    "move": {
+        "message": "Переместить"
+    },
+    "selected": {
+        "message": "выбрано"
+    },
+    "moveSelectedTitle": {
+        "message": "Переместить выбранное"
+    },
+    "deleteSelectedTitle": {
+        "message": "Удалить выбранное"
+    },
+    "cancelSelectionTitle": {
+        "message": "Отменить выделение"
+    },
+    "emptyFolder": {
+        "message": "Папка пуста"
+    },
+    "noSearchResults": {
+        "message": "Закладки не найдены"
+    },
+    "noSearchResultsDesc": {
+        "message": "Попробуйте другой поисковый запрос"
+    },
+    "theme": {
+        "message": "Тема"
+    },
+    "themeDark": {
+        "message": "Тёмная",
+        "description": "Dark theme name"
+    },
+    "themeLight": {
+        "message": "Светлая",
+        "description": "Light theme name"
+    },
+    "themeSystem": {
+        "message": "Системная",
+        "description": "System theme name"
+    },
+    "themeToggle": {
+        "message": "Переключить тему",
+        "description": "Tooltip for theme toggle button"
+    },
+    "showFavicons": {
+        "message": "Показывать иконки сайтов (favicons)"
+    },
+    "showFaviconsDesc": {
+        "message": "Для загрузки иконок используется сервис Google"
+    },
+    "bookmarksAndFolders": {
+        "message": "Закладки и папки",
+        "description": "Label for bookmarks and folders section"
+    },
+    "importFromHtml": {
+        "message": "Импорт из HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "Импорт закладок из HTML выполнен успешно! Добавлено закладок: $COUNT$.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+        "message": "Файл не выбран"
+    },
+    "htmlImporterFileTooLarge": {
+        "message": "Файл слишком большой (макс. 1 МБ)"
+    },
+    "htmlImporterParseError": {
+        "message": "Не удалось импортировать HTML: $1"
+    },
+    "htmlImporterNoBookmarksFound": {
+        "message": "В файле не найдено закладок"
+    },
+    "importHtmlError": {
+        "message": "Не удалось обработать HTML-файл. Пожалуйста, проверьте формат файла."
+    },
+    "importHtmlSizeWarning": {
+        "message": "Лимит 1 МБ"
+    },
+    "importHtmlSizeNote": {
+        "message": "макс. ~2500 закладок"
+    },
+    "importWarning": {
+        "message": "Все существующие закладки будут заменены"
+    },
+    "developer": {
+        "message": "Разработчик:"
+    },
+    "lock": {
+        "message": "Блокировка"
+    },
+    "faqButtonTitle": {
+        "message": "Часто задаваемые вопросы"
+    },
+    "clearingHistory": {
+        "message": "Очистка истории",
+        "description": "Заголовок модального окна прогресса очистки"
+    },
+    "preparingToClear": {
+        "message": "Подготовка к очистке истории...",
+        "description": "Начальный статус"
+    },
+    "progress": {
+        "message": "Прогресс",
+        "description": "Метка прогресса"
+    },
+    "domainsProcessed": {
+        "message": "Обработано доменов",
+        "description": "Метка для счетчика обработанных доменов"
+    },
+    "entriesDeleted": {
+        "message": "Удалено записей",
+        "description": "Метка для счетчика удаленных записей"
+    },
+    "processing": {
+        "message": "Обработка...",
+        "description": "Статус во время обработки"
+    },
+    "startingCleanup": {
+        "message": "Запуск очистки...",
+        "description": "Статус при запуске"
+    },
+    "finalizingCleanup": {
+        "message": "Завершение очистки...",
+        "description": "Статус при завершении"
+    },
+    "cancelling": {
+        "message": "Отмена...",
+        "description": "Статус при отмене"
+    },
+    "clearCancelled": {
+        "message": "Операция отменена",
+        "description": "Уведомление при отмене"
+    },
+    "fillAllFields": {
+        "message": "Пожалуйста, заполните все поля"
+    },
+    "setupComplete": {
+        "message": "Настройка завершена!"
+    },
+    "migrationSuccess": {
+        "message": "Данные успешно перенесены в защищенный формат!"
+    },
+    "migrationRequired": {
+        "message": "Требуется обновление формата данных"
+    },
+    "migrationInstruction": {
+        "message": "Введите ваш пароль для автоматического обновления до более защищенного формата."
+    },
+    "exportSuccess": {
+        "message": "Экспорт выполнен успешно",
+        "description": "Уведомление при успешном экспорте данных"
+    },
+    "unlocking": {
+        "message": "Разблокировка...",
+        "description": "Показывается во время дешифровки закладок"
+    },
+    "changingPassword": {
+        "message": "Смена пароля...",
+        "description": "Показывается во время смены мастер-пароля"
+    },
+    "settingUpEncryption": {
+        "message": "Настройка шифрования...",
+        "description": "Показывается при первом запуске"
+    },
+    "migratingData": {
+        "message": "Миграция данных в новый формат...",
+        "description": "Показывается при миграции с v1 на v2"
+    },
+    "loading": {
+        "message": "Загрузка...",
+        "description": "Общее сообщение загрузки"
+    },
+    "donationReminderTitle": {
+        "message": "Поддержите проект"
+    },
+    "donationReminderText": {
+        "message": "Если вам нравится это расширение, поддержите его разработку!"
+    },
+    "remindLater": {
+        "message": "Напомнить позже"
+    },
+    "supportNow": {
+        "message": "Поддержать"
+    },
+    "remindNever": {
+        "message": "Больше не показывать"
+    },
+    "confirmDismiss": {
+        "message": "Отключить напоминания о пожертвованиях навсегда?"
+    },
+    "bookmarkAlreadyInFolder": {
+        "message": "Элемент уже находится в этой папке"
+    },
+    "cannotMoveIntoSelf": {
+        "message": "Нельзя переместить папку в саму себя"
+    },
+    "bookmarksMoved": {
+        "message": "Перемещено элементов: {0}"
+    },
+    "deleteSelectedConfirm": {
+        "message": "Удалить выбранные элементы ({count})?",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "bookmarksDeleted": {
+        "message": "Удалено элементов: {count}",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "moveBookmarksTitle": {
+        "message": "Переместить элементов: {0}"
+    },
+    "setupTabNew": {
+        "message": "Создать новый",
+        "description": "Заголовок вкладки для создания нового пароля"
+    },
+    "setupTabRestore": {
+        "message": "Восстановить из резервной копии",
+        "description": "Заголовок вкладки для восстановления из резервной копии"
+    },
+    "restoreDropTitle": {
+        "message": "Перетащите файл сюда или нажмите для выбора",
+        "description": "Текст для области перетаскивания файлов на вкладке восстановления"
+    },
+    "strengthWeak": {
+        "message": "Слабый",
+        "description": "Индикатор надежности пароля"
+    },
+    "strengthFair": {
+        "message": "Средний",
+        "description": "Индикатор надежности пароля"
+    },
+    "strengthGood": {
+        "message": "Хороший",
+        "description": "Индикатор надежности пароля"
+    },
+    "strengthStrong": {
+        "message": "Надёжный",
+        "description": "Индикатор надежности пароля"
+    },
+    "importingBackup": {
+        "message": "Восстановление резервной копии...",
+        "description": "Сообщение загрузки при импорте резервной копии"
+    },
+    "unlockTitle": {
+        "message": "Введите мастер-пароль"
+    },
+    "warningRemember": {
+        "message": "Вы запомнили пароль?"
+    },
+    "yesRemember": {
+        "message": "Да, запомнил"
+    },
+    "survey": {
+        "message": "Оставить отзыв"
+    },
+    "changelog": {
+        "message": "Список изменений"
+    },
+    "rateExtension": {
+        "message": "Оценить в Chrome Web Store"
+    },
+    "migrationScreenTitle": {
+        "message": "Требуется обновление",
+        "description": "Title on the manager migration screen"
+    },
+    "migrationScreenBody1": {
+        "message": "Расширение было обновлено с улучшенной защитой.",
+        "description": "First line on the manager migration screen"
+    },
+    "migrationScreenBody2": {
+        "message": "Пожалуйста, откройте всплывающее окно расширения, чтобы перенести данные в новый защищённый формат.",
+        "description": "Second line on the manager migration screen"
+    },
+    "migrationScreenButton": {
+        "message": "Открыть расширение",
+        "description": "Button on the manager migration screen"
+    },
+    "notSetUpTitle": {
+        "message": "Расширение не настроено",
+        "description": "manager-lock: notSetUpTitle"
+    },
+    "notSetUpSubtitle": {
+        "message": "Расширение ещё не настроено. Откройте всплывающее окно расширения, чтобы создать пароль.",
+        "description": "manager-lock: notSetUpSubtitle"
+    },
+    "notSetUpButton": {
+        "message": "Открыть расширение",
+        "description": "manager-lock: notSetUpButton"
+    },
+    "reloadingSubtitle": {
+        "message": "Менеджер обновляется...",
+        "description": "manager-lock: reloadingSubtitle"
+    },
+    "reloadingWait": {
+        "message": "Пожалуйста, подождите пока менеджер обновляется",
+        "description": "manager-lock: reloadingWait"
+    },
+    "exportHtml": {
+        "message": "Экспорт в HTML"
+    },
+    "exportHtmlNote": {
+        "message": "Формат Netscape Bookmarks"
+    },
+    "exportHtmlSuccess": {
+        "message": "HTML-экспорт выполнен успешно"
+    },
+    "exportHtmlConfirmTitle": {
+        "message": "Подтвердите пароль"
+    },
+    "exportHtmlConfirmDesc": {
+        "message": "Закладки будут экспортированы в открытом виде. Введите мастер-пароль для подтверждения."
+    },
+    "exportHtmlPasswordRequired": {
+        "message": "Введите пароль"
+    },
+    "exportHtmlConfirmBtn": {
+        "message": "Экспортировать"
+    },
+    "exportHtmlVerifying": {
+        "message": "Проверка пароля…"
+    },
+    "copiedToClipboard": {
+        "message": "Скопировано!"
+    },
+    "copyFailed": {
+        "message": "Не удалось скопировать"
+    },
+    "clickToCopy": {
+        "message": "Нажмите для копирования"
+    },
+    "qrCodeFor": {
+        "message": "QR-код для $1",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            }
+        }
+    },
+    "quickCloseTab": {
+        "message": "Быстрое закрытие вкладки ($1)"
+    },
+    "quickCloseTabDesc": {
+        "message": "Закрывает текущую вкладку и удаляет историю посещений её домена"
+    },
+    "quickCloseTabCommand": {
+        "message": "Закрыть вкладку и очистить историю домена"
+    },
+    "changeShortcut": {
+        "message": "Изменить горячие клавиши"
+    },
+    "actions": {
+        "message": "Действия"
+    },
+    "qrCode": {
+        "message": "QR-код"
+    },
+    "qrScanHint": {
+        "message": "Отсканируйте QR-код, чтобы перейти по ссылке на вашем устройстве."
+    },
+    "stayUnlocked": {
+        "message": "Оставаться разблокированным между сеансами"
+    },
+    "stayUnlockedDesc": {
+        "message": "Не запрашивает пароль, пока браузер открыт"
+    },
+    "stayUnlockedWarning": {
+        "message": "Снижает безопасность: ключ шифрования сохраняется в хранилище сессии браузера. Любой, у кого есть доступ к вашему профилю браузера, потенциально может его прочитать."
+    },
+    "alwaysIncognito": {
+        "message": "Открывать закладки только в режиме инкогнито"
+    },
+    "alwaysIncognitoDesc": {
+        "message": "Все закладки будут открываться в приватном окне"
+    },
+    "enable": {
+        "message": "Включить"
+    },
+    "managerIsOpen": {
+        "message": "Менеджер закладок открыт"
+    },
+    "managerIsOpenDesc": {
+        "message": "Закройте менеджер закладок, чтобы использовать всплывающее окно."
+    },
+    "switchToManager": {
+        "message": "Переключиться на менеджер"
+    },
+    "hotkeys": {
+        "message": "Горячие клавиши"
+    },
+    "lockExtensionCommand": {
+        "message": "Заблокировать расширение"
+    },
+    "openManagerCommand": {
+        "message": "Открыть менеджер закладок"
+    },
+    "Error": {
+        "message": "Ошибка"
+    },
+    "blurPage": {
+        "message": "Размытие страницы ($1)"
+    },
+    "blurPageDesc": {
+        "message": "Размывает текущую вкладку при активации"
+    },
+    "blurPageCommand": {
+        "message": "Размыть страницу"
+    },
+    "openAll": {
+        "message": "Открыть все"
+    },
+    "openAllWindow": {
+        "message": "Открыть все в новом окне"
+    },
+    "openAllGroup": {
+        "message": "Открыть все в новой группе вкладок"
+    },
+    "openAllIncognito": {
+        "message": "Открыть все в режиме инкогнито"
+    },
+    "saveAllTabs": {
+        "message": "Сохранить все активные вкладки"
+    },
+    "noTabsToSave": {
+        "message": "Нет вкладок для сохранения"
+    },
+    "tabsSaved": {
+        "message": "Вкладки сохранены"
     }
-  },
-  "addToHoly": {
-    "message": "Добавить в Holy Private Bookmarks"
-  },
-  "cannotAddPage": {
-    "message": "Невозможно добавить эту страницу (нет действительного URL)"
-  },
-  "importantWarning": {
-    "message": "ВАЖНОЕ ПРЕДУПРЕЖДЕНИЕ:"
-  },
-  "passwordCannotBeRecovered": {
-    "message": "Этот пароль НЕВОЗМОЖНО восстановить!"
-  },
-  "noPasswordReset": {
-    "message": "НЕТ возможности сброса пароля"
-  },
-  "weDontStorePassword": {
-    "message": "Мы НЕ храним ваш пароль где-либо"
-  },
-  "bookmarksEncrypted": {
-    "message": "Ваши закладки зашифрованы только этим паролем"
-  },
-  "savePasswordSecurely": {
-    "message": "Сохраните этот пароль в надежном месте!"
-  },
-  "copyUrl": {
-    "message": "Копировать URL"
-  },
-  "edit": {
-    "message": "Редактировать"
-  },
-  "delete": {
-    "message": "Удалить"
-  },
-  "urlCopied": {
-    "message": "URL скопирован в буфер обмена"
-  },
-  "about": {
-    "message": "О расширении"
-  },
-  "aboutExtension": {
-    "message": "О расширении"
-  },
-  "openGitHub": {
-    "message": "Открыть GitHub"
-  },
-  "close": {
-    "message": "Закрыть"
-  },
-  "features": {
-    "message": "Возможности"
-  },
-  "troubleshooting": {
-    "message": "Устранение проблем"
-  },
-  "encryption": {
-    "message": "Шифрование"
-  },
-  "encryptionDesc": {
-    "message": "Шифрование AES-256"
-  },
-  "localStorage": {
-    "message": "Локальное хранилище"
-  },
-  "localStorageDesc": {
-    "message": "Данные остаются на вашем устройстве"
-  },
-  "privacy": {
-    "message": "Конфиденциальность"
-  },
-  "privacyDesc": {
-    "message": "Нет отслеживания или аналитики"
-  },
-  "openSource": {
-    "message": "GPLv3"
-  },
-  "viewOnGitHub": {
-    "message": "Посмотреть на GitHub"
-  },
-  "githubRepo": {
-    "message": "Репозиторий GitHub"
-  },
-  "githubRepoDesc": {
-    "message": "Просмотр исходного кода, сообщение об ошибках, участие в разработке"
-  },
-  "version": {
-    "message": "Версия"
-  },
-  "openmanager": {
-    "message": "Открыть менеджер"
-  },
-  "managerDesc": {
-    "message": "Открыть полноэкранный менеджер закладок"
-  },
-  "folders": {
-    "message": "Папки"
-  },
-  "bookmarks": {
-    "message": "закладки"
-  },
-  "allBookmarks": {
-    "message": "Все закладки"
-  },
-  "searchBookmarks": {
-    "message": "Поиск закладок..."
-  },
-  "noBookmarksInFolder": {
-    "message": "В этой папке нет закладок"
-  },
-  "addBookmarksToGetStarted": {
-    "message": "Добавьте закладки, чтобы начать"
-  },
-  "bookmarkUpdated": {
-    "message": "Закладка обновлена"
-  },
-  "bookmarkDeleted": {
-    "message": "Закладка удалена"
-  },
-  "renameFolder": {
-    "message": "Переименовать папку"
-  },
-  "folderCreated": {
-    "message": "Папка успешно создана"
-  },
-  "managerLocked": {
-    "message": "Менеджер заблокирован"
-  },
-  "lockManager": {
-    "message": "Заблокировать менеджер"
-  },
-  "rename": {
-    "message": "Переименовать"
-  },
-  "deleteFolder": {
-    "message": "Удалить папку"
-  },
-  "deleteFolderConfirm": {
-    "message": "Удалить папку \"{0}\"?"
-  },
-  "deleteFolderWarning": {
-    "message": "Все содержимое будет безвозвратно удалено."
-  },
-  "folderRenamed": {
-    "message": "Папка успешно переименована"
-  },
-  "folderDeleted": {
-    "message": "Папка успешно удалена"
-  },
-  "cannotRenameAll": {
-    "message": "Нельзя переименовать папку \"Все закладки\""
-  },
-  "cannotDeleteAll": {
-    "message": "Нельзя удалить папку \"Все закладки\""
-  },
-  "bookmarkAdded": {
-    "message": "Закладка добавлена"
-  },
-  "pendingBookmarkNotification": {
-    "message": "Ожидает добавления закладки!"
-  },
-  "pendingBookmarkInstruction": {
-    "message": "Закладка ожидает добавления. Пожалуйста, разблокируйте, чтобы продолжить."
-  },
-  "dragSuccess": {
-    "message": "Элемент успешно перемещен"
-  },
-  "invalidDestinationFolder": {
-    "message": "Неверная папка назначения"
-  },
-  "moveFailed": {
-    "message": "Не удалось переместить закладки"
-  },
-  "noBookmarksSelected": {
-    "message": "Не выбрано ни одной закладки"
-  },
-  "selectDestinationFolder": {
-    "message": "Выберите папку назначения:"
-  },
-  "move": {
-    "message": "Переместить"
-  },
-  "selected": {
-    "message": "выбрано"
-  },
-  "moveSelectedTitle": {
-    "message": "Переместить выбранное"
-  },
-  "deleteSelectedTitle": {
-    "message": "Удалить выбранное"
-  },
-  "cancelSelectionTitle": {
-    "message": "Отменить выделение"
-  },
-  "emptyFolder": {
-    "message": "Папка пуста"
-  },
-  "noSearchResults": {
-    "message": "Закладки не найдены"
-  },
-  "noSearchResultsDesc": {
-    "message": "Попробуйте другой поисковый запрос"
-  },
-  "theme": {
-    "message": "Тема"
-  },
-  "themeDark": {
-    "message": "Тёмная",
-    "description": "Dark theme name"
-  },
-  "themeLight": {
-    "message": "Светлая",
-    "description": "Light theme name"
-  },
-  "themeSystem": {
-    "message": "Системная",
-    "description": "System theme name"
-  },
-  "themeToggle": {
-    "message": "Переключить тему",
-    "description": "Tooltip for theme toggle button"
-  },
-  "showFavicons": {
-    "message": "Показывать иконки сайтов (favicons)"
-  },
-  "showFaviconsDesc": {
-    "message": "Для загрузки иконок используется сервис Google"
-  },
-  "bookmarksAndFolders": {
-    "message": "Закладки и папки",
-    "description": "Label for bookmarks and folders section"
-  },
-  "importFromHtml": {
-    "message": "Импорт из HTML"
-  },
-  "importHtmlSuccess": {
-    "message": "Импорт закладок из HTML выполнен успешно! Добавлено закладок: $COUNT$.",
-    "placeholders": {
-      "count": {
-        "content": "$1",
-        "example": "42"
-      }
-    }
-  },
-  "htmlImporterNoFileSelected": {
-    "message": "Файл не выбран"
-  },
-  "htmlImporterFileTooLarge": {
-    "message": "Файл слишком большой (макс. 1 МБ)"
-  },
-  "htmlImporterParseError": {
-    "message": "Не удалось импортировать HTML: $1"
-  },
-  "htmlImporterNoBookmarksFound": {
-    "message": "В файле не найдено закладок"
-  },
-  "importHtmlError": {
-    "message": "Не удалось обработать HTML-файл. Пожалуйста, проверьте формат файла."
-  },
-  "importHtmlSizeWarning": {
-    "message": "Лимит 1 МБ"
-  },
-  "importHtmlSizeNote": {
-    "message": "макс. ~2500 закладок"
-  },
-  "importWarning": {
-    "message": "Все существующие закладки будут заменены"
-  },
-  "developer": {
-    "message": "Разработчик:"
-  },
-  "lock": {
-    "message": "Блокировка"
-  },
-  "faqButtonTitle": {
-    "message": "Часто задаваемые вопросы"
-  },
-  "clearingHistory": {
-    "message": "Очистка истории",
-    "description": "Заголовок модального окна прогресса очистки"
-  },
-  "preparingToClear": {
-    "message": "Подготовка к очистке истории...",
-    "description": "Начальный статус"
-  },
-  "progress": {
-    "message": "Прогресс",
-    "description": "Метка прогресса"
-  },
-  "domainsProcessed": {
-    "message": "Обработано доменов",
-    "description": "Метка для счетчика обработанных доменов"
-  },
-  "entriesDeleted": {
-    "message": "Удалено записей",
-    "description": "Метка для счетчика удаленных записей"
-  },
-  "processing": {
-    "message": "Обработка...",
-    "description": "Статус во время обработки"
-  },
-  "startingCleanup": {
-    "message": "Запуск очистки...",
-    "description": "Статус при запуске"
-  },
-  "finalizingCleanup": {
-    "message": "Завершение очистки...",
-    "description": "Статус при завершении"
-  },
-  "cancelling": {
-    "message": "Отмена...",
-    "description": "Статус при отмене"
-  },
-  "clearCancelled": {
-    "message": "Операция отменена",
-    "description": "Уведомление при отмене"
-  },
-  "fillAllFields": {
-    "message": "Пожалуйста, заполните все поля"
-  },
-  "setupComplete": {
-    "message": "Настройка завершена!"
-  },
-  "migrationSuccess": {
-    "message": "Данные успешно перенесены в защищенный формат!"
-  },
-  "migrationRequired": {
-    "message": "Требуется обновление формата данных"
-  },
-  "migrationInstruction": {
-    "message": "Введите ваш пароль для автоматического обновления до более защищенного формата."
-  },
-  "exportSuccess": {
-    "message": "Экспорт выполнен успешно",
-    "description": "Уведомление при успешном экспорте данных"
-  },
-  "unlocking": {
-    "message": "Разблокировка...",
-    "description": "Показывается во время дешифровки закладок"
-  },
-  "changingPassword": {
-    "message": "Смена пароля...",
-    "description": "Показывается во время смены мастер-пароля"
-  },
-  "settingUpEncryption": {
-    "message": "Настройка шифрования...",
-    "description": "Показывается при первом запуске"
-  },
-  "migratingData": {
-    "message": "Миграция данных в новый формат...",
-    "description": "Показывается при миграции с v1 на v2"
-  },
-  "loading": {
-    "message": "Загрузка...",
-    "description": "Общее сообщение загрузки"
-  },
-  "donationReminderTitle": {
-    "message": "Поддержите проект"
-  },
-  "donationReminderText": {
-    "message": "Если вам нравится это расширение, поддержите его разработку!"
-  },
-  "remindLater": {
-    "message": "Напомнить позже"
-  },
-  "supportNow": {
-    "message": "Поддержать"
-  },
-  "remindNever": {
-    "message": "Больше не показывать"
-  },
-  "confirmDismiss": {
-    "message": "Отключить напоминания о пожертвованиях навсегда?"
-  },
-  "bookmarkAlreadyInFolder": {
-    "message": "Элемент уже находится в этой папке"
-  },
-  "cannotMoveIntoSelf": {
-    "message": "Нельзя переместить папку в саму себя"
-  },
-  "bookmarksMoved": {
-    "message": "Перемещено элементов: {0}"
-  },
-  "deleteSelectedConfirm": {
-    "message": "Удалить выбранные элементы ({count})?",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "plural": {
-        "content": "$2"
-      }
-    }
-  },
-  "bookmarksDeleted": {
-    "message": "Удалено элементов: {count}",
-    "placeholders": {
-      "count": {
-        "content": "$1"
-      },
-      "plural": {
-        "content": "$2"
-      }
-    }
-  },
-  "moveBookmarksTitle": {
-    "message": "Переместить элементов: {0}"
-  },
-  "setupTabNew": {
-    "message": "Создать новый",
-    "description": "Заголовок вкладки для создания нового пароля"
-  },
-  "setupTabRestore": {
-    "message": "Восстановить из резервной копии",
-    "description": "Заголовок вкладки для восстановления из резервной копии"
-  },
-  "restoreDropTitle": {
-    "message": "Перетащите файл сюда или нажмите для выбора",
-    "description": "Текст для области перетаскивания файлов на вкладке восстановления"
-  },
-  "strengthWeak": {
-    "message": "Слабый",
-    "description": "Индикатор надежности пароля"
-  },
-  "strengthFair": {
-    "message": "Средний",
-    "description": "Индикатор надежности пароля"
-  },
-  "strengthGood": {
-    "message": "Хороший",
-    "description": "Индикатор надежности пароля"
-  },
-  "strengthStrong": {
-    "message": "Надёжный",
-    "description": "Индикатор надежности пароля"
-  },
-  "importingBackup": {
-    "message": "Восстановление резервной копии...",
-    "description": "Сообщение загрузки при импорте резервной копии"
-  },
-  "unlockTitle": {
-    "message": "Введите мастер-пароль"
-  },
-  "warningRemember": {
-    "message": "Вы запомнили пароль?"
-  },
-  "yesRemember": {
-    "message": "Да, запомнил"
-  },
-  "survey": {
-    "message": "Оставить отзыв"
-  },
-  "changelog": {
-    "message": "Список изменений"
-  },
-  "rateExtension": {
-    "message": "Оценить в Chrome Web Store"
-  },
-  "migrationScreenTitle": {
-    "message": "Требуется обновление",
-    "description": "Title on the manager migration screen"
-  },
-  "migrationScreenBody1": {
-    "message": "Расширение было обновлено с улучшенной защитой.",
-    "description": "First line on the manager migration screen"
-  },
-  "migrationScreenBody2": {
-    "message": "Пожалуйста, откройте всплывающее окно расширения, чтобы перенести данные в новый защищённый формат.",
-    "description": "Second line on the manager migration screen"
-  },
-  "migrationScreenButton": {
-    "message": "Открыть расширение",
-    "description": "Button on the manager migration screen"
-  },
-  "notSetUpTitle": {
-    "message": "Расширение не настроено",
-    "description": "manager-lock: notSetUpTitle"
-  },
-  "notSetUpSubtitle": {
-    "message": "Расширение ещё не настроено. Откройте всплывающее окно расширения, чтобы создать пароль.",
-    "description": "manager-lock: notSetUpSubtitle"
-  },
-  "notSetUpButton": {
-    "message": "Открыть расширение",
-    "description": "manager-lock: notSetUpButton"
-  },
-  "reloadingSubtitle": {
-    "message": "Менеджер обновляется...",
-    "description": "manager-lock: reloadingSubtitle"
-  },
-  "reloadingWait": {
-    "message": "Пожалуйста, подождите пока менеджер обновляется",
-    "description": "manager-lock: reloadingWait"
-  },
-  "exportHtml": {
-    "message": "Экспорт в HTML"
-  },
-  "exportHtmlNote": {
-    "message": "Формат Netscape Bookmarks"
-  },
-  "exportHtmlSuccess": {
-    "message": "HTML-экспорт выполнен успешно"
-  },
-  "exportHtmlConfirmTitle": {
-    "message": "Подтвердите пароль"
-  },
-  "exportHtmlConfirmDesc": {
-    "message": "Закладки будут экспортированы в открытом виде. Введите мастер-пароль для подтверждения."
-  },
-  "exportHtmlPasswordRequired": {
-    "message": "Введите пароль"
-  },
-  "exportHtmlConfirmBtn": {
-    "message": "Экспортировать"
-  },
-  "exportHtmlVerifying": {
-    "message": "Проверка пароля…"
-  },
-  "copiedToClipboard": {
-    "message": "Скопировано!"
-  },
-  "copyFailed": {
-    "message": "Не удалось скопировать"
-  },
-  "clickToCopy": {
-    "message": "Нажмите для копирования"
-  },
-  "qrCodeFor": {
-    "message": "QR-код для $1",
-    "placeholders": {
-      "1": {
-        "content": "$1"
-      }
-    }
-  },
-  "quickCloseTab": {
-    "message": "Быстрое закрытие вкладки ($1)"
-  },
-  "quickCloseTabDesc": {
-    "message": "Закрывает текущую вкладку и удаляет историю посещений её домена"
-  },
-  "quickCloseTabCommand": {
-    "message": "Закрыть вкладку и очистить историю домена"
-  },
-  "changeShortcut": {
-    "message": "Изменить горячие клавиши"
-  },
-  "actions": {
-    "message": "Действия"
-  },
-  "qrCode": {
-    "message": "QR-код"
-  },
-  "qrScanHint": {
-    "message": "Отсканируйте QR-код, чтобы перейти по ссылке на вашем устройстве."
-  },
-  "stayUnlocked": {
-    "message": "Оставаться разблокированным между сеансами"
-  },
-  "stayUnlockedDesc": {
-    "message": "Не запрашивает пароль, пока браузер открыт"
-  },
-  "stayUnlockedWarning": {
-    "message": "Снижает безопасность: ключ шифрования сохраняется в хранилище сессии браузера. Любой, у кого есть доступ к вашему профилю браузера, потенциально может его прочитать."
-  },
-  "alwaysIncognito": {
-    "message": "Открывать закладки только в режиме инкогнито"
-  },
-  "alwaysIncognitoDesc": {
-    "message": "Все закладки будут открываться в приватном окне"
-  },
-  "enable": {
-    "message": "Включить"
-  },
-  "managerIsOpen": {
-    "message": "Менеджер закладок открыт"
-  },
-  "managerIsOpenDesc": {
-    "message": "Закройте менеджер закладок, чтобы использовать всплывающее окно."
-  },
-  "switchToManager": {
-    "message": "Переключиться на менеджер"
-  },
-  "hotkeys": {
-    "message": "Горячие клавиши"
-  },
-  "lockExtensionCommand": {
-    "message": "Заблокировать расширение"
-  },
-  "openManagerCommand": {
-    "message": "Открыть менеджер закладок"
-  },
-  "Error": {
-    "message": "Ошибка"
-  },
-  "blurPage": {
-    "message": "Размытие страницы ($1)"
-  },
-  "blurPageDesc": {
-    "message": "Размывает текущую вкладку при активации"
-  },
-  "blurPageCommand": {
-    "message": "Размыть страницу"
-  }
 }
