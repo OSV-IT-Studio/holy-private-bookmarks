@@ -97,7 +97,7 @@ const {
     hideLoadingIndicator,
 	showGlobalLoadingIndicator,
     hideGlobalLoadingIndicator
-, openModal, closeModal, closeModalWithAnimation, createModalEscHandler} = Shared;
+, openModal, closeModal, closeModalWithAnimation, createModalEscHandler, createBookmarkModal} = Shared;
 
 // App-level state
 
@@ -367,6 +367,7 @@ function buildDeps() {
         closeModal,
         closeModalWithAnimation,
         createModalEscHandler,
+        createBookmarkModal,
         // Cross-module calls
         showSection:          (id) => PopupUI.showSection(id),
         renderTree:           () => PopupTree.renderTree(),

@@ -68,7 +68,7 @@ buildFolderTreePicker,
     hideLoadingIndicator,
 	showGlobalLoadingIndicator,
     hideGlobalLoadingIndicator
-, openModal, closeModal, closeModalWithAnimation} = Shared;
+, openModal, closeModal, closeModalWithAnimation, createBookmarkModal} = Shared;
 
 // App-level state
 
@@ -168,6 +168,7 @@ function buildDeps() {
         countAllBookmarks,
 
         buildFolderTreePicker,
+        createBookmarkModal,
         openInPrivateTab,
         collectAllBookmarkUrls,
         isAlwaysIncognito,

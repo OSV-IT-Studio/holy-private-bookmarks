@@ -66,34 +66,10 @@ const PopupBookmarks = (function () {
             }
         }
 
-        const modal = document.createElement('div');
-        modal.id        = 'add-bookmark-modal';
-        modal.className = 'hpb-modal';
-        modal.innerHTML = `
-            <div class="hpb-modal__dialog">
-                <h2 class="hpb-modal__title"></h2>
-                <div class="hpb-modal__body">
-				<div class="hpb-modal__bookmark-form">
-                    <label for="modal-bookmark-title">${getMessage('title')}</label>
-                    <input type="text" id="modal-bookmark-title" placeholder="Bookmark title">
-                    <label for="modal-bookmark-url">${getMessage('url')}</label>
-                    <input type="text" id="modal-bookmark-url" placeholder="https://example.com">
-                    <label for="folder-select">${getMessage('folder')}</label>
-                    <div class="folder-select-container w-100">
-                        <div id="folder-select" class="folder-tree-picker"></div>
-                        <button class="btn-secondary" id="new-folder-in-modal">${getMessage('new') || 'New'}</button>
-                    </div>
-				</div>
-                </div>
-                <div class="hpb-modal__footer">
-                    <button class="btn-secondary" id="modal-cancel">${getMessage('cancel')}</button>
-                    <button class="btn-primary"   id="modal-save">${getMessage('save')}</button>
-                </div>
-            </div>
-        `;
+        const modal = (_deps.createBookmarkModal || window.HolyShared.createBookmarkModal)({ id: 'add-bookmark-modal', getMessage });
         document.body.appendChild(modal);
 
-        modal.querySelector('h2').textContent = getMessage(isEdit ? 'editBookmark' : 'addBookmark');
+        modal.querySelector('#modal-title-text').textContent = getMessage(isEdit ? 'editBookmark' : 'addBookmark');
         const _safeTitle = (pageTitle != null && typeof pageTitle === 'string') ? pageTitle : '';
         modal.querySelector('#modal-bookmark-title').value = titleVal;
         modal.querySelector('#modal-bookmark-url').value   = urlVal;

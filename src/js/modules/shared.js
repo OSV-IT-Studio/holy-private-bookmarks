@@ -1327,6 +1327,37 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
         };
     }
 
+    // BOOKMARK MODAL FACTORY
+
+    function createBookmarkModal({ id, getMessage }) {
+        const modal = document.createElement('div');
+        modal.id        = id;
+        modal.className = 'hpb-modal';
+        modal.innerHTML = `
+            <div class="hpb-modal__dialog">
+                <h2 class="hpb-modal__title" id="modal-title-text"></h2>
+                <div class="hpb-modal__body">
+                    <div class="hpb-modal__bookmark-form">
+                        <label for="modal-bookmark-title">${getMessage('title')}</label>
+                        <input type="text" id="modal-bookmark-title" placeholder="Bookmark title">
+                        <label for="modal-bookmark-url">${getMessage('url')}</label>
+                        <input type="text" id="modal-bookmark-url" placeholder="https://example.com">
+                        <label for="folder-select">${getMessage('folder')}</label>
+                        <div class="folder-select-container w-100">
+                            <div id="folder-select" class="folder-tree-picker"></div>
+                            <button class="btn-secondary" id="new-folder-in-modal">${getMessage('new') || 'New'}</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="hpb-modal__footer">
+                    <button class="btn-secondary" id="modal-cancel">${getMessage('cancel')}</button>
+                    <button class="btn-primary"   id="modal-save">${getMessage('save')}</button>
+                </div>
+            </div>
+        `;
+        return modal;
+    }
+
     // EXPORT 
     
     if (typeof window !== 'undefined') {
@@ -1400,6 +1431,7 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             showPrompt,
             closeModalWithAnimation: _closeModalWithAnimation,
             createModalEscHandler,
+            createBookmarkModal,
 			openModal,
 			closeModal,
             escapeHtml,
@@ -1486,7 +1518,8 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             throttle,
             
             showLoadingIndicator,
-            hideLoadingIndicator
+            hideLoadingIndicator,
+            createBookmarkModal
         };
     }
 })();
