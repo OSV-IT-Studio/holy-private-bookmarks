@@ -78,7 +78,7 @@ const PopupTree = (function () {
 
     
 
-    function createBookmarkElement(item, path) {
+    function createBookmarkElement(item, path, options = {}) {
         const { getDomainFromUrl, getMessage, escapeHtml,
                 isFaviconEnabled, loadFaviconAsync,
                 openInPrivateTab, isAlwaysIncognito, showNotification,
@@ -124,15 +124,15 @@ const PopupTree = (function () {
         titleDiv.appendChild(iconSpan);
         titleDiv.appendChild(textSpan);
 
-        
-        const quickActionsTrigger = document.createElement('button');
-        quickActionsTrigger.className = 'quick-actions-trigger';
-        quickActionsTrigger.title = getMessage('actions');
-        quickActionsTrigger.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg>';
+        if (!options.noActions) {
+            const quickActionsTrigger = document.createElement('button');
+            quickActionsTrigger.className = 'quick-actions-trigger';
+            quickActionsTrigger.title = getMessage('actions');
+            quickActionsTrigger.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg>';
+            titleDiv.appendChild(quickActionsTrigger);
+        }
 
         const pathStr = path.join(',');
-
-        titleDiv.appendChild(quickActionsTrigger);
         header.appendChild(titleDiv);
         header.appendChild(domainSpan);
         link.appendChild(header);

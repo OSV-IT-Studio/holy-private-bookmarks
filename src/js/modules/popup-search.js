@@ -74,10 +74,7 @@ const PopupSearch = (function () {
     }
 
     function _renderSearchResults(results, query, tree) {
-        const { getMessage, getDomainFromUrl, isFaviconEnabled,
-                loadFaviconAsync, openInPrivateTab, isAlwaysIncognito,
-                copyBookmarkUrl, editBookmark, deleteBookmark,
-                showNotification, escapeHtml } = _deps;
+        const { getMessage, getDomainFromUrl, escapeHtml } = _deps;
 
         tree.innerHTML = '';
 
@@ -96,78 +93,26 @@ const PopupSearch = (function () {
             return;
         }
 
-        const fragment = document.createDocumentFragment();
+        const safeQuery = query ? escapeHtml(query) : '';
+        const fragment  = document.createDocumentFragment();
 
         for (const item of results) {
-            const div = document.createElement('div');
-            div.className = 'tree-item';
-            if (item.uid) div.dataset.itemUid = item.uid;
+            const div = PopupTree.createBookmarkElement(item, [], { noActions: true });
+            div.removeAttribute('draggable');
+            div.removeAttribute('data-drag-ready');
+            const domain     = getDomainFromUrl ? getDomainFromUrl(item.url) : '';
+            const safeTitle  = item.title ? escapeHtml(item.title) : '';
+            const safeDomain = domain ? escapeHtml(domain) : escapeHtml(item.url || '');
 
-            const domain = getDomainFromUrl ? getDomainFromUrl(item.url) : '';
-            const safeTitle = item.title ? escapeHtml(item.title) : '';
-            const safeUrl   = item.url   ? escapeHtml(item.url)   : '';
-            const safeQuery = query ? escapeHtml(query) : '';
-
-            const highlightedTitle  = _highlight(safeTitle,  safeQuery);
-            const highlightedDomain = _highlight(domain || safeUrl, safeQuery);
-
-            const link = document.createElement('div');
-            link.className   = 'bookmark-link';
-            link.dataset.url = item.url;
-
-            const header = document.createElement('div');
-            header.className = 'item-header';
-
-            const titleDiv = document.createElement('div');
-            titleDiv.className = 'item-title';
-
-            const iconSpan = document.createElement('span');
-            iconSpan.className = 'icon bookmark';
-            iconSpan.innerHTML = `
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 4C5 2.89543 5.89543 2 7 2H17C18.1046 2 19 2.89543 19 4V21L12 17L5 21V4Z" fill="currentColor"/>
-                </svg>
-            `;
-
-            const textSpan = document.createElement('span');
-            textSpan.className = 'bookmark-title';
-            textSpan.innerHTML = highlightedTitle;
-
-            const domainSpan = document.createElement('span');
-            domainSpan.className = 'item-domain';
-            domainSpan.innerHTML = highlightedDomain;
-
-            const quickActionsTrigger = document.createElement('button');
-            quickActionsTrigger.className = 'quick-actions-trigger';
-            quickActionsTrigger.title = getMessage('actions');
-            quickActionsTrigger.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg>';
-
-            titleDiv.appendChild(iconSpan);
-            titleDiv.appendChild(textSpan);
-            titleDiv.appendChild(quickActionsTrigger);
-            header.appendChild(titleDiv);
-            header.appendChild(domainSpan);
-            link.appendChild(header);
-            div.appendChild(link);
-
-            link.addEventListener('click', e => {
-                if (e.target.closest('.quick-actions-hover') || e.target.closest('.quick-actions-trigger')) return;
-                if (isAlwaysIncognito && isAlwaysIncognito()) {
-                    openInPrivateTab(item.url);
-                } else {
-                    chrome.tabs.create({ url: item.url, active: !e.ctrlKey && !e.metaKey });
-                }
-            });
-
-            if (isFaviconEnabled && isFaviconEnabled() && loadFaviconAsync) {
-                loadFaviconAsync(item.url, iconSpan);
-            }
+            const titleSpan  = div.querySelector('.bookmark-title');
+            const domainSpan = div.querySelector('.item-domain');
+            if (titleSpan)  titleSpan.innerHTML  = _highlight(safeTitle,  safeQuery);
+            if (domainSpan) domainSpan.innerHTML = _highlight(safeDomain, safeQuery);
 
             fragment.appendChild(div);
         }
 
         tree.appendChild(fragment);
-
     }
 
     function _onInput(e) {
@@ -194,9 +139,11 @@ const PopupSearch = (function () {
     }
 
     function reset() {
+        if (!_active) return;
         const input = document.getElementById('search-input');
         if (input) input.value = '';
         _active = false;
+        _deps.renderTree?.();
     }
 
     function isActive() {

@@ -657,7 +657,7 @@ async function init() {
 		'#create-pass': () => PopupAuth.createMasterPassword(),
         '#unlock':                   () => PopupAuth.unlock(),
         '#lock':                     lock,
-        '#add-current':              () => PopupBookmarks.addCurrentPage(),
+        '#add-current':              () => { PopupSearch.reset(); PopupBookmarks.addCurrentPage(); },
         '#export':                   () => ImportExportManager.exportData(),
         '#export-html-btn':          () => ImportExportManager.exportToHTML(),
         '#import-btn':               () => getCachedElement('#import-file').click(),
@@ -671,7 +671,7 @@ async function init() {
 		
         '#faq-btn':                  () => chrome.tabs.create({ url: 'https://osv-it-studio.github.io/holy-private-bookmarks#faq' }),
 		'#survey-btn':               () => chrome.tabs.create({ url: 'https://docs.google.com/forms/d/e/1FAIpQLSfcEpeT2NA9b3XxZeR6gJjiUFBLgMJ0xE0kb0zolPssykLTag/viewform' }),
-        '#quick-add-bookmark':       () => PopupBookmarks.openAddBookmarkModal('', 'https://'),
+        '#quick-add-bookmark':       () => { PopupSearch.reset(); PopupBookmarks.openAddBookmarkModal('', 'https://'); },
 		'#search-btn': () => {
 			const searchBar = document.getElementById('search-bar');
 			const searchInput = document.getElementById('search-input');
@@ -686,7 +686,6 @@ async function init() {
 					if (searchInput && searchInput.value) {
 						searchInput.value = '';
 						if (window.PopupSearch) PopupSearch.reset();
-						PopupTree.renderTree();
 					}
 				} else {
 					searchBar.style.display = 'flex';
@@ -715,14 +714,15 @@ async function init() {
             });
             data.folders.push(folder);
             saveAndRefresh();
-            showNotification(getMessage('tabsSaved') || `Saved ${bookmarkTabs.length} tabs`);
+            showNotification(getMessage('tabsSaved'));
+			PopupSearch.reset(); 
         },
         '#open-github':              () => chrome.tabs.create({ url: 'https://github.com/OSV-IT-Studio/holy-private-bookmarks' }),
 		'#rate-btn':                 () => { chrome.tabs.create({ url: 'https://chromewebstore.google.com/detail/holy-private-bookmarks-%E2%80%94/nnafnomgekidkehbgkfmhapccelgdbch/reviews' 
 		});
 		},
         '#about-btn':                () => { _openAboutModal(); },
-        '#quick-add-folder':         () => PopupBookmarks.addFolder(),
+        '#quick-add-folder':         () => { PopupSearch.reset(); PopupBookmarks.addFolder(); },
         '#change-shortcut-btn':      () => chrome.tabs.create({ url: 'chrome://extensions/shortcuts' }),
         '#delete-all-data-btn':      async () => {
             const confirmed = await showConfirm({
