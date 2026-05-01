@@ -724,6 +724,23 @@ async function init() {
         '#about-btn':                () => { _openAboutModal(); },
         '#quick-add-folder':         () => PopupBookmarks.addFolder(),
         '#change-shortcut-btn':      () => chrome.tabs.create({ url: 'chrome://extensions/shortcuts' }),
+        '#delete-all-data-btn':      async () => {
+            const confirmed = await showConfirm({
+                warning: `
+                <h2 class="hpb-modal__title hpb-modal__title--center">${getMessage('deleteAllData')}</h2>
+                <div style="text-align:left">${getMessage('deleteAllDataConfirm')}</div>`,
+                confirmLabel: getMessage('deleteAllDataConfirmBtn'),
+                cancelLabel:  getMessage('cancel'),
+            });
+            if (!confirmed) return;
+            try {
+                await chrome.storage.local.clear();
+                await chrome.storage.session.clear();
+            } catch (e) {
+                console.error('Failed to clear storage:', e);
+            }
+            window.close();
+        },
         '#clear-history':            () => {
             const btn = getCachedElement('#clear-history');
             if (btn && window.HistoryCleaner) {

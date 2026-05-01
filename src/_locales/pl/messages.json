@@ -289,6 +289,21 @@
     "urlCopied": {
         "message": "URL skopiowany do schowka"
     },
+    "dangerZone": {
+        "message": "Strefa niebezpieczna"
+    },
+    "deleteAllData": {
+        "message": "Usuń wszystkie dane"
+    },
+    "deleteAllDataDesc": {
+        "message": "Trwale usuń wszystkie zakładki i ustawienia"
+    },
+    "deleteAllDataConfirm": {
+        "message": "Wszystkie zakładki, foldery, hasło główne i ustawienia zostaną trwale usunięte. Tej operacji nie można cofnąć."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Usuń wszystko"
+    },
     "about": {
         "message": "O rozszerzeniu"
     },

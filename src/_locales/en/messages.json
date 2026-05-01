@@ -289,6 +289,21 @@
     "urlCopied": {
         "message": "URL copied to clipboard"
     },
+    "dangerZone": {
+        "message": "Danger Zone"
+    },
+    "deleteAllData": {
+        "message": "Delete All Data"
+    },
+    "deleteAllDataDesc": {
+        "message": "Permanently delete all bookmarks and settings"
+    },
+    "deleteAllDataConfirm": {
+        "message": "All bookmarks, folders, master password and settings will be permanently deleted. This action cannot be undone."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Delete Everything"
+    },
     "about": {
         "message": "About"
     },

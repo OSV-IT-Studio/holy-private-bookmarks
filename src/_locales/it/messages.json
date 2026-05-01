@@ -289,6 +289,21 @@
     "urlCopied": {
         "message": "URL copiato negli appunti"
     },
+    "dangerZone": {
+        "message": "Zona pericolosa"
+    },
+    "deleteAllData": {
+        "message": "Elimina tutti i dati"
+    },
+    "deleteAllDataDesc": {
+        "message": "Elimina definitivamente tutti i segnalibri e le impostazioni"
+    },
+    "deleteAllDataConfirm": {
+        "message": "Tutti i segnalibri, le cartelle, la password principale e le impostazioni verranno eliminati definitivamente. Questa azione non può essere annullata."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Elimina tutto"
+    },
     "about": {
         "message": "Informazioni"
     },

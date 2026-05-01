@@ -289,6 +289,21 @@
     "urlCopied": {
         "message": "כתובת URL הועתקה ללוח"
     },
+    "dangerZone": {
+        "message": "אזור סכנה"
+    },
+    "deleteAllData": {
+        "message": "מחק את כל הנתונים"
+    },
+    "deleteAllDataDesc": {
+        "message": "מחק לצמיתות את כל הסימניות וההגדרות"
+    },
+    "deleteAllDataConfirm": {
+        "message": "כל הסימניות, התיקיות, סיסמת הראשי וההגדרות יימחקו לצמיתות. לא ניתן לבטל פעולה זו."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "מחק הכל"
+    },
     "about": {
         "message": "אודות"
     },

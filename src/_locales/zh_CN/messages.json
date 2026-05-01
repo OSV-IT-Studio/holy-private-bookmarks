@@ -289,6 +289,21 @@
     "urlCopied": {
         "message": "网址已复制到剪贴板"
     },
+    "dangerZone": {
+        "message": "危险区域"
+    },
+    "deleteAllData": {
+        "message": "删除所有数据"
+    },
+    "deleteAllDataDesc": {
+        "message": "永久删除所有书签和设置"
+    },
+    "deleteAllDataConfirm": {
+        "message": "所有书签、文件夹、主密码和设置将被永久删除。此操作无法撤销。"
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "删除全部"
+    },
     "about": {
         "message": "关于"
     },

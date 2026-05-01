@@ -289,6 +289,21 @@
     "urlCopied": {
         "message": "URL-ը պատճենվեց clipboard-ում"
     },
+    "dangerZone": {
+        "message": "Վտանգավոր գոտի"
+    },
+    "deleteAllData": {
+        "message": "Ջնջել բոլոր տվյալները"
+    },
+    "deleteAllDataDesc": {
+        "message": "Ընդմիշտ ջնջել բոլոր էջանիշերը և կարգավորումները"
+    },
+    "deleteAllDataConfirm": {
+        "message": "Բոլոր էջանիշերը, թղթապանակները, գլխավոր գաղտնաբառը և կարգավորումները կջնջվեն ընդմիշտ: Այս գործողությունը հնարավոր չէ հետարկել:"
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Ջնջել ամեն ինչ"
+    },
     "about": {
         "message": "Մեր մասին"
     },

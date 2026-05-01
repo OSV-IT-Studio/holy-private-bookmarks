@@ -289,6 +289,21 @@
     "urlCopied": {
         "message": "URL in die Zwischenablage kopiert"
     },
+    "dangerZone": {
+        "message": "Gefahrenzone"
+    },
+    "deleteAllData": {
+        "message": "Alle Daten löschen"
+    },
+    "deleteAllDataDesc": {
+        "message": "Alle Lesezeichen und Einstellungen dauerhaft löschen"
+    },
+    "deleteAllDataConfirm": {
+        "message": "Alle Lesezeichen, Ordner, das Master-Passwort und alle Einstellungen werden dauerhaft gelöscht. Diese Aktion kann nicht rückgängig gemacht werden."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Alles löschen"
+    },
     "about": {
         "message": "Über"
     },

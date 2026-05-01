@@ -289,6 +289,21 @@
     "urlCopied": {
         "message": "تم نسخ الرابط إلى الحافظة"
     },
+    "dangerZone": {
+        "message": "منطقة الخطر"
+    },
+    "deleteAllData": {
+        "message": "حذف جميع البيانات"
+    },
+    "deleteAllDataDesc": {
+        "message": "حذف جميع الإشارات المرجعية والإعدادات بشكل دائم"
+    },
+    "deleteAllDataConfirm": {
+        "message": "سيتم حذف جميع الإشارات المرجعية والمجلدات وكلمة المرور الرئيسية والإعدادات بشكل دائم. لا يمكن التراجع عن هذا الإجراء."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "حذف الكل"
+    },
     "about": {
         "message": "حول"
     },

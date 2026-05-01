@@ -289,6 +289,21 @@
     "urlCopied": {
         "message": "URL copiée dans le presse-papiers"
     },
+    "dangerZone": {
+        "message": "Zone dangereuse"
+    },
+    "deleteAllData": {
+        "message": "Supprimer toutes les données"
+    },
+    "deleteAllDataDesc": {
+        "message": "Supprimer définitivement tous les favoris et paramètres"
+    },
+    "deleteAllDataConfirm": {
+        "message": "Tous les favoris, dossiers, mot de passe maître et paramètres seront définitivement supprimés. Cette action est irréversible."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Tout supprimer"
+    },
     "about": {
         "message": "À propos"
     },

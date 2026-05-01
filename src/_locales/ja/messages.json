@@ -289,6 +289,21 @@
     "urlCopied": {
         "message": "URLをクリップボードにコピーしました"
     },
+    "dangerZone": {
+        "message": "危険ゾーン"
+    },
+    "deleteAllData": {
+        "message": "すべてのデータを削除"
+    },
+    "deleteAllDataDesc": {
+        "message": "すべてのブックマークと設定を完全に削除します"
+    },
+    "deleteAllDataConfirm": {
+        "message": "すべてのブックマーク、フォルダ、マスターパスワード、設定が完全に削除されます。この操作は元に戻せません。"
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "すべて削除"
+    },
     "about": {
         "message": "この拡張機能について"
     },

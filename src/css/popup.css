@@ -129,6 +129,7 @@ input:checked + .slider::before{transform:translateX(24px)}
 .settings-btn__divider{opacity:.3;font-size:14px}
 .settings-btn__arrow{display:flex;align-items:center;justify-content:center;width:28px;height:28px;color:var(--btn-text-secondary);flex-shrink:0}
 .settings-btn:hover .settings-btn__arrow{color:var(--btn-accent);transform:translateX(3px)}
+.settings-btn--danger{border-color:rgba(255,80,80,.3);color:var(--btn-text)}.settings-btn--danger .settings-btn__icon{background:rgba(255,80,80,.08);color:#ff5050}.settings-btn--danger:hover{background:rgba(255,80,80,.08);border-color:rgba(255,80,80,.6)}.settings-btn--danger:hover .settings-btn__icon{background:rgba(255,80,80,.15)}.settings-btn--danger:hover .settings-btn__arrow{color:#ff5050}
 
 .action-menu{position:relative;width:100%;margin:30px auto}
 .action-menu__panel{width:100%;height:70px;display:flex;background:var(--card-bg);border:1px solid var(--card-border);border-radius:40px;backdrop-filter:blur(10px);overflow:hidden}

@@ -289,6 +289,21 @@
     "urlCopied": {
         "message": "URL copiada al portapapeles"
     },
+    "dangerZone": {
+        "message": "Zona de peligro"
+    },
+    "deleteAllData": {
+        "message": "Eliminar todos los datos"
+    },
+    "deleteAllDataDesc": {
+        "message": "Eliminar permanentemente todos los marcadores y configuraciones"
+    },
+    "deleteAllDataConfirm": {
+        "message": "Todos los marcadores, carpetas, contraseña maestra y configuraciones se eliminarán permanentemente. Esta acción no se puede deshacer."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Eliminar todo"
+    },
     "about": {
         "message": "Acerca de"
     },

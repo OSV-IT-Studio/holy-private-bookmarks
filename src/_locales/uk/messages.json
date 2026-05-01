@@ -289,6 +289,21 @@
     "urlCopied": {
         "message": "URL скопійовано в буфер обміну"
     },
+    "dangerZone": {
+        "message": "Небезпечна зона"
+    },
+    "deleteAllData": {
+        "message": "Видалити всі дані"
+    },
+    "deleteAllDataDesc": {
+        "message": "Безповоротно видалити всі закладки та налаштування"
+    },
+    "deleteAllDataConfirm": {
+        "message": "Усі закладки, папки, головний пароль та налаштування будуть безповоротно видалені. Цю дію не можна скасувати."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Видалити все"
+    },
     "about": {
         "message": "Про розширення"
     },

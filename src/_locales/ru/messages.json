@@ -289,6 +289,21 @@
     "urlCopied": {
         "message": "URL скопирован в буфер обмена"
     },
+    "dangerZone": {
+        "message": "Опасная зона"
+    },
+    "deleteAllData": {
+        "message": "Удалить все данные"
+    },
+    "deleteAllDataDesc": {
+        "message": "Безвозвратно удалить все закладки и настройки"
+    },
+    "deleteAllDataConfirm": {
+        "message": "Все закладки, папки, мастер-пароль и настройки будут безвозвратно удалены. Это действие нельзя отменить."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Удалить всё"
+    },
     "about": {
         "message": "О расширении"
     },
