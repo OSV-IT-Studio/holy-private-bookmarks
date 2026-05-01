@@ -1,4 +1,10 @@
 [
+{
+  "version": "1.8.5.43",
+  "changes": [
+    "Internal code improvements"
+  ]
+},
   {
     "version": "1.8.5.42",
     "changes": [
@@ -9,8 +15,8 @@
   "version": "1.8.5.40",
   "changes": [
      "Added 'Delete All Data' button in Settings — removes all bookmarks, folders, master password and settings",
-    "A confirmation dialog is shown before deletion",
-    "New 'Danger Zone' section in Settings groups destructive actions separately"
+     "A confirmation dialog is shown before deletion",
+     "New 'Danger Zone' section in Settings groups destructive actions separately"
   ]
 },
 {

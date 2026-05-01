@@ -198,33 +198,7 @@ const PopupBookmarks = (function () {
     }
 
     function updateBookmark(editUid, title, url, newFolderUid) {
-        const { getData, getAnyItemByUid, getItemByUid, getParentArrayForItemUid } = _deps;
-        const data = getData();
-
-        const bookmark = getAnyItemByUid(data, editUid);
-        if (!bookmark) return;
-
-        bookmark.title = title;
-        bookmark.url   = url;
-
-        const sourceArr = getParentArrayForItemUid(data, editUid);
-        if (!sourceArr) return;
-
-        let targetArr;
-        if (!newFolderUid) {
-            targetArr = data.folders;
-        } else {
-            const folder = getItemByUid(data, newFolderUid);
-            if (!folder || folder.type !== 'folder') return;
-            if (!Array.isArray(folder.children)) folder.children = [];
-            targetArr = folder.children;
-        }
-
-        if (targetArr === sourceArr) return;
-
-        const idx = sourceArr.indexOf(bookmark);
-        if (idx !== -1) sourceArr.splice(idx, 1);
-        targetArr.push(bookmark);
+        _deps.moveBookmark(_deps.getData(), editUid, title, url, newFolderUid);
     }
 
     function editBookmark(uid) {

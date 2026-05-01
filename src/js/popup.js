@@ -62,6 +62,7 @@ const {
     getParentArrayByUid,
     getAnyItemByUid,
     getParentArrayForItemUid,
+    moveBookmark,
 
     countItemsInFolder,
 	countFoldersInFolder,
@@ -351,6 +352,7 @@ function buildDeps() {
         getParentArrayByUid,
         getAnyItemByUid,
         getParentArrayForItemUid,
+        moveBookmark,
         countItemsInFolder,
 		countFoldersInFolder,
         buildFolderTreePicker,

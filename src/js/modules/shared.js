@@ -1053,6 +1053,33 @@ function hideGlobalLoadingIndicator(container = null) {
         return search(data.folders);
     }
 
+    function moveBookmark(data, editUid, title, url, newFolderUid) {
+        const bookmark = getAnyItemByUid(data, editUid);
+        if (!bookmark) return;
+
+        bookmark.title = title;
+        bookmark.url   = url;
+
+        const sourceArr = getParentArrayForItemUid(data, editUid);
+        if (!sourceArr) return;
+
+        let targetArr;
+        if (!newFolderUid) {
+            targetArr = data.folders;
+        } else {
+            const folder = getItemByUid(data, newFolderUid);
+            if (!folder || folder.type !== 'folder') return;
+            if (!Array.isArray(folder.children)) folder.children = [];
+            targetArr = folder.children;
+        }
+
+        if (targetArr === sourceArr) return;
+
+        const idx = sourceArr.indexOf(bookmark);
+        if (idx !== -1) sourceArr.splice(idx, 1);
+        targetArr.push(bookmark);
+    }
+
     function ensureItemUids(items) {
         if (!Array.isArray(items)) return;
         for (const item of items) {
@@ -1398,6 +1425,7 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             getParentArrayByUid,
             getAnyItemByUid,
             getParentArrayForItemUid,
+            moveBookmark,
             arraysEqual,
             
             
