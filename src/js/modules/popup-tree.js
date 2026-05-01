@@ -368,7 +368,7 @@ const PopupTree = (function () {
 
             if (action === 'open-all' || action === 'open-all-window' || action === 'open-all-incognito' || action === 'open-all-group') {
                 if (!uid) return;
-                const { getData, getItemByUid, collectAllBookmarkUrls, openInPrivateTab, showNotification, getMessage } = _deps;
+                const { getData, getItemByUid, collectAllBookmarkUrls } = _deps;
                 const folder = getItemByUid(getData(), uid);
                 if (!folder || !folder.children) return;
                 const urls = collectAllBookmarkUrls(folder.children);

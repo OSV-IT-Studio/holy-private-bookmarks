@@ -201,11 +201,11 @@
                     case 'open-all-window':
                     case 'open-all-incognito':
                     case 'open-all-group': {
-                        const { collectAllBookmarkUrls, showNotification: sn, getMessage: gm2 } = _deps;
+                        const { collectAllBookmarkUrls } = _deps;
                         const children = boundData?.children;
                         if (!children) break;
                         const urls = collectAllBookmarkUrls(children);
-                        if (!urls.length) { sn(gm2('noBookmarksInFolder') || 'No bookmarks in folder', true); break; }
+                        if (!urls.length) { showNotification(gm('noBookmarksInFolder') || 'No bookmarks in folder', true); break; }
                         if (btn.dataset.action === 'open-all') {
                             urls.forEach(url => chrome.tabs.create({ url, active: false }));
                         } else if (btn.dataset.action === 'open-all-window') {

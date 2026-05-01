@@ -1,5 +1,12 @@
 [
 {
+  "version": "1.8.5.39",
+  "changes": [
+    "Added bookmark search in the popup — click the search icon in the toolbar to open the search bar, type to instantly filter bookmarks across all folders",
+    "Search matches by title and URL, with matched text highlighted in results"
+  ]
+},
+{
   "version": "1.8.5.35",
   "changes": [
     "Added 'Save all open tabs' button in the popup toolbar — saves all open http/https tabs in the current window into a new folder named by current date and time",

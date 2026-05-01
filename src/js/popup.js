@@ -166,6 +166,7 @@ async function saveAndRefresh() {
 
 
 function performFullCleanup() {
+    if (window.PopupSearch) PopupSearch.reset();
     if (data) wipeUserData(data);
     clearAllSharedCaches();
     CryptoManager?.clear?.();
@@ -580,6 +581,7 @@ async function init() {
     PopupUI.init(deps);
     PopupTree.init(deps);
     PopupBookmarks.init(deps);
+    if (window.PopupSearch) PopupSearch.init(deps);
 
     initFaviconToggle();
     initQuickCloseToggle();
@@ -666,9 +668,37 @@ async function init() {
         '#back':                     () => PopupUI.showSection('main'),
         '#change-pass':              () => PopupAuth.changeMasterPassword(),
         '#manager-btn':              openManager,
+		
         '#faq-btn':                  () => chrome.tabs.create({ url: 'https://osv-it-studio.github.io/holy-private-bookmarks#faq' }),
 		'#survey-btn':               () => chrome.tabs.create({ url: 'https://docs.google.com/forms/d/e/1FAIpQLSfcEpeT2NA9b3XxZeR6gJjiUFBLgMJ0xE0kb0zolPssykLTag/viewform' }),
         '#quick-add-bookmark':       () => PopupBookmarks.openAddBookmarkModal('', 'https://'),
+		'#search-btn': () => {
+			const searchBar = document.getElementById('search-bar');
+			const searchInput = document.getElementById('search-input');
+			const searchBtn = document.getElementById('search-btn');
+    
+			if (searchBar) {
+				const isVisible = searchBar.style.display === 'flex';
+        
+				if (isVisible) {
+					searchBar.style.display = 'none';
+					if (searchBtn) searchBtn.classList.remove('active');
+					if (searchInput && searchInput.value) {
+						searchInput.value = '';
+						if (window.PopupSearch) PopupSearch.reset();
+						PopupTree.renderTree();
+					}
+				} else {
+					searchBar.style.display = 'flex';
+					if (searchBtn) {
+						searchBtn.classList.add('active');
+					}
+					if (searchInput) {
+						setTimeout(() => searchInput.focus(), 100);
+					}
+				}
+			}
+		},
         '#save-all-tabs':            async () => {
             const tabs = await chrome.tabs.query({ currentWindow: true });
             const bookmarkTabs = tabs.filter(t => t.url && t.url.startsWith('http'));
