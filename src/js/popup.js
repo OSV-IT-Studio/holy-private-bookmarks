@@ -542,7 +542,20 @@ function _openAboutModal() {
     document.body.appendChild(modal);
     openModal(modal);
 }
-
+function hideSearchAndClear() {
+    const searchBar = document.getElementById('search-bar');
+    const searchInput = document.getElementById('search-input');
+    const searchBtn = document.getElementById('search-btn');
+    
+    if (searchBar) {
+        searchBar.style.display = 'none';
+        if (searchBtn) searchBtn.classList.remove('active');
+        if (searchInput && searchInput.value) {
+            searchInput.value = '';
+            if (window.PopupSearch) PopupSearch.reset();
+        }
+    }
+}
 // Main initialization
 
 async function init() {
@@ -660,7 +673,7 @@ async function init() {
 		'#create-pass': () => PopupAuth.createMasterPassword(),
         '#unlock':                   () => PopupAuth.unlock(),
         '#lock':                     lock,
-        '#add-current':              () => { PopupSearch.reset(); PopupBookmarks.addCurrentPage(); },
+        '#add-current':              () => { hideSearchAndClear(); PopupBookmarks.addCurrentPage(); },
         '#export':                   () => ImportExportManager.exportData(),
         '#export-html-btn':          () => ImportExportManager.exportToHTML(),
         '#import-btn':               () => getCachedElement('#import-file').click(),
@@ -674,33 +687,28 @@ async function init() {
 		
         '#faq-btn':                  () => chrome.tabs.create({ url: 'https://osv-it-studio.github.io/holy-private-bookmarks#faq' }),
 		'#survey-btn':               () => chrome.tabs.create({ url: 'https://docs.google.com/forms/d/e/1FAIpQLSfcEpeT2NA9b3XxZeR6gJjiUFBLgMJ0xE0kb0zolPssykLTag/viewform' }),
-        '#quick-add-bookmark':       () => { PopupSearch.reset(); PopupBookmarks.openAddBookmarkModal('', 'https://'); },
+        '#quick-add-bookmark':       () => { hideSearchAndClear(); PopupBookmarks.openAddBookmarkModal('', 'https://'); },
 		'#search-btn': () => {
-			const searchBar = document.getElementById('search-bar');
-			const searchInput = document.getElementById('search-input');
-			const searchBtn = document.getElementById('search-btn');
+    const searchBar = document.getElementById('search-bar');
+    const searchInput = document.getElementById('search-input');
+    const searchBtn = document.getElementById('search-btn');
     
-			if (searchBar) {
-				const isVisible = searchBar.style.display === 'flex';
+    if (searchBar) {
+        const isVisible = searchBar.style.display === 'flex';
         
-				if (isVisible) {
-					searchBar.style.display = 'none';
-					if (searchBtn) searchBtn.classList.remove('active');
-					if (searchInput && searchInput.value) {
-						searchInput.value = '';
-						if (window.PopupSearch) PopupSearch.reset();
-					}
-				} else {
-					searchBar.style.display = 'flex';
-					if (searchBtn) {
-						searchBtn.classList.add('active');
-					}
-					if (searchInput) {
-						setTimeout(() => searchInput.focus(), 100);
-					}
-				}
-			}
-		},
+        if (isVisible) {
+            hideSearchAndClear();
+        } else {
+            searchBar.style.display = 'flex';
+            if (searchBtn) {
+                searchBtn.classList.add('active');
+            }
+            if (searchInput) {
+                setTimeout(() => searchInput.focus(), 100);
+          }
+        }
+    }
+},
         '#save-all-tabs':            async () => {
             const tabs = await chrome.tabs.query({ currentWindow: true });
             const bookmarkTabs = tabs.filter(t => t.url && t.url.startsWith('http'));
@@ -718,14 +726,14 @@ async function init() {
             data.folders.push(folder);
             saveAndRefresh();
             showNotification(getMessage('tabsSaved'));
-			PopupSearch.reset(); 
+			hideSearchAndClear();
         },
         '#open-github':              () => chrome.tabs.create({ url: 'https://github.com/OSV-IT-Studio/holy-private-bookmarks' }),
 		'#rate-btn':                 () => { chrome.tabs.create({ url: 'https://chromewebstore.google.com/detail/holy-private-bookmarks-%E2%80%94/nnafnomgekidkehbgkfmhapccelgdbch/reviews' 
 		});
 		},
         '#about-btn':                () => { _openAboutModal(); },
-        '#quick-add-folder':         () => { PopupSearch.reset(); PopupBookmarks.addFolder(); },
+        '#quick-add-folder':         () => { hideSearchAndClear(); PopupBookmarks.addFolder(); },
         '#change-shortcut-btn':      () => chrome.tabs.create({ url: 'chrome://extensions/shortcuts' }),
         '#delete-all-data-btn':      async () => {
             const confirmed = await showConfirm({
@@ -740,7 +748,7 @@ async function init() {
                 await chrome.storage.local.clear();
                 await chrome.storage.session.clear();
             } catch (e) {
-                console.error('Failed to clear storage:', e);
+                getMessage('Error');
             }
             window.close();
         },
@@ -889,6 +897,7 @@ async function init() {
                 let message = getMessage('importHtmlSuccess', [stats.imported.toString()]);
                 if (!message || message === 'importHtmlSuccess') message = `Imported ${stats.imported} bookmarks`;
                 showNotification(message);
+				hideSearchAndClear();
             },
             onError:    msg => showNotification(msg, true)
         });

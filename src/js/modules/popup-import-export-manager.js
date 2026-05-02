@@ -132,6 +132,7 @@ const ImportExportManager = (function() {
             }
             
             showNotification(getMessage('importChromeSuccess'));
+			hideSearchAndClear();
         } catch (error) {
             showNotification(getMessage('importChromeError') + ': ' + error.message, true);
         } finally {
@@ -279,6 +280,7 @@ const ImportExportManager = (function() {
             const closeImport = Shared.closeModalWithAnimation || ((el) => { Shared.closeModal(el); });
             closeImport(modal);
             showNotification(getMessage('importChromeSuccess'));
+			hideSearchAndClear();
         });
     }
 

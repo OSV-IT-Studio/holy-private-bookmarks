@@ -231,7 +231,7 @@ const HTMLImporter = (function() {
     const importFile = document.getElementById('import-html-file');
     
     if (!importBtn || !importFile) {
-      console.warn('HTML importer elements not found');
+      getMessage('Error');
       return false;
     }
 
