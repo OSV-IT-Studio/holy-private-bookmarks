@@ -44,7 +44,6 @@ const HistoryCleaner = (function() {
         progressModal.style.zIndex = '10000';
         progressModal.innerHTML = `
             <div class="hpb-modal__dialog hpb-modal__dialog--sm" style="text-align:center;">
-                <div class="spinner" style="width: 48px; height: 48px; border-width: 4px; margin: 0 auto 16px auto;"></div>
                 <h2 class="hpb-modal__title hpb-modal__title--center progress-title">
                     ${getMessage('clearingHistory')}
                 </h2>

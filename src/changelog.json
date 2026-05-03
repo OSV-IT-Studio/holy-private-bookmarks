@@ -1,5 +1,11 @@
 [
 {
+  "version": "1.8.5.51",
+  "changes": [
+    "Fixed spacing and layout in the history cleaner interface"
+  ]
+},
+{
   "version": "1.8.5.50",
   "changes": [
 	"Added «Report a Bug» button in the About section — opens the GitHub Issues page"
