@@ -18,16 +18,10 @@
  * Source code: https://github.com/OSV-IT-Studio/holy-private-bookmarks
  */
 
-// MODULE: popup-tree.js
-// Handles: tree rendering, folder/bookmark element creation,
-//          virtual scroll (load-more), click delegation
-
 const PopupTree = (function () {
 
     let _deps = {};
     let _eventHandlersInitialized = false;
-
-    // Empty state
 
     function renderEmptyState(container) {
         const { getMessage } = _deps;
@@ -44,124 +38,65 @@ const PopupTree = (function () {
         `;
     }
 
-    // Folder element
-
     function createFolderElement(item, path) {
-        const { countItemsInFolder, escapeHtml } = _deps;
+        const { countItemsInFolder, escapeHtml, getMessage } = _deps;
 
-        const div = document.createElement('div');
-        div.className    = 'tree-item';
+        const div = TreeItemFactory.createFolderItem(item, {
+            escapeHtml,
+            getMessage,
+            countItemsInFolder,
+            withArrow: true,
+        });
+
         div.dataset.path = path.join(',');
-        if (item.uid) div.dataset.folderUid = item.uid;
         div.setAttribute('draggable', 'true');
         div.setAttribute('data-drag-ready', '1');
 
-        div.innerHTML = `
-            <div class="item-header folder">
-                <div class="item-title">
-                    <span class="arrow">▶</span>
-                    <span class="icon folder-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
-                        </svg>
-                    </span>
-                    <span class="folder-name">${escapeHtml(item.name)}</span>
-                    <span class="folder-badge">${countItemsInFolder(item)}</span>
-                </div>
-                <button class="quick-actions-trigger" title="${getMessage('actions')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
-            </div>
-            <div class="subitems collapsed"></div>
-        `;
+        const subitems = document.createElement('div');
+        subitems.className = 'subitems collapsed';
+        div.appendChild(subitems);
 
         return div;
     }
-
-    
 
     function createBookmarkElement(item, path, options = {}) {
         const { getDomainFromUrl, getMessage, escapeHtml,
                 isFaviconEnabled, loadFaviconAsync,
-                openInPrivateTab, isAlwaysIncognito, showNotification,
-                editBookmark, deleteBookmark, copyBookmarkUrl } = _deps;
+                openInPrivateTab, isAlwaysIncognito } = _deps;
 
-        const div = document.createElement('div');
-        div.className    = 'tree-item';
+        const div = TreeItemFactory.createBookmarkItem(item, {
+            escapeHtml,
+            getDomainFromUrl,
+            getMessage,
+            isFaviconEnabled,
+            loadFaviconAsync,
+            showActions: options.showActions !== false,
+        });
+
         div.dataset.path = path.join(',');
-        if (item.uid) div.dataset.itemUid = item.uid;
         div.setAttribute('draggable', 'true');
         div.setAttribute('data-drag-ready', '1');
 
-        const domain = getDomainFromUrl(item.url);
-
-        
-        const link = document.createElement('div');
-        link.className = 'bookmark-link';
-        link.dataset.url = item.url;
-
-        const header = document.createElement('div');
-        header.className = 'item-header';
-
-        const titleDiv = document.createElement('div');
-        titleDiv.className = 'item-title';
-
-        // Favicon / bookmark icon
-        const iconSpan = document.createElement('span');
-        iconSpan.className = 'icon bookmark';
-        iconSpan.innerHTML = `
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 4C5 2.89543 5.89543 2 7 2H17C18.1046 2 19 2.89543 19 4V21L12 17L5 21V4Z" fill="currentColor"/>
-            </svg>
-        `;
-
-        const textSpan = document.createElement('span');
-        textSpan.className   = 'bookmark-title';
-        textSpan.textContent = item.title;
-
-        const domainSpan = document.createElement('span');
-        domainSpan.className   = 'item-domain';
-        domainSpan.textContent = domain;
-
-        titleDiv.appendChild(iconSpan);
-        titleDiv.appendChild(textSpan);
-
-        if (!options.noActions) {
-            const quickActionsTrigger = document.createElement('button');
-            quickActionsTrigger.className = 'quick-actions-trigger';
-            quickActionsTrigger.title = getMessage('actions');
-            quickActionsTrigger.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg>';
-            titleDiv.appendChild(quickActionsTrigger);
-        }
-
-        const pathStr = path.join(',');
-        header.appendChild(titleDiv);
-        header.appendChild(domainSpan);
-        link.appendChild(header);
-        div.appendChild(link);
-
-        link.addEventListener('click', e => {
-            if (e.target.closest('.quick-actions-hover') || e.target.closest('.quick-actions-trigger')) return;
-            if (isAlwaysIncognito()) {
-                openInPrivateTab(item.url);
-            } else {
-                chrome.tabs.create({ url: item.url, active: !e.ctrlKey && !e.metaKey });
-            }
-        });
-
-        
-        if (isFaviconEnabled()) {
-            loadFaviconAsync(item.url, iconSpan);
+        const link = div.querySelector('.bookmark-link');
+        if (link) {
+            link.addEventListener('click', e => {
+                if (e.target.closest('.quick-actions-hover') || e.target.closest('.quick-actions-trigger')) return;
+                if (isAlwaysIncognito()) {
+                    openInPrivateTab(item.url);
+                } else {
+                    chrome.tabs.create({ url: item.url, active: !e.ctrlKey && !e.metaKey });
+                }
+            });
         }
 
         return div;
     }
 
-    // Folder open / close
-
-    function openFolder(folderItem, header, sub) {
+    function openFolder(folderItem, sub) {
         const { getItemByUid, getItemByPath, getData, virtualScrollCache, VIRTUAL_SCROLL_CONFIG, loadMoreFolderItems } = _deps;
 
         sub.classList.remove('collapsed');
-        const arrow = header.querySelector('.arrow');
+        const arrow = folderItem.querySelector('.arrow');
         if (arrow) arrow.textContent = '▼';
         folderItem.classList.add('open');
         folderItem.classList.add('loading');
@@ -214,14 +149,13 @@ const PopupTree = (function () {
         }
     }
 
-    function closeFolder(folderItem, header, sub) {
+    function closeFolder(folderItem, sub) {
         sub.classList.add('collapsed');
-        const arrow = header.querySelector('.arrow');
+        const arrow = folderItem.querySelector('.arrow');
         if (arrow) arrow.textContent = '▶';
         folderItem.classList.remove('open');
         saveFoldersState();
 
-       
         const path = folderItem.dataset.path;
         if (path) {
             if (_sentinels.has(path)) {
@@ -232,21 +166,20 @@ const PopupTree = (function () {
             }
             _deps.virtualScrollCache?.folders?.delete(path);
         }
-        
+
         sub.innerHTML = '';
     }
 
-    function toggleFolder(header) {
-        const folderItem = header.closest('.tree-item');
+    function toggleFolder(folderItem) {
         if (!folderItem) return;
-        const sub = folderItem.querySelector('.subitems');
+        const sub = folderItem.querySelector(':scope > .subitems');
         if (!sub) return;
 
         if (sub.classList.contains('collapsed')) {
-            openFolder(folderItem, header, sub);
+            openFolder(folderItem, sub);
             saveFoldersState();
         } else {
-            closeFolder(folderItem, header, sub);
+            closeFolder(folderItem, sub);
         }
     }
 
@@ -261,7 +194,6 @@ const PopupTree = (function () {
         } catch (e) {}
     }
 
-    
     function restoreFoldersState() {
         let openKeys;
         try {
@@ -281,10 +213,9 @@ const PopupTree = (function () {
                 document.querySelector(`#tree .tree-item[data-path="${key}"]`);
 
             if (el) {
-                const header = el.querySelector('.item-header.folder');
-                const sub    = el.querySelector('.subitems');
-                if (header && sub && sub.classList.contains('collapsed')) {
-                    openFolder(el, header, sub);
+                const sub = el.querySelector(':scope > .subitems');
+                if (sub && sub.classList.contains('collapsed')) {
+                    openFolder(el, sub);
                 }
             }
 
@@ -294,40 +225,27 @@ const PopupTree = (function () {
         requestAnimationFrame(() => openNext(0));
     }
 
-    // Click delegation
-
     function _buildPopupFolderPanel(uid, getMessage) {
         return QuickActions.buildPanel([
-            { action: 'open-all',           title: getMessage('openAll'),           icon: 'openAll',
-              dataset: { uid } },
-            { action: 'open-all-window',    title: getMessage('openAllWindow'),     icon: 'openWindow',
-              dataset: { uid } },
-            { action: 'open-all-group',     title: getMessage('openAllGroup'),      icon: 'openGroup',
-              dataset: { uid } },
-            { action: 'open-all-incognito', title: getMessage('openAllIncognito'),  icon: 'openIncognito', className: 'private',
-              dataset: { uid } },
-            { action: 'rename', title: getMessage('rename'), icon: 'rename',
-              dataset: { uid } },
-            { action: 'delete', title: getMessage('delete'), icon: 'delete', className: 'delete',
-              dataset: { uid } },
+            { action: 'open-all',           title: getMessage('openAll'),           icon: 'openAll',       dataset: { uid } },
+            { action: 'open-all-window',    title: getMessage('openAllWindow'),     icon: 'openWindow',    dataset: { uid } },
+            { action: 'open-all-group',     title: getMessage('openAllGroup'),      icon: 'openGroup',     dataset: { uid } },
+            { action: 'open-all-incognito', title: getMessage('openAllIncognito'),  icon: 'openIncognito', className: 'private', dataset: { uid } },
+            { action: 'rename', title: getMessage('rename'), icon: 'rename', dataset: { uid } },
+            { action: 'delete', title: getMessage('delete'), icon: 'delete', className: 'delete', dataset: { uid } },
         ]);
     }
 
     function _buildPopupBookmarkPanel(uid, url, getMessage) {
         const actions = [
-            { action: 'edit',    title: getMessage('edit'),        icon: 'edit',
-              dataset: { uid, 'item-type': 'bookmark' } },
-            { action: 'copy',    title: getMessage('copyUrl'),     icon: 'copy',
-              dataset: { url } },
-            { action: 'qr',     title: getMessage('qrCode'), icon: 'qr',
-              dataset: { url, uid } },
+            { action: 'edit',    title: getMessage('edit'),    icon: 'edit', dataset: { uid, 'item-type': 'bookmark' } },
+            { action: 'copy',    title: getMessage('copyUrl'), icon: 'copy', dataset: { url } },
+            { action: 'qr',     title: getMessage('qrCode'),  icon: 'qr',   dataset: { url, uid } },
         ];
         if (!_deps.isAlwaysIncognito || !_deps.isAlwaysIncognito()) {
-            actions.push({ action: 'private', title: getMessage('openPrivate'), icon: 'private', className: 'private',
-              dataset: { url } });
+            actions.push({ action: 'private', title: getMessage('openPrivate'), icon: 'private', className: 'private', dataset: { url } });
         }
-        actions.push({ action: 'delete', title: getMessage('delete'), icon: 'delete', className: 'delete',
-              dataset: { uid, 'item-type': 'bookmark' } });
+        actions.push({ action: 'delete', title: getMessage('delete'), icon: 'delete', className: 'delete', dataset: { uid, 'item-type': 'bookmark' } });
         return QuickActions.buildPanel(actions);
     }
 
@@ -338,15 +256,15 @@ const PopupTree = (function () {
             e.stopPropagation();
             e.preventDefault();
             const { getMessage, escapeHtml } = _deps;
-            const item           = trigger.closest('.tree-item');
-            const isFolderHeader = !!trigger.closest('.item-header.folder');
+            const item     = trigger.closest('.tree-item');
+            const isFolder = item?.classList.contains('tree-item--folder');
 
             QuickActions.toggle(trigger, () => {
-                const uid    = isFolderHeader
+                const uid    = isFolder
                     ? (item?.dataset.folderUid ?? '')
                     : (item?.dataset.itemUid ?? '');
                 const linkEl = item?.querySelector('.bookmark-link') ?? null;
-                if (isFolderHeader) {
+                if (isFolder) {
                     return _buildPopupFolderPanel(uid, getMessage);
                 } else {
                     const rawUrl = linkEl?.dataset.url ?? '';
@@ -435,18 +353,14 @@ const PopupTree = (function () {
             return;
         }
 
-        // Folder header toggle
-        const folderHeader = e.target.closest('.item-header.folder');
-        if (folderHeader) {
+        const folderItem = e.target.closest('.tree-item--folder');
+        if (folderItem && !e.target.closest('.quick-actions-hover')) {
             e.preventDefault();
             e.stopPropagation();
-			QuickActions.closeAll();
-            toggleFolder(folderHeader);
+            QuickActions.closeAll();
+            toggleFolder(folderItem);
         }
     }
-
-    
-
 
     function setupGlobalClickHandler() {
         if (_eventHandlersInitialized) return;
@@ -461,9 +375,6 @@ const PopupTree = (function () {
         _eventHandlersInitialized = true;
     }
 
-    // Virtual scroll helpers
-
-    
     const _sentinels = new Map();
 
     function _folderKey(path) {
@@ -471,7 +382,6 @@ const PopupTree = (function () {
     }
 
     function removeLoadMoreButton(container) {
-        
         const key = container.dataset && container.dataset.folderKey;
         if (key && _sentinels.has(key)) {
             const { sentinel, observer } = _sentinels.get(key);
@@ -479,7 +389,7 @@ const PopupTree = (function () {
             sentinel.remove();
             _sentinels.delete(key);
         }
-        
+
         container.parentNode?.querySelector('.load-more-container')?.remove();
     }
 
@@ -521,7 +431,6 @@ const PopupTree = (function () {
             if (safeStart >= freshFolder.children.length) return;
             loadMoreFolderItems(freshFolder, actualPath, container, safeStart, _deps.VIRTUAL_SCROLL_CONFIG.loadMoreCount);
         }, {
-            
             root: document.getElementById('tree'),
             rootMargin: '0px 0px 80px 0px',
             threshold: 0
@@ -594,13 +503,10 @@ const PopupTree = (function () {
                 removeLoadMoreButton(container);
             }
 
-            
             DragDropManager.refreshDragItems();
             onFirstBatchDone?.();
         });
     }
-
-    // Main render
 
     function renderTree() {
         const { getData, virtualScrollCache, saveAndRefresh } = _deps;
@@ -649,8 +555,6 @@ const PopupTree = (function () {
         });
         _sentinels.clear();
     }
-
-    // Public API
 
     return {
         init(deps) { Object.assign(_deps, deps); },

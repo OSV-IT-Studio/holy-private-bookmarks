@@ -337,26 +337,15 @@
     function _createFolderGridItem(folder, index) {
         const { escapeHtml, countItemsInFolder, getMessage } = _deps;
 
-        const item = document.createElement('div');
-        item.className = 'tree-item tree-item--folder';
+        const item = TreeItemFactory.createFolderItem(folder, {
+            escapeHtml,
+            getMessage,
+            countItemsInFolder,
+            withArrow: false,
+        });
+
         item.dataset.index = index;
-        if (folder.uid) item.dataset.folderUid = folder.uid;
         if (_selectedBookmarks.has(folder)) item.classList.add('selected');
-
-        const childCount = countItemsInFolder(folder);
-
-        item.innerHTML = `
-            <div class="folder-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" fill="currentColor" fill-opacity="0.12"/>
-                </svg>
-            </div>
-            <div class="tree-item__content">
-                <div class="bookmark-title">${escapeHtml(folder.name)}</div>
-            </div>
-            <div class="folder-badge">${childCount}</div>
-            <button class="quick-actions-trigger" title="${getMessage('actions')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
-        `;
         item._boundData = folder;
 
         item.addEventListener('click', e => {
@@ -407,31 +396,16 @@
                 openInPrivateTab, isAlwaysIncognito,
                 getCurrentFolderId } = _deps;
 
-        const item = document.createElement('div');
-        item.className = 'tree-item';
+        const item = TreeItemFactory.createBookmarkItem(bookmark, {
+            escapeHtml,
+            getDomainFromUrl,
+            getMessage,
+            loadFaviconAsync: _deps.loadFaviconAsync,
+        });
+
         item.dataset.index = index;
-        if (bookmark.uid) item.dataset.itemUid = bookmark.uid;
         if (_selectedBookmarks.has(bookmark)) item.classList.add('selected');
-
-        const domain = getDomainFromUrl(bookmark.url);
-
-        item.innerHTML = `
-            <div class="tree-item__favicon-placeholder icon bookmark">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 4C5 2.89543 5.89543 2 7 2H17C18.1046 2 19 2.89543 19 4V21L12 17L5 21V4Z" fill="currentColor"/>
-                </svg>
-            </div>
-            <div class="tree-item__content">
-                <div class="bookmark-title">${escapeHtml(bookmark.title)}</div>
-            </div>
-            <div class="item-domain">${escapeHtml(domain)}</div>
-            <button class="quick-actions-trigger" title="${getMessage('actions')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></button>
-        `;
-
         item._boundData = bookmark;
-
-        const iconEl = item.querySelector('.tree-item__favicon-placeholder');
-        if (iconEl) _deps.loadFaviconAsync?.(bookmark.url, iconEl);
 
         item.addEventListener('click', e => {
             if (e.target.closest('.quick-actions-hover')) return;

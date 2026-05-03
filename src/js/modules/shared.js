@@ -1152,8 +1152,7 @@ function dragCreateGhost(item, clientX, clientY, offsetX, offsetY) {
 }
 
 function dragGetFaviconUrl(item) {
-    const iconEl = item.querySelector('.tree-item__favicon-placeholder') ||
-                   item.querySelector('.icon.bookmark');
+    const iconEl = item.querySelector('.tree-item__icon');
     if (!iconEl) return null;
     const val = iconEl.style.getPropertyValue('--favicon-url');
     if (!val) return null;

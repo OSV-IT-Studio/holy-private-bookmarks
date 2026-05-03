@@ -68,13 +68,11 @@ a,button,input,select,
 .toolbar-btn__icon svg{width:14px;height:14px;stroke:currentColor}
 .bookmarks-container{flex:1;overflow-y:auto;overflow-x:hidden;padding-right:4px;padding-left: 4px;scrollbar-width:thin;scrollbar-color:var(--border-muted) transparent}
 .bookmarks-grid,.bookmarks-list{display:flex;flex-direction:column;gap:4px;min-height:200px}
-.tree-item{background:var(--surface-1);border:1px solid var(--border-subtle);box-shadow:var(--item-shadow);border-radius:var(--radius-sm);padding:9px 12px;min-height:52px;transition:background var(--dur-fast) ease,border-color var(--dur-fast) ease,box-shadow var(--dur-fast) ease;cursor:pointer;display:flex;align-items:center;gap:11px;position:relative;overflow:hidden;box-sizing:border-box}
+.tree-item{background:var(--surface-1);border:1px solid var(--border-subtle);box-shadow:var(--item-shadow);border-radius:var(--radius-sm);min-height:52px;transition:background var(--dur-fast) ease,border-color var(--dur-fast) ease,box-shadow var(--dur-fast) ease;cursor:pointer;position:relative;overflow:hidden;box-sizing:border-box}
+.tree-item .item-header{padding:9px 12px;gap:11px}
 .tree-item.selected{background:var(--accent-dim);border-color:var(--border-accent)}
 .tree-item.selected:hover{background:rgba(99,179,237,.18)}
-.tree-item__favicon-placeholder{width:26px;height:26px;border-radius:var(--radius-xs);flex-shrink:0;background:var(--surface-3);color:var(--accent);display:flex;align-items:center;justify-content:center;background-image:var(--favicon-url,none);background-size:16px;background-repeat:no-repeat;background-position:center}
-.tree-item__favicon-placeholder svg{width:14px;height:14px;stroke:currentColor;transition:opacity .15s ease}
-.tree-item__favicon-placeholder.has-favicon svg{opacity:0;pointer-events:none}
-.tree-item__content{min-width:0;display:flex;flex-direction:column;gap:2px;flex:1}
+
 .bookmark-title{font-size:13px;font-weight:500;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .selection-toolbar{display:none;align-items:center;justify-content:space-between;background:var(--accent-dim);border:1px solid var(--border-accent);border-radius:var(--radius-sm);padding:8px 14px;margin-bottom:12px;animation:slideDown var(--dur-med) var(--ease-out)}
 .selection-info{display:flex;align-items:center;gap:8px;color:var(--accent);font-weight:600;font-size:13px}

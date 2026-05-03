@@ -528,7 +528,7 @@ const DragDropManager = (function () {
         const uid    = folderEl.dataset.folderUid;
         const folder = uid ? S.getItemByUid(_dataRef, uid) : null;
         if (!folder || folder.type !== 'folder') return;
-        const badge = folderEl.querySelector(':scope > .item-header .folder-badge');
+        const badge = folderEl.querySelector('.folder-badge');
         if (badge) badge.textContent = S.countItemsInFolder(folder);
         const sc = folderEl.querySelector('.subitems:not(.collapsed) .folder-virtual-scroll');
         if (!sc) return;
@@ -651,7 +651,7 @@ const DragDropManager = (function () {
             if (aUid) {
                 const aFolder = S.getItemByUid(_dataRef, aUid);
                 if (aFolder && aFolder.type === 'folder') {
-                    const aBadge = ancestor.querySelector(':scope > .item-header .folder-badge');
+                    const aBadge = ancestor.querySelector('.folder-badge');
                     if (aBadge) aBadge.textContent = S.countItemsInFolder(aFolder);
                 }
             }

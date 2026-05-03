@@ -144,12 +144,12 @@ const LoginUI = (function () {
                                     <div class="tree-item" style="pointer-events:none;cursor:default;margin:8px 0 0 0;">
                                         <div class="bookmark-link" style="cursor:default;">
                                             <div class="item-header" style="min-height:44px;">
-                                                <div class="item-title">
-                                                    <span class="icon bookmark">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M5 4C5 2.89543 5.89543 2 7 2H17C18.1046 2 19 2.89543 19 4V21L12 17L5 21V4Z" fill="currentColor"/>
-                                                        </svg>
-                                                    </span>
+                                                <span class="tree-item__icon icon bookmark">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5 4C5 2.89543 5.89543 2 7 2H17C18.1046 2 19 2.89543 19 4V21L12 17L5 21V4Z" fill="currentColor"/>
+                                                    </svg>
+                                                </span>
+                                                <div class="tree-item__body">
                                                     <span class="bookmark-title">${escapeHtml(bookmarkTitle)}</span>
                                                 </div>
                                             </div>
@@ -163,7 +163,7 @@ const LoginUI = (function () {
                 document.body.prepend(bar);
 
                 if (bookmarkUrl && isFaviconEnabled?.() && loadFaviconAsync) {
-                    const iconEl = bar.querySelector('.icon.bookmark');
+                    const iconEl = bar.querySelector('.tree-item__icon');
                     if (iconEl) loadFaviconAsync(bookmarkUrl, iconEl);
                 }
             }

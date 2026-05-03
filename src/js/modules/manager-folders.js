@@ -46,12 +46,10 @@
         if (allCount) allCount.textContent = countAllBookmarks(getData());
 
         const fragment = document.createDocumentFragment();
-        _renderFoldersRecursive(getData().folders, fragment, []);
+        _renderFoldersRecursive(getData().folders, fragment);
         tree.appendChild(fragment);
 
         _attachDelegatedTreeListener();
-        _addFolderTreeEventListeners();
-
         restoreFoldersState();
 
         const currentId = _deps.getCurrentFolderId?.();
@@ -69,14 +67,13 @@
         resetInactivityTimer();
     }
 
-    function _renderFoldersRecursive(items, container, path, depth = 0) {
+    function _renderFoldersRecursive(items, container) {
         const { countItemsInFolder, getMessage } = _deps;
 
         for (let i = 0; i < items.length; i++) {
             const item = items[i];
             if (item.type !== 'folder') continue;
 
-            const currentPath   = [...path, i];
             const itemCount     = countItemsInFolder(item);
             const hasSubfolders = item.children?.some(c => c.type === 'folder');
 
@@ -136,7 +133,7 @@
                 subUl.className = 'subfolder-list';
                 subUl.style.display = 'none';
                 container.appendChild(subUl);
-                _renderFoldersRecursive(item.children, subUl, currentPath, depth + 1);
+                _renderFoldersRecursive(item.children, subUl);
             }
         }
     }
@@ -179,8 +176,6 @@
         _treeListenerAttached = true;
     }
 
-    function _addFolderTreeEventListeners() {}
-
     function _toggleFolderExpand(folderItem) {
         const toggle  = folderItem.querySelector('.folder-toggle');
         const subList = folderItem.nextElementSibling;
@@ -192,6 +187,30 @@
         subList.style.display = isExpanded ? 'none' : 'block';
 
         _deps.resetInactivityTimer();
+    }
+
+    function _expandTreeToFolder(folderUid) {
+        if (!folderUid || folderUid === 'all') return;
+
+        const target = document.querySelector(`.folder-item[data-folder-uid="${folderUid}"]`);
+        if (!target) return;
+        let node = target.parentElement;
+        while (node) {
+            if (node.classList.contains('subfolder-list')) {
+                node.style.display = 'block';
+                const parentFolderItem = node.previousElementSibling;
+                if (parentFolderItem?.classList.contains('folder-item')) {
+                    parentFolderItem.classList.add('expanded');
+                    const toggle = parentFolderItem.querySelector('.folder-toggle');
+                    if (toggle) toggle.textContent = '▼';
+                }
+            }
+            node = node.parentElement;
+        }
+
+        requestAnimationFrame(() => {
+            target.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        });
     }
 
     function setActiveFolder(folderUid) {
@@ -210,6 +229,8 @@
 
         if (active) active.classList.add('active');
         _activeFolderEl = active || null;
+
+        _expandTreeToFolder(folderUid);
 
         updateBreadcrumbs(folderUid);
         renderBookmarks();
@@ -344,7 +365,7 @@
 
     function updateBreadcrumbs(folderUid) {
         const { getData, getItemByUid, getMessage, countBookmarksInFolder,
-                escapeHtml, setActiveFolder: setActiveFolderDep } = _deps;
+                escapeHtml } = _deps;
         const breadcrumbsContainer = document.getElementById('breadcrumbs');
         if (!breadcrumbsContainer) return;
 
@@ -451,3 +472,4 @@
 
 if (typeof window !== 'undefined') window.ManagerFolders = ManagerFolders;
 if (typeof module !== 'undefined') module.exports = ManagerFolders;
+

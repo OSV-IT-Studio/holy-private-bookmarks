@@ -97,7 +97,7 @@ const PopupSearch = (function () {
         const fragment  = document.createDocumentFragment();
 
         for (const item of results) {
-            const div = PopupTree.createBookmarkElement(item, [], { noActions: true });
+            const div = PopupTree.createBookmarkElement(item, [], { showActions: false });
             div.removeAttribute('draggable');
             div.removeAttribute('data-drag-ready');
             const domain     = getDomainFromUrl ? getDomainFromUrl(item.url) : '';

@@ -1,4 +1,11 @@
 [
+
+  {
+    "version": "1.8.5.46",
+    "changes": [
+      "Improved bookmark manager interface — bookmark and folder items now look consistent across the popup and manager"
+    ]
+  },
 {
   "version": "1.8.5.44",
   "changes": [

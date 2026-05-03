@@ -635,7 +635,7 @@ const PopupBookmarks = (function () {
 
             const folderEl = document.querySelector(`#tree .tree-item[data-folder-uid="${parentFolder.uid}"]`);
             if (folderEl) {
-                const badge = folderEl.querySelector(':scope > .item-header .folder-badge');
+                const badge = folderEl.querySelector('.folder-badge');
                 if (badge) badge.textContent = countItemsInFolder(parentFolder);
             }
 
@@ -650,7 +650,7 @@ const PopupBookmarks = (function () {
         if (!folderEl) return;
         const folder = getItemByUid(getData(), uid);
         if (!folder || folder.type !== 'folder') return;
-        const badge = folderEl.querySelector(':scope > .item-header .folder-badge');
+        const badge = folderEl.querySelector('.folder-badge');
         if (badge) badge.textContent = countItemsInFolder(folder);
         const sc = folderEl.querySelector('.subitems:not(.collapsed) .folder-virtual-scroll');
         if (!sc) return;
