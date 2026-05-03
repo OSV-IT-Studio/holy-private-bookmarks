@@ -361,6 +361,10 @@
             const currentId = _deps.getCurrentFolderId ? _deps.getCurrentFolderId() : '';
             createNewFolder(currentId === 'all' ? '' : currentId);
         });
+		document.getElementById('new-folder-mini-btn')?.addEventListener('click', () => {
+            const currentId = _deps.getCurrentFolderId ? _deps.getCurrentFolderId() : '';
+            createNewFolder(currentId === 'all' ? '' : currentId);
+        });
     }
 
     function updateBreadcrumbs(folderUid) {

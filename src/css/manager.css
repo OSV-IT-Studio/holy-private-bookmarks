@@ -16,15 +16,17 @@ a,button,input,select,
 .sidebar-resizer:hover,.sidebar-resizer.is-dragging{background:var(--border-subtle)}
 .logo{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border-subtle)}
 .logo-icon img{width:30px;height:30px;border-radius:8px}
-.logo-text{flex: 1;
-    font-size: 15px;
-    font-weight: 700; margin: 0; text-align: left; letter-spacing: -.01em; background: linear-gradient(90deg, var(--accent), var(--accent-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;  background-clip: text;}
+.logo-text{flex: 1;font-size: 15px;font-weight: 700; margin: 0; text-align: left; letter-spacing: -.01em; background: linear-gradient(90deg, var(--accent), var(--accent-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;  background-clip: text;}
 .actions-container{margin-bottom:14px}
 .lockManager,#manual-lock-btn{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;padding:9px 14px;background:var(--surface-2);border:1px solid var(--border-muted);border-radius:var(--radius-sm);color:var(--text-secondary);font-family:var(--font-main);font-size:13px;font-weight:500;cursor:pointer;transition:all var(--dur-med) var(--ease-out)}
 .lockManager:hover,#manual-lock-btn:hover{background:var(--danger-bg);border-color:var(--danger);color:var(--danger)}
 .lockManager svg,#manual-lock-btn svg{width:14px;height:14px;stroke:currentColor;flex-shrink:0}
 .folders-section{flex:1;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:var(--border-muted) transparent;padding:0 4px}
-.folders-title{font-size:10px;font-weight:600;letter-spacing:.9px;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:8px;padding:0 4px}
+.folders-header {display: flex;align-items: center;justify-content: space-between;margin-bottom: 12px;padding: 0 4px;}
+.folders-title {font-size: 12px;font-weight: 600;text-transform: uppercase;letter-spacing: 0.5px;color: var(--text-tertiary, rgba(255,255,255,0.5));margin: 0;}
+.sidebar-new-folder-btn {width: 24px;height: 24px;display: flex;align-items: center;justify-content: center;background: transparent;border: none;border-radius: 6px;cursor: pointer;color: var(--text-secondary, rgba(255,255,255,0.7));transition: all 0.2s ease;padding: 0;}
+.sidebar-new-folder-btn:hover {background: var(--hover-bg, rgba(255,255,255,0.1));color: var(--accent, #00d4ff);transform: scale(1.05);}
+.sidebar-new-folder-btn:active {transform: scale(0.95);}
 .folder-tree{list-style:none;display:flex;flex-direction:column;gap:2px}
 .folder-item{display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-radius:var(--radius-sm);cursor:pointer;user-select:none;position:relative;min-height:36px;border:1px solid transparent;background:transparent;will-change:background-color,border-color}
 .folder-item:hover{background:var(--surface-2);border-color:var(--border-subtle)}

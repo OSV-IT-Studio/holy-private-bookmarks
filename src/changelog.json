@@ -1,5 +1,10 @@
 [
-
+  {
+    "version": "1.8.5.47",
+    "changes": [
+      "Added a small folder creation button next to the 'Folders' title in the manager sidebar"
+    ]
+  },
   {
     "version": "1.8.5.46",
     "changes": [

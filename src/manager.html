@@ -14,7 +14,7 @@
     <div class="sidebar">
       <div class="logo">
         <div class="logo-icon"><img src="icons/icon48.png"></div>
-        <div class="logo-text">Holy Private Bookmarks</div>
+        <div class="logo-text" data-i18n="managerTitle"></div>
       </div>
 <div class="actions-container" style="margin-bottom: 24px;">
 
@@ -29,9 +29,17 @@
 
   
 </div>
-
+<div class="folders-header">
+    <div class="folders-title" data-i18n="folders"></div>
+    <button id="new-folder-mini-btn" class="sidebar-new-folder-btn" data-i18n-title="newFolder">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+    </button>
+</div>
       <div class="folders-section">
-        <div class="folders-title" data-i18n="folders"></div>
+        
         <ul class="folder-tree" id="folder-tree">
           <li class="folder-item all-bookmarks active" data-folder-id="all">
             <div class="folder-content">
