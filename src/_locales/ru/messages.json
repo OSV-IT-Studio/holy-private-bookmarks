@@ -893,5 +893,8 @@
     },
     "searchInFolder": {
         "message": "Поиск в папке..."
+    },
+    "reportBug": {
+        "message": "Сообщить об ошибке"
     }
 }

@@ -895,5 +895,8 @@
     },
     "searchInFolder": {
         "message": "フォルダ内を検索..."
+    },
+    "reportBug": {
+        "message": "バグを報告"
     }
 }

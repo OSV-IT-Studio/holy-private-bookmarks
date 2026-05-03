@@ -895,5 +895,8 @@
     },
     "searchInFolder": {
         "message": "البحث في المجلد..."
+    },
+    "reportBug": {
+        "message": "الإبلاغ عن خطأ"
     }
 }

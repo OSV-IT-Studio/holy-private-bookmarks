@@ -684,7 +684,7 @@ async function init() {
         '#back':                     () => PopupUI.showSection('main'),
         '#change-pass':              () => PopupAuth.changeMasterPassword(),
         '#manager-btn':              openManager,
-		
+        '#report-bug-btn':           () => chrome.tabs.create({ url: 'https://github.com/OSV-IT-Studio/holy-private-bookmarks/issues' }),
         '#faq-btn':                  () => chrome.tabs.create({ url: 'https://osv-it-studio.github.io/holy-private-bookmarks#faq' }),
 		'#survey-btn':               () => chrome.tabs.create({ url: 'https://docs.google.com/forms/d/e/1FAIpQLSfcEpeT2NA9b3XxZeR6gJjiUFBLgMJ0xE0kb0zolPssykLTag/viewform' }),
         '#quick-add-bookmark':       () => { hideSearchAndClear(); PopupBookmarks.openAddBookmarkModal('', 'https://'); },

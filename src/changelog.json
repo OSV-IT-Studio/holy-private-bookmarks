@@ -1,5 +1,11 @@
 [
 {
+  "version": "1.8.5.50",
+  "changes": [
+	"Added «Report a Bug» button in the About section — opens the GitHub Issues page"
+	]
+},
+{
   "version": "1.8.5.49",
   "changes": [
   "Improved drag-and-drop smoothness in the popup and bookmark manager"

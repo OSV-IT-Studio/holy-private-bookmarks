@@ -895,5 +895,8 @@
     },
     "searchInFolder": {
         "message": "在文件夹中搜索..."
+    },
+    "reportBug": {
+        "message": "报告错误"
     }
 }

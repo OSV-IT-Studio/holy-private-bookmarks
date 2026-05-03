@@ -895,5 +895,8 @@
     },
     "searchInFolder": {
         "message": "Cerca nella cartella..."
+    },
+    "reportBug": {
+        "message": "Segnala un bug"
     }
 }

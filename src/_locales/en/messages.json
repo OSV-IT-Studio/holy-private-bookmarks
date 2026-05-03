@@ -898,5 +898,8 @@
     },
     "searchInFolder": {
         "message": "Search in folder..."
+    },
+    "reportBug": {
+        "message": "Report a Bug"
     }
 }

@@ -895,5 +895,8 @@
     },
     "searchInFolder": {
         "message": "Որոնել թղթապանակում..."
+    },
+    "reportBug": {
+        "message": "Հայտնել սխալի մասին"
     }
 }
