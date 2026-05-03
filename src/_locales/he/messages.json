@@ -892,5 +892,8 @@
     },
     "tabsSaved": {
         "message": "לשוניות נשמרו"
+    },
+    "searchInFolder": {
+        "message": "חפש בתיקייה..."
     }
 }

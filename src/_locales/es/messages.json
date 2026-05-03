@@ -892,5 +892,8 @@
     },
     "tabsSaved": {
         "message": "Pestañas guardadas"
+    },
+    "searchInFolder": {
+        "message": "Buscar en carpeta..."
     }
 }

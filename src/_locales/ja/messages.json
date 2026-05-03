@@ -892,5 +892,8 @@
     },
     "tabsSaved": {
         "message": "タブを保存しました"
+    },
+    "searchInFolder": {
+        "message": "フォルダ内を検索..."
     }
 }

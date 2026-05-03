@@ -892,5 +892,8 @@
     },
     "tabsSaved": {
         "message": "تم حفظ علامات التبويب"
+    },
+    "searchInFolder": {
+        "message": "البحث في المجلد..."
     }
 }

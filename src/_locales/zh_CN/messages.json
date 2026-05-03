@@ -892,5 +892,8 @@
     },
     "tabsSaved": {
         "message": "标签页已保存"
+    },
+    "searchInFolder": {
+        "message": "在文件夹中搜索..."
     }
 }

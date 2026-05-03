@@ -895,5 +895,8 @@
     },
     "tabsSaved": {
         "message": "Tabs saved"
+    },
+    "searchInFolder": {
+        "message": "Search in folder..."
     }
 }

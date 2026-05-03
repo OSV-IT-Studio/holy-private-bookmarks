@@ -892,5 +892,8 @@
     },
     "tabsSaved": {
         "message": "Ներдիрները пахпанвел են"
+    },
+    "searchInFolder": {
+        "message": "Որոնել թղթապանակում..."
     }
 }

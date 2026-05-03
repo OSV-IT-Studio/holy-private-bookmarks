@@ -320,7 +320,7 @@
         document.getElementById('load-more-trigger')?.remove();
         _bookmarksGrid.appendChild(fragment);
 
-        if (window.ManagerDragDrop) window.ManagerDragDrop.refreshDraggable();
+        if (window.ManagerDragDrop && !_deps.getSearchQuery()) window.ManagerDragDrop.refreshDraggable();
 
         _addLoadMoreTrigger();
 
@@ -396,11 +396,14 @@
                 openInPrivateTab, isAlwaysIncognito,
                 getCurrentFolderId } = _deps;
 
+        const isSearching = !!_deps.getSearchQuery();
+
         const item = TreeItemFactory.createBookmarkItem(bookmark, {
             escapeHtml,
             getDomainFromUrl,
             getMessage,
             loadFaviconAsync: _deps.loadFaviconAsync,
+            showActions: !isSearching,
         });
 
         item.dataset.index = index;

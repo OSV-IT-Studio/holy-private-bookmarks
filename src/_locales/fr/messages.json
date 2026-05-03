@@ -892,5 +892,8 @@
     },
     "tabsSaved": {
         "message": "Onglets enregistrés"
+    },
+    "searchInFolder": {
+        "message": "Rechercher dans le dossier..."
     }
 }

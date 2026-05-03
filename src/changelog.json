@@ -1,4 +1,10 @@
 [
+{
+  "version": "1.8.5.48",
+  "changes": [
+  "Manager search placeholder updated to clarify that search applies to the current folder and its subfolders"
+  ]
+},
   {
     "version": "1.8.5.47",
     "changes": [

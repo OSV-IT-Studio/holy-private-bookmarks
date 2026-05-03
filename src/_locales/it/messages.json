@@ -892,5 +892,8 @@
     },
     "tabsSaved": {
         "message": "Schede salvate"
+    },
+    "searchInFolder": {
+        "message": "Cerca nella cartella..."
     }
 }

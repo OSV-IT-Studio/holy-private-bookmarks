@@ -890,5 +890,8 @@
     },
     "tabsSaved": {
         "message": "Вкладки сохранены"
+    },
+    "searchInFolder": {
+        "message": "Поиск в папке..."
     }
 }

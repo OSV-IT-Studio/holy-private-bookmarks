@@ -892,5 +892,8 @@
     },
     "tabsSaved": {
         "message": "Karty zapisane"
+    },
+    "searchInFolder": {
+        "message": "Szukaj w folderze..."
     }
 }
