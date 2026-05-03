@@ -1,5 +1,11 @@
 [
 {
+  "version": "1.8.5.49",
+  "changes": [
+  "Improved drag-and-drop smoothness in the popup and bookmark manager"
+  ]
+},
+{
   "version": "1.8.5.48",
   "changes": [
   "Manager search placeholder updated to clarify that search applies to the current folder and its subfolders"

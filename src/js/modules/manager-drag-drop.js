@@ -32,8 +32,11 @@
     let _escHandler  = null;
     let _forbiddenUids = null;
 
-    let _rafPending     = false;
-    let _latestDragOver = null;
+    let _rafPending      = false;
+    let _latestDragOver  = null;
+    let _lastIndicatorEl = null;
+    let _ghostRafPending = false;
+    let _latestGhostPos  = null;
 
     function init(deps) {
         Object.assign(_deps, deps);
@@ -116,8 +119,22 @@
         e.dataTransfer.effectAllowed = 'move';
         e.dataTransfer.setData('text/plain', JSON.stringify({ action: 'manager-drag', uid: _draggedUid }));
 
-        const _onMove = ev => window.HolyShared.dragMoveGhost(_ghostEl, ev.clientX, ev.clientY, GHOST_X, GHOST_Y);
-        const _onEnd  = () => { document.removeEventListener('dragover', _onMove); document.removeEventListener('dragend', _onEnd); };
+        const _onMove = ev => {
+            _latestGhostPos = { x: ev.clientX, y: ev.clientY };
+            if (!_ghostRafPending) {
+                _ghostRafPending = true;
+                requestAnimationFrame(() => {
+                    _ghostRafPending = false;
+                    if (_ghostEl && _latestGhostPos) {
+                        window.HolyShared.dragMoveGhost(_ghostEl, _latestGhostPos.x, _latestGhostPos.y, GHOST_X, GHOST_Y);
+                    }
+                });
+            }
+        };
+        const _onEnd = () => {
+            document.removeEventListener('dragover', _onMove);
+            document.removeEventListener('dragend',  _onEnd);
+        };
         document.addEventListener('dragover', _onMove);
         document.addEventListener('dragend',  _onEnd);
 
@@ -137,13 +154,16 @@
     }
 
     function _resetState() {
-        _dragged       = null;
-        _draggedUid    = null;
-        _draggedEl     = null;
-        _isFolder      = false;
-        _forbiddenUids = null;
-        _rafPending     = false;
-        _latestDragOver = null;
+        _dragged         = null;
+        _draggedUid      = null;
+        _draggedEl       = null;
+        _isFolder        = false;
+        _forbiddenUids   = null;
+        _rafPending      = false;
+        _latestDragOver  = null;
+        _lastIndicatorEl = null;
+        _ghostRafPending = false;
+        _latestGhostPos  = null;
     }
 
     function _onGridDragOver(e) {
@@ -163,22 +183,37 @@
         if (!e || !_dragged) return;
 
         const target = e.target.closest('.tree-item');
-        if (!target || target === _draggedEl) { _clearGridIndicators(); return; }
+        if (!target || target === _draggedEl) {
+            _clearLastIndicator();
+            return;
+        }
 
         const targetUid = target.dataset.folderUid || target.dataset.itemUid;
-        if (_forbiddenUids?.has(targetUid)) { _clearGridIndicators(); return; }
+        if (_forbiddenUids?.has(targetUid)) {
+            _clearLastIndicator();
+            return;
+        }
 
-        _clearGridIndicators();
         const rect           = target.getBoundingClientRect();
         const relY           = e.clientY - rect.top;
         const zone           = rect.height * 0.25;
         const isTargetFolder = target.classList.contains('tree-item--folder');
 
+        let newClass;
         if (isTargetFolder && relY > zone && relY < rect.height - zone) {
-            target.classList.add('drop-into-folder');
+            newClass = 'drop-into-folder';
         } else {
-            target.classList.add(relY <= rect.height / 2 ? 'drop-above' : 'drop-below');
+            newClass = relY <= rect.height / 2 ? 'drop-above' : 'drop-below';
         }
+
+        if (_lastIndicatorEl !== target) {
+            _clearLastIndicator();
+            _lastIndicatorEl = target;
+        } else {
+            target.classList.remove('drop-above', 'drop-below', 'drop-into-folder');
+        }
+
+        target.classList.add(newClass);
     }
 
     function _onGridDragLeave(e) {
@@ -343,7 +378,15 @@
         resetInactivityTimer();
     }
 
+    function _clearLastIndicator() {
+        if (_lastIndicatorEl) {
+            _lastIndicatorEl.classList.remove('drop-above', 'drop-below', 'drop-into-folder');
+            _lastIndicatorEl = null;
+        }
+    }
+
     function _clearGridIndicators() {
+        _clearLastIndicator();
         const grid = document.getElementById('bookmarks-grid');
         window.HolyShared.dragClearIndicators(grid || undefined);
     }

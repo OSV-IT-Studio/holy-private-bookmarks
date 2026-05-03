@@ -49,8 +49,10 @@ const DragDropManager = (function () {
     let _boundHandlers       = null;
     let _saveChangesCallback = null;
 
-    let _rafPending     = false;
-    let _latestDragOver = null;
+    let _rafPending      = false;
+    let _latestDragOver  = null;
+    let _ghostRafPending = false;
+    let _latestGhostPos  = null;
 
     let _dragCache = null;
 
@@ -190,10 +192,19 @@ const DragDropManager = (function () {
         e.preventDefault();
         if (!_state.isDragging) return;
 
-        window.HolyShared.dragMoveGhost(
-            _state.ghostElement, e.clientX, e.clientY,
-            DRAG_CONFIG.ghostOffsetX, DRAG_CONFIG.ghostOffsetY
-        );
+        _latestGhostPos = { x: e.clientX, y: e.clientY };
+        if (!_ghostRafPending) {
+            _ghostRafPending = true;
+            requestAnimationFrame(() => {
+                _ghostRafPending = false;
+                if (_state.ghostElement && _latestGhostPos) {
+                    window.HolyShared.dragMoveGhost(
+                        _state.ghostElement, _latestGhostPos.x, _latestGhostPos.y,
+                        DRAG_CONFIG.ghostOffsetX, DRAG_CONFIG.ghostOffsetY
+                    );
+                }
+            });
+        }
 
         _latestDragOver = e;
         if (!_rafPending) {
@@ -447,9 +458,11 @@ const DragDropManager = (function () {
 
         _clearIndicators();
 
-        _rafPending     = false;
-        _latestDragOver = null;
-        _state          = _emptyState();
+        _rafPending      = false;
+        _latestDragOver  = null;
+        _ghostRafPending = false;
+        _latestGhostPos  = null;
+        _state           = _emptyState();
     }
 
     //  Move logic 
