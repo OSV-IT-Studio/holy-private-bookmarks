@@ -741,10 +741,6 @@
         "message": "Please open the extension popup to migrate your data to the new secure format.",
         "description": "Second line on the manager migration screen"
     },
-    "migrationScreenButton": {
-        "message": "Open Extension",
-        "description": "Button on the manager migration screen"
-    },
     "notSetUpTitle": {
         "message": "Extension Not Set Up",
         "description": "manager-lock: notSetUpTitle"
@@ -754,7 +750,7 @@
         "description": "manager-lock: notSetUpSubtitle"
     },
     "notSetUpButton": {
-        "message": "Open Extension",
+        "message": "Open Popup",
         "description": "manager-lock: notSetUpButton"
     },
     "reloadingSubtitle": {

@@ -1,5 +1,12 @@
 [
 {
+  "version": "1.8.5.53",
+  "changes": [
+    "Redesigned bookmark manager toolbar — action buttons replaced with a compact icon bar in the header",
+    "Added 'Open Popup' button in the manager toolbar — opens the extension popup directly from the manager"
+  ]
+},
+{
   "version": "1.8.5.51",
   "changes": [
     "Fixed spacing and layout in the history cleaner interface"

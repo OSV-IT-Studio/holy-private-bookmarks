@@ -738,10 +738,6 @@
         "message": "Veuillez ouvrir le popup de l'extension pour migrer vos données vers le nouveau format sécurisé.",
         "description": "Second line on the manager migration screen"
     },
-    "migrationScreenButton": {
-        "message": "Ouvrir l'extension",
-        "description": "Button on the manager migration screen"
-    },
     "notSetUpTitle": {
         "message": "Extension non configurée",
         "description": "manager-lock: notSetUpTitle"
@@ -751,7 +747,7 @@
         "description": "manager-lock: notSetUpSubtitle"
     },
     "notSetUpButton": {
-        "message": "Ouvrir l'extension",
+        "message": "Ouvrir la fenêtre contextuelle",
         "description": "manager-lock: notSetUpButton"
     },
     "reloadingSubtitle": {

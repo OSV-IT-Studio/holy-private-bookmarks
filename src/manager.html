@@ -16,19 +16,7 @@
         <div class="logo-icon"><img src="icons/icon48.png"></div>
         <div class="logo-text" data-i18n="managerTitle"></div>
       </div>
-<div class="actions-container" style="margin-bottom: 24px;">
 
-  <button id="manual-lock-btn" class="lockManager">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-        </svg>
-    <span class="btn-text"  data-i18n="lockManager"></span>
-  </button>
-  
-
-  
-</div>
 <div class="folders-header">
     <div class="folders-title" data-i18n="folders"></div>
     <button id="new-folder-mini-btn" class="sidebar-new-folder-btn" data-i18n-title="newFolder">
@@ -82,29 +70,60 @@
                     </svg>
                 </span>
         </div>
-       <div class="toolbar-buttons">
-
-    <button id="new-folder-btn" class="toolbar-btn">
-        <span class="toolbar-btn__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                <line x1="12" y1="11" x2="12" y2="17"></line>
-                <line x1="9" y1="14" x2="15" y2="14"></line>
+       <div class="action-bar__right">
+	   <button id="manual-lock-btn" class="icon-button" data-i18n-title="lockManager">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
             </svg>
-        </span>
-        <span class="toolbar-btn__text" data-i18n="newFolder"></span>
-    </button>
-    
-    <button id="add-bookmark-btn" class="toolbar-btn toolbar-btn--primary">
-        <span class="toolbar-btn__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
+        </button>
+	   <button id="quick-theme-toggle" class="icon-button theme-toggle-btn" data-i18n-title="themeToggle">
+            <svg class="theme-toggle-btn__icon theme-toggle-btn__icon--dark" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+        <svg class="theme-toggle-btn__icon theme-toggle-btn__icon--light" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="5" />
+            <line x1="11" y1="1" x2="11" y2="3" />
+            <line x1="11" y1="19" x2="11" y2="21" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="16.36" y1="16.36" x2="17.78" y2="17.78" />
+            <line x1="1" y1="11" x2="3" y2="11" />
+            <line x1="19" y1="11" x2="21" y2="11" />
+            <line x1="4.22" y1="17.78" x2="5.64" y2="16.36" />
+            <line x1="16.36" y1="5.64" x2="17.78" y2="4.22" />
+        </svg>
+        <svg class="theme-toggle-btn__icon theme-toggle-btn__icon--system" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v2"/>
+			<path d="M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715"/>
+			<path d="M16 12a4 4 0 0 0-4-4"/>
+			<path d="m19 5-1.256 1.256"/>
+			<path d="M20 12h2"/>
+        </svg>
+        </button>
+	   <button id="quick-open-popup" class="icon-button" data-i18n-title="notSetUpButton">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <path d="M3 9h18"></path>
+                <circle cx="7" cy="6" r="1" fill="currentColor" stroke="none"></circle>
+                <circle cx="10" cy="6" r="1" fill="currentColor" stroke="none"></circle>
+                <path d="M12 14v3M12 14l-2-2M12 14l2-2" stroke-width="1.5"></path>
             </svg>
-        </span>
-        <span class="toolbar-btn__text" data-i18n="addBookmark"></span>
-    </button>
-</div>
+        </button>
+        <button id="quick-add-bookmark" class="icon-button" data-i18n-title="addBookmark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+        </button>
+        
+        <button id="quick-add-folder" class="icon-button" data-i18n-title="newFolder">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                <line x1="12" y1="11" x2="12" y2="17" />
+                <line x1="9" y1="14" x2="15" y2="14" />
+            </svg>
+        </button>
+    </div>
       </div>
 
       <div class="bookmarks-container">
@@ -124,29 +143,7 @@
   </div>
 
 
-<div class="theme-switcher">
-    <button id="quick-theme-toggle" class="theme-toggle-btn" data-i18n-title="themeToggle" title="Switch theme">
-        <svg class="theme-toggle-btn__icon theme-toggle-btn__icon--dark" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
-        <svg class="theme-toggle-btn__icon theme-toggle-btn__icon--light" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="5" />
-            <line x1="11" y1="1" x2="11" y2="3" />
-            <line x1="11" y1="19" x2="11" y2="21" />
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-            <line x1="16.36" y1="16.36" x2="17.78" y2="17.78" />
-            <line x1="1" y1="11" x2="3" y2="11" />
-            <line x1="19" y1="11" x2="21" y2="11" />
-            <line x1="4.22" y1="17.78" x2="5.64" y2="16.36" />
-            <line x1="16.36" y1="5.64" x2="17.78" y2="4.22" />
-        </svg>
-        <svg class="theme-toggle-btn__icon theme-toggle-btn__icon--system" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="18" height="14" rx="2" ry="2" />
-            <line x1="8" y1="21" x2="14" y2="21" />
-            <line x1="11" y1="17" x2="11" y2="21" />
-        </svg>
-    </button>
-</div>
+
 
   <script src="js/modules/i18n.js"></script>
   <script src="js/modules/secure-utils.js"></script>

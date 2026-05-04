@@ -741,10 +741,6 @@
         "message": "Otwórz wyskakujące okienko rozszerzenia, aby przenieść dane do nowego bezpiecznego formatu.",
         "description": "Second line on the manager migration screen"
     },
-    "migrationScreenButton": {
-        "message": "Otwórz rozszerzenie",
-        "description": "Button on the manager migration screen"
-    },
     "notSetUpTitle": {
         "message": "Rozszerzenie nie skonfigurowane",
         "description": "manager-lock: notSetUpTitle"
@@ -754,7 +750,7 @@
         "description": "manager-lock: notSetUpSubtitle"
     },
     "notSetUpButton": {
-        "message": "Otwórz rozszerzenie",
+        "message": "Otwórz okno podręczne",
         "description": "manager-lock: notSetUpButton"
     },
     "reloadingSubtitle": {

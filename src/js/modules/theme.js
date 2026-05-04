@@ -174,10 +174,12 @@ const ThemeManager = (function() {
 
 <div class="theme-option ${currentTheme === THEMES.SYSTEM ? 'active' : ''}" data-theme="${THEMES.SYSTEM}">
     <span class="theme-option__icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-            <line x1="8" y1="21" x2="16" y2="21" />
-            <line x1="12" y1="17" x2="12" y2="21" />
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v2"/>
+            <path d="M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715"/>
+            <path d="M16 12a4 4 0 0 0-4-4"/>
+            <path d="m19 5-1.256 1.256"/>
+            <path d="M20 12h2"/>
         </svg>
     </span>
     <span class="theme-option__name">${systemName}</span>

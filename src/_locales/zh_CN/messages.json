@@ -738,10 +738,6 @@
         "message": "请打开扩展弹出窗口，将您的数据迁移到新的安全格式。",
         "description": "Second line on the manager migration screen"
     },
-    "migrationScreenButton": {
-        "message": "打开扩展",
-        "description": "Button on the manager migration screen"
-    },
     "notSetUpTitle": {
         "message": "扩展未设置",
         "description": "manager-lock: notSetUpTitle"
@@ -751,7 +747,7 @@
         "description": "manager-lock: notSetUpSubtitle"
     },
     "notSetUpButton": {
-        "message": "打开扩展",
+        "message": "打开弹出窗口",
         "description": "manager-lock: notSetUpButton"
     },
     "reloadingSubtitle": {

@@ -258,7 +258,7 @@ if (breadcrumbs) {
                 <h1 class="lock-title">${getMessage('migrationScreenTitle')}</h1>
                 <p class="login-subtitle">${getMessage('migrationScreenBody1')}</p>
                 <p class="login-subtitle" style="margin-bottom:20px;">${getMessage('migrationScreenBody2')}</p>
-                <button id="open-popup" class="unlock-button">${getMessage('migrationScreenButton')}</button>
+                <button id="open-popup" class="unlock-button">${getMessage('notSetUpButton')}</button>
             </div>
         `;
         document.getElementById('open-popup')?.addEventListener('click', () => {

@@ -280,10 +280,13 @@ async function init() {
     ManagerBookmarks.initKeyboardHandlers();
 
     // Add bookmark button
-    document.getElementById('add-bookmark-btn')?.addEventListener('click',
+    document.getElementById('quick-add-bookmark')?.addEventListener('click',
         () => ManagerBookmarks.addNewBookmarkFromManager()
     );
-
+	// Open popup button
+	document.getElementById('quick-open-popup')?.addEventListener('click', () => {
+    chrome.runtime.sendMessage({ action: 'openPopupAfterManager' });
+});
     // Check storage state
     const stored = await chrome.storage.local.get(STORAGE_KEY);
 

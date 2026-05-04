@@ -738,10 +738,6 @@
         "message": "拡張機能のポップアップを開いて、データを新しい安全な形式に移行してください。",
         "description": "Second line on the manager migration screen"
     },
-    "migrationScreenButton": {
-        "message": "拡張機能を開く",
-        "description": "Button on the manager migration screen"
-    },
     "notSetUpTitle": {
         "message": "拡張機能が設定されていません",
         "description": "manager-lock: notSetUpTitle"
@@ -751,7 +747,7 @@
         "description": "manager-lock: notSetUpSubtitle"
     },
     "notSetUpButton": {
-        "message": "拡張機能を開く",
+        "message": "ポップアップを開く",
         "description": "manager-lock: notSetUpButton"
     },
     "reloadingSubtitle": {

@@ -357,7 +357,7 @@
     }
 
     function initNewFolderButton() {
-        document.getElementById('new-folder-btn')?.addEventListener('click', () => {
+        document.getElementById('quick-add-folder')?.addEventListener('click', () => {
             const currentId = _deps.getCurrentFolderId ? _deps.getCurrentFolderId() : '';
             createNewFolder(currentId === 'all' ? '' : currentId);
         });

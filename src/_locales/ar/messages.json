@@ -738,10 +738,6 @@
         "message": "يرجى فتح نافذة الامتداد المنبثقة لترحيل بياناتك إلى التنسيق الآمن الجديد.",
         "description": "Second line on the manager migration screen"
     },
-    "migrationScreenButton": {
-        "message": "فتح الامتداد",
-        "description": "Button on the manager migration screen"
-    },
     "notSetUpTitle": {
         "message": "الامتداد غير مُعدّ",
         "description": "manager-lock: notSetUpTitle"
@@ -751,7 +747,7 @@
         "description": "manager-lock: notSetUpSubtitle"
     },
     "notSetUpButton": {
-        "message": "فتح الامتداد",
+        "message": "فتح النافذة المنبثقة",
         "description": "manager-lock: notSetUpButton"
     },
     "reloadingSubtitle": {

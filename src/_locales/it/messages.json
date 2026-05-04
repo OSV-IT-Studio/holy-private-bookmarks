@@ -738,10 +738,6 @@
         "message": "Apri il popup dell'estensione per migrare i tuoi dati nel nuovo formato sicuro.",
         "description": "Second line on the manager migration screen"
     },
-    "migrationScreenButton": {
-        "message": "Apri estensione",
-        "description": "Button on the manager migration screen"
-    },
     "notSetUpTitle": {
         "message": "Estensione non configurata",
         "description": "manager-lock: notSetUpTitle"
@@ -751,7 +747,7 @@
         "description": "manager-lock: notSetUpSubtitle"
     },
     "notSetUpButton": {
-        "message": "Apri estensione",
+        "message": "Apri finestra popup",
         "description": "manager-lock: notSetUpButton"
     },
     "reloadingSubtitle": {

@@ -738,10 +738,6 @@
         "message": "Будь ласка, відкрийте спливаюче вікно розширення, щоб перенести дані в новий захищений формат.",
         "description": "Second line on the manager migration screen"
     },
-    "migrationScreenButton": {
-        "message": "Відкрити розширення",
-        "description": "Button on the manager migration screen"
-    },
     "notSetUpTitle": {
         "message": "Розширення не налаштовано",
         "description": "manager-lock: notSetUpTitle"
@@ -751,7 +747,7 @@
         "description": "manager-lock: notSetUpSubtitle"
     },
     "notSetUpButton": {
-        "message": "Відкрити розширення",
+        "message": "Відкрити спливаюче вікно",
         "description": "manager-lock: notSetUpButton"
     },
     "reloadingSubtitle": {

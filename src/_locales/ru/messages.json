@@ -736,10 +736,6 @@
         "message": "Пожалуйста, откройте всплывающее окно расширения, чтобы перенести данные в новый защищённый формат.",
         "description": "Second line on the manager migration screen"
     },
-    "migrationScreenButton": {
-        "message": "Открыть расширение",
-        "description": "Button on the manager migration screen"
-    },
     "notSetUpTitle": {
         "message": "Расширение не настроено",
         "description": "manager-lock: notSetUpTitle"
@@ -749,7 +745,7 @@
         "description": "manager-lock: notSetUpSubtitle"
     },
     "notSetUpButton": {
-        "message": "Открыть расширение",
+        "message": "Открыть всплывающее окно",
         "description": "manager-lock: notSetUpButton"
     },
     "reloadingSubtitle": {

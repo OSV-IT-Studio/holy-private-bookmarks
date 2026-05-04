@@ -735,10 +735,6 @@
         "message": "Խնդրում ենք բացել ընդլայնման թռուցիկ պատուհանը՝ ձեր տվյալները նոր անվտանգ ձևաչափին փոխանցելու համար:",
         "description": "Second line on the manager migration screen"
     },
-    "migrationScreenButton": {
-        "message": "Բացել ընդլայնումը",
-        "description": "Button on the manager migration screen"
-    },
     "notSetUpTitle": {
         "message": "Ընդլայնումը կարգավորված չէ",
         "description": "manager-lock: notSetUpTitle"
@@ -748,7 +744,7 @@
         "description": "manager-lock: notSetUpSubtitle"
     },
     "notSetUpButton": {
-        "message": "Բացել ընդլայնումը",
+        "message": "Բացել բացվող պատուհանը",
         "description": "manager-lock: notSetUpButton"
     },
     "reloadingSubtitle": {
