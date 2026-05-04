@@ -1,5 +1,12 @@
 [
 {
+  "version": "1.8.5.54",
+  "changes": [
+    "Updated history cleaner button icon in the popup toolbar",
+    "Breadcrumbs in the bookmark manager moved out of the header into the content area — layout feels tighter and more consistent"
+  ]
+},
+{
   "version": "1.8.5.53",
   "changes": [
     "Redesigned bookmark manager toolbar — action buttons replaced with a compact icon bar in the header",
