@@ -894,5 +894,11 @@
     },
     "reportBug": {
         "message": "Informar de un error"
+    },
+    "managerSubtitle": {
+        "message": "Control total sobre tus marcadores"
+    },
+    "invalidUrlProtocol": {
+        "message": "Por favor, introduce una URL válida que comience con http:// o https://"
     }
 }

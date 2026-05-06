@@ -894,5 +894,11 @@
     },
     "reportBug": {
         "message": "דווח על באג"
+    },
+    "managerSubtitle": {
+        "message": "שליטה מלאה על הסימניות שלך"
+    },
+    "invalidUrlProtocol": {
+        "message": "נא להזין כתובת URL תקינה המתחילה ב-http:// או https://"
     }
 }

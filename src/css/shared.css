@@ -81,7 +81,7 @@ input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,212,255,.2);o
 
 h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;background:var(--accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.5px}
 
-.folder-icon{display:flex;align-items:center;justify-content:center;width:18px;height:18px;color:#ffd700}
+.folder-icon{display:flex;align-items:center;justify-content:center;width:18px;height:18px;color:var(--folder-icon)}
 .folder-icon svg,.icon.folder-icon svg{width:18px;height:18px;stroke:currentColor}
 .folder-badge{background:rgba(0,212,255,.2);color:var(--accent);font-size:10px;padding:2px 8px;border-radius:10px;margin:0px 20px 0px 8px;font-weight:600}
 .folder-badge.large{font-size:11px;padding:3px 10px}
@@ -110,7 +110,7 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 .tree-item__icon{display:flex;align-items:center;justify-content:center;width:24px;height:24px;flex-shrink:0;color:var(--accent);background-image:var(--favicon-url,none);background-size:16px;background-repeat:no-repeat;background-position:center;border-radius:2px}
 .tree-item__icon svg{width:16px;height:16px;stroke:currentColor;transition:opacity .15s ease}
 .tree-item__icon.has-favicon svg{opacity:0;pointer-events:none}
-.tree-item__icon.folder-icon{color:#ffd700}
+.tree-item__icon.folder-icon{color:var(--folder-icon)}
 .tree-item__body{min-width:0;display:flex;flex-direction:column;gap:2px;flex:1}
 .bookmark-title{color:var(--text-primary);font-weight:500;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}
 .item-domain{font-size:11px;color:var(--accent);font-family:monospace;opacity:.7;margin:0px 20px 0px 8px;background:rgba(0,212,255,.1);padding:2px 8px;border-radius:12px;white-space:nowrap;flex-shrink:0;max-width:120px;overflow:hidden;text-overflow:ellipsis}
@@ -198,7 +198,7 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 .folder-tree-picker__trigger:hover{border-color:var(--accent-dim)}
 .folder-tree-picker__trigger.open{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,212,255,.2)}
 .folder-tree-picker__trigger-text{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:flex;align-items:center;gap:6px}
-.folder-tree-picker__trigger-text svg{flex-shrink:0;color:#ffd700;opacity:.85}
+.folder-tree-picker__trigger-text svg{flex-shrink:0;color:var(--folder-icon);opacity:.85}
 .folder-tree-picker__arrow{flex-shrink:0;transition:transform .2s;opacity:.5;font-size:10px;line-height:1}
 .folder-tree-picker__trigger.open .folder-tree-picker__arrow{transform:rotate(210deg)}
 .folder-tree-picker__dropdown{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--on-accent);border:1px solid var(--card-border);border-top-color:var(--accent);border-radius:0 0 var(--radius-sm) var(--radius-sm);box-shadow:0 12px 40px rgba(0,0,0,.6);z-index:9999;max-height:150px;overflow-y:auto}
@@ -210,12 +210,12 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 [data-theme="light"] .folder-tree-picker__node,.light .folder-tree-picker__node{border-bottom-color:rgba(0,0,0,.04)}
 .folder-tree-picker__node:hover{background:rgba(0,212,255,.08)}
 .folder-tree-picker__node.selected{background:rgba(0,212,255,.14);color:var(--accent)}
-.folder-tree-picker__node.selected .folder-tree-picker__icon svg{color:#ffd700;opacity:1}
+.folder-tree-picker__node.selected .folder-tree-picker__icon svg{color:var(--folder-icon);opacity:1}
 .folder-tree-picker__toggle{flex-shrink:0;width:22px;height:34px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--text-secondary);transition:transform .15s ease}
 .folder-tree-picker__toggle.expanded{transform:rotate(90deg)}
 .folder-tree-picker__toggle.leaf{opacity:0;pointer-events:none}
 .folder-tree-picker__label{flex:1;padding:0 10px 0 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:34px}
-.folder-tree-picker__icon{flex-shrink:0;display:flex;align-items:center;margin-right:5px;color:#ffd700;opacity:.75}
+.folder-tree-picker__icon{flex-shrink:0;display:flex;align-items:center;margin-right:5px;color:var(--folder-icon);opacity:.75}
 .folder-tree-picker__children{display:none}
 .folder-tree-picker__children.open{display:block}
 .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 24px;text-align:center;background:var(--surface-1);border-radius:var(--radius-lg);border:1px dashed var(--border-muted)}
@@ -225,9 +225,13 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 .empty-state__text{font-size:13px;color:var(--text-tertiary);margin:0;line-height:1.5}
 
 .action-bar__right{display:flex;align-items:center;gap:8px}
+.action-bar__left{display:flex;align-items:center}
+.action-bar__label{color:var(--text-secondary);font-weight:500;font-size:14px;letter-spacing:.3px}
 .icon-button{all:unset;box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:12px;background:transparent;border:1px solid var(--card-border);color:var(--text-secondary);cursor:pointer}
 .icon-button:hover{background:var(--card-hover);border-color:var(--accent);color:var(--accent);transform:scale(1.05)}
 .icon-button.active{color:var(--accent)}
 .icon-button:active{transform:scale(.98)}
 .icon-button svg{width:20px;height:20px;stroke:currentColor;pointer-events:none}
 .icon-button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.action-bar{display:flex;align-items:center;justify-content:space-between;background:var(--card-bg);backdrop-filter:blur(12px);gap:8px;border:1px solid var(--card-border);border-radius:18px 18px 0 0;padding:8px 16px;min-height:52px}
+.bookmarks-container{flex:1;overflow-y:auto;background:var(--card-bg);border-radius:0 0 18px 18px;padding:16px;backdrop-filter:blur(12px);border:1px solid var(--card-border);box-shadow:inset 0 4px 15px rgba(0,0,0,.2);position:relative;will-change:scroll-position}

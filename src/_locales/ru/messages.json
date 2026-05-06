@@ -892,5 +892,11 @@
     },
     "reportBug": {
         "message": "Сообщить об ошибке"
+    },
+    "managerSubtitle": {
+        "message": "Полный контроль над вашими закладками"
+    },
+    "invalidUrlProtocol": {
+        "message": "Введите корректный URL, начинающийся с http:// или https://"
     }
 }

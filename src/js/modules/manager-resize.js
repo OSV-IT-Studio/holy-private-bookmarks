@@ -23,7 +23,7 @@
   const sidebar = document.querySelector('.sidebar');
   if (!resizer || !sidebar) return;
 
-  const MIN_WIDTH    = 200;
+  const MIN_WIDTH    = 320;
   const MAX_WIDTH    = 480;
   const STORAGE_KEY  = 'sidebarWidth';
 

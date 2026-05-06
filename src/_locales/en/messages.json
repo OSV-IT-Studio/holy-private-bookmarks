@@ -897,5 +897,8 @@
     },
     "reportBug": {
         "message": "Report a Bug"
-    }
+    },
+  "managerSubtitle": {
+    "message": "Full control over your bookmarks"
+  }
 }

@@ -894,5 +894,11 @@
     },
     "reportBug": {
         "message": "الإبلاغ عن خطأ"
+    },
+    "managerSubtitle": {
+        "message": "تحكم كامل في إشاراتك المرجعية"
+    },
+    "invalidUrlProtocol": {
+        "message": "يرجى إدخال رابط صحيح يبدأ بـ http:// أو https://"
     }
 }

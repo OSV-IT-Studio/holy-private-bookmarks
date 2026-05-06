@@ -894,5 +894,11 @@
     },
     "reportBug": {
         "message": "Fehler melden"
+    },
+    "managerSubtitle": {
+        "message": "Volle Kontrolle über deine Lesezeichen"
+    },
+    "invalidUrlProtocol": {
+        "message": "Bitte gib eine gültige URL ein, die mit http:// oder https:// beginnt"
     }
 }

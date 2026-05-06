@@ -1,5 +1,17 @@
 [
   {
+    "version": "1.8.5.56",
+    "changes": [
+      "Updated extension icons across all sizes",
+      "Replaced logo image with inline SVG icon in the bookmark manager header and login screen",
+      "Redesigned bookmark manager header — now shows an icon, title, and subtitle",
+      "Breadcrumbs redesigned with a ribbon-style arrow shape",
+      "Updated the add bookmark button icon in the popup and manager",
+      "Updated the home button icon in the manager header",
+      "Folder icon color moved to a CSS variable — adapts correctly in light and dark themes"
+    ]
+  },
+  {
     "version": "1.8.5.55",
     "changes": [
       "Minor UI display fixes"

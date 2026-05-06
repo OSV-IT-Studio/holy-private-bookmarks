@@ -894,5 +894,11 @@
     },
     "reportBug": {
         "message": "Zgłoś błąd"
+    },
+    "managerSubtitle": {
+        "message": "Pełna kontrola nad Twoimi zakładkami"
+    },
+    "invalidUrlProtocol": {
+        "message": "Proszę podać prawidłowy adres URL zaczynający się od http:// lub https://"
     }
 }

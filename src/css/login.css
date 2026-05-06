@@ -4,9 +4,7 @@
 .login-container{display:block!important;}
 #login-notification-bar{display:block!important;}
 .login-container::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(0,212,255,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}
-.login-icon img{width:100px;height:100px}
 .login-header{margin-bottom:15px}
-.login-icon{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:8px}
 .login-subtitle{margin:0;color:var(--text-secondary);font-size:15px;line-height:1.5;text-align:center}
 
 .notice-content{display:flex;align-items:flex-start;gap:12px;color:var(--text-secondary)}
@@ -47,3 +45,5 @@
 .login-stay-unlocked__checkbox:checked + .login-stay-unlocked__toggle::after {transform: translateX(14px);background: var(--accent);}
 .login-stay-unlocked__checkbox:focus-visible + .login-stay-unlocked__toggle {box-shadow: var(--shadow-accent);}
 .login-stay-unlocked__text { line-height: 1.4; transition: color 0.15s; }
+.login-icon {width: 80px;height: 80px;margin: 0 auto 24px auto;background: rgba(255, 255, 255, 0.03);backdrop-filter: blur(8px);border-radius: 24px;border: 1px solid rgba(0, 212, 255, 0.15);display: flex;align-items: center;justify-content: center;transition: all 0.3s ease;}
+.login-icon svg {width: 45px;height: 45px;color: var(--accent, #00d4ff);transition: transform 0.3s ease;}

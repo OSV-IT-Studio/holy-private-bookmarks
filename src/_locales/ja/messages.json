@@ -894,5 +894,11 @@
     },
     "reportBug": {
         "message": "バグを報告"
+    },
+    "managerSubtitle": {
+        "message": "ブックマークを完全にコントロール"
+    },
+    "invalidUrlProtocol": {
+        "message": "http:// または https:// で始まる有効なURLを入力してください"
     }
 }

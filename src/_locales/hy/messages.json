@@ -894,5 +894,11 @@
     },
     "reportBug": {
         "message": "Հայտնել սխալի մասին"
+    },
+    "managerSubtitle": {
+        "message": "Ամբողջական վերահսկողություն ձեր էջանիշների նկատմամբ"
+    },
+    "invalidUrlProtocol": {
+        "message": "Խնդրում ենք մուտքագրել վավեր URL, որը սկսվում է http:// կամ https://-ով"
     }
 }

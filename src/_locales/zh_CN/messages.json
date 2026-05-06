@@ -894,5 +894,11 @@
     },
     "reportBug": {
         "message": "报告错误"
+    },
+    "managerSubtitle": {
+        "message": "完全掌控您的书签"
+    },
+    "invalidUrlProtocol": {
+        "message": "请输入以 http:// 或 https:// 开头的有效网址"
     }
 }
