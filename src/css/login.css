@@ -1,39 +1,35 @@
 /* Login screen */
 .login-section{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg-color);z-index:10;opacity:0;transition:opacity .3s ease}
-.login-container{max-width:400px;width:80%;padding:40px 32px;background:var(--card-bg);backdrop-filter:blur(20px);border:1px solid var(--card-border);border-radius:32px;box-shadow:var(--shadow),0 20px 40px -10px rgba(0,0,0,.3);animation:fadeInUp var(--dur-slow) ease;position:relative;overflow:hidden}
+.login-container{max-width:400px;width:80%;padding:40px 32px;background:var(--card-bg);backdrop-filter:blur(20px);border:1px solid var(--card-border);border-radius:32px;box-shadow:var(--shadow),0 20px 40px -10px var(--shadow-box);animation:fadeInUp var(--dur-slow) ease;position:relative;overflow:hidden}
 .login-container{display:block!important;}
 #login-notification-bar{display:block!important;}
-.login-container::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(0,212,255,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.login-container::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,var(--accent-tint-sm) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .login-header{margin-bottom:15px}
 .login-subtitle{margin:0;color:var(--text-secondary);font-size:15px;line-height:1.5;text-align:center}
 
 .notice-content{display:flex;align-items:flex-start;gap:12px;color:var(--text-secondary)}
 .notice-icon,.pending-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.notice-icon{background:rgba(255,193,7,.2)}
-.pending-icon{background:rgba(0,212,255,.15)}
+.notice-icon{background:var(--warning-bg)}
+.pending-icon{background:var(--accent-border-sm)}
 .notice-icon svg,.pending-icon svg{width:18px;height:18px}
 .notice-title{margin:0 0 4px;font-weight:600;font-size:15px}
-.notice-title.migration{color:#ffc107}
+.notice-title.migration{color:var(--warning)}
 .notice-title.pending{color:var(--accent)}
 .notice-text{margin:0 0 8px;opacity:.9;line-height:1.5}
 .notice-text strong{color:var(--accent);display:inline-block;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom}
 
 .password-field{margin-bottom:20px}
-.password-input{width:100%;padding:16px 20px;background:rgba(255,255,255,.05);border:2px solid transparent;border-radius:20px;color:var(--text-primary);font-size:16px;outline:none;transition:border-color .2s ease,background .2s ease,box-shadow .2s ease;box-sizing:border-box;line-height:normal}
-.password-input:focus{border-color:var(--accent);background:rgba(255,255,255,.08);box-shadow:0 0 0 4px rgba(0,212,255,.1)}
-.password-input::placeholder{color:var(--text-secondary);opacity:.5}
-
-.unlock-button{width:100%;padding:16px;background:linear-gradient(135deg,var(--accent),#0099cc);color:#fff;border:none;border-radius:var(--radius);font-size:16px;font-weight:600;cursor:pointer;transition:var(--transition);display:flex;align-items:center;justify-content:center;position:relative; line-height: 1.5;overflow:hidden}
-.unlock-button:hover{transform:translateY(-2px);box-shadow:0 10px 20px -5px rgba(0,212,255,.4)}
+.unlock-button{width:100%;padding:16px;background:linear-gradient(135deg,var(--accent),#0099cc);color:var(--text-on-primary);border:none;border-radius:var(--radius);font-size:16px;font-weight:600;cursor:pointer;transition:var(--transition);display:flex;align-items:center;justify-content:center;position:relative; line-height: 1.5;overflow:hidden}
+.unlock-button:hover{transform:translateY(-2px);box-shadow:0 10px 20px -5px var(--accent-tint-5xl)}
 .unlock-button:active{transform:translateY(0)}
-.unlock-button::after{content:'';position:absolute;inset:0;background:radial-gradient(circle,rgba(255,255,255,.3) 0%,transparent 70%);transform:scale(0);transition:transform .5s ease;pointer-events:none}
+.unlock-button::after{content:'';position:absolute;inset:0;background:radial-gradient(circle,var(--white-tint-3xl) 0%,transparent 70%);transform:scale(0);transition:transform .5s ease;pointer-events:none}
 .unlock-button:hover::after{transform:scale(1.5)}
 
-#login-notification-bar{position:fixed;top:0;left:0;right:0;z-index:11;padding:16px 20px;font-size:14px;color:var(--text-secondary);backdrop-filter:blur(10px);background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(0,150,255,.08));border-bottom:1px solid rgba(0,212,255,.3);box-shadow:0 10px 30px -5px rgba(0,212,255,.4);animation:slideDown var(--dur-med) ease}
+#login-notification-bar{position:fixed;top:0;left:0;right:0;z-index:11;padding:16px 20px;font-size:14px;color:var(--text-secondary);backdrop-filter:blur(10px);background:linear-gradient(135deg,var(--accent-tint-md),rgba(0,150,255,.08));border-bottom:1px solid var(--accent-tint-3xl);box-shadow:0 10px 30px -5px var(--accent-tint-5xl);animation:slideDown var(--dur-med) ease}
 
 @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
-@keyframes pulseGlow{0%,100%{box-shadow:0 10px 20px -5px rgba(0,212,255,.3)}50%{box-shadow:0 15px 30px -5px rgba(0,212,255,.5)}}
+@keyframes pulseGlow{0%,100%{box-shadow:0 10px 20px -5px var(--accent-tint-3xl)}50%{box-shadow:0 15px 30px -5px var(--accent-tint-glow)}}
 
 .login-stay-unlocked { margin: -8px 0 20px; display: flex; align-items: center; }
 .login-stay-unlocked__label {display: flex;align-items: center;gap: 10px;cursor: pointer;color: var(--text-secondary);font-size: 13px;user-select: none;}
@@ -45,5 +41,5 @@
 .login-stay-unlocked__checkbox:checked + .login-stay-unlocked__toggle::after {transform: translateX(14px);background: var(--accent);}
 .login-stay-unlocked__checkbox:focus-visible + .login-stay-unlocked__toggle {box-shadow: var(--shadow-accent);}
 .login-stay-unlocked__text { line-height: 1.4; transition: color 0.15s; }
-.login-icon {width: 80px;height: 80px;margin: 0 auto 24px auto;background: rgba(255, 255, 255, 0.03);backdrop-filter: blur(8px);border-radius: 24px;border: 1px solid rgba(0, 212, 255, 0.15);display: flex;align-items: center;justify-content: center;transition: all 0.3s ease;}
+.login-icon {width: 80px;height: 80px;margin: 0 auto 24px auto;background: var(--white-tint-xs);backdrop-filter: blur(8px);border-radius: 24px;border: 1px solid var(--accent-border-sm);display: flex;align-items: center;justify-content: center;transition: all 0.3s ease;}
 .login-icon svg {width: 45px;height: 45px;color: var(--accent, #00d4ff);transition: transform 0.3s ease;}

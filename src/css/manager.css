@@ -11,11 +11,11 @@ a,button,input,select,
 .subfolder-list,.subfolders{transition:background-color var(--dur-fast) ease,border-color var(--dur-fast) ease,color var(--dur-fast) ease,box-shadow var(--dur-fast) ease}
 .container{display:flex;height:100vh;padding:16px;gap:5px}
 .folder-item .folder-badge{margin: 0px 0px 0px 8px;}
-.sidebar{width:272px;min-width:200px;flex-shrink:0;background:var(--card-bg); backdrop-filter: blur(12px);border-radius:18px;padding:18px 14px;display:flex;flex-direction:column;border:1px solid var(--border-subtle);box-shadow:var(--shadow);backdrop-filter:var(--backdrop);overflow:hidden}
+.sidebar{width:272px;min-width:220px;flex-shrink:0;background:var(--card-bg); backdrop-filter: blur(12px);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;border:1px solid var(--card-border);backdrop-filter:var(--backdrop);overflow:hidden}
 .sidebar-resizer{width:5px;cursor:col-resize;flex-shrink:0;background:transparent;transition:background .15s}
 .sidebar-resizer:hover,.sidebar-resizer.is-dragging{background:var(--border-subtle)}
 .header {display: flex;align-items: center;gap: 12px;margin-bottom: 18px;padding-bottom: 14px;border-bottom: 1px solid var(--border-subtle);}
-.login-icon {  width: 38.5px;  height: 38.5px;  background: rgba(255, 255, 255, 0.03);  backdrop-filter: blur(8px);  border-radius: 10px;  border: 1px solid rgba(0, 212, 255, 0.15);  display: flex;  align-items: center;justify-content: center;}
+.login-icon {  width: 38.5px;  height: 38.5px;  background: var(--white-tint-xs);  backdrop-filter: blur(8px);  border-radius: 10px;  border: 1px solid var(--accent-border-sm);  display: flex;  align-items: center;justify-content: center;}
 .login-icon svg {width: 25px;height: 25px;  color: var(--accent, #00d4ff);  transition: transform 0.3s ease;}
 .header-container {display: flex;flex-direction: column;gap: 4px;}
 .managerTitle {font-size: 15px;font-weight: 700;letter-spacing: -0.3px;background: linear-gradient(135deg, var(--accent));-webkit-background-clip: text;background-clip: text;color: transparent;margin: 0;line-height: 1.2;}
@@ -52,7 +52,7 @@ a,button,input,select,
 .subfolders.collapsed{max-height:0;opacity:0;margin:0;visibility:hidden}
 .main-content{flex:1;backdrop-filter:var(--backdrop);display:flex;flex-direction:column;overflow:hidden;min-width:0}
 .search-container{position:relative;flex:1;min-width:0}
-.search-container .search-input,input[type=search].search-input{width:100%;padding:8px 12px 8px 34px;background:var(--surface-2);border:1px solid var(--border-subtle);border-radius:var(--radius-xs);color:var(--text-primary);font-family:var(--font-main);font-size:13px;font-weight:400;transition:all var(--dur-med) var(--ease-out);margin:0}
+.search-container .search-input,input[type=search].search-input{width:100%;padding:8px 12px 8px 34px;background:var(--card-bg);border:1px solid var(--border-subtle);border-radius:var(--radius-xs);color:var(--text-primary);font-family:var(--font-main);font-size:13px;font-weight:400;transition:all var(--dur-med) var(--ease-out);margin:0}
 .search-container .search-input:focus{outline:none;border-color:var(--accent);background:var(--surface-1);box-shadow:var(--shadow-accent)}
 .search-container .search-input::placeholder{color:var(--text-tertiary);opacity:1}
 .search-bar__icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--text-tertiary);pointer-events:none;line-height:1;transition:color var(--dur-fast) ease}
@@ -61,14 +61,14 @@ a,button,input,select,
 .toolbar-btn:hover{background:var(--surface-3);color:var(--text-primary)}
 .toolbar-btn:active{transform:scale(.96)}
 .toolbar-btn--primary{background:var(--accent-dim);border-color:var(--border-accent);color:var(--accent)}
-.toolbar-btn--primary:hover{background:rgba(99,179,237,.22);color:var(--accent-bright)}
+.toolbar-btn--primary:hover{background:var(--toolbar-primary-hover);color:var(--accent-bright)}
 .toolbar-btn__icon{display:flex;align-items:center;justify-content:center;width:15px;height:15px;flex-shrink:0}
 .toolbar-btn__icon svg{width:14px;height:14px;stroke:currentColor}
 .bookmarks-grid,.bookmarks-list{display:flex;flex-direction:column;gap:4px;min-height:200px}
 .tree-item{background:var(--surface-1);border:1px solid var(--border-subtle);box-shadow:var(--item-shadow);border-radius:var(--radius-sm);min-height:52px;transition:background var(--dur-fast) ease,border-color var(--dur-fast) ease,box-shadow var(--dur-fast) ease;cursor:pointer;position:relative;overflow:hidden;box-sizing:border-box}
 .tree-item .item-header{padding:9px 12px;gap:11px}
 .tree-item.selected{background:var(--accent-dim);border-color:var(--border-accent)}
-.tree-item.selected:hover{background:rgba(99,179,237,.18)}
+.tree-item.selected:hover{background:var(--selected-hover)}
 
 .bookmark-title{font-size:13px;font-weight:500;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .selection-toolbar{display:none;align-items:center;justify-content:space-between;background:var(--accent-dim);border:1px solid var(--border-accent);padding:8px 14px;animation:slideDown var(--dur-med) var(--ease-out)}
@@ -119,3 +119,5 @@ button{font-size:13px;gap:7px;padding:9px 16px}
 .breadcrumbs-container .breadcrumb-icon {width: 14px;height: 14px;flex-shrink: 0;}
 @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.action-bar {border-radius: 10px 10px 0 0;}
+.bookmarks-container {border-radius: 0 0 10px 10px;}
