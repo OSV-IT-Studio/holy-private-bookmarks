@@ -929,6 +929,4 @@ chrome.runtime.onMessage.addListener((message) => {
 document.addEventListener('DOMContentLoaded', init);
 document.addEventListener('DOMContentLoaded', () => {
   const version = chrome.runtime.getManifest().version;
-  const badge = document.getElementById('ext-version');
-  if (badge) badge.textContent = 'v' + version;
 });

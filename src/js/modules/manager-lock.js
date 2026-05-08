@@ -95,19 +95,7 @@ const ManagerLock = (function () {
     }
 
     
-    const breadcrumbs = document.getElementById('breadcrumbs');
-if (breadcrumbs) {
-    const allBookmarksText = getMessage('allBookmarks');
-    breadcrumbs.innerHTML = `
-        <span class="breadcrumb-item active" data-folder-id="all">
-            <svg class="breadcrumb-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-            </svg>
-            ${allBookmarksText}
-        </span>
-    `;
-}
+    
 
     const bookmarksGrid = document.getElementById('bookmarks-grid');
     if (bookmarksGrid) {
@@ -232,7 +220,14 @@ if (breadcrumbs) {
         loginSection.innerHTML = `
             <div class="login-container" style="display: none;">
                 <div class="login-header">
-                    <div class="login-icon"><img src="icons/icon128.png"></div>
+                    <div class="login-icon"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" fill="none">
+  <g transform="matrix(0.32395952,0,0,0.32395952,-4.1461257,-4.337526)" style="clip-rule:evenodd;fill-rule:evenodd;stroke-width:6.17273;stroke-miterlimit:4;stroke-dasharray:none">
+    <path d="M 49.755,81.327 C 30.101,71.953 20.908,54.999 22.175,30.465 32.644,27.85 41.855,24.227 49.807,19.597 c 7.669,4.938 16.897,8.641 27.684,11.109 1.351,24.093 -7.894,40.967 -27.736,50.621 z"></path>
+    <g transform="translate(49.8 47) scale(0.82) translate(-49.8 -47)">
+      <polygon points="49.776,52.121 57.011,59.355 57.011,34.827 42.67,34.912 42.67,59.228" fill="currentColor"></polygon>
+    </g>
+  </g>
+</svg></div>
                     <h1 class="lock-title">${getMessage('notSetUpTitle')}</h1>
                     <p class="login-subtitle">${getMessage('notSetUpSubtitle')}</p>
                 </div>
@@ -254,7 +249,14 @@ if (breadcrumbs) {
         loginSection.innerHTML = `
             <div class="login-container"  style="display: none;">
                 <div class="login-header">
-                    <div class="login-icon"><img src="icons/icon128.png"></div>
+                    <div class="login-icon"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" fill="none">
+  <g transform="matrix(0.32395952,0,0,0.32395952,-4.1461257,-4.337526)" style="clip-rule:evenodd;fill-rule:evenodd;stroke-width:6.17273;stroke-miterlimit:4;stroke-dasharray:none">
+    <path d="M 49.755,81.327 C 30.101,71.953 20.908,54.999 22.175,30.465 32.644,27.85 41.855,24.227 49.807,19.597 c 7.669,4.938 16.897,8.641 27.684,11.109 1.351,24.093 -7.894,40.967 -27.736,50.621 z"></path>
+    <g transform="translate(49.8 47) scale(0.82) translate(-49.8 -47)">
+      <polygon points="49.776,52.121 57.011,59.355 57.011,34.827 42.67,34.912 42.67,59.228" fill="currentColor"></polygon>
+    </g>
+  </g>
+</svg></div>
                 </div>
                 <h1 class="lock-title">${getMessage('migrationScreenTitle')}</h1>
                 <p class="login-subtitle">${getMessage('migrationScreenBody1')}</p>

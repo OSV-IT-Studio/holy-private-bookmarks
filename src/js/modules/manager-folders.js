@@ -231,8 +231,6 @@
         _activeFolderEl = active || null;
 
         _expandTreeToFolder(folderUid);
-
-        updateBreadcrumbs(folderUid);
         renderBookmarks();
         resetInactivityTimer();
     }
@@ -298,7 +296,7 @@
         renderFolderTree();
         await _deps.renderBookmarksPreservingScroll();
 
-        if (getCurrentFolderId() === folderUid) updateBreadcrumbs(folderUid);
+        if (getCurrentFolderId() === folderUid) ;
 
         showNotification(getMessage('folderRenamed'));
         resetInactivityTimer();
@@ -367,65 +365,6 @@
         });
     }
 
-    function updateBreadcrumbs(folderUid) {
-        const { getData, getItemByUid, getMessage, countBookmarksInFolder,
-                escapeHtml } = _deps;
-        const breadcrumbsContainer = document.getElementById('breadcrumbs');
-        if (!breadcrumbsContainer) return;
-
-        let breadcrumbs = [{ uid: 'all', name: getMessage('allBookmarks') }];
-
-        if (folderUid && folderUid !== 'all') {
-            const folder = getItemByUid(getData(), folderUid);
-            if (folder) {
-                function buildPath(items, targetUid, path) {
-                    for (const item of items) {
-                        if (item.type !== 'folder') continue;
-                        const newPath = [...path, { uid: item.uid, name: item.name }];
-                        if (item.uid === targetUid) return newPath;
-                        if (item.children) {
-                            const found = buildPath(item.children, targetUid, newPath);
-                            if (found) return found;
-                        }
-                    }
-                    return null;
-                }
-                const path = buildPath(getData().folders, folderUid, []);
-                if (path) breadcrumbs = [{ uid: 'all', name: getMessage('allBookmarks') }, ...path];
-            }
-        }
-
-        let html = '';
-        for (let i = 0; i < breadcrumbs.length; i++) {
-            const crumb  = breadcrumbs[i];
-            const isLast = i === breadcrumbs.length - 1;
-            html += `<span class="breadcrumb-item ${isLast ? 'active' : ''}" data-folder-uid="${crumb.uid}" ${isLast ? 'aria-current="page"' : ''}>`;
-            if (i === 0) html += `<svg class="breadcrumb-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`;
-            html += `${escapeHtml(crumb.name)}</span>`;
-        }
-        breadcrumbsContainer.innerHTML = html;
-
-        breadcrumbsContainer.querySelectorAll('.breadcrumb-item:not(.active)').forEach(item => {
-            item.addEventListener('click', e => {
-                e.stopPropagation();
-                const uid = item.dataset.folderUid;
-                if (uid) setActiveFolder(uid);
-            });
-        });
-
-        const count        = countBookmarksInFolder(folderUid);
-        const countElement = document.getElementById('bookmarks-count');
-        if (countElement) {
-            countElement.innerHTML = `
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                </svg>
-                <span class="count-number">${count}</span>
-                <span>${count === 1 ? getMessage('bookmark') : getMessage('bookmarks')}</span>
-            `;
-        }
-    }
 
     function saveFoldersState() {
         const expandedFolders = new Set();
@@ -466,7 +405,6 @@
         renameFolder,
         deleteFolder,
         initNewFolderButton,
-        updateBreadcrumbs,
         saveFoldersState,
         restoreFoldersState
     };

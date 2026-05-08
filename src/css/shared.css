@@ -2,7 +2,7 @@
 .hpb-modal--open{display:flex;animation:hpbModalIn var(--dur-med) var(--ease-in-out) both}
 .hpb-modal--closing{display:flex;animation:hpbModalOut var(--dur-fast) ease both;pointer-events:none}
 
-.hpb-modal__dialog{background:var(--modal-bg);backdrop-filter:var(--backdrop);border:1px solid var(--card-border);border-radius:var(--radius-lg);padding:28px;width:90%;max-width:520px;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;gap:0;transition:all .2s}
+.hpb-modal__dialog{background:var(--card-bg);backdrop-filter:var(--backdrop);border:1px solid var(--card-border);border-radius:var(--radius-lg);padding:28px;width:90%;max-width:520px;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;gap:0;transition:all .2s}
 .hpb-modal--open .hpb-modal__dialog{animation:hpbDialogIn var(--dur-med) cubic-bezier(.34,1.36,.64,1) both}
 .hpb-modal--closing .hpb-modal__dialog{animation:hpbDialogOut var(--dur-fast) ease both}
 .hpb-modal__dialog--sm,.hpb-modal__dialog--xs{max-width:420px}
@@ -101,6 +101,7 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 .quick-action-btn-small.delete:hover svg{color:var(--danger)}
 .quick-action-btn-small svg{width:14px;height:14px;stroke:currentColor;flex-shrink:0}.qa-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0}.qa-label{font-size:12px;font-weight:500;line-height:1;letter-spacing:.01em}
 
+.tree-item{position:relative;margin:0 5px 6px;overflow:hidden;background:var(--surface-1);border:1px solid var(--border-subtle);box-shadow:var(--item-shadow);border-radius:var(--radius-sm)}
 .tree-item:hover{background:var(--surface-2)}
 
 .item-header{display:flex;align-items:center;gap:8px;min-width:0;width:100%;box-sizing:border-box;position:relative}
@@ -233,5 +234,5 @@ h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;backgroun
 .icon-button:active{transform:scale(.98)}
 .icon-button svg{width:20px;height:20px;stroke:currentColor;pointer-events:none}
 .icon-button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.action-bar{display:flex;align-items:center;justify-content:space-between;background:var(--card-bg);backdrop-filter:blur(12px);gap:8px;border:1px solid var(--card-border);border-radius:18px 18px 0 0;padding:8px 16px;min-height:52px}
+.action-bar{display:flex;align-items:center;justify-content:space-between;background:var(--card-bg);backdrop-filter:blur(12px);gap:8px;border:1px solid var(--card-border);border-radius:18px 18px 0 0;padding:8px 16px;min-height:52px; border-bottom: 0;}
 .bookmarks-container{flex:1;overflow-y:auto;background:var(--card-bg);border-radius:0 0 18px 18px;padding:16px;backdrop-filter:blur(12px);border:1px solid var(--card-border);box-shadow:inset 0 4px 15px var(--black-tint-sm);position:relative;will-change:scroll-position}

@@ -1,4 +1,12 @@
 [
+{
+  "version": "1.8.5.60",
+  "changes": [
+    "Redesigned color theme — new accent color palette in both dark and light modes",
+    "Removed breadcrumbs from the bookmark manager",
+    "Removed version badge from the popup header"
+  ]
+},
   {
     "version": "1.8.5.58",
     "changes": [

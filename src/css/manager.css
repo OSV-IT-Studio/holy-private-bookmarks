@@ -6,7 +6,7 @@ body{font-family:var(--font-main);background:var(--bg);color:var(--text-primary)
 
 a,button,input,select,
 .folder-item,.folder-name,.folder-badge,.folder-toggle,
-.folder-action-btn,.toolbar-btn,.tree-item,
+.folder-action-btn,.toolbar-btn,
 .selection-btn,.breadcrumb-item,.theme-toggle-btn,
 .subfolder-list,.subfolders{transition:background-color var(--dur-fast) ease,border-color var(--dur-fast) ease,color var(--dur-fast) ease,box-shadow var(--dur-fast) ease}
 .container{display:flex;height:100vh;padding:16px;gap:5px}
@@ -64,11 +64,7 @@ a,button,input,select,
 .toolbar-btn--primary:hover{background:var(--toolbar-primary-hover);color:var(--accent-bright)}
 .toolbar-btn__icon{display:flex;align-items:center;justify-content:center;width:15px;height:15px;flex-shrink:0}
 .toolbar-btn__icon svg{width:14px;height:14px;stroke:currentColor}
-.bookmarks-grid,.bookmarks-list{display:flex;flex-direction:column;gap:4px;min-height:200px}
-.tree-item{background:var(--surface-1);border:1px solid var(--border-subtle);box-shadow:var(--item-shadow);border-radius:var(--radius-sm);min-height:52px;transition:background var(--dur-fast) ease,border-color var(--dur-fast) ease,box-shadow var(--dur-fast) ease;cursor:pointer;position:relative;overflow:hidden;box-sizing:border-box}
-.tree-item .item-header{padding:9px 12px;gap:11px}
-.tree-item.selected{background:var(--accent-dim);border-color:var(--border-accent)}
-.tree-item.selected:hover{background:var(--selected-hover)}
+.bookmarks-grid,.bookmarks-list{display:flex;flex-direction:column;min-height:200px}
 
 .bookmark-title{font-size:13px;font-weight:500;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .selection-toolbar{display:none;align-items:center;justify-content:space-between;background:var(--accent-dim);border:1px solid var(--border-accent);padding:8px 14px;animation:slideDown var(--dur-med) var(--ease-out)}
@@ -102,21 +98,6 @@ a,button,input,select,
 button{font-size:13px;gap:7px;padding:9px 16px}
 
 #theme-loader-block{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999}
-.breadcrumbs-container {display: flex;align-items: center;gap: 2px;font-size: 12px;border-width: 0px 1px 0px 1px;border-style: solid;border-color: var(--card-border);background: var(--card-bg);backdrop-filter: var(--backdrop);width: 100%;overflow-x: auto;overflow-y: hidden;white-space: nowrap;flex-wrap: nowrap;scrollbar-width: thin;}
-.breadcrumbs-container .breadcrumb-item {position: relative;display: flex;align-items: center;gap: 8px;line-height: 30px;padding: 0 12px 0 10px;margin-right: 23px;margin-top: 2px;margin-bottom: 2px;background: var(--accent-dim);color: var(--text-secondary);text-decoration: none;white-space: nowrap;font-size: 13px;transition: background 0.3s, color 0.3s, border-color 0.3s;cursor: pointer;}
-.breadcrumbs-container .breadcrumb-item::before,
-.breadcrumbs-container .breadcrumb-item::after {content: "";position: absolute;top: 0;border-width: 15px 10px;border-style: solid;width: 0;height: 0;transition: inherit;}
-.breadcrumbs-container .breadcrumb-item::before {left: -20px;border-color: var(--accent-dim);border-left-color: transparent;}
-.breadcrumbs-container .breadcrumb-item::after {left: 100%;border-color: transparent;border-left-color: var(--accent-dim);z-index: 2;}
-.breadcrumbs-container .breadcrumb-item:first-child {padding-left: 15px;border-radius: 4px 0 0 4px;}
-.breadcrumbs-container .breadcrumb-item:first-child::before {display: none;}
-.breadcrumbs-container .breadcrumb-item.active {padding-right: 15px;border-radius: 0 4px 4px 0;background: var(--accent);color: var(--on-accent);cursor: default;}
-.breadcrumbs-container .breadcrumb-item.active::after {display: none;}
-.breadcrumbs-container .breadcrumb-item.active::before {border-color: var(--accent);border-left-color: transparent;}
-.breadcrumbs-container .breadcrumb-item:not(.active):hover {background: var(--surface-3);color: var(--text-primary);}
-.breadcrumbs-container .breadcrumb-item:not(.active):hover::before {border-color: var(--surface-3);border-left-color: transparent;}
-.breadcrumbs-container .breadcrumb-item:not(.active):hover::after {border-left-color: var(--surface-3);}
-.breadcrumbs-container .breadcrumb-icon {width: 14px;height: 14px;flex-shrink: 0;}
 @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .action-bar {border-radius: 10px 10px 0 0;}
