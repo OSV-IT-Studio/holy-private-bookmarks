@@ -8,46 +8,46 @@
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon16.png">
   <style>
     :root {
-      --bg-from:       #0f0f17;
-      --bg-mid:        #1a1a2e;
-      --bg-to:         #16213e;
-      --sidebar-bg:    rgba(20, 20, 35, 0.95);
-      --surface-1:     rgba(255, 255, 255, 0.06);
-      --surface-2:     rgba(255, 255, 255, 0.10);
-      --surface-3:     rgba(255, 255, 255, 0.16);
+      --bg-from:       #0a0c12;
+      --bg-mid:        #0d1117;
+      --bg-to:         #0c0f1a;
+      --sidebar-bg:    rgba(13, 16, 25, 0.98);
+      --surface-1:     rgba(255, 255, 255, 0.055);
+      --surface-2:     rgba(255, 255, 255, 0.09);
+      --surface-3:     rgba(255, 255, 255, 0.14);
 
-      --border-subtle: rgba(255, 255, 255, 0.05);
+      --border-subtle: rgba(255, 255, 255, 0.08);
       --border-muted:  rgba(255, 255, 255, 0.10);
-      --border-accent: rgba(0, 212, 255, 0.40);
+      --border-accent: rgba(99, 179, 237, 0.40);
 
-      --accent:        #00d4ff;
-      --accent-light:  #a0f1ff;
-      --accent-bright: #4de1ff;
-      --accent-dim:    rgba(0, 212, 255, 0.13);
-      --accent-glow:   rgba(0, 212, 255, 0.22);
+      --accent:        #63b3ed;
+      --accent-light:  #bee3f8;
+      --accent-bright: #90cdf4;
+      --accent-dim:    rgba(99, 179, 237, 0.12);
+      --accent-glow:   rgba(99, 179, 237, 0.22);
 
-      --text-primary:   #ffffff;
-      --text-secondary: rgba(255, 255, 255, 0.70);
-      --text-tertiary:  rgba(255, 255, 255, 0.45);
+      --text-primary:   #f0f4f8;
+      --text-secondary: rgba(240, 244, 248, 0.68);
+      --text-tertiary:  rgba(240, 244, 248, 0.42);
 
-      --success:  #00ff9d;
-      --danger:   #ff4060;
+      --success:  #68d391;
+      --danger:   #fc8181;
 
-      --shadow:    0 8px 32px rgba(0, 0, 0, 0.45);
-      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.60);
-      --shadow-accent: 0 0 0 1px rgba(0, 212, 255, 0.25), 0 8px 32px rgba(0, 212, 255, 0.10);
+      --shadow:    0 8px 32px rgba(0, 0, 0, 0.55);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.70);
+      --shadow-accent: 0 0 0 1px rgba(99, 179, 237, 0.22), 0 8px 32px rgba(99, 179, 237, 0.10);
 
       --radius-sm: 12px;
-      --radius:    18px;
-      --radius-lg: 24px;
-      --radius-xl: 30px;
+      --radius:    16px;
+      --radius-lg: 20px;
+      --radius-xl: 24px;
 
       --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-      --dur-med:  0.35s;
+      --dur-med:  0.3s;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -56,7 +56,7 @@
 
     body {
       font-family: 'DM Sans', system-ui, sans-serif;
-      background: linear-gradient(135deg, var(--bg-from) 0%, var(--bg-mid) 50%, var(--bg-to) 100%);
+      background: linear-gradient(160deg, var(--bg-from) 0%, var(--bg-mid) 50%, var(--bg-to) 100%);
       background-attachment: fixed;
       color: var(--text-primary);
       min-height: 100vh;
@@ -119,7 +119,7 @@
       line-height: 1.05;
       margin-bottom: 20px;
       /* Accent gradient on title */
-      background: linear-gradient(135deg, #ffffff 30%, var(--accent-light) 100%);
+      background: linear-gradient(135deg, #f0f4f8 30%, var(--accent-light) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -189,9 +189,9 @@
       place-items: center;
       font-size: 20px;
       font-weight: 800;
-      background: linear-gradient(135deg, #00d4ff, #0099cc);
-      color: #0c0e14;
-      box-shadow: 0 8px 24px rgba(0, 212, 255, 0.30);
+      background: linear-gradient(135deg, #63b3ed, #2b6cb0);
+      color: #0a0c12;
+      box-shadow: 0 6px 20px rgba(99, 179, 237, 0.28);
       flex-shrink: 0;
       letter-spacing: -.02em;
     }
@@ -250,7 +250,7 @@
       position: absolute;
       bottom: -60px; left: 50%; transform: translateX(-50%);
       width: 340px; height: 200px;
-      background: radial-gradient(ellipse, rgba(0,212,255,.12), transparent 70%);
+      background: radial-gradient(ellipse, rgba(99,179,237,.10), transparent 70%);
       pointer-events: none;
     }
 
@@ -260,9 +260,9 @@
       display: grid;
       place-items: center;
       border-radius: 22px;
-      background: linear-gradient(135deg, rgba(0,212,255,.15), rgba(0,212,255,.06));
-      border: 1px solid rgba(0,212,255,.25);
-      box-shadow: 0 0 28px rgba(0,212,255,.12), inset 0 1px 0 rgba(255,255,255,.06);
+      background: linear-gradient(135deg, rgba(99,179,237,.14), rgba(99,179,237,.06));
+      border: 1px solid rgba(99,179,237,.25);
+      box-shadow: 0 0 24px rgba(99,179,237,.10), inset 0 1px 0 rgba(255,255,255,.06);
     }
 
     .footer-icon svg { width: 30px; height: 30px; color: var(--accent); }
@@ -272,7 +272,7 @@
       font-weight: 800;
       letter-spacing: -.03em;
       margin-bottom: 14px;
-      background: linear-gradient(135deg, #ffffff 30%, var(--accent-light) 100%);
+      background: linear-gradient(135deg, #f0f4f8 30%, var(--accent-light) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
