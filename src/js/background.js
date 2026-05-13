@@ -212,12 +212,27 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
 if (message.action === 'openPopupAfterManager') {
     const tabId = sender.tab?.id;
-    chrome.tabs.remove(tabId, () => {
-        setTimeout(() => {
-            if (chrome.action.openPopup) {
-                chrome.action.openPopup();
-            }
-        }, 150);
+
+    chrome.tabs.query({}, (allTabs) => {
+        const otherTabs = allTabs.filter(t => t.id !== tabId);
+        
+        const doOpen = () => {
+            chrome.tabs.remove(tabId, () => {
+                setTimeout(() => {
+                    if (chrome.action.openPopup) {
+                        chrome.action.openPopup();
+                    }
+                }, 150);
+            });
+        };
+
+        if (otherTabs.length === 0) {
+            chrome.tabs.create({ url: 'chrome://newtab', active: true }, () => {
+                doOpen();
+            });
+        } else {
+            doOpen();
+        }
     });
 }
     if (message.action === 'setQuickCloseEnabled') {

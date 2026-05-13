@@ -1,5 +1,11 @@
 [
 {
+  "version": "1.8.5.61",
+  "changes": [
+    "Fixed a bug where clicking 'Open Popup' in the bookmark manager closed the entire browser window when the manager was the only open tab"
+  ]
+},
+{
   "version": "1.8.5.60",
   "changes": [
     "Redesigned color theme — new accent color palette in both dark and light modes",
@@ -364,66 +370,6 @@
     "changes": [
       "Drag & drop in the bookmark manager now supports reordering items within the grid, not just moving into folders",
       "Items can now be dropped directly onto folders in the bookmark manager sidebar"
-    ]
-  },
-  {
-    "version": "1.8.4.46",
-    "changes": [
-      "Folders now have stable IDs — open/collapsed state is preserved correctly after saving or reloading",
-      "The popup remembers which folders were open between sessions"
-    ]
-  },
-  {
-    "version": "1.8.4.45",
-    "changes": [
-      "Added breadcrumb navigation in the bookmark manager — shows your current folder path with clickable segments",
-      "The bookmark manager now remembers which folders were expanded when refreshing the folder tree",
-      "Clicking a bookmark now automatically expands and highlights its parent folder in the sidebar"
-    ]
-  },
-  {
-    "version": "1.8.4.43",
-    "changes": [
-      "Fixed sidebar display after unlocking the bookmark manager"
-    ]
-  },
-  {
-    "version": "1.8.4.42",
-    "changes": [
-      "Drag & drop added to the bookmark manager — move bookmarks and folders by dragging them",
-      "Search in the bookmark manager now works across all folders, not just the current one",
-      "Improved bookmark count display in the sidebar"
-    ]
-  },
-  {
-    "version": "1.8.4.39",
-    "changes": [
-      "Removed emoji from interface labels for a cleaner look",
-      "Fixed Chinese (Simplified) translation"
-    ]
-  },
-  {
-    "version": "1.8.4.38",
-    "changes": [
-      "Fixed bookmark and folder count display in the bookmark manager sidebar"
-    ]
-  },
-  {
-    "version": "1.8.4.36",
-    "changes": [
-      "Minor donation reminder fixes"
-    ]
-  },
-  {
-    "version": "1.8.4.35",
-    "changes": [
-      "Added donation reminder — a non-intrusive prompt shown occasionally to support the project, with options to remind later or dismiss permanently"
-    ]
-  },
-  {
-    "version": "1.8.4.34",
-    "changes": [
-      "Fixed duplicate text in localization files"
     ]
   }
 ]
