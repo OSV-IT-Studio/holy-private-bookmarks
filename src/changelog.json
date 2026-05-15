@@ -1,5 +1,11 @@
 [
 {
+  "version": "1.8.5.62",
+  "changes": [
+    "Added 5 new interface languages: Portuguese, Korean, Turkish, Dutch, Vietnamese"
+  ]
+},
+{
   "version": "1.8.5.61",
   "changes": [
     "Fixed a bug where clicking 'Open Popup' in the bookmark manager closed the entire browser window when the manager was the only open tab"

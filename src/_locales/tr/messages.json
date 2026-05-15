@@ -1,0 +1,904 @@
+{
+    "Name": {
+        "message": "Holy Private Bookmarks — Şifreli Yerel Yer İmi Yöneticisi"
+    },
+    "extensionName": {
+        "message": "Holy Private Bookmarks"
+    },
+    "extensionDescription": {
+        "message": "Yer imlerinizi ana parola ve AES-256 şifrelemesiyle gizli tutun. Tüm veriler cihazınızda kalır — bulut yok, takip yok."
+    },
+    "managerTitle": {
+        "message": "HPB - Yer imi yöneticisi"
+    },
+    "createPassword": {
+        "message": "Tam yer imi şifrelemesi için bir ana parola oluşturun"
+    },
+    "newPassword": {
+        "message": "Yeni parola (en az 6 karakter)"
+    },
+    "confirmPassword": {
+        "message": "Parolayı onayla"
+    },
+    "createStorage": {
+        "message": "Depolama oluştur"
+    },
+    "enterMasterPassword": {
+        "message": ""
+    },
+    "masterPassword": {
+        "message": "Ana parola"
+    },
+    "unlock": {
+        "message": "Kilidi aç"
+    },
+    "wrongPassword": {
+        "message": "Yanlış parola"
+    },
+    "passwordsMismatch": {
+        "message": "Parolalar eşleşmiyor veya çok kısa"
+    },
+    "bookmarksProtected": {
+        "message": "Yer imleriniz güvenle korunuyor"
+    },
+    "addCurrentPage": {
+        "message": "Geçerli sayfayı ekle"
+    },
+    "newFolder": {
+        "message": "Yeni klasör"
+    },
+    "clearHistory": {
+        "message": "Geçmişi temizle"
+    },
+    "settings": {
+        "message": "Ayarlar"
+    },
+    "settingsbtn": {
+        "message": "⚙️"
+    },
+    "changeMasterPassword": {
+        "message": "Ana parolayı değiştir"
+    },
+    "currentPassword": {
+        "message": "Mevcut ana parola"
+    },
+    "newPassword2": {
+        "message": "Yeni parola"
+    },
+    "confirmNewPassword": {
+        "message": "Yeni parolayı onayla"
+    },
+    "changePassword": {
+        "message": "Parolayı değiştir"
+    },
+    "exportImport": {
+        "message": "Dışa & İçe Aktar"
+    },
+    "export": {
+        "message": "Yedek oluştur"
+    },
+    "openPrivate": {
+        "message": "Gizli sekmede aç"
+    },
+    "import": {
+        "message": "İçe aktar"
+    },
+    "importFromChrome": {
+        "message": "Chrome'dan içe aktar"
+    },
+    "importChromeBookmarks": {
+        "message": "Tüm Chrome yer imlerini içe aktar"
+    },
+    "importChromeBookmarksAdvanced": {
+        "message": "İçe aktarılacak klasörleri seç"
+    },
+    "importChromeConfirm": {
+        "message": "Chrome'daki tüm yer imleri içe aktarılsın mı? Mevcut yer imleri korunacak."
+    },
+    "importChromeSuccess": {
+        "message": "Yer imleri başarıyla içe aktarıldı!"
+    },
+    "importChromeError": {
+        "message": "Yer imleri içe aktarılamadı"
+    },
+    "selectFoldersToImport": {
+        "message": "İçe aktarılacak klasörleri seç"
+    },
+    "selectAll": {
+        "message": "Tümünü seç"
+    },
+    "deselectAll": {
+        "message": "Tümünün seçimini kaldır"
+    },
+    "importSelected": {
+        "message": "İçe aktar"
+    },
+    "back": {
+        "message": "← Geri"
+    },
+    "addBookmark": {
+        "message": "Yer imi ekle"
+    },
+    "editBookmark": {
+        "message": "Yer imini düzenle"
+    },
+    "page": {
+        "message": "Sayfa"
+    },
+    "title": {
+        "message": "Başlık"
+    },
+    "url": {
+        "message": "URL"
+    },
+    "folder": {
+        "message": "Klasör"
+    },
+    "rootFolder": {
+        "message": "Kök klasör"
+    },
+    "new": {
+        "message": "+ Yeni"
+    },
+    "cancel": {
+        "message": "İptal"
+    },
+    "save": {
+        "message": "Kaydet"
+    },
+    "deleteConfirm": {
+        "message": "Yer imini sil"
+    },
+    "folderName": {
+        "message": "Klasör adı:"
+    },
+    "newName": {
+        "message": "Yeni ad:"
+    },
+    "titleRequired": {
+        "message": "Başlık ve URL zorunludur"
+    },
+    "validUrl": {
+        "message": "URL http:// veya https:// ile başlamalıdır"
+    },
+    "passwordChanged": {
+        "message": "Parola başarıyla değiştirildi!"
+    },
+    "importSuccess": {
+        "message": "Yedek başarıyla içe aktarıldı! Lütfen açılır pencereyi yeniden açın."
+    },
+    "invalidFile": {
+        "message": "Geçersiz yedek dosyası"
+    },
+    "clearHistoryConfirm": {
+        "message": "Holy Private Bookmarks'taki alanlara ait TÜM tarayıcı geçmişi silinsin mi?"
+    },
+    "noBookmarks": {
+        "message": "Yer imi bulunamadı — temizlenecek bir şey yok."
+    },
+    "noDomains": {
+        "message": "Yer imlerinde geçerli alan adı bulunamadı."
+    },
+    "newBookmark": {
+        "message": "Yeni yer imi"
+    },
+    "paste": {
+        "message": "Yapıştır"
+    },
+    "ctxnewFolder": {
+        "message": "Yeni klasör"
+    },
+    "emptyTreeTitle": {
+        "message": "Henüz yer imi yok"
+    },
+    "emptyTreeSubtitle": {
+        "message": "Başlamak için ilk yer iminizi veya klasörünüzü ekleyin"
+    },
+    "historyCleared": {
+        "message": "Geçmiş temizlendi!\n$domains$ alan adından $count$ ziyaret kaldırıldı.",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "domains": {
+                "content": "$2"
+            }
+        }
+    },
+    "addToHoly": {
+        "message": "Holy Private Bookmarks'a ekle"
+    },
+    "cannotAddPage": {
+        "message": "Bu sayfa eklenemiyor (geçerli URL yok)"
+    },
+    "supportProject": {
+        "message": "Projeyi destekle"
+    },
+    "supportPageTitle": {
+        "message": "Holy Private Bookmarks'ı Destekle"
+    },
+    "donateHeroTitle": {
+        "message": "Gizlilik odaklı geliştirmeyi destekleyin"
+    },
+    "donateHeroSubtitle": {
+        "message": "Holy Private Bookmarks %100 ücretsiz ve açık kaynaklıdır, her zaman öyle kalacak. Desteğiniz, geliştiricilerin gizliliğe önem veren herkes için uzantıyı sürdürmeye ve geliştirmeye zaman ayırmasına yardımcı olur."
+    },
+    "whySupport": {
+        "message": "Desteğiniz neden önemli"
+    },
+    "timeInvestment": {
+        "message": "Geliştirici zamanı"
+    },
+    "timeInvestmentDesc": {
+        "message": "Her özellik, hata düzeltmesi ve güvenlik geliştirmesi saatler süren çalışmayı temsil eder. Katkınız bu zamanı değerli kılar ve projeyi sürdürülebilir tutar."
+    },
+    "longTerm": {
+        "message": "Uzun vadeli taahhüt"
+    },
+    "longTermDesc": {
+        "message": "Desteğiniz, uzantının aktif olarak sürdürülmesini, gelecekteki Chrome güncellemeleriyle uyumlu kalmasını ve sürekli geliştirilmesini sağlar."
+    },
+    "futureFeatures": {
+        "message": "Gelecekteki özellikler"
+    },
+    "futureFeaturesDesc": {
+        "message": "Yardımınızla, tüm topluluğa fayda sağlayan yeni işlevlere, daha iyi kullanıcı arayüzüne ve geliştirilmiş güvenlik özelliklerine öncelik verebiliriz."
+    },
+    "donateCtaText": {
+        "message": "Abonelik yok. Ödeme duvarı yok. Kurumsal finansman yok. Sadece başkaları için yararlı bir şey inşa eden insanlar. Bu uzantı size zaman kazandırıyor veya huzur veriyorsa, geliştiricilere kahve ısmarlmayı düşünün."
+    },
+    "donateCryptoTitle": {
+        "message": "Kripto ile Destekle"
+    },
+    "copyAddress": {
+        "message": "Adresi kopyala"
+    },
+    "donateThanks": {
+        "message": "Bağımsız açık kaynak geliştirmeyi desteklediğiniz için teşekkürler"
+    },
+    "donateThanksNote": {
+        "message": "Büyük ya da küçük her katkı bizim için çok önemlidir."
+    },
+    "importantWarning": {
+        "message": "ÖNEMLİ UYARI:"
+    },
+    "passwordCannotBeRecovered": {
+        "message": "Bu parola KURTARILAMAZ!"
+    },
+    "noPasswordReset": {
+        "message": "Parola sıfırlama seçeneği YOKTUR"
+    },
+    "weDontStorePassword": {
+        "message": "Parolanızı hiçbir yerde SAKLAMAMAKTAYIZ"
+    },
+    "bookmarksEncrypted": {
+        "message": "Yer imleriniz yalnızca bu parola ile şifrelenir"
+    },
+    "savePasswordSecurely": {
+        "message": "Bu parolayı güvenli bir şekilde kaydedin!"
+    },
+    "copyUrl": {
+        "message": "URL'yi kopyala"
+    },
+    "edit": {
+        "message": "Düzenle"
+    },
+    "delete": {
+        "message": "Sil"
+    },
+    "urlCopied": {
+        "message": "URL panoya kopyalandı"
+    },
+    "dangerZone": {
+        "message": "Tehlike Bölgesi"
+    },
+    "deleteAllData": {
+        "message": "Tüm Verileri Sil"
+    },
+    "deleteAllDataDesc": {
+        "message": "Tüm yer imlerini ve ayarları kalıcı olarak sil"
+    },
+    "deleteAllDataConfirm": {
+        "message": "Tüm yer imleri, klasörler, ana parola ve ayarlar kalıcı olarak silinecek. Bu işlem geri alınamaz."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Her Şeyi Sil"
+    },
+    "about": {
+        "message": "Hakkında"
+    },
+    "aboutExtension": {
+        "message": "Uzantı Hakkında"
+    },
+    "openGitHub": {
+        "message": "GitHub'ı Aç"
+    },
+    "close": {
+        "message": "Kapat"
+    },
+    "features": {
+        "message": "Özellikler"
+    },
+    "troubleshooting": {
+        "message": "Sorun Giderme"
+    },
+    "encryption": {
+        "message": "Şifreleme"
+    },
+    "encryptionDesc": {
+        "message": "AES-256 şifreleme"
+    },
+    "localStorage": {
+        "message": "Yerel Depolama"
+    },
+    "localStorageDesc": {
+        "message": "Veriler cihazınızda kalır"
+    },
+    "privacy": {
+        "message": "Gizlilik"
+    },
+    "privacyDesc": {
+        "message": "Takip veya analitik yok"
+    },
+    "openSource": {
+        "message": "GPLv3"
+    },
+    "viewOnGitHub": {
+        "message": "GitHub'da Görüntüle"
+    },
+    "githubRepo": {
+        "message": "GitHub Deposu"
+    },
+    "githubRepoDesc": {
+        "message": "Kaynak kodu görüntüle, sorun bildir, katkıda bulun"
+    },
+    "version": {
+        "message": "Sürüm"
+    },
+    "openmanager": {
+        "message": "Yöneticiyi aç"
+    },
+    "managerDesc": {
+        "message": "Tam ekran yer imi yöneticisini aç"
+    },
+    "folders": {
+        "message": "Klasörler"
+    },
+    "bookmarks": {
+        "message": "yer imleri"
+    },
+    "allBookmarks": {
+        "message": "Tüm Yer İmleri"
+    },
+    "searchBookmarks": {
+        "message": "Yer imi ara..."
+    },
+    "noBookmarksInFolder": {
+        "message": "Klasörde yer imi yok"
+    },
+    "addBookmarksToGetStarted": {
+        "message": "Başlamak için yer imi ekleyin"
+    },
+    "bookmarkUpdated": {
+        "message": "Yer imi güncellendi"
+    },
+    "bookmarkDeleted": {
+        "message": "Yer imi silindi"
+    },
+    "renameFolder": {
+        "message": "Klasörü yeniden adlandır"
+    },
+    "folderCreated": {
+        "message": "Klasör başarıyla oluşturuldu"
+    },
+    "managerLocked": {
+        "message": "Yönetici kilitlendi"
+    },
+    "lockManager": {
+        "message": "Yöneticiyi Kilitle"
+    },
+    "rename": {
+        "message": "Yeniden Adlandır"
+    },
+    "deleteFolder": {
+        "message": "Klasörü sil"
+    },
+    "deleteFolderConfirm": {
+        "message": "\"{0}\" klasörü silinsin mi?"
+    },
+    "deleteFolderWarning": {
+        "message": "Tüm içerik kalıcı olarak silinecek."
+    },
+    "folderRenamed": {
+        "message": "Klasör başarıyla yeniden adlandırıldı"
+    },
+    "folderDeleted": {
+        "message": "Klasör başarıyla silindi"
+    },
+    "cannotRenameAll": {
+        "message": "\"Tüm Yer İmleri\" klasörü yeniden adlandırılamaz"
+    },
+    "cannotDeleteAll": {
+        "message": "\"Tüm Yer İmleri\" klasörü silinemez"
+    },
+    "bookmarkAdded": {
+        "message": "Yer imi eklendi"
+    },
+    "pendingBookmarkNotification": {
+        "message": "Bekleyen yer imi!"
+    },
+    "pendingBookmarkInstruction": {
+        "message": "Eklenmeyi bekleyen bir yer imi var. Devam etmek için kilidi açın."
+    },
+    "dragSuccess": {
+        "message": "Öğe başarıyla taşındı"
+    },
+    "invalidDestinationFolder": {
+        "message": "Geçersiz hedef klasör"
+    },
+    "moveFailed": {
+        "message": "Yer imleri taşınamadı"
+    },
+    "noBookmarksSelected": {
+        "message": "Hiçbir yer imi seçilmedi"
+    },
+    "selectDestinationFolder": {
+        "message": "Hedef klasörü seçin:"
+    },
+    "move": {
+        "message": "Taşı"
+    },
+    "selected": {
+        "message": "seçildi"
+    },
+    "moveSelectedTitle": {
+        "message": "Seçilileri taşı"
+    },
+    "deleteSelectedTitle": {
+        "message": "Seçilileri sil"
+    },
+    "cancelSelectionTitle": {
+        "message": "Seçimi iptal et"
+    },
+    "emptyFolder": {
+        "message": "Klasör boş",
+        "description": "Message shown when a folder has no bookmarks"
+    },
+    "noSearchResults": {
+        "message": "Yer imi bulunamadı",
+        "description": "Message when search returns no results"
+    },
+    "noSearchResultsDesc": {
+        "message": "Farklı bir arama terimi deneyin",
+        "description": "Description for empty search results"
+    },
+    "theme": {
+        "message": "Tema"
+    },
+    "themeDark": {
+        "message": "Koyu",
+        "description": "Dark theme name"
+    },
+    "themeLight": {
+        "message": "Açık",
+        "description": "Light theme name"
+    },
+    "themeSystem": {
+        "message": "Sistem",
+        "description": "System theme name"
+    },
+    "themeToggle": {
+        "message": "Temayı değiştir",
+        "description": "Tooltip for theme toggle button"
+    },
+    "showFavicons": {
+        "message": "Web sitesi faviconlarını göster"
+    },
+    "showFaviconsDesc": {
+        "message": "Simgeler Google'ın favicon hizmeti aracılığıyla yüklenir"
+    },
+    "bookmarksAndFolders": {
+        "message": "Yer İmleri ve Klasörler"
+    },
+    "importFromHtml": {
+        "message": "HTML'den içe aktar"
+    },
+    "importHtmlSuccess": {
+        "message": "HTML yer imleri başarıyla içe aktarıldı! $COUNT$ yer imi eklendi.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+        "message": "Dosya seçilmedi"
+    },
+    "htmlImporterFileTooLarge": {
+        "message": "Dosya çok büyük (maks. 1MB)"
+    },
+    "htmlImporterParseError": {
+        "message": "HTML içe aktarılamadı: $1"
+    },
+    "htmlImporterNoBookmarksFound": {
+        "message": "Dosyada yer imi bulunamadı"
+    },
+    "importHtmlError": {
+        "message": "HTML dosyası ayrıştırılamadı. Lütfen dosya biçimini kontrol edin."
+    },
+    "importHtmlSizeWarning": {
+        "message": "1MB Sınırı"
+    },
+    "importHtmlSizeNote": {
+        "message": "Maks. ~2500 yer imi"
+    },
+    "importWarning": {
+        "message": "Mevcut tüm yer imleri değiştirilecek"
+    },
+    "developer": {
+        "message": "Geliştirici:"
+    },
+    "lock": {
+        "message": "Kilitle"
+    },
+    "faqButtonTitle": {
+        "message": "Sık Sorulan Sorular"
+    },
+    "clearingHistory": {
+        "message": "Geçmiş Temizleniyor",
+        "description": "Title for history clearing progress modal"
+    },
+    "preparingToClear": {
+        "message": "Geçmişi temizlemeye hazırlanıyor...",
+        "description": "Initial status message"
+    },
+    "progress": {
+        "message": "İlerleme",
+        "description": "Progress label"
+    },
+    "domainsProcessed": {
+        "message": "İşlenen alan adları",
+        "description": "Label for domains processed count"
+    },
+    "entriesDeleted": {
+        "message": "Silinen girişler",
+        "description": "Label for deleted entries count"
+    },
+    "startingCleanup": {
+        "message": "Temizleme başlatılıyor...",
+        "description": "Status when starting"
+    },
+    "finalizingCleanup": {
+        "message": "Temizleme tamamlanıyor...",
+        "description": "Status when finalizing"
+    },
+    "cancelling": {
+        "message": "İptal ediliyor...",
+        "description": "Status when cancelling"
+    },
+    "clearCancelled": {
+        "message": "İşlem iptal edildi",
+        "description": "Notification when cancelled"
+    },
+    "fillAllFields": {
+        "message": "Lütfen tüm alanları doldurun"
+    },
+    "setupComplete": {
+        "message": "Kurulum tamamlandı!"
+    },
+    "migrationSuccess": {
+        "message": "Veriler güvenli biçime başarıyla taşındı!"
+    },
+    "migrationRequired": {
+        "message": "Veri biçimi güncellemesi gerekiyor"
+    },
+    "migrationInstruction": {
+        "message": "Daha güvenli biçime otomatik yükseltmek için parolanızı girin."
+    },
+    "exportSuccess": {
+        "message": "Dışa aktarma başarılı",
+        "description": "Notification when data export completes successfully"
+    },
+    "processing": {
+        "message": "İşleniyor...",
+        "description": "Generic processing message for loading indicators"
+    },
+    "unlocking": {
+        "message": "Kilit açılıyor...",
+        "description": "Shown while decrypting bookmarks"
+    },
+    "changingPassword": {
+        "message": "Parola değiştiriliyor...",
+        "description": "Shown while changing master password"
+    },
+    "settingUpEncryption": {
+        "message": "Şifreleme ayarlanıyor...",
+        "description": "Shown during first-time setup"
+    },
+    "migratingData": {
+        "message": "Veriler güvenli biçime taşınıyor...",
+        "description": "Shown during v1 to v2 migration"
+    },
+    "loading": {
+        "message": "Yükleniyor...",
+        "description": "Generic loading message"
+    },
+    "donationReminderTitle": {
+        "message": "Projeyi destekle"
+    },
+    "donationReminderText": {
+        "message": "Bu uzantıyı beğendiyseniz lütfen geliştirilmesini destekleyin!"
+    },
+    "remindLater": {
+        "message": "Sonra hatırlat"
+    },
+    "supportNow": {
+        "message": "Şimdi destekle"
+    },
+    "remindNever": {
+        "message": "Bir daha gösterme"
+    },
+    "confirmDismiss": {
+        "message": "Bağış hatırlatıcıları bir daha gösterilmesin mi?"
+    },
+    "bookmarkAlreadyInFolder": {
+        "message": "Öğe zaten bu klasörde"
+    },
+    "cannotMoveIntoSelf": {
+        "message": "Klasör kendi içine taşınamaz"
+    },
+    "bookmarksMoved": {
+        "message": "{0} öğe taşındı"
+    },
+    "deleteSelectedConfirm": {
+        "message": "Seçili {count} öğe silinsin mi?",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "bookmarksDeleted": {
+        "message": "{count} öğe silindi",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "moveBookmarksTitle": {
+        "message": "{0} öğeyi taşı"
+    },
+    "setupTabNew": {
+        "message": "Yeni Oluştur",
+        "description": "Tab label for creating new password"
+    },
+    "setupTabRestore": {
+        "message": "Yedeği Geri Yükle",
+        "description": "Tab label for restoring from backup"
+    },
+    "restoreDropTitle": {
+        "message": "Yedek dosyasını buraya bırakın veya seçmek için tıklayın",
+        "description": "Text for drag & drop area in restore tab"
+    },
+    "strengthWeak": {
+        "message": "Zayıf",
+        "description": "Password strength indicator"
+    },
+    "strengthFair": {
+        "message": "Orta",
+        "description": "Password strength indicator"
+    },
+    "strengthGood": {
+        "message": "İyi",
+        "description": "Password strength indicator"
+    },
+    "strengthStrong": {
+        "message": "Güçlü",
+        "description": "Password strength indicator"
+    },
+    "importingBackup": {
+        "message": "Yedek geri yükleniyor...",
+        "description": "Loading message during backup import"
+    },
+    "unlockTitle": {
+        "message": "Ana parolayı girin"
+    },
+    "warningRemember": {
+        "message": "Parolanızı hatırlıyor musunuz?"
+    },
+    "yesRemember": {
+        "message": "Evet, hatırlıyorum"
+    },
+    "survey": {
+        "message": "Geri Bildirim Anketi"
+    },
+    "Error": {
+        "message": "Hata"
+    },
+    "changelog": {
+        "message": "Değişiklik Günlüğü"
+    },
+    "rateExtension": {
+        "message": "Chrome Web Mağazası'nda değerlendir"
+    },
+    "migrationScreenTitle": {
+        "message": "Güncelleme Gerekiyor",
+        "description": "Title on the manager migration screen"
+    },
+    "migrationScreenBody1": {
+        "message": "Uzantı geliştirilmiş güvenlikle güncellendi.",
+        "description": "First line on the manager migration screen"
+    },
+    "migrationScreenBody2": {
+        "message": "Verilerinizi yeni güvenli biçime taşımak için uzantı açılır penceresini açın.",
+        "description": "Second line on the manager migration screen"
+    },
+    "notSetUpTitle": {
+        "message": "Uzantı Kurulmamış",
+        "description": "manager-lock: notSetUpTitle"
+    },
+    "notSetUpSubtitle": {
+        "message": "Uzantı henüz kurulmamış. Parola oluşturmak için uzantı açılır penceresini açın.",
+        "description": "manager-lock: notSetUpSubtitle"
+    },
+    "notSetUpButton": {
+        "message": "Açılır Pencereyi Aç",
+        "description": "manager-lock: notSetUpButton"
+    },
+    "reloadingSubtitle": {
+        "message": "Yönetici yeniden yükleniyor...",
+        "description": "manager-lock: reloadingSubtitle"
+    },
+    "reloadingWait": {
+        "message": "Yönetici güncellenirken lütfen bekleyin",
+        "description": "manager-lock: reloadingWait"
+    },
+    "exportHtml": {
+        "message": "HTML'ye Dışa Aktar"
+    },
+    "exportHtmlNote": {
+        "message": "Netscape Yer İmleri biçimi"
+    },
+    "exportHtmlSuccess": {
+        "message": "HTML dışa aktarma başarılı"
+    },
+    "exportHtmlConfirmTitle": {
+        "message": "Parolanızı onaylayın"
+    },
+    "exportHtmlConfirmDesc": {
+        "message": "Yer imleriniz düz metin olarak dışa aktarılacak. Onaylamak için ana parolanızı girin."
+    },
+    "exportHtmlPasswordRequired": {
+        "message": "Lütfen parolanızı girin"
+    },
+    "exportHtmlConfirmBtn": {
+        "message": "Dışa Aktar"
+    },
+    "exportHtmlVerifying": {
+        "message": "Parola doğrulanıyor…"
+    },
+    "copiedToClipboard": {
+        "message": "Panoya kopyalandı!"
+    },
+    "copyFailed": {
+        "message": "Kopyalama başarısız"
+    },
+    "clickToCopy": {
+        "message": "Kopyalamak için tıklayın"
+    },
+    "qrCodeFor": {
+        "message": "$1 için QR Kodu",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            }
+        }
+    },
+    "quickCloseTab": {
+        "message": "Sekmeyi hızla kapat ($1)"
+    },
+    "quickCloseTabDesc": {
+        "message": "Geçerli sekmeyi kapatır ve alan adının tarama geçmişini siler"
+    },
+    "quickCloseTabCommand": {
+        "message": "Sekmeyi kapat ve alan geçmişini temizle"
+    },
+    "changeShortcut": {
+        "message": "Kısayolları değiştir"
+    },
+    "actions": {
+        "message": "Eylemler"
+    },
+    "qrCode": {
+        "message": "QR Kodu"
+    },
+    "qrScanHint": {
+        "message": "Bağlantıyı cihazınızda açmak için QR kodunu tarayın."
+    },
+    "stayUnlocked": {
+        "message": "Oturumlar arasında kilitsiz kal"
+    },
+    "stayUnlockedDesc": {
+        "message": "Tarayıcı açıkken kilitsiz kalır"
+    },
+    "stayUnlockedWarning": {
+        "message": "Güvenliği azaltır: şifreleme anahtarı tarayıcı oturumu deposunda saklanır. Tarayıcı profilinize erişimi olan herkes bunu okuyabilir."
+    },
+    "alwaysIncognito": {
+        "message": "Yer imlerini her zaman gizli modda aç"
+    },
+    "alwaysIncognitoDesc": {
+        "message": "Tüm yer imleri özel pencerede açılacak"
+    },
+    "enable": {
+        "message": "Etkinleştir"
+    },
+    "managerIsOpen": {
+        "message": "Yer İmi Yöneticisi açık"
+    },
+    "managerIsOpenDesc": {
+        "message": "Açılır pencereyi kullanmak için yer imi yöneticisi sekmesini kapatın."
+    },
+    "switchToManager": {
+        "message": "Yöneticiye Geç"
+    },
+    "hotkeys": {
+        "message": "Kısayol Tuşları"
+    },
+    "lockExtensionCommand": {
+        "message": "Uzantıyı kilitle"
+    },
+    "openManagerCommand": {
+        "message": "Yer imi yöneticisini aç"
+    },
+    "blurPage": {
+        "message": "Sayfayı bulanıklaştır ($1)"
+    },
+    "blurPageDesc": {
+        "message": "Etkinleştirildiğinde geçerli sekmeyi bulanıklaştırır"
+    },
+    "blurPageCommand": {
+        "message": "Sayfayı bulanıklaştır"
+    },
+    "invalidUrlProtocol": {
+        "message": "Lütfen http:// veya https:// ile başlayan geçerli bir URL girin"
+    },
+    "openAll": {
+        "message": "Tümünü aç"
+    },
+    "openAllWindow": {
+        "message": "Tümünü yeni pencerede aç"
+    },
+    "openAllGroup": {
+        "message": "Tümünü yeni sekme grubunda aç"
+    },
+    "openAllIncognito": {
+        "message": "Tümünü gizli modda aç"
+    },
+    "saveAllTabs": {
+        "message": "Açık sekmelerin tümünü kaydet"
+    },
+    "noTabsToSave": {
+        "message": "Kaydedilecek sekme yok"
+    },
+    "tabsSaved": {
+        "message": "Sekmeler kaydedildi"
+    },
+    "searchInFolder": {
+        "message": "Klasörde ara..."
+    },
+    "reportBug": {
+        "message": "Hata Bildir"
+    },
+    "managerSubtitle": {
+        "message": "Yer imleriniz üzerinde tam kontrol"
+    }
+}

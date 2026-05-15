@@ -1,0 +1,904 @@
+{
+    "Name": {
+        "message": "Holy Private Bookmarks — Trình Quản Lý Dấu Trang Cục Bộ Được Mã Hóa"
+    },
+    "extensionName": {
+        "message": "Holy Private Bookmarks"
+    },
+    "extensionDescription": {
+        "message": "Giữ dấu trang của bạn riêng tư với mật khẩu chính và mã hóa AES-256. Tất cả dữ liệu lưu trên thiết bị của bạn — không đám mây, không theo dõi."
+    },
+    "managerTitle": {
+        "message": "HPB - Trình quản lý dấu trang"
+    },
+    "createPassword": {
+        "message": "Tạo mật khẩu chính để mã hóa toàn bộ dấu trang"
+    },
+    "newPassword": {
+        "message": "Mật khẩu mới (tối thiểu 6 ký tự)"
+    },
+    "confirmPassword": {
+        "message": "Xác nhận mật khẩu"
+    },
+    "createStorage": {
+        "message": "Tạo bộ lưu trữ"
+    },
+    "enterMasterPassword": {
+        "message": ""
+    },
+    "masterPassword": {
+        "message": "Mật khẩu chính"
+    },
+    "unlock": {
+        "message": "Mở khóa"
+    },
+    "wrongPassword": {
+        "message": "Mật khẩu sai"
+    },
+    "passwordsMismatch": {
+        "message": "Mật khẩu không khớp hoặc quá ngắn"
+    },
+    "bookmarksProtected": {
+        "message": "Dấu trang của bạn được bảo vệ an toàn"
+    },
+    "addCurrentPage": {
+        "message": "Thêm trang hiện tại"
+    },
+    "newFolder": {
+        "message": "Thư mục mới"
+    },
+    "clearHistory": {
+        "message": "Xóa lịch sử"
+    },
+    "settings": {
+        "message": "Cài đặt"
+    },
+    "settingsbtn": {
+        "message": "⚙️"
+    },
+    "changeMasterPassword": {
+        "message": "Thay đổi mật khẩu chính"
+    },
+    "currentPassword": {
+        "message": "Mật khẩu chính hiện tại"
+    },
+    "newPassword2": {
+        "message": "Mật khẩu mới"
+    },
+    "confirmNewPassword": {
+        "message": "Xác nhận mật khẩu mới"
+    },
+    "changePassword": {
+        "message": "Đổi mật khẩu"
+    },
+    "exportImport": {
+        "message": "Xuất & Nhập"
+    },
+    "export": {
+        "message": "Tạo bản sao lưu"
+    },
+    "openPrivate": {
+        "message": "Mở trong tab riêng tư"
+    },
+    "import": {
+        "message": "Nhập"
+    },
+    "importFromChrome": {
+        "message": "Nhập từ Chrome"
+    },
+    "importChromeBookmarks": {
+        "message": "Nhập tất cả dấu trang Chrome"
+    },
+    "importChromeBookmarksAdvanced": {
+        "message": "Chọn thư mục để nhập"
+    },
+    "importChromeConfirm": {
+        "message": "Nhập tất cả dấu trang từ Chrome? Dấu trang hiện có sẽ được giữ nguyên."
+    },
+    "importChromeSuccess": {
+        "message": "Nhập dấu trang thành công!"
+    },
+    "importChromeError": {
+        "message": "Không thể nhập dấu trang"
+    },
+    "selectFoldersToImport": {
+        "message": "Chọn thư mục để nhập"
+    },
+    "selectAll": {
+        "message": "Chọn tất cả"
+    },
+    "deselectAll": {
+        "message": "Bỏ chọn tất cả"
+    },
+    "importSelected": {
+        "message": "Nhập"
+    },
+    "back": {
+        "message": "← Quay lại"
+    },
+    "addBookmark": {
+        "message": "Thêm dấu trang"
+    },
+    "editBookmark": {
+        "message": "Chỉnh sửa dấu trang"
+    },
+    "page": {
+        "message": "Trang"
+    },
+    "title": {
+        "message": "Tiêu đề"
+    },
+    "url": {
+        "message": "URL"
+    },
+    "folder": {
+        "message": "Thư mục"
+    },
+    "rootFolder": {
+        "message": "Thư mục gốc"
+    },
+    "new": {
+        "message": "+ Mới"
+    },
+    "cancel": {
+        "message": "Hủy"
+    },
+    "save": {
+        "message": "Lưu"
+    },
+    "deleteConfirm": {
+        "message": "Xóa dấu trang"
+    },
+    "folderName": {
+        "message": "Tên thư mục:"
+    },
+    "newName": {
+        "message": "Tên mới:"
+    },
+    "titleRequired": {
+        "message": "Tiêu đề và URL là bắt buộc"
+    },
+    "validUrl": {
+        "message": "URL phải bắt đầu bằng http:// hoặc https://"
+    },
+    "passwordChanged": {
+        "message": "Đổi mật khẩu thành công!"
+    },
+    "importSuccess": {
+        "message": "Nhập bản sao lưu thành công! Vui lòng mở lại cửa sổ popup."
+    },
+    "invalidFile": {
+        "message": "Tệp sao lưu không hợp lệ"
+    },
+    "clearHistoryConfirm": {
+        "message": "Xóa TẤT CẢ lịch sử trình duyệt cho các tên miền trong Holy Private Bookmarks của bạn?"
+    },
+    "noBookmarks": {
+        "message": "Không tìm thấy dấu trang — không có gì để xóa."
+    },
+    "noDomains": {
+        "message": "Không tìm thấy tên miền hợp lệ trong dấu trang."
+    },
+    "newBookmark": {
+        "message": "Dấu trang mới"
+    },
+    "paste": {
+        "message": "Dán"
+    },
+    "ctxnewFolder": {
+        "message": "Thư mục mới"
+    },
+    "emptyTreeTitle": {
+        "message": "Chưa có dấu trang"
+    },
+    "emptyTreeSubtitle": {
+        "message": "Thêm dấu trang hoặc thư mục đầu tiên để bắt đầu"
+    },
+    "historyCleared": {
+        "message": "Đã xóa lịch sử!\nĐã xóa $count$ lượt truy cập từ $domains$ tên miền.",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "domains": {
+                "content": "$2"
+            }
+        }
+    },
+    "addToHoly": {
+        "message": "Thêm vào Holy Private Bookmarks"
+    },
+    "cannotAddPage": {
+        "message": "Không thể thêm trang này (không có URL hợp lệ)"
+    },
+    "supportProject": {
+        "message": "Ủng hộ dự án"
+    },
+    "supportPageTitle": {
+        "message": "Ủng Hộ Holy Private Bookmarks"
+    },
+    "donateHeroTitle": {
+        "message": "Ủng hộ phát triển tập trung vào quyền riêng tư"
+    },
+    "donateHeroSubtitle": {
+        "message": "Holy Private Bookmarks hoàn toàn miễn phí và mã nguồn mở, và sẽ luôn như vậy. Sự ủng hộ của bạn giúp các nhà phát triển dành thời gian duy trì và cải thiện tiện ích cho tất cả những ai quan tâm đến quyền riêng tư."
+    },
+    "whySupport": {
+        "message": "Tại sao sự ủng hộ của bạn quan trọng"
+    },
+    "timeInvestment": {
+        "message": "Thời gian của nhà phát triển"
+    },
+    "timeInvestmentDesc": {
+        "message": "Mỗi tính năng, sửa lỗi và cải tiến bảo mật đại diện cho nhiều giờ làm việc. Đóng góp của bạn trân trọng thời gian đó và giữ cho dự án bền vững."
+    },
+    "longTerm": {
+        "message": "Cam kết lâu dài"
+    },
+    "longTermDesc": {
+        "message": "Sự ủng hộ của bạn đảm bảo tiện ích được duy trì tích cực, tương thích với các bản cập nhật Chrome trong tương lai và liên tục được cải thiện."
+    },
+    "futureFeatures": {
+        "message": "Tính năng trong tương lai"
+    },
+    "futureFeaturesDesc": {
+        "message": "Với sự giúp đỡ của bạn, chúng tôi có thể ưu tiên chức năng mới, giao diện tốt hơn và các tính năng bảo mật nâng cao có lợi cho toàn bộ cộng đồng."
+    },
+    "donateCtaText": {
+        "message": "Không đăng ký. Không paywall. Không tài trợ doanh nghiệp. Chỉ là những người xây dựng điều gì đó hữu ích cho người khác. Nếu tiện ích này tiết kiệm thời gian hoặc mang lại sự an tâm cho bạn, hãy cân nhắc mua cho các nhà phát triển một tách cà phê."
+    },
+    "donateCryptoTitle": {
+        "message": "Ủng Hộ bằng Tiền Điện Tử"
+    },
+    "copyAddress": {
+        "message": "Sao chép địa chỉ"
+    },
+    "donateThanks": {
+        "message": "Cảm ơn bạn đã ủng hộ phát triển mã nguồn mở độc lập"
+    },
+    "donateThanksNote": {
+        "message": "Mỗi đóng góp, dù lớn hay nhỏ, đều có ý nghĩa rất lớn với chúng tôi."
+    },
+    "importantWarning": {
+        "message": "CẢNH BÁO QUAN TRỌNG:"
+    },
+    "passwordCannotBeRecovered": {
+        "message": "Mật khẩu này KHÔNG THỂ khôi phục!"
+    },
+    "noPasswordReset": {
+        "message": "KHÔNG có tùy chọn đặt lại mật khẩu"
+    },
+    "weDontStorePassword": {
+        "message": "Chúng tôi KHÔNG lưu trữ mật khẩu của bạn ở bất kỳ đâu"
+    },
+    "bookmarksEncrypted": {
+        "message": "Dấu trang của bạn chỉ được mã hóa bằng mật khẩu này"
+    },
+    "savePasswordSecurely": {
+        "message": "Lưu mật khẩu này một cách an toàn!"
+    },
+    "copyUrl": {
+        "message": "Sao chép URL"
+    },
+    "edit": {
+        "message": "Chỉnh sửa"
+    },
+    "delete": {
+        "message": "Xóa"
+    },
+    "urlCopied": {
+        "message": "Đã sao chép URL vào bộ nhớ tạm"
+    },
+    "dangerZone": {
+        "message": "Vùng Nguy Hiểm"
+    },
+    "deleteAllData": {
+        "message": "Xóa Tất Cả Dữ Liệu"
+    },
+    "deleteAllDataDesc": {
+        "message": "Xóa vĩnh viễn tất cả dấu trang và cài đặt"
+    },
+    "deleteAllDataConfirm": {
+        "message": "Tất cả dấu trang, thư mục, mật khẩu chính và cài đặt sẽ bị xóa vĩnh viễn. Hành động này không thể hoàn tác."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Xóa Tất Cả"
+    },
+    "about": {
+        "message": "Giới thiệu"
+    },
+    "aboutExtension": {
+        "message": "Về Tiện Ích"
+    },
+    "openGitHub": {
+        "message": "Mở GitHub"
+    },
+    "close": {
+        "message": "Đóng"
+    },
+    "features": {
+        "message": "Tính năng"
+    },
+    "troubleshooting": {
+        "message": "Khắc phục sự cố"
+    },
+    "encryption": {
+        "message": "Mã hóa"
+    },
+    "encryptionDesc": {
+        "message": "Mã hóa AES-256"
+    },
+    "localStorage": {
+        "message": "Lưu trữ cục bộ"
+    },
+    "localStorageDesc": {
+        "message": "Dữ liệu lưu trên thiết bị của bạn"
+    },
+    "privacy": {
+        "message": "Quyền riêng tư"
+    },
+    "privacyDesc": {
+        "message": "Không theo dõi hoặc phân tích"
+    },
+    "openSource": {
+        "message": "GPLv3"
+    },
+    "viewOnGitHub": {
+        "message": "Xem trên GitHub"
+    },
+    "githubRepo": {
+        "message": "Kho lưu trữ GitHub"
+    },
+    "githubRepoDesc": {
+        "message": "Xem mã nguồn, báo cáo sự cố, đóng góp"
+    },
+    "version": {
+        "message": "Phiên bản"
+    },
+    "openmanager": {
+        "message": "Mở trình quản lý"
+    },
+    "managerDesc": {
+        "message": "Mở trình quản lý dấu trang toàn màn hình"
+    },
+    "folders": {
+        "message": "Thư mục"
+    },
+    "bookmarks": {
+        "message": "dấu trang"
+    },
+    "allBookmarks": {
+        "message": "Tất Cả Dấu Trang"
+    },
+    "searchBookmarks": {
+        "message": "Tìm kiếm dấu trang..."
+    },
+    "noBookmarksInFolder": {
+        "message": "Không có dấu trang trong thư mục"
+    },
+    "addBookmarksToGetStarted": {
+        "message": "Thêm dấu trang để bắt đầu"
+    },
+    "bookmarkUpdated": {
+        "message": "Đã cập nhật dấu trang"
+    },
+    "bookmarkDeleted": {
+        "message": "Đã xóa dấu trang"
+    },
+    "renameFolder": {
+        "message": "Đổi tên thư mục"
+    },
+    "folderCreated": {
+        "message": "Tạo thư mục thành công"
+    },
+    "managerLocked": {
+        "message": "Trình quản lý đã bị khóa"
+    },
+    "lockManager": {
+        "message": "Khóa trình quản lý"
+    },
+    "rename": {
+        "message": "Đổi tên"
+    },
+    "deleteFolder": {
+        "message": "Xóa thư mục"
+    },
+    "deleteFolderConfirm": {
+        "message": "Xóa thư mục \"{0}\"?"
+    },
+    "deleteFolderWarning": {
+        "message": "Tất cả nội dung sẽ bị xóa vĩnh viễn."
+    },
+    "folderRenamed": {
+        "message": "Đổi tên thư mục thành công"
+    },
+    "folderDeleted": {
+        "message": "Xóa thư mục thành công"
+    },
+    "cannotRenameAll": {
+        "message": "Không thể đổi tên thư mục \"Tất Cả Dấu Trang\""
+    },
+    "cannotDeleteAll": {
+        "message": "Không thể xóa thư mục \"Tất Cả Dấu Trang\""
+    },
+    "bookmarkAdded": {
+        "message": "Đã thêm dấu trang"
+    },
+    "pendingBookmarkNotification": {
+        "message": "Dấu trang đang chờ!"
+    },
+    "pendingBookmarkInstruction": {
+        "message": "Có một dấu trang đang chờ được thêm. Vui lòng mở khóa để tiếp tục."
+    },
+    "dragSuccess": {
+        "message": "Đã di chuyển mục thành công"
+    },
+    "invalidDestinationFolder": {
+        "message": "Thư mục đích không hợp lệ"
+    },
+    "moveFailed": {
+        "message": "Di chuyển dấu trang thất bại"
+    },
+    "noBookmarksSelected": {
+        "message": "Không có dấu trang nào được chọn"
+    },
+    "selectDestinationFolder": {
+        "message": "Chọn thư mục đích:"
+    },
+    "move": {
+        "message": "Di chuyển"
+    },
+    "selected": {
+        "message": "đã chọn"
+    },
+    "moveSelectedTitle": {
+        "message": "Di chuyển các mục đã chọn"
+    },
+    "deleteSelectedTitle": {
+        "message": "Xóa các mục đã chọn"
+    },
+    "cancelSelectionTitle": {
+        "message": "Hủy chọn"
+    },
+    "emptyFolder": {
+        "message": "Thư mục trống",
+        "description": "Message shown when a folder has no bookmarks"
+    },
+    "noSearchResults": {
+        "message": "Không tìm thấy dấu trang",
+        "description": "Message when search returns no results"
+    },
+    "noSearchResultsDesc": {
+        "message": "Thử từ khóa tìm kiếm khác",
+        "description": "Description for empty search results"
+    },
+    "theme": {
+        "message": "Giao diện"
+    },
+    "themeDark": {
+        "message": "Tối",
+        "description": "Dark theme name"
+    },
+    "themeLight": {
+        "message": "Sáng",
+        "description": "Light theme name"
+    },
+    "themeSystem": {
+        "message": "Hệ thống",
+        "description": "System theme name"
+    },
+    "themeToggle": {
+        "message": "Chuyển đổi giao diện",
+        "description": "Tooltip for theme toggle button"
+    },
+    "showFavicons": {
+        "message": "Hiển thị favicon trang web"
+    },
+    "showFaviconsDesc": {
+        "message": "Biểu tượng được tải qua dịch vụ favicon của Google"
+    },
+    "bookmarksAndFolders": {
+        "message": "Dấu trang & Thư mục"
+    },
+    "importFromHtml": {
+        "message": "Nhập từ HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "Nhập dấu trang HTML thành công! Đã thêm $COUNT$ dấu trang.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+        "message": "Chưa chọn tệp"
+    },
+    "htmlImporterFileTooLarge": {
+        "message": "Tệp quá lớn (tối đa 1MB)"
+    },
+    "htmlImporterParseError": {
+        "message": "Nhập HTML thất bại: $1"
+    },
+    "htmlImporterNoBookmarksFound": {
+        "message": "Không tìm thấy dấu trang trong tệp"
+    },
+    "importHtmlError": {
+        "message": "Phân tích tệp HTML thất bại. Vui lòng kiểm tra định dạng tệp."
+    },
+    "importHtmlSizeWarning": {
+        "message": "Giới hạn 1MB"
+    },
+    "importHtmlSizeNote": {
+        "message": "Tối đa ~2500 dấu trang"
+    },
+    "importWarning": {
+        "message": "Tất cả dấu trang hiện có sẽ bị thay thế"
+    },
+    "developer": {
+        "message": "Nhà phát triển:"
+    },
+    "lock": {
+        "message": "Khóa"
+    },
+    "faqButtonTitle": {
+        "message": "Câu Hỏi Thường Gặp"
+    },
+    "clearingHistory": {
+        "message": "Đang Xóa Lịch Sử",
+        "description": "Title for history clearing progress modal"
+    },
+    "preparingToClear": {
+        "message": "Đang chuẩn bị xóa lịch sử...",
+        "description": "Initial status message"
+    },
+    "progress": {
+        "message": "Tiến trình",
+        "description": "Progress label"
+    },
+    "domainsProcessed": {
+        "message": "Tên miền đã xử lý",
+        "description": "Label for domains processed count"
+    },
+    "entriesDeleted": {
+        "message": "Mục đã xóa",
+        "description": "Label for deleted entries count"
+    },
+    "startingCleanup": {
+        "message": "Bắt đầu dọn dẹp...",
+        "description": "Status when starting"
+    },
+    "finalizingCleanup": {
+        "message": "Đang hoàn tất dọn dẹp...",
+        "description": "Status when finalizing"
+    },
+    "cancelling": {
+        "message": "Đang hủy...",
+        "description": "Status when cancelling"
+    },
+    "clearCancelled": {
+        "message": "Đã hủy thao tác",
+        "description": "Notification when cancelled"
+    },
+    "fillAllFields": {
+        "message": "Vui lòng điền vào tất cả các trường"
+    },
+    "setupComplete": {
+        "message": "Thiết lập hoàn tất!"
+    },
+    "migrationSuccess": {
+        "message": "Đã di chuyển dữ liệu thành công sang định dạng bảo mật!"
+    },
+    "migrationRequired": {
+        "message": "Cần cập nhật định dạng dữ liệu"
+    },
+    "migrationInstruction": {
+        "message": "Nhập mật khẩu của bạn để tự động nâng cấp lên định dạng bảo mật hơn."
+    },
+    "exportSuccess": {
+        "message": "Xuất thành công",
+        "description": "Notification when data export completes successfully"
+    },
+    "processing": {
+        "message": "Đang xử lý...",
+        "description": "Generic processing message for loading indicators"
+    },
+    "unlocking": {
+        "message": "Đang mở khóa...",
+        "description": "Shown while decrypting bookmarks"
+    },
+    "changingPassword": {
+        "message": "Đang đổi mật khẩu...",
+        "description": "Shown while changing master password"
+    },
+    "settingUpEncryption": {
+        "message": "Đang thiết lập mã hóa...",
+        "description": "Shown during first-time setup"
+    },
+    "migratingData": {
+        "message": "Đang di chuyển dữ liệu sang định dạng bảo mật...",
+        "description": "Shown during v1 to v2 migration"
+    },
+    "loading": {
+        "message": "Đang tải...",
+        "description": "Generic loading message"
+    },
+    "donationReminderTitle": {
+        "message": "Ủng hộ dự án"
+    },
+    "donationReminderText": {
+        "message": "Nếu bạn thích tiện ích này, hãy ủng hộ sự phát triển của nó!"
+    },
+    "remindLater": {
+        "message": "Nhắc sau"
+    },
+    "supportNow": {
+        "message": "Ủng hộ ngay"
+    },
+    "remindNever": {
+        "message": "Không hiển thị lại"
+    },
+    "confirmDismiss": {
+        "message": "Không bao giờ hiển thị lời nhắc quyên góp nữa?"
+    },
+    "bookmarkAlreadyInFolder": {
+        "message": "Mục đã có trong thư mục này"
+    },
+    "cannotMoveIntoSelf": {
+        "message": "Không thể di chuyển thư mục vào chính nó"
+    },
+    "bookmarksMoved": {
+        "message": "Đã di chuyển {0} mục"
+    },
+    "deleteSelectedConfirm": {
+        "message": "Xóa {count} mục đã chọn?",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "bookmarksDeleted": {
+        "message": "Đã xóa {count} mục",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "moveBookmarksTitle": {
+        "message": "Di chuyển {0} mục"
+    },
+    "setupTabNew": {
+        "message": "Tạo Mới",
+        "description": "Tab label for creating new password"
+    },
+    "setupTabRestore": {
+        "message": "Khôi Phục Sao Lưu",
+        "description": "Tab label for restoring from backup"
+    },
+    "restoreDropTitle": {
+        "message": "Thả tệp sao lưu vào đây hoặc nhấp để chọn",
+        "description": "Text for drag & drop area in restore tab"
+    },
+    "strengthWeak": {
+        "message": "Yếu",
+        "description": "Password strength indicator"
+    },
+    "strengthFair": {
+        "message": "Trung bình",
+        "description": "Password strength indicator"
+    },
+    "strengthGood": {
+        "message": "Tốt",
+        "description": "Password strength indicator"
+    },
+    "strengthStrong": {
+        "message": "Mạnh",
+        "description": "Password strength indicator"
+    },
+    "importingBackup": {
+        "message": "Đang khôi phục sao lưu...",
+        "description": "Loading message during backup import"
+    },
+    "unlockTitle": {
+        "message": "Nhập mật khẩu chính"
+    },
+    "warningRemember": {
+        "message": "Bạn có nhớ mật khẩu không?"
+    },
+    "yesRemember": {
+        "message": "Có, tôi nhớ"
+    },
+    "survey": {
+        "message": "Khảo sát phản hồi"
+    },
+    "Error": {
+        "message": "Lỗi"
+    },
+    "changelog": {
+        "message": "Nhật ký thay đổi"
+    },
+    "rateExtension": {
+        "message": "Đánh giá trên Chrome Web Store"
+    },
+    "migrationScreenTitle": {
+        "message": "Cần Cập Nhật",
+        "description": "Title on the manager migration screen"
+    },
+    "migrationScreenBody1": {
+        "message": "Tiện ích đã được cập nhật với bảo mật nâng cao.",
+        "description": "First line on the manager migration screen"
+    },
+    "migrationScreenBody2": {
+        "message": "Vui lòng mở cửa sổ popup tiện ích để di chuyển dữ liệu của bạn sang định dạng bảo mật mới.",
+        "description": "Second line on the manager migration screen"
+    },
+    "notSetUpTitle": {
+        "message": "Tiện Ích Chưa Được Thiết Lập",
+        "description": "manager-lock: notSetUpTitle"
+    },
+    "notSetUpSubtitle": {
+        "message": "Tiện ích chưa được thiết lập. Vui lòng mở cửa sổ popup tiện ích để tạo mật khẩu.",
+        "description": "manager-lock: notSetUpSubtitle"
+    },
+    "notSetUpButton": {
+        "message": "Mở Popup",
+        "description": "manager-lock: notSetUpButton"
+    },
+    "reloadingSubtitle": {
+        "message": "Trình quản lý đang tải lại...",
+        "description": "manager-lock: reloadingSubtitle"
+    },
+    "reloadingWait": {
+        "message": "Vui lòng chờ trong khi trình quản lý cập nhật",
+        "description": "manager-lock: reloadingWait"
+    },
+    "exportHtml": {
+        "message": "Xuất sang HTML"
+    },
+    "exportHtmlNote": {
+        "message": "Định dạng Netscape Bookmarks"
+    },
+    "exportHtmlSuccess": {
+        "message": "Xuất HTML thành công"
+    },
+    "exportHtmlConfirmTitle": {
+        "message": "Xác nhận mật khẩu"
+    },
+    "exportHtmlConfirmDesc": {
+        "message": "Dấu trang của bạn sẽ được xuất dưới dạng văn bản thuần túy. Nhập mật khẩu chính để xác nhận."
+    },
+    "exportHtmlPasswordRequired": {
+        "message": "Vui lòng nhập mật khẩu"
+    },
+    "exportHtmlConfirmBtn": {
+        "message": "Xuất"
+    },
+    "exportHtmlVerifying": {
+        "message": "Đang xác minh mật khẩu…"
+    },
+    "copiedToClipboard": {
+        "message": "Đã sao chép vào bộ nhớ tạm!"
+    },
+    "copyFailed": {
+        "message": "Sao chép thất bại"
+    },
+    "clickToCopy": {
+        "message": "Nhấp để sao chép"
+    },
+    "qrCodeFor": {
+        "message": "Mã QR cho $1",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            }
+        }
+    },
+    "quickCloseTab": {
+        "message": "Đóng tab nhanh ($1)"
+    },
+    "quickCloseTabDesc": {
+        "message": "Đóng tab hiện tại và xóa lịch sử duyệt web cho tên miền đó"
+    },
+    "quickCloseTabCommand": {
+        "message": "Đóng tab và xóa lịch sử tên miền"
+    },
+    "changeShortcut": {
+        "message": "Thay đổi phím tắt"
+    },
+    "actions": {
+        "message": "Hành động"
+    },
+    "qrCode": {
+        "message": "Mã QR"
+    },
+    "qrScanHint": {
+        "message": "Quét mã QR để mở liên kết trên thiết bị của bạn."
+    },
+    "stayUnlocked": {
+        "message": "Giữ mở khóa giữa các phiên"
+    },
+    "stayUnlockedDesc": {
+        "message": "Giữ bạn mở khóa trong khi trình duyệt đang mở"
+    },
+    "stayUnlockedWarning": {
+        "message": "Giảm bảo mật: khóa mã hóa được lưu trong bộ nhớ phiên trình duyệt. Bất kỳ ai có quyền truy cập vào hồ sơ trình duyệt của bạn đều có thể đọc nó."
+    },
+    "alwaysIncognito": {
+        "message": "Luôn mở dấu trang ở chế độ ẩn danh"
+    },
+    "alwaysIncognitoDesc": {
+        "message": "Tất cả dấu trang sẽ được mở trong cửa sổ riêng tư"
+    },
+    "enable": {
+        "message": "Bật"
+    },
+    "managerIsOpen": {
+        "message": "Trình quản lý dấu trang đang mở"
+    },
+    "managerIsOpenDesc": {
+        "message": "Đóng tab trình quản lý dấu trang để sử dụng popup."
+    },
+    "switchToManager": {
+        "message": "Chuyển sang Trình Quản Lý"
+    },
+    "hotkeys": {
+        "message": "Phím tắt"
+    },
+    "lockExtensionCommand": {
+        "message": "Khóa tiện ích"
+    },
+    "openManagerCommand": {
+        "message": "Mở trình quản lý dấu trang"
+    },
+    "blurPage": {
+        "message": "Làm mờ trang ($1)"
+    },
+    "blurPageDesc": {
+        "message": "Làm mờ tab hiện tại khi được bật"
+    },
+    "blurPageCommand": {
+        "message": "Làm mờ trang"
+    },
+    "invalidUrlProtocol": {
+        "message": "Vui lòng nhập URL hợp lệ bắt đầu bằng http:// hoặc https://"
+    },
+    "openAll": {
+        "message": "Mở tất cả"
+    },
+    "openAllWindow": {
+        "message": "Mở tất cả trong cửa sổ mới"
+    },
+    "openAllGroup": {
+        "message": "Mở tất cả trong nhóm tab mới"
+    },
+    "openAllIncognito": {
+        "message": "Mở tất cả ở chế độ ẩn danh"
+    },
+    "saveAllTabs": {
+        "message": "Lưu tất cả tab đang mở"
+    },
+    "noTabsToSave": {
+        "message": "Không có tab nào để lưu"
+    },
+    "tabsSaved": {
+        "message": "Đã lưu các tab"
+    },
+    "searchInFolder": {
+        "message": "Tìm kiếm trong thư mục..."
+    },
+    "reportBug": {
+        "message": "Báo Cáo Lỗi"
+    },
+    "managerSubtitle": {
+        "message": "Kiểm soát hoàn toàn dấu trang của bạn"
+    }
+}
