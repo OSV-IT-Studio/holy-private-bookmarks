@@ -1,0 +1,904 @@
+{
+    "Name": {
+        "message": "Holy Private Bookmarks — Manager local de marcaje criptat"
+    },
+    "extensionName": {
+        "message": "Holy Private Bookmarks"
+    },
+    "extensionDescription": {
+        "message": "Păstrați-vă marcajele private cu o parolă principală și criptare AES-256. Toate datele rămân pe dispozitivul dvs. — fără cloud, fără urmărire."
+    },
+    "managerTitle": {
+        "message": "HPB - Manager de marcaje"
+    },
+    "createPassword": {
+        "message": "Creați o parolă principală pentru criptarea completă a marcajelor"
+    },
+    "newPassword": {
+        "message": "Parolă nouă (min. 6 caractere)"
+    },
+    "confirmPassword": {
+        "message": "Confirmați parola"
+    },
+    "createStorage": {
+        "message": "Creați spațiu de stocare"
+    },
+    "enterMasterPassword": {
+        "message": ""
+    },
+    "masterPassword": {
+        "message": "Parolă principală"
+    },
+    "unlock": {
+        "message": "Deblocați"
+    },
+    "wrongPassword": {
+        "message": "Parolă greșită"
+    },
+    "passwordsMismatch": {
+        "message": "Parolele nu se potrivesc sau sunt prea scurte"
+    },
+    "bookmarksProtected": {
+        "message": "Marcajele dvs. sunt protejate în siguranță"
+    },
+    "addCurrentPage": {
+        "message": "Adăugați pagina curentă"
+    },
+    "newFolder": {
+        "message": "Folder nou"
+    },
+    "clearHistory": {
+        "message": "Ștergeți istoricul"
+    },
+    "settings": {
+        "message": "Setări"
+    },
+    "settingsbtn": {
+        "message": "⚙️"
+    },
+    "changeMasterPassword": {
+        "message": "Schimbați parola principală"
+    },
+    "currentPassword": {
+        "message": "Parola principală actuală"
+    },
+    "newPassword2": {
+        "message": "Parolă nouă"
+    },
+    "confirmNewPassword": {
+        "message": "Confirmați parola nouă"
+    },
+    "changePassword": {
+        "message": "Schimbați parola"
+    },
+    "exportImport": {
+        "message": "Export și import"
+    },
+    "export": {
+        "message": "Creați copie de rezervă"
+    },
+    "openPrivate": {
+        "message": "Deschideți în filă privată"
+    },
+    "import": {
+        "message": "Importați"
+    },
+    "importFromChrome": {
+        "message": "Importați din Chrome"
+    },
+    "importChromeBookmarks": {
+        "message": "Importați toate marcajele Chrome"
+    },
+    "importChromeBookmarksAdvanced": {
+        "message": "Selectați folderele de importat"
+    },
+    "importChromeConfirm": {
+        "message": "Importați toate marcajele din Chrome? Marcajele existente vor fi păstrate."
+    },
+    "importChromeSuccess": {
+        "message": "Marcajele au fost importate cu succes!"
+    },
+    "importChromeError": {
+        "message": "Nu s-au putut importa marcajele"
+    },
+    "selectFoldersToImport": {
+        "message": "Selectați folderele de importat"
+    },
+    "selectAll": {
+        "message": "Selectați tot"
+    },
+    "deselectAll": {
+        "message": "Deselectați tot"
+    },
+    "importSelected": {
+        "message": "Importați"
+    },
+    "back": {
+        "message": "← Înapoi"
+    },
+    "addBookmark": {
+        "message": "Adăugați marcaj"
+    },
+    "editBookmark": {
+        "message": "Editați marcajul"
+    },
+    "page": {
+        "message": "Pagină"
+    },
+    "title": {
+        "message": "Titlu"
+    },
+    "url": {
+        "message": "URL"
+    },
+    "folder": {
+        "message": "Dosar"
+    },
+    "rootFolder": {
+        "message": "Folder rădăcină"
+    },
+    "new": {
+        "message": "+ Nou"
+    },
+    "cancel": {
+        "message": "Anulați"
+    },
+    "save": {
+        "message": "Salvați"
+    },
+    "deleteConfirm": {
+        "message": "Ștergeți marcajul"
+    },
+    "folderName": {
+        "message": "Numele folderului:"
+    },
+    "newName": {
+        "message": "Nume nou:"
+    },
+    "titleRequired": {
+        "message": "Titlul și URL-ul sunt obligatorii"
+    },
+    "validUrl": {
+        "message": "URL-ul trebuie să înceapă cu http:// sau https://"
+    },
+    "passwordChanged": {
+        "message": "Parola a fost schimbată cu succes!"
+    },
+    "importSuccess": {
+        "message": "Copia de rezervă a fost importată cu succes! Redeschideți fereastra popup."
+    },
+    "invalidFile": {
+        "message": "Fișier de rezervă invalid"
+    },
+    "clearHistoryConfirm": {
+        "message": "Ștergeți TOATE înregistrările de istoric al browserului pentru domeniile din Holy Private Bookmarks?"
+    },
+    "noBookmarks": {
+        "message": "Nu s-au găsit marcaje — nimic de șters."
+    },
+    "noDomains": {
+        "message": "Nu s-au găsit domenii valide în marcaje."
+    },
+    "newBookmark": {
+        "message": "Marcaj nou"
+    },
+    "paste": {
+        "message": "Lipiți"
+    },
+    "ctxnewFolder": {
+        "message": "Folder nou"
+    },
+    "emptyTreeTitle": {
+        "message": "Niciun marcaj încă"
+    },
+    "emptyTreeSubtitle": {
+        "message": "Adăugați primul marcaj sau folder pentru a începe"
+    },
+    "historyCleared": {
+        "message": "Istoricul a fost șters!\nS-au eliminat $count$ vizite din $domains$ domenii.",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "domains": {
+                "content": "$2"
+            }
+        }
+    },
+    "addToHoly": {
+        "message": "Adăugați la Holy Private Bookmarks"
+    },
+    "cannotAddPage": {
+        "message": "Nu se poate adăuga această pagină (niciun URL valid)"
+    },
+    "supportProject": {
+        "message": "Susțineți proiectul"
+    },
+    "supportPageTitle": {
+        "message": "Susțineți Holy Private Bookmarks"
+    },
+    "donateHeroTitle": {
+        "message": "Susțineți dezvoltarea axată pe confidențialitate"
+    },
+    "donateHeroSubtitle": {
+        "message": "Holy Private Bookmarks este 100% gratuit și open-source și va rămâne întotdeauna astfel. Sprijinul dvs. ajută dezvoltatorii să dedice timp pentru întreținerea și îmbunătățirea extensiei pentru toți cei care prețuiesc confidențialitatea."
+    },
+    "whySupport": {
+        "message": "De ce contează sprijinul dvs."
+    },
+    "timeInvestment": {
+        "message": "Timpul dezvoltatorului"
+    },
+    "timeInvestmentDesc": {
+        "message": "Fiecare funcție, remediere de erori și îmbunătățire de securitate reprezintă ore de muncă. Contribuția dvs. valorifică acel timp și menține proiectul sustenabil."
+    },
+    "longTerm": {
+        "message": "Angajament pe termen lung"
+    },
+    "longTermDesc": {
+        "message": "Sprijinul dvs. asigură că extensia rămâne activ întreținută, compatibilă cu viitoarele actualizări Chrome și îmbunătățită continuu."
+    },
+    "futureFeatures": {
+        "message": "Funcții viitoare"
+    },
+    "futureFeaturesDesc": {
+        "message": "Cu ajutorul dvs., putem prioritiza noi funcționalități, o interfață mai bună și funcții de securitate îmbunătățite care beneficiază întreaga comunitate."
+    },
+    "donateCtaText": {
+        "message": "Fără abonamente. Fără bariere de plată. Fără finanțare corporativă. Doar oameni care construiesc ceva util pentru alții. Dacă această extensie vă economisește timp sau vă oferă liniște sufletească, considerați să cumpărați o cafea dezvoltatorilor."
+    },
+    "donateCryptoTitle": {
+        "message": "Susțineți cu criptomonedă"
+    },
+    "copyAddress": {
+        "message": "Copiați adresa"
+    },
+    "donateThanks": {
+        "message": "Vă mulțumim că susțineți dezvoltarea open-source independentă"
+    },
+    "donateThanksNote": {
+        "message": "Fiecare contribuție, mare sau mică, înseamnă totul pentru noi."
+    },
+    "importantWarning": {
+        "message": "AVERTISMENT IMPORTANT:"
+    },
+    "passwordCannotBeRecovered": {
+        "message": "Această parolă NU POATE fi recuperată!"
+    },
+    "noPasswordReset": {
+        "message": "NU există opțiune de resetare a parolei"
+    },
+    "weDontStorePassword": {
+        "message": "NU stocăm parola dvs. nicăieri"
+    },
+    "bookmarksEncrypted": {
+        "message": "Marcajele dvs. sunt criptate numai cu această parolă"
+    },
+    "savePasswordSecurely": {
+        "message": "Salvați această parolă în siguranță!"
+    },
+    "copyUrl": {
+        "message": "Copiați URL-ul"
+    },
+    "edit": {
+        "message": "Editați"
+    },
+    "delete": {
+        "message": "Ștergeți"
+    },
+    "urlCopied": {
+        "message": "URL copiat în clipboard"
+    },
+    "dangerZone": {
+        "message": "Zonă periculoasă"
+    },
+    "deleteAllData": {
+        "message": "Ștergeți toate datele"
+    },
+    "deleteAllDataDesc": {
+        "message": "Ștergeți permanent toate marcajele și setările"
+    },
+    "deleteAllDataConfirm": {
+        "message": "Toate marcajele, folderele, parola principală și setările vor fi șterse permanent. Această acțiune nu poate fi anulată."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Ștergeți tot"
+    },
+    "about": {
+        "message": "Despre"
+    },
+    "aboutExtension": {
+        "message": "Despre extensie"
+    },
+    "openGitHub": {
+        "message": "Deschideți GitHub"
+    },
+    "close": {
+        "message": "Închideți"
+    },
+    "features": {
+        "message": "Funcții"
+    },
+    "troubleshooting": {
+        "message": "Depanare"
+    },
+    "encryption": {
+        "message": "Criptare"
+    },
+    "encryptionDesc": {
+        "message": "Criptare AES-256"
+    },
+    "localStorage": {
+        "message": "Stocare locală"
+    },
+    "localStorageDesc": {
+        "message": "Datele rămân pe dispozitivul dvs."
+    },
+    "privacy": {
+        "message": "Confidențialitate"
+    },
+    "privacyDesc": {
+        "message": "Fără urmărire sau analiză"
+    },
+    "openSource": {
+        "message": "GPLv3"
+    },
+    "viewOnGitHub": {
+        "message": "Vizualizați pe GitHub"
+    },
+    "githubRepo": {
+        "message": "Depozit GitHub"
+    },
+    "githubRepoDesc": {
+        "message": "Vizualizați codul sursă, raportați probleme, contribuiți"
+    },
+    "version": {
+        "message": "Versiune"
+    },
+    "openmanager": {
+        "message": "Deschideți managerul"
+    },
+    "managerDesc": {
+        "message": "Deschideți managerul de marcaje pe ecran complet"
+    },
+    "folders": {
+        "message": "Foldere"
+    },
+    "bookmarks": {
+        "message": "marcaje"
+    },
+    "allBookmarks": {
+        "message": "Toate marcajele"
+    },
+    "searchBookmarks": {
+        "message": "Căutați marcaje..."
+    },
+    "noBookmarksInFolder": {
+        "message": "Niciun marcaj în folder"
+    },
+    "addBookmarksToGetStarted": {
+        "message": "Adăugați marcaje pentru a începe"
+    },
+    "bookmarkUpdated": {
+        "message": "Marcajul a fost actualizat"
+    },
+    "bookmarkDeleted": {
+        "message": "Marcajul a fost șters"
+    },
+    "renameFolder": {
+        "message": "Redenumiți folderul"
+    },
+    "folderCreated": {
+        "message": "Folderul a fost creat cu succes"
+    },
+    "managerLocked": {
+        "message": "Managerul a fost blocat"
+    },
+    "lockManager": {
+        "message": "Blocați managerul"
+    },
+    "rename": {
+        "message": "Redenumiți"
+    },
+    "deleteFolder": {
+        "message": "Ștergeți folderul"
+    },
+    "deleteFolderConfirm": {
+        "message": "Ștergeți folderul \"{0}\"?"
+    },
+    "deleteFolderWarning": {
+        "message": "Tot conținutul va fi șters permanent."
+    },
+    "folderRenamed": {
+        "message": "Folderul a fost redenumit cu succes"
+    },
+    "folderDeleted": {
+        "message": "Folderul a fost șters cu succes"
+    },
+    "cannotRenameAll": {
+        "message": "Nu se poate redenumi folderul \"Toate marcajele\""
+    },
+    "cannotDeleteAll": {
+        "message": "Nu se poate șterge folderul \"Toate marcajele\""
+    },
+    "bookmarkAdded": {
+        "message": "Marcajul a fost adăugat"
+    },
+    "pendingBookmarkNotification": {
+        "message": "Marcaj în așteptare!"
+    },
+    "pendingBookmarkInstruction": {
+        "message": "Un marcaj așteaptă să fie adăugat. Deblocați pentru a continua."
+    },
+    "dragSuccess": {
+        "message": "Elementul a fost mutat cu succes"
+    },
+    "invalidDestinationFolder": {
+        "message": "Folder de destinație invalid"
+    },
+    "moveFailed": {
+        "message": "Nu s-au putut muta marcajele"
+    },
+    "noBookmarksSelected": {
+        "message": "Niciun marcaj selectat"
+    },
+    "selectDestinationFolder": {
+        "message": "Selectați folderul de destinație:"
+    },
+    "move": {
+        "message": "Mutați"
+    },
+    "selected": {
+        "message": "selectate"
+    },
+    "moveSelectedTitle": {
+        "message": "Mutați selectate"
+    },
+    "deleteSelectedTitle": {
+        "message": "Ștergeți selectate"
+    },
+    "cancelSelectionTitle": {
+        "message": "Anulați selecția"
+    },
+    "emptyFolder": {
+        "message": "Folderul este gol",
+        "description": "Message shown when a folder has no bookmarks"
+    },
+    "noSearchResults": {
+        "message": "Niciun marcaj găsit",
+        "description": "Message when search returns no results"
+    },
+    "noSearchResultsDesc": {
+        "message": "Încercați un alt termen de căutare",
+        "description": "Description for empty search results"
+    },
+    "theme": {
+        "message": "Temă"
+    },
+    "themeDark": {
+        "message": "Întunecat",
+        "description": "Dark theme name"
+    },
+    "themeLight": {
+        "message": "Luminos",
+        "description": "Light theme name"
+    },
+    "themeSystem": {
+        "message": "Sistem",
+        "description": "System theme name"
+    },
+    "themeToggle": {
+        "message": "Schimbați tema",
+        "description": "Tooltip for theme toggle button"
+    },
+    "showFavicons": {
+        "message": "Afișați favoritele site-urilor"
+    },
+    "showFaviconsDesc": {
+        "message": "Pictogramele sunt încărcate prin serviciul favicon al Google"
+    },
+    "bookmarksAndFolders": {
+        "message": "Marcaje și foldere"
+    },
+    "importFromHtml": {
+        "message": "Importați din HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "Marcajele HTML au fost importate cu succes! $COUNT$ marcaje adăugate.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+        "message": "Niciun fișier selectat"
+    },
+    "htmlImporterFileTooLarge": {
+        "message": "Fișierul este prea mare (max. 1 MB)"
+    },
+    "htmlImporterParseError": {
+        "message": "Importul HTML a eșuat: $1"
+    },
+    "htmlImporterNoBookmarksFound": {
+        "message": "Nu s-au găsit marcaje în fișier"
+    },
+    "importHtmlError": {
+        "message": "Analiza fișierului HTML a eșuat. Verificați formatul fișierului."
+    },
+    "importHtmlSizeWarning": {
+        "message": "Limită de 1 MB"
+    },
+    "importHtmlSizeNote": {
+        "message": "Max. ~2500 marcaje"
+    },
+    "importWarning": {
+        "message": "Toate marcajele existente vor fi înlocuite"
+    },
+    "developer": {
+        "message": "Dezvoltator:"
+    },
+    "lock": {
+        "message": "Blocați"
+    },
+    "faqButtonTitle": {
+        "message": "Întrebări frecvente"
+    },
+    "clearingHistory": {
+        "message": "Ștergere istoric",
+        "description": "Title for history clearing progress modal"
+    },
+    "preparingToClear": {
+        "message": "Pregătire pentru ștergerea istoricului...",
+        "description": "Initial status message"
+    },
+    "progress": {
+        "message": "Progres",
+        "description": "Progress label"
+    },
+    "domainsProcessed": {
+        "message": "Domenii procesate",
+        "description": "Label for domains processed count"
+    },
+    "entriesDeleted": {
+        "message": "Înregistrări șterse",
+        "description": "Label for deleted entries count"
+    },
+    "startingCleanup": {
+        "message": "Se pornește curățarea...",
+        "description": "Status when starting"
+    },
+    "finalizingCleanup": {
+        "message": "Se finalizează curățarea...",
+        "description": "Status when finalizing"
+    },
+    "cancelling": {
+        "message": "Se anulează...",
+        "description": "Status when cancelling"
+    },
+    "clearCancelled": {
+        "message": "Operațiunea a fost anulată",
+        "description": "Notification when cancelled"
+    },
+    "fillAllFields": {
+        "message": "Completați toate câmpurile"
+    },
+    "setupComplete": {
+        "message": "Configurarea s-a finalizat!"
+    },
+    "migrationSuccess": {
+        "message": "Datele au fost migrate cu succes în format securizat!"
+    },
+    "migrationRequired": {
+        "message": "Actualizarea formatului de date este necesară"
+    },
+    "migrationInstruction": {
+        "message": "Introduceți parola pentru a face upgrade automat la un format mai securizat."
+    },
+    "exportSuccess": {
+        "message": "Export reușit",
+        "description": "Notification when data export completes successfully"
+    },
+    "processing": {
+        "message": "Se procesează...",
+        "description": "Generic processing message for loading indicators"
+    },
+    "unlocking": {
+        "message": "Se deblochează...",
+        "description": "Shown while decrypting bookmarks"
+    },
+    "changingPassword": {
+        "message": "Se schimbă parola...",
+        "description": "Shown while changing master password"
+    },
+    "settingUpEncryption": {
+        "message": "Se configurează criptarea...",
+        "description": "Shown during first-time setup"
+    },
+    "migratingData": {
+        "message": "Se migrează datele în format securizat...",
+        "description": "Shown during v1 to v2 migration"
+    },
+    "loading": {
+        "message": "Se încarcă...",
+        "description": "Generic loading message"
+    },
+    "donationReminderTitle": {
+        "message": "Susțineți proiectul"
+    },
+    "donationReminderText": {
+        "message": "Dacă vă place această extensie, susțineți dezvoltarea ei!"
+    },
+    "remindLater": {
+        "message": "Amintiți-mi mai târziu"
+    },
+    "supportNow": {
+        "message": "Susțineți acum"
+    },
+    "remindNever": {
+        "message": "Nu mai afișați"
+    },
+    "confirmDismiss": {
+        "message": "Nu mai afișați niciodată mementourile de donație?"
+    },
+    "bookmarkAlreadyInFolder": {
+        "message": "Elementul se află deja în acest folder"
+    },
+    "cannotMoveIntoSelf": {
+        "message": "Nu se poate muta un folder în el însuși"
+    },
+    "bookmarksMoved": {
+        "message": "{0} element(e) mutate"
+    },
+    "deleteSelectedConfirm": {
+        "message": "Ștergeți {count} element(e) selectate?",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "bookmarksDeleted": {
+        "message": "{count} element(e) șterse",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "moveBookmarksTitle": {
+        "message": "Mutați {0} element(e)"
+    },
+    "setupTabNew": {
+        "message": "Creați nou",
+        "description": "Tab label for creating new password"
+    },
+    "setupTabRestore": {
+        "message": "Restaurați copia de rezervă",
+        "description": "Tab label for restoring from backup"
+    },
+    "restoreDropTitle": {
+        "message": "Plasați fișierul de rezervă aici sau faceți clic pentru a selecta",
+        "description": "Text for drag & drop area in restore tab"
+    },
+    "strengthWeak": {
+        "message": "Slabă",
+        "description": "Password strength indicator"
+    },
+    "strengthFair": {
+        "message": "Acceptabilă",
+        "description": "Password strength indicator"
+    },
+    "strengthGood": {
+        "message": "Bună",
+        "description": "Password strength indicator"
+    },
+    "strengthStrong": {
+        "message": "Puternică",
+        "description": "Password strength indicator"
+    },
+    "importingBackup": {
+        "message": "Se restaurează copia de rezervă...",
+        "description": "Loading message during backup import"
+    },
+    "unlockTitle": {
+        "message": "Introduceți parola principală"
+    },
+    "warningRemember": {
+        "message": "Vă amintiți parola?"
+    },
+    "yesRemember": {
+        "message": "Da, îmi amintesc"
+    },
+    "survey": {
+        "message": "Sondaj de feedback"
+    },
+    "Error": {
+        "message": "Eroare"
+    },
+    "changelog": {
+        "message": "Jurnal de modificări"
+    },
+    "rateExtension": {
+        "message": "Evaluați în Chrome Web Store"
+    },
+    "migrationScreenTitle": {
+        "message": "Actualizare necesară",
+        "description": "Title on the manager migration screen"
+    },
+    "migrationScreenBody1": {
+        "message": "Extensia a fost actualizată cu securitate îmbunătățită.",
+        "description": "First line on the manager migration screen"
+    },
+    "migrationScreenBody2": {
+        "message": "Deschideți fereastra popup a extensiei pentru a migra datele în noul format securizat.",
+        "description": "Second line on the manager migration screen"
+    },
+    "notSetUpTitle": {
+        "message": "Extensia nu este configurată",
+        "description": "manager-lock: notSetUpTitle"
+    },
+    "notSetUpSubtitle": {
+        "message": "Extensia nu este configurată încă. Deschideți fereastra popup a extensiei pentru a crea o parolă.",
+        "description": "manager-lock: notSetUpSubtitle"
+    },
+    "notSetUpButton": {
+        "message": "Deschideți popup",
+        "description": "manager-lock: notSetUpButton"
+    },
+    "reloadingSubtitle": {
+        "message": "Managerul se reîncarcă...",
+        "description": "manager-lock: reloadingSubtitle"
+    },
+    "reloadingWait": {
+        "message": "Așteptați în timp ce managerul se actualizează",
+        "description": "manager-lock: reloadingWait"
+    },
+    "exportHtml": {
+        "message": "Exportați în HTML"
+    },
+    "exportHtmlNote": {
+        "message": "Format Netscape Bookmarks"
+    },
+    "exportHtmlSuccess": {
+        "message": "Exportul HTML a reușit"
+    },
+    "exportHtmlConfirmTitle": {
+        "message": "Confirmați parola"
+    },
+    "exportHtmlConfirmDesc": {
+        "message": "Marcajele dvs. vor fi exportate ca text simplu. Introduceți parola principală pentru a confirma."
+    },
+    "exportHtmlPasswordRequired": {
+        "message": "Introduceți parola"
+    },
+    "exportHtmlConfirmBtn": {
+        "message": "Exportați"
+    },
+    "exportHtmlVerifying": {
+        "message": "Se verifică parola…"
+    },
+    "copiedToClipboard": {
+        "message": "Copiat în clipboard!"
+    },
+    "copyFailed": {
+        "message": "Copierea a eșuat"
+    },
+    "clickToCopy": {
+        "message": "Faceți clic pentru a copia"
+    },
+    "qrCodeFor": {
+        "message": "Cod QR pentru $1",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            }
+        }
+    },
+    "quickCloseTab": {
+        "message": "Închideți fila rapid ($1)"
+    },
+    "quickCloseTabDesc": {
+        "message": "Închide fila curentă și șterge istoricul de navigare pentru acel domeniu"
+    },
+    "quickCloseTabCommand": {
+        "message": "Închideți fila și ștergeți istoricul domeniului"
+    },
+    "changeShortcut": {
+        "message": "Schimbați comenzile rapide"
+    },
+    "actions": {
+        "message": "Acțiuni"
+    },
+    "qrCode": {
+        "message": "Cod QR"
+    },
+    "qrScanHint": {
+        "message": "Scanați codul QR pentru a deschide linkul pe dispozitivul dvs."
+    },
+    "stayUnlocked": {
+        "message": "Rămâneți deblocat între sesiuni"
+    },
+    "stayUnlockedDesc": {
+        "message": "Vă menține deblocat cât timp browserul este deschis"
+    },
+    "stayUnlockedWarning": {
+        "message": "Reduce securitatea: cheia de criptare este stocată în stocarea de sesiune a browserului. Oricine are acces la profilul browserului dvs. o poate citi."
+    },
+    "alwaysIncognito": {
+        "message": "Deschideți întotdeauna marcajele în modul incognito"
+    },
+    "alwaysIncognitoDesc": {
+        "message": "Toate marcajele se vor deschide într-o fereastră privată"
+    },
+    "enable": {
+        "message": "Activați"
+    },
+    "managerIsOpen": {
+        "message": "Managerul de marcaje este deschis"
+    },
+    "managerIsOpenDesc": {
+        "message": "Închideți fila managerului de marcaje pentru a folosi fereastra popup."
+    },
+    "switchToManager": {
+        "message": "Comutați la manager"
+    },
+    "hotkeys": {
+        "message": "Comenzi rapide"
+    },
+    "lockExtensionCommand": {
+        "message": "Blocați extensia"
+    },
+    "openManagerCommand": {
+        "message": "Deschideți managerul de marcaje"
+    },
+    "blurPage": {
+        "message": "Estompați pagina ($1)"
+    },
+    "blurPageDesc": {
+        "message": "Estompează fila curentă când este activată"
+    },
+    "blurPageCommand": {
+        "message": "Estompați pagina"
+    },
+    "invalidUrlProtocol": {
+        "message": "Introduceți un URL valid care începe cu http:// sau https://"
+    },
+    "openAll": {
+        "message": "Deschideți toate"
+    },
+    "openAllWindow": {
+        "message": "Deschideți toate în fereastră nouă"
+    },
+    "openAllGroup": {
+        "message": "Deschideți toate în grup nou de file"
+    },
+    "openAllIncognito": {
+        "message": "Deschideți toate în modul incognito"
+    },
+    "saveAllTabs": {
+        "message": "Salvați toate filele deschise"
+    },
+    "noTabsToSave": {
+        "message": "Nicio filă de salvat"
+    },
+    "tabsSaved": {
+        "message": "Filele au fost salvate"
+    },
+    "searchInFolder": {
+        "message": "Căutați în folder..."
+    },
+    "reportBug": {
+        "message": "Raportați o eroare"
+    },
+    "managerSubtitle": {
+        "message": "Control deplin asupra marcajelor dvs."
+    }
+}

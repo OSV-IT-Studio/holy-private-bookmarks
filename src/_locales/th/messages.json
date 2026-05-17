@@ -1,0 +1,904 @@
+{
+    "Name": {
+        "message": "Holy Private Bookmarks — ตัวจัดการบุ๊กมาร์กในเครื่องที่เข้ารหัส"
+    },
+    "extensionName": {
+        "message": "Holy Private Bookmarks"
+    },
+    "extensionDescription": {
+        "message": "รักษาบุ๊กมาร์กของคุณให้เป็นส่วนตัวด้วยรหัสผ่านหลักและการเข้ารหัส AES-256 ข้อมูลทั้งหมดอยู่บนอุปกรณ์ของคุณ — ไม่มีคลาวด์ ไม่มีการติดตาม"
+    },
+    "managerTitle": {
+        "message": "HPB - ตัวจัดการบุ๊กมาร์ก"
+    },
+    "createPassword": {
+        "message": "สร้างรหัสผ่านหลักสำหรับการเข้ารหัสบุ๊กมาร์กแบบเต็ม"
+    },
+    "newPassword": {
+        "message": "รหัสผ่านใหม่ (อย่างน้อย 6 ตัวอักษร)"
+    },
+    "confirmPassword": {
+        "message": "ยืนยันรหัสผ่าน"
+    },
+    "createStorage": {
+        "message": "สร้างที่เก็บข้อมูล"
+    },
+    "enterMasterPassword": {
+        "message": ""
+    },
+    "masterPassword": {
+        "message": "รหัสผ่านหลัก"
+    },
+    "unlock": {
+        "message": "ปลดล็อก"
+    },
+    "wrongPassword": {
+        "message": "รหัสผ่านไม่ถูกต้อง"
+    },
+    "passwordsMismatch": {
+        "message": "รหัสผ่านไม่ตรงกันหรือสั้นเกินไป"
+    },
+    "bookmarksProtected": {
+        "message": "บุ๊กมาร์กของคุณได้รับการปกป้องอย่างปลอดภัย"
+    },
+    "addCurrentPage": {
+        "message": "เพิ่มหน้าปัจจุบัน"
+    },
+    "newFolder": {
+        "message": "โฟลเดอร์ใหม่"
+    },
+    "clearHistory": {
+        "message": "ล้างประวัติ"
+    },
+    "settings": {
+        "message": "การตั้งค่า"
+    },
+    "settingsbtn": {
+        "message": "⚙️"
+    },
+    "changeMasterPassword": {
+        "message": "เปลี่ยนรหัสผ่านหลัก"
+    },
+    "currentPassword": {
+        "message": "รหัสผ่านหลักปัจจุบัน"
+    },
+    "newPassword2": {
+        "message": "รหัสผ่านใหม่"
+    },
+    "confirmNewPassword": {
+        "message": "ยืนยันรหัสผ่านใหม่"
+    },
+    "changePassword": {
+        "message": "เปลี่ยนรหัสผ่าน"
+    },
+    "exportImport": {
+        "message": "ส่งออก & นำเข้า"
+    },
+    "export": {
+        "message": "สร้างข้อมูลสำรอง"
+    },
+    "openPrivate": {
+        "message": "เปิดในแท็บส่วนตัว"
+    },
+    "import": {
+        "message": "นำเข้า"
+    },
+    "importFromChrome": {
+        "message": "นำเข้าจาก Chrome"
+    },
+    "importChromeBookmarks": {
+        "message": "นำเข้าบุ๊กมาร์ก Chrome ทั้งหมด"
+    },
+    "importChromeBookmarksAdvanced": {
+        "message": "เลือกโฟลเดอร์ที่จะนำเข้า"
+    },
+    "importChromeConfirm": {
+        "message": "นำเข้าบุ๊กมาร์กทั้งหมดจาก Chrome? บุ๊กมาร์กที่มีอยู่จะถูกเก็บไว้"
+    },
+    "importChromeSuccess": {
+        "message": "นำเข้าบุ๊กมาร์กสำเร็จ!"
+    },
+    "importChromeError": {
+        "message": "ไม่สามารถนำเข้าบุ๊กมาร์กได้"
+    },
+    "selectFoldersToImport": {
+        "message": "เลือกโฟลเดอร์ที่จะนำเข้า"
+    },
+    "selectAll": {
+        "message": "เลือกทั้งหมด"
+    },
+    "deselectAll": {
+        "message": "ยกเลิกการเลือกทั้งหมด"
+    },
+    "importSelected": {
+        "message": "นำเข้า"
+    },
+    "back": {
+        "message": "← กลับ"
+    },
+    "addBookmark": {
+        "message": "เพิ่มบุ๊กมาร์ก"
+    },
+    "editBookmark": {
+        "message": "แก้ไขบุ๊กมาร์ก"
+    },
+    "page": {
+        "message": "หน้า"
+    },
+    "title": {
+        "message": "ชื่อ"
+    },
+    "url": {
+        "message": "URL"
+    },
+    "folder": {
+        "message": "โฟลเดอร์"
+    },
+    "rootFolder": {
+        "message": "โฟลเดอร์หลัก"
+    },
+    "new": {
+        "message": "+ ใหม่"
+    },
+    "cancel": {
+        "message": "ยกเลิก"
+    },
+    "save": {
+        "message": "บันทึก"
+    },
+    "deleteConfirm": {
+        "message": "ลบบุ๊กมาร์ก"
+    },
+    "folderName": {
+        "message": "ชื่อโฟลเดอร์:"
+    },
+    "newName": {
+        "message": "ชื่อใหม่:"
+    },
+    "titleRequired": {
+        "message": "ต้องระบุชื่อและ URL"
+    },
+    "validUrl": {
+        "message": "URL ต้องเริ่มต้นด้วย http:// หรือ https://"
+    },
+    "passwordChanged": {
+        "message": "เปลี่ยนรหัสผ่านสำเร็จ!"
+    },
+    "importSuccess": {
+        "message": "นำเข้าข้อมูลสำรองสำเร็จ! กรุณาเปิด popup อีกครั้ง"
+    },
+    "invalidFile": {
+        "message": "ไฟล์สำรองไม่ถูกต้อง"
+    },
+    "clearHistoryConfirm": {
+        "message": "ลบรายการประวัติเบราว์เซอร์ทั้งหมดสำหรับโดเมนที่มีอยู่ใน Holy Private Bookmarks ของคุณ?"
+    },
+    "noBookmarks": {
+        "message": "ไม่พบบุ๊กมาร์ก — ไม่มีอะไรต้องล้าง"
+    },
+    "noDomains": {
+        "message": "ไม่พบโดเมนที่ถูกต้องในบุ๊กมาร์ก"
+    },
+    "newBookmark": {
+        "message": "บุ๊กมาร์กใหม่"
+    },
+    "paste": {
+        "message": "วาง"
+    },
+    "ctxnewFolder": {
+        "message": "โฟลเดอร์ใหม่"
+    },
+    "emptyTreeTitle": {
+        "message": "ยังไม่มีบุ๊กมาร์ก"
+    },
+    "emptyTreeSubtitle": {
+        "message": "เพิ่มบุ๊กมาร์กหรือโฟลเดอร์แรกของคุณเพื่อเริ่มต้น"
+    },
+    "historyCleared": {
+        "message": "ล้างประวัติแล้ว!\nลบ $count$ การเข้าชมจาก $domains$ โดเมน",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "domains": {
+                "content": "$2"
+            }
+        }
+    },
+    "addToHoly": {
+        "message": "เพิ่มไปยัง Holy Private Bookmarks"
+    },
+    "cannotAddPage": {
+        "message": "ไม่สามารถเพิ่มหน้านี้ได้ (ไม่มี URL ที่ถูกต้อง)"
+    },
+    "supportProject": {
+        "message": "สนับสนุนโครงการ"
+    },
+    "supportPageTitle": {
+        "message": "สนับสนุน Holy Private Bookmarks"
+    },
+    "donateHeroTitle": {
+        "message": "สนับสนุนการพัฒนาที่มุ่งเน้นความเป็นส่วนตัว"
+    },
+    "donateHeroSubtitle": {
+        "message": "Holy Private Bookmarks เป็นซอฟต์แวร์ฟรีและโอเพ่นซอร์ส 100% และจะเป็นเช่นนั้นตลอดไป การสนับสนุนของคุณช่วยให้นักพัฒนาสามารถอุทิศเวลาในการดูแลและพัฒนาส่วนขยายสำหรับทุกคนที่ใส่ใจเรื่องความเป็นส่วนตัว"
+    },
+    "whySupport": {
+        "message": "เหตุใดการสนับสนุนของคุณจึงสำคัญ"
+    },
+    "timeInvestment": {
+        "message": "เวลาของนักพัฒนา"
+    },
+    "timeInvestmentDesc": {
+        "message": "ทุกฟีเจอร์ การแก้ไขบัก และการปรับปรุงความปลอดภัยแทนชั่วโมงการทำงาน การสนับสนุนของคุณให้คุณค่ากับเวลานั้นและทำให้โครงการยั่งยืน"
+    },
+    "longTerm": {
+        "message": "ความมุ่งมั่นระยะยาว"
+    },
+    "longTermDesc": {
+        "message": "การสนับสนุนของคุณช่วยให้ส่วนขยายได้รับการดูแลอย่างต่อเนื่อง เข้ากันได้กับการอัปเดต Chrome ในอนาคต และพัฒนาอย่างต่อเนื่อง"
+    },
+    "futureFeatures": {
+        "message": "ฟีเจอร์ในอนาคต"
+    },
+    "futureFeaturesDesc": {
+        "message": "ด้วยความช่วยเหลือของคุณ เราสามารถจัดลำดับความสำคัญของฟังก์ชันใหม่ UI ที่ดีขึ้น และฟีเจอร์ความปลอดภัยที่เพิ่มขึ้นซึ่งเป็นประโยชน์ต่อชุมชนทั้งหมด"
+    },
+    "donateCtaText": {
+        "message": "ไม่มีการสมัครสมาชิก ไม่มีการจ่ายเงิน ไม่มีการระดมทุนจากบริษัท เพียงแต่ผู้คนสร้างสิ่งที่มีประโยชน์สำหรับผู้อื่น หากส่วนขยายนี้ช่วยประหยัดเวลาหรือให้ความสงบใจ โปรดพิจารณาซื้อกาแฟให้นักพัฒนา"
+    },
+    "donateCryptoTitle": {
+        "message": "สนับสนุนด้วย Crypto"
+    },
+    "copyAddress": {
+        "message": "คัดลอกที่อยู่"
+    },
+    "donateThanks": {
+        "message": "ขอบคุณที่สนับสนุนการพัฒนาโอเพ่นซอร์สอิสระ"
+    },
+    "donateThanksNote": {
+        "message": "การสนับสนุนทุกรูปแบบ ไม่ว่าจะมากหรือน้อย มีความหมายอย่างยิ่งสำหรับเรา"
+    },
+    "importantWarning": {
+        "message": "คำเตือนสำคัญ:"
+    },
+    "passwordCannotBeRecovered": {
+        "message": "รหัสผ่านนี้ไม่สามารถกู้คืนได้!"
+    },
+    "noPasswordReset": {
+        "message": "ไม่มีตัวเลือกรีเซ็ตรหัสผ่าน"
+    },
+    "weDontStorePassword": {
+        "message": "เราไม่จัดเก็บรหัสผ่านของคุณไว้ที่ใดเลย"
+    },
+    "bookmarksEncrypted": {
+        "message": "บุ๊กมาร์กของคุณเข้ารหัสด้วยรหัสผ่านนี้เท่านั้น"
+    },
+    "savePasswordSecurely": {
+        "message": "บันทึกรหัสผ่านนี้อย่างปลอดภัย!"
+    },
+    "copyUrl": {
+        "message": "คัดลอก URL"
+    },
+    "edit": {
+        "message": "แก้ไข"
+    },
+    "delete": {
+        "message": "ลบ"
+    },
+    "urlCopied": {
+        "message": "คัดลอก URL ไปยังคลิปบอร์ดแล้ว"
+    },
+    "dangerZone": {
+        "message": "โซนอันตราย"
+    },
+    "deleteAllData": {
+        "message": "ลบข้อมูลทั้งหมด"
+    },
+    "deleteAllDataDesc": {
+        "message": "ลบบุ๊กมาร์กและการตั้งค่าทั้งหมดอย่างถาวร"
+    },
+    "deleteAllDataConfirm": {
+        "message": "บุ๊กมาร์ก โฟลเดอร์ รหัสผ่านหลัก และการตั้งค่าทั้งหมดจะถูกลบอย่างถาวร การดำเนินการนี้ไม่สามารถยกเลิกได้"
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "ลบทุกอย่าง"
+    },
+    "about": {
+        "message": "เกี่ยวกับ"
+    },
+    "aboutExtension": {
+        "message": "เกี่ยวกับส่วนขยาย"
+    },
+    "openGitHub": {
+        "message": "เปิด GitHub"
+    },
+    "close": {
+        "message": "ปิด"
+    },
+    "features": {
+        "message": "ฟีเจอร์"
+    },
+    "troubleshooting": {
+        "message": "การแก้ไขปัญหา"
+    },
+    "encryption": {
+        "message": "การเข้ารหัส"
+    },
+    "encryptionDesc": {
+        "message": "การเข้ารหัส AES-256"
+    },
+    "localStorage": {
+        "message": "ที่เก็บข้อมูลในเครื่อง"
+    },
+    "localStorageDesc": {
+        "message": "ข้อมูลอยู่บนอุปกรณ์ของคุณ"
+    },
+    "privacy": {
+        "message": "ความเป็นส่วนตัว"
+    },
+    "privacyDesc": {
+        "message": "ไม่มีการติดตามหรือวิเคราะห์"
+    },
+    "openSource": {
+        "message": "GPLv3"
+    },
+    "viewOnGitHub": {
+        "message": "ดูบน GitHub"
+    },
+    "githubRepo": {
+        "message": "ที่เก็บ GitHub"
+    },
+    "githubRepoDesc": {
+        "message": "ดูซอร์สโค้ด รายงานปัญหา มีส่วนร่วม"
+    },
+    "version": {
+        "message": "เวอร์ชัน"
+    },
+    "openmanager": {
+        "message": "เปิดตัวจัดการ"
+    },
+    "managerDesc": {
+        "message": "เปิดตัวจัดการบุ๊กมาร์กแบบเต็มหน้าจอ"
+    },
+    "folders": {
+        "message": "โฟลเดอร์"
+    },
+    "bookmarks": {
+        "message": "บุ๊กมาร์ก"
+    },
+    "allBookmarks": {
+        "message": "บุ๊กมาร์กทั้งหมด"
+    },
+    "searchBookmarks": {
+        "message": "ค้นหาบุ๊กมาร์ก..."
+    },
+    "noBookmarksInFolder": {
+        "message": "ไม่มีบุ๊กมาร์กในโฟลเดอร์"
+    },
+    "addBookmarksToGetStarted": {
+        "message": "เพิ่มบุ๊กมาร์กเพื่อเริ่มต้น"
+    },
+    "bookmarkUpdated": {
+        "message": "อัปเดตบุ๊กมาร์กแล้ว"
+    },
+    "bookmarkDeleted": {
+        "message": "ลบบุ๊กมาร์กแล้ว"
+    },
+    "renameFolder": {
+        "message": "เปลี่ยนชื่อโฟลเดอร์"
+    },
+    "folderCreated": {
+        "message": "สร้างโฟลเดอร์สำเร็จ"
+    },
+    "managerLocked": {
+        "message": "ล็อกตัวจัดการแล้ว"
+    },
+    "lockManager": {
+        "message": "ล็อกตัวจัดการ"
+    },
+    "rename": {
+        "message": "เปลี่ยนชื่อ"
+    },
+    "deleteFolder": {
+        "message": "ลบโฟลเดอร์"
+    },
+    "deleteFolderConfirm": {
+        "message": "ลบโฟลเดอร์ \"{0}\"?"
+    },
+    "deleteFolderWarning": {
+        "message": "เนื้อหาทั้งหมดจะถูกลบอย่างถาวร"
+    },
+    "folderRenamed": {
+        "message": "เปลี่ยนชื่อโฟลเดอร์สำเร็จ"
+    },
+    "folderDeleted": {
+        "message": "ลบโฟลเดอร์สำเร็จ"
+    },
+    "cannotRenameAll": {
+        "message": "ไม่สามารถเปลี่ยนชื่อโฟลเดอร์ \"บุ๊กมาร์กทั้งหมด\" ได้"
+    },
+    "cannotDeleteAll": {
+        "message": "ไม่สามารถลบโฟลเดอร์ \"บุ๊กมาร์กทั้งหมด\" ได้"
+    },
+    "bookmarkAdded": {
+        "message": "เพิ่มบุ๊กมาร์กแล้ว"
+    },
+    "pendingBookmarkNotification": {
+        "message": "บุ๊กมาร์กรอดำเนินการ!"
+    },
+    "pendingBookmarkInstruction": {
+        "message": "มีบุ๊กมาร์กรอการเพิ่ม กรุณาปลดล็อกเพื่อดำเนินการต่อ"
+    },
+    "dragSuccess": {
+        "message": "ย้ายรายการสำเร็จ"
+    },
+    "invalidDestinationFolder": {
+        "message": "โฟลเดอร์ปลายทางไม่ถูกต้อง"
+    },
+    "moveFailed": {
+        "message": "ไม่สามารถย้ายบุ๊กมาร์กได้"
+    },
+    "noBookmarksSelected": {
+        "message": "ไม่ได้เลือกบุ๊กมาร์ก"
+    },
+    "selectDestinationFolder": {
+        "message": "เลือกโฟลเดอร์ปลายทาง:"
+    },
+    "move": {
+        "message": "ย้าย"
+    },
+    "selected": {
+        "message": "เลือกแล้ว"
+    },
+    "moveSelectedTitle": {
+        "message": "ย้ายที่เลือก"
+    },
+    "deleteSelectedTitle": {
+        "message": "ลบที่เลือก"
+    },
+    "cancelSelectionTitle": {
+        "message": "ยกเลิกการเลือก"
+    },
+    "emptyFolder": {
+        "message": "โฟลเดอร์ว่างเปล่า",
+        "description": "Message shown when a folder has no bookmarks"
+    },
+    "noSearchResults": {
+        "message": "ไม่พบบุ๊กมาร์ก",
+        "description": "Message when search returns no results"
+    },
+    "noSearchResultsDesc": {
+        "message": "ลองใช้คำค้นหาอื่น",
+        "description": "Description for empty search results"
+    },
+    "theme": {
+        "message": "ธีม"
+    },
+    "themeDark": {
+        "message": "มืด",
+        "description": "Dark theme name"
+    },
+    "themeLight": {
+        "message": "สว่าง",
+        "description": "Light theme name"
+    },
+    "themeSystem": {
+        "message": "ระบบ",
+        "description": "System theme name"
+    },
+    "themeToggle": {
+        "message": "สลับธีม",
+        "description": "Tooltip for theme toggle button"
+    },
+    "showFavicons": {
+        "message": "แสดง favicon ของเว็บไซต์"
+    },
+    "showFaviconsDesc": {
+        "message": "ไอคอนถูกโหลดผ่านบริการ favicon ของ Google"
+    },
+    "bookmarksAndFolders": {
+        "message": "บุ๊กมาร์กและโฟลเดอร์"
+    },
+    "importFromHtml": {
+        "message": "นำเข้าจาก HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "นำเข้าบุ๊กมาร์ก HTML สำเร็จ! เพิ่ม $COUNT$ บุ๊กมาร์ก",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+        "message": "ไม่ได้เลือกไฟล์"
+    },
+    "htmlImporterFileTooLarge": {
+        "message": "ไฟล์ใหญ่เกินไป (สูงสุด 1MB)"
+    },
+    "htmlImporterParseError": {
+        "message": "ไม่สามารถนำเข้า HTML: $1"
+    },
+    "htmlImporterNoBookmarksFound": {
+        "message": "ไม่พบบุ๊กมาร์กในไฟล์"
+    },
+    "importHtmlError": {
+        "message": "ไม่สามารถแยกวิเคราะห์ไฟล์ HTML กรุณาตรวจสอบรูปแบบไฟล์"
+    },
+    "importHtmlSizeWarning": {
+        "message": "ขีดจำกัด 1MB"
+    },
+    "importHtmlSizeNote": {
+        "message": "สูงสุด ~2500 บุ๊กมาร์ก"
+    },
+    "importWarning": {
+        "message": "บุ๊กมาร์กที่มีอยู่ทั้งหมดจะถูกแทนที่"
+    },
+    "developer": {
+        "message": "นักพัฒนา:"
+    },
+    "lock": {
+        "message": "ล็อก"
+    },
+    "faqButtonTitle": {
+        "message": "คำถามที่พบบ่อย"
+    },
+    "clearingHistory": {
+        "message": "กำลังล้างประวัติ",
+        "description": "Title for history clearing progress modal"
+    },
+    "preparingToClear": {
+        "message": "กำลังเตรียมล้างประวัติ...",
+        "description": "Initial status message"
+    },
+    "progress": {
+        "message": "ความคืบหน้า",
+        "description": "Progress label"
+    },
+    "domainsProcessed": {
+        "message": "โดเมนที่ประมวลผล",
+        "description": "Label for domains processed count"
+    },
+    "entriesDeleted": {
+        "message": "รายการที่ลบ",
+        "description": "Label for deleted entries count"
+    },
+    "startingCleanup": {
+        "message": "กำลังเริ่มการล้างข้อมูล...",
+        "description": "Status when starting"
+    },
+    "finalizingCleanup": {
+        "message": "กำลังสรุปการล้างข้อมูล...",
+        "description": "Status when finalizing"
+    },
+    "cancelling": {
+        "message": "กำลังยกเลิก...",
+        "description": "Status when cancelling"
+    },
+    "clearCancelled": {
+        "message": "ยกเลิกการดำเนินการ",
+        "description": "Notification when cancelled"
+    },
+    "fillAllFields": {
+        "message": "กรุณากรอกข้อมูลในทุกช่อง"
+    },
+    "setupComplete": {
+        "message": "การตั้งค่าเสร็จสมบูรณ์!"
+    },
+    "migrationSuccess": {
+        "message": "ย้ายข้อมูลไปยังรูปแบบที่ปลอดภัยสำเร็จ!"
+    },
+    "migrationRequired": {
+        "message": "ต้องอัปเดตรูปแบบข้อมูล"
+    },
+    "migrationInstruction": {
+        "message": "ป้อนรหัสผ่านของคุณเพื่ออัปเกรดเป็นรูปแบบที่ปลอดภัยยิ่งขึ้นโดยอัตโนมัติ"
+    },
+    "exportSuccess": {
+        "message": "ส่งออกสำเร็จ",
+        "description": "Notification when data export completes successfully"
+    },
+    "processing": {
+        "message": "กำลังประมวลผล...",
+        "description": "Generic processing message for loading indicators"
+    },
+    "unlocking": {
+        "message": "กำลังปลดล็อก...",
+        "description": "Shown while decrypting bookmarks"
+    },
+    "changingPassword": {
+        "message": "กำลังเปลี่ยนรหัสผ่าน...",
+        "description": "Shown while changing master password"
+    },
+    "settingUpEncryption": {
+        "message": "กำลังตั้งค่าการเข้ารหัส...",
+        "description": "Shown during first-time setup"
+    },
+    "migratingData": {
+        "message": "กำลังย้ายข้อมูลไปยังรูปแบบที่ปลอดภัย...",
+        "description": "Shown during v1 to v2 migration"
+    },
+    "loading": {
+        "message": "กำลังโหลด...",
+        "description": "Generic loading message"
+    },
+    "donationReminderTitle": {
+        "message": "สนับสนุนโครงการ"
+    },
+    "donationReminderText": {
+        "message": "หากคุณชอบส่วนขยายนี้ โปรดสนับสนุนการพัฒนา!"
+    },
+    "remindLater": {
+        "message": "แจ้งเตือนภายหลัง"
+    },
+    "supportNow": {
+        "message": "สนับสนุนเดี๋ยวนี้"
+    },
+    "remindNever": {
+        "message": "ไม่แสดงอีก"
+    },
+    "confirmDismiss": {
+        "message": "ไม่แสดงการแจ้งเตือนการบริจาคอีกเลย?"
+    },
+    "bookmarkAlreadyInFolder": {
+        "message": "รายการนี้อยู่ในโฟลเดอร์นี้แล้ว"
+    },
+    "cannotMoveIntoSelf": {
+        "message": "ไม่สามารถย้ายโฟลเดอร์เข้าไปในตัวเองได้"
+    },
+    "bookmarksMoved": {
+        "message": "ย้าย {0} รายการแล้ว"
+    },
+    "deleteSelectedConfirm": {
+        "message": "ลบ {count} รายการที่เลือก?",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "bookmarksDeleted": {
+        "message": "ลบ {count} รายการแล้ว",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "moveBookmarksTitle": {
+        "message": "ย้าย {0} รายการ"
+    },
+    "setupTabNew": {
+        "message": "สร้างใหม่",
+        "description": "Tab label for creating new password"
+    },
+    "setupTabRestore": {
+        "message": "กู้คืนข้อมูลสำรอง",
+        "description": "Tab label for restoring from backup"
+    },
+    "restoreDropTitle": {
+        "message": "วางไฟล์สำรองที่นี่หรือคลิกเพื่อเลือก",
+        "description": "Text for drag & drop area in restore tab"
+    },
+    "strengthWeak": {
+        "message": "อ่อนแอ",
+        "description": "Password strength indicator"
+    },
+    "strengthFair": {
+        "message": "พอใช้",
+        "description": "Password strength indicator"
+    },
+    "strengthGood": {
+        "message": "ดี",
+        "description": "Password strength indicator"
+    },
+    "strengthStrong": {
+        "message": "แข็งแกร่ง",
+        "description": "Password strength indicator"
+    },
+    "importingBackup": {
+        "message": "กำลังกู้คืนข้อมูลสำรอง...",
+        "description": "Loading message during backup import"
+    },
+    "unlockTitle": {
+        "message": "ป้อนรหัสผ่านหลัก"
+    },
+    "warningRemember": {
+        "message": "คุณจำรหัสผ่านได้ไหม?"
+    },
+    "yesRemember": {
+        "message": "ใช่ ฉันจำได้"
+    },
+    "survey": {
+        "message": "แบบสำรวจความคิดเห็น"
+    },
+    "Error": {
+        "message": "ข้อผิดพลาด"
+    },
+    "changelog": {
+        "message": "บันทึกการเปลี่ยนแปลง"
+    },
+    "rateExtension": {
+        "message": "ให้คะแนนใน Chrome Web Store"
+    },
+    "migrationScreenTitle": {
+        "message": "ต้องอัปเดต",
+        "description": "Title on the manager migration screen"
+    },
+    "migrationScreenBody1": {
+        "message": "ส่วนขยายได้รับการอัปเดตพร้อมความปลอดภัยที่ดีขึ้น",
+        "description": "First line on the manager migration screen"
+    },
+    "migrationScreenBody2": {
+        "message": "กรุณาเปิด popup ส่วนขยายเพื่อย้ายข้อมูลของคุณไปยังรูปแบบที่ปลอดภัยใหม่",
+        "description": "Second line on the manager migration screen"
+    },
+    "notSetUpTitle": {
+        "message": "ยังไม่ได้ตั้งค่าส่วนขยาย",
+        "description": "manager-lock: notSetUpTitle"
+    },
+    "notSetUpSubtitle": {
+        "message": "ยังไม่ได้ตั้งค่าส่วนขยาย กรุณาเปิด popup ส่วนขยายเพื่อสร้างรหัสผ่าน",
+        "description": "manager-lock: notSetUpSubtitle"
+    },
+    "notSetUpButton": {
+        "message": "เปิด Popup",
+        "description": "manager-lock: notSetUpButton"
+    },
+    "reloadingSubtitle": {
+        "message": "ตัวจัดการกำลังโหลดใหม่...",
+        "description": "manager-lock: reloadingSubtitle"
+    },
+    "reloadingWait": {
+        "message": "กรุณารอขณะที่ตัวจัดการอัปเดต",
+        "description": "manager-lock: reloadingWait"
+    },
+    "exportHtml": {
+        "message": "ส่งออกเป็น HTML"
+    },
+    "exportHtmlNote": {
+        "message": "รูปแบบ Netscape Bookmarks"
+    },
+    "exportHtmlSuccess": {
+        "message": "ส่งออก HTML สำเร็จ"
+    },
+    "exportHtmlConfirmTitle": {
+        "message": "ยืนยันรหัสผ่านของคุณ"
+    },
+    "exportHtmlConfirmDesc": {
+        "message": "บุ๊กมาร์กของคุณจะถูกส่งออกเป็นข้อความธรรมดา ป้อนรหัสผ่านหลักเพื่อยืนยัน"
+    },
+    "exportHtmlPasswordRequired": {
+        "message": "กรุณาป้อนรหัสผ่านของคุณ"
+    },
+    "exportHtmlConfirmBtn": {
+        "message": "ส่งออก"
+    },
+    "exportHtmlVerifying": {
+        "message": "กำลังตรวจสอบรหัสผ่าน…"
+    },
+    "copiedToClipboard": {
+        "message": "คัดลอกไปยังคลิปบอร์ดแล้ว!"
+    },
+    "copyFailed": {
+        "message": "ไม่สามารถคัดลอกได้"
+    },
+    "clickToCopy": {
+        "message": "คลิกเพื่อคัดลอก"
+    },
+    "qrCodeFor": {
+        "message": "QR Code สำหรับ $1",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            }
+        }
+    },
+    "quickCloseTab": {
+        "message": "ปิดแท็บด่วน ($1)"
+    },
+    "quickCloseTabDesc": {
+        "message": "ปิดแท็บปัจจุบันและลบประวัติการท่องเว็บสำหรับโดเมนนั้น"
+    },
+    "quickCloseTabCommand": {
+        "message": "ปิดแท็บและล้างประวัติโดเมน"
+    },
+    "changeShortcut": {
+        "message": "เปลี่ยนปุ่มลัด"
+    },
+    "actions": {
+        "message": "การดำเนินการ"
+    },
+    "qrCode": {
+        "message": "QR Code"
+    },
+    "qrScanHint": {
+        "message": "สแกน QR Code เพื่อเปิดลิงก์บนอุปกรณ์ของคุณ"
+    },
+    "stayUnlocked": {
+        "message": "ยังคงปลดล็อกระหว่างเซสชัน"
+    },
+    "stayUnlockedDesc": {
+        "message": "ทำให้คุณปลดล็อกในขณะที่เบราว์เซอร์เปิดอยู่"
+    },
+    "stayUnlockedWarning": {
+        "message": "ลดความปลอดภัย: คีย์เข้ารหัสถูกเก็บในที่เก็บเซสชันของเบราว์เซอร์ ใครก็ตามที่เข้าถึงโปรไฟล์เบราว์เซอร์ของคุณอาจอ่านได้"
+    },
+    "alwaysIncognito": {
+        "message": "เปิดบุ๊กมาร์กในโหมดไม่ระบุตัวตนเสมอ"
+    },
+    "alwaysIncognitoDesc": {
+        "message": "บุ๊กมาร์กทั้งหมดจะเปิดในหน้าต่างส่วนตัว"
+    },
+    "enable": {
+        "message": "เปิดใช้งาน"
+    },
+    "managerIsOpen": {
+        "message": "ตัวจัดการบุ๊กมาร์กเปิดอยู่"
+    },
+    "managerIsOpenDesc": {
+        "message": "ปิดแท็บตัวจัดการบุ๊กมาร์กเพื่อใช้ popup"
+    },
+    "switchToManager": {
+        "message": "สลับไปยังตัวจัดการ"
+    },
+    "hotkeys": {
+        "message": "ปุ่มลัด"
+    },
+    "lockExtensionCommand": {
+        "message": "ล็อกส่วนขยาย"
+    },
+    "openManagerCommand": {
+        "message": "เปิดตัวจัดการบุ๊กมาร์ก"
+    },
+    "blurPage": {
+        "message": "เบลอหน้า ($1)"
+    },
+    "blurPageDesc": {
+        "message": "เบลอแท็บปัจจุบันเมื่อเปิดใช้งาน"
+    },
+    "blurPageCommand": {
+        "message": "เบลอหน้า"
+    },
+    "invalidUrlProtocol": {
+        "message": "กรุณาป้อน URL ที่ถูกต้องที่เริ่มต้นด้วย http:// หรือ https://"
+    },
+    "openAll": {
+        "message": "เปิดทั้งหมด"
+    },
+    "openAllWindow": {
+        "message": "เปิดทั้งหมดในหน้าต่างใหม่"
+    },
+    "openAllGroup": {
+        "message": "เปิดทั้งหมดในกลุ่มแท็บใหม่"
+    },
+    "openAllIncognito": {
+        "message": "เปิดทั้งหมดในโหมดไม่ระบุตัวตน"
+    },
+    "saveAllTabs": {
+        "message": "บันทึกแท็บที่เปิดทั้งหมด"
+    },
+    "noTabsToSave": {
+        "message": "ไม่มีแท็บที่จะบันทึก"
+    },
+    "tabsSaved": {
+        "message": "บันทึกแท็บแล้ว"
+    },
+    "searchInFolder": {
+        "message": "ค้นหาในโฟลเดอร์..."
+    },
+    "reportBug": {
+        "message": "รายงานบัก"
+    },
+    "managerSubtitle": {
+        "message": "ควบคุมบุ๊กมาร์กของคุณอย่างเต็มที่"
+    }
+}

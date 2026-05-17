@@ -1,0 +1,904 @@
+{
+    "Name": {
+        "message": "Holy Private Bookmarks — Krypterad lokal bokmärkeshanterare"
+    },
+    "extensionName": {
+        "message": "Holy Private Bookmarks"
+    },
+    "extensionDescription": {
+        "message": "Håll dina bokmärken privata med ett huvudlösenord och AES-256-kryptering. All data stannar på din enhet — inget moln, ingen spårning."
+    },
+    "managerTitle": {
+        "message": "HPB - Bokmärkeshanterare"
+    },
+    "createPassword": {
+        "message": "Skapa ett huvudlösenord för fullständig bokmärkeskryptering"
+    },
+    "newPassword": {
+        "message": "Nytt lösenord (min. 6 tecken)"
+    },
+    "confirmPassword": {
+        "message": "Bekräfta lösenord"
+    },
+    "createStorage": {
+        "message": "Skapa lagring"
+    },
+    "enterMasterPassword": {
+        "message": ""
+    },
+    "masterPassword": {
+        "message": "Huvudlösenord"
+    },
+    "unlock": {
+        "message": "Lås upp"
+    },
+    "wrongPassword": {
+        "message": "Fel lösenord"
+    },
+    "passwordsMismatch": {
+        "message": "Lösenorden matchar inte eller är för korta"
+    },
+    "bookmarksProtected": {
+        "message": "Dina bokmärken är säkert skyddade"
+    },
+    "addCurrentPage": {
+        "message": "Lägg till aktuell sida"
+    },
+    "newFolder": {
+        "message": "Ny mapp"
+    },
+    "clearHistory": {
+        "message": "Rensa historik"
+    },
+    "settings": {
+        "message": "Inställningar"
+    },
+    "settingsbtn": {
+        "message": "⚙️"
+    },
+    "changeMasterPassword": {
+        "message": "Ändra huvudlösenord"
+    },
+    "currentPassword": {
+        "message": "Nuvarande huvudlösenord"
+    },
+    "newPassword2": {
+        "message": "Nytt lösenord"
+    },
+    "confirmNewPassword": {
+        "message": "Bekräfta nytt lösenord"
+    },
+    "changePassword": {
+        "message": "Ändra lösenord"
+    },
+    "exportImport": {
+        "message": "Exportera & Importera"
+    },
+    "export": {
+        "message": "Skapa säkerhetskopia"
+    },
+    "openPrivate": {
+        "message": "Öppna i privat flik"
+    },
+    "import": {
+        "message": "Importera"
+    },
+    "importFromChrome": {
+        "message": "Importera från Chrome"
+    },
+    "importChromeBookmarks": {
+        "message": "Importera alla Chrome-bokmärken"
+    },
+    "importChromeBookmarksAdvanced": {
+        "message": "Välj mappar att importera"
+    },
+    "importChromeConfirm": {
+        "message": "Importera alla bokmärken från Chrome? Befintliga bokmärken bevaras."
+    },
+    "importChromeSuccess": {
+        "message": "Bokmärken importerades!"
+    },
+    "importChromeError": {
+        "message": "Det gick inte att importera bokmärken"
+    },
+    "selectFoldersToImport": {
+        "message": "Välj mappar att importera"
+    },
+    "selectAll": {
+        "message": "Välj alla"
+    },
+    "deselectAll": {
+        "message": "Avmarkera alla"
+    },
+    "importSelected": {
+        "message": "Importera"
+    },
+    "back": {
+        "message": "← Tillbaka"
+    },
+    "addBookmark": {
+        "message": "Lägg till bokmärke"
+    },
+    "editBookmark": {
+        "message": "Redigera bokmärke"
+    },
+    "page": {
+        "message": "Sida"
+    },
+    "title": {
+        "message": "Titel"
+    },
+    "url": {
+        "message": "URL"
+    },
+    "folder": {
+        "message": "Mapp"
+    },
+    "rootFolder": {
+        "message": "Rotmapp"
+    },
+    "new": {
+        "message": "+ Ny"
+    },
+    "cancel": {
+        "message": "Avbryt"
+    },
+    "save": {
+        "message": "Spara"
+    },
+    "deleteConfirm": {
+        "message": "Ta bort bokmärke"
+    },
+    "folderName": {
+        "message": "Mappnamn:"
+    },
+    "newName": {
+        "message": "Nytt namn:"
+    },
+    "titleRequired": {
+        "message": "Titel och URL krävs"
+    },
+    "validUrl": {
+        "message": "URL måste börja med http:// eller https://"
+    },
+    "passwordChanged": {
+        "message": "Lösenordet ändrades!"
+    },
+    "importSuccess": {
+        "message": "Säkerhetskopian importerades! Öppna popup-fönstret igen."
+    },
+    "invalidFile": {
+        "message": "Ogiltig säkerhetskopieringsfil"
+    },
+    "clearHistoryConfirm": {
+        "message": "Ta bort ALLA webbläsarhistorikposter för domäner i dina Holy Private Bookmarks?"
+    },
+    "noBookmarks": {
+        "message": "Inga bokmärken hittades — inget att rensa."
+    },
+    "noDomains": {
+        "message": "Inga giltiga domäner hittades i bokmärken."
+    },
+    "newBookmark": {
+        "message": "Nytt bokmärke"
+    },
+    "paste": {
+        "message": "Klistra in"
+    },
+    "ctxnewFolder": {
+        "message": "Ny mapp"
+    },
+    "emptyTreeTitle": {
+        "message": "Inga bokmärken ännu"
+    },
+    "emptyTreeSubtitle": {
+        "message": "Lägg till ditt första bokmärke eller mapp för att komma igång"
+    },
+    "historyCleared": {
+        "message": "Historiken rensades!\nTog bort $count$ besök från $domains$ domäner.",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "domains": {
+                "content": "$2"
+            }
+        }
+    },
+    "addToHoly": {
+        "message": "Lägg till i Holy Private Bookmarks"
+    },
+    "cannotAddPage": {
+        "message": "Kan inte lägga till den här sidan (ingen giltig URL)"
+    },
+    "supportProject": {
+        "message": "Stödja projektet"
+    },
+    "supportPageTitle": {
+        "message": "Stödja Holy Private Bookmarks"
+    },
+    "donateHeroTitle": {
+        "message": "Stödja integritetsfokuserad utveckling"
+    },
+    "donateHeroSubtitle": {
+        "message": "Holy Private Bookmarks är 100% gratis och open-source och kommer alltid att vara det. Ditt stöd hjälper utvecklarna att ägna tid åt att underhålla och förbättra tillägget för alla som värnar om integritet."
+    },
+    "whySupport": {
+        "message": "Varför ditt stöd spelar roll"
+    },
+    "timeInvestment": {
+        "message": "Utvecklartid"
+    },
+    "timeInvestmentDesc": {
+        "message": "Varje funktion, buggfix och säkerhetsförbättring representerar timmars arbete. Ditt bidrag värderar den tiden och håller projektet hållbart."
+    },
+    "longTerm": {
+        "message": "Långsiktigt engagemang"
+    },
+    "longTermDesc": {
+        "message": "Ditt stöd säkerställer att tillägget förblir aktivt underhållet, kompatibelt med framtida Chrome-uppdateringar och kontinuerligt förbättrat."
+    },
+    "futureFeatures": {
+        "message": "Framtida funktioner"
+    },
+    "futureFeaturesDesc": {
+        "message": "Med din hjälp kan vi prioritera ny funktionalitet, bättre användargränssnitt och förbättrade säkerhetsfunktioner som gynnar hela gemenskapen."
+    },
+    "donateCtaText": {
+        "message": "Inga prenumerationer. Inga betalväggar. Ingen företagsfinansiering. Bara människor som bygger något användbart för andra. Om det här tillägget sparar tid eller ger dig sinnesro, överväg att bjuda utvecklarna på kaffe."
+    },
+    "donateCryptoTitle": {
+        "message": "Stödja med krypto"
+    },
+    "copyAddress": {
+        "message": "Kopiera adress"
+    },
+    "donateThanks": {
+        "message": "Tack för att du stödjer oberoende open-source-utveckling"
+    },
+    "donateThanksNote": {
+        "message": "Varje bidrag, stort eller litet, betyder allt för oss."
+    },
+    "importantWarning": {
+        "message": "VIKTIGT MEDDELANDE:"
+    },
+    "passwordCannotBeRecovered": {
+        "message": "Det här lösenordet KAN INTE återställas!"
+    },
+    "noPasswordReset": {
+        "message": "Det finns INGET alternativ för lösenordsåterställning"
+    },
+    "weDontStorePassword": {
+        "message": "Vi lagrar INTE ditt lösenord någonstans"
+    },
+    "bookmarksEncrypted": {
+        "message": "Dina bokmärken krypteras bara med det här lösenordet"
+    },
+    "savePasswordSecurely": {
+        "message": "Spara det här lösenordet säkert!"
+    },
+    "copyUrl": {
+        "message": "Kopiera URL"
+    },
+    "edit": {
+        "message": "Redigera"
+    },
+    "delete": {
+        "message": "Ta bort"
+    },
+    "urlCopied": {
+        "message": "URL kopierad till urklipp"
+    },
+    "dangerZone": {
+        "message": "Farozon"
+    },
+    "deleteAllData": {
+        "message": "Ta bort all data"
+    },
+    "deleteAllDataDesc": {
+        "message": "Ta bort alla bokmärken och inställningar permanent"
+    },
+    "deleteAllDataConfirm": {
+        "message": "Alla bokmärken, mappar, huvudlösenord och inställningar tas bort permanent. Den här åtgärden kan inte ångras."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Ta bort allt"
+    },
+    "about": {
+        "message": "Om"
+    },
+    "aboutExtension": {
+        "message": "Om tillägget"
+    },
+    "openGitHub": {
+        "message": "Öppna GitHub"
+    },
+    "close": {
+        "message": "Stäng"
+    },
+    "features": {
+        "message": "Funktioner"
+    },
+    "troubleshooting": {
+        "message": "Felsökning"
+    },
+    "encryption": {
+        "message": "Kryptering"
+    },
+    "encryptionDesc": {
+        "message": "AES-256-kryptering"
+    },
+    "localStorage": {
+        "message": "Lokal lagring"
+    },
+    "localStorageDesc": {
+        "message": "Data stannar på din enhet"
+    },
+    "privacy": {
+        "message": "Integritet"
+    },
+    "privacyDesc": {
+        "message": "Ingen spårning eller analys"
+    },
+    "openSource": {
+        "message": "GPLv3"
+    },
+    "viewOnGitHub": {
+        "message": "Visa på GitHub"
+    },
+    "githubRepo": {
+        "message": "GitHub-förråd"
+    },
+    "githubRepoDesc": {
+        "message": "Visa källkod, rapportera problem, bidra"
+    },
+    "version": {
+        "message": "Version"
+    },
+    "openmanager": {
+        "message": "Öppna hanteraren"
+    },
+    "managerDesc": {
+        "message": "Öppna bokmärkeshanteraren i helskärm"
+    },
+    "folders": {
+        "message": "Mappar"
+    },
+    "bookmarks": {
+        "message": "bokmärken"
+    },
+    "allBookmarks": {
+        "message": "Alla bokmärken"
+    },
+    "searchBookmarks": {
+        "message": "Sök bokmärken..."
+    },
+    "noBookmarksInFolder": {
+        "message": "Inga bokmärken i mappen"
+    },
+    "addBookmarksToGetStarted": {
+        "message": "Lägg till bokmärken för att komma igång"
+    },
+    "bookmarkUpdated": {
+        "message": "Bokmärket uppdaterades"
+    },
+    "bookmarkDeleted": {
+        "message": "Bokmärket togs bort"
+    },
+    "renameFolder": {
+        "message": "Byt namn på mapp"
+    },
+    "folderCreated": {
+        "message": "Mappen skapades"
+    },
+    "managerLocked": {
+        "message": "Hanteraren låst"
+    },
+    "lockManager": {
+        "message": "Lås hanteraren"
+    },
+    "rename": {
+        "message": "Byt namn"
+    },
+    "deleteFolder": {
+        "message": "Ta bort mapp"
+    },
+    "deleteFolderConfirm": {
+        "message": "Ta bort mappen \"{0}\"?"
+    },
+    "deleteFolderWarning": {
+        "message": "Allt innehåll tas bort permanent."
+    },
+    "folderRenamed": {
+        "message": "Mappnamnet ändrades"
+    },
+    "folderDeleted": {
+        "message": "Mappen togs bort"
+    },
+    "cannotRenameAll": {
+        "message": "Kan inte byta namn på mappen \"Alla bokmärken\""
+    },
+    "cannotDeleteAll": {
+        "message": "Kan inte ta bort mappen \"Alla bokmärken\""
+    },
+    "bookmarkAdded": {
+        "message": "Bokmärket lades till"
+    },
+    "pendingBookmarkNotification": {
+        "message": "Bokmärke väntar!"
+    },
+    "pendingBookmarkInstruction": {
+        "message": "Ett bokmärke väntar på att läggas till. Lås upp för att fortsätta."
+    },
+    "dragSuccess": {
+        "message": "Objektet flyttades"
+    },
+    "invalidDestinationFolder": {
+        "message": "Ogiltig målmapp"
+    },
+    "moveFailed": {
+        "message": "Det gick inte att flytta bokmärken"
+    },
+    "noBookmarksSelected": {
+        "message": "Inga bokmärken valda"
+    },
+    "selectDestinationFolder": {
+        "message": "Välj målmapp:"
+    },
+    "move": {
+        "message": "Flytta"
+    },
+    "selected": {
+        "message": "valda"
+    },
+    "moveSelectedTitle": {
+        "message": "Flytta valda"
+    },
+    "deleteSelectedTitle": {
+        "message": "Ta bort valda"
+    },
+    "cancelSelectionTitle": {
+        "message": "Avbryt val"
+    },
+    "emptyFolder": {
+        "message": "Mappen är tom",
+        "description": "Message shown when a folder has no bookmarks"
+    },
+    "noSearchResults": {
+        "message": "Inga bokmärken hittades",
+        "description": "Message when search returns no results"
+    },
+    "noSearchResultsDesc": {
+        "message": "Prova ett annat sökord",
+        "description": "Description for empty search results"
+    },
+    "theme": {
+        "message": "Tema"
+    },
+    "themeDark": {
+        "message": "Mörkt",
+        "description": "Dark theme name"
+    },
+    "themeLight": {
+        "message": "Ljust",
+        "description": "Light theme name"
+    },
+    "themeSystem": {
+        "message": "System",
+        "description": "System theme name"
+    },
+    "themeToggle": {
+        "message": "Byt tema",
+        "description": "Tooltip for theme toggle button"
+    },
+    "showFavicons": {
+        "message": "Visa webbplatsikoner"
+    },
+    "showFaviconsDesc": {
+        "message": "Ikoner laddas via Googles favicon-tjänst"
+    },
+    "bookmarksAndFolders": {
+        "message": "Bokmärken och mappar"
+    },
+    "importFromHtml": {
+        "message": "Importera från HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "HTML-bokmärken importerades! $COUNT$ bokmärken lades till.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+        "message": "Ingen fil vald"
+    },
+    "htmlImporterFileTooLarge": {
+        "message": "Filen är för stor (max 1 MB)"
+    },
+    "htmlImporterParseError": {
+        "message": "Det gick inte att importera HTML: $1"
+    },
+    "htmlImporterNoBookmarksFound": {
+        "message": "Inga bokmärken hittades i filen"
+    },
+    "importHtmlError": {
+        "message": "Det gick inte att tolka HTML-filen. Kontrollera filformatet."
+    },
+    "importHtmlSizeWarning": {
+        "message": "1 MB-gräns"
+    },
+    "importHtmlSizeNote": {
+        "message": "Max ~2500 bokmärken"
+    },
+    "importWarning": {
+        "message": "Alla befintliga bokmärken ersätts"
+    },
+    "developer": {
+        "message": "Utvecklare:"
+    },
+    "lock": {
+        "message": "Lås"
+    },
+    "faqButtonTitle": {
+        "message": "Vanliga frågor"
+    },
+    "clearingHistory": {
+        "message": "Rensar historik",
+        "description": "Title for history clearing progress modal"
+    },
+    "preparingToClear": {
+        "message": "Förbereder rensning av historik...",
+        "description": "Initial status message"
+    },
+    "progress": {
+        "message": "Förlopp",
+        "description": "Progress label"
+    },
+    "domainsProcessed": {
+        "message": "Domäner bearbetade",
+        "description": "Label for domains processed count"
+    },
+    "entriesDeleted": {
+        "message": "Poster borttagna",
+        "description": "Label for deleted entries count"
+    },
+    "startingCleanup": {
+        "message": "Startar rensning...",
+        "description": "Status when starting"
+    },
+    "finalizingCleanup": {
+        "message": "Slutför rensning...",
+        "description": "Status when finalizing"
+    },
+    "cancelling": {
+        "message": "Avbryter...",
+        "description": "Status when cancelling"
+    },
+    "clearCancelled": {
+        "message": "Åtgärden avbröts",
+        "description": "Notification when cancelled"
+    },
+    "fillAllFields": {
+        "message": "Fyll i alla fält"
+    },
+    "setupComplete": {
+        "message": "Konfigurationen är klar!"
+    },
+    "migrationSuccess": {
+        "message": "Data migrerades till säkert format!"
+    },
+    "migrationRequired": {
+        "message": "Uppdatering av dataformat krävs"
+    },
+    "migrationInstruction": {
+        "message": "Ange ditt lösenord för att automatiskt uppgradera till ett säkrare format."
+    },
+    "exportSuccess": {
+        "message": "Exporten lyckades",
+        "description": "Notification when data export completes successfully"
+    },
+    "processing": {
+        "message": "Bearbetar...",
+        "description": "Generic processing message for loading indicators"
+    },
+    "unlocking": {
+        "message": "Låser upp...",
+        "description": "Shown while decrypting bookmarks"
+    },
+    "changingPassword": {
+        "message": "Ändrar lösenord...",
+        "description": "Shown while changing master password"
+    },
+    "settingUpEncryption": {
+        "message": "Ställer in kryptering...",
+        "description": "Shown during first-time setup"
+    },
+    "migratingData": {
+        "message": "Migrerar data till säkert format...",
+        "description": "Shown during v1 to v2 migration"
+    },
+    "loading": {
+        "message": "Laddar...",
+        "description": "Generic loading message"
+    },
+    "donationReminderTitle": {
+        "message": "Stödja projektet"
+    },
+    "donationReminderText": {
+        "message": "Om du gillar det här tillägget, stödja dess utveckling!"
+    },
+    "remindLater": {
+        "message": "Påminn senare"
+    },
+    "supportNow": {
+        "message": "Stödja nu"
+    },
+    "remindNever": {
+        "message": "Visa inte igen"
+    },
+    "confirmDismiss": {
+        "message": "Visa aldrig donationspåminnelser igen?"
+    },
+    "bookmarkAlreadyInFolder": {
+        "message": "Elementet finns redan i den här mappen"
+    },
+    "cannotMoveIntoSelf": {
+        "message": "Kan inte flytta en mapp till sig själv"
+    },
+    "bookmarksMoved": {
+        "message": "{0} element flyttades"
+    },
+    "deleteSelectedConfirm": {
+        "message": "Ta bort {count} valda element?",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "bookmarksDeleted": {
+        "message": "{count} element borttagna",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "moveBookmarksTitle": {
+        "message": "Flytta {0} element"
+    },
+    "setupTabNew": {
+        "message": "Skapa nytt",
+        "description": "Tab label for creating new password"
+    },
+    "setupTabRestore": {
+        "message": "Återställ säkerhetskopia",
+        "description": "Tab label for restoring from backup"
+    },
+    "restoreDropTitle": {
+        "message": "Släpp säkerhetskopieringsfilen här eller klicka för att välja",
+        "description": "Text for drag & drop area in restore tab"
+    },
+    "strengthWeak": {
+        "message": "Svagt",
+        "description": "Password strength indicator"
+    },
+    "strengthFair": {
+        "message": "Godkänt",
+        "description": "Password strength indicator"
+    },
+    "strengthGood": {
+        "message": "Bra",
+        "description": "Password strength indicator"
+    },
+    "strengthStrong": {
+        "message": "Starkt",
+        "description": "Password strength indicator"
+    },
+    "importingBackup": {
+        "message": "Återställer säkerhetskopia...",
+        "description": "Loading message during backup import"
+    },
+    "unlockTitle": {
+        "message": "Ange huvudlösenord"
+    },
+    "warningRemember": {
+        "message": "Kommer du ihåg ditt lösenord?"
+    },
+    "yesRemember": {
+        "message": "Ja, jag kommer ihåg"
+    },
+    "survey": {
+        "message": "Feedbackundersökning"
+    },
+    "Error": {
+        "message": "Fel"
+    },
+    "changelog": {
+        "message": "Ändringslogg"
+    },
+    "rateExtension": {
+        "message": "Betygsätt i Chrome Web Store"
+    },
+    "migrationScreenTitle": {
+        "message": "Uppdatering krävs",
+        "description": "Title on the manager migration screen"
+    },
+    "migrationScreenBody1": {
+        "message": "Tillägget har uppdaterats med förbättrad säkerhet.",
+        "description": "First line on the manager migration screen"
+    },
+    "migrationScreenBody2": {
+        "message": "Öppna tilläggets popup-fönster för att migrera dina data till det nya säkra formatet.",
+        "description": "Second line on the manager migration screen"
+    },
+    "notSetUpTitle": {
+        "message": "Tillägget är inte konfigurerat",
+        "description": "manager-lock: notSetUpTitle"
+    },
+    "notSetUpSubtitle": {
+        "message": "Tillägget är inte konfigurerat ännu. Öppna tilläggets popup-fönster för att skapa ett lösenord.",
+        "description": "manager-lock: notSetUpSubtitle"
+    },
+    "notSetUpButton": {
+        "message": "Öppna popup",
+        "description": "manager-lock: notSetUpButton"
+    },
+    "reloadingSubtitle": {
+        "message": "Hanteraren laddas om...",
+        "description": "manager-lock: reloadingSubtitle"
+    },
+    "reloadingWait": {
+        "message": "Vänta medan hanteraren uppdateras",
+        "description": "manager-lock: reloadingWait"
+    },
+    "exportHtml": {
+        "message": "Exportera till HTML"
+    },
+    "exportHtmlNote": {
+        "message": "Netscape Bookmarks-format"
+    },
+    "exportHtmlSuccess": {
+        "message": "HTML-exporten lyckades"
+    },
+    "exportHtmlConfirmTitle": {
+        "message": "Bekräfta ditt lösenord"
+    },
+    "exportHtmlConfirmDesc": {
+        "message": "Dina bokmärken exporteras som klartext. Ange ditt huvudlösenord för att bekräfta."
+    },
+    "exportHtmlPasswordRequired": {
+        "message": "Ange ditt lösenord"
+    },
+    "exportHtmlConfirmBtn": {
+        "message": "Exportera"
+    },
+    "exportHtmlVerifying": {
+        "message": "Verifierar lösenord…"
+    },
+    "copiedToClipboard": {
+        "message": "Kopierat till urklipp!"
+    },
+    "copyFailed": {
+        "message": "Det gick inte att kopiera"
+    },
+    "clickToCopy": {
+        "message": "Klicka för att kopiera"
+    },
+    "qrCodeFor": {
+        "message": "QR-kod för $1",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            }
+        }
+    },
+    "quickCloseTab": {
+        "message": "Stäng flik snabbt ($1)"
+    },
+    "quickCloseTabDesc": {
+        "message": "Stänger den aktuella fliken och tar bort webbhistoriken för den domänen"
+    },
+    "quickCloseTabCommand": {
+        "message": "Stäng flik och rensa domänhistorik"
+    },
+    "changeShortcut": {
+        "message": "Ändra kortkommandon"
+    },
+    "actions": {
+        "message": "Åtgärder"
+    },
+    "qrCode": {
+        "message": "QR-kod"
+    },
+    "qrScanHint": {
+        "message": "Skanna QR-koden för att öppna länken på din enhet."
+    },
+    "stayUnlocked": {
+        "message": "Förbli upplåst mellan sessioner"
+    },
+    "stayUnlockedDesc": {
+        "message": "Håller dig upplåst medan webbläsaren är öppen"
+    },
+    "stayUnlockedWarning": {
+        "message": "Minskar säkerheten: krypteringsnyckeln lagras i webbläsarens sessionslagring. Alla med tillgång till din webbläsarprofil kan potentiellt läsa den."
+    },
+    "alwaysIncognito": {
+        "message": "Öppna alltid bokmärken i inkognitoläge"
+    },
+    "alwaysIncognitoDesc": {
+        "message": "Alla bokmärken öppnas i ett privat fönster"
+    },
+    "enable": {
+        "message": "Aktivera"
+    },
+    "managerIsOpen": {
+        "message": "Bokmärkeshanteraren är öppen"
+    },
+    "managerIsOpenDesc": {
+        "message": "Stäng bokmärkeshanterarens flik för att använda popup-fönstret."
+    },
+    "switchToManager": {
+        "message": "Växla till hanteraren"
+    },
+    "hotkeys": {
+        "message": "Kortkommandon"
+    },
+    "lockExtensionCommand": {
+        "message": "Lås tillägget"
+    },
+    "openManagerCommand": {
+        "message": "Öppna bokmärkeshanteraren"
+    },
+    "blurPage": {
+        "message": "Sudda sidan ($1)"
+    },
+    "blurPageDesc": {
+        "message": "Suddar den aktuella fliken när den aktiveras"
+    },
+    "blurPageCommand": {
+        "message": "Sudda sidan"
+    },
+    "invalidUrlProtocol": {
+        "message": "Ange en giltig URL som börjar med http:// eller https://"
+    },
+    "openAll": {
+        "message": "Öppna alla"
+    },
+    "openAllWindow": {
+        "message": "Öppna alla i nytt fönster"
+    },
+    "openAllGroup": {
+        "message": "Öppna alla i ny flikgrupp"
+    },
+    "openAllIncognito": {
+        "message": "Öppna alla i inkognitoläge"
+    },
+    "saveAllTabs": {
+        "message": "Spara alla öppna flikar"
+    },
+    "noTabsToSave": {
+        "message": "Inga flikar att spara"
+    },
+    "tabsSaved": {
+        "message": "Flikar sparade"
+    },
+    "searchInFolder": {
+        "message": "Sök i mapp..."
+    },
+    "reportBug": {
+        "message": "Rapportera ett fel"
+    },
+    "managerSubtitle": {
+        "message": "Full kontroll över dina bokmärken"
+    }
+}

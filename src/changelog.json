@@ -1,5 +1,11 @@
 [
 {
+  "version": "1.8.5.63",
+  "changes": [
+    "Added 5 new interface languages: Indonesian, Thai, Czech, Swedish, Romanian"
+  ]
+},
+{
   "version": "1.8.5.62",
   "changes": [
     "Added 5 new interface languages: Portuguese, Korean, Turkish, Dutch, Vietnamese"

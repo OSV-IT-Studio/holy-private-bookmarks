@@ -1,0 +1,904 @@
+{
+    "Name": {
+        "message": "Holy Private Bookmarks — Šifrovaný lokální správce záložek"
+    },
+    "extensionName": {
+        "message": "Holy Private Bookmarks"
+    },
+    "extensionDescription": {
+        "message": "Udržujte své záložky soukromé pomocí hlavního hesla a šifrování AES-256. Všechna data zůstávají na vašem zařízení — žádný cloud, žádné sledování."
+    },
+    "managerTitle": {
+        "message": "HPB - Správce záložek"
+    },
+    "createPassword": {
+        "message": "Vytvořte hlavní heslo pro úplné šifrování záložek"
+    },
+    "newPassword": {
+        "message": "Nové heslo (min. 6 znaků)"
+    },
+    "confirmPassword": {
+        "message": "Potvrdit heslo"
+    },
+    "createStorage": {
+        "message": "Vytvořit úložiště"
+    },
+    "enterMasterPassword": {
+        "message": ""
+    },
+    "masterPassword": {
+        "message": "Hlavní heslo"
+    },
+    "unlock": {
+        "message": "Odemknout"
+    },
+    "wrongPassword": {
+        "message": "Nesprávné heslo"
+    },
+    "passwordsMismatch": {
+        "message": "Hesla se neshodují nebo jsou příliš krátká"
+    },
+    "bookmarksProtected": {
+        "message": "Vaše záložky jsou bezpečně chráněny"
+    },
+    "addCurrentPage": {
+        "message": "Přidat aktuální stránku"
+    },
+    "newFolder": {
+        "message": "Nová složka"
+    },
+    "clearHistory": {
+        "message": "Vymazat historii"
+    },
+    "settings": {
+        "message": "Nastavení"
+    },
+    "settingsbtn": {
+        "message": "⚙️"
+    },
+    "changeMasterPassword": {
+        "message": "Změnit hlavní heslo"
+    },
+    "currentPassword": {
+        "message": "Aktuální hlavní heslo"
+    },
+    "newPassword2": {
+        "message": "Nové heslo"
+    },
+    "confirmNewPassword": {
+        "message": "Potvrdit nové heslo"
+    },
+    "changePassword": {
+        "message": "Změnit heslo"
+    },
+    "exportImport": {
+        "message": "Export a import"
+    },
+    "export": {
+        "message": "Vytvořit zálohu"
+    },
+    "openPrivate": {
+        "message": "Otevřít v soukromé kartě"
+    },
+    "import": {
+        "message": "Importovat"
+    },
+    "importFromChrome": {
+        "message": "Importovat z Chrome"
+    },
+    "importChromeBookmarks": {
+        "message": "Importovat všechny záložky Chrome"
+    },
+    "importChromeBookmarksAdvanced": {
+        "message": "Vybrat složky k importu"
+    },
+    "importChromeConfirm": {
+        "message": "Importovat všechny záložky z Chrome? Stávající záložky budou zachovány."
+    },
+    "importChromeSuccess": {
+        "message": "Záložky úspěšně importovány!"
+    },
+    "importChromeError": {
+        "message": "Import záložek se nezdařil"
+    },
+    "selectFoldersToImport": {
+        "message": "Vybrat složky k importu"
+    },
+    "selectAll": {
+        "message": "Vybrat vše"
+    },
+    "deselectAll": {
+        "message": "Zrušit výběr všeho"
+    },
+    "importSelected": {
+        "message": "Importovat"
+    },
+    "back": {
+        "message": "← Zpět"
+    },
+    "addBookmark": {
+        "message": "Přidat záložku"
+    },
+    "editBookmark": {
+        "message": "Upravit záložku"
+    },
+    "page": {
+        "message": "Stránka"
+    },
+    "title": {
+        "message": "Název"
+    },
+    "url": {
+        "message": "URL"
+    },
+    "folder": {
+        "message": "Složka"
+    },
+    "rootFolder": {
+        "message": "Kořenová složka"
+    },
+    "new": {
+        "message": "+ Nová"
+    },
+    "cancel": {
+        "message": "Zrušit"
+    },
+    "save": {
+        "message": "Uložit"
+    },
+    "deleteConfirm": {
+        "message": "Smazat záložku"
+    },
+    "folderName": {
+        "message": "Název složky:"
+    },
+    "newName": {
+        "message": "Nový název:"
+    },
+    "titleRequired": {
+        "message": "Název a URL jsou povinné"
+    },
+    "validUrl": {
+        "message": "URL musí začínat http:// nebo https://"
+    },
+    "passwordChanged": {
+        "message": "Heslo bylo úspěšně změněno!"
+    },
+    "importSuccess": {
+        "message": "Záloha úspěšně importována! Prosím znovu otevřete popup."
+    },
+    "invalidFile": {
+        "message": "Neplatný soubor zálohy"
+    },
+    "clearHistoryConfirm": {
+        "message": "Smazat VŠECHNY záznamy historie prohlížeče pro domény ve vašich Holy Private Bookmarks?"
+    },
+    "noBookmarks": {
+        "message": "Žádné záložky nenalezeny — není co mazat."
+    },
+    "noDomains": {
+        "message": "V záložkách nebyly nalezeny žádné platné domény."
+    },
+    "newBookmark": {
+        "message": "Nová záložka"
+    },
+    "paste": {
+        "message": "Vložit"
+    },
+    "ctxnewFolder": {
+        "message": "Nová složka"
+    },
+    "emptyTreeTitle": {
+        "message": "Zatím žádné záložky"
+    },
+    "emptyTreeSubtitle": {
+        "message": "Přidejte první záložku nebo složku pro začátek"
+    },
+    "historyCleared": {
+        "message": "Historie vymazána!\nOdstraněno $count$ návštěv z $domains$ domén.",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "domains": {
+                "content": "$2"
+            }
+        }
+    },
+    "addToHoly": {
+        "message": "Přidat do Holy Private Bookmarks"
+    },
+    "cannotAddPage": {
+        "message": "Tuto stránku nelze přidat (žádná platná URL)"
+    },
+    "supportProject": {
+        "message": "Podpořit projekt"
+    },
+    "supportPageTitle": {
+        "message": "Podpořte Holy Private Bookmarks"
+    },
+    "donateHeroTitle": {
+        "message": "Podpořte vývoj zaměřený na soukromí"
+    },
+    "donateHeroSubtitle": {
+        "message": "Holy Private Bookmarks je 100% zdarma a open-source a vždy bude. Vaše podpora pomáhá vývojářům věnovat čas údržbě a vylepšování rozšíření pro všechny, kteří si cení soukromí."
+    },
+    "whySupport": {
+        "message": "Proč záleží na vaší podpoře"
+    },
+    "timeInvestment": {
+        "message": "Čas vývojáře"
+    },
+    "timeInvestmentDesc": {
+        "message": "Každá funkce, oprava chyby a bezpečnostní vylepšení představuje hodiny práce. Váš příspěvek oceňuje tento čas a udržuje projekt udržitelným."
+    },
+    "longTerm": {
+        "message": "Dlouhodobý závazek"
+    },
+    "longTermDesc": {
+        "message": "Vaše podpora zajišťuje, že rozšíření zůstane aktivně udržováno, kompatibilní s budoucími aktualizacemi Chrome a neustále vylepšováno."
+    },
+    "futureFeatures": {
+        "message": "Budoucí funkce"
+    },
+    "futureFeaturesDesc": {
+        "message": "S vaší pomocí můžeme upřednostnit nové funkce, lepší UI a vylepšené bezpečnostní funkce, které prospívají celé komunitě."
+    },
+    "donateCtaText": {
+        "message": "Žádná předplatná. Žádné platební brány. Žádné firemní financování. Jen lidé budující něco užitečného pro ostatní. Pokud vám toto rozšíření šetří čas nebo dává klid, zvažte koupi kávy vývojářům."
+    },
+    "donateCryptoTitle": {
+        "message": "Podpořte kryptoměnou"
+    },
+    "copyAddress": {
+        "message": "Kopírovat adresu"
+    },
+    "donateThanks": {
+        "message": "Děkujeme za podporu nezávislého open-source vývoje"
+    },
+    "donateThanksNote": {
+        "message": "Každý příspěvek, velký nebo malý, pro nás znamená svět."
+    },
+    "importantWarning": {
+        "message": "DŮLEŽITÉ UPOZORNĚNÍ:"
+    },
+    "passwordCannotBeRecovered": {
+        "message": "Toto heslo NELZE obnovit!"
+    },
+    "noPasswordReset": {
+        "message": "NEEXISTUJE možnost resetování hesla"
+    },
+    "weDontStorePassword": {
+        "message": "Vaše heslo NIKDE neukládáme"
+    },
+    "bookmarksEncrypted": {
+        "message": "Vaše záložky jsou šifrovány pouze tímto heslem"
+    },
+    "savePasswordSecurely": {
+        "message": "Uložte toto heslo bezpečně!"
+    },
+    "copyUrl": {
+        "message": "Kopírovat URL"
+    },
+    "edit": {
+        "message": "Upravit"
+    },
+    "delete": {
+        "message": "Smazat"
+    },
+    "urlCopied": {
+        "message": "URL zkopírována do schránky"
+    },
+    "dangerZone": {
+        "message": "Nebezpečná zóna"
+    },
+    "deleteAllData": {
+        "message": "Smazat všechna data"
+    },
+    "deleteAllDataDesc": {
+        "message": "Trvale smazat všechny záložky a nastavení"
+    },
+    "deleteAllDataConfirm": {
+        "message": "Všechny záložky, složky, hlavní heslo a nastavení budou trvale smazány. Tuto akci nelze vrátit zpět."
+    },
+    "deleteAllDataConfirmBtn": {
+        "message": "Smazat vše"
+    },
+    "about": {
+        "message": "O aplikaci"
+    },
+    "aboutExtension": {
+        "message": "O rozšíření"
+    },
+    "openGitHub": {
+        "message": "Otevřít GitHub"
+    },
+    "close": {
+        "message": "Zavřít"
+    },
+    "features": {
+        "message": "Funkce"
+    },
+    "troubleshooting": {
+        "message": "Řešení problémů"
+    },
+    "encryption": {
+        "message": "Šifrování"
+    },
+    "encryptionDesc": {
+        "message": "Šifrování AES-256"
+    },
+    "localStorage": {
+        "message": "Lokální úložiště"
+    },
+    "localStorageDesc": {
+        "message": "Data zůstávají na vašem zařízení"
+    },
+    "privacy": {
+        "message": "Soukromí"
+    },
+    "privacyDesc": {
+        "message": "Žádné sledování ani analytika"
+    },
+    "openSource": {
+        "message": "GPLv3"
+    },
+    "viewOnGitHub": {
+        "message": "Zobrazit na GitHubu"
+    },
+    "githubRepo": {
+        "message": "Repozitář GitHub"
+    },
+    "githubRepoDesc": {
+        "message": "Zobrazit zdrojový kód, nahlásit problémy, přispívat"
+    },
+    "version": {
+        "message": "Verze"
+    },
+    "openmanager": {
+        "message": "Otevřít správce"
+    },
+    "managerDesc": {
+        "message": "Otevřít správce záložek na celou obrazovku"
+    },
+    "folders": {
+        "message": "Složky"
+    },
+    "bookmarks": {
+        "message": "záložky"
+    },
+    "allBookmarks": {
+        "message": "Všechny záložky"
+    },
+    "searchBookmarks": {
+        "message": "Hledat záložky..."
+    },
+    "noBookmarksInFolder": {
+        "message": "Ve složce nejsou žádné záložky"
+    },
+    "addBookmarksToGetStarted": {
+        "message": "Přidejte záložky pro začátek"
+    },
+    "bookmarkUpdated": {
+        "message": "Záložka aktualizována"
+    },
+    "bookmarkDeleted": {
+        "message": "Záložka smazána"
+    },
+    "renameFolder": {
+        "message": "Přejmenovat složku"
+    },
+    "folderCreated": {
+        "message": "Složka úspěšně vytvořena"
+    },
+    "managerLocked": {
+        "message": "Správce uzamčen"
+    },
+    "lockManager": {
+        "message": "Uzamknout správce"
+    },
+    "rename": {
+        "message": "Přejmenovat"
+    },
+    "deleteFolder": {
+        "message": "Smazat složku"
+    },
+    "deleteFolderConfirm": {
+        "message": "Smazat složku \"{0}\"?"
+    },
+    "deleteFolderWarning": {
+        "message": "Veškerý obsah bude trvale smazán."
+    },
+    "folderRenamed": {
+        "message": "Složka úspěšně přejmenována"
+    },
+    "folderDeleted": {
+        "message": "Složka úspěšně smazána"
+    },
+    "cannotRenameAll": {
+        "message": "Složku \"Všechny záložky\" nelze přejmenovat"
+    },
+    "cannotDeleteAll": {
+        "message": "Složku \"Všechny záložky\" nelze smazat"
+    },
+    "bookmarkAdded": {
+        "message": "Záložka přidána"
+    },
+    "pendingBookmarkNotification": {
+        "message": "Záložka čeká!"
+    },
+    "pendingBookmarkInstruction": {
+        "message": "Záložka čeká na přidání. Odemkněte pro pokračování."
+    },
+    "dragSuccess": {
+        "message": "Položka úspěšně přesunuta"
+    },
+    "invalidDestinationFolder": {
+        "message": "Neplatná cílová složka"
+    },
+    "moveFailed": {
+        "message": "Přesun záložek se nezdařil"
+    },
+    "noBookmarksSelected": {
+        "message": "Žádné záložky nevybrány"
+    },
+    "selectDestinationFolder": {
+        "message": "Vybrat cílovou složku:"
+    },
+    "move": {
+        "message": "Přesunout"
+    },
+    "selected": {
+        "message": "vybráno"
+    },
+    "moveSelectedTitle": {
+        "message": "Přesunout vybrané"
+    },
+    "deleteSelectedTitle": {
+        "message": "Smazat vybrané"
+    },
+    "cancelSelectionTitle": {
+        "message": "Zrušit výběr"
+    },
+    "emptyFolder": {
+        "message": "Složka je prázdná",
+        "description": "Message shown when a folder has no bookmarks"
+    },
+    "noSearchResults": {
+        "message": "Žádné záložky nenalezeny",
+        "description": "Message when search returns no results"
+    },
+    "noSearchResultsDesc": {
+        "message": "Zkuste jiný hledaný výraz",
+        "description": "Description for empty search results"
+    },
+    "theme": {
+        "message": "Téma"
+    },
+    "themeDark": {
+        "message": "Tmavé",
+        "description": "Dark theme name"
+    },
+    "themeLight": {
+        "message": "Světlé",
+        "description": "Light theme name"
+    },
+    "themeSystem": {
+        "message": "Systémové",
+        "description": "System theme name"
+    },
+    "themeToggle": {
+        "message": "Přepnout téma",
+        "description": "Tooltip for theme toggle button"
+    },
+    "showFavicons": {
+        "message": "Zobrazit favikony webů"
+    },
+    "showFaviconsDesc": {
+        "message": "Ikony jsou načítány přes službu favicon od Google"
+    },
+    "bookmarksAndFolders": {
+        "message": "Záložky a složky"
+    },
+    "importFromHtml": {
+        "message": "Importovat z HTML"
+    },
+    "importHtmlSuccess": {
+        "message": "HTML záložky úspěšně importovány! Přidáno $COUNT$ záložek.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "42"
+            }
+        }
+    },
+    "htmlImporterNoFileSelected": {
+        "message": "Žádný soubor nevybrán"
+    },
+    "htmlImporterFileTooLarge": {
+        "message": "Soubor je příliš velký (max. 1 MB)"
+    },
+    "htmlImporterParseError": {
+        "message": "Import HTML se nezdařil: $1"
+    },
+    "htmlImporterNoBookmarksFound": {
+        "message": "V souboru nebyly nalezeny žádné záložky"
+    },
+    "importHtmlError": {
+        "message": "Analýza souboru HTML se nezdařila. Zkontrolujte formát souboru."
+    },
+    "importHtmlSizeWarning": {
+        "message": "Limit 1 MB"
+    },
+    "importHtmlSizeNote": {
+        "message": "Max. ~2500 záložek"
+    },
+    "importWarning": {
+        "message": "Všechny stávající záložky budou nahrazeny"
+    },
+    "developer": {
+        "message": "Vývojář:"
+    },
+    "lock": {
+        "message": "Zamknout"
+    },
+    "faqButtonTitle": {
+        "message": "Často kladené otázky"
+    },
+    "clearingHistory": {
+        "message": "Mazání historie",
+        "description": "Title for history clearing progress modal"
+    },
+    "preparingToClear": {
+        "message": "Příprava na mazání historie...",
+        "description": "Initial status message"
+    },
+    "progress": {
+        "message": "Průběh",
+        "description": "Progress label"
+    },
+    "domainsProcessed": {
+        "message": "Zpracované domény",
+        "description": "Label for domains processed count"
+    },
+    "entriesDeleted": {
+        "message": "Smazané záznamy",
+        "description": "Label for deleted entries count"
+    },
+    "startingCleanup": {
+        "message": "Spouštění čištění...",
+        "description": "Status when starting"
+    },
+    "finalizingCleanup": {
+        "message": "Dokončování čištění...",
+        "description": "Status when finalizing"
+    },
+    "cancelling": {
+        "message": "Rušení...",
+        "description": "Status when cancelling"
+    },
+    "clearCancelled": {
+        "message": "Operace zrušena",
+        "description": "Notification when cancelled"
+    },
+    "fillAllFields": {
+        "message": "Vyplňte prosím všechna pole"
+    },
+    "setupComplete": {
+        "message": "Nastavení dokončeno!"
+    },
+    "migrationSuccess": {
+        "message": "Data úspěšně migrována do bezpečného formátu!"
+    },
+    "migrationRequired": {
+        "message": "Vyžadována aktualizace formátu dat"
+    },
+    "migrationInstruction": {
+        "message": "Zadejte heslo pro automatický upgrade na bezpečnější formát."
+    },
+    "exportSuccess": {
+        "message": "Export úspěšný",
+        "description": "Notification when data export completes successfully"
+    },
+    "processing": {
+        "message": "Zpracovávání...",
+        "description": "Generic processing message for loading indicators"
+    },
+    "unlocking": {
+        "message": "Odemykání...",
+        "description": "Shown while decrypting bookmarks"
+    },
+    "changingPassword": {
+        "message": "Změna hesla...",
+        "description": "Shown while changing master password"
+    },
+    "settingUpEncryption": {
+        "message": "Nastavování šifrování...",
+        "description": "Shown during first-time setup"
+    },
+    "migratingData": {
+        "message": "Migrace dat do bezpečného formátu...",
+        "description": "Shown during v1 to v2 migration"
+    },
+    "loading": {
+        "message": "Načítání...",
+        "description": "Generic loading message"
+    },
+    "donationReminderTitle": {
+        "message": "Podpořit projekt"
+    },
+    "donationReminderText": {
+        "message": "Pokud se vám toto rozšíření líbí, podpořte prosím jeho vývoj!"
+    },
+    "remindLater": {
+        "message": "Připomenout později"
+    },
+    "supportNow": {
+        "message": "Podpořit nyní"
+    },
+    "remindNever": {
+        "message": "Nezobrazovat znovu"
+    },
+    "confirmDismiss": {
+        "message": "Nikdy více nezobrazovat připomínky darování?"
+    },
+    "bookmarkAlreadyInFolder": {
+        "message": "Prvek je již v této složce"
+    },
+    "cannotMoveIntoSelf": {
+        "message": "Složku nelze přesunout do sebe sama"
+    },
+    "bookmarksMoved": {
+        "message": "Přesunuto {0} prvků"
+    },
+    "deleteSelectedConfirm": {
+        "message": "Smazat {count} vybraných prvků?",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "bookmarksDeleted": {
+        "message": "Smazáno {count} prvků",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            },
+            "plural": {
+                "content": "$2"
+            }
+        }
+    },
+    "moveBookmarksTitle": {
+        "message": "Přesunout {0} prvků"
+    },
+    "setupTabNew": {
+        "message": "Vytvořit nové",
+        "description": "Tab label for creating new password"
+    },
+    "setupTabRestore": {
+        "message": "Obnovit zálohu",
+        "description": "Tab label for restoring from backup"
+    },
+    "restoreDropTitle": {
+        "message": "Přetáhněte záložní soubor sem nebo klikněte pro výběr",
+        "description": "Text for drag & drop area in restore tab"
+    },
+    "strengthWeak": {
+        "message": "Slabé",
+        "description": "Password strength indicator"
+    },
+    "strengthFair": {
+        "message": "Průměrné",
+        "description": "Password strength indicator"
+    },
+    "strengthGood": {
+        "message": "Dobré",
+        "description": "Password strength indicator"
+    },
+    "strengthStrong": {
+        "message": "Silné",
+        "description": "Password strength indicator"
+    },
+    "importingBackup": {
+        "message": "Obnovování zálohy...",
+        "description": "Loading message during backup import"
+    },
+    "unlockTitle": {
+        "message": "Zadejte hlavní heslo"
+    },
+    "warningRemember": {
+        "message": "Pamatujete si své heslo?"
+    },
+    "yesRemember": {
+        "message": "Ano, pamatuji si"
+    },
+    "survey": {
+        "message": "Průzkum zpětné vazby"
+    },
+    "Error": {
+        "message": "Chyba"
+    },
+    "changelog": {
+        "message": "Protokol změn"
+    },
+    "rateExtension": {
+        "message": "Ohodnotit v Chrome Web Store"
+    },
+    "migrationScreenTitle": {
+        "message": "Vyžadována aktualizace",
+        "description": "Title on the manager migration screen"
+    },
+    "migrationScreenBody1": {
+        "message": "Rozšíření bylo aktualizováno s vylepšeným zabezpečením.",
+        "description": "First line on the manager migration screen"
+    },
+    "migrationScreenBody2": {
+        "message": "Otevřete popup rozšíření pro migraci dat do nového bezpečného formátu.",
+        "description": "Second line on the manager migration screen"
+    },
+    "notSetUpTitle": {
+        "message": "Rozšíření není nastaveno",
+        "description": "manager-lock: notSetUpTitle"
+    },
+    "notSetUpSubtitle": {
+        "message": "Rozšíření ještě není nastaveno. Otevřete popup rozšíření pro vytvoření hesla.",
+        "description": "manager-lock: notSetUpSubtitle"
+    },
+    "notSetUpButton": {
+        "message": "Otevřít popup",
+        "description": "manager-lock: notSetUpButton"
+    },
+    "reloadingSubtitle": {
+        "message": "Správce se znovu načítá...",
+        "description": "manager-lock: reloadingSubtitle"
+    },
+    "reloadingWait": {
+        "message": "Počkejte prosím, správce se aktualizuje",
+        "description": "manager-lock: reloadingWait"
+    },
+    "exportHtml": {
+        "message": "Exportovat do HTML"
+    },
+    "exportHtmlNote": {
+        "message": "Formát Netscape Bookmarks"
+    },
+    "exportHtmlSuccess": {
+        "message": "Export HTML úspěšný"
+    },
+    "exportHtmlConfirmTitle": {
+        "message": "Potvrďte své heslo"
+    },
+    "exportHtmlConfirmDesc": {
+        "message": "Vaše záložky budou exportovány jako prostý text. Potvrďte zadáním hlavního hesla."
+    },
+    "exportHtmlPasswordRequired": {
+        "message": "Zadejte prosím své heslo"
+    },
+    "exportHtmlConfirmBtn": {
+        "message": "Exportovat"
+    },
+    "exportHtmlVerifying": {
+        "message": "Ověřování hesla…"
+    },
+    "copiedToClipboard": {
+        "message": "Zkopírováno do schránky!"
+    },
+    "copyFailed": {
+        "message": "Kopírování se nezdařilo"
+    },
+    "clickToCopy": {
+        "message": "Klikněte pro kopírování"
+    },
+    "qrCodeFor": {
+        "message": "QR kód pro $1",
+        "placeholders": {
+            "1": {
+                "content": "$1"
+            }
+        }
+    },
+    "quickCloseTab": {
+        "message": "Rychlé zavření karty ($1)"
+    },
+    "quickCloseTabDesc": {
+        "message": "Zavře aktuální kartu a smaže historii prohlížení pro danou doménu"
+    },
+    "quickCloseTabCommand": {
+        "message": "Zavřít kartu a vymazat historii domény"
+    },
+    "changeShortcut": {
+        "message": "Změnit klávesové zkratky"
+    },
+    "actions": {
+        "message": "Akce"
+    },
+    "qrCode": {
+        "message": "QR kód"
+    },
+    "qrScanHint": {
+        "message": "Naskenujte QR kód pro otevření odkazu na vašem zařízení."
+    },
+    "stayUnlocked": {
+        "message": "Zůstat odemčen mezi relacemi"
+    },
+    "stayUnlockedDesc": {
+        "message": "Udržuje vás odemčené, dokud je prohlížeč otevřen"
+    },
+    "stayUnlockedWarning": {
+        "message": "Snižuje bezpečnost: šifrovací klíč je uložen v úložišti relace prohlížeče. Kdokoli s přístupem k vašemu profilu prohlížeče ho může potenciálně číst."
+    },
+    "alwaysIncognito": {
+        "message": "Vždy otevírat záložky v anonymním režimu"
+    },
+    "alwaysIncognitoDesc": {
+        "message": "Všechny záložky se otevřou v soukromém okně"
+    },
+    "enable": {
+        "message": "Povolit"
+    },
+    "managerIsOpen": {
+        "message": "Správce záložek je otevřen"
+    },
+    "managerIsOpenDesc": {
+        "message": "Zavřete kartu správce záložek pro použití popupu."
+    },
+    "switchToManager": {
+        "message": "Přepnout na správce"
+    },
+    "hotkeys": {
+        "message": "Klávesové zkratky"
+    },
+    "lockExtensionCommand": {
+        "message": "Zamknout rozšíření"
+    },
+    "openManagerCommand": {
+        "message": "Otevřít správce záložek"
+    },
+    "blurPage": {
+        "message": "Rozmazat stránku ($1)"
+    },
+    "blurPageDesc": {
+        "message": "Rozmaže aktuální kartu při aktivaci"
+    },
+    "blurPageCommand": {
+        "message": "Rozmazat stránku"
+    },
+    "invalidUrlProtocol": {
+        "message": "Zadejte platnou URL začínající http:// nebo https://"
+    },
+    "openAll": {
+        "message": "Otevřít vše"
+    },
+    "openAllWindow": {
+        "message": "Otevřít vše v novém okně"
+    },
+    "openAllGroup": {
+        "message": "Otevřít vše v nové skupině karet"
+    },
+    "openAllIncognito": {
+        "message": "Otevřít vše v anonymním režimu"
+    },
+    "saveAllTabs": {
+        "message": "Uložit všechny otevřené karty"
+    },
+    "noTabsToSave": {
+        "message": "Žádné karty k uložení"
+    },
+    "tabsSaved": {
+        "message": "Karty uloženy"
+    },
+    "searchInFolder": {
+        "message": "Hledat ve složce..."
+    },
+    "reportBug": {
+        "message": "Nahlásit chybu"
+    },
+    "managerSubtitle": {
+        "message": "Plná kontrola nad vašimi záložkami"
+    }
+}
