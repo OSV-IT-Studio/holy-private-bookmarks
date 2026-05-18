@@ -32,7 +32,8 @@ a,button,input,select,
 .folder-item:hover{background:var(--surface-2);border-color:var(--border-subtle)}
 .folder-item.active{background:var(--accent-dim);border-color:var(--border-accent)}
 .folder-item.active .folder-name{color:var(--accent);font-weight:600}
-
+.tree-item.selected{background:var(--accent-dim);border-color:var(--border-accent)}
+.tree-item.selected:hover{background:rgba(99,179,237,.18)}
 .folder-content{display:flex;align-items:center;gap:6px;flex:1;min-width:0;overflow:hidden}
 .folder-toggle{display:flex;align-items:center;justify-content:center;width:16px;height:16px;color:var(--text-tertiary);flex-shrink:0}
 .folder-toggle svg{width:11px;height:11px;stroke:currentColor;transition:transform var(--dur-med) var(--ease-out)}
