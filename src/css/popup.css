@@ -39,6 +39,8 @@ a,button,input,select,
 .subitems.collapsed{max-height:0!important;opacity:0;padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important}
 
 .popup-header{display:flex;align-items:center;padding: 12px 24px 12px 24px;background:var(--card-bg);border-bottom:1px solid var(--header-border);gap:12px; justify-content: space-between;}
+.header-icon{width: 28px;height: 28px;background: var(--white-tint-xs);backdrop-filter: blur(8px);border-radius: 10px;border: 1px solid var(--accent-border-sm);display: flex;align-items: center;justify-content: center;}
+.header-icon svg {width: 18px;height: 18px;color: var(--accent, #00d4ff);transition: transform 0.3s ease;}
 .popup-header-inner{ display: flex; align-items: center; justify-content: space-between; gap:10px;}
 .popup-header h1{flex:1;font-size:15px;font-weight:700;margin:0;text-align:left;letter-spacing:-.01em;background:var(--accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .top-right-buttons{display:flex;gap:8px;flex-shrink:0}
@@ -137,27 +139,9 @@ html.holy-light-theme body .changelog-version{border-color:var(--accent-tint-2xl
 .changelog-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
 .changelog-list li{display:flex;align-items:flex-start;gap:10px;font-size:.8125rem;color:var(--text-secondary);line-height:1.55}
 .changelog-list li::before{content:'';flex-shrink:0;width:5px;height:5px;border-radius:50%;background:var(--accent-tint-dot);margin-top:6px}
-.search-bar{position: relative;flex: 1;min-width: 0;display:flex;align-items:center;gap:8px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:0;border-top:none;backdrop-filter:blur(12px)}
+.search-bar{position: relative;flex: 1;min-width: 0;display:flex;align-items:center;gap:8px;background:var(--card-bg);border-radius:0;border-top:none;backdrop-filter:blur(12px)}
 .search-bar__icon{position: absolute;left: 10px;top: 50%;transform: translateY(-50%);font-size: 13px;color: var(--text-tertiary);pointer-events: none;line-height: 1;transition: color var(--dur-fast) ease;}
 .search-bar__input{    width: 100%;padding: 8px 12px 8px 34px;background: var(--surface-2);border: 1px solid var(--border-subtle);color: var(--text-primary);font-family: var(--font-main);font-size: 13px;font-weight: 400;transition: all var(--dur-med) var(--ease-out);margin: 0;caret-color:var(--accent)}
 .search-bar__input::placeholder{color:var(--text-secondary)}
 
 mark.search-highlight{background:var(--accent-tint-2xl);color:inherit;border-radius:2px;padding:0 1px}
-
-.login-icon{
-    width: 28px;
-    height: 28px;
-    background: var(--white-tint-xs);
-    backdrop-filter: blur(8px);
-    border-radius: 10px;
-    border: 1px solid var(--accent-border-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.login-icon svg {
-    width: 18px;
-    height: 18px;
-    color: var(--accent, #00d4ff);
-    transition: transform 0.3s ease;
-}

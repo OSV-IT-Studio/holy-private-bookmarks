@@ -194,64 +194,36 @@
 
 
     function clearAllSharedCaches() {
-       
         if (messageCache) {
             try {
-                for (const [key, value] of messageCache.entries()) {
-                    if (value && typeof value === 'string') {
-                        secureWipeString(value);
-                    }
-                    secureWipeString(key);
-                }
                 messageCache.clear();
             } catch (e) {}
         }
-        
-        
+
         if (faviconCache) {
             try {
-                for (const [url] of faviconCache.entries()) {
-                    secureWipeString(url);
-                }
                 faviconCache.clear();
             } catch (e) {}
         }
-        
-        
+
         if (faviconPromises) {
             try {
-                for (const [url] of faviconPromises.entries()) {
-                    secureWipeString(url);
-                }
                 faviconPromises.clear();
             } catch (e) {}
         }
 
-        // Drain pending favicon queue so locked state doesn't fire requests
         _cancelFaviconQueue();
 
-        
-        
         if (virtualScrollCache) {
             try {
                 if (virtualScrollCache.folders) {
-                    for (const [path, data] of virtualScrollCache.folders.entries()) {
-                        secureWipeString(path);
-                        if (data && data.items) {
-                            wipeSensitiveData(data.items);
-                        }
-                    }
                     virtualScrollCache.clear();
                 }
             } catch (e) {}
         }
-        
-        
+
         if (elementCache) {
             try {
-                for (const [selector] of Object.entries(elementCache)) {
-                    secureWipeString(selector);
-                }
                 elementCache = {};
             } catch (e) {}
         }
@@ -515,22 +487,22 @@
 
 async function saveEncrypted(data, cryptoManager) {
     try {
+        const encrypted = await cryptoManager.encrypt(JSON.stringify(data));
+
         const stored = await chrome.storage.local.get(STORAGE_KEY);
         const storedData = stored[STORAGE_KEY];
-        
+
         if (!storedData) {
             throw new Error('No stored data found');
         }
-        
-        const encrypted = await cryptoManager.encrypt(JSON.stringify(data));
-        
-        await chrome.storage.local.set({ 
+
+        await chrome.storage.local.set({
             [STORAGE_KEY]: {
                 ...storedData,
                 encrypted: encrypted
-            } 
+            }
         });
-        
+
         return true;
     } catch (e) {
         return false;
@@ -846,7 +818,6 @@ function openInPrivateTab(url, showNotificationFn = showNotification, getMessage
 function showLoadingIndicator(container, text = null) {
     hideLoadingIndicator(container);
     
-    
     if (!document.getElementById('folder-loader-styles')) {
         const style = document.createElement('style');
         style.id = 'folder-loader-styles';
@@ -873,10 +844,6 @@ function hideLoadingIndicator(container) {
     const oldLoader = container.querySelector('.folder-loader');
     if (oldLoader) {
         oldLoader.remove();
-    }
-	 const style = document.getElementById('folder-loader-styles');
-    if (style) {
-        style.remove();
     }
 }
 
@@ -986,71 +953,44 @@ function hideGlobalLoadingIndicator(container = null) {
         }
     }
 
-    function getItemByUid(data, uid) {
-        if (!uid || !data?.folders) return null;
-        function search(items) {
+    function _findByUid(folders, uid, onlyFolders) {
+        function walk(items, parent) {
             for (const item of items) {
-                if (item.type === 'folder') {
-                    if (item.uid === uid) return item;
-                    if (item.children) {
-                        const found = search(item.children);
-                        if (found) return found;
-                    }
+                if ((!onlyFolders || item.type === 'folder') && item.uid === uid) {
+                    return { item, parentArray: parent };
+                }
+                if (item.type === 'folder' && item.children) {
+                    const found = walk(item.children, item.children);
+                    if (found) return found;
                 }
             }
             return null;
         }
-        return search(data.folders);
+        return walk(folders, folders);
+    }
+
+    function getItemByUid(data, uid) {
+        if (!uid || !data?.folders) return null;
+        const result = _findByUid(data.folders, uid, true);
+        return result ? result.item : null;
     }
 
     function getParentArrayByUid(data, uid) {
         if (!uid || !data?.folders) return null;
-        function search(items) {
-            for (const item of items) {
-                if (item.type === 'folder' && item.children) {
-                    for (const child of item.children) {
-                        if (child.type === 'folder' && child.uid === uid) return item.children;
-                    }
-                    const found = search(item.children);
-                    if (found) return found;
-                }
-            }
-            return null;
-        }
-        for (const item of data.folders) {
-            if (item.type === 'folder' && item.uid === uid) return data.folders;
-        }
-        return search(data.folders);
+        const result = _findByUid(data.folders, uid, true);
+        return result ? result.parentArray : null;
     }
 
     function getAnyItemByUid(data, uid) {
         if (!uid || !data?.folders) return null;
-        function search(items) {
-            for (const item of items) {
-                if (item.uid === uid) return item;
-                if (item.type === 'folder' && item.children) {
-                    const found = search(item.children);
-                    if (found) return found;
-                }
-            }
-            return null;
-        }
-        return search(data.folders);
+        const result = _findByUid(data.folders, uid, false);
+        return result ? result.item : null;
     }
 
     function getParentArrayForItemUid(data, uid) {
         if (!uid || !data?.folders) return null;
-        function search(items) {
-            for (const item of items) {
-                if (item.uid === uid) return items;
-                if (item.type === 'folder' && item.children) {
-                    const found = search(item.children);
-                    if (found) return found;
-                }
-            }
-            return null;
-        }
-        return search(data.folders);
+        const result = _findByUid(data.folders, uid, false);
+        return result ? result.parentArray : null;
     }
 
     function moveBookmark(data, editUid, title, url, newFolderUid) {

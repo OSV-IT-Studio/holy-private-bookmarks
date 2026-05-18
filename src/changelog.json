@@ -1,5 +1,14 @@
 [
 {
+  "version": "1.8.5.64",
+  "changes": [
+    "Improved performance when searching through large bookmark collections",
+    "Faster locking — extension now locks noticeably quicker when the inactivity timeout expires",
+    "Reduced visual lag when opening folders with many bookmarks",
+    "General performance improvements"
+  ]
+},
+{
   "version": "1.8.5.63",
   "changes": [
     "Added 5 new interface languages: Indonesian, Thai, Czech, Swedish, Romanian"

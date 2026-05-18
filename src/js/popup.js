@@ -157,6 +157,7 @@ async function saveChanges() {
 async function saveAndRefresh() {
     await saveChanges();
 
+    if (window.PopupSearch) PopupSearch.invalidateIndex();
     virtualScrollCache?.clear?.();
     PopupTree.renderTree();
 }

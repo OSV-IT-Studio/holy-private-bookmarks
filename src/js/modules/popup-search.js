@@ -18,17 +18,30 @@ const PopupSearch = (function () {
     let _deps = {};
     let _debounceTimer = null;
     let _active = false;
+    let _searchIndex = null;
 
-    function _collectAllBookmarks(items, results = []) {
-        if (!Array.isArray(items)) return results;
-        for (const item of items) {
-            if (item.type === 'bookmark') {
-                results.push(item);
-            } else if (item.type === 'folder' && Array.isArray(item.children)) {
-                _collectAllBookmarks(item.children, results);
+    function _buildIndex(folders) {
+        const results = [];
+        function collect(items) {
+            if (!Array.isArray(items)) return;
+            for (const item of items) {
+                if (item.type === 'bookmark') {
+                    results.push({
+                        item,
+                        titleLower: (item.title || '').toLowerCase(),
+                        urlLower: (item.url || '').toLowerCase()
+                    });
+                } else if (item.type === 'folder' && Array.isArray(item.children)) {
+                    collect(item.children);
+                }
             }
         }
+        collect(folders);
         return results;
+    }
+
+    function invalidateIndex() {
+        _searchIndex = null;
     }
 
     function _search(query) {
@@ -44,6 +57,7 @@ const PopupSearch = (function () {
 
         if (!q) {
             _active = false;
+            _searchIndex = null;
             _deps.renderTree();
             return;
         }
@@ -56,12 +70,13 @@ const PopupSearch = (function () {
             return;
         }
 
-        const all = _collectAllBookmarks(data.folders);
-        const matched = all.filter(item => {
-            const titleMatch = item.title?.toLowerCase().includes(q);
-            const urlMatch   = item.url?.toLowerCase().includes(q);
-            return titleMatch || urlMatch;
-        });
+        if (!_searchIndex) {
+            _searchIndex = _buildIndex(data.folders);
+        }
+
+        const matched = _searchIndex
+            .filter(entry => entry.titleLower.includes(q) || entry.urlLower.includes(q))
+            .map(entry => entry.item);
 
         _renderSearchResults(matched, q, tree);
     }
@@ -143,6 +158,7 @@ const PopupSearch = (function () {
         const input = document.getElementById('search-input');
         if (input) input.value = '';
         _active = false;
+        _searchIndex = null;
         _deps.renderTree?.();
     }
 
@@ -150,7 +166,7 @@ const PopupSearch = (function () {
         return _active;
     }
 
-    return { init, reset, isActive };
+    return { init, reset, isActive, invalidateIndex };
 
 })();
 
