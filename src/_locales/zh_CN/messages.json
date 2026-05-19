@@ -900,5 +900,8 @@
     },
     "invalidUrlProtocol": {
         "message": "请输入以 http:// 或 https:// 开头的有效网址"
+    },
+    "browserDropHint": {
+        "message": "拖放至此以添加书签"
     }
 }

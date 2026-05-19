@@ -38,10 +38,176 @@
     let _ghostRafPending = false;
     let _latestGhostPos  = null;
 
+    let _browserDropOverlay = null;
+    let _browserDropCounter = 0;
+
     function init(deps) {
         Object.assign(_deps, deps);
         _attachGridListeners();
         _attachSidebarListeners();
+        _attachBrowserDropListeners();
+    }
+
+    function _isBrowserDrag(e) {
+        if (!e.dataTransfer) return false;
+        const types = Array.from(e.dataTransfer.types);
+        return types.includes('text/uri-list') || types.includes('text/plain');
+    }
+
+    function _showBrowserDropOverlay() {
+        if (_browserDropOverlay) return;
+        const overlay = document.createElement('div');
+        overlay.className = 'browser-drop-overlay';
+        overlay.innerHTML = `
+            <div class="browser-drop-overlay__inner">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                    <polyline points="17 21 17 13 7 13 7 21"/>
+                    <polyline points="7 3 7 8 15 8"/>
+                </svg>
+                <span>${_deps.getMessage('browserDropHint')}</span>
+            </div>
+        `;
+        document.querySelector('.main-content')?.appendChild(overlay);
+        requestAnimationFrame(() => overlay.classList.add('browser-drop-overlay--visible'));
+        _browserDropOverlay = overlay;
+    }
+
+    function _hideBrowserDropOverlay() {
+        if (!_browserDropOverlay) return;
+        _browserDropOverlay.classList.remove('browser-drop-overlay--visible');
+        const el = _browserDropOverlay;
+        _browserDropOverlay = null;
+        setTimeout(() => el.remove(), 200);
+    }
+
+    function _extractUrlFromDrop(e) {
+        const uriList = e.dataTransfer.getData('text/uri-list');
+        if (uriList) {
+            const first = uriList.split('\n').map(s => s.trim()).find(s => s && !s.startsWith('#'));
+            if (first && (first.startsWith('http://') || first.startsWith('https://'))) return first;
+        }
+        const plain = e.dataTransfer.getData('text/plain');
+        if (plain && (plain.startsWith('http://') || plain.startsWith('https://'))) return plain.trim();
+        return null;
+    }
+
+    function _extractTitleFromHtml(html) {
+        try {
+            const parser = new DOMParser();
+            const doc    = parser.parseFromString(html, 'text/html');
+            const a      = doc.querySelector('a');
+            if (a) {
+                const t = a.textContent.trim();
+                if (t) return t;
+            }
+            const title = doc.querySelector('title');
+            if (title) {
+                const t = title.textContent.trim();
+                if (t) return t;
+            }
+        } catch (_) {}
+        return '';
+    }
+
+    function _normalizeUrl(url) {
+        try {
+            const u = new URL(url);
+            u.hash = '';
+            return u.href.replace(/\/$/, '');
+        } catch (_) { return url; }
+    }
+
+    async function _resolveTitleForUrl(url, htmlHint) {
+        if (htmlHint) {
+            const fromHtml = _extractTitleFromHtml(htmlHint);
+            if (fromHtml) return fromHtml;
+        }
+
+        const normalized = _normalizeUrl(url);
+
+        try {
+            const tabs = await chrome.tabs.query({});
+            const tab  = tabs.find(t => _normalizeUrl(t.url) === normalized);
+            if (tab && tab.title && tab.title !== url) return tab.title;
+        } catch (_) {}
+
+        try {
+            const results = await chrome.bookmarks.search({ url });
+            const match   = results.find(b => _normalizeUrl(b.url) === normalized && b.title);
+            if (match) return match.title;
+        } catch (_) {}
+
+        try { return new URL(url).hostname; } catch (_) { return url; }
+    }
+
+    function _attachBrowserDropListeners() {
+        const main = document.querySelector('.main-content');
+        if (!main) return;
+
+        main.addEventListener('dragenter', e => {
+            if (_dragged) return;
+            if (!_isBrowserDrag(e)) return;
+            e.preventDefault();
+            _browserDropCounter++;
+            _showBrowserDropOverlay();
+        });
+
+        main.addEventListener('dragleave', () => {
+            if (_dragged) return;
+            _browserDropCounter--;
+            if (_browserDropCounter <= 0) {
+                _browserDropCounter = 0;
+                _hideBrowserDropOverlay();
+            }
+        });
+
+        main.addEventListener('dragover', e => {
+            if (_dragged) return;
+            if (!_isBrowserDrag(e)) return;
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'copy';
+        });
+
+        main.addEventListener('drop', async e => {
+            if (_dragged) return;
+            _browserDropCounter = 0;
+            _hideBrowserDropOverlay();
+
+            const url = _extractUrlFromDrop(e);
+            if (!url) return;
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            let htmlHint = '';
+            try { htmlHint = e.dataTransfer.getData('text/html'); } catch (_) {}
+
+            const title = await _resolveTitleForUrl(url, htmlHint);
+
+            const { getData, getItemByUid, getCurrentFolderId, generateFolderUid,
+                    saveAndRefresh, showNotification, getMessage, resetInactivityTimer } = _deps;
+
+            const data     = getData();
+            const fid      = getCurrentFolderId();
+            const uid      = generateFolderUid();
+            const bookmark = { type: 'bookmark', title, url, dateAdded: Date.now(), uid };
+
+            if (fid && fid !== 'all') {
+                const folder = getItemByUid(data, fid);
+                if (folder?.children) {
+                    folder.children.push(bookmark);
+                } else {
+                    data.folders.push(bookmark);
+                }
+            } else {
+                data.folders.push(bookmark);
+            }
+
+            await saveAndRefresh();
+            showNotification(getMessage('bookmarkAdded'));
+            resetInactivityTimer?.();
+        });
     }
 
     function refreshDraggable() {

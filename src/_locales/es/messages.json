@@ -900,5 +900,8 @@
     },
     "invalidUrlProtocol": {
         "message": "Por favor, introduce una URL válida que comience con http:// o https://"
+    },
+    "browserDropHint": {
+        "message": "Suelta aquí para añadir marcador"
     }
 }

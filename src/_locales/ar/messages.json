@@ -900,5 +900,8 @@
     },
     "invalidUrlProtocol": {
         "message": "يرجى إدخال رابط صحيح يبدأ بـ http:// أو https://"
+    },
+    "browserDropHint": {
+        "message": "أفلت هنا لإضافة إشارة مرجعية"
     }
 }

@@ -900,5 +900,8 @@
     },
     "managerSubtitle": {
         "message": "Kendali penuh atas bookmark Anda"
+    },
+    "browserDropHint": {
+        "message": "Lepaskan di sini untuk menambahkan bookmark"
     }
 }

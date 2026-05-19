@@ -900,5 +900,8 @@
     },
     "managerSubtitle": {
         "message": "Controle total sobre seus favoritos"
+    },
+    "browserDropHint": {
+        "message": "Solte aqui para adicionar favorito"
     }
 }

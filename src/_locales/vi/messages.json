@@ -900,5 +900,8 @@
     },
     "managerSubtitle": {
         "message": "Kiểm soát hoàn toàn dấu trang của bạn"
+    },
+    "browserDropHint": {
+        "message": "Thả vào đây để thêm dấu trang"
     }
 }

@@ -900,5 +900,8 @@
     },
     "managerSubtitle": {
         "message": "Control deplin asupra marcajelor dvs."
+    },
+    "browserDropHint": {
+        "message": "Plasează aici pentru a adăuga marcaj"
     }
 }

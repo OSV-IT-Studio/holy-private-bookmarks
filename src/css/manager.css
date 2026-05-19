@@ -51,7 +51,7 @@ a,button,input,select,
 .folder-item:not(.expanded) + .subfolder-list{max-height:0;opacity:0;margin:0;visibility:hidden}
 .subfolders{padding-left:16px;margin:2px 0;overflow:hidden;transition:max-height var(--dur-med) var(--ease-in-out),opacity var(--dur-med) var(--ease-in-out)}
 .subfolders.collapsed{max-height:0;opacity:0;margin:0;visibility:hidden}
-.main-content{flex:1;backdrop-filter:var(--backdrop);display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.main-content{flex:1;backdrop-filter:var(--backdrop);display:flex;flex-direction:column;overflow:hidden;min-width:0;position:relative}
 .search-container{position:relative;flex:1;min-width:0}
 .search-container .search-input,input[type=search].search-input{width:100%;padding:8px 12px 8px 34px;background:var(--card-bg);border:1px solid var(--border-subtle);border-radius:var(--radius-xs);color:var(--text-primary);font-family:var(--font-main);font-size:13px;font-weight:400;transition:all var(--dur-med) var(--ease-out);margin:0}
 .search-container .search-input:focus{outline:none;border-color:var(--accent);background:var(--surface-1);box-shadow:var(--shadow-accent)}
@@ -72,13 +72,13 @@ a,button,input,select,
 .selection-info{display:flex;align-items:center;gap:8px;color:var(--accent);font-weight:600;font-size:13px}
 .selection-count{background:var(--accent);color:var(--on-accent);padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700;font-family:var(--font-mono)}
 .selection-actions{display:flex;gap:5px;align-items:center}
-.selection-btn{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:var(--surface-2);border:1px solid var(--border-muted);border-radius:30px;color:var(--text-secondary);font-family:var(--font-main);font-size:12px;font-weight:500;cursor:pointer;transition:all var(--dur-fast) ease;white-space:nowrap}
+.selection-btn{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:var(--surface-2);border:1px solid var(--border-muted);border-radius:30px;color:var(--text-secondary);font-family:var(--font-main);font-size:12px;font-weight:500;cursor:pointer;transition:all var(--dur-fast) ease;white-space:nowrap;height: 30px;justify-content: center;}
+.selection-btn--cancel{width: 30px;}
 .selection-btn:hover{background:var(--surface-3);color:var(--text-primary)}
 .selection-btn--move:hover{border-color:var(--accent);color:var(--accent)}
 .selection-btn--delete:hover,.selection-btn--cancel:hover{border-color:var(--danger);color:var(--danger);background:var(--danger-bg)}
 .selection-btn__icon{display:flex;align-items:center;justify-content:center;width:14px;height:14px}
-.selection-btn__icon svg{width:100%;height:100%;stroke:currentColor}
-
+.selection-btn__icon svg{stroke:currentColor}
 
 .folder-context-menu{display:none;position:fixed;background:var(--sidebar-bg);border:1px solid var(--border-muted);border-radius:var(--radius-sm);box-shadow:var(--shadow-lg);z-index:3000;min-width:156px;overflow:hidden;padding:4px}
 .folder-context-menu-item{padding:7px 12px;color:var(--text-secondary);cursor:pointer;font-size:13px;font-weight:500;transition:background var(--dur-fast) ease;display:flex;align-items:center;gap:9px;border-radius:var(--radius-xs)}
@@ -103,3 +103,7 @@ button{font-size:13px;gap:7px;padding:9px 16px}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .action-bar {border-radius: 10px 10px 0 0;}
 .bookmarks-container {border-radius: 0 0 10px 10px;}
+.browser-drop-overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);border-radius:inherit;display:flex;align-items:center;justify-content:center;z-index:500;opacity:0;transition:opacity .15s ease;pointer-events:none;border:2px dashed transparent}
+.browser-drop-overlay--visible{opacity:1;pointer-events:auto;border-color:var(--accent)}
+.browser-drop-overlay__inner{display:flex;flex-direction:column;align-items:center;gap:14px;color:var(--accent);font-size:14px;font-weight:600;text-align:center;padding:24px;background:var(--card-bg);border-radius:var(--radius-sm);border:1px solid var(--border-accent);box-shadow:var(--shadow-lg)}
+.browser-drop-overlay__inner svg{stroke:var(--accent);opacity:.9}

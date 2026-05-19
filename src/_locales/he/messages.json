@@ -900,5 +900,8 @@
     },
     "invalidUrlProtocol": {
         "message": "נא להזין כתובת URL תקינה המתחילה ב-http:// או https://"
+    },
+    "browserDropHint": {
+        "message": "שחרר כאן כדי להוסיף סימנייה"
     }
 }

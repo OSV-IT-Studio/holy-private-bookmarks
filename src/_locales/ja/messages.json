@@ -900,5 +900,8 @@
     },
     "invalidUrlProtocol": {
         "message": "http:// または https:// で始まる有効なURLを入力してください"
+    },
+    "browserDropHint": {
+        "message": "ここにドロップしてブックマークを追加"
     }
 }

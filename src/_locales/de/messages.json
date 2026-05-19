@@ -900,5 +900,8 @@
     },
     "invalidUrlProtocol": {
         "message": "Bitte gib eine gültige URL ein, die mit http:// oder https:// beginnt"
+    },
+    "browserDropHint": {
+        "message": "Hier ablegen, um Lesezeichen hinzuzufügen"
     }
 }

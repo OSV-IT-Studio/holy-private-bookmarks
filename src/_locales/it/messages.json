@@ -900,5 +900,8 @@
     },
     "invalidUrlProtocol": {
         "message": "Inserisci un URL valido che inizi con http:// o https://"
+    },
+    "browserDropHint": {
+        "message": "Rilascia qui per aggiungere un segnalibro"
     }
 }

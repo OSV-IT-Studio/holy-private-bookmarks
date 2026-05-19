@@ -900,5 +900,8 @@
     },
     "managerSubtitle": {
         "message": "Full kontroll över dina bokmärken"
+    },
+    "browserDropHint": {
+        "message": "Släpp här för att lägga till bokmärke"
     }
 }

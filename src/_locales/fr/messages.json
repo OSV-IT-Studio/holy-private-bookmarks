@@ -900,5 +900,8 @@
     },
     "invalidUrlProtocol": {
         "message": "Veuillez saisir une URL valide commençant par http:// ou https://"
+    },
+    "browserDropHint": {
+        "message": "Déposez ici pour ajouter un signet"
     }
 }

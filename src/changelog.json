@@ -1,5 +1,11 @@
 [
 {
+  "version": "1.8.5.65",
+  "changes": [
+    "Extended drag-and-drop: you can now drop links from the browser directly into the manager to save them as bookmarks"
+  ]
+},
+{
   "version": "1.8.5.64",
   "changes": [
     "Improved performance when searching through large bookmark collections",

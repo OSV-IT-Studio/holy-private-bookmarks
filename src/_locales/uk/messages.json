@@ -900,5 +900,8 @@
     },
     "invalidUrlProtocol": {
         "message": "Введіть коректний URL, що починається з http:// або https://"
+    },
+    "browserDropHint": {
+        "message": "Перетягніть сюди, щоб додати закладку"
     }
 }

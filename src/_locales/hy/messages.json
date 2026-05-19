@@ -900,5 +900,8 @@
     },
     "invalidUrlProtocol": {
         "message": "Խնդրում ենք մուտքագրել վավեր URL, որը սկսվում է http:// կամ https://-ով"
+    },
+    "browserDropHint": {
+        "message": "Գցեք այստեղ էջանիշ ավելացնելու համար"
     }
 }

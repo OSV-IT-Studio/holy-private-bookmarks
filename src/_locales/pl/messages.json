@@ -900,5 +900,8 @@
     },
     "invalidUrlProtocol": {
         "message": "Proszę podać prawidłowy adres URL zaczynający się od http:// lub https://"
+    },
+    "browserDropHint": {
+        "message": "Upuść tutaj, aby dodać zakładkę"
     }
 }

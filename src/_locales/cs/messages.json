@@ -900,5 +900,8 @@
     },
     "managerSubtitle": {
         "message": "Plná kontrola nad vašimi záložkami"
+    },
+    "browserDropHint": {
+        "message": "Přetáhněte sem pro přidání záložky"
     }
 }

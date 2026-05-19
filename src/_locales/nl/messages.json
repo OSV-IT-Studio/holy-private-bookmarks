@@ -900,5 +900,8 @@
     },
     "managerSubtitle": {
         "message": "Volledige controle over uw bladwijzers"
+    },
+    "browserDropHint": {
+        "message": "Hier neerzetten om bladwijzer toe te voegen"
     }
 }

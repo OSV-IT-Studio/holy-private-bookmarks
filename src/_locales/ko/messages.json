@@ -900,5 +900,8 @@
     },
     "managerSubtitle": {
         "message": "북마크에 대한 완전한 제어"
+    },
+    "browserDropHint": {
+        "message": "여기에 놓아 북마크 추가"
     }
 }

@@ -898,7 +898,10 @@
     "reportBug": {
         "message": "Report a Bug"
     },
-  "managerSubtitle": {
-    "message": "Full control over your bookmarks"
-  }
+    "managerSubtitle": {
+        "message": "Full control over your bookmarks"
+    },
+    "browserDropHint": {
+        "message": "Drop here to add bookmark"
+    }
 }
