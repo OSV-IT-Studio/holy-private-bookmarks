@@ -1,907 +1,919 @@
 {
-    "Name": {
-        "message": "Holy Private Bookmarks — Versleutelde Lokale Bladwijzerbeheerder"
-    },
-    "extensionName": {
-        "message": "Holy Private Bookmarks"
-    },
-    "extensionDescription": {
-        "message": "Houd uw bladwijzers privé met een hoofdwachtwoord en AES-256-versleuteling. Alle gegevens blijven op uw apparaat — geen cloud, geen tracking."
-    },
-    "managerTitle": {
-        "message": "HPB - Bladwijzerbeheerder"
-    },
-    "createPassword": {
-        "message": "Maak een hoofdwachtwoord aan voor volledige bladwijzerversleuteling"
-    },
-    "newPassword": {
-        "message": "Nieuw wachtwoord (min. 6 tekens)"
-    },
-    "confirmPassword": {
-        "message": "Wachtwoord bevestigen"
-    },
-    "createStorage": {
-        "message": "Opslag aanmaken"
-    },
-    "enterMasterPassword": {
-        "message": ""
-    },
-    "masterPassword": {
-        "message": "Hoofdwachtwoord"
-    },
-    "unlock": {
-        "message": "Ontgrendelen"
-    },
-    "wrongPassword": {
-        "message": "Verkeerd wachtwoord"
-    },
-    "passwordsMismatch": {
-        "message": "Wachtwoorden komen niet overeen of zijn te kort"
-    },
-    "bookmarksProtected": {
-        "message": "Uw bladwijzers zijn veilig beveiligd"
-    },
-    "addCurrentPage": {
-        "message": "Huidige pagina toevoegen"
-    },
-    "newFolder": {
-        "message": "Nieuwe map"
-    },
-    "clearHistory": {
-        "message": "Geschiedenis wissen"
-    },
-    "settings": {
-        "message": "Instellingen"
-    },
-    "settingsbtn": {
-        "message": "⚙️"
-    },
-    "changeMasterPassword": {
-        "message": "Hoofdwachtwoord wijzigen"
-    },
-    "currentPassword": {
-        "message": "Huidig hoofdwachtwoord"
-    },
-    "newPassword2": {
-        "message": "Nieuw wachtwoord"
-    },
-    "confirmNewPassword": {
-        "message": "Nieuw wachtwoord bevestigen"
-    },
-    "changePassword": {
-        "message": "Wachtwoord wijzigen"
-    },
-    "exportImport": {
-        "message": "Exporteren & Importeren"
-    },
-    "export": {
-        "message": "Back-up maken"
-    },
-    "openPrivate": {
-        "message": "Openen in privétabblad"
-    },
-    "import": {
-        "message": "Importeren"
-    },
-    "importFromChrome": {
-        "message": "Importeren uit Chrome"
-    },
-    "importChromeBookmarks": {
-        "message": "Alle Chrome-bladwijzers importeren"
-    },
-    "importChromeBookmarksAdvanced": {
-        "message": "Mappen selecteren om te importeren"
-    },
-    "importChromeConfirm": {
-        "message": "Alle bladwijzers uit Chrome importeren? Bestaande bladwijzers blijven behouden."
-    },
-    "importChromeSuccess": {
-        "message": "Bladwijzers succesvol geïmporteerd!"
-    },
-    "importChromeError": {
-        "message": "Bladwijzers importeren mislukt"
-    },
-    "selectFoldersToImport": {
-        "message": "Mappen selecteren om te importeren"
-    },
-    "selectAll": {
-        "message": "Alles selecteren"
-    },
-    "deselectAll": {
-        "message": "Alles deselecteren"
-    },
-    "importSelected": {
-        "message": "Importeren"
-    },
-    "back": {
-        "message": "← Terug"
-    },
-    "addBookmark": {
-        "message": "Bladwijzer toevoegen"
-    },
-    "editBookmark": {
-        "message": "Bladwijzer bewerken"
-    },
-    "page": {
-        "message": "Pagina"
-    },
-    "title": {
-        "message": "Titel"
-    },
-    "url": {
-        "message": "URL"
-    },
-    "folder": {
-        "message": "Map"
-    },
-    "rootFolder": {
-        "message": "Hoofdmap"
-    },
-    "new": {
-        "message": "+ Nieuw"
-    },
-    "cancel": {
-        "message": "Annuleren"
-    },
-    "save": {
-        "message": "Opslaan"
-    },
-    "deleteConfirm": {
-        "message": "Bladwijzer verwijderen"
-    },
-    "folderName": {
-        "message": "Mapnaam:"
-    },
-    "newName": {
-        "message": "Nieuwe naam:"
-    },
-    "titleRequired": {
-        "message": "Titel en URL zijn verplicht"
-    },
-    "validUrl": {
-        "message": "URL moet beginnen met http:// of https://"
-    },
-    "passwordChanged": {
-        "message": "Wachtwoord succesvol gewijzigd!"
-    },
-    "importSuccess": {
-        "message": "Back-up succesvol geïmporteerd! Open de pop-up opnieuw."
-    },
-    "invalidFile": {
-        "message": "Ongeldig back-upbestand"
-    },
-    "clearHistoryConfirm": {
-        "message": "ALLE browsergeschiedenisitems verwijderen voor domeinen in uw Holy Private Bookmarks?"
-    },
-    "noBookmarks": {
-        "message": "Geen bladwijzers gevonden — niets te wissen."
-    },
-    "noDomains": {
-        "message": "Geen geldige domeinen gevonden in bladwijzers."
-    },
-    "newBookmark": {
-        "message": "Nieuwe bladwijzer"
-    },
-    "paste": {
-        "message": "Plakken"
-    },
-    "ctxnewFolder": {
-        "message": "Nieuwe map"
-    },
-    "emptyTreeTitle": {
-        "message": "Nog geen bladwijzers"
-    },
-    "emptyTreeSubtitle": {
-        "message": "Voeg uw eerste bladwijzer of map toe om te beginnen"
-    },
-    "historyCleared": {
-        "message": "Geschiedenis gewist!\n$count$ bezoek(en) verwijderd van $domains$ domein(en).",
-        "placeholders": {
-            "count": {
-                "content": "$1"
-            },
-            "domains": {
-                "content": "$2"
-            }
-        }
-    },
-    "addToHoly": {
-        "message": "Toevoegen aan Holy Private Bookmarks"
-    },
-    "cannotAddPage": {
-        "message": "Kan deze pagina niet toevoegen (geen geldige URL)"
-    },
-    "supportProject": {
-        "message": "Project ondersteunen"
-    },
-    "supportPageTitle": {
-        "message": "Holy Private Bookmarks Ondersteunen"
-    },
-    "donateHeroTitle": {
-        "message": "Ondersteun privacygericht ontwikkeling"
-    },
-    "donateHeroSubtitle": {
-        "message": "Holy Private Bookmarks is 100% gratis en open-source, en dat blijft zo altijd. Uw ondersteuning helpt de ontwikkelaars tijd te besteden aan het onderhouden en verbeteren van de extensie voor iedereen die om privacy geeft."
-    },
-    "whySupport": {
-        "message": "Waarom uw ondersteuning belangrijk is"
-    },
-    "timeInvestment": {
-        "message": "Ontwikkelaarstijd"
-    },
-    "timeInvestmentDesc": {
-        "message": "Elke functie, bugfix en beveiligingsverbetering vertegenwoordigt uren werk. Uw bijdrage waardeert die tijd en houdt het project duurzaam."
-    },
-    "longTerm": {
-        "message": "Langetermijnverplichting"
-    },
-    "longTermDesc": {
-        "message": "Uw ondersteuning zorgt ervoor dat de extensie actief wordt onderhouden, compatibel blijft met toekomstige Chrome-updates en voortdurend wordt verbeterd."
-    },
-    "futureFeatures": {
-        "message": "Toekomstige functies"
-    },
-    "futureFeaturesDesc": {
-        "message": "Met uw hulp kunnen we prioriteit geven aan nieuwe functionaliteit, een betere UI en verbeterde beveiligingsfuncties die de hele gemeenschap ten goede komen."
-    },
-    "donateCtaText": {
-        "message": "Geen abonnementen. Geen betaalmuren. Geen bedrijfsfinanciering. Alleen mensen die iets nuttigs bouwen voor anderen. Als deze extensie u tijd bespaart of gemoedsrust geeft, overweeg dan de ontwikkelaars een koffie te kopen."
-    },
-    "donateCryptoTitle": {
-        "message": "Ondersteunen met Crypto"
-    },
-    "copyAddress": {
-        "message": "Adres kopiëren"
-    },
-    "donateThanks": {
-        "message": "Bedankt voor het ondersteunen van onafhankelijke open-source ontwikkeling"
-    },
-    "donateThanksNote": {
-        "message": "Elke bijdrage, groot of klein, betekent de wereld voor ons."
-    },
-    "importantWarning": {
-        "message": "BELANGRIJKE WAARSCHUWING:"
-    },
-    "passwordCannotBeRecovered": {
-        "message": "Dit wachtwoord KAN NIET worden hersteld!"
-    },
-    "noPasswordReset": {
-        "message": "Er is GEEN optie voor wachtwoordherstel"
-    },
-    "weDontStorePassword": {
-        "message": "Wij slaan uw wachtwoord NERGENS op"
-    },
-    "bookmarksEncrypted": {
-        "message": "Uw bladwijzers zijn alleen met dit wachtwoord versleuteld"
-    },
-    "savePasswordSecurely": {
-        "message": "Sla dit wachtwoord veilig op!"
-    },
-    "copyUrl": {
-        "message": "URL kopiëren"
-    },
-    "edit": {
-        "message": "Bewerken"
-    },
-    "delete": {
-        "message": "Verwijderen"
-    },
-    "urlCopied": {
-        "message": "URL gekopieerd naar klembord"
-    },
-    "dangerZone": {
-        "message": "Gevarenzone"
-    },
-    "deleteAllData": {
-        "message": "Alle Gegevens Verwijderen"
-    },
-    "deleteAllDataDesc": {
-        "message": "Alle bladwijzers en instellingen permanent verwijderen"
-    },
-    "deleteAllDataConfirm": {
-        "message": "Alle bladwijzers, mappen, hoofdwachtwoord en instellingen worden permanent verwijderd. Deze actie kan niet ongedaan worden gemaakt."
-    },
-    "deleteAllDataConfirmBtn": {
-        "message": "Alles Verwijderen"
-    },
-    "about": {
-        "message": "Over"
-    },
-    "aboutExtension": {
-        "message": "Over Extensie"
-    },
-    "openGitHub": {
-        "message": "GitHub Openen"
-    },
-    "close": {
-        "message": "Sluiten"
-    },
-    "features": {
-        "message": "Functies"
-    },
-    "troubleshooting": {
-        "message": "Probleemoplossing"
-    },
-    "encryption": {
-        "message": "Versleuteling"
-    },
-    "encryptionDesc": {
-        "message": "AES-256-versleuteling"
-    },
-    "localStorage": {
-        "message": "Lokale Opslag"
-    },
-    "localStorageDesc": {
-        "message": "Gegevens blijven op uw apparaat"
-    },
-    "privacy": {
-        "message": "Privacy"
-    },
-    "privacyDesc": {
-        "message": "Geen tracking of analyses"
-    },
-    "openSource": {
-        "message": "GPLv3"
-    },
-    "viewOnGitHub": {
-        "message": "Bekijken op GitHub"
-    },
-    "githubRepo": {
-        "message": "GitHub-opslagplaats"
-    },
-    "githubRepoDesc": {
-        "message": "Broncode bekijken, problemen melden, bijdragen"
-    },
-    "version": {
-        "message": "Versie"
-    },
-    "openmanager": {
-        "message": "Beheerder openen"
-    },
-    "managerDesc": {
-        "message": "Bladwijzerbeheerder op volledig scherm openen"
-    },
-    "folders": {
-        "message": "Mappen"
-    },
-    "bookmarks": {
-        "message": "bladwijzers"
-    },
-    "allBookmarks": {
-        "message": "Alle Bladwijzers"
-    },
-    "searchBookmarks": {
-        "message": "Bladwijzers zoeken..."
-    },
-    "noBookmarksInFolder": {
-        "message": "Geen bladwijzers in map"
-    },
-    "addBookmarksToGetStarted": {
-        "message": "Voeg bladwijzers toe om te beginnen"
-    },
-    "bookmarkUpdated": {
-        "message": "Bladwijzer bijgewerkt"
-    },
-    "bookmarkDeleted": {
-        "message": "Bladwijzer verwijderd"
-    },
-    "renameFolder": {
-        "message": "Map hernoemen"
-    },
-    "folderCreated": {
-        "message": "Map succesvol aangemaakt"
-    },
-    "managerLocked": {
-        "message": "Beheerder vergrendeld"
-    },
-    "lockManager": {
-        "message": "Beheerder Vergrendelen"
-    },
-    "rename": {
-        "message": "Hernoemen"
-    },
-    "deleteFolder": {
-        "message": "Map verwijderen"
-    },
-    "deleteFolderConfirm": {
-        "message": "Map \"{0}\" verwijderen?"
-    },
-    "deleteFolderWarning": {
-        "message": "Alle inhoud wordt permanent verwijderd."
-    },
-    "folderRenamed": {
-        "message": "Map succesvol hernoemd"
-    },
-    "folderDeleted": {
-        "message": "Map succesvol verwijderd"
-    },
-    "cannotRenameAll": {
-        "message": "Kan de map \"Alle Bladwijzers\" niet hernoemen"
-    },
-    "cannotDeleteAll": {
-        "message": "Kan de map \"Alle Bladwijzers\" niet verwijderen"
-    },
-    "bookmarkAdded": {
-        "message": "Bladwijzer toegevoegd"
-    },
-    "pendingBookmarkNotification": {
-        "message": "Bladwijzer in afwachting!"
-    },
-    "pendingBookmarkInstruction": {
-        "message": "Er wacht een bladwijzer om te worden toegevoegd. Ontgrendel om door te gaan."
-    },
-    "dragSuccess": {
-        "message": "Item succesvol verplaatst"
-    },
-    "invalidDestinationFolder": {
-        "message": "Ongeldige doelmap"
-    },
-    "moveFailed": {
-        "message": "Bladwijzers verplaatsen mislukt"
-    },
-    "noBookmarksSelected": {
-        "message": "Geen bladwijzers geselecteerd"
-    },
-    "selectDestinationFolder": {
-        "message": "Doelmap selecteren:"
-    },
-    "move": {
-        "message": "Verplaatsen"
-    },
-    "selected": {
-        "message": "geselecteerd"
-    },
-    "moveSelectedTitle": {
-        "message": "Geselecteerde verplaatsen"
-    },
-    "deleteSelectedTitle": {
-        "message": "Geselecteerde verwijderen"
-    },
-    "cancelSelectionTitle": {
-        "message": "Selectie annuleren"
-    },
-    "emptyFolder": {
-        "message": "Map is leeg",
-        "description": "Message shown when a folder has no bookmarks"
-    },
-    "noSearchResults": {
-        "message": "Geen bladwijzers gevonden",
-        "description": "Message when search returns no results"
-    },
-    "noSearchResultsDesc": {
-        "message": "Probeer een andere zoekterm",
-        "description": "Description for empty search results"
-    },
-    "theme": {
-        "message": "Thema"
-    },
-    "themeDark": {
-        "message": "Donker",
-        "description": "Dark theme name"
-    },
-    "themeLight": {
-        "message": "Licht",
-        "description": "Light theme name"
-    },
-    "themeSystem": {
-        "message": "Systeem",
-        "description": "System theme name"
-    },
-    "themeToggle": {
-        "message": "Thema wisselen",
-        "description": "Tooltip for theme toggle button"
-    },
-    "showFavicons": {
-        "message": "Website-favicons weergeven"
-    },
-    "showFaviconsDesc": {
-        "message": "Pictogrammen worden geladen via de favicon-service van Google"
-    },
-    "bookmarksAndFolders": {
-        "message": "Bladwijzers & Mappen"
-    },
-    "importFromHtml": {
-        "message": "Importeren uit HTML"
-    },
-    "importHtmlSuccess": {
-        "message": "HTML-bladwijzers succesvol geïmporteerd! $COUNT$ bladwijzers toegevoegd.",
-        "placeholders": {
-            "count": {
-                "content": "$1",
-                "example": "42"
-            }
-        }
-    },
-    "htmlImporterNoFileSelected": {
-        "message": "Geen bestand geselecteerd"
-    },
-    "htmlImporterFileTooLarge": {
-        "message": "Bestand te groot (max. 1MB)"
-    },
-    "htmlImporterParseError": {
-        "message": "HTML importeren mislukt: $1"
-    },
-    "htmlImporterNoBookmarksFound": {
-        "message": "Geen bladwijzers gevonden in bestand"
-    },
-    "importHtmlError": {
-        "message": "HTML-bestand verwerken mislukt. Controleer het bestandsformaat."
-    },
-    "importHtmlSizeWarning": {
-        "message": "1MB Limiet"
-    },
-    "importHtmlSizeNote": {
-        "message": "~2500 bladwijzers max."
-    },
-    "importWarning": {
-        "message": "Alle bestaande bladwijzers worden vervangen"
-    },
-    "developer": {
-        "message": "Ontwikkelaar:"
-    },
-    "lock": {
-        "message": "Vergrendelen"
-    },
-    "faqButtonTitle": {
-        "message": "Veelgestelde Vragen"
-    },
-    "clearingHistory": {
-        "message": "Geschiedenis Wissen",
-        "description": "Title for history clearing progress modal"
-    },
-    "preparingToClear": {
-        "message": "Voorbereiden om geschiedenis te wissen...",
-        "description": "Initial status message"
-    },
-    "progress": {
-        "message": "Voortgang",
-        "description": "Progress label"
-    },
-    "domainsProcessed": {
-        "message": "Verwerkte domeinen",
-        "description": "Label for domains processed count"
-    },
-    "entriesDeleted": {
-        "message": "Verwijderde vermeldingen",
-        "description": "Label for deleted entries count"
-    },
-    "startingCleanup": {
-        "message": "Opruimen starten...",
-        "description": "Status when starting"
-    },
-    "finalizingCleanup": {
-        "message": "Opruimen afronden...",
-        "description": "Status when finalizing"
-    },
-    "cancelling": {
-        "message": "Annuleren...",
-        "description": "Status when cancelling"
-    },
-    "clearCancelled": {
-        "message": "Bewerking geannuleerd",
-        "description": "Notification when cancelled"
-    },
-    "fillAllFields": {
-        "message": "Vul alle velden in"
-    },
-    "setupComplete": {
-        "message": "Installatie voltooid!"
-    },
-    "migrationSuccess": {
-        "message": "Gegevens succesvol gemigreerd naar veilig formaat!"
-    },
-    "migrationRequired": {
-        "message": "Update van gegevensformaat vereist"
-    },
-    "migrationInstruction": {
-        "message": "Voer uw wachtwoord in om automatisch te upgraden naar een veiliger formaat."
-    },
-    "exportSuccess": {
-        "message": "Exporteren geslaagd",
-        "description": "Notification when data export completes successfully"
-    },
-    "processing": {
-        "message": "Verwerken...",
-        "description": "Generic processing message for loading indicators"
-    },
-    "unlocking": {
-        "message": "Ontgrendelen...",
-        "description": "Shown while decrypting bookmarks"
-    },
-    "changingPassword": {
-        "message": "Wachtwoord wijzigen...",
-        "description": "Shown while changing master password"
-    },
-    "settingUpEncryption": {
-        "message": "Versleuteling instellen...",
-        "description": "Shown during first-time setup"
-    },
-    "migratingData": {
-        "message": "Gegevens migreren naar veilig formaat...",
-        "description": "Shown during v1 to v2 migration"
-    },
-    "loading": {
-        "message": "Laden...",
-        "description": "Generic loading message"
-    },
-    "donationReminderTitle": {
-        "message": "Project ondersteunen"
-    },
-    "donationReminderText": {
-        "message": "Als u deze extensie leuk vindt, ondersteunen dan de ontwikkeling ervan!"
-    },
-    "remindLater": {
-        "message": "Later herinneren"
-    },
-    "supportNow": {
-        "message": "Nu ondersteunen"
-    },
-    "remindNever": {
-        "message": "Niet meer weergeven"
-    },
-    "confirmDismiss": {
-        "message": "Nooit meer donatiherinneringen weergeven?"
-    },
-    "bookmarkAlreadyInFolder": {
-        "message": "Element bevindt zich al in deze map"
-    },
-    "cannotMoveIntoSelf": {
-        "message": "Kan een map niet in zichzelf verplaatsen"
-    },
-    "bookmarksMoved": {
-        "message": "{0} element(en) verplaatst"
-    },
-    "deleteSelectedConfirm": {
-        "message": "{count} geselecteerd element(en) verwijderen?",
-        "placeholders": {
-            "count": {
-                "content": "$1"
-            },
-            "plural": {
-                "content": "$2"
-            }
-        }
-    },
-    "bookmarksDeleted": {
-        "message": "{count} element(en) verwijderd",
-        "placeholders": {
-            "count": {
-                "content": "$1"
-            },
-            "plural": {
-                "content": "$2"
-            }
-        }
-    },
-    "moveBookmarksTitle": {
-        "message": "{0} element(en) verplaatsen"
-    },
-    "setupTabNew": {
-        "message": "Nieuw Aanmaken",
-        "description": "Tab label for creating new password"
-    },
-    "setupTabRestore": {
-        "message": "Back-up Herstellen",
-        "description": "Tab label for restoring from backup"
-    },
-    "restoreDropTitle": {
-        "message": "Zet back-upbestand hier neer of klik om te selecteren",
-        "description": "Text for drag & drop area in restore tab"
-    },
-    "strengthWeak": {
-        "message": "Zwak",
-        "description": "Password strength indicator"
-    },
-    "strengthFair": {
-        "message": "Matig",
-        "description": "Password strength indicator"
-    },
-    "strengthGood": {
-        "message": "Goed",
-        "description": "Password strength indicator"
-    },
-    "strengthStrong": {
-        "message": "Sterk",
-        "description": "Password strength indicator"
-    },
-    "importingBackup": {
-        "message": "Back-up herstellen...",
-        "description": "Loading message during backup import"
-    },
-    "unlockTitle": {
-        "message": "Hoofdwachtwoord invoeren"
-    },
-    "warningRemember": {
-        "message": "Weet u uw wachtwoord nog?"
-    },
-    "yesRemember": {
-        "message": "Ja, ik weet het nog"
-    },
-    "survey": {
-        "message": "Feedbackenquête"
-    },
-    "Error": {
-        "message": "Fout"
-    },
-    "changelog": {
-        "message": "Wijzigingslogboek"
-    },
-    "rateExtension": {
-        "message": "Beoordelen in Chrome Web Store"
-    },
-    "migrationScreenTitle": {
-        "message": "Update Vereist",
-        "description": "Title on the manager migration screen"
-    },
-    "migrationScreenBody1": {
-        "message": "De extensie is bijgewerkt met verbeterde beveiliging.",
-        "description": "First line on the manager migration screen"
-    },
-    "migrationScreenBody2": {
-        "message": "Open de extensie-pop-up om uw gegevens naar het nieuwe veilige formaat te migreren.",
-        "description": "Second line on the manager migration screen"
-    },
-    "notSetUpTitle": {
-        "message": "Extensie Niet Ingesteld",
-        "description": "manager-lock: notSetUpTitle"
-    },
-    "notSetUpSubtitle": {
-        "message": "Extensie nog niet ingesteld. Open de extensie-pop-up om een wachtwoord aan te maken.",
-        "description": "manager-lock: notSetUpSubtitle"
-    },
-    "notSetUpButton": {
-        "message": "Pop-up Openen",
-        "description": "manager-lock: notSetUpButton"
-    },
-    "reloadingSubtitle": {
-        "message": "Beheerder wordt opnieuw geladen...",
-        "description": "manager-lock: reloadingSubtitle"
-    },
-    "reloadingWait": {
-        "message": "Wacht terwijl de beheerder wordt bijgewerkt",
-        "description": "manager-lock: reloadingWait"
-    },
-    "exportHtml": {
-        "message": "Exporteren naar HTML"
-    },
-    "exportHtmlNote": {
-        "message": "Netscape Bladwijzers formaat"
-    },
-    "exportHtmlSuccess": {
-        "message": "HTML-exporteren geslaagd"
-    },
-    "exportHtmlConfirmTitle": {
-        "message": "Bevestig uw wachtwoord"
-    },
-    "exportHtmlConfirmDesc": {
-        "message": "Uw bladwijzers worden geëxporteerd als platte tekst. Voer uw hoofdwachtwoord in om te bevestigen."
-    },
-    "exportHtmlPasswordRequired": {
-        "message": "Voer uw wachtwoord in"
-    },
-    "exportHtmlConfirmBtn": {
-        "message": "Exporteren"
-    },
-    "exportHtmlVerifying": {
-        "message": "Wachtwoord verifiëren…"
-    },
-    "copiedToClipboard": {
-        "message": "Gekopieerd naar klembord!"
-    },
-    "copyFailed": {
-        "message": "Kopiëren mislukt"
-    },
-    "clickToCopy": {
-        "message": "Klik om te kopiëren"
-    },
-    "qrCodeFor": {
-        "message": "QR-code voor $1",
-        "placeholders": {
-            "1": {
-                "content": "$1"
-            }
-        }
-    },
-    "quickCloseTab": {
-        "message": "Tabblad snel sluiten ($1)"
-    },
-    "quickCloseTabDesc": {
-        "message": "Sluit het huidige tabblad en verwijdert de browsegeschiedenis voor het domein"
-    },
-    "quickCloseTabCommand": {
-        "message": "Tabblad sluiten en domeingeschiedenis wissen"
-    },
-    "changeShortcut": {
-        "message": "Sneltoetsen wijzigen"
-    },
-    "actions": {
-        "message": "Acties"
-    },
-    "qrCode": {
-        "message": "QR-code"
-    },
-    "qrScanHint": {
-        "message": "Scan de QR-code om de link op uw apparaat te openen."
-    },
-    "stayUnlocked": {
-        "message": "Ontgrendeld blijven tussen sessies"
-    },
-    "stayUnlockedDesc": {
-        "message": "Houdt u ontgrendeld terwijl de browser open is"
-    },
-    "stayUnlockedWarning": {
-        "message": "Vermindert beveiliging: de versleutelingssleutel wordt opgeslagen in browsersessieopslag. Iedereen met toegang tot uw browserprofiel kan deze mogelijk lezen."
-    },
-    "alwaysIncognito": {
-        "message": "Bladwijzers altijd openen in incognitomodus"
-    },
-    "alwaysIncognitoDesc": {
-        "message": "Alle bladwijzers worden geopend in een privévenster"
-    },
-    "enable": {
-        "message": "Inschakelen"
-    },
-    "managerIsOpen": {
-        "message": "Bladwijzerbeheerder is open"
-    },
-    "managerIsOpenDesc": {
-        "message": "Sluit het tabblad van de bladwijzerbeheerder om de pop-up te gebruiken."
-    },
-    "switchToManager": {
-        "message": "Naar Beheerder Overschakelen"
-    },
-    "hotkeys": {
-        "message": "Sneltoetsen"
-    },
-    "lockExtensionCommand": {
-        "message": "Extensie vergrendelen"
-    },
-    "openManagerCommand": {
-        "message": "Bladwijzerbeheerder openen"
-    },
-    "blurPage": {
-        "message": "Pagina vervagen ($1)"
-    },
-    "blurPageDesc": {
-        "message": "Vervaagt het huidige tabblad wanneer geactiveerd"
-    },
-    "blurPageCommand": {
-        "message": "Pagina vervagen"
-    },
-    "invalidUrlProtocol": {
-        "message": "Voer een geldige URL in die begint met http:// of https://"
-    },
-    "openAll": {
-        "message": "Alles openen"
-    },
-    "openAllWindow": {
-        "message": "Alles openen in nieuw venster"
-    },
-    "openAllGroup": {
-        "message": "Alles openen in nieuwe tabbladgroep"
-    },
-    "openAllIncognito": {
-        "message": "Alles openen in incognitomodus"
-    },
-    "saveAllTabs": {
-        "message": "Alle open tabbladen opslaan"
-    },
-    "noTabsToSave": {
-        "message": "Geen tabbladen om op te slaan"
-    },
-    "tabsSaved": {
-        "message": "Tabbladen opgeslagen"
-    },
-    "searchInFolder": {
-        "message": "Zoeken in map..."
-    },
-    "reportBug": {
-        "message": "Bug Melden"
-    },
-    "managerSubtitle": {
-        "message": "Volledige controle over uw bladwijzers"
-    },
-    "browserDropHint": {
-        "message": "Hier neerzetten om bladwijzer toe te voegen"
+  "Name": {
+    "message": "Holy Private Bookmarks — Versleutelde Lokale Bladwijzerbeheerder"
+  },
+  "extensionName": {
+    "message": "Holy Private Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "Houd uw bladwijzers privé met een hoofdwachtwoord en AES-256-versleuteling. Alle gegevens blijven op uw apparaat — geen cloud, geen tracking."
+  },
+  "managerTitle": {
+    "message": "HPB - Bladwijzerbeheerder"
+  },
+  "createPassword": {
+    "message": "Maak een hoofdwachtwoord aan voor volledige bladwijzerversleuteling"
+  },
+  "newPassword": {
+    "message": "Nieuw wachtwoord (min. 6 tekens)"
+  },
+  "confirmPassword": {
+    "message": "Wachtwoord bevestigen"
+  },
+  "createStorage": {
+    "message": "Opslag aanmaken"
+  },
+  "enterMasterPassword": {
+    "message": ""
+  },
+  "masterPassword": {
+    "message": "Hoofdwachtwoord"
+  },
+  "unlock": {
+    "message": "Ontgrendelen"
+  },
+  "wrongPassword": {
+    "message": "Verkeerd wachtwoord"
+  },
+  "passwordsMismatch": {
+    "message": "Wachtwoorden komen niet overeen of zijn te kort"
+  },
+  "bookmarksProtected": {
+    "message": "Uw bladwijzers zijn veilig beveiligd"
+  },
+  "addCurrentPage": {
+    "message": "Huidige pagina toevoegen"
+  },
+  "newFolder": {
+    "message": "Nieuwe map"
+  },
+  "clearHistory": {
+    "message": "Geschiedenis wissen"
+  },
+  "settings": {
+    "message": "Instellingen"
+  },
+  "settingsbtn": {
+    "message": "⚙️"
+  },
+  "changeMasterPassword": {
+    "message": "Hoofdwachtwoord wijzigen"
+  },
+  "currentPassword": {
+    "message": "Huidig hoofdwachtwoord"
+  },
+  "newPassword2": {
+    "message": "Nieuw wachtwoord"
+  },
+  "confirmNewPassword": {
+    "message": "Nieuw wachtwoord bevestigen"
+  },
+  "changePassword": {
+    "message": "Wachtwoord wijzigen"
+  },
+  "exportImport": {
+    "message": "Exporteren & Importeren"
+  },
+  "export": {
+    "message": "Back-up maken"
+  },
+  "openPrivate": {
+    "message": "Openen in privétabblad"
+  },
+  "import": {
+    "message": "Importeren"
+  },
+  "importFromChrome": {
+    "message": "Importeren uit Chrome"
+  },
+  "importChromeBookmarks": {
+    "message": "Alle Chrome-bladwijzers importeren"
+  },
+  "importChromeBookmarksAdvanced": {
+    "message": "Mappen selecteren om te importeren"
+  },
+  "importChromeConfirm": {
+    "message": "Alle bladwijzers uit Chrome importeren? Bestaande bladwijzers blijven behouden."
+  },
+  "importChromeSuccess": {
+    "message": "Bladwijzers succesvol geïmporteerd!"
+  },
+  "importChromeError": {
+    "message": "Bladwijzers importeren mislukt"
+  },
+  "selectFoldersToImport": {
+    "message": "Mappen selecteren om te importeren"
+  },
+  "selectAll": {
+    "message": "Alles selecteren"
+  },
+  "deselectAll": {
+    "message": "Alles deselecteren"
+  },
+  "importSelected": {
+    "message": "Importeren"
+  },
+  "back": {
+    "message": "← Terug"
+  },
+  "addBookmark": {
+    "message": "Bladwijzer toevoegen"
+  },
+  "editBookmark": {
+    "message": "Bladwijzer bewerken"
+  },
+  "page": {
+    "message": "Pagina"
+  },
+  "title": {
+    "message": "Titel"
+  },
+  "url": {
+    "message": "URL"
+  },
+  "folder": {
+    "message": "Map"
+  },
+  "rootFolder": {
+    "message": "Hoofdmap"
+  },
+  "new": {
+    "message": "+ Nieuw"
+  },
+  "cancel": {
+    "message": "Annuleren"
+  },
+  "save": {
+    "message": "Opslaan"
+  },
+  "deleteConfirm": {
+    "message": "Bladwijzer verwijderen"
+  },
+  "folderName": {
+    "message": "Mapnaam:"
+  },
+  "newName": {
+    "message": "Nieuwe naam:"
+  },
+  "titleRequired": {
+    "message": "Titel en URL zijn verplicht"
+  },
+  "validUrl": {
+    "message": "URL moet beginnen met http:// of https://"
+  },
+  "passwordChanged": {
+    "message": "Wachtwoord succesvol gewijzigd!"
+  },
+  "importSuccess": {
+    "message": "Back-up succesvol geïmporteerd! Open de pop-up opnieuw."
+  },
+  "invalidFile": {
+    "message": "Ongeldig back-upbestand"
+  },
+  "clearHistoryConfirm": {
+    "message": "ALLE browsergeschiedenisitems verwijderen voor domeinen in uw Holy Private Bookmarks?"
+  },
+  "noBookmarks": {
+    "message": "Geen bladwijzers gevonden — niets te wissen."
+  },
+  "noDomains": {
+    "message": "Geen geldige domeinen gevonden in bladwijzers."
+  },
+  "newBookmark": {
+    "message": "Nieuwe bladwijzer"
+  },
+  "paste": {
+    "message": "Plakken"
+  },
+  "ctxnewFolder": {
+    "message": "Nieuwe map"
+  },
+  "emptyTreeTitle": {
+    "message": "Nog geen bladwijzers"
+  },
+  "emptyTreeSubtitle": {
+    "message": "Voeg uw eerste bladwijzer of map toe om te beginnen"
+  },
+  "historyCleared": {
+    "message": "Geschiedenis gewist!\n$count$ bezoek(en) verwijderd van $domains$ domein(en).",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domains": {
+        "content": "$2"
+      }
     }
+  },
+  "addToHoly": {
+    "message": "Toevoegen aan Holy Private Bookmarks"
+  },
+  "cannotAddPage": {
+    "message": "Kan deze pagina niet toevoegen (geen geldige URL)"
+  },
+  "supportProject": {
+    "message": "Project ondersteunen"
+  },
+  "supportPageTitle": {
+    "message": "Holy Private Bookmarks Ondersteunen"
+  },
+  "donateHeroTitle": {
+    "message": "Ondersteun privacygericht ontwikkeling"
+  },
+  "donateHeroSubtitle": {
+    "message": "Holy Private Bookmarks is 100% gratis en open-source, en dat blijft zo altijd. Uw ondersteuning helpt de ontwikkelaars tijd te besteden aan het onderhouden en verbeteren van de extensie voor iedereen die om privacy geeft."
+  },
+  "whySupport": {
+    "message": "Waarom uw ondersteuning belangrijk is"
+  },
+  "timeInvestment": {
+    "message": "Ontwikkelaarstijd"
+  },
+  "timeInvestmentDesc": {
+    "message": "Elke functie, bugfix en beveiligingsverbetering vertegenwoordigt uren werk. Uw bijdrage waardeert die tijd en houdt het project duurzaam."
+  },
+  "longTerm": {
+    "message": "Langetermijnverplichting"
+  },
+  "longTermDesc": {
+    "message": "Uw ondersteuning zorgt ervoor dat de extensie actief wordt onderhouden, compatibel blijft met toekomstige Chrome-updates en voortdurend wordt verbeterd."
+  },
+  "futureFeatures": {
+    "message": "Toekomstige functies"
+  },
+  "futureFeaturesDesc": {
+    "message": "Met uw hulp kunnen we prioriteit geven aan nieuwe functionaliteit, een betere UI en verbeterde beveiligingsfuncties die de hele gemeenschap ten goede komen."
+  },
+  "donateCtaText": {
+    "message": "Geen abonnementen. Geen betaalmuren. Geen bedrijfsfinanciering. Alleen mensen die iets nuttigs bouwen voor anderen. Als deze extensie u tijd bespaart of gemoedsrust geeft, overweeg dan de ontwikkelaars een koffie te kopen."
+  },
+  "donateCryptoTitle": {
+    "message": "Ondersteunen met Crypto"
+  },
+  "copyAddress": {
+    "message": "Adres kopiëren"
+  },
+  "donateThanks": {
+    "message": "Bedankt voor het ondersteunen van onafhankelijke open-source ontwikkeling"
+  },
+  "donateThanksNote": {
+    "message": "Elke bijdrage, groot of klein, betekent de wereld voor ons."
+  },
+  "importantWarning": {
+    "message": "BELANGRIJKE WAARSCHUWING:"
+  },
+  "passwordCannotBeRecovered": {
+    "message": "Dit wachtwoord KAN NIET worden hersteld!"
+  },
+  "noPasswordReset": {
+    "message": "Er is GEEN optie voor wachtwoordherstel"
+  },
+  "weDontStorePassword": {
+    "message": "Wij slaan uw wachtwoord NERGENS op"
+  },
+  "bookmarksEncrypted": {
+    "message": "Uw bladwijzers zijn alleen met dit wachtwoord versleuteld"
+  },
+  "savePasswordSecurely": {
+    "message": "Sla dit wachtwoord veilig op!"
+  },
+  "copyUrl": {
+    "message": "URL kopiëren"
+  },
+  "edit": {
+    "message": "Bewerken"
+  },
+  "delete": {
+    "message": "Verwijderen"
+  },
+  "urlCopied": {
+    "message": "URL gekopieerd naar klembord"
+  },
+  "dangerZone": {
+    "message": "Gevarenzone"
+  },
+  "deleteAllData": {
+    "message": "Alle Gegevens Verwijderen"
+  },
+  "deleteAllDataDesc": {
+    "message": "Alle bladwijzers en instellingen permanent verwijderen"
+  },
+  "deleteAllDataConfirm": {
+    "message": "Alle bladwijzers, mappen, hoofdwachtwoord en instellingen worden permanent verwijderd. Deze actie kan niet ongedaan worden gemaakt."
+  },
+  "deleteAllDataConfirmBtn": {
+    "message": "Alles Verwijderen"
+  },
+  "about": {
+    "message": "Over"
+  },
+  "aboutExtension": {
+    "message": "Over Extensie"
+  },
+  "openGitHub": {
+    "message": "GitHub Openen"
+  },
+  "close": {
+    "message": "Sluiten"
+  },
+  "features": {
+    "message": "Functies"
+  },
+  "troubleshooting": {
+    "message": "Probleemoplossing"
+  },
+  "encryption": {
+    "message": "Versleuteling"
+  },
+  "encryptionDesc": {
+    "message": "AES-256-versleuteling"
+  },
+  "localStorage": {
+    "message": "Lokale Opslag"
+  },
+  "localStorageDesc": {
+    "message": "Gegevens blijven op uw apparaat"
+  },
+  "privacy": {
+    "message": "Privacy"
+  },
+  "privacyDesc": {
+    "message": "Geen tracking of analyses"
+  },
+  "openSource": {
+    "message": "GPLv3"
+  },
+  "viewOnGitHub": {
+    "message": "Bekijken op GitHub"
+  },
+  "githubRepo": {
+    "message": "GitHub-opslagplaats"
+  },
+  "githubRepoDesc": {
+    "message": "Broncode bekijken, problemen melden, bijdragen"
+  },
+  "version": {
+    "message": "Versie"
+  },
+  "openmanager": {
+    "message": "Beheerder openen"
+  },
+  "managerDesc": {
+    "message": "Bladwijzerbeheerder op volledig scherm openen"
+  },
+  "folders": {
+    "message": "Mappen"
+  },
+  "bookmarks": {
+    "message": "bladwijzers"
+  },
+  "allBookmarks": {
+    "message": "Alle Bladwijzers"
+  },
+  "searchBookmarks": {
+    "message": "Bladwijzers zoeken..."
+  },
+  "noBookmarksInFolder": {
+    "message": "Geen bladwijzers in map"
+  },
+  "addBookmarksToGetStarted": {
+    "message": "Voeg bladwijzers toe om te beginnen"
+  },
+  "bookmarkUpdated": {
+    "message": "Bladwijzer bijgewerkt"
+  },
+  "bookmarkDeleted": {
+    "message": "Bladwijzer verwijderd"
+  },
+  "renameFolder": {
+    "message": "Map hernoemen"
+  },
+  "folderCreated": {
+    "message": "Map succesvol aangemaakt"
+  },
+  "managerLocked": {
+    "message": "Beheerder vergrendeld"
+  },
+  "lockManager": {
+    "message": "Beheerder Vergrendelen"
+  },
+  "rename": {
+    "message": "Hernoemen"
+  },
+  "deleteFolder": {
+    "message": "Map verwijderen"
+  },
+  "deleteFolderConfirm": {
+    "message": "Map \"{0}\" verwijderen?"
+  },
+  "deleteFolderWarning": {
+    "message": "Alle inhoud wordt permanent verwijderd."
+  },
+  "folderRenamed": {
+    "message": "Map succesvol hernoemd"
+  },
+  "folderDeleted": {
+    "message": "Map succesvol verwijderd"
+  },
+  "cannotRenameAll": {
+    "message": "Kan de map \"Alle Bladwijzers\" niet hernoemen"
+  },
+  "cannotDeleteAll": {
+    "message": "Kan de map \"Alle Bladwijzers\" niet verwijderen"
+  },
+  "bookmarkAdded": {
+    "message": "Bladwijzer toegevoegd"
+  },
+  "pendingBookmarkNotification": {
+    "message": "Bladwijzer in afwachting!"
+  },
+  "pendingBookmarkInstruction": {
+    "message": "Er wacht een bladwijzer om te worden toegevoegd. Ontgrendel om door te gaan."
+  },
+  "dragSuccess": {
+    "message": "Item succesvol verplaatst"
+  },
+  "invalidDestinationFolder": {
+    "message": "Ongeldige doelmap"
+  },
+  "moveFailed": {
+    "message": "Bladwijzers verplaatsen mislukt"
+  },
+  "noBookmarksSelected": {
+    "message": "Geen bladwijzers geselecteerd"
+  },
+  "selectDestinationFolder": {
+    "message": "Doelmap selecteren:"
+  },
+  "move": {
+    "message": "Verplaatsen"
+  },
+  "selected": {
+    "message": "geselecteerd"
+  },
+  "moveSelectedTitle": {
+    "message": "Geselecteerde verplaatsen"
+  },
+  "deleteSelectedTitle": {
+    "message": "Geselecteerde verwijderen"
+  },
+  "cancelSelectionTitle": {
+    "message": "Selectie annuleren"
+  },
+  "emptyFolder": {
+    "message": "Map is leeg",
+    "description": "Message shown when a folder has no bookmarks"
+  },
+  "noSearchResults": {
+    "message": "Geen bladwijzers gevonden",
+    "description": "Message when search returns no results"
+  },
+  "noSearchResultsDesc": {
+    "message": "Probeer een andere zoekterm",
+    "description": "Description for empty search results"
+  },
+  "theme": {
+    "message": "Thema"
+  },
+  "themeDark": {
+    "message": "Donker",
+    "description": "Dark theme name"
+  },
+  "themeLight": {
+    "message": "Licht",
+    "description": "Light theme name"
+  },
+  "themeSystem": {
+    "message": "Systeem",
+    "description": "System theme name"
+  },
+  "themeToggle": {
+    "message": "Thema wisselen",
+    "description": "Tooltip for theme toggle button"
+  },
+  "showFavicons": {
+    "message": "Website-favicons weergeven"
+  },
+  "showFaviconsDesc": {
+    "message": "Pictogrammen worden geladen via de favicon-service van Google"
+  },
+  "bookmarksAndFolders": {
+    "message": "Bladwijzers & Mappen"
+  },
+  "importFromHtml": {
+    "message": "Importeren uit HTML"
+  },
+  "importHtmlSuccess": {
+    "message": "HTML-bladwijzers succesvol geïmporteerd! $COUNT$ bladwijzers toegevoegd.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "htmlImporterNoFileSelected": {
+    "message": "Geen bestand geselecteerd"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "Bestand te groot (max. 1MB)"
+  },
+  "htmlImporterParseError": {
+    "message": "HTML importeren mislukt: $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "Geen bladwijzers gevonden in bestand"
+  },
+  "importHtmlError": {
+    "message": "HTML-bestand verwerken mislukt. Controleer het bestandsformaat."
+  },
+  "importHtmlSizeWarning": {
+    "message": "1MB Limiet"
+  },
+  "importHtmlSizeNote": {
+    "message": "~2500 bladwijzers max."
+  },
+  "importWarning": {
+    "message": "Alle bestaande bladwijzers worden vervangen"
+  },
+  "developer": {
+    "message": "Ontwikkelaar:"
+  },
+  "lock": {
+    "message": "Vergrendelen"
+  },
+  "faqButtonTitle": {
+    "message": "Veelgestelde Vragen"
+  },
+  "clearingHistory": {
+    "message": "Geschiedenis Wissen",
+    "description": "Title for history clearing progress modal"
+  },
+  "preparingToClear": {
+    "message": "Voorbereiden om geschiedenis te wissen...",
+    "description": "Initial status message"
+  },
+  "progress": {
+    "message": "Voortgang",
+    "description": "Progress label"
+  },
+  "domainsProcessed": {
+    "message": "Verwerkte domeinen",
+    "description": "Label for domains processed count"
+  },
+  "entriesDeleted": {
+    "message": "Verwijderde vermeldingen",
+    "description": "Label for deleted entries count"
+  },
+  "startingCleanup": {
+    "message": "Opruimen starten...",
+    "description": "Status when starting"
+  },
+  "finalizingCleanup": {
+    "message": "Opruimen afronden...",
+    "description": "Status when finalizing"
+  },
+  "cancelling": {
+    "message": "Annuleren...",
+    "description": "Status when cancelling"
+  },
+  "clearCancelled": {
+    "message": "Bewerking geannuleerd",
+    "description": "Notification when cancelled"
+  },
+  "fillAllFields": {
+    "message": "Vul alle velden in"
+  },
+  "setupComplete": {
+    "message": "Installatie voltooid!"
+  },
+  "migrationSuccess": {
+    "message": "Gegevens succesvol gemigreerd naar veilig formaat!"
+  },
+  "migrationRequired": {
+    "message": "Update van gegevensformaat vereist"
+  },
+  "migrationInstruction": {
+    "message": "Voer uw wachtwoord in om automatisch te upgraden naar een veiliger formaat."
+  },
+  "exportSuccess": {
+    "message": "Exporteren geslaagd",
+    "description": "Notification when data export completes successfully"
+  },
+  "processing": {
+    "message": "Verwerken...",
+    "description": "Generic processing message for loading indicators"
+  },
+  "unlocking": {
+    "message": "Ontgrendelen...",
+    "description": "Shown while decrypting bookmarks"
+  },
+  "changingPassword": {
+    "message": "Wachtwoord wijzigen...",
+    "description": "Shown while changing master password"
+  },
+  "settingUpEncryption": {
+    "message": "Versleuteling instellen...",
+    "description": "Shown during first-time setup"
+  },
+  "migratingData": {
+    "message": "Gegevens migreren naar veilig formaat...",
+    "description": "Shown during v1 to v2 migration"
+  },
+  "loading": {
+    "message": "Laden...",
+    "description": "Generic loading message"
+  },
+  "donationReminderTitle": {
+    "message": "Project ondersteunen"
+  },
+  "donationReminderText": {
+    "message": "Als u deze extensie leuk vindt, ondersteunen dan de ontwikkeling ervan!"
+  },
+  "remindLater": {
+    "message": "Later herinneren"
+  },
+  "supportNow": {
+    "message": "Nu ondersteunen"
+  },
+  "remindNever": {
+    "message": "Niet meer weergeven"
+  },
+  "confirmDismiss": {
+    "message": "Nooit meer donatiherinneringen weergeven?"
+  },
+  "bookmarkAlreadyInFolder": {
+    "message": "Element bevindt zich al in deze map"
+  },
+  "cannotMoveIntoSelf": {
+    "message": "Kan een map niet in zichzelf verplaatsen"
+  },
+  "bookmarksMoved": {
+    "message": "{0} element(en) verplaatst"
+  },
+  "deleteSelectedConfirm": {
+    "message": "{count} geselecteerd element(en) verwijderen?",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "bookmarksDeleted": {
+    "message": "{count} element(en) verwijderd",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "moveBookmarksTitle": {
+    "message": "{0} element(en) verplaatsen"
+  },
+  "setupTabNew": {
+    "message": "Nieuw Aanmaken",
+    "description": "Tab label for creating new password"
+  },
+  "setupTabRestore": {
+    "message": "Back-up Herstellen",
+    "description": "Tab label for restoring from backup"
+  },
+  "restoreDropTitle": {
+    "message": "Zet back-upbestand hier neer of klik om te selecteren",
+    "description": "Text for drag & drop area in restore tab"
+  },
+  "strengthWeak": {
+    "message": "Zwak",
+    "description": "Password strength indicator"
+  },
+  "strengthFair": {
+    "message": "Matig",
+    "description": "Password strength indicator"
+  },
+  "strengthGood": {
+    "message": "Goed",
+    "description": "Password strength indicator"
+  },
+  "strengthStrong": {
+    "message": "Sterk",
+    "description": "Password strength indicator"
+  },
+  "importingBackup": {
+    "message": "Back-up herstellen...",
+    "description": "Loading message during backup import"
+  },
+  "unlockTitle": {
+    "message": "Hoofdwachtwoord invoeren"
+  },
+  "warningRemember": {
+    "message": "Weet u uw wachtwoord nog?"
+  },
+  "yesRemember": {
+    "message": "Ja, ik weet het nog"
+  },
+  "survey": {
+    "message": "Feedbackenquête"
+  },
+  "Error": {
+    "message": "Fout"
+  },
+  "changelog": {
+    "message": "Wijzigingslogboek"
+  },
+  "rateExtension": {
+    "message": "Beoordelen in Chrome Web Store"
+  },
+  "migrationScreenTitle": {
+    "message": "Update Vereist",
+    "description": "Title on the manager migration screen"
+  },
+  "migrationScreenBody1": {
+    "message": "De extensie is bijgewerkt met verbeterde beveiliging.",
+    "description": "First line on the manager migration screen"
+  },
+  "migrationScreenBody2": {
+    "message": "Open de extensie-pop-up om uw gegevens naar het nieuwe veilige formaat te migreren.",
+    "description": "Second line on the manager migration screen"
+  },
+  "notSetUpTitle": {
+    "message": "Extensie Niet Ingesteld",
+    "description": "manager-lock: notSetUpTitle"
+  },
+  "notSetUpSubtitle": {
+    "message": "Extensie nog niet ingesteld. Open de extensie-pop-up om een wachtwoord aan te maken.",
+    "description": "manager-lock: notSetUpSubtitle"
+  },
+  "notSetUpButton": {
+    "message": "Pop-up Openen",
+    "description": "manager-lock: notSetUpButton"
+  },
+  "reloadingSubtitle": {
+    "message": "Beheerder wordt opnieuw geladen...",
+    "description": "manager-lock: reloadingSubtitle"
+  },
+  "reloadingWait": {
+    "message": "Wacht terwijl de beheerder wordt bijgewerkt",
+    "description": "manager-lock: reloadingWait"
+  },
+  "exportHtml": {
+    "message": "Exporteren naar HTML"
+  },
+  "exportHtmlNote": {
+    "message": "Netscape Bladwijzers formaat"
+  },
+  "exportHtmlSuccess": {
+    "message": "HTML-exporteren geslaagd"
+  },
+  "exportHtmlConfirmTitle": {
+    "message": "Bevestig uw wachtwoord"
+  },
+  "exportHtmlConfirmDesc": {
+    "message": "Uw bladwijzers worden geëxporteerd als platte tekst. Voer uw hoofdwachtwoord in om te bevestigen."
+  },
+  "exportHtmlPasswordRequired": {
+    "message": "Voer uw wachtwoord in"
+  },
+  "exportHtmlConfirmBtn": {
+    "message": "Exporteren"
+  },
+  "exportHtmlVerifying": {
+    "message": "Wachtwoord verifiëren…"
+  },
+  "copiedToClipboard": {
+    "message": "Gekopieerd naar klembord!"
+  },
+  "copyFailed": {
+    "message": "Kopiëren mislukt"
+  },
+  "clickToCopy": {
+    "message": "Klik om te kopiëren"
+  },
+  "qrCodeFor": {
+    "message": "QR-code voor $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "quickCloseTab": {
+    "message": "Tabblad snel sluiten ($1)"
+  },
+  "quickCloseTabDesc": {
+    "message": "Sluit het huidige tabblad en verwijdert de browsegeschiedenis voor het domein"
+  },
+  "quickCloseTabCommand": {
+    "message": "Tabblad sluiten en domeingeschiedenis wissen"
+  },
+  "changeShortcut": {
+    "message": "Sneltoetsen wijzigen"
+  },
+  "actions": {
+    "message": "Acties"
+  },
+  "qrCode": {
+    "message": "QR-code"
+  },
+  "qrScanHint": {
+    "message": "Scan de QR-code om de link op uw apparaat te openen."
+  },
+  "stayUnlocked": {
+    "message": "Ontgrendeld blijven tussen sessies"
+  },
+  "stayUnlockedDesc": {
+    "message": "Houdt u ontgrendeld terwijl de browser open is"
+  },
+  "stayUnlockedWarning": {
+    "message": "Vermindert beveiliging: de versleutelingssleutel wordt opgeslagen in browsersessieopslag. Iedereen met toegang tot uw browserprofiel kan deze mogelijk lezen."
+  },
+  "alwaysIncognito": {
+    "message": "Bladwijzers altijd openen in incognitomodus"
+  },
+  "alwaysIncognitoDesc": {
+    "message": "Alle bladwijzers worden geopend in een privévenster"
+  },
+  "enable": {
+    "message": "Inschakelen"
+  },
+  "managerIsOpen": {
+    "message": "Bladwijzerbeheerder is open"
+  },
+  "managerIsOpenDesc": {
+    "message": "Sluit het tabblad van de bladwijzerbeheerder om de pop-up te gebruiken."
+  },
+  "switchToManager": {
+    "message": "Naar Beheerder Overschakelen"
+  },
+  "hotkeys": {
+    "message": "Sneltoetsen"
+  },
+  "lockExtensionCommand": {
+    "message": "Extensie vergrendelen"
+  },
+  "openManagerCommand": {
+    "message": "Bladwijzerbeheerder openen"
+  },
+  "blurPage": {
+    "message": "Pagina vervagen ($1)"
+  },
+  "blurPageDesc": {
+    "message": "Vervaagt het huidige tabblad wanneer geactiveerd"
+  },
+  "blurPageCommand": {
+    "message": "Pagina vervagen"
+  },
+  "invalidUrlProtocol": {
+    "message": "Voer een geldige URL in die begint met http:// of https://"
+  },
+  "openAll": {
+    "message": "Alles openen"
+  },
+  "openAllWindow": {
+    "message": "Alles openen in nieuw venster"
+  },
+  "openAllGroup": {
+    "message": "Alles openen in nieuwe tabbladgroep"
+  },
+  "openAllIncognito": {
+    "message": "Alles openen in incognitomodus"
+  },
+  "saveAllTabs": {
+    "message": "Alle open tabbladen opslaan"
+  },
+  "noTabsToSave": {
+    "message": "Geen tabbladen om op te slaan"
+  },
+  "tabsSaved": {
+    "message": "Tabbladen opgeslagen"
+  },
+  "searchInFolder": {
+    "message": "Zoeken in map..."
+  },
+  "reportBug": {
+    "message": "Bug Melden"
+  },
+  "managerSubtitle": {
+    "message": "Volledige controle over uw bladwijzers"
+  },
+  "browserDropHint": {
+    "message": "Hier neerzetten om bladwijzer toe te voegen"
+  },
+  "openIncognitoWindow": {
+    "message": "Overschakelen naar incognitomodus"
+  },
+  "incognitoAccessRequired": {
+    "message": "Toegang tot incognitomodus vereist"
+  },
+  "incognitoAccessDesc": {
+    "message": "Om deze functie te gebruiken, schakel incognitotoegang in bij de extensie-instellingen."
+  },
+  "openExtensionSettings": {
+    "message": "Instellingen openen"
+  }
 }

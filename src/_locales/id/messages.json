@@ -1,907 +1,919 @@
 {
-    "Name": {
-        "message": "Holy Private Bookmarks — Pengelola Bookmark Lokal Terenkripsi"
-    },
-    "extensionName": {
-        "message": "Holy Private Bookmarks"
-    },
-    "extensionDescription": {
-        "message": "Jaga bookmark Anda tetap privat dengan kata sandi master dan enkripsi AES-256. Semua data tersimpan di perangkat Anda — tanpa cloud, tanpa pelacakan."
-    },
-    "managerTitle": {
-        "message": "HPB - Pengelola bookmark"
-    },
-    "createPassword": {
-        "message": "Buat kata sandi master untuk enkripsi bookmark penuh"
-    },
-    "newPassword": {
-        "message": "Kata sandi baru (min. 6 karakter)"
-    },
-    "confirmPassword": {
-        "message": "Konfirmasi kata sandi"
-    },
-    "createStorage": {
-        "message": "Buat penyimpanan"
-    },
-    "enterMasterPassword": {
-        "message": ""
-    },
-    "masterPassword": {
-        "message": "Kata sandi master"
-    },
-    "unlock": {
-        "message": "Buka kunci"
-    },
-    "wrongPassword": {
-        "message": "Kata sandi salah"
-    },
-    "passwordsMismatch": {
-        "message": "Kata sandi tidak cocok atau terlalu pendek"
-    },
-    "bookmarksProtected": {
-        "message": "Bookmark Anda terlindungi dengan aman"
-    },
-    "addCurrentPage": {
-        "message": "Tambah halaman saat ini"
-    },
-    "newFolder": {
-        "message": "Folder baru"
-    },
-    "clearHistory": {
-        "message": "Hapus riwayat"
-    },
-    "settings": {
-        "message": "Pengaturan"
-    },
-    "settingsbtn": {
-        "message": "⚙️"
-    },
-    "changeMasterPassword": {
-        "message": "Ubah kata sandi master"
-    },
-    "currentPassword": {
-        "message": "Kata sandi master saat ini"
-    },
-    "newPassword2": {
-        "message": "Kata sandi baru"
-    },
-    "confirmNewPassword": {
-        "message": "Konfirmasi kata sandi baru"
-    },
-    "changePassword": {
-        "message": "Ubah kata sandi"
-    },
-    "exportImport": {
-        "message": "Ekspor & Impor"
-    },
-    "export": {
-        "message": "Buat cadangan"
-    },
-    "openPrivate": {
-        "message": "Buka di tab pribadi"
-    },
-    "import": {
-        "message": "Impor"
-    },
-    "importFromChrome": {
-        "message": "Impor dari Chrome"
-    },
-    "importChromeBookmarks": {
-        "message": "Impor semua bookmark Chrome"
-    },
-    "importChromeBookmarksAdvanced": {
-        "message": "Pilih folder untuk diimpor"
-    },
-    "importChromeConfirm": {
-        "message": "Impor semua bookmark dari Chrome? Bookmark yang ada akan dipertahankan."
-    },
-    "importChromeSuccess": {
-        "message": "Bookmark berhasil diimpor!"
-    },
-    "importChromeError": {
-        "message": "Gagal mengimpor bookmark"
-    },
-    "selectFoldersToImport": {
-        "message": "Pilih folder untuk diimpor"
-    },
-    "selectAll": {
-        "message": "Pilih semua"
-    },
-    "deselectAll": {
-        "message": "Batalkan semua pilihan"
-    },
-    "importSelected": {
-        "message": "Impor"
-    },
-    "back": {
-        "message": "← Kembali"
-    },
-    "addBookmark": {
-        "message": "Tambah bookmark"
-    },
-    "editBookmark": {
-        "message": "Sunting bookmark"
-    },
-    "page": {
-        "message": "Halaman"
-    },
-    "title": {
-        "message": "Judul"
-    },
-    "url": {
-        "message": "URL"
-    },
-    "folder": {
-        "message": "Folder"
-    },
-    "rootFolder": {
-        "message": "Folder utama"
-    },
-    "new": {
-        "message": "+ Baru"
-    },
-    "cancel": {
-        "message": "Batal"
-    },
-    "save": {
-        "message": "Simpan"
-    },
-    "deleteConfirm": {
-        "message": "Hapus bookmark"
-    },
-    "folderName": {
-        "message": "Nama folder:"
-    },
-    "newName": {
-        "message": "Nama baru:"
-    },
-    "titleRequired": {
-        "message": "Judul dan URL wajib diisi"
-    },
-    "validUrl": {
-        "message": "URL harus dimulai dengan http:// atau https://"
-    },
-    "passwordChanged": {
-        "message": "Kata sandi berhasil diubah!"
-    },
-    "importSuccess": {
-        "message": "Cadangan berhasil diimpor! Silakan buka kembali popup."
-    },
-    "invalidFile": {
-        "message": "File cadangan tidak valid"
-    },
-    "clearHistoryConfirm": {
-        "message": "Hapus SEMUA entri riwayat browser untuk domain yang ada di Holy Private Bookmarks Anda?"
-    },
-    "noBookmarks": {
-        "message": "Tidak ada bookmark ditemukan — tidak ada yang perlu dihapus."
-    },
-    "noDomains": {
-        "message": "Tidak ada domain valid ditemukan di bookmark."
-    },
-    "newBookmark": {
-        "message": "Bookmark baru"
-    },
-    "paste": {
-        "message": "Tempel"
-    },
-    "ctxnewFolder": {
-        "message": "Folder baru"
-    },
-    "emptyTreeTitle": {
-        "message": "Belum ada bookmark"
-    },
-    "emptyTreeSubtitle": {
-        "message": "Tambahkan bookmark atau folder pertama Anda untuk memulai"
-    },
-    "historyCleared": {
-        "message": "Riwayat dihapus!\nDihapus $count$ kunjungan dari $domains$ domain.",
-        "placeholders": {
-            "count": {
-                "content": "$1"
-            },
-            "domains": {
-                "content": "$2"
-            }
-        }
-    },
-    "addToHoly": {
-        "message": "Tambah ke Holy Private Bookmarks"
-    },
-    "cannotAddPage": {
-        "message": "Tidak dapat menambah halaman ini (tidak ada URL valid)"
-    },
-    "supportProject": {
-        "message": "Dukung proyek ini"
-    },
-    "supportPageTitle": {
-        "message": "Dukung Holy Private Bookmarks"
-    },
-    "donateHeroTitle": {
-        "message": "Dukung pengembangan yang berfokus pada privasi"
-    },
-    "donateHeroSubtitle": {
-        "message": "Holy Private Bookmarks 100% gratis dan open-source, dan akan selalu begitu. Dukungan Anda membantu pengembang mendedikasikan waktu untuk merawat dan meningkatkan ekstensi bagi semua yang peduli privasi."
-    },
-    "whySupport": {
-        "message": "Mengapa dukungan Anda penting"
-    },
-    "timeInvestment": {
-        "message": "Waktu pengembang"
-    },
-    "timeInvestmentDesc": {
-        "message": "Setiap fitur, perbaikan bug, dan peningkatan keamanan mewakili berjam-jam kerja. Kontribusi Anda menghargai waktu tersebut dan menjaga proyek tetap berkelanjutan."
-    },
-    "longTerm": {
-        "message": "Komitmen jangka panjang"
-    },
-    "longTermDesc": {
-        "message": "Dukungan Anda memastikan ekstensi tetap aktif dirawat, kompatibel dengan pembaruan Chrome mendatang, dan terus ditingkatkan."
-    },
-    "futureFeatures": {
-        "message": "Fitur masa depan"
-    },
-    "futureFeaturesDesc": {
-        "message": "Dengan bantuan Anda, kami dapat memprioritaskan fungsionalitas baru, UI yang lebih baik, dan fitur keamanan yang ditingkatkan yang menguntungkan seluruh komunitas."
-    },
-    "donateCtaText": {
-        "message": "Tidak ada langganan. Tidak ada paywall. Tidak ada pendanaan korporat. Hanya orang-orang yang membangun sesuatu yang berguna untuk orang lain. Jika ekstensi ini menghemat waktu Anda atau memberikan ketenangan pikiran, pertimbangkan untuk membelikan kopi kepada para pengembang."
-    },
-    "donateCryptoTitle": {
-        "message": "Dukung dengan Kripto"
-    },
-    "copyAddress": {
-        "message": "Salin alamat"
-    },
-    "donateThanks": {
-        "message": "Terima kasih telah mendukung pengembangan open-source independen"
-    },
-    "donateThanksNote": {
-        "message": "Setiap kontribusi, besar atau kecil, sangat berarti bagi kami."
-    },
-    "importantWarning": {
-        "message": "PERINGATAN PENTING:"
-    },
-    "passwordCannotBeRecovered": {
-        "message": "Kata sandi ini TIDAK DAPAT dipulihkan!"
-    },
-    "noPasswordReset": {
-        "message": "TIDAK ada opsi reset kata sandi"
-    },
-    "weDontStorePassword": {
-        "message": "Kami TIDAK menyimpan kata sandi Anda di mana pun"
-    },
-    "bookmarksEncrypted": {
-        "message": "Bookmark Anda dienkripsi hanya dengan kata sandi ini"
-    },
-    "savePasswordSecurely": {
-        "message": "Simpan kata sandi ini dengan aman!"
-    },
-    "copyUrl": {
-        "message": "Salin URL"
-    },
-    "edit": {
-        "message": "Edit"
-    },
-    "delete": {
-        "message": "Hapus"
-    },
-    "urlCopied": {
-        "message": "URL disalin ke clipboard"
-    },
-    "dangerZone": {
-        "message": "Zona Berbahaya"
-    },
-    "deleteAllData": {
-        "message": "Hapus Semua Data"
-    },
-    "deleteAllDataDesc": {
-        "message": "Hapus permanen semua bookmark dan pengaturan"
-    },
-    "deleteAllDataConfirm": {
-        "message": "Semua bookmark, folder, kata sandi master, dan pengaturan akan dihapus secara permanen. Tindakan ini tidak dapat dibatalkan."
-    },
-    "deleteAllDataConfirmBtn": {
-        "message": "Hapus Semuanya"
-    },
-    "about": {
-        "message": "Tentang"
-    },
-    "aboutExtension": {
-        "message": "Tentang Ekstensi"
-    },
-    "openGitHub": {
-        "message": "Buka GitHub"
-    },
-    "close": {
-        "message": "Tutup"
-    },
-    "features": {
-        "message": "Fitur"
-    },
-    "troubleshooting": {
-        "message": "Pemecahan masalah"
-    },
-    "encryption": {
-        "message": "Enkripsi"
-    },
-    "encryptionDesc": {
-        "message": "Enkripsi AES-256"
-    },
-    "localStorage": {
-        "message": "Penyimpanan lokal"
-    },
-    "localStorageDesc": {
-        "message": "Data tersimpan di perangkat Anda"
-    },
-    "privacy": {
-        "message": "Privasi"
-    },
-    "privacyDesc": {
-        "message": "Tanpa pelacakan atau analitik"
-    },
-    "openSource": {
-        "message": "GPLv3"
-    },
-    "viewOnGitHub": {
-        "message": "Lihat di GitHub"
-    },
-    "githubRepo": {
-        "message": "Repositori GitHub"
-    },
-    "githubRepoDesc": {
-        "message": "Lihat kode sumber, laporkan masalah, berkontribusi"
-    },
-    "version": {
-        "message": "Versi"
-    },
-    "openmanager": {
-        "message": "Buka pengelola"
-    },
-    "managerDesc": {
-        "message": "Buka pengelola bookmark layar penuh"
-    },
-    "folders": {
-        "message": "Folder"
-    },
-    "bookmarks": {
-        "message": "bookmark"
-    },
-    "allBookmarks": {
-        "message": "Semua Bookmark"
-    },
-    "searchBookmarks": {
-        "message": "Cari bookmark..."
-    },
-    "noBookmarksInFolder": {
-        "message": "Tidak ada bookmark di folder"
-    },
-    "addBookmarksToGetStarted": {
-        "message": "Tambahkan bookmark untuk memulai"
-    },
-    "bookmarkUpdated": {
-        "message": "Bookmark diperbarui"
-    },
-    "bookmarkDeleted": {
-        "message": "Bookmark dihapus"
-    },
-    "renameFolder": {
-        "message": "Ganti nama folder"
-    },
-    "folderCreated": {
-        "message": "Folder berhasil dibuat"
-    },
-    "managerLocked": {
-        "message": "Pengelola dikunci"
-    },
-    "lockManager": {
-        "message": "Kunci Pengelola"
-    },
-    "rename": {
-        "message": "Ganti nama"
-    },
-    "deleteFolder": {
-        "message": "Hapus folder"
-    },
-    "deleteFolderConfirm": {
-        "message": "Hapus folder \"{0}\"?"
-    },
-    "deleteFolderWarning": {
-        "message": "Semua konten akan dihapus secara permanen."
-    },
-    "folderRenamed": {
-        "message": "Folder berhasil diganti nama"
-    },
-    "folderDeleted": {
-        "message": "Folder berhasil dihapus"
-    },
-    "cannotRenameAll": {
-        "message": "Tidak dapat mengganti nama folder \"Semua Bookmark\""
-    },
-    "cannotDeleteAll": {
-        "message": "Tidak dapat menghapus folder \"Semua Bookmark\""
-    },
-    "bookmarkAdded": {
-        "message": "Bookmark ditambahkan"
-    },
-    "pendingBookmarkNotification": {
-        "message": "Bookmark menunggu!"
-    },
-    "pendingBookmarkInstruction": {
-        "message": "Ada bookmark yang menunggu untuk ditambahkan. Buka kunci untuk melanjutkan."
-    },
-    "dragSuccess": {
-        "message": "Item berhasil dipindahkan"
-    },
-    "invalidDestinationFolder": {
-        "message": "Folder tujuan tidak valid"
-    },
-    "moveFailed": {
-        "message": "Gagal memindahkan bookmark"
-    },
-    "noBookmarksSelected": {
-        "message": "Tidak ada bookmark dipilih"
-    },
-    "selectDestinationFolder": {
-        "message": "Pilih folder tujuan:"
-    },
-    "move": {
-        "message": "Pindah"
-    },
-    "selected": {
-        "message": "dipilih"
-    },
-    "moveSelectedTitle": {
-        "message": "Pindah yang dipilih"
-    },
-    "deleteSelectedTitle": {
-        "message": "Hapus yang dipilih"
-    },
-    "cancelSelectionTitle": {
-        "message": "Batalkan pilihan"
-    },
-    "emptyFolder": {
-        "message": "Folder kosong",
-        "description": "Message shown when a folder has no bookmarks"
-    },
-    "noSearchResults": {
-        "message": "Tidak ada bookmark ditemukan",
-        "description": "Message when search returns no results"
-    },
-    "noSearchResultsDesc": {
-        "message": "Coba kata kunci pencarian lain",
-        "description": "Description for empty search results"
-    },
-    "theme": {
-        "message": "Tema"
-    },
-    "themeDark": {
-        "message": "Gelap",
-        "description": "Dark theme name"
-    },
-    "themeLight": {
-        "message": "Terang",
-        "description": "Light theme name"
-    },
-    "themeSystem": {
-        "message": "Sistem",
-        "description": "System theme name"
-    },
-    "themeToggle": {
-        "message": "Ganti tema",
-        "description": "Tooltip for theme toggle button"
-    },
-    "showFavicons": {
-        "message": "Tampilkan favicon situs web"
-    },
-    "showFaviconsDesc": {
-        "message": "Ikon dimuat melalui layanan favicon Google"
-    },
-    "bookmarksAndFolders": {
-        "message": "Bookmark & Folder"
-    },
-    "importFromHtml": {
-        "message": "Impor dari HTML"
-    },
-    "importHtmlSuccess": {
-        "message": "Bookmark HTML berhasil diimpor! $COUNT$ bookmark ditambahkan.",
-        "placeholders": {
-            "count": {
-                "content": "$1",
-                "example": "42"
-            }
-        }
-    },
-    "htmlImporterNoFileSelected": {
-        "message": "Tidak ada file dipilih"
-    },
-    "htmlImporterFileTooLarge": {
-        "message": "File terlalu besar (maks. 1MB)"
-    },
-    "htmlImporterParseError": {
-        "message": "Gagal mengimpor HTML: $1"
-    },
-    "htmlImporterNoBookmarksFound": {
-        "message": "Tidak ada bookmark ditemukan di file"
-    },
-    "importHtmlError": {
-        "message": "Gagal mengurai file HTML. Periksa format file."
-    },
-    "importHtmlSizeWarning": {
-        "message": "Batas 1MB"
-    },
-    "importHtmlSizeNote": {
-        "message": "Maks. ~2500 bookmark"
-    },
-    "importWarning": {
-        "message": "Semua bookmark yang ada akan digantikan"
-    },
-    "developer": {
-        "message": "Pengembang:"
-    },
-    "lock": {
-        "message": "Kunci"
-    },
-    "faqButtonTitle": {
-        "message": "Pertanyaan yang Sering Diajukan"
-    },
-    "clearingHistory": {
-        "message": "Menghapus Riwayat",
-        "description": "Title for history clearing progress modal"
-    },
-    "preparingToClear": {
-        "message": "Mempersiapkan penghapusan riwayat...",
-        "description": "Initial status message"
-    },
-    "progress": {
-        "message": "Kemajuan",
-        "description": "Progress label"
-    },
-    "domainsProcessed": {
-        "message": "Domain diproses",
-        "description": "Label for domains processed count"
-    },
-    "entriesDeleted": {
-        "message": "Entri dihapus",
-        "description": "Label for deleted entries count"
-    },
-    "startingCleanup": {
-        "message": "Memulai pembersihan...",
-        "description": "Status when starting"
-    },
-    "finalizingCleanup": {
-        "message": "Menyelesaikan pembersihan...",
-        "description": "Status when finalizing"
-    },
-    "cancelling": {
-        "message": "Membatalkan...",
-        "description": "Status when cancelling"
-    },
-    "clearCancelled": {
-        "message": "Operasi dibatalkan",
-        "description": "Notification when cancelled"
-    },
-    "fillAllFields": {
-        "message": "Harap isi semua kolom"
-    },
-    "setupComplete": {
-        "message": "Pengaturan selesai!"
-    },
-    "migrationSuccess": {
-        "message": "Data berhasil dimigrasikan ke format aman!"
-    },
-    "migrationRequired": {
-        "message": "Pembaruan format data diperlukan"
-    },
-    "migrationInstruction": {
-        "message": "Masukkan kata sandi Anda untuk meningkatkan ke format yang lebih aman secara otomatis."
-    },
-    "exportSuccess": {
-        "message": "Ekspor berhasil",
-        "description": "Notification when data export completes successfully"
-    },
-    "processing": {
-        "message": "Memproses...",
-        "description": "Generic processing message for loading indicators"
-    },
-    "unlocking": {
-        "message": "Membuka kunci...",
-        "description": "Shown while decrypting bookmarks"
-    },
-    "changingPassword": {
-        "message": "Mengubah kata sandi...",
-        "description": "Shown while changing master password"
-    },
-    "settingUpEncryption": {
-        "message": "Menyiapkan enkripsi...",
-        "description": "Shown during first-time setup"
-    },
-    "migratingData": {
-        "message": "Migrasi data ke format aman...",
-        "description": "Shown during v1 to v2 migration"
-    },
-    "loading": {
-        "message": "Memuat...",
-        "description": "Generic loading message"
-    },
-    "donationReminderTitle": {
-        "message": "Dukung proyek ini"
-    },
-    "donationReminderText": {
-        "message": "Jika Anda menyukai ekstensi ini, dukung pengembangannya!"
-    },
-    "remindLater": {
-        "message": "Ingatkan nanti"
-    },
-    "supportNow": {
-        "message": "Dukung sekarang"
-    },
-    "remindNever": {
-        "message": "Jangan tampilkan lagi"
-    },
-    "confirmDismiss": {
-        "message": "Jangan pernah tampilkan pengingat donasi lagi?"
-    },
-    "bookmarkAlreadyInFolder": {
-        "message": "Item sudah ada di folder ini"
-    },
-    "cannotMoveIntoSelf": {
-        "message": "Tidak dapat memindahkan folder ke dalam dirinya sendiri"
-    },
-    "bookmarksMoved": {
-        "message": "{0} item dipindahkan"
-    },
-    "deleteSelectedConfirm": {
-        "message": "Hapus {count} item yang dipilih?",
-        "placeholders": {
-            "count": {
-                "content": "$1"
-            },
-            "plural": {
-                "content": "$2"
-            }
-        }
-    },
-    "bookmarksDeleted": {
-        "message": "{count} item dihapus",
-        "placeholders": {
-            "count": {
-                "content": "$1"
-            },
-            "plural": {
-                "content": "$2"
-            }
-        }
-    },
-    "moveBookmarksTitle": {
-        "message": "Pindah {0} item"
-    },
-    "setupTabNew": {
-        "message": "Buat Baru",
-        "description": "Tab label for creating new password"
-    },
-    "setupTabRestore": {
-        "message": "Pulihkan Cadangan",
-        "description": "Tab label for restoring from backup"
-    },
-    "restoreDropTitle": {
-        "message": "Letakkan file cadangan di sini atau klik untuk memilih",
-        "description": "Text for drag & drop area in restore tab"
-    },
-    "strengthWeak": {
-        "message": "Lemah",
-        "description": "Password strength indicator"
-    },
-    "strengthFair": {
-        "message": "Cukup",
-        "description": "Password strength indicator"
-    },
-    "strengthGood": {
-        "message": "Baik",
-        "description": "Password strength indicator"
-    },
-    "strengthStrong": {
-        "message": "Kuat",
-        "description": "Password strength indicator"
-    },
-    "importingBackup": {
-        "message": "Memulihkan cadangan...",
-        "description": "Loading message during backup import"
-    },
-    "unlockTitle": {
-        "message": "Masukkan kata sandi master"
-    },
-    "warningRemember": {
-        "message": "Apakah Anda ingat kata sandi Anda?"
-    },
-    "yesRemember": {
-        "message": "Ya, saya ingat"
-    },
-    "survey": {
-        "message": "Survei Umpan Balik"
-    },
-    "Error": {
-        "message": "Kesalahan"
-    },
-    "changelog": {
-        "message": "Riwayat perubahan"
-    },
-    "rateExtension": {
-        "message": "Beri nilai di Chrome Web Store"
-    },
-    "migrationScreenTitle": {
-        "message": "Pembaruan Diperlukan",
-        "description": "Title on the manager migration screen"
-    },
-    "migrationScreenBody1": {
-        "message": "Ekstensi telah diperbarui dengan keamanan yang ditingkatkan.",
-        "description": "First line on the manager migration screen"
-    },
-    "migrationScreenBody2": {
-        "message": "Buka popup ekstensi untuk memigrasikan data Anda ke format aman yang baru.",
-        "description": "Second line on the manager migration screen"
-    },
-    "notSetUpTitle": {
-        "message": "Ekstensi Belum Dikonfigurasi",
-        "description": "manager-lock: notSetUpTitle"
-    },
-    "notSetUpSubtitle": {
-        "message": "Ekstensi belum dikonfigurasi. Buka popup ekstensi untuk membuat kata sandi.",
-        "description": "manager-lock: notSetUpSubtitle"
-    },
-    "notSetUpButton": {
-        "message": "Buka Popup",
-        "description": "manager-lock: notSetUpButton"
-    },
-    "reloadingSubtitle": {
-        "message": "Pengelola sedang dimuat ulang...",
-        "description": "manager-lock: reloadingSubtitle"
-    },
-    "reloadingWait": {
-        "message": "Harap tunggu sementara pengelola diperbarui",
-        "description": "manager-lock: reloadingWait"
-    },
-    "exportHtml": {
-        "message": "Ekspor ke HTML"
-    },
-    "exportHtmlNote": {
-        "message": "Format Netscape Bookmarks"
-    },
-    "exportHtmlSuccess": {
-        "message": "Ekspor HTML berhasil"
-    },
-    "exportHtmlConfirmTitle": {
-        "message": "Konfirmasi kata sandi Anda"
-    },
-    "exportHtmlConfirmDesc": {
-        "message": "Bookmark Anda akan diekspor sebagai teks biasa. Masukkan kata sandi master untuk mengonfirmasi."
-    },
-    "exportHtmlPasswordRequired": {
-        "message": "Harap masukkan kata sandi Anda"
-    },
-    "exportHtmlConfirmBtn": {
-        "message": "Ekspor"
-    },
-    "exportHtmlVerifying": {
-        "message": "Memverifikasi kata sandi…"
-    },
-    "copiedToClipboard": {
-        "message": "Disalin ke clipboard!"
-    },
-    "copyFailed": {
-        "message": "Gagal menyalin"
-    },
-    "clickToCopy": {
-        "message": "Klik untuk menyalin"
-    },
-    "qrCodeFor": {
-        "message": "Kode QR untuk $1",
-        "placeholders": {
-            "1": {
-                "content": "$1"
-            }
-        }
-    },
-    "quickCloseTab": {
-        "message": "Tutup tab cepat ($1)"
-    },
-    "quickCloseTabDesc": {
-        "message": "Menutup tab saat ini dan menghapus riwayat penjelajahan untuk domainnya"
-    },
-    "quickCloseTabCommand": {
-        "message": "Tutup tab dan hapus riwayat domain"
-    },
-    "changeShortcut": {
-        "message": "Ubah pintasan"
-    },
-    "actions": {
-        "message": "Tindakan"
-    },
-    "qrCode": {
-        "message": "Kode QR"
-    },
-    "qrScanHint": {
-        "message": "Pindai kode QR untuk membuka tautan di perangkat Anda."
-    },
-    "stayUnlocked": {
-        "message": "Tetap terbuka antar sesi"
-    },
-    "stayUnlockedDesc": {
-        "message": "Membuat Anda tetap terbuka selama browser terbuka"
-    },
-    "stayUnlockedWarning": {
-        "message": "Mengurangi keamanan: kunci enkripsi disimpan dalam penyimpanan sesi browser. Siapa pun yang memiliki akses ke profil browser Anda berpotensi membacanya."
-    },
-    "alwaysIncognito": {
-        "message": "Selalu buka bookmark dalam mode penyamaran"
-    },
-    "alwaysIncognitoDesc": {
-        "message": "Semua bookmark akan dibuka di jendela pribadi"
-    },
-    "enable": {
-        "message": "Aktifkan"
-    },
-    "managerIsOpen": {
-        "message": "Pengelola Bookmark terbuka"
-    },
-    "managerIsOpenDesc": {
-        "message": "Tutup tab pengelola bookmark untuk menggunakan popup."
-    },
-    "switchToManager": {
-        "message": "Beralih ke Pengelola"
-    },
-    "hotkeys": {
-        "message": "Pintasan keyboard"
-    },
-    "lockExtensionCommand": {
-        "message": "Kunci ekstensi"
-    },
-    "openManagerCommand": {
-        "message": "Buka pengelola bookmark"
-    },
-    "blurPage": {
-        "message": "Kaburkan halaman ($1)"
-    },
-    "blurPageDesc": {
-        "message": "Mengaburkan tab saat ini ketika diaktifkan"
-    },
-    "blurPageCommand": {
-        "message": "Kaburkan halaman"
-    },
-    "invalidUrlProtocol": {
-        "message": "Masukkan URL valid yang dimulai dengan http:// atau https://"
-    },
-    "openAll": {
-        "message": "Buka semua"
-    },
-    "openAllWindow": {
-        "message": "Buka semua di jendela baru"
-    },
-    "openAllGroup": {
-        "message": "Buka semua di grup tab baru"
-    },
-    "openAllIncognito": {
-        "message": "Buka semua dalam mode penyamaran"
-    },
-    "saveAllTabs": {
-        "message": "Simpan semua tab terbuka"
-    },
-    "noTabsToSave": {
-        "message": "Tidak ada tab untuk disimpan"
-    },
-    "tabsSaved": {
-        "message": "Tab disimpan"
-    },
-    "searchInFolder": {
-        "message": "Cari di folder..."
-    },
-    "reportBug": {
-        "message": "Laporkan Bug"
-    },
-    "managerSubtitle": {
-        "message": "Kendali penuh atas bookmark Anda"
-    },
-    "browserDropHint": {
-        "message": "Lepaskan di sini untuk menambahkan bookmark"
+  "Name": {
+    "message": "Holy Private Bookmarks — Pengelola Bookmark Lokal Terenkripsi"
+  },
+  "extensionName": {
+    "message": "Holy Private Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "Jaga bookmark Anda tetap privat dengan kata sandi master dan enkripsi AES-256. Semua data tersimpan di perangkat Anda — tanpa cloud, tanpa pelacakan."
+  },
+  "managerTitle": {
+    "message": "HPB - Pengelola bookmark"
+  },
+  "createPassword": {
+    "message": "Buat kata sandi master untuk enkripsi bookmark penuh"
+  },
+  "newPassword": {
+    "message": "Kata sandi baru (min. 6 karakter)"
+  },
+  "confirmPassword": {
+    "message": "Konfirmasi kata sandi"
+  },
+  "createStorage": {
+    "message": "Buat penyimpanan"
+  },
+  "enterMasterPassword": {
+    "message": ""
+  },
+  "masterPassword": {
+    "message": "Kata sandi master"
+  },
+  "unlock": {
+    "message": "Buka kunci"
+  },
+  "wrongPassword": {
+    "message": "Kata sandi salah"
+  },
+  "passwordsMismatch": {
+    "message": "Kata sandi tidak cocok atau terlalu pendek"
+  },
+  "bookmarksProtected": {
+    "message": "Bookmark Anda terlindungi dengan aman"
+  },
+  "addCurrentPage": {
+    "message": "Tambah halaman saat ini"
+  },
+  "newFolder": {
+    "message": "Folder baru"
+  },
+  "clearHistory": {
+    "message": "Hapus riwayat"
+  },
+  "settings": {
+    "message": "Pengaturan"
+  },
+  "settingsbtn": {
+    "message": "⚙️"
+  },
+  "changeMasterPassword": {
+    "message": "Ubah kata sandi master"
+  },
+  "currentPassword": {
+    "message": "Kata sandi master saat ini"
+  },
+  "newPassword2": {
+    "message": "Kata sandi baru"
+  },
+  "confirmNewPassword": {
+    "message": "Konfirmasi kata sandi baru"
+  },
+  "changePassword": {
+    "message": "Ubah kata sandi"
+  },
+  "exportImport": {
+    "message": "Ekspor & Impor"
+  },
+  "export": {
+    "message": "Buat cadangan"
+  },
+  "openPrivate": {
+    "message": "Buka di tab pribadi"
+  },
+  "import": {
+    "message": "Impor"
+  },
+  "importFromChrome": {
+    "message": "Impor dari Chrome"
+  },
+  "importChromeBookmarks": {
+    "message": "Impor semua bookmark Chrome"
+  },
+  "importChromeBookmarksAdvanced": {
+    "message": "Pilih folder untuk diimpor"
+  },
+  "importChromeConfirm": {
+    "message": "Impor semua bookmark dari Chrome? Bookmark yang ada akan dipertahankan."
+  },
+  "importChromeSuccess": {
+    "message": "Bookmark berhasil diimpor!"
+  },
+  "importChromeError": {
+    "message": "Gagal mengimpor bookmark"
+  },
+  "selectFoldersToImport": {
+    "message": "Pilih folder untuk diimpor"
+  },
+  "selectAll": {
+    "message": "Pilih semua"
+  },
+  "deselectAll": {
+    "message": "Batalkan semua pilihan"
+  },
+  "importSelected": {
+    "message": "Impor"
+  },
+  "back": {
+    "message": "← Kembali"
+  },
+  "addBookmark": {
+    "message": "Tambah bookmark"
+  },
+  "editBookmark": {
+    "message": "Sunting bookmark"
+  },
+  "page": {
+    "message": "Halaman"
+  },
+  "title": {
+    "message": "Judul"
+  },
+  "url": {
+    "message": "URL"
+  },
+  "folder": {
+    "message": "Folder"
+  },
+  "rootFolder": {
+    "message": "Folder utama"
+  },
+  "new": {
+    "message": "+ Baru"
+  },
+  "cancel": {
+    "message": "Batal"
+  },
+  "save": {
+    "message": "Simpan"
+  },
+  "deleteConfirm": {
+    "message": "Hapus bookmark"
+  },
+  "folderName": {
+    "message": "Nama folder:"
+  },
+  "newName": {
+    "message": "Nama baru:"
+  },
+  "titleRequired": {
+    "message": "Judul dan URL wajib diisi"
+  },
+  "validUrl": {
+    "message": "URL harus dimulai dengan http:// atau https://"
+  },
+  "passwordChanged": {
+    "message": "Kata sandi berhasil diubah!"
+  },
+  "importSuccess": {
+    "message": "Cadangan berhasil diimpor! Silakan buka kembali popup."
+  },
+  "invalidFile": {
+    "message": "File cadangan tidak valid"
+  },
+  "clearHistoryConfirm": {
+    "message": "Hapus SEMUA entri riwayat browser untuk domain yang ada di Holy Private Bookmarks Anda?"
+  },
+  "noBookmarks": {
+    "message": "Tidak ada bookmark ditemukan — tidak ada yang perlu dihapus."
+  },
+  "noDomains": {
+    "message": "Tidak ada domain valid ditemukan di bookmark."
+  },
+  "newBookmark": {
+    "message": "Bookmark baru"
+  },
+  "paste": {
+    "message": "Tempel"
+  },
+  "ctxnewFolder": {
+    "message": "Folder baru"
+  },
+  "emptyTreeTitle": {
+    "message": "Belum ada bookmark"
+  },
+  "emptyTreeSubtitle": {
+    "message": "Tambahkan bookmark atau folder pertama Anda untuk memulai"
+  },
+  "historyCleared": {
+    "message": "Riwayat dihapus!\nDihapus $count$ kunjungan dari $domains$ domain.",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domains": {
+        "content": "$2"
+      }
     }
+  },
+  "addToHoly": {
+    "message": "Tambah ke Holy Private Bookmarks"
+  },
+  "cannotAddPage": {
+    "message": "Tidak dapat menambah halaman ini (tidak ada URL valid)"
+  },
+  "supportProject": {
+    "message": "Dukung proyek ini"
+  },
+  "supportPageTitle": {
+    "message": "Dukung Holy Private Bookmarks"
+  },
+  "donateHeroTitle": {
+    "message": "Dukung pengembangan yang berfokus pada privasi"
+  },
+  "donateHeroSubtitle": {
+    "message": "Holy Private Bookmarks 100% gratis dan open-source, dan akan selalu begitu. Dukungan Anda membantu pengembang mendedikasikan waktu untuk merawat dan meningkatkan ekstensi bagi semua yang peduli privasi."
+  },
+  "whySupport": {
+    "message": "Mengapa dukungan Anda penting"
+  },
+  "timeInvestment": {
+    "message": "Waktu pengembang"
+  },
+  "timeInvestmentDesc": {
+    "message": "Setiap fitur, perbaikan bug, dan peningkatan keamanan mewakili berjam-jam kerja. Kontribusi Anda menghargai waktu tersebut dan menjaga proyek tetap berkelanjutan."
+  },
+  "longTerm": {
+    "message": "Komitmen jangka panjang"
+  },
+  "longTermDesc": {
+    "message": "Dukungan Anda memastikan ekstensi tetap aktif dirawat, kompatibel dengan pembaruan Chrome mendatang, dan terus ditingkatkan."
+  },
+  "futureFeatures": {
+    "message": "Fitur masa depan"
+  },
+  "futureFeaturesDesc": {
+    "message": "Dengan bantuan Anda, kami dapat memprioritaskan fungsionalitas baru, UI yang lebih baik, dan fitur keamanan yang ditingkatkan yang menguntungkan seluruh komunitas."
+  },
+  "donateCtaText": {
+    "message": "Tidak ada langganan. Tidak ada paywall. Tidak ada pendanaan korporat. Hanya orang-orang yang membangun sesuatu yang berguna untuk orang lain. Jika ekstensi ini menghemat waktu Anda atau memberikan ketenangan pikiran, pertimbangkan untuk membelikan kopi kepada para pengembang."
+  },
+  "donateCryptoTitle": {
+    "message": "Dukung dengan Kripto"
+  },
+  "copyAddress": {
+    "message": "Salin alamat"
+  },
+  "donateThanks": {
+    "message": "Terima kasih telah mendukung pengembangan open-source independen"
+  },
+  "donateThanksNote": {
+    "message": "Setiap kontribusi, besar atau kecil, sangat berarti bagi kami."
+  },
+  "importantWarning": {
+    "message": "PERINGATAN PENTING:"
+  },
+  "passwordCannotBeRecovered": {
+    "message": "Kata sandi ini TIDAK DAPAT dipulihkan!"
+  },
+  "noPasswordReset": {
+    "message": "TIDAK ada opsi reset kata sandi"
+  },
+  "weDontStorePassword": {
+    "message": "Kami TIDAK menyimpan kata sandi Anda di mana pun"
+  },
+  "bookmarksEncrypted": {
+    "message": "Bookmark Anda dienkripsi hanya dengan kata sandi ini"
+  },
+  "savePasswordSecurely": {
+    "message": "Simpan kata sandi ini dengan aman!"
+  },
+  "copyUrl": {
+    "message": "Salin URL"
+  },
+  "edit": {
+    "message": "Edit"
+  },
+  "delete": {
+    "message": "Hapus"
+  },
+  "urlCopied": {
+    "message": "URL disalin ke clipboard"
+  },
+  "dangerZone": {
+    "message": "Zona Berbahaya"
+  },
+  "deleteAllData": {
+    "message": "Hapus Semua Data"
+  },
+  "deleteAllDataDesc": {
+    "message": "Hapus permanen semua bookmark dan pengaturan"
+  },
+  "deleteAllDataConfirm": {
+    "message": "Semua bookmark, folder, kata sandi master, dan pengaturan akan dihapus secara permanen. Tindakan ini tidak dapat dibatalkan."
+  },
+  "deleteAllDataConfirmBtn": {
+    "message": "Hapus Semuanya"
+  },
+  "about": {
+    "message": "Tentang"
+  },
+  "aboutExtension": {
+    "message": "Tentang Ekstensi"
+  },
+  "openGitHub": {
+    "message": "Buka GitHub"
+  },
+  "close": {
+    "message": "Tutup"
+  },
+  "features": {
+    "message": "Fitur"
+  },
+  "troubleshooting": {
+    "message": "Pemecahan masalah"
+  },
+  "encryption": {
+    "message": "Enkripsi"
+  },
+  "encryptionDesc": {
+    "message": "Enkripsi AES-256"
+  },
+  "localStorage": {
+    "message": "Penyimpanan lokal"
+  },
+  "localStorageDesc": {
+    "message": "Data tersimpan di perangkat Anda"
+  },
+  "privacy": {
+    "message": "Privasi"
+  },
+  "privacyDesc": {
+    "message": "Tanpa pelacakan atau analitik"
+  },
+  "openSource": {
+    "message": "GPLv3"
+  },
+  "viewOnGitHub": {
+    "message": "Lihat di GitHub"
+  },
+  "githubRepo": {
+    "message": "Repositori GitHub"
+  },
+  "githubRepoDesc": {
+    "message": "Lihat kode sumber, laporkan masalah, berkontribusi"
+  },
+  "version": {
+    "message": "Versi"
+  },
+  "openmanager": {
+    "message": "Buka pengelola"
+  },
+  "managerDesc": {
+    "message": "Buka pengelola bookmark layar penuh"
+  },
+  "folders": {
+    "message": "Folder"
+  },
+  "bookmarks": {
+    "message": "bookmark"
+  },
+  "allBookmarks": {
+    "message": "Semua Bookmark"
+  },
+  "searchBookmarks": {
+    "message": "Cari bookmark..."
+  },
+  "noBookmarksInFolder": {
+    "message": "Tidak ada bookmark di folder"
+  },
+  "addBookmarksToGetStarted": {
+    "message": "Tambahkan bookmark untuk memulai"
+  },
+  "bookmarkUpdated": {
+    "message": "Bookmark diperbarui"
+  },
+  "bookmarkDeleted": {
+    "message": "Bookmark dihapus"
+  },
+  "renameFolder": {
+    "message": "Ganti nama folder"
+  },
+  "folderCreated": {
+    "message": "Folder berhasil dibuat"
+  },
+  "managerLocked": {
+    "message": "Pengelola dikunci"
+  },
+  "lockManager": {
+    "message": "Kunci Pengelola"
+  },
+  "rename": {
+    "message": "Ganti nama"
+  },
+  "deleteFolder": {
+    "message": "Hapus folder"
+  },
+  "deleteFolderConfirm": {
+    "message": "Hapus folder \"{0}\"?"
+  },
+  "deleteFolderWarning": {
+    "message": "Semua konten akan dihapus secara permanen."
+  },
+  "folderRenamed": {
+    "message": "Folder berhasil diganti nama"
+  },
+  "folderDeleted": {
+    "message": "Folder berhasil dihapus"
+  },
+  "cannotRenameAll": {
+    "message": "Tidak dapat mengganti nama folder \"Semua Bookmark\""
+  },
+  "cannotDeleteAll": {
+    "message": "Tidak dapat menghapus folder \"Semua Bookmark\""
+  },
+  "bookmarkAdded": {
+    "message": "Bookmark ditambahkan"
+  },
+  "pendingBookmarkNotification": {
+    "message": "Bookmark menunggu!"
+  },
+  "pendingBookmarkInstruction": {
+    "message": "Ada bookmark yang menunggu untuk ditambahkan. Buka kunci untuk melanjutkan."
+  },
+  "dragSuccess": {
+    "message": "Item berhasil dipindahkan"
+  },
+  "invalidDestinationFolder": {
+    "message": "Folder tujuan tidak valid"
+  },
+  "moveFailed": {
+    "message": "Gagal memindahkan bookmark"
+  },
+  "noBookmarksSelected": {
+    "message": "Tidak ada bookmark dipilih"
+  },
+  "selectDestinationFolder": {
+    "message": "Pilih folder tujuan:"
+  },
+  "move": {
+    "message": "Pindah"
+  },
+  "selected": {
+    "message": "dipilih"
+  },
+  "moveSelectedTitle": {
+    "message": "Pindah yang dipilih"
+  },
+  "deleteSelectedTitle": {
+    "message": "Hapus yang dipilih"
+  },
+  "cancelSelectionTitle": {
+    "message": "Batalkan pilihan"
+  },
+  "emptyFolder": {
+    "message": "Folder kosong",
+    "description": "Message shown when a folder has no bookmarks"
+  },
+  "noSearchResults": {
+    "message": "Tidak ada bookmark ditemukan",
+    "description": "Message when search returns no results"
+  },
+  "noSearchResultsDesc": {
+    "message": "Coba kata kunci pencarian lain",
+    "description": "Description for empty search results"
+  },
+  "theme": {
+    "message": "Tema"
+  },
+  "themeDark": {
+    "message": "Gelap",
+    "description": "Dark theme name"
+  },
+  "themeLight": {
+    "message": "Terang",
+    "description": "Light theme name"
+  },
+  "themeSystem": {
+    "message": "Sistem",
+    "description": "System theme name"
+  },
+  "themeToggle": {
+    "message": "Ganti tema",
+    "description": "Tooltip for theme toggle button"
+  },
+  "showFavicons": {
+    "message": "Tampilkan favicon situs web"
+  },
+  "showFaviconsDesc": {
+    "message": "Ikon dimuat melalui layanan favicon Google"
+  },
+  "bookmarksAndFolders": {
+    "message": "Bookmark & Folder"
+  },
+  "importFromHtml": {
+    "message": "Impor dari HTML"
+  },
+  "importHtmlSuccess": {
+    "message": "Bookmark HTML berhasil diimpor! $COUNT$ bookmark ditambahkan.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "htmlImporterNoFileSelected": {
+    "message": "Tidak ada file dipilih"
+  },
+  "htmlImporterFileTooLarge": {
+    "message": "File terlalu besar (maks. 1MB)"
+  },
+  "htmlImporterParseError": {
+    "message": "Gagal mengimpor HTML: $1"
+  },
+  "htmlImporterNoBookmarksFound": {
+    "message": "Tidak ada bookmark ditemukan di file"
+  },
+  "importHtmlError": {
+    "message": "Gagal mengurai file HTML. Periksa format file."
+  },
+  "importHtmlSizeWarning": {
+    "message": "Batas 1MB"
+  },
+  "importHtmlSizeNote": {
+    "message": "Maks. ~2500 bookmark"
+  },
+  "importWarning": {
+    "message": "Semua bookmark yang ada akan digantikan"
+  },
+  "developer": {
+    "message": "Pengembang:"
+  },
+  "lock": {
+    "message": "Kunci"
+  },
+  "faqButtonTitle": {
+    "message": "Pertanyaan yang Sering Diajukan"
+  },
+  "clearingHistory": {
+    "message": "Menghapus Riwayat",
+    "description": "Title for history clearing progress modal"
+  },
+  "preparingToClear": {
+    "message": "Mempersiapkan penghapusan riwayat...",
+    "description": "Initial status message"
+  },
+  "progress": {
+    "message": "Kemajuan",
+    "description": "Progress label"
+  },
+  "domainsProcessed": {
+    "message": "Domain diproses",
+    "description": "Label for domains processed count"
+  },
+  "entriesDeleted": {
+    "message": "Entri dihapus",
+    "description": "Label for deleted entries count"
+  },
+  "startingCleanup": {
+    "message": "Memulai pembersihan...",
+    "description": "Status when starting"
+  },
+  "finalizingCleanup": {
+    "message": "Menyelesaikan pembersihan...",
+    "description": "Status when finalizing"
+  },
+  "cancelling": {
+    "message": "Membatalkan...",
+    "description": "Status when cancelling"
+  },
+  "clearCancelled": {
+    "message": "Operasi dibatalkan",
+    "description": "Notification when cancelled"
+  },
+  "fillAllFields": {
+    "message": "Harap isi semua kolom"
+  },
+  "setupComplete": {
+    "message": "Pengaturan selesai!"
+  },
+  "migrationSuccess": {
+    "message": "Data berhasil dimigrasikan ke format aman!"
+  },
+  "migrationRequired": {
+    "message": "Pembaruan format data diperlukan"
+  },
+  "migrationInstruction": {
+    "message": "Masukkan kata sandi Anda untuk meningkatkan ke format yang lebih aman secara otomatis."
+  },
+  "exportSuccess": {
+    "message": "Ekspor berhasil",
+    "description": "Notification when data export completes successfully"
+  },
+  "processing": {
+    "message": "Memproses...",
+    "description": "Generic processing message for loading indicators"
+  },
+  "unlocking": {
+    "message": "Membuka kunci...",
+    "description": "Shown while decrypting bookmarks"
+  },
+  "changingPassword": {
+    "message": "Mengubah kata sandi...",
+    "description": "Shown while changing master password"
+  },
+  "settingUpEncryption": {
+    "message": "Menyiapkan enkripsi...",
+    "description": "Shown during first-time setup"
+  },
+  "migratingData": {
+    "message": "Migrasi data ke format aman...",
+    "description": "Shown during v1 to v2 migration"
+  },
+  "loading": {
+    "message": "Memuat...",
+    "description": "Generic loading message"
+  },
+  "donationReminderTitle": {
+    "message": "Dukung proyek ini"
+  },
+  "donationReminderText": {
+    "message": "Jika Anda menyukai ekstensi ini, dukung pengembangannya!"
+  },
+  "remindLater": {
+    "message": "Ingatkan nanti"
+  },
+  "supportNow": {
+    "message": "Dukung sekarang"
+  },
+  "remindNever": {
+    "message": "Jangan tampilkan lagi"
+  },
+  "confirmDismiss": {
+    "message": "Jangan pernah tampilkan pengingat donasi lagi?"
+  },
+  "bookmarkAlreadyInFolder": {
+    "message": "Item sudah ada di folder ini"
+  },
+  "cannotMoveIntoSelf": {
+    "message": "Tidak dapat memindahkan folder ke dalam dirinya sendiri"
+  },
+  "bookmarksMoved": {
+    "message": "{0} item dipindahkan"
+  },
+  "deleteSelectedConfirm": {
+    "message": "Hapus {count} item yang dipilih?",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "bookmarksDeleted": {
+    "message": "{count} item dihapus",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "moveBookmarksTitle": {
+    "message": "Pindah {0} item"
+  },
+  "setupTabNew": {
+    "message": "Buat Baru",
+    "description": "Tab label for creating new password"
+  },
+  "setupTabRestore": {
+    "message": "Pulihkan Cadangan",
+    "description": "Tab label for restoring from backup"
+  },
+  "restoreDropTitle": {
+    "message": "Letakkan file cadangan di sini atau klik untuk memilih",
+    "description": "Text for drag & drop area in restore tab"
+  },
+  "strengthWeak": {
+    "message": "Lemah",
+    "description": "Password strength indicator"
+  },
+  "strengthFair": {
+    "message": "Cukup",
+    "description": "Password strength indicator"
+  },
+  "strengthGood": {
+    "message": "Baik",
+    "description": "Password strength indicator"
+  },
+  "strengthStrong": {
+    "message": "Kuat",
+    "description": "Password strength indicator"
+  },
+  "importingBackup": {
+    "message": "Memulihkan cadangan...",
+    "description": "Loading message during backup import"
+  },
+  "unlockTitle": {
+    "message": "Masukkan kata sandi master"
+  },
+  "warningRemember": {
+    "message": "Apakah Anda ingat kata sandi Anda?"
+  },
+  "yesRemember": {
+    "message": "Ya, saya ingat"
+  },
+  "survey": {
+    "message": "Survei Umpan Balik"
+  },
+  "Error": {
+    "message": "Kesalahan"
+  },
+  "changelog": {
+    "message": "Riwayat perubahan"
+  },
+  "rateExtension": {
+    "message": "Beri nilai di Chrome Web Store"
+  },
+  "migrationScreenTitle": {
+    "message": "Pembaruan Diperlukan",
+    "description": "Title on the manager migration screen"
+  },
+  "migrationScreenBody1": {
+    "message": "Ekstensi telah diperbarui dengan keamanan yang ditingkatkan.",
+    "description": "First line on the manager migration screen"
+  },
+  "migrationScreenBody2": {
+    "message": "Buka popup ekstensi untuk memigrasikan data Anda ke format aman yang baru.",
+    "description": "Second line on the manager migration screen"
+  },
+  "notSetUpTitle": {
+    "message": "Ekstensi Belum Dikonfigurasi",
+    "description": "manager-lock: notSetUpTitle"
+  },
+  "notSetUpSubtitle": {
+    "message": "Ekstensi belum dikonfigurasi. Buka popup ekstensi untuk membuat kata sandi.",
+    "description": "manager-lock: notSetUpSubtitle"
+  },
+  "notSetUpButton": {
+    "message": "Buka Popup",
+    "description": "manager-lock: notSetUpButton"
+  },
+  "reloadingSubtitle": {
+    "message": "Pengelola sedang dimuat ulang...",
+    "description": "manager-lock: reloadingSubtitle"
+  },
+  "reloadingWait": {
+    "message": "Harap tunggu sementara pengelola diperbarui",
+    "description": "manager-lock: reloadingWait"
+  },
+  "exportHtml": {
+    "message": "Ekspor ke HTML"
+  },
+  "exportHtmlNote": {
+    "message": "Format Netscape Bookmarks"
+  },
+  "exportHtmlSuccess": {
+    "message": "Ekspor HTML berhasil"
+  },
+  "exportHtmlConfirmTitle": {
+    "message": "Konfirmasi kata sandi Anda"
+  },
+  "exportHtmlConfirmDesc": {
+    "message": "Bookmark Anda akan diekspor sebagai teks biasa. Masukkan kata sandi master untuk mengonfirmasi."
+  },
+  "exportHtmlPasswordRequired": {
+    "message": "Harap masukkan kata sandi Anda"
+  },
+  "exportHtmlConfirmBtn": {
+    "message": "Ekspor"
+  },
+  "exportHtmlVerifying": {
+    "message": "Memverifikasi kata sandi…"
+  },
+  "copiedToClipboard": {
+    "message": "Disalin ke clipboard!"
+  },
+  "copyFailed": {
+    "message": "Gagal menyalin"
+  },
+  "clickToCopy": {
+    "message": "Klik untuk menyalin"
+  },
+  "qrCodeFor": {
+    "message": "Kode QR untuk $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "quickCloseTab": {
+    "message": "Tutup tab cepat ($1)"
+  },
+  "quickCloseTabDesc": {
+    "message": "Menutup tab saat ini dan menghapus riwayat penjelajahan untuk domainnya"
+  },
+  "quickCloseTabCommand": {
+    "message": "Tutup tab dan hapus riwayat domain"
+  },
+  "changeShortcut": {
+    "message": "Ubah pintasan"
+  },
+  "actions": {
+    "message": "Tindakan"
+  },
+  "qrCode": {
+    "message": "Kode QR"
+  },
+  "qrScanHint": {
+    "message": "Pindai kode QR untuk membuka tautan di perangkat Anda."
+  },
+  "stayUnlocked": {
+    "message": "Tetap terbuka antar sesi"
+  },
+  "stayUnlockedDesc": {
+    "message": "Membuat Anda tetap terbuka selama browser terbuka"
+  },
+  "stayUnlockedWarning": {
+    "message": "Mengurangi keamanan: kunci enkripsi disimpan dalam penyimpanan sesi browser. Siapa pun yang memiliki akses ke profil browser Anda berpotensi membacanya."
+  },
+  "alwaysIncognito": {
+    "message": "Selalu buka bookmark dalam mode penyamaran"
+  },
+  "alwaysIncognitoDesc": {
+    "message": "Semua bookmark akan dibuka di jendela pribadi"
+  },
+  "enable": {
+    "message": "Aktifkan"
+  },
+  "managerIsOpen": {
+    "message": "Pengelola Bookmark terbuka"
+  },
+  "managerIsOpenDesc": {
+    "message": "Tutup tab pengelola bookmark untuk menggunakan popup."
+  },
+  "switchToManager": {
+    "message": "Beralih ke Pengelola"
+  },
+  "hotkeys": {
+    "message": "Pintasan keyboard"
+  },
+  "lockExtensionCommand": {
+    "message": "Kunci ekstensi"
+  },
+  "openManagerCommand": {
+    "message": "Buka pengelola bookmark"
+  },
+  "blurPage": {
+    "message": "Kaburkan halaman ($1)"
+  },
+  "blurPageDesc": {
+    "message": "Mengaburkan tab saat ini ketika diaktifkan"
+  },
+  "blurPageCommand": {
+    "message": "Kaburkan halaman"
+  },
+  "invalidUrlProtocol": {
+    "message": "Masukkan URL valid yang dimulai dengan http:// atau https://"
+  },
+  "openAll": {
+    "message": "Buka semua"
+  },
+  "openAllWindow": {
+    "message": "Buka semua di jendela baru"
+  },
+  "openAllGroup": {
+    "message": "Buka semua di grup tab baru"
+  },
+  "openAllIncognito": {
+    "message": "Buka semua dalam mode penyamaran"
+  },
+  "saveAllTabs": {
+    "message": "Simpan semua tab terbuka"
+  },
+  "noTabsToSave": {
+    "message": "Tidak ada tab untuk disimpan"
+  },
+  "tabsSaved": {
+    "message": "Tab disimpan"
+  },
+  "searchInFolder": {
+    "message": "Cari di folder..."
+  },
+  "reportBug": {
+    "message": "Laporkan Bug"
+  },
+  "managerSubtitle": {
+    "message": "Kendali penuh atas bookmark Anda"
+  },
+  "browserDropHint": {
+    "message": "Lepaskan di sini untuk menambahkan bookmark"
+  },
+  "openIncognitoWindow": {
+    "message": "Beralih ke mode penyamaran"
+  },
+  "incognitoAccessRequired": {
+    "message": "Diperlukan akses mode penyamaran"
+  },
+  "incognitoAccessDesc": {
+    "message": "Untuk menggunakan fitur ini, aktifkan akses mode penyamaran di pengaturan ekstensi."
+  },
+  "openExtensionSettings": {
+    "message": "Buka pengaturan"
+  }
 }

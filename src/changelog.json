@@ -1,5 +1,11 @@
 [
 {
+  "version": "1.8.5.66",
+  "changes": [
+    "Added 'Switch to incognito' button in the popup toolbar — opens a new incognito window with the extension active"
+  ]
+},
+{
   "version": "1.8.5.65",
   "changes": [
     "Extended drag-and-drop: you can now drop links from the browser directly into the manager to save them as bookmarks"

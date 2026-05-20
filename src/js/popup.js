@@ -197,6 +197,52 @@ async function openManager() {
     }
 }
 
+async function openIncognito() {
+    const allowed = await chrome.extension.isAllowedIncognitoAccess();
+    if (!allowed) {
+        const existing = document.getElementById('incognito-access-modal');
+        if (existing) { openModal(existing); return; }
+        const modal = document.createElement('div');
+        modal.id = 'incognito-access-modal';
+        modal.className = 'hpb-modal';
+        modal.innerHTML = `
+            <div class="hpb-modal__dialog hpb-modal__dialog--xs">
+                <h2 class="hpb-modal__title hpb-modal__title--center">${getMessage('incognitoAccessRequired')}</h2>
+                <div class="hpb-modal__body">
+                    <p style="text-align:center;margin:0">${getMessage('incognitoAccessDesc')}</p>
+                </div>
+                <div class="hpb-modal__footer">
+                    <button id="incognito-open-settings" class="hpb-btn btn-primary">${getMessage('openExtensionSettings')}</button>
+                    <button id="incognito-cancel" class="btn-secondary">${getMessage('cancel')}</button>
+                </div>
+            </div>`;
+        const close = () => closeModalWithAnimation(modal, () => modal.remove());
+        modal.querySelector('#incognito-open-settings').addEventListener('click', () => { chrome.tabs.create({ url: 'chrome://extensions/?id=' + chrome.runtime.id }); close(); window.close(); });
+        modal.querySelector('#incognito-cancel').addEventListener('click', close);
+        modal.addEventListener('click', e => { if (e.target === modal) close(); });
+        document.body.appendChild(modal);
+        openModal(modal);
+        return;
+    }
+    window.close();
+    chrome.windows.create({ url: 'chrome://newtab', incognito: true }, (win) => {
+        if (win) {
+            chrome.action.openPopup({ windowId: win.id }).catch(() => {});
+        }
+    });
+}
+
+async function initIncognitoButton() {
+    const incognitoBtn = document.getElementById('incognito-btn');
+    const managerBtn = document.getElementById('manager-btn');
+    const win = await chrome.windows.getCurrent();
+    if (win.incognito) {
+        if (managerBtn) managerBtn.style.display = 'none';
+    } else {
+        if (incognitoBtn) incognitoBtn.style.display = '';
+    }
+}
+
 // Favicon toggle
 
 async function initFaviconToggle() {
@@ -605,6 +651,7 @@ async function init() {
     initStayUnlockedToggle();
     initAlwaysIncognitoToggle();
     initBlurPageToggle();
+    initIncognitoButton();
 
     
     const [stored, session, stayPref] = await Promise.all([
@@ -685,6 +732,7 @@ async function init() {
         '#back':                     () => PopupUI.showSection('main'),
         '#change-pass':              () => PopupAuth.changeMasterPassword(),
         '#manager-btn':              openManager,
+        '#incognito-btn':            openIncognito,
         '#report-bug-btn':           () => chrome.tabs.create({ url: 'https://github.com/OSV-IT-Studio/holy-private-bookmarks/issues' }),
         '#faq-btn':                  () => chrome.tabs.create({ url: 'https://osv-it-studio.github.io/holy-private-bookmarks#faq' }),
 		'#survey-btn':               () => chrome.tabs.create({ url: 'https://docs.google.com/forms/d/e/1FAIpQLSfcEpeT2NA9b3XxZeR6gJjiUFBLgMJ0xE0kb0zolPssykLTag/viewform' }),
