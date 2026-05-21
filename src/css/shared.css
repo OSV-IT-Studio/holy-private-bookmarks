@@ -14,6 +14,7 @@
 
 .hpb-modal__icon{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;margin-bottom:16px;transition:all .2s}
 .hpb-modal__icon--danger{background:var(--danger-tint-sm);color:var(--danger-hex);box-shadow:0 0 0 1px var(--danger-tint-lg)}
+.hpb-modal__icon--info{background:var(--accent-tint-sm);color:var(--btn-accent);box-shadow:0 0 0 1px var(--accent-tint-sm)}
 .hpb-modal__icon svg{width:28px;height:28px;stroke-width:1.8;stroke:currentColor}
 
 .hpb-modal__desc{font-size:.875rem;color:var(--text-secondary);text-align:center;line-height:1.6;margin:auto;}
