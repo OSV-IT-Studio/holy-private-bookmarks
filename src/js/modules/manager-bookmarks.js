@@ -43,6 +43,7 @@
     let _dataVersion = Date.now();
 
     function _getDataVersion() { return _dataVersion; }
+
     function _bumpDataVersion() { _dataVersion = Date.now(); }
 
     function clearBookmarksCache() {
@@ -213,8 +214,14 @@
                                 urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
                             });
                         } else if (btn.dataset.action === 'open-all-incognito') {
-                            chrome.windows.create({ url: urls[0], incognito: true, focused: true }, win => {
-                                urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
+                            chrome.extension.isAllowedIncognitoAccess().then(allowed => {
+                                if (allowed) {
+                                    chrome.windows.create({ url: urls[0], incognito: true, focused: true }, win => {
+                                        urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
+                                    });
+                                } else {
+                                    _deps.showIncognitoAccessModal();
+                                }
                             });
                         } else if (btn.dataset.action === 'open-all-group') {
                             (async () => {

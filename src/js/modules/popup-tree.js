@@ -226,14 +226,19 @@ const PopupTree = (function () {
     }
 
     function _buildPopupFolderPanel(uid, getMessage) {
-        return QuickActions.buildPanel([
-            { action: 'open-all',           title: getMessage('openAll'),           icon: 'openAll',       dataset: { uid } },
-            { action: 'open-all-window',    title: getMessage('openAllWindow'),     icon: 'openWindow',    dataset: { uid } },
-            { action: 'open-all-group',     title: getMessage('openAllGroup'),      icon: 'openGroup',     dataset: { uid } },
-            { action: 'open-all-incognito', title: getMessage('openAllIncognito'),  icon: 'openIncognito', className: 'private', dataset: { uid } },
+        const buttons = [
+            { action: 'open-all',        title: getMessage('openAll'),        icon: 'openAll',    dataset: { uid } },
+            { action: 'open-all-window', title: getMessage('openAllWindow'),  icon: 'openWindow', dataset: { uid } },
+            { action: 'open-all-group',  title: getMessage('openAllGroup'),   icon: 'openGroup',  dataset: { uid } },
+        ];
+        if (!_deps.isAlwaysIncognito || !_deps.isAlwaysIncognito()) {
+            buttons.push({ action: 'open-all-incognito', title: getMessage('openAllIncognito'), icon: 'openIncognito', className: 'private', dataset: { uid } });
+        }
+        buttons.push(
             { action: 'rename', title: getMessage('rename'), icon: 'rename', dataset: { uid } },
             { action: 'delete', title: getMessage('delete'), icon: 'delete', className: 'delete', dataset: { uid } },
-        ]);
+        );
+        return QuickActions.buildPanel(buttons);
     }
 
     function _buildPopupBookmarkPanel(uid, url, getMessage) {
@@ -294,24 +299,47 @@ const PopupTree = (function () {
                     showNotification(getMessage('noBookmarksInFolder') || 'No bookmarks in folder', true);
                     return;
                 }
+                const alwaysIncognito = _deps.isAlwaysIncognito && _deps.isAlwaysIncognito();
                 if (action === 'open-all') {
-                    urls.forEach(url => chrome.tabs.create({ url, active: false }));
+                    if (alwaysIncognito) {
+                        chrome.windows.create({ url: urls[0], incognito: true, focused: true }, win => {
+                            urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
+                        });
+                    } else {
+                        urls.forEach(url => chrome.tabs.create({ url, active: false }));
+                    }
                 } else if (action === 'open-all-window') {
-                    chrome.windows.create({ url: urls[0], focused: true }, win => {
+                    chrome.windows.create({ url: urls[0], incognito: alwaysIncognito, focused: true }, win => {
                         urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
                     });
                 } else if (action === 'open-all-incognito') {
-                    chrome.windows.create({ url: urls[0], incognito: true, focused: true }, win => {
-                        urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
+                    chrome.extension.isAllowedIncognitoAccess().then(allowed => {
+                        if (allowed) {
+                            chrome.windows.create({ url: urls[0], incognito: true, focused: true }, win => {
+                                urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
+                            });
+                        } else {
+                            _deps.showIncognitoAccessModal();
+                        }
                     });
                 } else if (action === 'open-all-group') {
                     (async () => {
-                        const tabs = await Promise.all(urls.map(url => chrome.tabs.create({ url, active: false })));
-                        const tabIds = tabs.map(t => t.id);
-                        if (chrome.tabGroups) {
-                            const groupId = await chrome.tabs.group({ tabIds });
-                            if (folder.name) {
-                                await chrome.tabGroups.update(groupId, { title: folder.name });
+                        let windowId;
+                        if (alwaysIncognito) {
+                            const win = await chrome.windows.create({ url: urls[0], incognito: true, focused: true });
+                            windowId = win.id;
+                            const extraTabs = await Promise.all(urls.slice(1).map(url => chrome.tabs.create({ url, windowId, active: false })));
+                            const tabIds = [win.tabs[0].id, ...extraTabs.map(t => t.id)];
+                            if (chrome.tabGroups) {
+                                const groupId = await chrome.tabs.group({ tabIds, createProperties: { windowId } });
+                                if (folder.name) await chrome.tabGroups.update(groupId, { title: folder.name });
+                            }
+                        } else {
+                            const tabs = await Promise.all(urls.map(url => chrome.tabs.create({ url, active: false })));
+                            const tabIds = tabs.map(t => t.id);
+                            if (chrome.tabGroups) {
+                                const groupId = await chrome.tabs.group({ tabIds });
+                                if (folder.name) await chrome.tabGroups.update(groupId, { title: folder.name });
                             }
                         }
                     })();

@@ -709,6 +709,37 @@ async function saveEncrypted(data, cryptoManager) {
 
     // PRIVATE TABS 
     
+    function showIncognitoAccessModal() {
+        const existing = document.getElementById('incognito-access-modal');
+        if (existing) { openModal(existing); return; }
+        const modal = document.createElement('div');
+        modal.id = 'incognito-access-modal';
+        modal.className = 'hpb-modal';
+        modal.innerHTML = `
+            <div class="hpb-modal__dialog hpb-modal__dialog--xs">
+                <div class="hpb-modal__icon hpb-modal__icon--info">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18a2 2 0 0 0-4 0"/><path d="m19 11-2.11-6.657a2 2 0 0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11"/><path d="M2 11h20"/><circle cx="17" cy="18" r="3"/><circle cx="7" cy="18" r="3"/></svg>
+                </div>
+                <h2 class="hpb-modal__title hpb-modal__title--center">${getMessage('incognitoAccessRequired')}</h2>
+                <div class="hpb-modal__body">
+                    <p style="text-align:center;margin:0">${getMessage('incognitoAccessDesc')}</p>
+                </div>
+                <div class="hpb-modal__footer">
+                    <button id="incognito-open-settings" class="hpb-btn btn-primary">${getMessage('openExtensionSettings')}</button>
+                    <button id="incognito-cancel" class="btn-secondary">${getMessage('cancel')}</button>
+                </div>
+            </div>`;
+        const close = () => _closeModalWithAnimation(modal, () => modal.remove());
+        modal.querySelector('#incognito-open-settings').addEventListener('click', () => {
+            chrome.tabs.create({ url: 'chrome://extensions/?id=' + chrome.runtime.id });
+            close();
+        });
+        modal.querySelector('#incognito-cancel').addEventListener('click', close);
+        modal.addEventListener('click', e => { if (e.target === modal) close(); });
+        document.body.appendChild(modal);
+        openModal(modal);
+    }
+
 
 function openInPrivateTab(url, showNotificationFn = showNotification, getMessageFn = getMessage) {
     try {
@@ -1405,6 +1436,7 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             
             
             openInPrivateTab,
+            showIncognitoAccessModal,
             
             
             convertChromeBookmarks,
@@ -1477,6 +1509,7 @@ function buildFolderTreePicker(container, folders, initialValue, onChange) {
             escapeHtml,
             
             openInPrivateTab,
+            showIncognitoAccessModal,
             
             convertChromeBookmarks,
             collectAllBookmarkUrls,

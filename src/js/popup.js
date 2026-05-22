@@ -88,6 +88,7 @@ const {
     escapeHtml,
 
     openInPrivateTab,
+    showIncognitoAccessModal,
     collectAllBookmarkUrls,
     convertChromeBookmarks,
 
@@ -200,32 +201,8 @@ async function openManager() {
 async function openIncognito() {
     const allowed = await chrome.extension.isAllowedIncognitoAccess();
     if (!allowed) {
-        const existing = document.getElementById('incognito-access-modal');
-        if (existing) { openModal(existing); return; }
-        const modal = document.createElement('div');
-        modal.id = 'incognito-access-modal';
-        modal.className = 'hpb-modal';
-        modal.innerHTML = `
-            <div class="hpb-modal__dialog hpb-modal__dialog--xs">
-			<div class="hpb-modal__icon hpb-modal__icon--info">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hat-glasses-icon lucide-hat-glasses"><path d="M14 18a2 2 0 0 0-4 0"></path><path d="m19 11-2.11-6.657a2 2 0 0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11"></path><path d="M2 11h20"></path><circle cx="17" cy="18" r="3"></circle><circle cx="7" cy="18" r="3"></circle></svg>
-                    </div>
-                <h2 class="hpb-modal__title hpb-modal__title--center">${getMessage('incognitoAccessRequired')}</h2>
-                <div class="hpb-modal__body">
-                    <p style="text-align:center;margin:0">${getMessage('incognitoAccessDesc')}</p>
-                </div>
-                <div class="hpb-modal__footer">
-                    <button id="incognito-open-settings" class="hpb-btn btn-primary">${getMessage('openExtensionSettings')}</button>
-                    <button id="incognito-cancel" class="btn-secondary">${getMessage('cancel')}</button>
-                </div>
-            </div>`;
-        const close = () => closeModalWithAnimation(modal, () => modal.remove());
-        modal.querySelector('#incognito-open-settings').addEventListener('click', () => { chrome.tabs.create({ url: 'chrome://extensions/?id=' + chrome.runtime.id }); close(); window.close(); });
-        modal.querySelector('#incognito-cancel').addEventListener('click', close);
-        modal.addEventListener('click', e => { if (e.target === modal) close(); });
-        document.body.appendChild(modal);
-        openModal(modal);
-        return;
+        showIncognitoAccessModal();
+		 return;
     }
     window.close();
     chrome.windows.create({ url: 'chrome://newtab', incognito: true }, (win) => {
@@ -339,8 +316,18 @@ async function initAlwaysIncognitoToggle() {
     const toggle = document.getElementById('always-incognito-toggle');
     if (!toggle) return;
     toggle.checked = isAlwaysIncognito();
-    toggle.addEventListener('change', e => {
-        setAlwaysIncognito(e.target.checked);
+    toggle.addEventListener('change', async e => {
+        if (!e.target.checked) {
+            setAlwaysIncognito(false);
+            return;
+        }
+        const allowed = await chrome.extension.isAllowedIncognitoAccess();
+        if (allowed) {
+            setAlwaysIncognito(true);
+        } else {
+            toggle.checked = false;
+            showIncognitoAccessModal();
+        }
     });
 }
 
@@ -420,6 +407,7 @@ function buildDeps() {
         closeModalWithAnimation,
         createModalEscHandler,
         createBookmarkModal,
+        showIncognitoAccessModal,
         // Cross-module calls
         showSection:          (id) => PopupUI.showSection(id),
         renderTree:           () => PopupTree.renderTree(),

@@ -1,4 +1,13 @@
 [
+{
+  "version": "1.8.5.68",
+  "changes": [
+    "When 'Always open in incognito' is enabled, all folder actions (open all, open all in new window, open all in tab group) now open in incognito mode",
+    "The 'Open all in incognito' button is now hidden when 'Always open in incognito' is already enabled — it becomes redundant",
+    "Enabling 'Always open in incognito' now shows a prompt if the extension doesn't have permission to access incognito mode",
+    "Clicking 'Open all in incognito' now also checks for incognito permission and shows a prompt if it's missing"
+  ]
+},
   {
     "version": "1.8.5.67",
     "changes": [
