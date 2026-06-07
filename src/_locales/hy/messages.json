@@ -915,5 +915,11 @@
   },
   "openExtensionSettings": {
     "message": "Բացել կարգավորումները"
+  },
+  "saveTabHere": {
+    "message": "Պահել ներդիրը այստեղ"
+  },
+  "tabSavedHere": {
+    "message": "Ներդիրը պահված է թղթապանակում"
   }
 }

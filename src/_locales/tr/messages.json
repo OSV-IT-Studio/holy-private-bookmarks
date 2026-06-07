@@ -915,5 +915,11 @@
   },
   "openExtensionSettings": {
     "message": "Ayarları aç"
+  },
+  "saveTabHere": {
+    "message": "Sekmeyi buraya kaydet"
+  },
+  "tabSavedHere": {
+    "message": "Sekme klasöre kaydedildi"
   }
 }

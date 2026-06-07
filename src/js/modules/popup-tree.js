@@ -235,6 +235,7 @@ const PopupTree = (function () {
             buttons.push({ action: 'open-all-incognito', title: getMessage('openAllIncognito'), icon: 'openIncognito', className: 'private', dataset: { uid } });
         }
         buttons.push(
+            { action: 'save-tab-here', title: getMessage('saveTabHere'), icon: 'saveTabHere', dataset: { uid } },
             { action: 'rename', title: getMessage('rename'), icon: 'rename', dataset: { uid } },
             { action: 'delete', title: getMessage('delete'), icon: 'delete', className: 'delete', dataset: { uid } },
         );
@@ -344,6 +345,33 @@ const PopupTree = (function () {
                         }
                     })();
                 }
+                return;
+            }
+
+            if (action === 'save-tab-here') {
+                if (!uid) return;
+                const folder = _deps.getItemByUid(_deps.getData(), uid);
+                if (!folder || !folder.children) {
+                    showNotification(getMessage('folderNotFound') || 'Folder not found', true);
+                    return;
+                }
+                chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+                    const tab = tabs && tabs[0];
+                    if (!tab || !tab.url || !tab.url.startsWith('http')) {
+                        showNotification(getMessage('noTabsToSave') || 'No tabs to save', true);
+                        return;
+                    }
+                    const bookmark = {
+                        type: 'bookmark',
+                        title: tab.title || tab.url,
+                        url: tab.url,
+                        dateAdded: Date.now(),
+                        uid: _deps.generateFolderUid(),
+                    };
+                    folder.children.push(bookmark);
+                    _deps.saveAndRefresh();
+                    showNotification(getMessage('tabSavedHere') || 'Tab saved to folder');
+                });
                 return;
             }
 

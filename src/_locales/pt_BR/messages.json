@@ -915,5 +915,11 @@
   },
   "openExtensionSettings": {
     "message": "Abrir configurações"
+  },
+  "saveTabHere": {
+    "message": "Salvar aba aqui"
+  },
+  "tabSavedHere": {
+    "message": "Aba salva na pasta"
   }
 }

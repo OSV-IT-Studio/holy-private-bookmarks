@@ -915,5 +915,11 @@
   },
   "openExtensionSettings": {
     "message": "Öppna inställningar"
+  },
+  "saveTabHere": {
+    "message": "Spara flik här"
+  },
+  "tabSavedHere": {
+    "message": "Flik sparad i mapp"
   }
 }

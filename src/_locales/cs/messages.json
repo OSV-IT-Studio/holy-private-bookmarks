@@ -915,5 +915,11 @@
   },
   "openExtensionSettings": {
     "message": "Otevřít nastavení"
+  },
+  "saveTabHere": {
+    "message": "Uložit kartu sem"
+  },
+  "tabSavedHere": {
+    "message": "Karta uložena do složky"
   }
 }

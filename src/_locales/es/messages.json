@@ -915,5 +915,11 @@
   },
   "openExtensionSettings": {
     "message": "Abrir configuración"
+  },
+  "saveTabHere": {
+    "message": "Guardar pestaña aquí"
+  },
+  "tabSavedHere": {
+    "message": "Pestaña guardada en la carpeta"
   }
 }

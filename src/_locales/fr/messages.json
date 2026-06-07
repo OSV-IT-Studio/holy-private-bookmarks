@@ -915,5 +915,11 @@
   },
   "openExtensionSettings": {
     "message": "Ouvrir les paramètres"
+  },
+  "saveTabHere": {
+    "message": "Enregistrer l'onglet ici"
+  },
+  "tabSavedHere": {
+    "message": "Onglet enregistré dans le dossier"
   }
 }

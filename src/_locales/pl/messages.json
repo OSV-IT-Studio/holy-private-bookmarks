@@ -915,5 +915,11 @@
   },
   "openExtensionSettings": {
     "message": "Otwórz ustawienia"
+  },
+  "saveTabHere": {
+    "message": "Zapisz kartę tutaj"
+  },
+  "tabSavedHere": {
+    "message": "Karta zapisana w folderze"
   }
 }

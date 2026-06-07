@@ -915,5 +915,11 @@
   },
   "openExtensionSettings": {
     "message": "فتح الإعدادات"
+  },
+  "saveTabHere": {
+    "message": "حفظ علامة التبويب هنا"
+  },
+  "tabSavedHere": {
+    "message": "تم حفظ علامة التبويب في المجلد"
   }
 }

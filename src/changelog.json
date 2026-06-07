@@ -1,5 +1,11 @@
 [
 {
+  "version": "1.8.5.69",
+  "changes": [
+    "Save tab to folder: added 'Save tab here' button to folder quick-actions — saves the current active tab directly into the selected folder"
+  ]
+},
+{
   "version": "1.8.5.68",
   "changes": [
     "When 'Always open in incognito' is enabled, all folder actions (open all, open all in new window, open all in tab group) now open in incognito mode",

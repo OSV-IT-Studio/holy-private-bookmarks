@@ -915,5 +915,11 @@
   },
   "openExtensionSettings": {
     "message": "設定を開く"
+  },
+  "saveTabHere": {
+    "message": "このフォルダにタブを保存"
+  },
+  "tabSavedHere": {
+    "message": "タブをフォルダに保存しました"
   }
 }

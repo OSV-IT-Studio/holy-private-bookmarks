@@ -915,5 +915,11 @@
   },
   "openExtensionSettings": {
     "message": "설정 열기"
+  },
+  "saveTabHere": {
+    "message": "여기에 탭 저장"
+  },
+  "tabSavedHere": {
+    "message": "탭이 폴더에 저장되었습니다"
   }
 }

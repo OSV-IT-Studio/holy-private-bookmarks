@@ -915,5 +915,11 @@
   },
   "openExtensionSettings": {
     "message": "Deschide setările"
+  },
+  "saveTabHere": {
+    "message": "Salvează tab aici"
+  },
+  "tabSavedHere": {
+    "message": "Tab salvat în dosar"
   }
 }

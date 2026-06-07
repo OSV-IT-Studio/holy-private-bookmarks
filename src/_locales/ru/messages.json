@@ -913,5 +913,11 @@
   },
   "openExtensionSettings": {
     "message": "Открыть настройки"
+  },
+  "saveTabHere": {
+    "message": "Сохранить вкладку сюда"
+  },
+  "tabSavedHere": {
+    "message": "Вкладка сохранена в папку"
   }
 }

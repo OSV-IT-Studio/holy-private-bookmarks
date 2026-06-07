@@ -915,5 +915,11 @@
   },
   "openExtensionSettings": {
     "message": "เปิดการตั้งค่า"
+  },
+  "saveTabHere": {
+    "message": "บันทึกแท็บที่นี่"
+  },
+  "tabSavedHere": {
+    "message": "บันทึกแท็บไปยังโฟลเดอร์แล้ว"
   }
 }
