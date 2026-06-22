@@ -1,4 +1,10 @@
 [
+  {
+    "version": "1.8.5.70",
+    "changes": [
+      "Minor UI display fixes"
+    ]
+  },
 {
   "version": "1.8.5.69",
   "changes": [

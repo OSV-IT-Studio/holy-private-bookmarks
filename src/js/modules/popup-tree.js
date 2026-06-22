@@ -23,6 +23,10 @@ const PopupTree = (function () {
     let _deps = {};
     let _eventHandlersInitialized = false;
 
+    function _parsePath(pathStr, fallback = []) {
+        return pathStr ? pathStr.split(',').map(Number) : fallback;
+    }
+
     function renderEmptyState(container) {
         const { getMessage } = _deps;
         container.innerHTML = `
@@ -103,9 +107,7 @@ const PopupTree = (function () {
 
         if (!sub.hasChildNodes() || sub.children.length === 0) {
             const uid       = folderItem.dataset.folderUid || null;
-            const pathArray = folderItem.dataset.path
-                ? folderItem.dataset.path.split(',').map(Number)
-                : [];
+            const pathArray = _parsePath(folderItem.dataset.path);
 
             if (pathArray.some(n => !Number.isInteger(n) || n < 0)) {
                 folderItem.classList.remove('loading');
@@ -125,7 +127,7 @@ const PopupTree = (function () {
 
                 if (virtualScrollCache?.getFolderContainer) {
                     const actualPath = uid
-                        ? (folderItem.dataset.path ? folderItem.dataset.path.split(',').map(Number) : pathArray)
+                        ? (_parsePath(folderItem.dataset.path, pathArray))
                         : pathArray;
                     const folderData = virtualScrollCache.getFolderContainer(actualPath);
                     folderData.totalItems   = folder.children.length;
@@ -255,6 +257,32 @@ const PopupTree = (function () {
         return QuickActions.buildPanel(actions);
     }
 
+    function _openUrlsInNewWindow(urls, incognito) {
+        chrome.windows.create({ url: urls[0], incognito, focused: true }, win => {
+            urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
+        });
+    }
+
+    async function _openUrlsAsTabGroup(urls, incognito, groupTitle) {
+        let tabIds;
+        let windowId;
+
+        if (incognito) {
+            const win = await chrome.windows.create({ url: urls[0], incognito: true, focused: true });
+            windowId = win.id;
+            const extraTabs = await Promise.all(urls.slice(1).map(url => chrome.tabs.create({ url, windowId, active: false })));
+            tabIds = [win.tabs[0].id, ...extraTabs.map(t => t.id)];
+        } else {
+            const tabs = await Promise.all(urls.map(url => chrome.tabs.create({ url, active: false })));
+            tabIds = tabs.map(t => t.id);
+        }
+
+        if (chrome.tabGroups) {
+            const groupId = await chrome.tabs.group({ tabIds, ...(windowId ? { createProperties: { windowId } } : {}) });
+            if (groupTitle) await chrome.tabGroups.update(groupId, { title: groupTitle });
+        }
+    }
+
     async function handleTreeClick(e) {
 
         const trigger = e.target.closest('.quick-actions-trigger');
@@ -301,49 +329,25 @@ const PopupTree = (function () {
                     return;
                 }
                 const alwaysIncognito = _deps.isAlwaysIncognito && _deps.isAlwaysIncognito();
+
                 if (action === 'open-all') {
                     if (alwaysIncognito) {
-                        chrome.windows.create({ url: urls[0], incognito: true, focused: true }, win => {
-                            urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
-                        });
+                        _openUrlsInNewWindow(urls, true);
                     } else {
                         urls.forEach(url => chrome.tabs.create({ url, active: false }));
                     }
                 } else if (action === 'open-all-window') {
-                    chrome.windows.create({ url: urls[0], incognito: alwaysIncognito, focused: true }, win => {
-                        urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
-                    });
+                    _openUrlsInNewWindow(urls, alwaysIncognito);
                 } else if (action === 'open-all-incognito') {
                     chrome.extension.isAllowedIncognitoAccess().then(allowed => {
                         if (allowed) {
-                            chrome.windows.create({ url: urls[0], incognito: true, focused: true }, win => {
-                                urls.slice(1).forEach(url => chrome.tabs.create({ url, windowId: win.id, active: false }));
-                            });
+                            _openUrlsInNewWindow(urls, true);
                         } else {
                             _deps.showIncognitoAccessModal();
                         }
                     });
                 } else if (action === 'open-all-group') {
-                    (async () => {
-                        let windowId;
-                        if (alwaysIncognito) {
-                            const win = await chrome.windows.create({ url: urls[0], incognito: true, focused: true });
-                            windowId = win.id;
-                            const extraTabs = await Promise.all(urls.slice(1).map(url => chrome.tabs.create({ url, windowId, active: false })));
-                            const tabIds = [win.tabs[0].id, ...extraTabs.map(t => t.id)];
-                            if (chrome.tabGroups) {
-                                const groupId = await chrome.tabs.group({ tabIds, createProperties: { windowId } });
-                                if (folder.name) await chrome.tabGroups.update(groupId, { title: folder.name });
-                            }
-                        } else {
-                            const tabs = await Promise.all(urls.map(url => chrome.tabs.create({ url, active: false })));
-                            const tabIds = tabs.map(t => t.id);
-                            if (chrome.tabGroups) {
-                                const groupId = await chrome.tabs.group({ tabIds });
-                                if (folder.name) await chrome.tabGroups.update(groupId, { title: folder.name });
-                            }
-                        }
-                    })();
+                    _openUrlsAsTabGroup(urls, alwaysIncognito, folder.name);
                 }
                 return;
             }
@@ -352,13 +356,13 @@ const PopupTree = (function () {
                 if (!uid) return;
                 const folder = _deps.getItemByUid(_deps.getData(), uid);
                 if (!folder || !folder.children) {
-                    showNotification(getMessage('folderNotFound') || 'Folder not found', true);
+                    showNotification(getMessage('folderNotFound'), true);
                     return;
                 }
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
                     const tab = tabs && tabs[0];
                     if (!tab || !tab.url || !tab.url.startsWith('http')) {
-                        showNotification(getMessage('noTabsToSave') || 'No tabs to save', true);
+                        showNotification(getMessage('noTabsToSave'), true);
                         return;
                     }
                     const bookmark = {
@@ -369,8 +373,12 @@ const PopupTree = (function () {
                         uid: _deps.generateFolderUid(),
                     };
                     folder.children.push(bookmark);
-                    _deps.saveAndRefresh();
-                    showNotification(getMessage('tabSavedHere') || 'Tab saved to folder');
+
+                    _appendBookmarkInline(folder, uid, bookmark);
+                    if (window.PopupSearch) PopupSearch.invalidateIndex();
+                    _deps.saveChanges();
+
+                    showNotification(getMessage('tabSavedHere'));
                 });
                 return;
             }
@@ -437,6 +445,57 @@ const PopupTree = (function () {
         return path.join(',');
     }
 
+    function _appendBookmarkInline(folder, folderUid, bookmark) {
+        const folderEl = document.querySelector(`#tree .tree-item[data-folder-uid="${folderUid}"]`);
+        if (!folderEl) return false;
+
+        const badge = folderEl.querySelector('.folder-badge');
+        if (badge) badge.textContent = _deps.countItemsInFolder(folder);
+
+        let ancestor = folderEl.parentElement?.closest?.('.tree-item');
+        while (ancestor) {
+            const aUid = ancestor.dataset.folderUid;
+            if (aUid) {
+                const aFolder = _deps.getItemByUid(_deps.getData(), aUid);
+                if (aFolder && aFolder.type === 'folder') {
+                    const aBadge = ancestor.querySelector('.folder-badge');
+                    if (aBadge) aBadge.textContent = _deps.countItemsInFolder(aFolder);
+                }
+            }
+            ancestor = ancestor.parentElement?.closest?.('.tree-item');
+        }
+
+        const sub = folderEl.querySelector(':scope > .subitems');
+        if (!sub || sub.classList.contains('collapsed')) return false;
+
+        const container = sub.querySelector('.folder-virtual-scroll');
+        if (!container) return false;
+
+        const emptyMsg = container.querySelector(':scope > .empty-folder-message');
+        if (emptyMsg) emptyMsg.remove();
+
+        const folderPath = _parsePath(folderEl.dataset.path);
+        const folderData = _deps.virtualScrollCache?.getFolderContainer?.(folderPath);
+
+        const hasLoadMore = !!container.querySelector('.load-more-sentinel');
+        if (hasLoadMore) {
+            if (folderData) folderData.totalItems = folder.children.length;
+            return true;
+        }
+
+        const newPath = [...folderPath, folder.children.length - 1];
+        const newEl = createBookmarkElement(bookmark, newPath);
+        container.appendChild(newEl);
+
+        if (folderData) {
+            folderData.totalItems   = folder.children.length;
+            folderData.visibleCount = (folderData.visibleCount || 0) + 1;
+        }
+
+        DragDropManager.refreshDragItems();
+        return true;
+    }
+
     function removeLoadMoreButton(container) {
         const key = container.dataset && container.dataset.folderKey;
         if (key && _sentinels.has(key)) {
@@ -479,7 +538,7 @@ const PopupTree = (function () {
             const actualPath = folderUid
                 ? (() => {
                     const el = document.querySelector(`#tree .tree-item[data-folder-uid="${folderUid}"]`);
-                    return el?.dataset.path ? el.dataset.path.split(',').map(Number) : path;
+                    return el?.dataset.path ? _parsePath(el.dataset.path) : path;
                 })()
                 : path;
 
