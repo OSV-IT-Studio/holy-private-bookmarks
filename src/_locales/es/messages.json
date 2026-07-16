@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Los iconos se cargan a través del servicio de Google"
   },
+  "newBookmarkOnTop": {
+    "message": "Añadir marcadores nuevos arriba"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Los marcadores nuevos aparecerán en la parte superior de la lista en lugar de la inferior"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Marcadores"
+  },
   "bookmarksAndFolders": {
     "message": "Marcadores y Carpetas"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Pestaña guardada en la carpeta"
+  },
+  "duressPassword": {
+    "message": "Contraseña de emergencia"
+  },
+  "duressPasswordHint": {
+    "message": "Si se introduce en la pantalla de desbloqueo, esta contraseña elimina de inmediato y de forma irreversible todos los datos de la extensión."
+  },
+  "newDuressPassword": {
+    "message": "Nueva contraseña de emergencia"
+  },
+  "confirmDuressPassword": {
+    "message": "Confirmar contraseña de emergencia"
+  },
+  "setDuressPassword": {
+    "message": "Establecer contraseña de emergencia"
+  },
+  "disableDuressPassword": {
+    "message": "Desactivar contraseña de emergencia"
+  },
+  "duressPasswordSet": {
+    "message": "Contraseña de emergencia establecida"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "La contraseña de emergencia no puede coincidir con la contraseña maestra"
+  },
+  "duressPasswordSetFailed": {
+    "message": "No se pudo establecer la contraseña de emergencia"
+  },
+  "duressPasswordDisabled": {
+    "message": "Contraseña de emergencia desactivada"
   }
 }

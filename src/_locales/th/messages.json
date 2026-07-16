@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "ไอคอนถูกโหลดผ่านบริการ favicon ของ Google"
   },
+  "newBookmarkOnTop": {
+    "message": "เพิ่มบุ๊กมาร์กใหม่ไว้ด้านบน"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "บุ๊กมาร์กใหม่จะปรากฏที่ด้านบนของรายการแทนที่จะเป็นด้านล่าง"
+  },
+  "bookmarksSectionTitle": {
+    "message": "บุ๊กมาร์ก"
+  },
   "bookmarksAndFolders": {
     "message": "บุ๊กมาร์กและโฟลเดอร์"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "บันทึกแท็บไปยังโฟลเดอร์แล้ว"
+  },
+  "duressPassword": {
+    "message": "รหัสผ่านฉุกเฉิน"
+  },
+  "duressPasswordHint": {
+    "message": "หากป้อนรหัสผ่านนี้ในหน้าจอปลดล็อก ข้อมูลทั้งหมดของส่วนขยายจะถูกลบทันทีและไม่สามารถกู้คืนได้"
+  },
+  "newDuressPassword": {
+    "message": "รหัสผ่านฉุกเฉินใหม่"
+  },
+  "confirmDuressPassword": {
+    "message": "ยืนยันรหัสผ่านฉุกเฉิน"
+  },
+  "setDuressPassword": {
+    "message": "ตั้งรหัสผ่านฉุกเฉิน"
+  },
+  "disableDuressPassword": {
+    "message": "ปิดใช้งานรหัสผ่านฉุกเฉิน"
+  },
+  "duressPasswordSet": {
+    "message": "ตั้งรหัสผ่านฉุกเฉินแล้ว"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "รหัสผ่านฉุกเฉินต้องไม่ตรงกับรหัสผ่านหลัก"
+  },
+  "duressPasswordSetFailed": {
+    "message": "ตั้งรหัสผ่านฉุกเฉินไม่สำเร็จ"
+  },
+  "duressPasswordDisabled": {
+    "message": "ปิดใช้งานรหัสผ่านฉุกเฉินแล้ว"
   }
 }

@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Biểu tượng được tải qua dịch vụ favicon của Google"
   },
+  "newBookmarkOnTop": {
+    "message": "Thêm dấu trang mới lên đầu"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Dấu trang mới sẽ xuất hiện ở đầu danh sách thay vì ở cuối"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Dấu trang"
+  },
   "bookmarksAndFolders": {
     "message": "Dấu trang & Thư mục"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Tab đã được lưu vào thư mục"
+  },
+  "duressPassword": {
+    "message": "Mật khẩu khẩn cấp"
+  },
+  "duressPasswordHint": {
+    "message": "Nếu nhập mật khẩu này ở màn hình mở khóa, toàn bộ dữ liệu của tiện ích sẽ bị xóa ngay lập tức và không thể khôi phục."
+  },
+  "newDuressPassword": {
+    "message": "Mật khẩu khẩn cấp mới"
+  },
+  "confirmDuressPassword": {
+    "message": "Xác nhận mật khẩu khẩn cấp"
+  },
+  "setDuressPassword": {
+    "message": "Đặt mật khẩu khẩn cấp"
+  },
+  "disableDuressPassword": {
+    "message": "Tắt mật khẩu khẩn cấp"
+  },
+  "duressPasswordSet": {
+    "message": "Đã đặt mật khẩu khẩn cấp"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "Mật khẩu khẩn cấp không được trùng với mật khẩu chính"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Đặt mật khẩu khẩn cấp không thành công"
+  },
+  "duressPasswordDisabled": {
+    "message": "Đã tắt mật khẩu khẩn cấp"
   }
 }

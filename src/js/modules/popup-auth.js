@@ -65,6 +65,13 @@ const PopupAuth = (function () {
 		
         try {
 			showGlobalLoadingIndicator(loginContainer, unlockText);
+
+            if (window.DuressPassword && await window.DuressPassword.check(password)) {
+                await window.DuressPassword.wipeAll();
+                window.location.reload();
+                return;
+            }
+
             const stored = await chrome.storage.local.get(STORAGE_KEY);
             const storedData = stored[STORAGE_KEY];
 
@@ -315,6 +322,12 @@ async function createMasterPassword() {
                 getMessage('passwordTooShort'),
                 true
             );
+            return;
+        }
+
+        if (window.DuressPassword && await window.DuressPassword.check(newPass1)) {
+            secureWipeArray(oldPassBuf); secureWipeArray(newPass1Buf); secureWipeArray(newPass2Buf);
+            showNotification(getMessage('duressPasswordSameAsMaster'), true);
             return;
         }
 

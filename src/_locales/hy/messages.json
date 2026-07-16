@@ -494,6 +494,15 @@
   "showFaviconsDesc": {
     "message": "Պատկերակները բեռնվում են Google-ի ծառայության միջոցով"
   },
+  "newBookmarkOnTop": {
+    "message": "Նոր էջանիշներն ավելացնել վերևում"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Նոր էջանիշները կհայտնվեն ցանկի վերևում՝ ներքևի փոխարեն"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Էջանիշներ"
+  },
   "bookmarksAndFolders": {
     "message": "Էջանիշեր և պանակներ"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Ներդիրը պահված է թղթապանակում"
+  },
+  "duressPassword": {
+    "message": "Արտակարգ գաղտնաբառ"
+  },
+  "duressPasswordHint": {
+    "message": "Եթե այս գաղտնաբառը մուտքագրվի արգելաբացման էկրանին, ընդլայնման բոլոր տվյալները անմիջապես և անվերադարձ կջնջվեն։"
+  },
+  "newDuressPassword": {
+    "message": "Նոր արտակարգ գաղտնաբառ"
+  },
+  "confirmDuressPassword": {
+    "message": "Հաստատեք արտակարգ գաղտնաբառը"
+  },
+  "setDuressPassword": {
+    "message": "Սահմանել արտակարգ գաղտնաբառ"
+  },
+  "disableDuressPassword": {
+    "message": "Անջատել արտակարգ գաղտնաբառը"
+  },
+  "duressPasswordSet": {
+    "message": "Արտակարգ գաղտնաբառը սահմանված է"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "Արտակարգ իրավիճակի գաղտնաբառը չի կարող համընկնել գլխավոր գաղտնաբառի հետ"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Չհաջողվեց սահմանել արտակարգ գաղտնաբառը"
+  },
+  "duressPasswordDisabled": {
+    "message": "Արտակարգ գաղտնաբառն անջատված է"
   }
 }

@@ -159,6 +159,13 @@ const ManagerLock = (function () {
         try {
 			const unlockText = getMessage('unlocking');
 			showGlobalLoadingIndicator(loginContainer, unlockText);
+
+            if (window.DuressPassword && await window.DuressPassword.check(password)) {
+                await window.DuressPassword.wipeAll();
+                window.location.reload();
+                return;
+            }
+
             const stored     = await chrome.storage.local.get(STORAGE_KEY);
             const storedData = stored[STORAGE_KEY];
 

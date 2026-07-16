@@ -664,15 +664,19 @@
     }
 
     function _addNewBookmark(title, url, folderUid) {
-        const { getData, getItemByUid, generateFolderUid } = _deps;
+        const { getData, getItemByUid, generateFolderUid, isNewBookmarkOnTop } = _deps;
         const uid      = generateFolderUid ? generateFolderUid() : ('b_' + Date.now().toString(36));
         const bookmark = { type: 'bookmark', title, url, dateAdded: Date.now(), uid };
+        const onTop    = isNewBookmarkOnTop ? isNewBookmarkOnTop() : false;
 
         if (folderUid) {
             const folder = getItemByUid(getData(), folderUid);
-            if (folder?.children) { folder.children.push(bookmark); return; }
+            if (folder?.children) {
+                if (onTop) folder.children.unshift(bookmark); else folder.children.push(bookmark);
+                return;
+            }
         }
-        getData().folders.push(bookmark);
+        if (onTop) getData().folders.unshift(bookmark); else getData().folders.push(bookmark);
     }
 
     function _updateBookmark(editUid, title, url, newFolderUid) {

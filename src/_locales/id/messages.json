@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Ikon dimuat melalui layanan favicon Google"
   },
+  "newBookmarkOnTop": {
+    "message": "Tambahkan bookmark baru di atas"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Bookmark baru akan muncul di bagian atas daftar, bukan di bawah"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Bookmark"
+  },
   "bookmarksAndFolders": {
     "message": "Bookmark & Folder"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Tab disimpan ke folder"
+  },
+  "duressPassword": {
+    "message": "Kata sandi darurat"
+  },
+  "duressPasswordHint": {
+    "message": "Jika dimasukkan di layar buka kunci, kata sandi ini akan langsung dan permanen menghapus semua data ekstensi."
+  },
+  "newDuressPassword": {
+    "message": "Kata sandi darurat baru"
+  },
+  "confirmDuressPassword": {
+    "message": "Konfirmasi kata sandi darurat"
+  },
+  "setDuressPassword": {
+    "message": "Atur kata sandi darurat"
+  },
+  "disableDuressPassword": {
+    "message": "Nonaktifkan kata sandi darurat"
+  },
+  "duressPasswordSet": {
+    "message": "Kata sandi darurat berhasil diatur"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "Kata sandi darurat tidak boleh sama dengan kata sandi utama"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Gagal mengatur kata sandi darurat"
+  },
+  "duressPasswordDisabled": {
+    "message": "Kata sandi darurat dinonaktifkan"
   }
 }

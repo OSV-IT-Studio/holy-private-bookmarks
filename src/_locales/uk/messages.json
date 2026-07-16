@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Іконки завантажуються через сервіс Google"
   },
+  "newBookmarkOnTop": {
+    "message": "Додавати нові закладки згори"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Нові закладки з'являтимуться на початку списку, а не в кінці"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Закладки"
+  },
   "bookmarksAndFolders": {
     "message": "Закладки та теки"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Вкладку збережено до папки"
+  },
+  "duressPassword": {
+    "message": "Аварійний пароль"
+  },
+  "duressPasswordHint": {
+    "message": "Якщо цей пароль ввести на екрані розблокування, усі дані розширення будуть негайно та безповоротно видалені."
+  },
+  "newDuressPassword": {
+    "message": "Новий аварійний пароль"
+  },
+  "confirmDuressPassword": {
+    "message": "Підтвердіть аварійний пароль"
+  },
+  "setDuressPassword": {
+    "message": "Встановити аварійний пароль"
+  },
+  "disableDuressPassword": {
+    "message": "Вимкнути аварійний пароль"
+  },
+  "duressPasswordSet": {
+    "message": "Аварійний пароль встановлено"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "Аварійний пароль не може збігатися з основним паролем"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Не вдалося встановити аварійний пароль"
+  },
+  "duressPasswordDisabled": {
+    "message": "Аварійний пароль вимкнено"
   }
 }

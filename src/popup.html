@@ -156,6 +156,19 @@
 
 </div>
 <div class="settings-section">
+    <h3 class="section-title" data-i18n="bookmarksSectionTitle"></h3>
+    <div class="settings-option">
+        <div>
+            <div class="option-title" data-i18n="newBookmarkOnTop"></div>
+            <div class="option-description" data-i18n="newBookmarkOnTopDesc"></div>
+        </div>
+        <label class="switch">
+            <input type="checkbox" id="new-bookmark-top-toggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</div>
+<div class="settings-section">
     <h3 class="section-title" data-i18n="privacy"></h3>
     <div class="settings-option">
         <div>
@@ -240,6 +253,8 @@
                     placeholder="Confirm new password">
                 <button class="btn-primary w-100 mt-16" id="change-pass" data-i18n="changePassword"></button>
             </div>
+
+            
 
             <div class="settings-section exportImport">
     <h3 class="section-title" data-i18n="exportImport"></h3>
@@ -502,8 +517,28 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </span>
         </button>
+		<button class="settings-btn settings-btn--danger" id="duress-password">
+            <span class="settings-btn__icon">
+                <svg  width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round-icon lucide-key-round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+            </span>
+            <div class="settings-btn__content">
+                <span class="settings-btn__title" data-i18n="duressPassword"></span>
+            </div>
+            <span class="settings-btn__arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+        </button>
     </div>
 </div>
+<div class="settings-section duress-password" id="settings-duress-password" style="display:none">
+                <h3 class="section-title" data-i18n="duressPassword"></h3>
+                <p class="settings-hint" data-i18n="duressPasswordHint"></p>
+                <input type="password" id="duress-pass" data-i18n="newDuressPassword" placeholder="Emergency password">
+                <input type="password" id="duress-pass-confirm" data-i18n="confirmDuressPassword"
+                    placeholder="Confirm emergency password">
+                <button class="btn-primary w-100 mt-16" id="set-duress-pass" data-i18n="setDuressPassword"></button>
+                <button class="btn-primary w-100 mt-16" id="disable-duress-pass" data-i18n="disableDuressPassword"></button>
+            </div>
 </div>
     <input type="file" id="import-file" accept=".json" style="display:none">
 </div>
@@ -516,7 +551,6 @@
 <script src="js/modules/crypto-wrapper.js"></script>
 <script src="js/modules/theme.js"></script>
 <script src="js/modules/shared.js"></script>
-
 <script src="js/modules/qr-modal.js"></script>
 <script src="js/modules/quick-actions.js"></script>
 <script src="js/modules/popup-history-cleaner.js"></script>
@@ -524,6 +558,7 @@
 <script src="js/modules/popup-import-export-manager.js"></script>
 <script src="js/modules/popup-drag-drop.js"></script>
 <script src="js/modules/popup-auth.js"></script>
+<script src="js/modules/duress-password.js"></script>
 <script src="js/modules/login-ui.js"></script>
 <script src="js/modules/popup-ui.js"></script>
 <script src="js/modules/tree-item-factory.js"></script>

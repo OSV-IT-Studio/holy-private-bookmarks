@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Icons are loaded via Google's favicon service"
   },
+  "newBookmarkOnTop": {
+    "message": "Add new bookmarks to the top"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "New bookmarks appear at the top of the list instead of the bottom"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Bookmarks"
+  },
   "bookmarksAndFolders": {
     "message": "Bookmarks & Folders"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Tab saved to folder"
+  },
+  "duressPassword": {
+    "message": "Emergency password"
+  },
+  "duressPasswordHint": {
+    "message": "If entered on the unlock screen, this password instantly and irreversibly deletes all extension data."
+  },
+  "newDuressPassword": {
+    "message": "New emergency password"
+  },
+  "confirmDuressPassword": {
+    "message": "Confirm emergency password"
+  },
+  "setDuressPassword": {
+    "message": "Set emergency password"
+  },
+  "disableDuressPassword": {
+    "message": "Disable emergency password"
+  },
+  "duressPasswordSet": {
+    "message": "Emergency password set"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "The emergency password can't be the same as your master password"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Failed to set emergency password"
+  },
+  "duressPasswordDisabled": {
+    "message": "Emergency password disabled"
   }
 }

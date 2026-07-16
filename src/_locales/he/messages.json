@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "האייקונים נטענים דרך שירות Google"
   },
+  "newBookmarkOnTop": {
+    "message": "הוספת סימניות חדשות למעלה"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "סימניות חדשות יופיעו בראש הרשימה במקום בתחתית"
+  },
+  "bookmarksSectionTitle": {
+    "message": "סימניות"
+  },
   "bookmarksAndFolders": {
     "message": "סימניות ותיקיות"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "הכרטיסייה נשמרה בתיקייה"
+  },
+  "duressPassword": {
+    "message": "סיסמת חירום"
+  },
+  "duressPasswordHint": {
+    "message": "אם סיסמה זו תוזן במסך הנעילה, כל נתוני התוסף יימחקו מיד ולצמיתות."
+  },
+  "newDuressPassword": {
+    "message": "סיסמת חירום חדשה"
+  },
+  "confirmDuressPassword": {
+    "message": "אימות סיסמת חירום"
+  },
+  "setDuressPassword": {
+    "message": "הגדר סיסמת חירום"
+  },
+  "disableDuressPassword": {
+    "message": "בטל סיסמת חירום"
+  },
+  "duressPasswordSet": {
+    "message": "סיסמת החירום הוגדרה"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "סיסמת החירום לא יכולה להיות זהה לסיסמה הראשית"
+  },
+  "duressPasswordSetFailed": {
+    "message": "הגדרת סיסמת החירום נכשלה"
+  },
+  "duressPasswordDisabled": {
+    "message": "סיסמת החירום בוטלה"
   }
 }

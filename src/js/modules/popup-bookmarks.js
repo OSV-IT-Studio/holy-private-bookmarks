@@ -153,9 +153,10 @@ const PopupBookmarks = (function () {
             addNewBookmark(title, url, [], folderUid || null);
         }
 
+        const onTop = _deps.isNewBookmarkOnTop ? _deps.isNewBookmarkOnTop() : false;
         const domUpdated = isEdit
             ? _domUpdateEditBookmark(editUid, title, url, oldFolderUid, folderUid || null)
-            : _domInsertBookmark(title, url, [], folderUid || null);
+            : (onTop ? false : _domInsertBookmark(title, url, [], folderUid || null));
 
         if (domUpdated) {
             _deps.virtualScrollCache?.clear?.();
@@ -175,17 +176,21 @@ const PopupBookmarks = (function () {
     // CRUD
 
     function addNewBookmark(title, url, path, folderUid) {
-        const { getData, getItemByUid } = _deps;
+        const { getData, getItemByUid, isNewBookmarkOnTop } = _deps;
         const data = getData();
         const uid  = _deps.generateFolderUid();
         const bookmark = { type: 'bookmark', title, url, dateAdded: Date.now(), uid };
+        const onTop = isNewBookmarkOnTop ? isNewBookmarkOnTop() : false;
 
         if (folderUid) {
             const folder = getItemByUid(data, folderUid);
-            if (folder?.children) { folder.children.push(bookmark); return; }
+            if (folder?.children) {
+                if (onTop) folder.children.unshift(bookmark); else folder.children.push(bookmark);
+                return;
+            }
         }
         if (path.length === 0) {
-            data.folders.push(bookmark);
+            if (onTop) data.folders.unshift(bookmark); else data.folders.push(bookmark);
             return;
         }
         let target = data.folders;
@@ -194,7 +199,7 @@ const PopupBookmarks = (function () {
                 target = target[idx].children;
             } else { return; }
         }
-        target.push(bookmark);
+        if (onTop) target.unshift(bookmark); else target.push(bookmark);
     }
 
     function updateBookmark(editUid, title, url, newFolderUid) {

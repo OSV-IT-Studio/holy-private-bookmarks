@@ -81,6 +81,9 @@ const {
     isBlurPageEnabled,
     setBlurPageEnabled,
 
+    isNewBookmarkOnTop,
+    setNewBookmarkOnTop,
+
     saveEncrypted,
     showNotification,
     showConfirm,
@@ -143,6 +146,38 @@ function lock() {
     const tree = document.getElementById('tree');
     if (tree) tree.innerHTML = '';
     PopupUI.showLoginSection();
+}
+
+// Duress password
+
+async function setDuressPassword() {
+    const p1El = getCachedElement('#duress-pass');
+    const p2El = getCachedElement('#duress-pass-confirm');
+    const p1 = p1El?.value || '';
+    const p2 = p2El?.value || '';
+
+    if (p1El) p1El.value = '';
+    if (p2El) p2El.value = '';
+
+    if (p1 !== p2 || p1.length < DuressPassword.CONSTANTS.MIN_LENGTH) {
+        showNotification(getMessage('passwordsMismatch'), true);
+        return;
+    }
+
+    const stored = await chrome.storage.local.get(STORAGE_KEY);
+    const storedData = stored[STORAGE_KEY];
+    if (storedData && await CryptoManager.verifyPassword(p1, storedData)) {
+        showNotification(getMessage('duressPasswordSameAsMaster'), true);
+        return;
+    }
+
+    const ok = await DuressPassword.setup(p1);
+    showNotification(getMessage(ok ? 'duressPasswordSet' : 'duressPasswordSetFailed'), !ok);
+}
+
+async function disableDuressPassword() {
+    await DuressPassword.disable();
+    showNotification(getMessage('duressPasswordDisabled'));
 }
 
 // Persistence
@@ -331,6 +366,15 @@ async function initAlwaysIncognitoToggle() {
     });
 }
 
+async function initNewBookmarkTopToggle() {
+    const toggle = document.getElementById('new-bookmark-top-toggle');
+    if (!toggle) return;
+    toggle.checked = isNewBookmarkOnTop();
+    toggle.addEventListener('change', e => {
+        setNewBookmarkOnTop(e.target.checked);
+    });
+}
+
 async function initBlurPageToggle() {
     const toggle = document.getElementById('blur-page-toggle');
     if (!toggle) return;
@@ -399,6 +443,7 @@ function buildDeps() {
         openInPrivateTab,
         collectAllBookmarkUrls,
         isAlwaysIncognito,
+        isNewBookmarkOnTop,
         virtualScrollCache,
 		showGlobalLoadingIndicator,
         hideGlobalLoadingIndicator,
@@ -642,6 +687,7 @@ async function init() {
     initStayUnlockedToggle();
     initAlwaysIncognitoToggle();
     initBlurPageToggle();
+    initNewBookmarkTopToggle();
     initIncognitoButton();
 
     
@@ -722,6 +768,15 @@ async function init() {
         '#settings-btn':             () => { PopupUI.showSection('settings'); initStayUnlockedToggle(); },
         '#back':                     () => PopupUI.showSection('main'),
         '#change-pass':              () => PopupAuth.changeMasterPassword(),
+        '#duress-password':          () => {
+            const section = document.getElementById('settings-duress-password');
+            if (!section) return;
+            const willShow = section.style.display === 'none';
+            section.style.display = willShow ? 'block' : 'none';
+            if (willShow) document.getElementById('duress-pass')?.focus();
+        },
+        '#set-duress-pass':          () => setDuressPassword(),
+        '#disable-duress-pass':      () => disableDuressPassword(),
         '#manager-btn':              openManager,
         '#incognito-btn':            openIncognito,
         '#report-bug-btn':           () => chrome.tabs.create({ url: 'https://github.com/OSV-IT-Studio/holy-private-bookmarks/issues' }),

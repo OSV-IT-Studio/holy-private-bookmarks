@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "يتم تحميل الأيقونات عبر خدمة Google"
   },
+  "newBookmarkOnTop": {
+    "message": "إضافة الإشارات الجديدة في الأعلى"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "ستظهر الإشارات الجديدة في أعلى القائمة بدلاً من الأسفل"
+  },
+  "bookmarksSectionTitle": {
+    "message": "الإشارات المرجعية"
+  },
   "bookmarksAndFolders": {
     "message": "الإشارات المرجعية والمجلدات"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "تم حفظ علامة التبويب في المجلد"
+  },
+  "duressPassword": {
+    "message": "كلمة مرور الطوارئ"
+  },
+  "duressPasswordHint": {
+    "message": "إذا تم إدخال هذه الكلمة في شاشة إلغاء القفل، فسيتم حذف جميع بيانات الإضافة فورًا وبشكل نهائي."
+  },
+  "newDuressPassword": {
+    "message": "كلمة مرور طوارئ جديدة"
+  },
+  "confirmDuressPassword": {
+    "message": "تأكيد كلمة مرور الطوارئ"
+  },
+  "setDuressPassword": {
+    "message": "تعيين كلمة مرور الطوارئ"
+  },
+  "disableDuressPassword": {
+    "message": "تعطيل كلمة مرور الطوارئ"
+  },
+  "duressPasswordSet": {
+    "message": "تم تعيين كلمة مرور الطوارئ"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "لا يمكن أن يكون كلمة المرور الطارئة مطابقة لكلمة المرور الرئيسية"
+  },
+  "duressPasswordSetFailed": {
+    "message": "فشل تعيين كلمة مرور الطوارئ"
+  },
+  "duressPasswordDisabled": {
+    "message": "تم تعطيل كلمة مرور الطوارئ"
   }
 }

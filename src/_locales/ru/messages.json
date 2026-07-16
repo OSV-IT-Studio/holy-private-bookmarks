@@ -494,6 +494,15 @@
   "showFaviconsDesc": {
     "message": "Для загрузки иконок используется сервис Google"
   },
+  "newBookmarkOnTop": {
+    "message": "Добавлять новые закладки сверху"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Новые закладки будут появляться в начале списка, а не в конце"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Закладки"
+  },
   "bookmarksAndFolders": {
     "message": "Закладки и папки",
     "description": "Label for bookmarks and folders section"
@@ -919,5 +928,35 @@
   },
   "tabSavedHere": {
     "message": "Вкладка сохранена в папку"
+  },
+  "duressPassword": {
+    "message": "Аварийный пароль"
+  },
+  "duressPasswordHint": {
+    "message": "Если ввести этот пароль на экране разблокировки, все данные расширения будут немедленно и безвозвратно удалены."
+  },
+  "newDuressPassword": {
+    "message": "Новый аварийный пароль"
+  },
+  "confirmDuressPassword": {
+    "message": "Подтвердите аварийный пароль"
+  },
+  "setDuressPassword": {
+    "message": "Установить аварийный пароль"
+  },
+  "disableDuressPassword": {
+    "message": "Отключить аварийный пароль"
+  },
+  "duressPasswordSet": {
+    "message": "Аварийный пароль установлен"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "Аварийный пароль не может совпадать с основным паролем"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Не удалось установить аварийный пароль"
+  },
+  "duressPasswordDisabled": {
+    "message": "Аварийный пароль отключён"
   }
 }

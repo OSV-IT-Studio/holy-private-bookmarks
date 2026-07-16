@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Ícones carregados via serviço de favicon do Google"
   },
+  "newBookmarkOnTop": {
+    "message": "Adicionar novos favoritos no topo"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Novos favoritos aparecerão no topo da lista em vez de no final"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Favoritos"
+  },
   "bookmarksAndFolders": {
     "message": "Favoritos e pastas"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Aba salva na pasta"
+  },
+  "duressPassword": {
+    "message": "Senha de emergência"
+  },
+  "duressPasswordHint": {
+    "message": "Se digitada na tela de desbloqueio, esta senha apaga imediata e irreversivelmente todos os dados da extensão."
+  },
+  "newDuressPassword": {
+    "message": "Nova senha de emergência"
+  },
+  "confirmDuressPassword": {
+    "message": "Confirmar senha de emergência"
+  },
+  "setDuressPassword": {
+    "message": "Definir senha de emergência"
+  },
+  "disableDuressPassword": {
+    "message": "Desativar senha de emergência"
+  },
+  "duressPasswordSet": {
+    "message": "Senha de emergência definida"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "A senha de emergência não pode ser igual à senha mestra"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Falha ao definir a senha de emergência"
+  },
+  "duressPasswordDisabled": {
+    "message": "Senha de emergência desativada"
   }
 }

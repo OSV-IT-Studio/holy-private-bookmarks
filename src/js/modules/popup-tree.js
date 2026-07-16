@@ -372,9 +372,15 @@ const PopupTree = (function () {
                         dateAdded: Date.now(),
                         uid: _deps.generateFolderUid(),
                     };
-                    folder.children.push(bookmark);
+                    const onTop = _deps.isNewBookmarkOnTop ? _deps.isNewBookmarkOnTop() : false;
+                    if (onTop) folder.children.unshift(bookmark); else folder.children.push(bookmark);
 
-                    _appendBookmarkInline(folder, uid, bookmark);
+                    if (onTop) {
+                        _deps.virtualScrollCache?.clear?.();
+                        renderTree();
+                    } else {
+                        _appendBookmarkInline(folder, uid, bookmark);
+                    }
                     if (window.PopupSearch) PopupSearch.invalidateIndex();
                     _deps.saveChanges();
 

@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Ikony są ładowane za pośrednictwem usługi Google"
   },
+  "newBookmarkOnTop": {
+    "message": "Dodawaj nowe zakładki na górze"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Nowe zakładki będą pojawiać się na górze listy zamiast na dole"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Zakładki"
+  },
   "bookmarksAndFolders": {
     "message": "Zakładki i foldery"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Karta zapisana w folderze"
+  },
+  "duressPassword": {
+    "message": "Hasło awaryjne"
+  },
+  "duressPasswordHint": {
+    "message": "Jeśli zostanie wpisane na ekranie odblokowania, to hasło natychmiast i nieodwracalnie usunie wszystkie dane rozszerzenia."
+  },
+  "newDuressPassword": {
+    "message": "Nowe hasło awaryjne"
+  },
+  "confirmDuressPassword": {
+    "message": "Potwierdź hasło awaryjne"
+  },
+  "setDuressPassword": {
+    "message": "Ustaw hasło awaryjne"
+  },
+  "disableDuressPassword": {
+    "message": "Wyłącz hasło awaryjne"
+  },
+  "duressPasswordSet": {
+    "message": "Hasło awaryjne ustawione"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "Hasło awaryjne nie może być takie samo jak hasło główne"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Nie udało się ustawić hasła awaryjnego"
+  },
+  "duressPasswordDisabled": {
+    "message": "Hasło awaryjne wyłączone"
   }
 }

@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Pictogramele sunt încărcate prin serviciul favicon al Google"
   },
+  "newBookmarkOnTop": {
+    "message": "Adaugă marcajele noi sus"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Marcajele noi vor apărea în partea de sus a listei, nu în partea de jos"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Marcaje"
+  },
   "bookmarksAndFolders": {
     "message": "Marcaje și foldere"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Tab salvat în dosar"
+  },
+  "duressPassword": {
+    "message": "Parolă de urgență"
+  },
+  "duressPasswordHint": {
+    "message": "Dacă este introdusă pe ecranul de deblocare, această parolă șterge imediat și ireversibil toate datele extensiei."
+  },
+  "newDuressPassword": {
+    "message": "Parolă de urgență nouă"
+  },
+  "confirmDuressPassword": {
+    "message": "Confirmă parola de urgență"
+  },
+  "setDuressPassword": {
+    "message": "Setează parola de urgență"
+  },
+  "disableDuressPassword": {
+    "message": "Dezactivează parola de urgență"
+  },
+  "duressPasswordSet": {
+    "message": "Parola de urgență a fost setată"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "Parola de urgență nu poate fi identică cu parola principală"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Setarea parolei de urgență a eșuat"
+  },
+  "duressPasswordDisabled": {
+    "message": "Parola de urgență a fost dezactivată"
   }
 }

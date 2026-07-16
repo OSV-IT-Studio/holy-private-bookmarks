@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Ikoner laddas via Googles favicon-tjänst"
   },
+  "newBookmarkOnTop": {
+    "message": "Lägg till nya bokmärken högst upp"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Nya bokmärken visas högst upp i listan istället för längst ner"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Bokmärken"
+  },
   "bookmarksAndFolders": {
     "message": "Bokmärken och mappar"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Flik sparad i mapp"
+  },
+  "duressPassword": {
+    "message": "Nödlösenord"
+  },
+  "duressPasswordHint": {
+    "message": "Om det anges på upplåsningsskärmen raderar det här lösenordet omedelbart och permanent all data i tillägget."
+  },
+  "newDuressPassword": {
+    "message": "Nytt nödlösenord"
+  },
+  "confirmDuressPassword": {
+    "message": "Bekräfta nödlösenord"
+  },
+  "setDuressPassword": {
+    "message": "Ange nödlösenord"
+  },
+  "disableDuressPassword": {
+    "message": "Inaktivera nödlösenord"
+  },
+  "duressPasswordSet": {
+    "message": "Nödlösenord angivet"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "Nödlösenordet får inte vara samma som huvudlösenordet"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Det gick inte att ange nödlösenordet"
+  },
+  "duressPasswordDisabled": {
+    "message": "Nödlösenordet har inaktiverats"
   }
 }

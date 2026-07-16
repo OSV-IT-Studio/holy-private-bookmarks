@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Simgeler Google'ın favicon hizmeti aracılığıyla yüklenir"
   },
+  "newBookmarkOnTop": {
+    "message": "Yeni yer imlerini üste ekle"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Yeni yer imleri listenin altı yerine üstünde görünecek"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Yer İmleri"
+  },
   "bookmarksAndFolders": {
     "message": "Yer İmleri ve Klasörler"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Sekme klasöre kaydedildi"
+  },
+  "duressPassword": {
+    "message": "Acil durum parolası"
+  },
+  "duressPasswordHint": {
+    "message": "Kilit açma ekranında girildiğinde bu parola, uzantının tüm verilerini anında ve geri döndürülemez şekilde siler."
+  },
+  "newDuressPassword": {
+    "message": "Yeni acil durum parolası"
+  },
+  "confirmDuressPassword": {
+    "message": "Acil durum parolasını onayla"
+  },
+  "setDuressPassword": {
+    "message": "Acil durum parolası belirle"
+  },
+  "disableDuressPassword": {
+    "message": "Acil durum parolasını devre dışı bırak"
+  },
+  "duressPasswordSet": {
+    "message": "Acil durum parolası belirlendi"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "Acil durum şifresi ana şifreyle aynı olamaz"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Acil durum parolası belirlenemedi"
+  },
+  "duressPasswordDisabled": {
+    "message": "Acil durum parolası devre dışı bırakıldı"
   }
 }

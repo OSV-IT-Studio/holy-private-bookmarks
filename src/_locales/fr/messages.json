@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Les icônes sont chargées via le service Google"
   },
+  "newBookmarkOnTop": {
+    "message": "Ajouter les nouveaux favoris en haut"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Les nouveaux favoris apparaîtront en haut de la liste au lieu du bas"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Favoris"
+  },
   "bookmarksAndFolders": {
     "message": "Marque-pages et Dossiers"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Onglet enregistré dans le dossier"
+  },
+  "duressPassword": {
+    "message": "Mot de passe d'urgence"
+  },
+  "duressPasswordHint": {
+    "message": "Si ce mot de passe est saisi sur l'écran de déverrouillage, il supprime immédiatement et de façon irréversible toutes les données de l'extension."
+  },
+  "newDuressPassword": {
+    "message": "Nouveau mot de passe d'urgence"
+  },
+  "confirmDuressPassword": {
+    "message": "Confirmer le mot de passe d'urgence"
+  },
+  "setDuressPassword": {
+    "message": "Définir le mot de passe d'urgence"
+  },
+  "disableDuressPassword": {
+    "message": "Désactiver le mot de passe d'urgence"
+  },
+  "duressPasswordSet": {
+    "message": "Mot de passe d'urgence défini"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "Le mot de passe d'urgence ne peut pas être identique au mot de passe principal"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Échec de la définition du mot de passe d'urgence"
+  },
+  "duressPasswordDisabled": {
+    "message": "Mot de passe d'urgence désactivé"
   }
 }

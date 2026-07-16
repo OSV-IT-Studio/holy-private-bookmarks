@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Pictogrammen worden geladen via de favicon-service van Google"
   },
+  "newBookmarkOnTop": {
+    "message": "Nieuwe bladwijzers bovenaan toevoegen"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Nieuwe bladwijzers verschijnen bovenaan de lijst in plaats van onderaan"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Bladwijzers"
+  },
   "bookmarksAndFolders": {
     "message": "Bladwijzers & Mappen"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Tab opgeslagen in map"
+  },
+  "duressPassword": {
+    "message": "Noodwachtwoord"
+  },
+  "duressPasswordHint": {
+    "message": "Als dit wachtwoord op het ontgrendelscherm wordt ingevoerd, worden alle gegevens van de extensie direct en onomkeerbaar verwijderd."
+  },
+  "newDuressPassword": {
+    "message": "Nieuw noodwachtwoord"
+  },
+  "confirmDuressPassword": {
+    "message": "Bevestig noodwachtwoord"
+  },
+  "setDuressPassword": {
+    "message": "Noodwachtwoord instellen"
+  },
+  "disableDuressPassword": {
+    "message": "Noodwachtwoord uitschakelen"
+  },
+  "duressPasswordSet": {
+    "message": "Noodwachtwoord ingesteld"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "Het noodwachtwoord mag niet gelijk zijn aan het hoofdwachtwoord"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Instellen van noodwachtwoord mislukt"
+  },
+  "duressPasswordDisabled": {
+    "message": "Noodwachtwoord uitgeschakeld"
   }
 }

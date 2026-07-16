@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "アイコンはGoogleのサービスを通じて読み込まれます"
   },
+  "newBookmarkOnTop": {
+    "message": "新しいブックマークを上に追加"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "新しいブックマークはリストの下ではなく上に表示されます"
+  },
+  "bookmarksSectionTitle": {
+    "message": "ブックマーク"
+  },
   "bookmarksAndFolders": {
     "message": "ブックマーク＆フォルダ"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "タブをフォルダに保存しました"
+  },
+  "duressPassword": {
+    "message": "緊急パスワード"
+  },
+  "duressPasswordHint": {
+    "message": "ロック解除画面でこのパスワードを入力すると、拡張機能のすべてのデータが即座に、かつ元に戻せない形で削除されます。"
+  },
+  "newDuressPassword": {
+    "message": "新しい緊急パスワード"
+  },
+  "confirmDuressPassword": {
+    "message": "緊急パスワードの確認"
+  },
+  "setDuressPassword": {
+    "message": "緊急パスワードを設定"
+  },
+  "disableDuressPassword": {
+    "message": "緊急パスワードを無効化"
+  },
+  "duressPasswordSet": {
+    "message": "緊急パスワードを設定しました"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "緊急パスワードはマスターパスワードと同じにできません"
+  },
+  "duressPasswordSetFailed": {
+    "message": "緊急パスワードの設定に失敗しました"
+  },
+  "duressPasswordDisabled": {
+    "message": "緊急パスワードを無効にしました"
   }
 }

@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Le icone vengono caricate tramite il servizio Google"
   },
+  "newBookmarkOnTop": {
+    "message": "Aggiungi i nuovi segnalibri in alto"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "I nuovi segnalibri appariranno in cima all'elenco anziché in fondo"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Segnalibri"
+  },
   "bookmarksAndFolders": {
     "message": "Segnalibri e Cartelle"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Tab salvata nella cartella"
+  },
+  "duressPassword": {
+    "message": "Password di emergenza"
+  },
+  "duressPasswordHint": {
+    "message": "Se inserita nella schermata di sblocco, questa password elimina immediatamente e in modo irreversibile tutti i dati dell'estensione."
+  },
+  "newDuressPassword": {
+    "message": "Nuova password di emergenza"
+  },
+  "confirmDuressPassword": {
+    "message": "Conferma password di emergenza"
+  },
+  "setDuressPassword": {
+    "message": "Imposta password di emergenza"
+  },
+  "disableDuressPassword": {
+    "message": "Disattiva password di emergenza"
+  },
+  "duressPasswordSet": {
+    "message": "Password di emergenza impostata"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "La password di emergenza non può coincidere con la password principale"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Impossibile impostare la password di emergenza"
+  },
+  "duressPasswordDisabled": {
+    "message": "Password di emergenza disattivata"
   }
 }

@@ -186,22 +186,24 @@
             const title = await _resolveTitleForUrl(url, htmlHint);
 
             const { getData, getItemByUid, getCurrentFolderId, generateFolderUid,
-                    saveAndRefresh, showNotification, getMessage, resetInactivityTimer } = _deps;
+                    saveAndRefresh, showNotification, getMessage, resetInactivityTimer,
+                    isNewBookmarkOnTop } = _deps;
 
             const data     = getData();
             const fid      = getCurrentFolderId();
             const uid      = generateFolderUid();
             const bookmark = { type: 'bookmark', title, url, dateAdded: Date.now(), uid };
+            const onTop    = isNewBookmarkOnTop ? isNewBookmarkOnTop() : false;
 
             if (fid && fid !== 'all') {
                 const folder = getItemByUid(data, fid);
                 if (folder?.children) {
-                    folder.children.push(bookmark);
+                    if (onTop) folder.children.unshift(bookmark); else folder.children.push(bookmark);
                 } else {
-                    data.folders.push(bookmark);
+                    if (onTop) data.folders.unshift(bookmark); else data.folders.push(bookmark);
                 }
             } else {
-                data.folders.push(bookmark);
+                if (onTop) data.folders.unshift(bookmark); else data.folders.push(bookmark);
             }
 
             await saveAndRefresh();

@@ -1,4 +1,12 @@
 [
+{
+  "version": "1.8.5.72",
+  "changes": [
+    "Added a setting to add new bookmarks to the top of the list instead of the bottom (Settings → Bookmarks)",
+	"Added emergency (duress) password: enter it on the unlock screen instead of the master password to instantly and irreversibly wipe all extension data",
+    "New settings option to set or disable the emergency password, hidden by default in the Danger Zone section"
+  ]
+},
   {
     "version": "1.8.5.70",
     "changes": [

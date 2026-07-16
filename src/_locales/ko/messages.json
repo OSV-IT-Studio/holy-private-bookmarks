@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "아이콘은 Google의 파비콘 서비스를 통해 로드됩니다"
   },
+  "newBookmarkOnTop": {
+    "message": "새 북마크를 위에 추가"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "새 북마크가 목록 아래가 아닌 위에 표시됩니다"
+  },
+  "bookmarksSectionTitle": {
+    "message": "북마크"
+  },
   "bookmarksAndFolders": {
     "message": "북마크 및 폴더"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "탭이 폴더에 저장되었습니다"
+  },
+  "duressPassword": {
+    "message": "비상 비밀번호"
+  },
+  "duressPasswordHint": {
+    "message": "잠금 해제 화면에서 이 비밀번호를 입력하면 확장 프로그램의 모든 데이터가 즉시 되돌릴 수 없이 삭제됩니다."
+  },
+  "newDuressPassword": {
+    "message": "새 비상 비밀번호"
+  },
+  "confirmDuressPassword": {
+    "message": "비상 비밀번호 확인"
+  },
+  "setDuressPassword": {
+    "message": "비상 비밀번호 설정"
+  },
+  "disableDuressPassword": {
+    "message": "비상 비밀번호 비활성화"
+  },
+  "duressPasswordSet": {
+    "message": "비상 비밀번호가 설정되었습니다"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "비상 비밀번호는 마스터 비밀번호와 같을 수 없습니다"
+  },
+  "duressPasswordSetFailed": {
+    "message": "비상 비밀번호 설정에 실패했습니다"
+  },
+  "duressPasswordDisabled": {
+    "message": "비상 비밀번호가 비활성화되었습니다"
   }
 }

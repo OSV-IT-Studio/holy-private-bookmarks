@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "图标通过 Google 服务加载"
   },
+  "newBookmarkOnTop": {
+    "message": "将新书签添加到顶部"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "新书签将显示在列表顶部而不是底部"
+  },
+  "bookmarksSectionTitle": {
+    "message": "书签"
+  },
   "bookmarksAndFolders": {
     "message": "书签与文件夹"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "标签页已保存到文件夹"
+  },
+  "duressPassword": {
+    "message": "紧急密码"
+  },
+  "duressPasswordHint": {
+    "message": "如果在解锁界面输入此密码，扩展程序的所有数据将立即且不可恢复地被删除。"
+  },
+  "newDuressPassword": {
+    "message": "新的紧急密码"
+  },
+  "confirmDuressPassword": {
+    "message": "确认紧急密码"
+  },
+  "setDuressPassword": {
+    "message": "设置紧急密码"
+  },
+  "disableDuressPassword": {
+    "message": "禁用紧急密码"
+  },
+  "duressPasswordSet": {
+    "message": "紧急密码已设置"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "紧急密码不能与主密码相同"
+  },
+  "duressPasswordSetFailed": {
+    "message": "设置紧急密码失败"
+  },
+  "duressPasswordDisabled": {
+    "message": "紧急密码已禁用"
   }
 }

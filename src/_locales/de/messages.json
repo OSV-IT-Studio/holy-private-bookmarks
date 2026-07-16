@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Symbole werden über den Google-Dienst geladen"
   },
+  "newBookmarkOnTop": {
+    "message": "Neue Lesezeichen oben hinzufügen"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Neue Lesezeichen erscheinen oben in der Liste statt unten"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Lesezeichen"
+  },
   "bookmarksAndFolders": {
     "message": "Lesezeichen & Ordner"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Tab in Ordner gespeichert"
+  },
+  "duressPassword": {
+    "message": "Notfallpasswort"
+  },
+  "duressPasswordHint": {
+    "message": "Wenn dieses Passwort auf dem Entsperrbildschirm eingegeben wird, werden sofort und unwiderruflich alle Daten der Erweiterung gelöscht."
+  },
+  "newDuressPassword": {
+    "message": "Neues Notfallpasswort"
+  },
+  "confirmDuressPassword": {
+    "message": "Notfallpasswort bestätigen"
+  },
+  "setDuressPassword": {
+    "message": "Notfallpasswort festlegen"
+  },
+  "disableDuressPassword": {
+    "message": "Notfallpasswort deaktivieren"
+  },
+  "duressPasswordSet": {
+    "message": "Notfallpasswort festgelegt"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "Das Notfallpasswort darf nicht mit dem Hauptpasswort übereinstimmen"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Notfallpasswort konnte nicht festgelegt werden"
+  },
+  "duressPasswordDisabled": {
+    "message": "Notfallpasswort deaktiviert"
   }
 }

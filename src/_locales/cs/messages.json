@@ -497,6 +497,15 @@
   "showFaviconsDesc": {
     "message": "Ikony jsou načítány přes službu favicon od Google"
   },
+  "newBookmarkOnTop": {
+    "message": "Přidávat nové záložky nahoru"
+  },
+  "newBookmarkOnTopDesc": {
+    "message": "Nové záložky se zobrazí v horní části seznamu místo dolní"
+  },
+  "bookmarksSectionTitle": {
+    "message": "Záložky"
+  },
   "bookmarksAndFolders": {
     "message": "Záložky a složky"
   },
@@ -921,5 +930,35 @@
   },
   "tabSavedHere": {
     "message": "Karta uložena do složky"
+  },
+  "duressPassword": {
+    "message": "Nouzové heslo"
+  },
+  "duressPasswordHint": {
+    "message": "Pokud zadáte toto heslo na obrazovce odemknutí, okamžitě a nevratně smaže všechna data rozšíření."
+  },
+  "newDuressPassword": {
+    "message": "Nové nouzové heslo"
+  },
+  "confirmDuressPassword": {
+    "message": "Potvrďte nouzové heslo"
+  },
+  "setDuressPassword": {
+    "message": "Nastavit nouzové heslo"
+  },
+  "disableDuressPassword": {
+    "message": "Vypnout nouzové heslo"
+  },
+  "duressPasswordSet": {
+    "message": "Nouzové heslo nastaveno"
+  },
+  "duressPasswordSameAsMaster": {
+    "message": "Nouzové heslo nesmí být stejné jako hlavní heslo"
+  },
+  "duressPasswordSetFailed": {
+    "message": "Nastavení nouzového hesla selhalo"
+  },
+  "duressPasswordDisabled": {
+    "message": "Nouzové heslo vypnuto"
   }
 }
