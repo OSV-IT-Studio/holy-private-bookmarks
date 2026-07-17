@@ -621,6 +621,9 @@
     "message": "กำลังเปลี่ยนรหัสผ่าน...",
     "description": "Shown while changing master password"
   },
+  "settingUpDuressPassword": {
+    "message": "กำลังตั้งค่ารหัสผ่านฉุกเฉิน..."
+  },
   "settingUpEncryption": {
     "message": "กำลังตั้งค่าการเข้ารหัส...",
     "description": "Shown during first-time setup"

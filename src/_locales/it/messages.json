@@ -621,6 +621,9 @@
     "message": "Modifica password in corso...",
     "description": "Mostrato durante la modifica della password principale"
   },
+  "settingUpDuressPassword": {
+    "message": "Impostazione della password di emergenza..."
+  },
   "settingUpEncryption": {
     "message": "Impostazione crittografia...",
     "description": "Mostrato durante la configurazione iniziale"

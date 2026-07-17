@@ -621,6 +621,9 @@
     "message": "Passwort wird geändert...",
     "description": "Wird beim Ändern des Master-Passworts angezeigt"
   },
+  "settingUpDuressPassword": {
+    "message": "Notfallpasswort wird eingerichtet..."
+  },
   "settingUpEncryption": {
     "message": "Verschlüsselung wird eingerichtet...",
     "description": "Während der Ersteinrichtung angezeigt"

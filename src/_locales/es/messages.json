@@ -621,6 +621,9 @@
     "message": "Cambiando contraseña...",
     "description": "Se muestra mientras se cambia la contraseña maestra"
   },
+  "settingUpDuressPassword": {
+    "message": "Configurando la contraseña de emergencia..."
+  },
   "settingUpEncryption": {
     "message": "Configurando cifrado...",
     "description": "Se muestra durante la configuración inicial"

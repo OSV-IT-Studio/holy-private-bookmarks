@@ -621,6 +621,9 @@
     "message": "Parola değiştiriliyor...",
     "description": "Shown while changing master password"
   },
+  "settingUpDuressPassword": {
+    "message": "Acil durum şifresi ayarlanıyor..."
+  },
   "settingUpEncryption": {
     "message": "Şifreleme ayarlanıyor...",
     "description": "Shown during first-time setup"

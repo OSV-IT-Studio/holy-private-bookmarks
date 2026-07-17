@@ -621,6 +621,9 @@
     "message": "Modification du mot de passe...",
     "description": "Affiché lors du changement du mot de passe principal"
   },
+  "settingUpDuressPassword": {
+    "message": "Configuration du mot de passe d'urgence..."
+  },
   "settingUpEncryption": {
     "message": "Configuration du chiffrement...",
     "description": "Affiché lors de la configuration initiale"

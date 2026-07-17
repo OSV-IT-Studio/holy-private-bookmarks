@@ -619,6 +619,9 @@
     "message": "Смена пароля...",
     "description": "Показывается во время смены мастер-пароля"
   },
+  "settingUpDuressPassword": {
+    "message": "Настройка аварийного пароля..."
+  },
   "settingUpEncryption": {
     "message": "Настройка шифрования...",
     "description": "Показывается при первом запуске"

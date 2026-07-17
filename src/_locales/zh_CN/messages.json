@@ -621,6 +621,9 @@
     "message": "正在更改密码...",
     "description": "更改主密码时显示"
   },
+  "settingUpDuressPassword": {
+    "message": "正在设置紧急密码..."
+  },
   "settingUpEncryption": {
     "message": "正在设置加密...",
     "description": "首次设置时显示"

@@ -621,6 +621,9 @@
     "message": "Alterando senha...",
     "description": "Shown while changing master password"
   },
+  "settingUpDuressPassword": {
+    "message": "Configurando a senha de emergência..."
+  },
   "settingUpEncryption": {
     "message": "Configurando criptografia...",
     "description": "Shown during first-time setup"

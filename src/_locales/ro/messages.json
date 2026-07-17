@@ -621,6 +621,9 @@
     "message": "Se schimbă parola...",
     "description": "Shown while changing master password"
   },
+  "settingUpDuressPassword": {
+    "message": "Se configurează parola de urgență..."
+  },
   "settingUpEncryption": {
     "message": "Se configurează criptarea...",
     "description": "Shown during first-time setup"

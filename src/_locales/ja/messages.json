@@ -621,6 +621,9 @@
     "message": "パスワード変更中...",
     "description": "マスターパスワード変更中に表示"
   },
+  "settingUpDuressPassword": {
+    "message": "緊急パスワードを設定中..."
+  },
   "settingUpEncryption": {
     "message": "暗号化設定中...",
     "description": "初回セットアップ中に表示"

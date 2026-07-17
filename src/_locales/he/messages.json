@@ -621,6 +621,9 @@
     "message": "משנה סיסמה...",
     "description": "Shown while changing master password"
   },
+  "settingUpDuressPassword": {
+    "message": "מגדיר סיסמת חירום..."
+  },
   "settingUpEncryption": {
     "message": "מגדיר הצפנה...",
     "description": "Shown during first-time setup"

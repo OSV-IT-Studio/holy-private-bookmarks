@@ -621,6 +621,9 @@
     "message": "Wachtwoord wijzigen...",
     "description": "Shown while changing master password"
   },
+  "settingUpDuressPassword": {
+    "message": "Noodwachtwoord instellen..."
+  },
   "settingUpEncryption": {
     "message": "Versleuteling instellen...",
     "description": "Shown during first-time setup"

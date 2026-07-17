@@ -621,6 +621,9 @@
     "message": "Zmiana hasła...",
     "description": "Shown while changing master password"
   },
+  "settingUpDuressPassword": {
+    "message": "Konfigurowanie hasła awaryjnego..."
+  },
   "settingUpEncryption": {
     "message": "Konfigurowanie szyfrowania...",
     "description": "Shown during first-time setup"

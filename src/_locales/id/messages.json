@@ -621,6 +621,9 @@
     "message": "Mengubah kata sandi...",
     "description": "Shown while changing master password"
   },
+  "settingUpDuressPassword": {
+    "message": "Menyiapkan kata sandi darurat..."
+  },
   "settingUpEncryption": {
     "message": "Menyiapkan enkripsi...",
     "description": "Shown during first-time setup"

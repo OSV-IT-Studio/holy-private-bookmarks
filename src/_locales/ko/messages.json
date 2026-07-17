@@ -621,6 +621,9 @@
     "message": "비밀번호 변경 중...",
     "description": "Shown while changing master password"
   },
+  "settingUpDuressPassword": {
+    "message": "비상 비밀번호 설정 중..."
+  },
   "settingUpEncryption": {
     "message": "암호화 설정 중...",
     "description": "Shown during first-time setup"

@@ -621,6 +621,9 @@
     "message": "Ändrar lösenord...",
     "description": "Shown while changing master password"
   },
+  "settingUpDuressPassword": {
+    "message": "Ställer in nödlösenord..."
+  },
   "settingUpEncryption": {
     "message": "Ställer in kryptering...",
     "description": "Shown during first-time setup"

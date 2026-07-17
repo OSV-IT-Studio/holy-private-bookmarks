@@ -621,6 +621,9 @@
     "message": "Đang đổi mật khẩu...",
     "description": "Shown while changing master password"
   },
+  "settingUpDuressPassword": {
+    "message": "Đang thiết lập mật khẩu khẩn cấp..."
+  },
   "settingUpEncryption": {
     "message": "Đang thiết lập mã hóa...",
     "description": "Shown during first-time setup"

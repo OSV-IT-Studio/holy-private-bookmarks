@@ -621,6 +621,10 @@
     "message": "Changing password...",
     "description": "Shown while changing master password"
   },
+  "settingUpDuressPassword": {
+    "message": "Setting up emergency password...",
+    "description": "Shown while deriving and saving the emergency (duress) password"
+  },
   "settingUpEncryption": {
     "message": "Setting up encryption...",
     "description": "Shown during first-time setup"

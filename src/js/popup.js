@@ -150,6 +150,13 @@ function lock() {
 
 // Duress password
 
+async function updateDuressPasswordUI() {
+    const disableBtn = document.getElementById('disable-duress-pass');
+    if (!disableBtn) return;
+    const enabled = await DuressPassword.isEnabled();
+    disableBtn.style.display = enabled ? '' : 'none';
+}
+
 async function setDuressPassword() {
     const p1El = getCachedElement('#duress-pass');
     const p2El = getCachedElement('#duress-pass-confirm');
@@ -164,20 +171,30 @@ async function setDuressPassword() {
         return;
     }
 
-    const stored = await chrome.storage.local.get(STORAGE_KEY);
-    const storedData = stored[STORAGE_KEY];
-    if (storedData && await CryptoManager.verifyPassword(p1, storedData)) {
-        showNotification(getMessage('duressPasswordSameAsMaster'), true);
-        return;
-    }
+    const container = document.getElementById('settings-duress-password') || document.body;
 
-    const ok = await DuressPassword.setup(p1);
-    showNotification(getMessage(ok ? 'duressPasswordSet' : 'duressPasswordSetFailed'), !ok);
+    try {
+        showGlobalLoadingIndicator(container, getMessage('settingUpDuressPassword'));
+
+        const stored = await chrome.storage.local.get(STORAGE_KEY);
+        const storedData = stored[STORAGE_KEY];
+        if (storedData && await CryptoManager.verifyPassword(p1, storedData)) {
+            showNotification(getMessage('duressPasswordSameAsMaster'), true);
+            return;
+        }
+
+        const ok = await DuressPassword.setup(p1);
+        showNotification(getMessage(ok ? 'duressPasswordSet' : 'duressPasswordSetFailed'), !ok);
+        if (ok) await updateDuressPasswordUI();
+    } finally {
+        hideGlobalLoadingIndicator(container);
+    }
 }
 
 async function disableDuressPassword() {
     await DuressPassword.disable();
     showNotification(getMessage('duressPasswordDisabled'));
+    await updateDuressPasswordUI();
 }
 
 // Persistence
@@ -773,7 +790,10 @@ async function init() {
             if (!section) return;
             const willShow = section.style.display === 'none';
             section.style.display = willShow ? 'block' : 'none';
-            if (willShow) document.getElementById('duress-pass')?.focus();
+            if (willShow) {
+                document.getElementById('duress-pass')?.focus();
+                updateDuressPasswordUI();
+            }
         },
         '#set-duress-pass':          () => setDuressPassword(),
         '#disable-duress-pass':      () => disableDuressPassword(),

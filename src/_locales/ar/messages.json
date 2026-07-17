@@ -621,6 +621,9 @@
     "message": "جاري تغيير كلمة المرور...",
     "description": "يظهر أثناء تغيير كلمة المرور الرئيسية"
   },
+  "settingUpDuressPassword": {
+    "message": "جارٍ إعداد كلمة مرور الطوارئ..."
+  },
   "settingUpEncryption": {
     "message": "جاري إعداد التشفير...",
     "description": "يظهر أثناء الإعداد الأولي"

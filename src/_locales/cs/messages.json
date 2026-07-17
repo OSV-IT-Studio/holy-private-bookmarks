@@ -621,6 +621,9 @@
     "message": "Změna hesla...",
     "description": "Shown while changing master password"
   },
+  "settingUpDuressPassword": {
+    "message": "Nastavuje se nouzové heslo..."
+  },
   "settingUpEncryption": {
     "message": "Nastavování šifrování...",
     "description": "Shown during first-time setup"
