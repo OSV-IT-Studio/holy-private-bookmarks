@@ -64,6 +64,23 @@ Or load it manually:
 3. Enable "Developer mode"
 4. Click "Load unpacked" and select the folder
 
+## 🦊 Firefox Support
+
+This extension now also loads in Firefox, using the same source with no separate codebase to maintain. Two small additions make this possible:
+
+- `manifest.json` `background` now declares both `service_worker` (used by Chrome) and `scripts` (used by Firefox), since Firefox does not support Manifest V3 service workers for background scripts.
+- A `browser_specific_settings.gecko` block was added, since Firefox requires an explicit extension ID.
+- The `web_accessible_resources` match pattern was changed from `chrome-extension://*/*` (which is not a valid match-pattern scheme and fails Firefox's manifest schema validation) to `*://*/*`.
+
+**Loading in Firefox for testing:**
+1. Run `web-ext lint --source-dir=src` to confirm the manifest passes validation (0 errors expected).
+2. Run `web-ext build --source-dir=src` to produce a `.zip`/`.xpi`.
+3. In Firefox, go to `about:debugging#/runtime/this-firefox` → "Load Temporary Add-on" → select the built file.
+
+**Known Firefox-specific limitation:** `chrome.tabGroups.update()` (used for grouping tabs opened from a folder) is not supported in Firefox as of version 115+. The existing `if (chrome.tabGroups)` guards in `popup-tree.js` and `manager-bookmarks.js` already handle its absence gracefully — the tab-group titling step is just skipped rather than erroring.
+
+**For permanent installation / AMO listing:** the `gecko.id` above is a placeholder namespaced to the project's own domain — replace it with whatever ID you register when submitting to addons.mozilla.org for signing.
+
 ## Open Source Libraries
 
 This project uses the following open source libraries:
