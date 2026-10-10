@@ -964,5 +964,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Emergency password disabled"
+  },
+  "savePageEncrypted": {
+    "message": "Save page as encrypted HTML"
+  },
+  "savePageCapturing": {
+    "message": "Saving page…"
+  },
+  "savePageUnsupported": {
+    "message": "This page cannot be saved"
+  },
+  "savePageSuccess": {
+    "message": "Encrypted page saved"
+  },
+  "savePageViewerTitle": {
+    "message": "Encrypted page"
+  },
+  "savePageViewerHint": {
+    "message": "Enter the master password to open this page"
+  },
+  "savePageViewerOpen": {
+    "message": "Open"
+  },
+  "savePageViewerWrong": {
+    "message": "Wrong password"
+  },
+  "savePageViewerError": {
+    "message": "Could not open the file. Your browser may not support the required features"
+  },
+  "savePageCompressing": {
+    "message": "Compressing…"
+  },
+  "savePageEncrypting": {
+    "message": "Encrypting…"
+  },
+  "savePageFinishing": {
+    "message": "Creating file…"
   }
 }

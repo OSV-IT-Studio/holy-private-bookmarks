@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Đã tắt mật khẩu khẩn cấp"
+  },
+  "savePageEncrypted": {
+    "message": "Lưu trang dưới dạng HTML được mã hóa"
+  },
+  "savePageCapturing": {
+    "message": "Đang lưu trang…"
+  },
+  "savePageCompressing": {
+    "message": "Đang nén…"
+  },
+  "savePageEncrypting": {
+    "message": "Đang mã hóa…"
+  },
+  "savePageFinishing": {
+    "message": "Đang tạo tệp…"
+  },
+  "savePageUnsupported": {
+    "message": "Không thể lưu trang này"
+  },
+  "savePageSuccess": {
+    "message": "Đã lưu trang được mã hóa"
+  },
+  "savePageViewerTitle": {
+    "message": "Trang được mã hóa"
+  },
+  "savePageViewerHint": {
+    "message": "Nhập mật khẩu chính để mở trang này"
+  },
+  "savePageViewerOpen": {
+    "message": "Mở"
+  },
+  "savePageViewerWrong": {
+    "message": "Mật khẩu sai"
+  },
+  "savePageViewerError": {
+    "message": "Không thể mở tệp. Trình duyệt của bạn có thể không hỗ trợ các tính năng cần thiết"
   }
 }

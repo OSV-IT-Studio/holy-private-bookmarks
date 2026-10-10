@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Acil durum parolası devre dışı bırakıldı"
+  },
+  "savePageEncrypted": {
+    "message": "Sayfayı şifreli HTML olarak kaydet"
+  },
+  "savePageCapturing": {
+    "message": "Sayfa kaydediliyor…"
+  },
+  "savePageCompressing": {
+    "message": "Sıkıştırılıyor…"
+  },
+  "savePageEncrypting": {
+    "message": "Şifreleniyor…"
+  },
+  "savePageFinishing": {
+    "message": "Dosya oluşturuluyor…"
+  },
+  "savePageUnsupported": {
+    "message": "Bu sayfa kaydedilemiyor"
+  },
+  "savePageSuccess": {
+    "message": "Şifreli sayfa kaydedildi"
+  },
+  "savePageViewerTitle": {
+    "message": "Şifreli sayfa"
+  },
+  "savePageViewerHint": {
+    "message": "Bu sayfayı açmak için ana parolayı girin"
+  },
+  "savePageViewerOpen": {
+    "message": "Aç"
+  },
+  "savePageViewerWrong": {
+    "message": "Yanlış parola"
+  },
+  "savePageViewerError": {
+    "message": "Dosya açılamadı. Tarayıcınız gerekli özellikleri desteklemiyor olabilir"
   }
 }

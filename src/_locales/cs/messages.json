@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Nouzové heslo vypnuto"
+  },
+  "savePageEncrypted": {
+    "message": "Uložit stránku jako šifrované HTML"
+  },
+  "savePageCapturing": {
+    "message": "Ukládání stránky…"
+  },
+  "savePageCompressing": {
+    "message": "Komprese…"
+  },
+  "savePageEncrypting": {
+    "message": "Šifrování…"
+  },
+  "savePageFinishing": {
+    "message": "Vytváření souboru…"
+  },
+  "savePageUnsupported": {
+    "message": "Tuto stránku nelze uložit"
+  },
+  "savePageSuccess": {
+    "message": "Šifrovaná stránka uložena"
+  },
+  "savePageViewerTitle": {
+    "message": "Šifrovaná stránka"
+  },
+  "savePageViewerHint": {
+    "message": "Zadejte hlavní heslo pro otevření této stránky"
+  },
+  "savePageViewerOpen": {
+    "message": "Otevřít"
+  },
+  "savePageViewerWrong": {
+    "message": "Nesprávné heslo"
+  },
+  "savePageViewerError": {
+    "message": "Soubor se nepodařilo otevřít. Váš prohlížeč možná nepodporuje potřebné funkce"
   }
 }

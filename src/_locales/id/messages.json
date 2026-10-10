@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Kata sandi darurat dinonaktifkan"
+  },
+  "savePageEncrypted": {
+    "message": "Simpan halaman sebagai HTML terenkripsi"
+  },
+  "savePageCapturing": {
+    "message": "Menyimpan halaman…"
+  },
+  "savePageCompressing": {
+    "message": "Mengompresi…"
+  },
+  "savePageEncrypting": {
+    "message": "Mengenkripsi…"
+  },
+  "savePageFinishing": {
+    "message": "Membuat file…"
+  },
+  "savePageUnsupported": {
+    "message": "Halaman ini tidak dapat disimpan"
+  },
+  "savePageSuccess": {
+    "message": "Halaman terenkripsi disimpan"
+  },
+  "savePageViewerTitle": {
+    "message": "Halaman terenkripsi"
+  },
+  "savePageViewerHint": {
+    "message": "Masukkan kata sandi master untuk membuka halaman ini"
+  },
+  "savePageViewerOpen": {
+    "message": "Buka"
+  },
+  "savePageViewerWrong": {
+    "message": "Kata sandi salah"
+  },
+  "savePageViewerError": {
+    "message": "Tidak dapat membuka file. Browser Anda mungkin tidak mendukung fitur yang diperlukan"
   }
 }

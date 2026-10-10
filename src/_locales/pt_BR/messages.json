@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Senha de emergência desativada"
+  },
+  "savePageEncrypted": {
+    "message": "Salvar página como HTML criptografado"
+  },
+  "savePageCapturing": {
+    "message": "Salvando página…"
+  },
+  "savePageCompressing": {
+    "message": "Compactando…"
+  },
+  "savePageEncrypting": {
+    "message": "Criptografando…"
+  },
+  "savePageFinishing": {
+    "message": "Criando arquivo…"
+  },
+  "savePageUnsupported": {
+    "message": "Esta página não pode ser salva"
+  },
+  "savePageSuccess": {
+    "message": "Página criptografada salva"
+  },
+  "savePageViewerTitle": {
+    "message": "Página criptografada"
+  },
+  "savePageViewerHint": {
+    "message": "Digite a senha mestre para abrir esta página"
+  },
+  "savePageViewerOpen": {
+    "message": "Abrir"
+  },
+  "savePageViewerWrong": {
+    "message": "Senha incorreta"
+  },
+  "savePageViewerError": {
+    "message": "Não foi possível abrir o arquivo. Seu navegador pode não oferecer suporte aos recursos necessários"
   }
 }

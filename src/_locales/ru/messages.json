@@ -961,5 +961,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Аварийный пароль отключён"
+  },
+  "savePageEncrypted": {
+    "message": "Сохранить страницу в зашифрованный HTML"
+  },
+  "savePageCapturing": {
+    "message": "Сохранение страницы…"
+  },
+  "savePageUnsupported": {
+    "message": "Эту страницу нельзя сохранить"
+  },
+  "savePageSuccess": {
+    "message": "Зашифрованная страница сохранена"
+  },
+  "savePageViewerTitle": {
+    "message": "Зашифрованная страница"
+  },
+  "savePageViewerHint": {
+    "message": "Введите мастер-пароль, чтобы открыть страницу"
+  },
+  "savePageViewerOpen": {
+    "message": "Открыть"
+  },
+  "savePageViewerWrong": {
+    "message": "Неверный пароль"
+  },
+  "savePageViewerError": {
+    "message": "Не удалось открыть файл. Возможно, браузер не поддерживает нужные функции"
+  },
+  "savePageCompressing": {
+    "message": "Сжатие…"
+  },
+  "savePageEncrypting": {
+    "message": "Шифрование…"
+  },
+  "savePageFinishing": {
+    "message": "Создание файла…"
   }
 }

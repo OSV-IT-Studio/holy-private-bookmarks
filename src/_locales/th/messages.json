@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "ปิดใช้งานรหัสผ่านฉุกเฉินแล้ว"
+  },
+  "savePageEncrypted": {
+    "message": "บันทึกหน้าเป็น HTML ที่เข้ารหัส"
+  },
+  "savePageCapturing": {
+    "message": "กำลังบันทึกหน้า…"
+  },
+  "savePageCompressing": {
+    "message": "กำลังบีบอัด…"
+  },
+  "savePageEncrypting": {
+    "message": "กำลังเข้ารหัส…"
+  },
+  "savePageFinishing": {
+    "message": "กำลังสร้างไฟล์…"
+  },
+  "savePageUnsupported": {
+    "message": "ไม่สามารถบันทึกหน้านี้ได้"
+  },
+  "savePageSuccess": {
+    "message": "บันทึกหน้าที่เข้ารหัสแล้ว"
+  },
+  "savePageViewerTitle": {
+    "message": "หน้าที่เข้ารหัส"
+  },
+  "savePageViewerHint": {
+    "message": "ป้อนรหัสผ่านหลักเพื่อเปิดหน้านี้"
+  },
+  "savePageViewerOpen": {
+    "message": "เปิด"
+  },
+  "savePageViewerWrong": {
+    "message": "รหัสผ่านไม่ถูกต้อง"
+  },
+  "savePageViewerError": {
+    "message": "ไม่สามารถเปิดไฟล์ได้ เบราว์เซอร์ของคุณอาจไม่รองรับฟีเจอร์ที่จำเป็น"
   }
 }

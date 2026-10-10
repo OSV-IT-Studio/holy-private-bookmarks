@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Password di emergenza disattivata"
+  },
+  "savePageEncrypted": {
+    "message": "Salva la pagina come HTML crittografato"
+  },
+  "savePageCapturing": {
+    "message": "Salvataggio della pagina…"
+  },
+  "savePageCompressing": {
+    "message": "Compressione…"
+  },
+  "savePageEncrypting": {
+    "message": "Crittografia…"
+  },
+  "savePageFinishing": {
+    "message": "Creazione del file…"
+  },
+  "savePageUnsupported": {
+    "message": "Questa pagina non può essere salvata"
+  },
+  "savePageSuccess": {
+    "message": "Pagina crittografata salvata"
+  },
+  "savePageViewerTitle": {
+    "message": "Pagina crittografata"
+  },
+  "savePageViewerHint": {
+    "message": "Inserisci la password principale per aprire questa pagina"
+  },
+  "savePageViewerOpen": {
+    "message": "Apri"
+  },
+  "savePageViewerWrong": {
+    "message": "Password errata"
+  },
+  "savePageViewerError": {
+    "message": "Impossibile aprire il file. Il browser potrebbe non supportare le funzioni necessarie"
   }
 }

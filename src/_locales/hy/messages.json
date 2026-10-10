@@ -893,13 +893,13 @@
     "message": "Բացել բոլորը անանուն ռեժիմում"
   },
   "saveAllTabs": {
-    "message": "Պահپанелну բոлоры բаց ներдіры"
+    "message": "Պահպանել բոլոր բաց ներդիրները"
   },
   "noTabsToSave": {
     "message": "Ներդիրներ պահպանելու համար չկան"
   },
   "tabsSaved": {
-    "message": "Ներдիрները пахпанвел են"
+    "message": "Ներդիրները պահպանվեցին"
   },
   "searchInFolder": {
     "message": "Որոնել թղթապանակում..."
@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Արտակարգ գաղտնաբառն անջատված է"
+  },
+  "savePageEncrypted": {
+    "message": "Պահպանել էջը՝ որպես գաղտնագրված HTML"
+  },
+  "savePageCapturing": {
+    "message": "Էջը պահպանվում է…"
+  },
+  "savePageCompressing": {
+    "message": "Սեղմում…"
+  },
+  "savePageEncrypting": {
+    "message": "Գաղտնագրում…"
+  },
+  "savePageFinishing": {
+    "message": "Ֆայլը ստեղծվում է…"
+  },
+  "savePageUnsupported": {
+    "message": "Այս էջը հնարավոր չէ պահպանել"
+  },
+  "savePageSuccess": {
+    "message": "Գաղտնագրված էջը պահպանվեց"
+  },
+  "savePageViewerTitle": {
+    "message": "Գաղտնագրված էջ"
+  },
+  "savePageViewerHint": {
+    "message": "Մուտքագրեք գլխավոր գաղտնաբառը՝ այս էջը բացելու համար"
+  },
+  "savePageViewerOpen": {
+    "message": "Բացել"
+  },
+  "savePageViewerWrong": {
+    "message": "Սխալ գաղտնաբառ"
+  },
+  "savePageViewerError": {
+    "message": "Չհաջողվեց բացել ֆայլը։ Հնարավոր է՝ ձեր դիտարկիչը չի աջակցում անհրաժեշտ գործառույթները"
   }
 }

@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "تم تعطيل كلمة مرور الطوارئ"
+  },
+  "savePageEncrypted": {
+    "message": "حفظ الصفحة كملف HTML مشفّر"
+  },
+  "savePageCapturing": {
+    "message": "جارٍ حفظ الصفحة…"
+  },
+  "savePageCompressing": {
+    "message": "جارٍ الضغط…"
+  },
+  "savePageEncrypting": {
+    "message": "جارٍ التشفير…"
+  },
+  "savePageFinishing": {
+    "message": "جارٍ إنشاء الملف…"
+  },
+  "savePageUnsupported": {
+    "message": "لا يمكن حفظ هذه الصفحة"
+  },
+  "savePageSuccess": {
+    "message": "تم حفظ الصفحة المشفّرة"
+  },
+  "savePageViewerTitle": {
+    "message": "صفحة مشفّرة"
+  },
+  "savePageViewerHint": {
+    "message": "أدخل كلمة المرور الرئيسية لفتح هذه الصفحة"
+  },
+  "savePageViewerOpen": {
+    "message": "فتح"
+  },
+  "savePageViewerWrong": {
+    "message": "كلمة مرور خاطئة"
+  },
+  "savePageViewerError": {
+    "message": "تعذّر فتح الملف. قد لا يدعم متصفحك الميزات المطلوبة"
   }
 }

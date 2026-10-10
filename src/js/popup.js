@@ -778,6 +778,7 @@ async function init() {
         '#add-current':              () => { hideSearchAndClear(); PopupBookmarks.addCurrentPage(); },
         '#export':                   () => ImportExportManager.exportData(),
         '#export-html-btn':          () => ImportExportManager.exportToHTML(),
+        '#save-page-encrypted-btn':  () => ImportExportManager.savePageEncrypted(),
         '#import-btn':               () => getCachedElement('#import-file').click(),
         '#import-from-chrome':       () => ImportExportManager.importFromChromeBookmarks(data, saveAndRefresh),
         '#import-from-chrome-advanced': () => ImportExportManager.importFromChromeBookmarksAdvanced(data, saveAndRefresh),

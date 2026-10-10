@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Hasło awaryjne wyłączone"
+  },
+  "savePageEncrypted": {
+    "message": "Zapisz stronę jako zaszyfrowany HTML"
+  },
+  "savePageCapturing": {
+    "message": "Zapisywanie strony…"
+  },
+  "savePageCompressing": {
+    "message": "Kompresja…"
+  },
+  "savePageEncrypting": {
+    "message": "Szyfrowanie…"
+  },
+  "savePageFinishing": {
+    "message": "Tworzenie pliku…"
+  },
+  "savePageUnsupported": {
+    "message": "Tej strony nie można zapisać"
+  },
+  "savePageSuccess": {
+    "message": "Zaszyfrowana strona została zapisana"
+  },
+  "savePageViewerTitle": {
+    "message": "Zaszyfrowana strona"
+  },
+  "savePageViewerHint": {
+    "message": "Wpisz hasło główne, aby otworzyć tę stronę"
+  },
+  "savePageViewerOpen": {
+    "message": "Otwórz"
+  },
+  "savePageViewerWrong": {
+    "message": "Nieprawidłowe hasło"
+  },
+  "savePageViewerError": {
+    "message": "Nie udało się otworzyć pliku. Twoja przeglądarka może nie obsługiwać wymaganych funkcji"
   }
 }

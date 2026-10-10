@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "紧急密码已禁用"
+  },
+  "savePageEncrypted": {
+    "message": "将页面保存为加密 HTML"
+  },
+  "savePageCapturing": {
+    "message": "正在保存页面…"
+  },
+  "savePageCompressing": {
+    "message": "正在压缩…"
+  },
+  "savePageEncrypting": {
+    "message": "正在加密…"
+  },
+  "savePageFinishing": {
+    "message": "正在创建文件…"
+  },
+  "savePageUnsupported": {
+    "message": "无法保存此页面"
+  },
+  "savePageSuccess": {
+    "message": "已保存加密页面"
+  },
+  "savePageViewerTitle": {
+    "message": "加密页面"
+  },
+  "savePageViewerHint": {
+    "message": "输入主密码以打开此页面"
+  },
+  "savePageViewerOpen": {
+    "message": "打开"
+  },
+  "savePageViewerWrong": {
+    "message": "密码错误"
+  },
+  "savePageViewerError": {
+    "message": "无法打开文件。您的浏览器可能不支持所需功能"
   }
 }

@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Mot de passe d'urgence désactivé"
+  },
+  "savePageEncrypted": {
+    "message": "Enregistrer la page en HTML chiffré"
+  },
+  "savePageCapturing": {
+    "message": "Enregistrement de la page…"
+  },
+  "savePageCompressing": {
+    "message": "Compression…"
+  },
+  "savePageEncrypting": {
+    "message": "Chiffrement…"
+  },
+  "savePageFinishing": {
+    "message": "Création du fichier…"
+  },
+  "savePageUnsupported": {
+    "message": "Cette page ne peut pas être enregistrée"
+  },
+  "savePageSuccess": {
+    "message": "Page chiffrée enregistrée"
+  },
+  "savePageViewerTitle": {
+    "message": "Page chiffrée"
+  },
+  "savePageViewerHint": {
+    "message": "Saisissez le mot de passe maître pour ouvrir cette page"
+  },
+  "savePageViewerOpen": {
+    "message": "Ouvrir"
+  },
+  "savePageViewerWrong": {
+    "message": "Mot de passe incorrect"
+  },
+  "savePageViewerError": {
+    "message": "Impossible d'ouvrir le fichier. Votre navigateur ne prend peut-être pas en charge les fonctions requises"
   }
 }

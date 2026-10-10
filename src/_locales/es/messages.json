@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Contraseña de emergencia desactivada"
+  },
+  "savePageEncrypted": {
+    "message": "Guardar página como HTML cifrado"
+  },
+  "savePageCapturing": {
+    "message": "Guardando página…"
+  },
+  "savePageCompressing": {
+    "message": "Comprimiendo…"
+  },
+  "savePageEncrypting": {
+    "message": "Cifrando…"
+  },
+  "savePageFinishing": {
+    "message": "Creando archivo…"
+  },
+  "savePageUnsupported": {
+    "message": "Esta página no se puede guardar"
+  },
+  "savePageSuccess": {
+    "message": "Página cifrada guardada"
+  },
+  "savePageViewerTitle": {
+    "message": "Página cifrada"
+  },
+  "savePageViewerHint": {
+    "message": "Introduce la contraseña maestra para abrir esta página"
+  },
+  "savePageViewerOpen": {
+    "message": "Abrir"
+  },
+  "savePageViewerWrong": {
+    "message": "Contraseña incorrecta"
+  },
+  "savePageViewerError": {
+    "message": "No se pudo abrir el archivo. Es posible que tu navegador no admita las funciones necesarias"
   }
 }

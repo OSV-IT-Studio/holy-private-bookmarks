@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Noodwachtwoord uitgeschakeld"
+  },
+  "savePageEncrypted": {
+    "message": "Pagina opslaan als versleutelde HTML"
+  },
+  "savePageCapturing": {
+    "message": "Pagina opslaan…"
+  },
+  "savePageCompressing": {
+    "message": "Comprimeren…"
+  },
+  "savePageEncrypting": {
+    "message": "Versleutelen…"
+  },
+  "savePageFinishing": {
+    "message": "Bestand maken…"
+  },
+  "savePageUnsupported": {
+    "message": "Deze pagina kan niet worden opgeslagen"
+  },
+  "savePageSuccess": {
+    "message": "Versleutelde pagina opgeslagen"
+  },
+  "savePageViewerTitle": {
+    "message": "Versleutelde pagina"
+  },
+  "savePageViewerHint": {
+    "message": "Voer het hoofdwachtwoord in om deze pagina te openen"
+  },
+  "savePageViewerOpen": {
+    "message": "Openen"
+  },
+  "savePageViewerWrong": {
+    "message": "Verkeerd wachtwoord"
+  },
+  "savePageViewerError": {
+    "message": "Het bestand kon niet worden geopend. Je browser ondersteunt mogelijk de vereiste functies niet"
   }
 }

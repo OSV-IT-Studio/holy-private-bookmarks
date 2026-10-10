@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "緊急パスワードを無効にしました"
+  },
+  "savePageEncrypted": {
+    "message": "ページを暗号化HTMLとして保存"
+  },
+  "savePageCapturing": {
+    "message": "ページを保存中…"
+  },
+  "savePageCompressing": {
+    "message": "圧縮中…"
+  },
+  "savePageEncrypting": {
+    "message": "暗号化中…"
+  },
+  "savePageFinishing": {
+    "message": "ファイルを作成中…"
+  },
+  "savePageUnsupported": {
+    "message": "このページは保存できません"
+  },
+  "savePageSuccess": {
+    "message": "暗号化ページを保存しました"
+  },
+  "savePageViewerTitle": {
+    "message": "暗号化されたページ"
+  },
+  "savePageViewerHint": {
+    "message": "このページを開くにはマスターパスワードを入力してください"
+  },
+  "savePageViewerOpen": {
+    "message": "開く"
+  },
+  "savePageViewerWrong": {
+    "message": "パスワードが違います"
+  },
+  "savePageViewerError": {
+    "message": "ファイルを開けませんでした。お使いのブラウザが必要な機能に対応していない可能性があります"
   }
 }

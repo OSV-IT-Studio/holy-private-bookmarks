@@ -1,5 +1,12 @@
 [
 {
+  "version": "1.8.5.75",
+  "changes": [
+    "Added 'Save page as encrypted HTML' button to the popup toolbar: saves the current tab as a self-contained HTML file encrypted with your master password (AES-256-GCM, PBKDF2)",
+    "The saved file asks for the master password when opened and decrypts the page right in the browser, no extension needed"
+  ]
+},
+{
   "version": "1.8.5.74",
   "changes": [
     "Added a loading indicator while setting up the emergency password, since deriving it can take a moment",

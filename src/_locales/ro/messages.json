@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Parola de urgență a fost dezactivată"
+  },
+  "savePageEncrypted": {
+    "message": "Salvează pagina ca HTML criptat"
+  },
+  "savePageCapturing": {
+    "message": "Se salvează pagina…"
+  },
+  "savePageCompressing": {
+    "message": "Se comprimă…"
+  },
+  "savePageEncrypting": {
+    "message": "Se criptează…"
+  },
+  "savePageFinishing": {
+    "message": "Se creează fișierul…"
+  },
+  "savePageUnsupported": {
+    "message": "Această pagină nu poate fi salvată"
+  },
+  "savePageSuccess": {
+    "message": "Pagina criptată a fost salvată"
+  },
+  "savePageViewerTitle": {
+    "message": "Pagină criptată"
+  },
+  "savePageViewerHint": {
+    "message": "Introduceți parola principală pentru a deschide această pagină"
+  },
+  "savePageViewerOpen": {
+    "message": "Deschide"
+  },
+  "savePageViewerWrong": {
+    "message": "Parolă greșită"
+  },
+  "savePageViewerError": {
+    "message": "Fișierul nu a putut fi deschis. Este posibil ca browserul dvs. să nu accepte funcțiile necesare"
   }
 }

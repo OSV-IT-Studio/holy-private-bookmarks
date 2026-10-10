@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Аварійний пароль вимкнено"
+  },
+  "savePageEncrypted": {
+    "message": "Зберегти сторінку в зашифрований HTML"
+  },
+  "savePageCapturing": {
+    "message": "Збереження сторінки…"
+  },
+  "savePageUnsupported": {
+    "message": "Цю сторінку не можна зберегти"
+  },
+  "savePageSuccess": {
+    "message": "Зашифровану сторінку збережено"
+  },
+  "savePageViewerTitle": {
+    "message": "Зашифрована сторінка"
+  },
+  "savePageViewerHint": {
+    "message": "Введіть майстер-пароль, щоб відкрити сторінку"
+  },
+  "savePageViewerOpen": {
+    "message": "Відкрити"
+  },
+  "savePageViewerWrong": {
+    "message": "Невірний пароль"
+  },
+  "savePageViewerError": {
+    "message": "Не вдалося відкрити файл. Можливо, браузер не підтримує потрібні функції"
+  },
+  "savePageCompressing": {
+    "message": "Стиснення…"
+  },
+  "savePageEncrypting": {
+    "message": "Шифрування…"
+  },
+  "savePageFinishing": {
+    "message": "Створення файлу…"
   }
 }

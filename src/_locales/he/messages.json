@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "סיסמת החירום בוטלה"
+  },
+  "savePageEncrypted": {
+    "message": "שמור דף כ-HTML מוצפן"
+  },
+  "savePageCapturing": {
+    "message": "שומר את הדף…"
+  },
+  "savePageCompressing": {
+    "message": "דוחס…"
+  },
+  "savePageEncrypting": {
+    "message": "מצפין…"
+  },
+  "savePageFinishing": {
+    "message": "יוצר קובץ…"
+  },
+  "savePageUnsupported": {
+    "message": "לא ניתן לשמור דף זה"
+  },
+  "savePageSuccess": {
+    "message": "הדף המוצפן נשמר"
+  },
+  "savePageViewerTitle": {
+    "message": "דף מוצפן"
+  },
+  "savePageViewerHint": {
+    "message": "הזן את סיסמת המאסטר כדי לפתוח דף זה"
+  },
+  "savePageViewerOpen": {
+    "message": "פתח"
+  },
+  "savePageViewerWrong": {
+    "message": "סיסמה שגויה"
+  },
+  "savePageViewerError": {
+    "message": "לא ניתן לפתוח את הקובץ. ייתכן שהדפדפן שלך אינו תומך בתכונות הנדרשות"
   }
 }

@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Notfallpasswort deaktiviert"
+  },
+  "savePageEncrypted": {
+    "message": "Seite als verschlüsseltes HTML speichern"
+  },
+  "savePageCapturing": {
+    "message": "Seite wird gespeichert…"
+  },
+  "savePageCompressing": {
+    "message": "Komprimieren…"
+  },
+  "savePageEncrypting": {
+    "message": "Verschlüsseln…"
+  },
+  "savePageFinishing": {
+    "message": "Datei wird erstellt…"
+  },
+  "savePageUnsupported": {
+    "message": "Diese Seite kann nicht gespeichert werden"
+  },
+  "savePageSuccess": {
+    "message": "Verschlüsselte Seite gespeichert"
+  },
+  "savePageViewerTitle": {
+    "message": "Verschlüsselte Seite"
+  },
+  "savePageViewerHint": {
+    "message": "Geben Sie das Master-Passwort ein, um diese Seite zu öffnen"
+  },
+  "savePageViewerOpen": {
+    "message": "Öffnen"
+  },
+  "savePageViewerWrong": {
+    "message": "Falsches Passwort"
+  },
+  "savePageViewerError": {
+    "message": "Die Datei konnte nicht geöffnet werden. Ihr Browser unterstützt die erforderlichen Funktionen möglicherweise nicht"
   }
 }

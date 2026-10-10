@@ -963,5 +963,41 @@
   },
   "duressPasswordDisabled": {
     "message": "Nödlösenordet har inaktiverats"
+  },
+  "savePageEncrypted": {
+    "message": "Spara sidan som krypterad HTML"
+  },
+  "savePageCapturing": {
+    "message": "Sparar sidan…"
+  },
+  "savePageCompressing": {
+    "message": "Komprimerar…"
+  },
+  "savePageEncrypting": {
+    "message": "Krypterar…"
+  },
+  "savePageFinishing": {
+    "message": "Skapar fil…"
+  },
+  "savePageUnsupported": {
+    "message": "Den här sidan kan inte sparas"
+  },
+  "savePageSuccess": {
+    "message": "Krypterad sida sparad"
+  },
+  "savePageViewerTitle": {
+    "message": "Krypterad sida"
+  },
+  "savePageViewerHint": {
+    "message": "Ange huvudlösenordet för att öppna den här sidan"
+  },
+  "savePageViewerOpen": {
+    "message": "Öppna"
+  },
+  "savePageViewerWrong": {
+    "message": "Fel lösenord"
+  },
+  "savePageViewerError": {
+    "message": "Det gick inte att öppna filen. Din webbläsare kanske inte stöder de funktioner som krävs"
   }
 }
