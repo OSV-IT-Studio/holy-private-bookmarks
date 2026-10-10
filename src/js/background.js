@@ -240,6 +240,19 @@ if (message.action === 'openPopupAfterManager') {
     }
 });
 
+const UPDATE_PAGE_VERSION = '1.8.5.76';
+const UPDATE_PAGE_URL = 'https://osv-it-studio.github.io/holy-private-bookmarks/update-1-8-5-75.html';
+
+function compareVersions(a, b) {
+    const pa = String(a).split('.').map(n => parseInt(n, 10) || 0);
+    const pb = String(b).split('.').map(n => parseInt(n, 10) || 0);
+    for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+        const diff = (pa[i] || 0) - (pb[i] || 0);
+        if (diff !== 0) return diff;
+    }
+    return 0;
+}
+
 chrome.runtime.onInstalled.addListener((details) => {
     // Context menus
     chrome.contextMenus.create({
@@ -257,6 +270,13 @@ chrome.runtime.onInstalled.addListener((details) => {
     if (details.reason === 'install') {
         chrome.storage.local.set({ 'donationReminderJustInstalled': true });
         chrome.tabs.create({ url: 'https://osv-it-studio.github.io/holy-private-bookmarks/welcome.html' });
+    }
+
+    if (details.reason === 'update'
+        && details.previousVersion
+        && compareVersions(details.previousVersion, UPDATE_PAGE_VERSION) < 0
+        && compareVersions(chrome.runtime.getManifest().version, UPDATE_PAGE_VERSION) >= 0) {
+        chrome.tabs.create({ url: UPDATE_PAGE_URL });
     }
 
     // Uninstall feedback
