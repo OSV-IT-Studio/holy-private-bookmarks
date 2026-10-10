@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What's New in v1.8.5.75 — Holy Private Bookmarks</title>
+  <meta name="description" content="Holy Private Bookmarks v1.8.5.75: save any open page as a single encrypted HTML file that only your master password can open." />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon16.png">
+  <style>
+    :root {
+      --bg-from:       #0a0c12;
+      --bg-mid:        #0d1117;
+      --bg-to:         #0c0f1a;
+      --sidebar-bg:    rgba(13, 16, 25, 0.98);
+      --surface-1:     rgba(255, 255, 255, 0.055);
+      --surface-2:     rgba(255, 255, 255, 0.09);
+      --surface-3:     rgba(255, 255, 255, 0.14);
+
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-muted:  rgba(255, 255, 255, 0.10);
+      --border-accent: rgba(99, 179, 237, 0.40);
+
+      --accent:        #63b3ed;
+      --accent-light:  #bee3f8;
+      --accent-bright: #90cdf4;
+      --accent-dim:    rgba(99, 179, 237, 0.12);
+      --accent-glow:   rgba(99, 179, 237, 0.22);
+
+      --text-primary:   #f0f4f8;
+      --text-secondary: rgba(240, 244, 248, 0.68);
+      --text-tertiary:  rgba(240, 244, 248, 0.42);
+
+      --success:  #68d391;
+      --danger:   #fc8181;
+
+      --shadow:    0 8px 32px rgba(0, 0, 0, 0.55);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.70);
+      --shadow-accent: 0 0 0 1px rgba(99, 179, 237, 0.22), 0 8px 32px rgba(99, 179, 237, 0.10);
+
+      --radius-sm: 12px;
+      --radius:    16px;
+      --radius-lg: 20px;
+      --radius-xl: 24px;
+
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --dur-med:  0.3s;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: linear-gradient(160deg, var(--bg-from) 0%, var(--bg-mid) 50%, var(--bg-to) 100%);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 40px 20px 72px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+
+    .hero {
+      text-align: center;
+      margin-bottom: 48px;
+      animation: fadeUp .55s var(--ease-out) both;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,212,255,.10);
+      border: 1px solid rgba(0,212,255,.25);
+      border-radius: 999px;
+      padding: 6px 16px 6px 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: .01em;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .hero-icon {
+      width: 88px; height: 88px;
+      
+      display: grid;
+      place-items: center;
+      margin: 0 auto 28px;
+    }
+
+    .hero-icon svg { width: 44px; height: 44px; color: var(--accent); }
+
+    h1 {
+      font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #f0f4f8 30%, var(--accent-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--text-secondary);
+      font-size: clamp(16px, 2vw, 19px);
+      line-height: 1.75;
+    }
+
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+
+    .card {
+      background: var(--surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform var(--dur-med) var(--ease-out),
+                  box-shadow var(--dur-med) var(--ease-out),
+                  border-color var(--dur-med) ease;
+      animation: fadeUp .6s var(--ease-out) both;
+    }
+
+    .card:nth-child(2) { animation-delay: .08s; }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-accent);
+    }
+
+    .card-inner { padding: 30px; }
+
+    .card::before {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity var(--dur-med) ease;
+    }
+    .card:hover::before { opacity: 1; }
+
+    .step-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .step-number {
+      width: 50px; height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #63b3ed, #2b6cb0);
+      color: #0a0c12;
+      box-shadow: 0 6px 20px rgba(99, 179, 237, 0.28);
+      flex-shrink: 0;
+      letter-spacing: -.02em;
+    }
+
+    .step-title {
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -.02em;
+      line-height: 1.25;
+    }
+
+    .step-text {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .image-box {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border-muted);
+      background: rgba(0,0,0,.25);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+    }
+
+    .image-box img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+
+    .footer-box {
+      background: var(--surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      padding: 44px 32px;
+      text-align: center;
+      animation: fadeUp .75s var(--ease-out) .12s both;
+      position: relative;
+      overflow: hidden;
+    }
+
+
+    .footer-box::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: 50%; transform: translateX(-50%);
+      width: 340px; height: 200px;
+      background: radial-gradient(ellipse, rgba(99,179,237,.10), transparent 70%);
+      pointer-events: none;
+    }
+
+    .footer-icon {
+      width: 68px; height: 68px;
+      margin: 0 auto 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(99,179,237,.14), rgba(99,179,237,.06));
+      border: 1px solid rgba(99,179,237,.25);
+      box-shadow: 0 0 24px rgba(99,179,237,.10), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .footer-icon svg { width: 30px; height: 30px; color: var(--accent); }
+
+    .footer-box h2 {
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, #f0f4f8 30%, var(--accent-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-box p {
+      color: var(--text-secondary);
+      font-size: 17px;
+      line-height: 1.75;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 6px var(--accent); }
+      50%       { opacity: .5; box-shadow: 0 0 14px var(--accent); }
+    }
+
+
+    .steps.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card:nth-child(3) { animation-delay: .16s; }
+
+    .visual {
+      border-radius: var(--radius);
+      border: 1px solid var(--border-muted);
+      background: rgba(0,0,0,.25);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+      min-height: 150px;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+    }
+
+    .mock-bar {
+      display: flex;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 14px;
+      background: var(--surface-1);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .mock-btn {
+      width: 38px; height: 38px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      color: var(--text-secondary);
+      background: var(--surface-1);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .mock-btn svg { width: 20px; height: 20px; }
+
+    .mock-btn.active {
+      color: var(--accent);
+      border-color: var(--border-accent);
+      background: var(--accent-dim);
+      box-shadow: 0 0 18px var(--accent-glow);
+    }
+
+    .mock-file {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--surface-1);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .mock-file svg { width: 28px; height: 28px; color: var(--accent); flex-shrink: 0; }
+
+    .mock-file span {
+      font-family: 'DM Mono', ui-monospace, monospace;
+      font-size: 12px;
+      color: var(--text-secondary);
+      word-break: break-all;
+      line-height: 1.5;
+    }
+
+    .mock-unlock {
+      width: 100%;
+      display: grid;
+      gap: 10px;
+    }
+
+    .mock-field {
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid var(--border-muted);
+      background: var(--surface-1);
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      gap: 6px;
+    }
+
+    .mock-field i {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--text-tertiary);
+    }
+
+    .mock-open {
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #0a0c12;
+      background: linear-gradient(135deg, #63b3ed, #2b6cb0);
+    }
+
+    .notes {
+      margin-bottom: 28px;
+      animation: fadeUp .65s var(--ease-out) .1s both;
+    }
+
+    .notes h2 {
+      font-size: clamp(20px, 2.4vw, 26px);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+    }
+
+    .note-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px 32px;
+    }
+
+    .note-list li {
+      display: flex;
+      gap: 12px;
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .note-list svg {
+      width: 20px; height: 20px;
+      margin-top: 3px;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 24px;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text-primary);
+      background: var(--surface-1);
+      border: 1px solid var(--border-muted);
+      transition: transform var(--dur-med) var(--ease-out), border-color var(--dur-med) ease, box-shadow var(--dur-med) ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-accent);
+    }
+
+    .btn.primary {
+      color: #0a0c12;
+      border: none;
+      background: linear-gradient(135deg, #63b3ed, #2b6cb0);
+    }
+
+    @media (max-width: 980px) {
+      .steps.three { grid-template-columns: 1fr; }
+      .note-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 860px) {
+      .steps { grid-template-columns: 1fr; }
+      .card-inner { padding: 24px; }
+    }
+
+    @media (max-width: 560px) {
+      body { padding: 24px 14px 48px; }
+      .hero { margin-bottom: 36px; }
+      .step-top { align-items: flex-start; }
+      .step-number { width: 44px; height: 44px; font-size: 18px; border-radius: 14px; }
+      .footer-box { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <section class="hero">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Updated to v1.8.5.75
+      </div>
+
+      <img src="https://raw.githubusercontent.com/OSV-IT-Studio/holy-private-bookmarks/main/src/icons/icon128.png" alt="Holy Private Bookmarks - Encrypted Bookmark Manager Logo" class="hero-icon">
+
+      <h1>What's New</h1>
+      <p class="subtitle">
+        Save any open page as a single <strong style="color:#fff;font-weight:700;">encrypted HTML file</strong>. Only your master password can open it again.
+      </p>
+    </section>
+
+    <section class="steps three">
+      <article class="card">
+        <div class="card-inner">
+          <div class="step-top">
+            <div class="step-number">1</div>
+            <h2 class="step-title">Click the new button</h2>
+          </div>
+          <p class="step-text">
+            Open the extension and press the <span class="highlight">page-with-a-lock icon</span> in the action bar. The current tab is saved right away, with no extra password prompt.
+          </p>
+          <div class="visual">
+            <div class="mock-bar">
+              <div class="mock-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                <polyline points="7 3 7 8 15 8"></polyline>
+            </svg></div>
+              <div class="mock-btn active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><rect x="2" y="13" width="8" height="5" rx="1" /><path d="M8 13v-2a2 2 0 1 0-4 0v2" /></svg></div>
+              <div class="mock-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bookmark-plus-icon lucide-bookmark-plus"><path d="M12 7v6"></path><path d="M15 10H9"></path><path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"></path></svg></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-inner">
+          <div class="step-top">
+            <div class="step-number">2</div>
+            <h2 class="step-title">Get an encrypted file</h2>
+          </div>
+          <p class="step-text">
+            The page, with its styles and images, is packed into one <span class="highlight">.html</span> file and encrypted with AES-256-GCM. The file name never reveals the page title or address.
+          </p>
+          <div class="visual">
+            <div class="mock-file">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><rect x="2" y="13" width="8" height="5" rx="1" /><path d="M8 13v-2a2 2 0 1 0-4 0v2" /></svg>
+              <span>holy-private-page-20261010-120000.html</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-inner">
+          <div class="step-top">
+            <div class="step-number">3</div>
+            <h2 class="step-title">Open it anywhere</h2>
+          </div>
+          <p class="step-text">
+            Open the file in a modern browser, enter your <span class="highlight">master password</span> and the page is decrypted on the spot, offline and without the extension.
+          </p>
+          <div class="visual">
+            <div class="mock-unlock">
+              <div class="mock-field"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="mock-open">Open</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card notes">
+      <div class="card-inner">
+        <h2>Good to know</h2>
+        <ul class="note-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Your master password is never stored in the file. The key is derived from it with PBKDF2 (600,000 iterations).</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Scripts, hidden form fields and typed passwords are removed from the saved copy.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>The opened page runs in a sandboxed frame with no scripts and no network access.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>If you change your master password later, older files still open with the old one.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>There is no recovery: if the master password is lost, saved pages cannot be opened.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Some pages may look different from the original. Images that other sites block and dynamic content may not be captured, and browser pages such as chrome:// cannot be saved.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="footer-box">
+      <div class="footer-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+      </div>
+
+      <h2>Enjoy the Update</h2>
+      <p>
+        Questions or ideas? Open an issue on <span class="highlight">GitHub</span> and tell us what you think.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn primary" href="https://github.com/OSV-IT-Studio/holy-private-bookmarks" target="_blank" rel="noopener">Open on GitHub</a>
+        <a class="btn" href="https://osv-it-studio.github.io/holy-private-bookmarks/">Visit the website</a>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
