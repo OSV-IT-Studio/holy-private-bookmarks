@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "Halaman ini tidak dapat disimpan"
   },
+  "savePageWaitLoad": {
+    "message": "Tunggu hingga halaman selesai dimuat"
+  },
+  "savePageReopenPopup": {
+    "message": "Halaman berubah setelah jendela dibuka. Tutup ekstensi lalu buka kembali"
+  },
   "savePageSuccess": {
     "message": "Halaman terenkripsi disimpan"
   },

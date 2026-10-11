@@ -974,6 +974,12 @@
   "savePageUnsupported": {
     "message": "This page cannot be saved"
   },
+  "savePageWaitLoad": {
+    "message": "Wait for the page to finish loading"
+  },
+  "savePageReopenPopup": {
+    "message": "The page changed after the window was opened. Close the extension and open it again"
+  },
   "savePageSuccess": {
     "message": "Encrypted page saved"
   },

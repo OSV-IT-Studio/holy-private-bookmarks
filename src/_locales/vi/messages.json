@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "Không thể lưu trang này"
   },
+  "savePageWaitLoad": {
+    "message": "Vui lòng đợi trang tải xong"
+  },
+  "savePageReopenPopup": {
+    "message": "Trang đã thay đổi sau khi mở cửa sổ. Hãy đóng tiện ích và mở lại"
+  },
   "savePageSuccess": {
     "message": "Đã lưu trang được mã hóa"
   },

@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "Այս էջը հնարավոր չէ պահպանել"
   },
+  "savePageWaitLoad": {
+    "message": "Սպասեք, մինչև էջը ամբողջությամբ բեռնվի"
+  },
+  "savePageReopenPopup": {
+    "message": "Էջը փոխվել է պատուհանը բացելուց հետո։ Փակեք ընդլայնումը և նորից բացեք այն"
+  },
   "savePageSuccess": {
     "message": "Գաղտնագրված էջը պահպանվեց"
   },

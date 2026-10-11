@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "Deze pagina kan niet worden opgeslagen"
   },
+  "savePageWaitLoad": {
+    "message": "Wacht tot de pagina volledig is geladen"
+  },
+  "savePageReopenPopup": {
+    "message": "De pagina is veranderd nadat het venster werd geopend. Sluit de extensie en open deze opnieuw"
+  },
   "savePageSuccess": {
     "message": "Versleutelde pagina opgeslagen"
   },

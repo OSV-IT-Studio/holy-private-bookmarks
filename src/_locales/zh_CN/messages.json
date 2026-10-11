@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "无法保存此页面"
   },
+  "savePageWaitLoad": {
+    "message": "请等待页面加载完成"
+  },
+  "savePageReopenPopup": {
+    "message": "打开窗口后页面已发生变化。请关闭扩展程序后重新打开"
+  },
   "savePageSuccess": {
     "message": "已保存加密页面"
   },

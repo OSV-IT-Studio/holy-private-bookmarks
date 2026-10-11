@@ -840,6 +840,10 @@ finally{go.disabled=false}
             showNotification(getMessage('savePageUnsupported'), true);
             return;
         }
+        if (tab.status !== 'complete') {
+            showNotification(getMessage('savePageWaitLoad'), true);
+            return;
+        }
 
         let plainBytes = null;
         let capturePercent = 0;
@@ -860,7 +864,7 @@ finally{go.disabled=false}
                 throw new Error('vault key is not available');
             }
 
-            showGlobalLoadingIndicator(container, getMessage('savePageCapturing') + ' 0%');
+            showGlobalLoadingIndicator(container, getMessage('savePageCapturing') + ' 0%', true);
             _setSaveProgress(container, getMessage('savePageCapturing') + ' 0%', 5);
 
             let theme = 'dark';
@@ -871,10 +875,19 @@ finally{go.disabled=false}
 
             await _nextFrame();
 
-            const results = await chrome.scripting.executeScript({
-                target: { tabId: tab.id },
-                func: _capturePageInTab
-            });
+            let results;
+            try {
+                results = await chrome.scripting.executeScript({
+                    target: { tabId: tab.id },
+                    func: _capturePageInTab
+                });
+            } catch (injectError) {
+                if (/Cannot access contents of url|must request permission/i.test(injectError.message || '')) {
+                    showNotification(getMessage('savePageReopenPopup'), true);
+                    return;
+                }
+                throw injectError;
+            }
             const captured = results && results[0] && results[0].result;
             if (!captured || !captured.html) throw new Error(getMessage('savePageUnsupported'));
 

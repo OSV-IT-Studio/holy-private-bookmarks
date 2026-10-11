@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "Cette page ne peut pas être enregistrée"
   },
+  "savePageWaitLoad": {
+    "message": "Attendez que la page soit complètement chargée"
+  },
+  "savePageReopenPopup": {
+    "message": "La page a changé après l'ouverture de la fenêtre. Fermez l'extension et rouvrez-la"
+  },
   "savePageSuccess": {
     "message": "Page chiffrée enregistrée"
   },

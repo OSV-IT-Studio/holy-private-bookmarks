@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "Tej strony nie można zapisać"
   },
+  "savePageWaitLoad": {
+    "message": "Poczekaj, aż strona się w pełni załaduje"
+  },
+  "savePageReopenPopup": {
+    "message": "Strona zmieniła się po otwarciu okna. Zamknij rozszerzenie i otwórz je ponownie"
+  },
   "savePageSuccess": {
     "message": "Zaszyfrowana strona została zapisana"
   },

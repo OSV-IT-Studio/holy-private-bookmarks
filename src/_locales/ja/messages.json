@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "このページは保存できません"
   },
+  "savePageWaitLoad": {
+    "message": "ページの読み込みが完了するまでお待ちください"
+  },
+  "savePageReopenPopup": {
+    "message": "ウィンドウを開いた後にページが変わりました。拡張機能を閉じて、もう一度開いてください"
+  },
   "savePageSuccess": {
     "message": "暗号化ページを保存しました"
   },

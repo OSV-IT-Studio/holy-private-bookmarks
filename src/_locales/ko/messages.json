@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "이 페이지는 저장할 수 없습니다"
   },
+  "savePageWaitLoad": {
+    "message": "페이지 로딩이 끝날 때까지 기다려 주세요"
+  },
+  "savePageReopenPopup": {
+    "message": "창을 연 후 페이지가 변경되었습니다. 확장 프로그램을 닫았다가 다시 열어 주세요"
+  },
   "savePageSuccess": {
     "message": "암호화된 페이지를 저장했습니다"
   },

@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "Tuto stránku nelze uložit"
   },
+  "savePageWaitLoad": {
+    "message": "Počkejte, až se stránka úplně načte"
+  },
+  "savePageReopenPopup": {
+    "message": "Stránka se po otevření okna změnila. Zavřete rozšíření a otevřete ho znovu"
+  },
   "savePageSuccess": {
     "message": "Šifrovaná stránka uložena"
   },

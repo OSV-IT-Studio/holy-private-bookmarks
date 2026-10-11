@@ -1,5 +1,13 @@
 [
-
+  {
+    "version": "1.8.5.77",
+    "changes": [
+	  "Fixed the \"Add your first bookmark or folder\" hint staying visible after creating the first folder with the Add folder button",
+	  "Saving a page as encrypted HTML: the progress screen is now always centered in the visible popup area instead of the middle of a long bookmark list",
+	  "Saving a page as encrypted HTML: if the page navigated to another site after the window was opened, a clear message asks you to reopen the extension instead of a raw permission error",
+      "Saving a page as encrypted HTML now asks you to wait if the page is still loading, instead of showing a permission error"
+    ]
+  },
   {
     "version": "1.8.5.76",
     "changes": [

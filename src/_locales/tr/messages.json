@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "Bu sayfa kaydedilemiyor"
   },
+  "savePageWaitLoad": {
+    "message": "Sayfanın tamamen yüklenmesini bekleyin"
+  },
+  "savePageReopenPopup": {
+    "message": "Pencere açıldıktan sonra sayfa değişti. Eklentiyi kapatıp yeniden açın"
+  },
   "savePageSuccess": {
     "message": "Şifreli sayfa kaydedildi"
   },

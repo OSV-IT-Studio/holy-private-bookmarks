@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "Diese Seite kann nicht gespeichert werden"
   },
+  "savePageWaitLoad": {
+    "message": "Warten Sie, bis die Seite vollständig geladen ist"
+  },
+  "savePageReopenPopup": {
+    "message": "Die Seite hat sich nach dem Öffnen des Fensters geändert. Schließen Sie die Erweiterung und öffnen Sie sie erneut"
+  },
   "savePageSuccess": {
     "message": "Verschlüsselte Seite gespeichert"
   },

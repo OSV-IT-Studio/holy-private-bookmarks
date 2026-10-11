@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "ไม่สามารถบันทึกหน้านี้ได้"
   },
+  "savePageWaitLoad": {
+    "message": "โปรดรอจนกว่าหน้าเว็บจะโหลดเสร็จ"
+  },
+  "savePageReopenPopup": {
+    "message": "หน้าเว็บเปลี่ยนไปหลังจากเปิดหน้าต่าง ปิดส่วนขยายแล้วเปิดใหม่อีกครั้ง"
+  },
   "savePageSuccess": {
     "message": "บันทึกหน้าที่เข้ารหัสแล้ว"
   },

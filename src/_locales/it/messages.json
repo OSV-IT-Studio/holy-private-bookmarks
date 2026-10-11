@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "Questa pagina non può essere salvata"
   },
+  "savePageWaitLoad": {
+    "message": "Attendi il completamento del caricamento della pagina"
+  },
+  "savePageReopenPopup": {
+    "message": "La pagina è cambiata dopo l'apertura della finestra. Chiudi l'estensione e riaprila"
+  },
   "savePageSuccess": {
     "message": "Pagina crittografata salvata"
   },

@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "Esta página no se puede guardar"
   },
+  "savePageWaitLoad": {
+    "message": "Espera a que la página termine de cargarse"
+  },
+  "savePageReopenPopup": {
+    "message": "La página cambió después de abrir la ventana. Cierra la extensión y ábrela de nuevo"
+  },
   "savePageSuccess": {
     "message": "Página cifrada guardada"
   },

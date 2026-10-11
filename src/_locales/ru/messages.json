@@ -971,6 +971,12 @@
   "savePageUnsupported": {
     "message": "Эту страницу нельзя сохранить"
   },
+  "savePageWaitLoad": {
+    "message": "Дождитесь полной загрузки страницы"
+  },
+  "savePageReopenPopup": {
+    "message": "Страница изменилась после открытия окна. Закройте расширение и откройте его снова"
+  },
   "savePageSuccess": {
     "message": "Зашифрованная страница сохранена"
   },

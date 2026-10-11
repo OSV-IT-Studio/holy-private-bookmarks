@@ -77,7 +77,7 @@ input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-tint-xl
 ::-webkit-scrollbar-thumb{background:var(--accent);border-radius:4px;border:2px solid transparent;background-clip:padding-box}
 ::-webkit-scrollbar-thumb:hover{background:var(--accent-hover)}
 
-.notification{position:fixed;top:20px;right:20px;background:var(--accent);color:var(--text-on-primary);padding:12px 20px;border-radius:10px;z-index:9000;font-weight:500;animation:fadeInOut 2s ease-in-out;backdrop-filter:blur(10px);box-shadow:var(--shadow)}
+.notification{position:fixed;top:20px;right:20px;background:var(--accent);color:var(--text-on-primary);padding:12px 20px;border-radius:10px;z-index:9000;font-weight:500;animation:fadeInOut 2s ease-in-out;backdrop-filter:blur(10px);box-shadow:var(--shadow); max-width: 500px;}
 @keyframes fadeInOut{0%{opacity:0;transform:translateY(-10px)}15%,85%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-10px)}}
 
 h1{font-size:24px;font-weight:700;text-align:center;margin:20px 0 20px;background:var(--accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.5px}

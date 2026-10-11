@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "לא ניתן לשמור דף זה"
   },
+  "savePageWaitLoad": {
+    "message": "המתן לסיום טעינת הדף"
+  },
+  "savePageReopenPopup": {
+    "message": "הדף השתנה לאחר פתיחת החלון. סגור את התוסף ופתח אותו מחדש"
+  },
   "savePageSuccess": {
     "message": "הדף המוצפן נשמר"
   },

@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "Den här sidan kan inte sparas"
   },
+  "savePageWaitLoad": {
+    "message": "Vänta tills sidan har laddats klart"
+  },
+  "savePageReopenPopup": {
+    "message": "Sidan ändrades efter att fönstret öppnades. Stäng tillägget och öppna det igen"
+  },
   "savePageSuccess": {
     "message": "Krypterad sida sparad"
   },

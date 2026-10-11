@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "Această pagină nu poate fi salvată"
   },
+  "savePageWaitLoad": {
+    "message": "Așteptați încărcarea completă a paginii"
+  },
+  "savePageReopenPopup": {
+    "message": "Pagina s-a schimbat după deschiderea ferestrei. Închideți extensia și deschideți-o din nou"
+  },
   "savePageSuccess": {
     "message": "Pagina criptată a fost salvată"
   },

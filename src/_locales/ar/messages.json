@@ -982,6 +982,12 @@
   "savePageUnsupported": {
     "message": "لا يمكن حفظ هذه الصفحة"
   },
+  "savePageWaitLoad": {
+    "message": "يرجى الانتظار حتى يكتمل تحميل الصفحة"
+  },
+  "savePageReopenPopup": {
+    "message": "تغيرت الصفحة بعد فتح النافذة. أغلق الإضافة وافتحها مرة أخرى"
+  },
   "savePageSuccess": {
     "message": "تم حفظ الصفحة المشفّرة"
   },

@@ -889,7 +889,7 @@ function hideLoadingIndicator(container) {
 
 // GLOBAL LOADING INDICATOR 
 
-function showGlobalLoadingIndicator(container = null, text = null) {
+function showGlobalLoadingIndicator(container = null, text = null, viewport = false) {
     hideGlobalLoadingIndicator();
     
     
@@ -926,6 +926,7 @@ function showGlobalLoadingIndicator(container = null, text = null) {
     
     const overlay = document.createElement('div');
     overlay.className = 'global-loader-container';
+    if (viewport) overlay.style.position = 'fixed';
     
     
     const loader = document.createElement('div');

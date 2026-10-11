@@ -306,6 +306,7 @@ const PopupBookmarks = (function () {
             const idx = getData().folders.length - 1;
             const tree = document.getElementById('tree');
             if (tree && window.PopupTree?.createFolderElement) {
+                _clearEmptyTreeMessage(tree);
                 const el = window.PopupTree.createFolderElement(newFolder, [idx]);
                 tree.appendChild(el);
                 _deps.virtualScrollCache?.clear?.();
@@ -415,6 +416,11 @@ const PopupBookmarks = (function () {
     }
 
 
+    function _clearEmptyTreeMessage(tree) {
+        const emptyMsg = tree.querySelector('.empty-tree-message');
+        if (emptyMsg) emptyMsg.remove();
+    }
+
     async function _handleNewFolderInModal(modal) {
         const { getMessage, getData, buildFolderTreePicker, generateFolderUid } = _deps;
         const name = await _deps.showPrompt({
@@ -434,8 +440,7 @@ const PopupBookmarks = (function () {
             const idx  = getData().folders.length - 1;
             const tree = document.getElementById('tree');
             if (tree) {
-                const emptyMsg = tree.querySelector('.empty-tree-message');
-                if (emptyMsg) emptyMsg.remove();
+                _clearEmptyTreeMessage(tree);
                 const el = window.PopupTree.createFolderElement(getData().folders[idx], [idx]);
                 tree.appendChild(el);
                 window.DragDropManager?.refreshDragItems?.();
@@ -459,8 +464,7 @@ const PopupBookmarks = (function () {
         if (!folderUid && folderPath.length === 0) {
             targetContainer = tree;
             itemPath = [data.folders.length - 1];
-            const emptyMsg = tree.querySelector('.empty-tree-message');
-            if (emptyMsg) emptyMsg.remove();
+            _clearEmptyTreeMessage(tree);
         } else {
             const folderEl = folderUid
                 ? document.querySelector(`#tree .tree-item[data-folder-uid="${folderUid}"]`)
