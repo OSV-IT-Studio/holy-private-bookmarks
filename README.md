@@ -71,6 +71,7 @@ This project uses the following open source libraries:
 | Library | Author | License |
 |---------|--------|---------|
 | [QR Code Generator](https://github.com/kazuhikoarase/qrcode-generator) | © 2009 Kazuhiko Arase | MIT |
+| [Readability](https://github.com/mozilla/readability) | © 2010 Arc90 Inc | Apache 2.0 |
 
 ## License
 
