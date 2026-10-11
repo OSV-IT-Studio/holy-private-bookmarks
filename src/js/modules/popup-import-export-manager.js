@@ -427,6 +427,57 @@ const ImportExportManager = (function() {
         let finished = 0;
         let lastSent = 0;
 
+        const READER_CSS = `
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fbfbfa;color:#1f2328;font:18px/1.7 Georgia,"Times New Roman",serif}
+article{max-width:42rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+h1{font:700 2rem/1.25 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;margin:0 0 .5rem}
+h2,h3,h4,h5,h6{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.3;margin:2em 0 .6em}
+.byline{margin:0 0 2rem;color:#6a7078;font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+p,ul,ol,blockquote,pre,figure,table{margin:0 0 1.2em}
+img,svg{max-width:100%;height:auto}
+figure{margin-left:0;margin-right:0}
+figcaption{font-size:.85em;color:#6a7078}
+a{color:#2563eb}
+blockquote{margin-left:0;padding-left:1em;border-left:3px solid #c9ced6;color:#4a5058}
+pre,code{font-family:ui-monospace,Consolas,monospace;font-size:.9em}
+pre{padding:1em;background:#eef0f3;overflow:auto;border-radius:6px}
+table{border-collapse:collapse;display:block;overflow:auto}
+td,th{border:1px solid #d5d9df;padding:.4em .7em}
+@media(prefers-color-scheme:dark){body{background:#14161a;color:#e6e8eb}.byline,figcaption{color:#98a0aa}a{color:#7db4f2}blockquote{border-color:#3a4049;color:#b4bac2}pre{background:#1d2026}td,th{border-color:#343a42}}
+`;
+
+        function buildReaderRoot() {
+            if (typeof Readability !== 'function') return null;
+            let article = null;
+            try {
+                article = new Readability(document.cloneNode(true), { keepClasses: false }).parse();
+            } catch (e) {
+                return null;
+            }
+            if (!article || !article.content || (article.textContent || '').trim().length < 250) return null;
+            const title = article.title || document.title || '';
+            const doc = document.implementation.createHTMLDocument(title);
+            const html = doc.documentElement;
+            if (article.lang) html.setAttribute('lang', article.lang);
+            if (article.dir) html.setAttribute('dir', article.dir);
+            const wrap = doc.createElement('article');
+            const heading = doc.createElement('h1');
+            heading.textContent = title;
+            wrap.appendChild(heading);
+            if (article.byline) {
+                const byline = doc.createElement('p');
+                byline.className = 'byline';
+                byline.textContent = article.byline;
+                wrap.appendChild(byline);
+            }
+            const content = doc.createElement('div');
+            content.innerHTML = article.content;
+            wrap.appendChild(content);
+            doc.body.appendChild(wrap);
+            return html;
+        }
+
         function reportProgress(force) {
             const now = Date.now();
             if (!force && now - lastSent < 120) return;
@@ -554,10 +605,12 @@ const ImportExportManager = (function() {
         }
 
         const root = document.documentElement;
-        const clone = root.cloneNode(true);
-        const origImgs = Array.from(root.querySelectorAll('img'));
+        const readerRoot = buildReaderRoot();
+        const reader = !!readerRoot;
+        const clone = reader ? readerRoot : root.cloneNode(true);
+        const origImgs = reader ? [] : Array.from(root.querySelectorAll('img'));
         const cloneImgs = Array.from(clone.querySelectorAll('img'));
-        const origCanvases = Array.from(root.querySelectorAll('canvas'));
+        const origCanvases = reader ? [] : Array.from(root.querySelectorAll('canvas'));
         const cloneCanvases = Array.from(clone.querySelectorAll('canvas'));
 
         const canvasImages = origCanvases.map(c => {
@@ -568,8 +621,8 @@ const ImportExportManager = (function() {
             }
         });
 
-        let css = '';
-        for (const sheet of Array.from(document.styleSheets)) {
+        let css = reader ? READER_CSS : '';
+        for (const sheet of reader ? [] : Array.from(document.styleSheets)) {
             try {
                 const text = await sheetCss(sheet, 0);
                 if (!text) continue;
@@ -877,6 +930,10 @@ finally{go.disabled=false}
 
             let results;
             try {
+                await chrome.scripting.executeScript({
+                    target: { tabId: tab.id },
+                    files: ['js/modules/readability.js']
+                });
                 results = await chrome.scripting.executeScript({
                     target: { tabId: tab.id },
                     func: _capturePageInTab

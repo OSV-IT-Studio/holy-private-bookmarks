@@ -1,5 +1,12 @@
 [
   {
+    "version": "1.8.5.78",
+    "changes": [
+      "Saving a page as encrypted HTML now stores it in reader mode: only the article text and images are kept, without menus, ads and page clutter",
+      "If a page has no readable article, it is saved in full as before"
+    ]
+  },
+  {
     "version": "1.8.5.77",
     "changes": [
 	  "Fixed the \"Add your first bookmark or folder\" hint staying visible after creating the first folder with the Add folder button",
