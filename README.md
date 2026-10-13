@@ -63,7 +63,17 @@ Or load it manually:
 2. Open `chrome://extensions`
 3. Enable "Developer mode"
 4. Click "Load unpacked" and select the folder
+## 📣 Looking for a YouTube Reviewer
 
+We're a small team and we're looking for a YouTube creator who would like to make a video review of Holy Private Bookmarks.
+
+We can't pay for it, but in return we offer:
+- a link to your video in this README and on our [website](https://osv-it-studio.github.io/holy-private-bookmarks/)
+- we'll also try to feature it in the extension's Chrome Web Store listing
+
+You get full access to the extension, and we'll answer any technical questions. We don't dictate the content: an honest review, including criticism, is welcome. Please mention in the video or its description that it was made by arrangement with the developers.
+
+Interested? Write to us in [Discussions](https://github.com/OSV-IT-Studio/holy-private-bookmarks/discussions).
 ## Open Source Libraries
 
 This project uses the following open source libraries:
