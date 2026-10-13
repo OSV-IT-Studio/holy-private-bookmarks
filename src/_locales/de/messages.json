@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "Die Datei konnte nicht geöffnet werden. Ihr Browser unterstützt die erforderlichen Funktionen möglicherweise nicht"
+  },
+  "savePageModeTitle": {
+    "message": "So wird die Seite gespeichert"
+  },
+  "savePageModeFull": {
+    "message": "Ganze Seite"
+  },
+  "savePageModeFullDesc": {
+    "message": "Originallayout mit Stilen, Bildern und Schriften"
+  },
+  "savePageModeLite": {
+    "message": "Ohne Bilder"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Nur Layout und Text, ohne Bilder und Schriften. Deutlich kleinere Datei"
+  },
+  "savePageModeReader": {
+    "message": "Lesemodus"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Nur der Haupttext des Artikels mit seinen Bildern"
+  },
+  "savePageModeSelection": {
+    "message": "Markierter Ausschnitt"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Nur das, was gerade auf der Seite markiert ist"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Markieren Sie zuerst etwas auf der Seite"
+  },
+  "savePageReaderUnavailable": {
+    "message": "Auf dieser Seite wurde kein Artikel gefunden. Wählen Sie einen anderen Modus"
+  },
+  "savePageNoSelection": {
+    "message": "Auf der Seite ist nichts markiert"
   }
 }

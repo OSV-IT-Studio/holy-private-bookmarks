@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "Det gick inte att öppna filen. Din webbläsare kanske inte stöder de funktioner som krävs"
+  },
+  "savePageModeTitle": {
+    "message": "Hur sidan ska sparas"
+  },
+  "savePageModeFull": {
+    "message": "Hela sidan"
+  },
+  "savePageModeFullDesc": {
+    "message": "Originallayout med stilar, bilder och teckensnitt"
+  },
+  "savePageModeLite": {
+    "message": "Utan bilder"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Bara layout och text, utan bilder och teckensnitt. Betydligt mindre fil"
+  },
+  "savePageModeReader": {
+    "message": "Läsläge"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Bara artikelns huvudtext med dess bilder"
+  },
+  "savePageModeSelection": {
+    "message": "Markerat avsnitt"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Bara det som är markerat på sidan just nu"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Markera något på sidan först"
+  },
+  "savePageReaderUnavailable": {
+    "message": "Ingen artikel hittades på den här sidan. Välj ett annat läge"
+  },
+  "savePageNoSelection": {
+    "message": "Inget är markerat på sidan"
   }
 }

@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "Tidak dapat membuka file. Browser Anda mungkin tidak mendukung fitur yang diperlukan"
+  },
+  "savePageModeTitle": {
+    "message": "Cara menyimpan halaman"
+  },
+  "savePageModeFull": {
+    "message": "Seluruh halaman"
+  },
+  "savePageModeFullDesc": {
+    "message": "Tata letak asli dengan gaya, gambar, dan font"
+  },
+  "savePageModeLite": {
+    "message": "Tanpa gambar"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Hanya tata letak dan teks, tanpa gambar dan font. File jauh lebih kecil"
+  },
+  "savePageModeReader": {
+    "message": "Mode baca"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Hanya teks utama artikel beserta gambarnya"
+  },
+  "savePageModeSelection": {
+    "message": "Bagian yang dipilih"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Hanya yang sedang dipilih di halaman"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Pilih sesuatu di halaman terlebih dahulu"
+  },
+  "savePageReaderUnavailable": {
+    "message": "Artikel tidak ditemukan di halaman ini. Pilih mode lain"
+  },
+  "savePageNoSelection": {
+    "message": "Tidak ada yang dipilih di halaman"
   }
 }

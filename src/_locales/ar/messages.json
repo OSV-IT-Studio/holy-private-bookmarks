@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "تعذّر فتح الملف. قد لا يدعم متصفحك الميزات المطلوبة"
+  },
+  "savePageModeTitle": {
+    "message": "كيفية حفظ الصفحة"
+  },
+  "savePageModeFull": {
+    "message": "الصفحة كاملة"
+  },
+  "savePageModeFullDesc": {
+    "message": "التخطيط الأصلي مع الأنماط والصور والخطوط"
+  },
+  "savePageModeLite": {
+    "message": "بدون صور"
+  },
+  "savePageModeLiteDesc": {
+    "message": "التخطيط والنص فقط، بدون صور أو خطوط. حجم ملف أصغر بكثير"
+  },
+  "savePageModeReader": {
+    "message": "وضع القراءة"
+  },
+  "savePageModeReaderDesc": {
+    "message": "النص الرئيسي للمقال مع صوره فقط"
+  },
+  "savePageModeSelection": {
+    "message": "الجزء المحدد"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "فقط ما هو محدد حاليًا في الصفحة"
+  },
+  "savePageModeSelectionNone": {
+    "message": "حدّد شيئًا في الصفحة أولًا"
+  },
+  "savePageReaderUnavailable": {
+    "message": "لم يتم العثور على مقال في هذه الصفحة. اختر وضعًا آخر"
+  },
+  "savePageNoSelection": {
+    "message": "لم يتم تحديد أي شيء في الصفحة"
   }
 }

@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "Nie udało się otworzyć pliku. Twoja przeglądarka może nie obsługiwać wymaganych funkcji"
+  },
+  "savePageModeTitle": {
+    "message": "Jak zapisać stronę"
+  },
+  "savePageModeFull": {
+    "message": "Cała strona"
+  },
+  "savePageModeFullDesc": {
+    "message": "Oryginalny układ ze stylami, obrazami i czcionkami"
+  },
+  "savePageModeLite": {
+    "message": "Bez obrazów"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Tylko układ i tekst, bez obrazów i czcionek. Znacznie mniejszy plik"
+  },
+  "savePageModeReader": {
+    "message": "Tryb czytania"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Tylko główny tekst artykułu wraz z jego obrazami"
+  },
+  "savePageModeSelection": {
+    "message": "Zaznaczony fragment"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Tylko to, co jest teraz zaznaczone na stronie"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Najpierw zaznacz coś na stronie"
+  },
+  "savePageReaderUnavailable": {
+    "message": "Nie znaleziono artykułu na tej stronie. Wybierz inny tryb"
+  },
+  "savePageNoSelection": {
+    "message": "Na stronie nic nie jest zaznaczone"
   }
 }

@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "Soubor se nepodařilo otevřít. Váš prohlížeč možná nepodporuje potřebné funkce"
+  },
+  "savePageModeTitle": {
+    "message": "Jak stránku uložit"
+  },
+  "savePageModeFull": {
+    "message": "Celá stránka"
+  },
+  "savePageModeFullDesc": {
+    "message": "Původní vzhled se styly, obrázky a písmy"
+  },
+  "savePageModeLite": {
+    "message": "Bez obrázků"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Pouze rozvržení a text, bez obrázků a písem. Soubor je mnohem menší"
+  },
+  "savePageModeReader": {
+    "message": "Režim čtení"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Pouze hlavní text článku s jeho obrázky"
+  },
+  "savePageModeSelection": {
+    "message": "Vybraný úryvek"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Pouze to, co je právě vybráno na stránce"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Nejprve na stránce něco vyberte"
+  },
+  "savePageReaderUnavailable": {
+    "message": "Na této stránce nebyl nalezen žádný článek. Zvolte jiný režim"
+  },
+  "savePageNoSelection": {
+    "message": "Na stránce není nic vybráno"
   }
 }

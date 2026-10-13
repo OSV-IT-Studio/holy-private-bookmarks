@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "Het bestand kon niet worden geopend. Je browser ondersteunt mogelijk de vereiste functies niet"
+  },
+  "savePageModeTitle": {
+    "message": "Hoe de pagina opslaan"
+  },
+  "savePageModeFull": {
+    "message": "Hele pagina"
+  },
+  "savePageModeFullDesc": {
+    "message": "Originele opmaak met stijlen, afbeeldingen en lettertypen"
+  },
+  "savePageModeLite": {
+    "message": "Zonder afbeeldingen"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Alleen opmaak en tekst, zonder afbeeldingen en lettertypen. Veel kleiner bestand"
+  },
+  "savePageModeReader": {
+    "message": "Leesmodus"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Alleen de hoofdtekst van het artikel met bijbehorende afbeeldingen"
+  },
+  "savePageModeSelection": {
+    "message": "Geselecteerd fragment"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Alleen wat nu op de pagina is geselecteerd"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Selecteer eerst iets op de pagina"
+  },
+  "savePageReaderUnavailable": {
+    "message": "Geen artikel gevonden op deze pagina. Kies een andere modus"
+  },
+  "savePageNoSelection": {
+    "message": "Er is niets geselecteerd op de pagina"
   }
 }

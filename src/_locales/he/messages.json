@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "לא ניתן לפתוח את הקובץ. ייתכן שהדפדפן שלך אינו תומך בתכונות הנדרשות"
+  },
+  "savePageModeTitle": {
+    "message": "איך לשמור את הדף"
+  },
+  "savePageModeFull": {
+    "message": "הדף כולו"
+  },
+  "savePageModeFullDesc": {
+    "message": "פריסה מקורית עם סגנונות, תמונות וגופנים"
+  },
+  "savePageModeLite": {
+    "message": "בלי תמונות"
+  },
+  "savePageModeLiteDesc": {
+    "message": "פריסה וטקסט בלבד, בלי תמונות וגופנים. קובץ קטן בהרבה"
+  },
+  "savePageModeReader": {
+    "message": "מצב קריאה"
+  },
+  "savePageModeReaderDesc": {
+    "message": "רק הטקסט הראשי של המאמר עם התמונות שלו"
+  },
+  "savePageModeSelection": {
+    "message": "קטע נבחר"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "רק מה שנבחר כעת בדף"
+  },
+  "savePageModeSelectionNone": {
+    "message": "קודם בחרו משהו בדף"
+  },
+  "savePageReaderUnavailable": {
+    "message": "לא נמצא מאמר בדף זה. בחרו מצב אחר"
+  },
+  "savePageNoSelection": {
+    "message": "לא נבחר דבר בדף"
   }
 }

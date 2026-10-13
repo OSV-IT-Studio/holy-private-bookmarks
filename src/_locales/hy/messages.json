@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "Չհաջողվեց բացել ֆայլը։ Հնարավոր է՝ ձեր դիտարկիչը չի աջակցում անհրաժեշտ գործառույթները"
+  },
+  "savePageModeTitle": {
+    "message": "Ինչպես պահպանել էջը"
+  },
+  "savePageModeFull": {
+    "message": "Ամբողջ էջը"
+  },
+  "savePageModeFullDesc": {
+    "message": "Բնօրինակ դասավորությունը՝ ոճերով, պատկերներով և տառատեսակներով"
+  },
+  "savePageModeLite": {
+    "message": "Առանց պատկերների"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Միայն դասավորությունն ու տեքստը՝ առանց պատկերների և տառատեսակների։ Ֆայլը շատ ավելի փոքր է"
+  },
+  "savePageModeReader": {
+    "message": "Ընթերցման ռեժիմ"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Միայն հոդվածի հիմնական տեքստը՝ իր պատկերներով"
+  },
+  "savePageModeSelection": {
+    "message": "Ընտրված հատված"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Միայն այն, ինչ հիմա ընտրված է էջում"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Նախ ընտրեք ինչ-որ բան էջում"
+  },
+  "savePageReaderUnavailable": {
+    "message": "Այս էջում հոդված չի գտնվել։ Ընտրեք այլ ռեժիմ"
+  },
+  "savePageNoSelection": {
+    "message": "Էջում ոչինչ ընտրված չէ"
   }
 }

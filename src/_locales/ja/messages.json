@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "ファイルを開けませんでした。お使いのブラウザが必要な機能に対応していない可能性があります"
+  },
+  "savePageModeTitle": {
+    "message": "ページの保存方法"
+  },
+  "savePageModeFull": {
+    "message": "ページ全体"
+  },
+  "savePageModeFullDesc": {
+    "message": "スタイル・画像・フォントを含む元のレイアウト"
+  },
+  "savePageModeLite": {
+    "message": "画像なし"
+  },
+  "savePageModeLiteDesc": {
+    "message": "レイアウトとテキストのみ（画像とフォントなし）。ファイルがかなり小さくなります"
+  },
+  "savePageModeReader": {
+    "message": "リーダーモード"
+  },
+  "savePageModeReaderDesc": {
+    "message": "記事の本文と画像のみ"
+  },
+  "savePageModeSelection": {
+    "message": "選択範囲"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "ページ上で現在選択している部分のみ"
+  },
+  "savePageModeSelectionNone": {
+    "message": "先にページ上で何かを選択してください"
+  },
+  "savePageReaderUnavailable": {
+    "message": "このページでは記事が見つかりませんでした。別のモードを選んでください"
+  },
+  "savePageNoSelection": {
+    "message": "ページ上で何も選択されていません"
   }
 }

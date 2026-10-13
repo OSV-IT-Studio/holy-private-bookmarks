@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "无法打开文件。您的浏览器可能不支持所需功能"
+  },
+  "savePageModeTitle": {
+    "message": "如何保存页面"
+  },
+  "savePageModeFull": {
+    "message": "完整页面"
+  },
+  "savePageModeFullDesc": {
+    "message": "保留原始版式，包含样式、图片和字体"
+  },
+  "savePageModeLite": {
+    "message": "不含图片"
+  },
+  "savePageModeLiteDesc": {
+    "message": "仅保留版式和文字，不含图片和字体，文件小得多"
+  },
+  "savePageModeReader": {
+    "message": "阅读模式"
+  },
+  "savePageModeReaderDesc": {
+    "message": "仅保存文章正文及其图片"
+  },
+  "savePageModeSelection": {
+    "message": "所选片段"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "仅保存页面上当前选中的内容"
+  },
+  "savePageModeSelectionNone": {
+    "message": "请先在页面上选中内容"
+  },
+  "savePageReaderUnavailable": {
+    "message": "此页面未找到文章，请选择其他模式"
+  },
+  "savePageNoSelection": {
+    "message": "页面上没有选中任何内容"
   }
 }

@@ -1,4 +1,14 @@
 [
+{
+  "version": "1.8.5.79",
+  "changes": [
+    "Saving a page as encrypted HTML: you now choose how to save it. Full page, without images, reader mode, or the selected fragment",
+    "Reader mode is no longer applied automatically. If no article is found on the page, a message suggests another mode instead of silently saving something different",
+    "The last used saving mode is remembered and highlighted next time",
+    "The \"Selected fragment\" option is available only when something is selected on the page"
+	]
+  },
+
   {
     "version": "1.8.5.78",
     "changes": [

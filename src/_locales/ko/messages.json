@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "파일을 열 수 없습니다. 브라우저가 필요한 기능을 지원하지 않을 수 있습니다"
+  },
+  "savePageModeTitle": {
+    "message": "페이지 저장 방식"
+  },
+  "savePageModeFull": {
+    "message": "전체 페이지"
+  },
+  "savePageModeFullDesc": {
+    "message": "스타일, 이미지, 글꼴이 포함된 원본 레이아웃"
+  },
+  "savePageModeLite": {
+    "message": "이미지 제외"
+  },
+  "savePageModeLiteDesc": {
+    "message": "레이아웃과 텍스트만 저장하며 이미지와 글꼴은 제외합니다. 파일 크기가 훨씬 작습니다"
+  },
+  "savePageModeReader": {
+    "message": "읽기 모드"
+  },
+  "savePageModeReaderDesc": {
+    "message": "기사 본문과 해당 이미지만"
+  },
+  "savePageModeSelection": {
+    "message": "선택한 부분"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "현재 페이지에서 선택한 부분만"
+  },
+  "savePageModeSelectionNone": {
+    "message": "먼저 페이지에서 내용을 선택하세요"
+  },
+  "savePageReaderUnavailable": {
+    "message": "이 페이지에서 기사를 찾을 수 없습니다. 다른 모드를 선택하세요"
+  },
+  "savePageNoSelection": {
+    "message": "페이지에서 선택된 내용이 없습니다"
   }
 }

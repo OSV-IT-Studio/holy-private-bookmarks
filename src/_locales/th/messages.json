@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "ไม่สามารถเปิดไฟล์ได้ เบราว์เซอร์ของคุณอาจไม่รองรับฟีเจอร์ที่จำเป็น"
+  },
+  "savePageModeTitle": {
+    "message": "วิธีบันทึกหน้า"
+  },
+  "savePageModeFull": {
+    "message": "ทั้งหน้า"
+  },
+  "savePageModeFullDesc": {
+    "message": "เลย์เอาต์ต้นฉบับพร้อมสไตล์ รูปภาพ และฟอนต์"
+  },
+  "savePageModeLite": {
+    "message": "ไม่มีรูปภาพ"
+  },
+  "savePageModeLiteDesc": {
+    "message": "เฉพาะเลย์เอาต์และข้อความ ไม่มีรูปภาพและฟอนต์ ไฟล์เล็กลงมาก"
+  },
+  "savePageModeReader": {
+    "message": "โหมดอ่าน"
+  },
+  "savePageModeReaderDesc": {
+    "message": "เฉพาะข้อความหลักของบทความพร้อมรูปภาพ"
+  },
+  "savePageModeSelection": {
+    "message": "ส่วนที่เลือก"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "เฉพาะส่วนที่เลือกไว้ในหน้าตอนนี้"
+  },
+  "savePageModeSelectionNone": {
+    "message": "เลือกบางอย่างในหน้าก่อน"
+  },
+  "savePageReaderUnavailable": {
+    "message": "ไม่พบบทความในหน้านี้ โปรดเลือกโหมดอื่น"
+  },
+  "savePageNoSelection": {
+    "message": "ไม่ได้เลือกอะไรไว้ในหน้า"
   }
 }

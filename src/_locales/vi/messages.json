@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "Không thể mở tệp. Trình duyệt của bạn có thể không hỗ trợ các tính năng cần thiết"
+  },
+  "savePageModeTitle": {
+    "message": "Cách lưu trang"
+  },
+  "savePageModeFull": {
+    "message": "Toàn bộ trang"
+  },
+  "savePageModeFullDesc": {
+    "message": "Bố cục gốc cùng kiểu dáng, hình ảnh và phông chữ"
+  },
+  "savePageModeLite": {
+    "message": "Không có hình ảnh"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Chỉ bố cục và văn bản, không có hình ảnh và phông chữ. Tệp nhỏ hơn nhiều"
+  },
+  "savePageModeReader": {
+    "message": "Chế độ đọc"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Chỉ phần nội dung chính của bài viết cùng hình ảnh"
+  },
+  "savePageModeSelection": {
+    "message": "Đoạn đã chọn"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Chỉ phần đang được chọn trên trang"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Hãy chọn nội dung trên trang trước"
+  },
+  "savePageReaderUnavailable": {
+    "message": "Không tìm thấy bài viết trên trang này. Hãy chọn chế độ khác"
+  },
+  "savePageNoSelection": {
+    "message": "Chưa chọn gì trên trang"
   }
 }

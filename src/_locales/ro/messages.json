@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "Fișierul nu a putut fi deschis. Este posibil ca browserul dvs. să nu accepte funcțiile necesare"
+  },
+  "savePageModeTitle": {
+    "message": "Cum se salvează pagina"
+  },
+  "savePageModeFull": {
+    "message": "Pagina întreagă"
+  },
+  "savePageModeFullDesc": {
+    "message": "Aspectul original cu stiluri, imagini și fonturi"
+  },
+  "savePageModeLite": {
+    "message": "Fără imagini"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Doar aspectul și textul, fără imagini și fonturi. Fișier mult mai mic"
+  },
+  "savePageModeReader": {
+    "message": "Mod de citire"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Doar textul principal al articolului, cu imaginile sale"
+  },
+  "savePageModeSelection": {
+    "message": "Fragment selectat"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Doar ce este selectat acum pe pagină"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Mai întâi selectați ceva pe pagină"
+  },
+  "savePageReaderUnavailable": {
+    "message": "Nu s-a găsit niciun articol pe această pagină. Alegeți alt mod"
+  },
+  "savePageNoSelection": {
+    "message": "Nimic nu este selectat pe pagină"
   }
 }

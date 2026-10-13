@@ -1006,5 +1006,41 @@
   },
   "savePageFinishing": {
     "message": "Creating file…"
+  },
+  "savePageModeTitle": {
+    "message": "How to save the page"
+  },
+  "savePageModeFull": {
+    "message": "Full page"
+  },
+  "savePageModeFullDesc": {
+    "message": "Original layout with styles, images and fonts"
+  },
+  "savePageModeLite": {
+    "message": "Without images"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Layout and text only, no images or fonts. Much smaller file"
+  },
+  "savePageModeReader": {
+    "message": "Reader mode"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Only the main article text with its images"
+  },
+  "savePageModeSelection": {
+    "message": "Selected fragment"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Only what is selected on the page right now"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Select something on the page first"
+  },
+  "savePageReaderUnavailable": {
+    "message": "No article found on this page. Choose another mode"
+  },
+  "savePageNoSelection": {
+    "message": "Nothing is selected on the page"
   }
 }

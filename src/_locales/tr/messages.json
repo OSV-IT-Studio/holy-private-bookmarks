@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "Dosya açılamadı. Tarayıcınız gerekli özellikleri desteklemiyor olabilir"
+  },
+  "savePageModeTitle": {
+    "message": "Sayfa nasıl kaydedilsin"
+  },
+  "savePageModeFull": {
+    "message": "Tüm sayfa"
+  },
+  "savePageModeFullDesc": {
+    "message": "Stiller, görseller ve yazı tipleriyle özgün görünüm"
+  },
+  "savePageModeLite": {
+    "message": "Görselsiz"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Yalnızca düzen ve metin, görsel ve yazı tipi yok. Çok daha küçük dosya"
+  },
+  "savePageModeReader": {
+    "message": "Okuma modu"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Yalnızca makalenin ana metni ve görselleri"
+  },
+  "savePageModeSelection": {
+    "message": "Seçili bölüm"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Yalnızca sayfada şu anda seçili olan kısım"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Önce sayfada bir şey seçin"
+  },
+  "savePageReaderUnavailable": {
+    "message": "Bu sayfada makale bulunamadı. Başka bir mod seçin"
+  },
+  "savePageNoSelection": {
+    "message": "Sayfada hiçbir şey seçili değil"
   }
 }

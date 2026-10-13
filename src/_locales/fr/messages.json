@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "Impossible d'ouvrir le fichier. Votre navigateur ne prend peut-être pas en charge les fonctions requises"
+  },
+  "savePageModeTitle": {
+    "message": "Comment enregistrer la page"
+  },
+  "savePageModeFull": {
+    "message": "Page entière"
+  },
+  "savePageModeFullDesc": {
+    "message": "Mise en page d’origine avec styles, images et polices"
+  },
+  "savePageModeLite": {
+    "message": "Sans images"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Mise en page et texte uniquement, sans images ni polices. Fichier bien plus léger"
+  },
+  "savePageModeReader": {
+    "message": "Mode lecture"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Uniquement le texte principal de l’article avec ses images"
+  },
+  "savePageModeSelection": {
+    "message": "Passage sélectionné"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Uniquement ce qui est sélectionné sur la page"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Sélectionnez d’abord quelque chose sur la page"
+  },
+  "savePageReaderUnavailable": {
+    "message": "Aucun article trouvé sur cette page. Choisissez un autre mode"
+  },
+  "savePageNoSelection": {
+    "message": "Rien n’est sélectionné sur la page"
   }
 }

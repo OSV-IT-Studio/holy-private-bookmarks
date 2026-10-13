@@ -1003,5 +1003,41 @@
   },
   "savePageFinishing": {
     "message": "Создание файла…"
+  },
+  "savePageModeTitle": {
+    "message": "Как сохранить страницу"
+  },
+  "savePageModeFull": {
+    "message": "Страница целиком"
+  },
+  "savePageModeFullDesc": {
+    "message": "Исходная вёрстка со стилями, картинками и шрифтами"
+  },
+  "savePageModeLite": {
+    "message": "Без картинок"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Только вёрстка и текст, без картинок и шрифтов. Файл заметно меньше"
+  },
+  "savePageModeReader": {
+    "message": "Режим чтения"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Только основной текст статьи с её картинками"
+  },
+  "savePageModeSelection": {
+    "message": "Выделенный фрагмент"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Только то, что сейчас выделено на странице"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Сначала выделите что-нибудь на странице"
+  },
+  "savePageReaderUnavailable": {
+    "message": "На этой странице не удалось найти статью. Выберите другой режим"
+  },
+  "savePageNoSelection": {
+    "message": "На странице ничего не выделено"
   }
 }

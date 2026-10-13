@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "No se pudo abrir el archivo. Es posible que tu navegador no admita las funciones necesarias"
+  },
+  "savePageModeTitle": {
+    "message": "Cómo guardar la página"
+  },
+  "savePageModeFull": {
+    "message": "Página completa"
+  },
+  "savePageModeFullDesc": {
+    "message": "Diseño original con estilos, imágenes y fuentes"
+  },
+  "savePageModeLite": {
+    "message": "Sin imágenes"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Solo diseño y texto, sin imágenes ni fuentes. Archivo mucho más pequeño"
+  },
+  "savePageModeReader": {
+    "message": "Modo lectura"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Solo el texto principal del artículo con sus imágenes"
+  },
+  "savePageModeSelection": {
+    "message": "Fragmento seleccionado"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Solo lo que está seleccionado en la página"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Primero selecciona algo en la página"
+  },
+  "savePageReaderUnavailable": {
+    "message": "No se encontró ningún artículo en esta página. Elige otro modo"
+  },
+  "savePageNoSelection": {
+    "message": "No hay nada seleccionado en la página"
   }
 }

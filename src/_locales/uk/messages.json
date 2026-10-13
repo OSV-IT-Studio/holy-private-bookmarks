@@ -1005,5 +1005,41 @@
   },
   "savePageFinishing": {
     "message": "Створення файлу…"
+  },
+  "savePageModeTitle": {
+    "message": "Як зберегти сторінку"
+  },
+  "savePageModeFull": {
+    "message": "Уся сторінка"
+  },
+  "savePageModeFullDesc": {
+    "message": "Оригінальна верстка зі стилями, зображеннями та шрифтами"
+  },
+  "savePageModeLite": {
+    "message": "Без зображень"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Лише верстка й текст, без зображень і шрифтів. Файл помітно менший"
+  },
+  "savePageModeReader": {
+    "message": "Режим читання"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Лише основний текст статті з її зображеннями"
+  },
+  "savePageModeSelection": {
+    "message": "Виділений фрагмент"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Лише те, що зараз виділено на сторінці"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Спершу виділіть щось на сторінці"
+  },
+  "savePageReaderUnavailable": {
+    "message": "Не вдалося знайти статтю на цій сторінці. Виберіть інший режим"
+  },
+  "savePageNoSelection": {
+    "message": "На сторінці нічого не виділено"
   }
 }

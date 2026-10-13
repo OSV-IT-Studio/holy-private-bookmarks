@@ -417,7 +417,7 @@ const ImportExportManager = (function() {
 
     const PAGE_KDF_ITERATIONS = 600000;
 
-    async function _capturePageInTab() {
+    async function _capturePageInTab(mode) {
         const MAX_ONE = 8 * 1024 * 1024;
         const MAX_TOTAL = 40 * 1024 * 1024;
         const FETCH_TIMEOUT = 10000;
@@ -426,6 +426,7 @@ const ImportExportManager = (function() {
         let started = 0;
         let finished = 0;
         let lastSent = 0;
+        const withImages = mode !== 'lite';
 
         const READER_CSS = `
 html{-webkit-text-size-adjust:100%}
@@ -447,6 +448,28 @@ td,th{border:1px solid #d5d9df;padding:.4em .7em}
 @media(prefers-color-scheme:dark){body{background:#14161a;color:#e6e8eb}.byline,figcaption{color:#98a0aa}a{color:#7db4f2}blockquote{border-color:#3a4049;color:#b4bac2}pre{background:#1d2026}td,th{border-color:#343a42}}
 `;
 
+        function wrapArticle(title, byline, lang, dir, fill) {
+            const doc = document.implementation.createHTMLDocument(title);
+            const html = doc.documentElement;
+            if (lang) html.setAttribute('lang', lang);
+            if (dir) html.setAttribute('dir', dir);
+            const wrap = doc.createElement('article');
+            const heading = doc.createElement('h1');
+            heading.textContent = title;
+            wrap.appendChild(heading);
+            if (byline) {
+                const line = doc.createElement('p');
+                line.className = 'byline';
+                line.textContent = byline;
+                wrap.appendChild(line);
+            }
+            const content = doc.createElement('div');
+            fill(doc, content);
+            wrap.appendChild(content);
+            doc.body.appendChild(wrap);
+            return html;
+        }
+
         function buildReaderRoot() {
             if (typeof Readability !== 'function') return null;
             let article = null;
@@ -457,25 +480,21 @@ td,th{border:1px solid #d5d9df;padding:.4em .7em}
             }
             if (!article || !article.content || (article.textContent || '').trim().length < 250) return null;
             const title = article.title || document.title || '';
-            const doc = document.implementation.createHTMLDocument(title);
-            const html = doc.documentElement;
-            if (article.lang) html.setAttribute('lang', article.lang);
-            if (article.dir) html.setAttribute('dir', article.dir);
-            const wrap = doc.createElement('article');
-            const heading = doc.createElement('h1');
-            heading.textContent = title;
-            wrap.appendChild(heading);
-            if (article.byline) {
-                const byline = doc.createElement('p');
-                byline.className = 'byline';
-                byline.textContent = article.byline;
-                wrap.appendChild(byline);
-            }
-            const content = doc.createElement('div');
-            content.innerHTML = article.content;
-            wrap.appendChild(content);
-            doc.body.appendChild(wrap);
-            return html;
+            return wrapArticle(title, article.byline, article.lang, article.dir, (doc, box) => {
+                box.innerHTML = article.content;
+            });
+        }
+
+        function buildSelectionRoot() {
+            const sel = window.getSelection();
+            if (!sel || sel.rangeCount === 0 || sel.isCollapsed) return null;
+            const holder = document.createElement('div');
+            for (let i = 0; i < sel.rangeCount; i++) holder.appendChild(sel.getRangeAt(i).cloneContents());
+            if (!holder.textContent.trim() && !holder.querySelector('img, svg, canvas')) return null;
+            const source = document.documentElement;
+            return wrapArticle(document.title || '', location.hostname, source.getAttribute('lang'), source.getAttribute('dir'), (doc, box) => {
+                box.appendChild(doc.importNode(holder, true));
+            });
         }
 
         function reportProgress(force) {
@@ -508,6 +527,7 @@ td,th{border:1px solid #d5d9df;padding:.4em .7em}
         }
 
         function fetchData(url) {
+            if (!withImages) return Promise.resolve(null);
             if (cache.has(url)) return cache.get(url);
             const task = (async () => {
                 if (!/^(https?|blob):/i.test(url)) return null;
@@ -604,13 +624,37 @@ td,th{border:1px solid #d5d9df;padding:.4em .7em}
             }
         }
 
+        const LAZY_ATTRS = ['data-src', 'data-lazy-src', 'data-original', 'data-lazy', 'data-url'];
+
+        function firstSrcsetUrl(value) {
+            return ((value || '').split(',')[0] || '').trim().split(/\s+/)[0] || '';
+        }
+
+        function imageSource(img, orig) {
+            if (orig && orig.complete && orig.naturalWidth > 2) return orig.currentSrc || orig.src || '';
+            const lazy = LAZY_ATTRS.map(name => img.getAttribute(name)).find(value => value && value.trim());
+            const own = (orig && (orig.currentSrc || orig.src)) || img.getAttribute('src') || '';
+            const fromSet = firstSrcsetUrl(img.getAttribute('srcset') || img.getAttribute('data-srcset'));
+            const picked = (lazy || own || fromSet || '').trim();
+            if (!picked || picked.startsWith('data:')) return picked;
+            try {
+                return new URL(picked, document.baseURI).href;
+            } catch (e) {
+                return '';
+            }
+        }
+
         const root = document.documentElement;
-        const readerRoot = buildReaderRoot();
-        const reader = !!readerRoot;
-        const clone = reader ? readerRoot : root.cloneNode(true);
-        const origImgs = reader ? [] : Array.from(root.querySelectorAll('img'));
+        const articleMode = mode === 'reader' || mode === 'selection';
+        let clone = null;
+        if (mode === 'reader') clone = buildReaderRoot();
+        else if (mode === 'selection') clone = buildSelectionRoot();
+        else clone = root.cloneNode(true);
+        if (!clone) return { error: mode };
+
+        const origImgs = articleMode ? [] : Array.from(root.querySelectorAll('img'));
         const cloneImgs = Array.from(clone.querySelectorAll('img'));
-        const origCanvases = reader ? [] : Array.from(root.querySelectorAll('canvas'));
+        const origCanvases = articleMode || !withImages ? [] : Array.from(root.querySelectorAll('canvas'));
         const cloneCanvases = Array.from(clone.querySelectorAll('canvas'));
 
         const canvasImages = origCanvases.map(c => {
@@ -621,32 +665,42 @@ td,th{border:1px solid #d5d9df;padding:.4em .7em}
             }
         });
 
-        let css = reader ? READER_CSS : '';
-        for (const sheet of reader ? [] : Array.from(document.styleSheets)) {
-            try {
-                const text = await sheetCss(sheet, 0);
-                if (!text) continue;
-                const media = sheet.media && sheet.media.mediaText;
-                css += media && media !== 'all' ? '@media ' + media + '{' + text + '}\n' : text + '\n';
-            } catch (e) {
-                continue;
+        let css = articleMode ? READER_CSS : '';
+        if (!articleMode) {
+            const sheets = Array.from(document.styleSheets).concat(Array.from(document.adoptedStyleSheets || []));
+            for (const sheet of sheets) {
+                try {
+                    const text = await sheetCss(sheet, 0);
+                    if (!text) continue;
+                    const media = sheet.media && sheet.media.mediaText;
+                    css += media && media !== 'all' ? '@media ' + media + '{' + text + '}\n' : text + '\n';
+                } catch (e) {
+                    continue;
+                }
             }
         }
         css = css.replace(/<\/style/gi, '<\\/style');
 
-        await Promise.all(cloneImgs.map(async (img, i) => {
-            const orig = origImgs[i];
-            const src = (orig && (orig.currentSrc || orig.src)) || img.getAttribute('src') || '';
-            img.removeAttribute('srcset');
-            img.removeAttribute('sizes');
-            img.removeAttribute('loading');
-            let data = null;
-            if (src.startsWith('data:')) data = src;
-            else if (src) data = await fetchData(src);
-            if (!data && orig) data = viaCanvas(orig);
-            if (data) img.setAttribute('src', data);
-            else img.removeAttribute('src');
-        }));
+        if (withImages) {
+            await Promise.all(cloneImgs.map(async (img, i) => {
+                const orig = origImgs[i];
+                const src = imageSource(img, orig);
+                img.removeAttribute('srcset');
+                img.removeAttribute('sizes');
+                img.removeAttribute('loading');
+                img.removeAttribute('data-srcset');
+                LAZY_ATTRS.forEach(name => img.removeAttribute(name));
+                let data = null;
+                if (src.startsWith('data:')) data = src;
+                else if (src) data = await fetchData(src);
+                if (!data && orig) data = viaCanvas(orig);
+                if (data) img.setAttribute('src', data);
+                else img.removeAttribute('src');
+            }));
+        } else {
+            cloneImgs.forEach(img => img.remove());
+            clone.querySelectorAll('picture').forEach(el => el.remove());
+        }
 
         cloneCanvases.forEach((canvas, i) => {
             const snap = canvasImages[i];
@@ -726,7 +780,8 @@ td,th{border:1px solid #d5d9df;padding:.4em .7em}
         return {
             html: '<!DOCTYPE html>\n' + clone.outerHTML,
             title: document.title || '',
-            url: location.href
+            url: location.href,
+            mode: mode
         };
     }
 
@@ -884,6 +939,141 @@ finally{go.disabled=false}
         return new Promise(resolve => setTimeout(resolve, 30));
     }
 
+    const SAVE_MODE_KEY = 'holySavePageMode';
+
+    const SAVE_MODES = [
+        { id: 'full', name: 'savePageModeFull', desc: 'savePageModeFullDesc', icon: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>' },
+        { id: 'lite', name: 'savePageModeLite', desc: 'savePageModeLiteDesc', icon: '<path d="M4 6h16M4 12h16M4 18h10"/>' },
+        { id: 'reader', name: 'savePageModeReader', desc: 'savePageModeReaderDesc', icon: '<path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/>' },
+        { id: 'selection', name: 'savePageModeSelection', desc: 'savePageModeSelectionDesc', icon: '<path d="M5 3h2M17 3h2M5 21h2M17 21h2M3 5v2M21 5v2M3 17v2M21 17v2M9 9h6M12 9v6"/>' }
+    ];
+
+    async function _readLastSaveMode() {
+        try {
+            const stored = await chrome.storage.local.get(SAVE_MODE_KEY);
+            const id = stored[SAVE_MODE_KEY];
+            return SAVE_MODES.some(m => m.id === id) ? id : 'full';
+        } catch (_) {
+            return 'full';
+        }
+    }
+
+    async function _probeSelection(tabId) {
+        try {
+            const results = await chrome.scripting.executeScript({
+                target: { tabId },
+                func: () => {
+                    const sel = window.getSelection();
+                    return !!sel && !sel.isCollapsed && sel.toString().trim().length > 0;
+                }
+            });
+            return !!(results && results[0] && results[0].result);
+        } catch (_) {
+            return false;
+        }
+    }
+
+    function _chooseSaveMode({ lastMode, hasSelection }) {
+        return new Promise(resolve => {
+            const previous = document.getElementById('hpb-modal-save-mode');
+            if (previous) previous.remove();
+
+            const overlay = document.createElement('div');
+            overlay.id = 'hpb-modal-save-mode';
+            overlay.className = 'hpb-modal hpb-modal--open';
+            overlay.style.zIndex = '9999';
+            overlay.setAttribute('tabindex', '-1');
+            const openedAt = Date.now();
+
+            const dialog = document.createElement('div');
+            dialog.className = 'hpb-modal__dialog hpb-modal__dialog--xs';
+            dialog.setAttribute('role', 'dialog');
+            dialog.setAttribute('aria-modal', 'true');
+            dialog.setAttribute('aria-labelledby', 'hpb-save-mode-title');
+
+            const heading = document.createElement('h2');
+            heading.id = 'hpb-save-mode-title';
+            heading.className = 'hpb-modal__title hpb-modal__title--center';
+            heading.style.marginBottom = '0';
+            heading.textContent = getMessage('savePageModeTitle');
+            dialog.appendChild(heading);
+
+            const list = document.createElement('div');
+            list.className = 'hpb-save-modes';
+            dialog.appendChild(list);
+
+            let finished = false;
+            function finish(result) {
+                if (finished) return;
+                finished = true;
+                overlay.classList.replace('hpb-modal--open', 'hpb-modal--closing');
+                setTimeout(() => overlay.remove(), 250);
+                resolve(result);
+            }
+
+            let focusTarget = null;
+            SAVE_MODES.forEach(mode => {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'hpb-save-mode' + (mode.id === lastMode ? ' is-last' : '');
+                button.dataset.mode = mode.id;
+
+                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                svg.setAttribute('viewBox', '0 0 24 24');
+                svg.setAttribute('fill', 'none');
+                svg.setAttribute('stroke', 'currentColor');
+                svg.setAttribute('stroke-width', '2');
+                svg.setAttribute('stroke-linecap', 'round');
+                svg.setAttribute('stroke-linejoin', 'round');
+                svg.innerHTML = mode.icon;
+
+                const text = document.createElement('span');
+                text.className = 'hpb-save-mode__text';
+                const name = document.createElement('span');
+                name.className = 'hpb-save-mode__name';
+                name.textContent = getMessage(mode.name);
+                const desc = document.createElement('span');
+                desc.className = 'hpb-save-mode__desc';
+                text.appendChild(name);
+                text.appendChild(desc);
+
+                button.appendChild(svg);
+                button.appendChild(text);
+
+                if (mode.id === 'selection' && !hasSelection) {
+                    button.disabled = true;
+                    desc.textContent = getMessage('savePageModeSelectionNone');
+                } else {
+                    desc.textContent = getMessage(mode.desc);
+                    button.addEventListener('click', () => finish(mode.id));
+                    if (!focusTarget || mode.id === lastMode) focusTarget = button;
+                }
+                list.appendChild(button);
+            });
+
+            const footer = document.createElement('div');
+            footer.className = 'hpb-modal__footer';
+            const cancel = document.createElement('button');
+            cancel.type = 'button';
+            cancel.className = 'btn-secondary';
+            cancel.textContent = getMessage('cancel');
+            cancel.addEventListener('click', () => finish(null));
+            footer.appendChild(cancel);
+            dialog.appendChild(footer);
+
+            overlay.appendChild(dialog);
+            overlay.addEventListener('click', e => {
+                if (e.target === overlay && Date.now() - openedAt > 50) finish(null);
+            });
+            overlay.addEventListener('keydown', e => {
+                if (e.key === 'Escape') finish(null);
+            });
+
+            document.body.appendChild(overlay);
+            if (focusTarget) focusTarget.focus();
+        });
+    }
+
     async function savePageEncrypted() {
         const SecureCrypto = window.SecureCrypto;
         const { secureWipeArray, showGlobalLoadingIndicator, hideGlobalLoadingIndicator } = window.HolyShared || {};
@@ -897,6 +1087,17 @@ finally{go.disabled=false}
             showNotification(getMessage('savePageWaitLoad'), true);
             return;
         }
+
+        const hasSelection = await _probeSelection(tab.id);
+        const lastMode = await _readLastSaveMode();
+        const mode = await _chooseSaveMode({
+            lastMode: lastMode === 'selection' && !hasSelection ? 'full' : lastMode,
+            hasSelection
+        });
+        if (!mode) return;
+        try {
+            await chrome.storage.local.set({ [SAVE_MODE_KEY]: mode });
+        } catch (_) {}
 
         let plainBytes = null;
         let capturePercent = 0;
@@ -930,13 +1131,16 @@ finally{go.disabled=false}
 
             let results;
             try {
-                await chrome.scripting.executeScript({
-                    target: { tabId: tab.id },
-                    files: ['js/modules/readability.js']
-                });
+                if (mode === 'reader') {
+                    await chrome.scripting.executeScript({
+                        target: { tabId: tab.id },
+                        files: ['js/modules/readability.js']
+                    });
+                }
                 results = await chrome.scripting.executeScript({
                     target: { tabId: tab.id },
-                    func: _capturePageInTab
+                    func: _capturePageInTab,
+                    args: [mode]
                 });
             } catch (injectError) {
                 if (/Cannot access contents of url|must request permission/i.test(injectError.message || '')) {
@@ -946,6 +1150,10 @@ finally{go.disabled=false}
                 throw injectError;
             }
             const captured = results && results[0] && results[0].result;
+            if (captured && captured.error) {
+                showNotification(getMessage(captured.error === 'selection' ? 'savePageNoSelection' : 'savePageReaderUnavailable'), true);
+                return;
+            }
             if (!captured || !captured.html) throw new Error(getMessage('savePageUnsupported'));
 
             _setSaveProgress(container, getMessage('savePageCompressing'), 75);

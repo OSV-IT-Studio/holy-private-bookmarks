@@ -1005,5 +1005,41 @@
   },
   "savePageViewerError": {
     "message": "Não foi possível abrir o arquivo. Seu navegador pode não oferecer suporte aos recursos necessários"
+  },
+  "savePageModeTitle": {
+    "message": "Como salvar a página"
+  },
+  "savePageModeFull": {
+    "message": "Página inteira"
+  },
+  "savePageModeFullDesc": {
+    "message": "Layout original com estilos, imagens e fontes"
+  },
+  "savePageModeLite": {
+    "message": "Sem imagens"
+  },
+  "savePageModeLiteDesc": {
+    "message": "Apenas layout e texto, sem imagens nem fontes. Arquivo bem menor"
+  },
+  "savePageModeReader": {
+    "message": "Modo de leitura"
+  },
+  "savePageModeReaderDesc": {
+    "message": "Apenas o texto principal do artigo com suas imagens"
+  },
+  "savePageModeSelection": {
+    "message": "Trecho selecionado"
+  },
+  "savePageModeSelectionDesc": {
+    "message": "Apenas o que está selecionado na página"
+  },
+  "savePageModeSelectionNone": {
+    "message": "Primeiro selecione algo na página"
+  },
+  "savePageReaderUnavailable": {
+    "message": "Nenhum artigo encontrado nesta página. Escolha outro modo"
+  },
+  "savePageNoSelection": {
+    "message": "Nada está selecionado na página"
   }
 }
