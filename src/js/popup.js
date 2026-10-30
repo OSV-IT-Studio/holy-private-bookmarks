@@ -608,8 +608,8 @@ function _openAboutModal() {
                     <dd><a href="https://github.com/OSV-IT-Studio/holy-private-bookmarks" target="_blank" style="color:inherit;opacity:.7;font-size:11px">https://github.com/OSV-IT-Studio/holy-private-bookmarks</a></dd>
 					
                     <dt>Open Source libs:</dt>
-                    <dd><a href="https://github.com/kazuhikoarase/qrcode-generator" target="_blank" style="color:inherit;opacity:.7;font-size:11px">QR Code Generator &copy; 2009 Kazuhiko Arase (MIT)</a>
-					<a href="https://github.com/mozilla/readability" target="_blank" style="color:inherit;opacity:.7;font-size:11px">Readability &copy; 2010 Arc90 Inc (Apache 2.0)</a></dd>
+                    <dd><a href="https://github.com/kazuhikoarase/qrcode-generator" target="_blank" style="color:inherit;opacity:.7;font-size:11px">QR Code Generator &copy; 2009 Kazuhiko Arase (MIT)</a><p>
+					<a href="https://github.com/mozilla/readability" target="_blank" style="color:inherit;opacity:.7;font-size:11px">Readability &copy; 2010 Arc90 Inc, © 2010–2026 Mozilla and Contributors (Apache 2.0)</a></p></dd>
                 </dl>
                 
             </div>

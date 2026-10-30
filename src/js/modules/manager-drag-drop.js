@@ -279,10 +279,14 @@
 
         _ghostEl = window.HolyShared.dragCreateGhost(el, e.clientX, e.clientY, GHOST_X, GHOST_Y);
 
-        const blank = Object.assign(document.createElement('div'), { style: 'opacity:0' });
+        // Hide Chrome's native drag image; the extension renders its own .drag-ghost.
+        const blank = document.createElement('canvas');
+        blank.width = 1;
+        blank.height = 1;
+        blank.style.cssText = 'position:fixed;left:-1px;top:-1px;width:1px;height:1px;opacity:0;pointer-events:none;';
         document.body.appendChild(blank);
         e.dataTransfer.setDragImage(blank, 0, 0);
-        setTimeout(() => blank.remove(), 0);
+        requestAnimationFrame(() => blank.remove());
 
         e.dataTransfer.effectAllowed = 'move';
         e.dataTransfer.setData('text/plain', JSON.stringify({ action: 'manager-drag', uid: _draggedUid }));

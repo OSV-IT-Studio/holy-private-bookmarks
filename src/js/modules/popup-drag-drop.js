@@ -161,7 +161,14 @@ const DragDropManager = (function () {
             item, e.clientX, e.clientY,
             DRAG_CONFIG.ghostOffsetX, DRAG_CONFIG.ghostOffsetY
         );
-        e.dataTransfer.setDragImage(new Image(), 0, 0);
+// Hide Chrome's native drag image; the extension renders its own .drag-ghost.
+        const transparentDragImage = document.createElement('canvas');
+        transparentDragImage.width = 1;
+        transparentDragImage.height = 1;
+        transparentDragImage.style.cssText = 'position:fixed;left:-1px;top:-1px;width:1px;height:1px;opacity:0;pointer-events:none;';
+        document.body.appendChild(transparentDragImage);
+        e.dataTransfer.setDragImage(transparentDragImage, 0, 0);
+        requestAnimationFrame(() => transparentDragImage.remove());
 
         _state._escHandler = window.HolyShared.dragHandleEscape(
             () => _state.isDragging,
